@@ -7,14 +7,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Install Wrangler
-        run: npm install -g wrangler@3.99.0
+        run: npm install -g wrangler
       - name: Deploy Worker
         run: wrangler deploy --config wrangler.worker.toml
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

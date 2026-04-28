@@ -147,216 +147,190 @@ pre code{background:none;border:none;padding:0;color:inherit}
 }
 
 /* ============================================
-   ARTICLES PAGE — RESOURCE CENTER REDESIGN
+   ARTICLES PAGE — EDITORIAL REDESIGN
    ============================================ */
-body { background: #F9FAFB !important; }
 
 .articles-hero {
-  max-width: 860px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem 3rem;
-  text-align: center;
+  padding: 5rem 1.5rem 3.5rem;
 }
-.articles-hero .badge-live {
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  border-radius: 100px;
-  padding: .3rem 1rem;
+.articles-hero .eyebrow {
   font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 1.5rem;
-}
-.articles-hero .badge-live span {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #22c55e;
-  display: inline-block;
+  color: #9ca3af;
+  margin-bottom: 1.1rem;
+  display: block;
 }
 .articles-hero h1 {
   font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
   font-weight: 400;
-  line-height: 1.13;
-  letter-spacing: -.025em;
-  color: #0d0f1a;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  color: #111827;
   margin-bottom: 1.1rem;
 }
 .articles-hero p {
-  font-size: 1.08rem;
-  color: #64748b;
+  font-size: 1.05rem;
+  color: #6b7280;
   line-height: 1.7;
-  max-width: 520px;
-  margin: 0 auto;
+  max-width: 480px;
 }
 
 /* FILTER TABS */
 .articles-filter {
-  max-width: 860px;
-  margin: 0 auto 2.5rem;
+  max-width: 780px;
+  margin: 0 auto 3rem;
   padding: 0 1.5rem;
   display: flex;
-  gap: .5rem;
+  gap: .4rem;
   flex-wrap: wrap;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1.25rem;
 }
 .filter-btn {
-  padding: .4rem 1rem;
-  border-radius: 100px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
+  padding: .35rem .9rem;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
   font-size: .82rem;
   font-weight: 600;
-  color: #6b7280;
+  color: #9ca3af;
   cursor: pointer;
   transition: all .15s;
 }
-.filter-btn:hover, .filter-btn.active {
-  background: #0d0f1a;
-  border-color: #0d0f1a;
-  color: #fff;
-}
+.filter-btn:hover { color: #111827; background: #f9fafb; }
+.filter-btn.active { color: #111827; background: #f3f4f6; }
 
-/* ARTICLES GRID — vertical list of cards */
+/* ARTICLES LIST — editorial, no cards */
 .articles-grid {
-  max-width: 860px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  padding: 0 1.5rem 6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
 .article-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / .06), 0 2px 4px -1px rgb(0 0 0 / .04);
-  transition: box-shadow .18s, transform .18s;
-  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #f3f4f6;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
 }
-.article-card:hover {
-  box-shadow: 0 10px 24px -4px rgb(0 0 0 / .1), 0 4px 8px -2px rgb(0 0 0 / .06);
-  transform: translateY(-2px);
-}
+.article-card:first-child { border-top: 1px solid #f3f4f6; }
+.article-card:hover { box-shadow: none; transform: none; }
+
 .article-card .card-link {
-  display: block;
-  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 0;
+  padding: 2rem 0;
   text-decoration: none;
   color: inherit;
+  align-items: start;
 }
 .article-card .card-link:hover { text-decoration: none; }
 
-/* top row: badge + meta */
 .card-top-row {
+  grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: .75rem;
-  margin-bottom: .9rem;
-  flex-wrap: wrap;
+  gap: .6rem;
+  margin-bottom: .6rem;
 }
 .card-cat {
-  display: inline-block;
-  font-size: .7rem;
+  font-size: .68rem;
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  padding: .25rem .75rem;
-  border-radius: 100px;
+  padding: .2rem .65rem;
+  border-radius: 4px;
 }
-/* category color variants */
-[data-cat="teknik"] .card-cat  { background: #eff6ff; color: #1d4ed8; }
-[data-cat="devlet"] .card-cat  { background: #f0fdf4; color: #15803d; }
-[data-cat="guvenlik"] .card-cat{ background: #fdf4ff; color: #7e22ce; }
-[data-cat="rehber"] .card-cat  { background: #fff7ed; color: #c2410c; }
-[data-cat="pratik"] .card-cat  { background: #fefce8; color: #a16207; }
-[data-cat="mobil"] .card-cat   { background: #f0fdfa; color: #0f766e; }
-[data-cat="donusum"] .card-cat { background: #fff1f2; color: #be123c; }
-[data-cat="duzenleme"] .card-cat{background: #f5f3ff; color: #6d28d9; }
-.card-cat-default              { background: #f1f5f9; color: #475569; }
+[data-cat="teknik"]   .card-cat { background: #eff6ff; color: #2563eb; }
+[data-cat="devlet"]   .card-cat { background: #f0fdf4; color: #16a34a; }
+[data-cat="guvenlik"] .card-cat { background: #faf5ff; color: #7c3aed; }
+[data-cat="rehber"]   .card-cat { background: #fff7ed; color: #ea580c; }
+[data-cat="pratik"]   .card-cat { background: #fefce8; color: #ca8a04; }
+[data-cat="mobil"]    .card-cat { background: #f0fdfa; color: #0d9488; }
+[data-cat="donusum"]  .card-cat { background: #fff1f2; color: #e11d48; }
+[data-cat="duzenleme"].card-cat { background: #f5f3ff; color: #7c3aed; }
 
-.card-meta-date {
-  font-size: .78rem;
-  color: #9ca3af;
-  font-weight: 500;
-}
-.card-meta-time {
-  font-size: .78rem;
-  color: #9ca3af;
-  font-weight: 500;
-}
-.card-meta-dot {
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: #d1d5db;
-  display: inline-block;
-}
+.card-meta-date, .card-meta-time { font-size: .75rem; color: #d1d5db; font-weight: 500; }
+.card-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #e5e7eb; display: inline-block; }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #111827;
   line-height: 1.35;
-  margin-bottom: .6rem;
+  margin-bottom: .5rem;
   letter-spacing: -.01em;
+  grid-column: 1;
   transition: color .15s;
 }
 .article-card:hover .card-title { color: #2563eb; }
 
 .card-excerpt {
-  font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.65;
+  font-size: .95rem;
+  color: #6b7280;
+  line-height: 1.6;
   margin: 0;
+  grid-column: 1;
+  max-width: 56ch;
 }
 
-/* Remove old card styles */
-.article-card h2 a { display: none; }
-.read-more { display: none; }
+/* arrow on hover */
+.card-arrow {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: center;
+  margin-left: 2rem;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  transition: color .15s, transform .15s;
+}
+.article-card:hover .card-arrow { color: #2563eb; transform: translateX(3px); }
 
-/* Popular tools section modernize */
+/* Popular tools */
 .popular-tools-section {
-  max-width: 860px;
+  max-width: 780px;
   margin: 0 auto 2rem;
   padding: 0 1.5rem;
 }
 .popular-tools-section h2 {
-  font-size: .72rem;
+  font-size: .68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #9ca3af;
-  margin-bottom: 1rem;
+  letter-spacing: .1em;
+  color: #d1d5db;
+  margin-bottom: .85rem;
 }
-.tools-pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-}
+.tools-pill-row { display: flex; flex-wrap: wrap; gap: .4rem; }
 .tool-pill {
-  padding: .5rem 1.1rem;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 100px;
-  font-size: .85rem;
+  padding: .4rem 1rem;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 6px;
+  font-size: .82rem;
   font-weight: 600;
-  color: #374151;
+  color: #6b7280;
   text-decoration: none;
   transition: all .15s;
 }
-.tool-pill:hover {
-  background: #0d0f1a;
-  color: #fff;
-  border-color: #0d0f1a;
-  text-decoration: none;
-}
+.tool-pill:hover { background: #111827; color: #fff; border-color: #111827; text-decoration: none; }
+
+/* hide old elements */
+.article-card h2 a, .read-more { display: none; }
 
 @media(max-width:600px){
-  .article-card .card-link { padding: 1.25rem 1.25rem; }
-  .card-title { font-size: 1.1rem; }
+  .article-card .card-link { padding: 1.5rem 0; }
+  .card-title { font-size: 1rem; }
+  .card-arrow { display: none; }
 }
 
 </style>
@@ -418,6 +392,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF Boyutu Neden Bu Kadar Büyük?</h2>
           <p class="card-excerpt">Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza katmanları — PDF boyutunu belirleyen tüm faktörler ve çözümler.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="devlet">
@@ -431,6 +406,7 @@ initNav();
           </div>
           <h2 class="card-title">e-Devlet PDF Hataları ve Çözümleri — Tam Rehber 2026</h2>
           <p class="card-excerpt">Dosya boyutu çok büyük, format desteklenmiyor, şifreli PDF. KYK, İŞKUR, SGK başvurularındaki tüm PDF hataları ve adım adım çözümler.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="teknik">
@@ -444,6 +420,7 @@ initNav();
           </div>
           <h2 class="card-title">Tarayıcıda PDF İşleme: WebAssembly ve KVKK</h2>
           <p class="card-excerpt">MirPDF nasıl çalışır? WebAssembly, pdf-lib ve Web Workers ile tarayıcıda PDF işleme teknolojisi ve KVKK uyumu.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="teknik">
@@ -457,6 +434,7 @@ initNav();
           </div>
           <h2 class="card-title">OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma</h2>
           <p class="card-excerpt">Optik Karakter Tanıma teknolojisi, Türkçe OCR'ın zorlukları, Tesseract motoru ve doğruluk faktörleri. Adım adım rehber.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="guvenlik">
@@ -470,6 +448,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF Güvenliği: Parola, AES-256, KVKK ve Güvenli Paylaşım</h2>
           <p class="card-excerpt">PDF parola türleri, AES-256 şifreleme, KVKK madde 12 uyumu, filigran ile belge takibi ve güvenli paylaşım protokolü.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
         <article class="article-card" data-cat="rehber">
@@ -483,6 +462,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF ile Çalışmada 8 Temel İşlem — Adım Adım 2026</h2>
           <p class="card-excerpt">Birleştirme, bölme, döndürme, sayfa silme, JPG→PDF, şifreleme ve filigran: en sık karşılaşılan sorunlar ve kesin çözümler.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="teknik">
@@ -496,6 +476,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF Boyutunu Kalite Kaybetmeden Küçültme — 2026 Rehberi</h2>
           <p class="card-excerpt">Görsel sıkıştırma, font alt kümeleme ve tarayıcı tabanlı güvenli işleme ile PDF dosyalarınızı %70'e kadar küçültün.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="rehber">
@@ -509,6 +490,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF Dosyalarını Birleştirme: Hızlı, Güvenli ve Sıra Yönetimiyle</h2>
           <p class="card-excerpt">Tarayıcı tabanlı birleştirme teknolojisi ile dosyalarınız sunucuya yüklenmez. Sıralama yönetimi ve büyük dosya desteği dahil.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="pratik">
@@ -522,6 +504,7 @@ initNav();
           </div>
           <h2 class="card-title">Outlook Ek Boyut Sınırını Aşmadan PDF Gönderme</h2>
           <p class="card-excerpt">Outlook'un 20 MB ek sınırını aşan PDF'leri nasıl küçültürsünüz? Kalite kaybı olmadan e-posta ile gönderilebilir boyuta getirin.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="mobil">
@@ -535,6 +518,7 @@ initNav();
           </div>
           <h2 class="card-title">Telefondan PDF Birleştirme — Android ve iPhone İçin</h2>
           <p class="card-excerpt">Uygulama indirmeden, doğrudan mobil tarayıcıdan birden fazla PDF'yi tek dosyada birleştirin. iOS ve Android uyumlu.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="donusum">
@@ -548,6 +532,7 @@ initNav();
           </div>
           <h2 class="card-title">JPG'den PDF Oluşturma: Ücretsiz, Hızlı ve Toplu İşlem</h2>
           <p class="card-excerpt">Tek fotoğraf veya onlarca görsel — hepsini sıralı, profesyonel bir PDF belgesine dönüştürün. Kayıpsız ve kayıt gerekmez.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="guvenlik">
@@ -561,6 +546,7 @@ initNav();
           </div>
           <h2 class="card-title">Şifreli PDF Açma: Parola Biliyorsanız Kilit Nasıl Kaldırılır?</h2>
           <p class="card-excerpt">Parola korumalı PDF dosyalarını güvenli şekilde açın ve şifre kaldırarak düzenlenebilir hale getirin. Tarayıcıda, sunucusuz.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="duzenleme">
@@ -574,6 +560,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF'ten Sayfa Silme — Online, Kayıt Olmadan</h2>
           <p class="card-excerpt">Boş, yanlış veya gizli kalması gereken sayfaları PDF'den anında kaldırın. Tekil silme ve aralık seçimi desteklenir.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="mobil">
@@ -587,6 +574,7 @@ initNav();
           </div>
           <h2 class="card-title">Telefonda Word Dosyasını PDF'ye Çevirme — iOS ve Android</h2>
           <p class="card-excerpt">Android veya iPhone'da DOCX dosyasını biçimlendirme bozulmadan PDF'ye dönüştürmenin en kolay ve güvenilir yolu.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="duzenleme">
@@ -600,6 +588,7 @@ initNav();
           </div>
           <h2 class="card-title">İmza Atmak İçin PDF Hazırlama: Alanlar, Düzen ve İpuçları</h2>
           <p class="card-excerpt">İmzalanacak PDF'yi doğru formatta hazırlayın. İmza alanı ekleme, sayfa düzeni ve e-imza uyumluluğu için adım adım rehber.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="devlet">
@@ -613,6 +602,7 @@ initNav();
           </div>
           <h2 class="card-title">e-Devlet Belgelerini PDF Olarak İndirme ve Dönüştürme</h2>
           <p class="card-excerpt">Barkodlu e-Devlet belgelerini geçerliliğini koruyarak doğru PDF formatında hazırlayın. KYK, SGK ve İŞKUR başvuruları için.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="pratik">
@@ -626,6 +616,7 @@ initNav();
           </div>
           <h2 class="card-title">PDF ve Görsellere QR Kod Ekleme — Kartvizit, Afiş ve Daha Fazlası</h2>
           <p class="card-excerpt">Kartvizit, afiş ve sosyal medya görsellerine QR kod yerleştirin. Doğrudan tarayıcıdan, uygulama gerektirmez.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
     <article class="article-card" data-cat="guvenlik">
@@ -639,6 +630,7 @@ initNav();
           </div>
           <h2 class="card-title">KVKK Uyumlu PDF Aracı: Saklamama, Log Politikası ve Kurumsal Güvenlik</h2>
           <p class="card-excerpt">Kişisel veri içeren belgeler için doğru PDF aracını nasıl seçersiniz? KVKK madde 12, sunucu politikası ve kurumsal uyum rehberi.</p>
+          <span class="card-arrow">→</span>
         </a>
     </article>
 </article>

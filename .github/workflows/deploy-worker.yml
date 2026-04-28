@@ -12,6 +12,5 @@ jobs:
       - name: Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
-          apiEmail: mehmetkant217@gmail.com
-          apiKey: ${{ secrets.CF_API_KEY }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
           command: deploy --config wrangler.worker.toml

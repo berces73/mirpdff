@@ -1,0 +1,9 @@
+# wrangler.toml — Cloudflare Pages frontend config
+# Worker (API) config is in wrangler.worker.toml
+#
+# Deploy Pages:  wrangler pages deploy public --project-name mirpdf
+# Deploy Worker: wrangler deploy --config wrangler.worker.toml
+
+name = "mirpdf"
+pages_build_output_dir = "public"
+compatibility_date = "2026-02-24"

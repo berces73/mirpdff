@@ -1,0 +1,5 @@
+-- ⚠️  Bu dosya artık kullanılmıyor.
+-- Master şema: d1/schema.sql
+--
+-- Deploy komutu:
+--   wrangler d1 execute mirpdf-db --file=d1/schema.sql --remote --config wrangler.worker.toml

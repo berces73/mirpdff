@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Yardım Merkezi — MirPDF</title>
+  <meta name="description" content="MirPDF yardım merkezi: teknik sorunlar, hesap yönetimi, ödeme desteği ve güvenlik konularında hızlı cevaplar.">
+    <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Yardım Merkezi | MirPDF"/>
+  <meta property="og:description" content="MirPDF kullanımı hakkında sık sorulan sorular ve destek."/>
+  <meta property="og:url" content="https://mirpdf.com/yardim"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:site_name" content="MirPDF"/>
+  <link rel="canonical" href="https://mirpdf.com/yardim">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{--bg:#f7f8fc;--bg-soft:#fff;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:960px;margin:0 auto;padding:0 1.5rem}
+header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.15rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+#mainNav{display:flex;align-items:center;gap:.1rem}
+.page-hero{background:#fff;border-bottom:1px solid var(--border);padding:2.5rem 0 2rem}
+.page-hero h1{font-size:1.9rem;font-weight:800;margin-bottom:.4rem}
+.page-hero p{color:var(--muted)}
+.search-bar{display:flex;gap:.6rem;margin-top:1.25rem;max-width:500px}
+.search-bar input{flex:1;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:12px;font-size:.92rem;font-family:inherit;outline:none;transition:.15s}
+.search-bar input:focus{border-color:var(--primary)}
+.search-bar button{padding:.7rem 1.2rem;border-radius:12px;background:var(--text);color:#fff;border:none;cursor:pointer;font-weight:700;font-size:.88rem;font-family:inherit}
+main{padding:2.5rem 0 4rem}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:3rem}
+.help-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;text-decoration:none;color:var(--text);transition:.15s;display:block}
+.help-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(99,102,241,.1);transform:translateY(-1px)}
+.help-card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;font-size:1.1rem}
+.help-card h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.help-card p{font-size:.85rem;color:var(--muted);line-height:1.5}
+.section-title{font-size:1.2rem;font-weight:800;margin-bottom:1rem}
+.faq-list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2.5rem}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-btn{width:100%;text-align:left;padding:.9rem 1.1rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;color:var(--text);display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.faq-btn i{color:var(--muted);font-size:.75rem;transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-btn i{transform:rotate(180deg)}
+.faq-body{display:none;padding:.1rem 1.1rem 1rem;font-size:.875rem;color:var(--muted);line-height:1.65}
+.faq-item.open .faq-body{display:block}
+.contact-cta{background:linear-gradient(135deg,#6366f1 0%,#4f46e5 100%);border-radius:18px;padding:2.5rem 2rem;text-align:center;color:#fff}
+.contact-cta h2{font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+.contact-cta p{opacity:.85;margin-bottom:1.5rem;font-size:.92rem}
+.cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.4rem;border-radius:11px;font-weight:700;font-size:.88rem;text-decoration:none;transition:.15s}
+.cta-btn-white{background:#fff;color:#4f46e5}
+.cta-btn-outline{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.cta-btn:hover{opacity:.9}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .5rem}
+footer a:hover{color:var(--text)}
+@media(max-width:600px){.help-grid{grid-template-columns:1fr}}
+</style>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:description" content="MirPDF yardım merkezi: sık sorulan sorular, teknik sorunlar, hesap yönetimi ve ödeme desteği."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Yardım Merkezi — MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false"
+        style="display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="mainNav"></div>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Yardım Merkezi</h1>
+    <p>En sık karşılaşılan sorunları konu başlıklarına ayırdık. Hesap, ödeme ve teknik problemler için hızlı cevaplara buradan ulaşabilirsiniz.</p>
+    <div class="search-bar">
+      <input type="search" id="helpSearch" placeholder="Örn: dosya yüklenmiyor, şifremi unuttum…" aria-label="Yardım ara">
+      <button onclick="doSearch()"><i class="fas fa-search"></i> Ara</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- Kategori kartları -->
+    <div class="help-grid">
+      <a href="#dosya-islemleri" class="help-card">
+        <div class="help-card-icon" style="background:#ede9fe"><i class="fas fa-file-pdf" style="color:#6366f1"></i></div>
+        <h3>Dosya İşlemleri</h3>
+        <p>Yükleme sorunları, format hataları, dosya boyutu ve işlem hataları.</p>
+      </a>
+      <a href="#hesap" class="help-card">
+        <div class="help-card-icon" style="background:#dbeafe"><i class="fas fa-user mir-text-primary"></i></div>
+        <h3>Hesap &amp; Giriş</h3>
+        <p>Şifremi unuttum, e-posta doğrulama, hesap silme, güvenlik ayarları.</p>
+      </a>
+      <a href="#odeme" class="help-card">
+        <div class="help-card-icon" style="background:#d1fae5"><i class="fas fa-credit-card" style="color:#10b981"></i></div>
+        <h3>Ödeme &amp; Abonelik</h3>
+        <p>Pro satın alma, iade, iptal, fatura bilgileri ve kredi sorunları.</p>
+      </a>
+      <a href="#guvenlik" class="help-card">
+        <div class="help-card-icon" style="background:#fef3c7"><i class="fas fa-shield-alt" style="color:#d97706"></i></div>
+        <h3>Güvenlik &amp; Gizlilik</h3>
+        <p>Dosyalarım güvende mi, KVKK, veri saklama süresi, şifreleme.</p>
+      </a>
+      <a href="#teknik" class="help-card">
+        <div class="help-card-icon" style="background:#fee2e2"><i class="fas fa-tools" style="color:#ef4444"></i></div>
+        <h3>Teknik Sorunlar</h3>
+        <p>OCR hatası, uzun bekleme, yavaş işlem, tarayıcı uyumluluğu.</p>
+      </a>
+      <a href="/faq" class="help-card">
+        <div class="help-card-icon" style="background:#f0fdf4"><i class="fas fa-question-circle" style="color:#059669"></i></div>
+        <h3>Sık Sorulan Sorular</h3>
+        <p>En çok sorulan sorular ve hızlı cevaplar için SSS sayfasına bakın.</p>
+      </a>
+    </div>
+
+    <!-- Dosya İşlemleri -->
+    <h2 class="section-title" id="dosya-islemleri"><i class="fas fa-file-pdf" style="color:#6366f1;margin-right:.4rem"></i>Dosya İşlemleri</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Dosyam neden yüklenmiyor? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">En sık nedenler şunlardır: (1) Sunucu gerektiren araçlarda 50 MB teknik üst sınırın aşılması, (2) aracın desteklemediği bir dosya türü, (3) bozuk ya da şifreli dosya, (4) işlem sırasında kopan bağlantı. Önce dosyayı sıkıştırmayı, ardından güncel Chrome, Edge veya Firefox ile tekrar denemeyi öneririz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">İşlemim çok uzun sürüyor, ne yapmalıyım? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">OCR, sıkıştırma ve PDF→Word işlemleri belge yapısına göre değişir; kısa belgeler genelde 10–60 saniyede tamamlanır, büyük taramalar daha uzun sürebilir. Süre 2 dakikayı geçtiyse sayfayı yenileyip tekrar deneyin. Sorun sürerse belge türünü ve yaklaşık boyutunu belirterek <a href="/contact" class="mir-text-primary">destek ekibine yazın</a>.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Çıkan dosya bozuk veya hatalı görünüyor <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">PDF→Word dönüşümlerinde orijinal belgede gömülü font veya karmaşık tablo varsa bazı bozulmalar olabilir. Taranan (tarayıcıyla oluşturulmuş) PDF'lerde OCR hatası görülebilir — aydınlatma ve çözünürlük kalitesi sonucu doğrudan etkiler. Daha iyi sonuç için kaynak dosyanın 300 DPI veya üstü olmasını öneririz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Dosyam ne kadar süre tutulur, silinir mi? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">İşlem tamamlandıktan 60 dakika sonra giriş ve çıkış dosyaları otomatik olarak silinir. Bu süre dolmadan da siz indirebilirsiniz. Dosyalarınız üçüncü taraflarla paylaşılmaz. Detaylar için <a href="/legal/security.html" class="mir-text-primary">Güvenlik politikamıza</a> bakın.</div>
+      </div>
+    </div>
+
+    <!-- Hesap -->
+    <h2 class="section-title" id="hesap"><i class="fas fa-user" style="color:#2563eb;margin-right:.4rem"></i>Hesap &amp; Giriş</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Şifremi unuttum, ne yapmalıyım? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body"><a href="/forgot-password" class="mir-text-primary">Şifremi Unuttum</a> sayfasına gidin, e-posta adresinizi yazın. E-postanız sistemde kayıtlıysa 5 dakika içinde sıfırlama bağlantısı gelir. Spam klasörünü kontrol etmeyi unutmayın. Bağlantı 1 saat içinde geçerliliğini yitirir.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Doğrulama e-postası gelmedi <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">Önce spam/gereksiz klasörünü kontrol edin. Gelmemişse <a href="/account" class="mir-text-primary">Hesabım</a> sayfasından "Doğrulama e-postasını tekrar gönder" butonuna tıklayın. E-posta sağlayıcınız blokluyorsa farklı bir adresle kayıt olmayı deneyin.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Hesabımı nasıl silebilirim? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body"><a href="/account" class="mir-text-primary">Hesabım</a> → en altta "Hesabı Sil" bölümü. E-posta adresinizi girerek onaylayın. KVKK kapsamındaki tüm verileriniz 30 gün içinde kalıcı olarak silinir. Aktif Pro aboneliğiniz varsa önce iptal etmenizi öneririz.</div>
+      </div>
+    </div>
+
+    <!-- Ödeme -->
+    <h2 class="section-title" id="odeme"><i class="fas fa-credit-card" style="color:#10b981;margin-right:.4rem"></i>Ödeme &amp; Abonelik</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Ödemem başarısız oldu, neden? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">En sık nedenler: yetersiz bakiye, kart limitinin dolması, bankanın yabancı işlemi reddetmesi. Farklı kart veya ödeme yöntemiyle tekrar deneyebilirsiniz. Sorun devam ederse bankanızla iletişime geçin veya <a href="/contact" class="mir-text-primary">bize yazın</a>.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Pro aboneliğimi nasıl iptal ederim? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body"><a href="/account" class="mir-text-primary">Hesabım</a> → Plan bölümü → "Aboneliği Yönet" → Stripe portalında iptal. İptal ettiğinizde mevcut dönem sona erene kadar Pro özelliklerine erişmeye devam edersiniz. İlk ödeme için iade talebi süresi 14 gündür.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Ödedim ama Pro özellikleri aktif değil <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">Sayfayı yenileyip çıkış yapıp tekrar giriş yapmayı deneyin. Webhook gecikmesi nadiren 1–2 dakika sürebilir. Sorun devam ederse ödeme tarih/saatinizle birlikte <a href="/contact" class="mir-text-primary">destek ekibine yazın</a>, en geç 24 saatte çözülür.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Para iadesi alabilir miyim? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">İlk ödemeden itibaren 14 gün içinde iade talep edebilirsiniz. <a href="/contact" class="mir-text-primary">İletişim formu</a> üzerinden sipariş bilgilerinizle başvurun. Kullanılmamış kredi paketleri ve teknik hata kaynaklı kayıplar için detayları <a href="/legal/refund.html" class="mir-text-primary">İade Politikamızda</a> açıkça belirttik.</div>
+      </div>
+    </div>
+
+    <!-- Güvenlik -->
+    <h2 class="section-title" id="guvenlik"><i class="fas fa-shield-alt" style="color:#d97706;margin-right:.4rem"></i>Güvenlik &amp; Gizlilik</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Dosyalarım güvende mi? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">Araç türüne göre değişir ama akış nettir: birleştirme, bölme, sayfa silme gibi araçlar dosyayı cihazınızda işler; OCR, sıkıştırma ve dönüşüm araçlarında ise dosya işlem için geçici olarak sunucuya gider ve 60 dakika içinde otomatik silinir. Detaylar: <a href="/legal/security.html" class="mir-text-primary">Güvenlik Politikası</a>.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">KVKK kapsamında haklarım neler? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">Verilerinize erişim, düzeltme, silme ve taşıma haklarınız bulunmaktadır. Hesabınızı sildiğinizde tüm kişisel verileriniz 30 gün içinde sistemden kaldırılır. Detaylı bilgi için <a href="/legal/kvkk.html" class="mir-text-primary">KVKK sayfamızı</a> ziyaret edin.</div>
+      </div>
+    </div>
+
+    <!-- Teknik -->
+    <h2 class="section-title" id="teknik"><i class="fas fa-tools" style="color:#ef4444;margin-right:.4rem"></i>Teknik Sorunlar</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Araç çalışmıyor veya sayfa açılmıyor <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">Önce tarayıcı önbelleğini temizleyin (Ctrl+Shift+R). Chrome veya Firefox'un güncel sürümünü kullanın. Sistem durumunu <a href="/status" class="mir-text-primary">status sayfasından</a> kontrol edin. Sorun devam ederse <a href="/contact" class="mir-text-primary">bildirin</a>.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">OCR sonucu yanlış / Türkçe karakterler bozuk <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-body">OCR kalitesi kaynak belgenin netliğine bağlıdır. En iyi sonuç için: (1) 300 DPI+ tarama yapın, (2) iyi aydınlatmada çekin, (3) eğik olmayan belgeler kullanın. Çok fazla el yazısı içeren belgeler için başarı oranı düşebilir.</div>
+      </div>
+    </div>
+
+    <!-- İletişim CTA -->
+    <div class="contact-cta">
+      <h2>Cevap bulamadınız mı?</h2>
+      <p>Mesajınıza çoğu zaman <strong>bir iş günü içinde</strong> dönüş yapıyoruz.</p>
+      <div class="cta-btns">
+        <a href="/contact" class="cta-btn cta-btn-white"><i class="fas fa-envelope"></i> E-posta Gönder</a>
+        <a href="/faq" class="cta-btn cta-btn-outline"><i class="fas fa-question-circle"></i> SSS'ye Bak</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer style="background:#0d0f1a;color:rgba(255,255,255,.6);padding:2.5rem 2rem 1.5rem;margin-top:3rem">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem">
+      <div>
+        <a href="/" style="color:#fff;font-weight:800;font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+          <img src="/assets/icons/logo.svg" width="28" height="28" alt="MirPDF" loading="lazy" style="border-radius:7px">MirPDF
+        </a>
+        <p style="font-size:.83rem;line-height:1.6">Ücretsiz online PDF araçları. Tarayıcıda çalışır, dosyalar cihazınızdan çıkmaz.</p>
+      </div>
+      <div>
+        <h4 class="mir-footer-section-title">Araçlar</h4>
+        <a href="/pdf-birlestir" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">PDF Birleştir</a>
+        <a href="/pdf-sikistir" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">PDF → Word</a>
+        <a href="/ocr" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">OCR PDF</a>
+      </div>
+      <div>
+        <h4 class="mir-footer-section-title">Şirket</h4>
+        <a href="/about" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Hakkımızda</a>
+        <a href="/contact" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">İletişim</a>
+        <a href="/faq" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">SSS</a>
+        <a href="/pricing" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Fiyatlar</a>
+      </div>
+      <div>
+        <h4 class="mir-footer-section-title">Yasal</h4>
+        <a href="/legal/privacy.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Gizlilik</a>
+        <a href="/legal/terms.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Şartlar</a>
+        <a href="/legal/kvkk.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">KVKK</a>
+        <a href="/legal/cookies.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Çerezler</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;font-size:.79rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;align-items:center">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div style="display:flex;gap:1rem">
+        <a href="/en/" class="mir-footer-link-xs">🇬🇧 English</a>
+        <a href="https://twitter.com/mirpdf" class="mir-footer-link-xs">𝕏</a>
+        <a href="/status" class="mir-footer-link-xs">Status</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  });
+});
+
+// Basit arama — ilgili bölüme scroll
+function doSearch() {
+  const q = document.getElementById('helpSearch').value.toLowerCase().trim();
+  if (!q) return;
+  const map = {
+    'şifre': '#hesap', 'giriş': '#hesap', 'hesap': '#hesap', 'kayıt': '#hesap',
+    'ödeme': '#odeme', 'pro': '#odeme', 'abonelik': '#odeme', 'iade': '#odeme',
+    'dosya': '#dosya-islemleri', 'yükleme': '#dosya-islemleri', 'hata': '#teknik',
+    'ocr': '#teknik', 'kvkk': '#guvenlik', 'güvenlik': '#guvenlik', 'silme': '#guvenlik',
+  };
+  for (const [kw, anchor] of Object.entries(map)) {
+    if (q.includes(kw)) { document.querySelector(anchor)?.scrollIntoView({behavior:'smooth'}); return; }
+  }
+  window.location.href = '/contact?q=' + encodeURIComponent(q);
+}
+document.getElementById('helpSearch')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') doSearch();
+});
+
+// Mobile nav
+document.getElementById('mobileToggle')?.addEventListener('click', function() {
+  const nav = document.getElementById('mainNav');
+  if (nav) { const open = nav.classList.toggle('show'); this.setAttribute('aria-expanded', String(open)); }
+});
+</script>
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

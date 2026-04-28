@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0"/>
+<title>PDF Boyutu Neden Bu Kadar Büyük? | MirPDF</title>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-blog.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+<meta name="description" content="Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza — PDF dosyalarının neden büyük olduğunu ve nasıl küçültüleceğini detaylı rehber."/>
+<link rel="canonical" href="https://mirpdf.com/articles/pdf-boyutu-neden-buyuk.html"/>
+<meta property="og:title" content="PDF Boyutu Neden Büyük? Tam Rehber 2026"/>
+<meta property="og:description" content="Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza — PDF dosyalarının neden büyük olduğunu ve nasıl küçültüleceğini detaylı rehber."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mirpdf.com/articles/pdf-boyutu-neden-buyuk.html"/>
+  <meta property="og:locale" content="tr_TR"/>
+<meta name="article:published_time" content="2026-03-16"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PDF Boyutu Neden Bu Kadar Büyük?","description":"Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza — PDF dosyalarının neden büyük olduğunu ve nasıl küçültüleceğini detaylı rehber.","datePublished":"2026-03-16","dateModified":"2026-03-16","author":{"@type":"Organization","name":"MirPDF","url":"https://mirpdf.com"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/brand/logo.png"}},"inLanguage":"tr-TR"}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico"/>
+
+
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script defer src="/assets/js/vitals.js"></script>
+
+  <meta name="twitter:description" content="Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza — PDF dosyalarının neden büyük olduğunu ve nasıl küçültüleceğini detaylı rehber."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="PDF Boyutu Neden Bu Kadar Büyük? | MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-blog.png"/>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/css/article.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo"><img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF</a>
+      <nav class="main-nav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/pdf-sikistir" class="nav-cta">PDF Sıkıştır</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="art-layout">
+  <nav class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span><a href="/articles/">Makaleler</a><span>›</span><span>Teknik Rehber</span></nav>
+  <div class="article-header">
+    <div class="article-cat"><i class="fas fa-bookmark"></i> Teknik Rehber</div>
+    <div class="article-body">
+<h1 class="article-title">PDF Boyutu Neden Bu Kadar Büyük?</h1>
+    <div class="article-meta">
+      <span><i class="fas fa-calendar-alt mir-icon-accent"></i>2026-03-16</span>
+      <span>·</span>
+      <span><i class="fas fa-clock mir-icon-accent"></i>12 dk okuma</span>
+      <span>·</span>
+      <span><i class="fas fa-shield-alt" style="color:#10b981;margin-right:.3rem"></i>KVKK Uyumlu</span>
+    </div>
+  </div>
+  <div class="body-text">
+<p>PDF dosyalarınız neden bu kadar büyük? Tek sayfalık bir e-fatura neden 8 MB oluyor? Taranan bir belge neden 50 MB'ı aşıyor? Bu soruların cevabı PDF formatının iç yapısında gizli.</p>
+
+<p>Bu rehberde PDF boyutunu belirleyen tüm faktörleri tek tek inceleyeceğiz ve her faktör için boyutu küçültmenin pratik yollarını göstereceğiz.</p>
+
+<h2>PDF Neden Diğer Formatlardan Büyük Olabilir?</h2>
+
+<p>PDF (Portable Document Format), Adobe tarafından 1993 yılında geliştirilen ve o tarihten bu yana ISO standardı haline gelen bir format. Temel tasarım hedefi şu: dosyayı hangi cihazda, hangi işletim sisteminde, hangi ekran boyutunda açarsanız açın — tamamen aynı görünmesi. Bu hedef çok değerli ama bir bedeli var: görselliği korumak için çok fazla veri saklanmak zorunda.</p>
+
+<p>Metin tabanlı bir Word belgesiyle karşılaştırın: Word, metni karakter kodları olarak saklar ve font bilgisini ayrıca tanımlar. PDF ise metni konumuna, boyutuna, rengine, rotasyonuna göre sayfada tam olarak nereye yerleştirileceğiyle birlikte saklar.</p>
+
+<h2>Faktör 1: Gömülü Fontlar (En Büyük Etken)</h2>
+
+<p>PDF oluşturulurken kullanılan fontlar genellikle dosyanın içine gömülür. Bu, dosyayı açan kişinin bilgisayarında o font olmasa bile metnin doğru görünmesini sağlar. Ancak bu "font gömme" işlemi ciddi boyut artışına neden olur.</p>
+
+<p>Örnek: Arial Regular fontu yaklaşık 500 KB yer kaplar. Eğer belgenizde 4 farklı font kullanıyorsanız (normal, kalın, italik, kalın-italik) ve tüm bunlar gömülüyse, sadece fontlar için 2 MB alan harcanmış olabilir.</p>
+
+<div class="callout tip"><p><strong>💡 Boyut ipucu:</strong> Font gömme yerine 'yalnızca kullanılan karakterleri göm' (font subsetting) seçeneğini kullanın. Bu, tüm font yerine yalnızca belgede geçen karakterleri gömer. Türkçe metin için bu genellikle %70–80 tasarruf demektir.</p></div>
+
+<p>Muhasebe yazılımları (Logo, Mikro, Paraşüt) e-fatura PDF'lerini oluştururken genellikle tüm fontu gömer. Bu yüzden tek sayfalık faturalar 3–5 MB olabilir. Çözüm: sıkıştırma sonrası yazılımın font embedding ayarlarını kontrol edin.</p>
+
+<h2>Faktör 2: Görseller ve Fotoğraf Kalitesi</h2>
+
+<p>PDF içindeki görseller dosya boyutunu en çok artıran ikinci faktördür. Burada üç ayrı değişken var:</p>
+
+<h3>Çözünürlük (DPI)</h3>
+<p>DPI (dots per inch), görüntünün inç başına nokta sayısıdır. Ekranda görüntüleme için 72 DPI yeterli. Baskı için 300 DPI gerekir. Tarayıcılar ise varsayılan olarak genellikle 300 veya 600 DPI tarar.</p>
+
+<table class="data-table">
+  <thead><tr><th>DPI</th><th>Kullanım</th><th>A4 sayfa boyutu (gri)</th><th>A4 sayfa boyutu (renkli)</th></tr></thead>
+  <tbody>
+    <tr><td>72 DPI</td><td>Sadece ekran görüntüleme</td><td>~200 KB</td><td>~500 KB</td></tr>
+    <tr><td>150 DPI</td><td>Web + basit baskı</td><td>~600 KB</td><td>~1.5 MB</td></tr>
+    <tr><td>300 DPI</td><td>Standart baskı kalitesi</td><td>~2.2 MB</td><td>~5 MB</td></tr>
+    <tr><td>600 DPI</td><td>Profesyonel baskı</td><td>~8 MB</td><td>~18 MB</td></tr>
+  </tbody>
+</table>
+
+<p>e-Devlet'ten veya tarayıcıdan alınan belgeler çoğunlukla 300 DPI'da geliyor. Ekranda görüntülemek ve e-posta ile göndermek için 150 DPI tamamen yeterli.</p>
+
+<h3>Görsel Sıkıştırma Yöntemi</h3>
+<p>PDF içindeki görseller JPEG, PNG veya TIFF formatında saklanabilir. JPEG kayıplı sıkıştırma kullanır ve çok küçük dosyalar üretir. PNG kayıpsız sıkıştırma kullanır, grafik ve ekran görüntüleri için daha iyidir ama büyüktür.</p>
+
+<div class="callout warn"><p><strong>⚠ Dikkat:</strong> Firmalar PDF'e logo eklerken PNG kullanmak isterler (şeffaflık için). Ancak yüksek çözünürlüklü PNG logo tek başına 2–3 MB yer kaplayabilir. Logo boyutunu 300×150 piksel, JPEG kalite 85 ile düzenleyin.</p></div>
+
+<h3>Renk Profili</h3>
+<p>Profesyonel tasarım araçları bazen CMYK renk profili gömülü PDF'ler oluşturur. Bu renk profili dosyası 500 KB–2 MB yer kaplayabilir. Dijital kullanım için RGB renk profiline geçmek dosya boyutunu küçültür.</p>
+
+<h2>Faktör 3: Taranmış Belgeler vs Dijital Belgeler</h2>
+
+<p>Bu fark çoğu kullanıcı tarafından fark edilmez ama muazzam boyut farklılıklarına neden olur.</p>
+
+<p><strong>Dijital PDF:</strong> Metin, vektörel objeler ve düşük çözünürlüklü görseller içerir. 10 sayfalık metin belgesi 500 KB – 2 MB olabilir.</p>
+
+<p><strong>Taranmış PDF:</strong> Her sayfa aslında bir fotoğraf (raster görüntü). 10 sayfalık taranmış belge 30–100 MB olabilir — her sayfa bir fotoğraf dosyası.</p>
+
+<div class="callout note"><p><strong>ℹ OCR çözümü:</strong> Taranmış PDF'leri hem boyut olarak küçültmek hem de metin aranabilir yapmak için OCR (Optik Karakter Tanıma) kullanın. MirPDF'in OCR aracı Tesseract motoru ile Türkçe metin tanıma yapabilmektedir.</p></div>
+
+<h2>Faktör 4: Gömülü Metadata ve Yapısal Veriler</h2>
+
+<p>PDF dosyaları içinde görünmeyen pek çok veri saklanır:</p>
+
+<ul>
+  <li><strong>Document Info:</strong> Yazar, oluşturma tarihi, yazılım adı, başlık, konu</li>
+  <li><strong>XMP Metadata:</strong> Genişletilmiş metadata formatı, bazen birkaç KB</li>
+  <li><strong>Thumbnail görseli:</strong> Bazı PDF oluşturucular küçük önizleme görseli ekler (~50 KB)</li>
+  <li><strong>Yer imleri (Bookmarks):</strong> Bölüm gezinimi için</li>
+  <li><strong>Form alanları:</strong> Doldurulabilir formlar ekstra boyut ekler</li>
+  <li><strong>Eklentiler (Attachments):</strong> XML faturaları veya başka dosyalar PDF'e gömülü gelebilir</li>
+</ul>
+
+<p>e-Fatura PDF'lerinde çok önemli bir durum var: GİB standardı, fatura verisini hem görsel katmanda (görüntülediğiniz PDF) hem de XML formatında gömülü olarak saklar. Bu XML kısım birkaç KB ile birkaç yüz KB arasında değişebilir.</p>
+
+<h2>Faktör 5: e-İmza ve Dijital İmza Katmanları</h2>
+
+<p>e-Fatura, e-Arşiv ve kurumsal belgeler genellikle dijital imza içerir. Bu imzalar kriptografik veri olup PDF boyutunu 50–500 KB artırabilir. Üstelik bir PDF birden fazla kişi tarafından imzalanmışsa her imza ek boyut ekler.</p>
+
+<p>Önemli not: Görsel sıkıştırma dijital imzaları bozmaz, çünkü imzalar kriptografik hash değerleri üzerinden çalışır. Ancak aşırı agresif sıkıştırma veya PDF yeniden oluşturma imzaları geçersiz kılabilir.</p>
+
+<div class="callout tip"><p><strong>✓ Güvenli kural:</strong> e-imzalı belgelerde sıkıştırırken 'Orta Kalite' seçeneğini tercih edin. 'Yüksek Sıkıştırma' yalnızca imzasız arşiv belgeler için uygundur.</p></div>
+
+<h2>Faktör 6: Katmanlar ve Şeffaflık Efektleri</h2>
+
+<p>Adobe Illustrator, InDesign veya profesyonel tasarım araçlarından dışa aktarılan PDF'ler genellikle şeffaflık katmanları içerir. Bu katmanlar hem boyutu artırır hem de bazı eski PDF okuyucularında render sorunlarına neden olur.</p>
+
+<h2>Faktör 7: PDF Sürümü ve Nesne Yapısı</h2>
+
+<p>PDF 1.4 ile PDF 2.0 arasında sıkıştırma verimliliği açısından farklar var. Eski PDF 1.3 dosyaları modern araçlarla yeniden oluşturulduğunda genellikle daha küçük boyutlara ulaşılabiliyor.</p>
+
+<p>Ayrıca bir PDF defalarca düzenlenmiş ve kaydedilmişse "artık nesneler" birikebilir. Bu nesneler artık kullanılmıyor ama dosyada yer kaplıyorlar. PDF sıkıştırma araçları bu artık nesneleri temizler.</p>
+
+<h2>Boyutu Etkileyen Faktörlerin Özeti</h2>
+
+<table class="data-table">
+  <thead><tr><th>Faktör</th><th>Tipik Etki</th><th>Çözüm</th></tr></thead>
+  <tbody>
+    <tr><td>Gömülü fontlar (tam)</td><td>+1–5 MB</td><td>Font subsetting, sıkıştırma</td></tr>
+    <tr><td>Yüksek DPI görseller</td><td>+2–50 MB</td><td>DPI düşürme (150 DPI)</td></tr>
+    <tr><td>Taranmış sayfa</td><td>+1–10 MB/sayfa</td><td>OCR + sıkıştırma</td></tr>
+    <tr><td>Gömülü XML (e-fatura)</td><td>+50–500 KB</td><td>Entegratör ayarı</td></tr>
+    <tr><td>e-İmza katmanı</td><td>+50–500 KB</td><td>Değiştirme (imzayı koru)</td></tr>
+    <tr><td>Metadata ve thumbnail</td><td>+10–200 KB</td><td>MirPDF metadata temizle</td></tr>
+    <tr><td>Artık nesneler</td><td>+5–30%</td><td>PDF yeniden oluşturma</td></tr>
+  </tbody>
+</table>
+
+<h2>Hangi Durumlarda Sıkıştırma En Çok İşe Yarar?</h2>
+
+<ul>
+  <li>Taranmış belgeler: %50–80 boyut azalması normal</li>
+  <li>Yüksek çözünürlüklü fotoğraf içeren PDF'ler: %40–70 azalma</li>
+  <li>e-Fatura (gömülü fontlu): %30–60 azalma</li>
+  <li>Saf metin belgeler: %5–20 azalma (zaten küçük)</li>
+  <li>Zaten sıkıştırılmış PDF'ler: %0–5 azalma veya hafif artış</li>
+</ul>
+
+<div class="callout warn"><p><strong>⚠ Beklenti yönetimi:</strong> Zaten iyileştirilmiş bir PDF'i tekrar sıkıştırmaya çalışmak boyutu artırabilir. Bu normal bir davranış — sıkıştırma şablonu veriyi yeniden paketler ve küçük overhead ekler.</p></div>
+
+<h2>Pratik Çözüm: Ne Zaman Ne Kullanılmalı?</h2>
+
+<h3>e-Devlet/KYK başvurusu (2 MB sınırı)</h3>
+<p>Orta kalite sıkıştırma yeterli. QR kod ve barkod okunabilirliğini korur. Hedef: 1.5 MB altı.</p>
+
+<h3>e-Fatura müşteriye gönderim (e-posta eki)</h3>
+<p>Orta kalite yeterli. Hedef: 500 KB–1 MB. Alıcının Gmail veya Outlook'ta rahatça açabilmesi sağlanır.</p>
+
+<h3>Muhasebe arşivi (10 yıl saklama)</h3>
+<p>Düşük sıkıştırma (yüksek kalite) tercih edin. Boyut önemli değil, kalite önemli. Hedef: orijinal kaliteyi korumak.</p>
+
+<h3>Web'e yükleme (portföy, sunum)</h3>
+<p>Yüksek sıkıştırma kullanabilirsiniz. Hedef: 1–3 MB. Ekranda iyi görünmesi yeterli, baskı kalitesi önemli değil.</p>
+
+<div class="cta-block"><h3>PDF Boyutunu Şimdi Küçültün</h3><p>Tarayıcınızda çalışır, dosyanız sunucuya gitmez. Ücretsiz.</p><a href="/pdf-sikistir" class="cta-btn">PDF Sıkıştır →</a></div>
+
+<h2>Sık Sorulan Sorular</h2>
+
+<details><summary>PDF sıkıştırınca metin okunabilirliği bozulur mu?</summary>
+<p>Metin vektörel veridir ve sıkıştırmadan etkilenmez. Kalite kaybı yalnızca görsel (fotoğraf, tarama) öğelerde yaşanır. Orta kalite sıkıştırmada metin her zaman keskin kalır.</p></details>
+
+<details><summary>Dosya 10 MB'tan fazla ama sıkıştırma işe yaramıyor. Neden?</summary>
+<p>Zaten sıkıştırılmış bir PDF olabilir veya PDF/A standardında kaydedilmiş olabilir (arşiv formatı). Bu durumda kaynak dosyadan yeniden dışa aktarım gerekir.</p></details>
+
+<details><summary>Her sıkıştırma aracı aynı sonucu verir mi?</summary>
+<p>Hayır. Farklı araçlar farklı algoritmalar kullanır. MirPDF, Ghostscript motoru ile sunucu tarafı sıkıştırma (Pro plan) ve pdf-lib ile tarayıcı tarafı sıkıştırma (ücretsiz) sunar.</p></details>
+
+<details><summary>PDF boyutu küçüldükten sonra orijinaline dönebilir miyim?</summary>
+<p>Hayır. Sıkıştırma kalıcıdır. Her zaman orijinal dosyayı saklayın, sıkıştırılmış versiyonu dağıtım/gönderim için kullanın.</p></details>
+</div>
+</div>
+
+  <div class="mir-tip-card-lg">
+    <p class="mir-label-blue">📖 İlgili Rehberler</p>
+    <div class="mir-tag-row">
+      <a href="/articles/pdf-sikistirma-nasil.html" class="mir-tag-chip">📝 PDF Sıkıştırma Rehberi</a> <a href="/articles/mac-pdf-kucultme.html" class="mir-tag-chip">📝 Mac'te PDF Boyutu Küçültme</a>
+    </div>
+  </div>
+
+</div><footer class="footer">
+  <div class="container"><div class="footer-grid">
+    <div>
+      <a href="/" style="color:#fff;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:.4rem;margin-bottom:.6rem;font-size:1rem">
+        <img src="/assets/icons/logo.svg" width="24" height="24" alt="MirPDF" style="border-radius:5px">MirPDF
+      </a>
+      <p style="font-size:.8rem;line-height:1.6;max-width:260px">Ücretsiz PDF araçları. Tarayıcıda çalışır, kayıt gerekmez.</p>
+    </div>
+    <div style="display:flex;gap:3rem;flex-wrap:wrap">
+      <div>
+        <div class="mir-footer-section-title">Araçlar</div>
+        <a href="/pdf-birlestir" class="mir-footer-link">PDF Birleştir</a>
+        <a href="/pdf-sikistir" class="mir-footer-link">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" class="mir-footer-link-sm">PDF → Word</a>
+      </div>
+      <div>
+        <div class="mir-footer-section-title">Yasal</div>
+        <a href="/legal/privacy.html" class="mir-footer-link">Gizlilik</a>
+        <a href="/legal/terms.html" class="mir-footer-link">Şartlar</a>
+        <a href="/legal/kvkk.html" class="mir-footer-link-sm">KVKK</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:.9rem auto 0;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem;font-size:.78rem">
+    © 2026 MirPDF — Tüm hakları saklıdır.
+  </div>
+</footer>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

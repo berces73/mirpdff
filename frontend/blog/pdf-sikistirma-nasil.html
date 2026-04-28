@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0" />
+  <title>PDF Sıkıştırma Nasıl Yapılır? | MirPDF</title>
+  <meta name="description" content="PDF sıkıştırma nasıl yapılır? Adım adım rehber: boyut neden büyür, e-devlet limiti için nasıl küçültülür, güvenli mi? MirPDF ile ücretsiz dene." />
+  <link rel="canonical" href="https://mirpdf.com/blog/pdf-sikistirma-nasil.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous"/>
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--light:#94a3b8;--radius:18px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:background .15s,color .15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+.btn-premium{background:var(--text)!important;color:#fff!important;padding:.45rem 1.2rem!important;border-radius:10px;font-weight:700!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:67px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}.main-nav.open{display:flex}.main-nav a{width:100%;padding:.65rem 1rem}}
+.breadcrumb{background:var(--bg-soft);border-bottom:1px solid var(--border);padding:.6rem 0;font-size:.8rem;color:var(--muted)}
+.breadcrumb ol{display:flex;align-items:center;gap:.4rem;list-style:none;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--text)}
+.breadcrumb li:not(:last-child)::after{content:'›';margin-left:.4rem;color:var(--light)}
+.article-wrap{max-width:800px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.article-title{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem}
+.article-meta{display:flex;gap:.75rem;color:var(--muted);font-size:.83rem;margin-bottom:2rem;flex-wrap:wrap;align-items:center}
+.article-tag{background:#ede9fe;color:#6366f1;padding:.2rem .6rem;border-radius:6px;font-size:.72rem;font-weight:700}
+.article-body{font-size:.97rem;line-height:1.8;color:#374151}
+.article-body h2{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.article-body h3{font-size:1.05rem;font-weight:700;color:var(--text);margin:1.75rem 0 .5rem}
+.article-body p{margin-bottom:.9rem}
+.article-body ul,ol{padding-left:1.5rem;margin-bottom:.9rem}
+.article-body li{margin-bottom:.35rem}
+.article-body a{color:#2563eb;text-decoration:underline;text-underline-offset:3px}
+.article-body a:hover{color:#1d4ed8}
+.article-body strong{color:var(--text);font-weight:700}
+.cta-box{background:linear-gradient(135deg,#0d0f1a,#1e1b4b);color:#fff;border-radius:16px;padding:2rem;text-align:center;margin:2.5rem 0}
+.cta-box h3{font-size:1.15rem;font-weight:800;margin-bottom:.5rem}
+.cta-box p{color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:1.25rem}
+.cta-box a{display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.75rem;background:#6366f1;color:#fff;border-radius:10px;font-weight:700;text-decoration:none;font-size:.9rem}
+.site-footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:3rem 0 1.5rem;margin-top:4rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-brand{font-weight:800;font-size:1rem;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.footer-brand-mark{width:26px;height:26px;border-radius:7px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem}
+.footer-desc{font-size:.83rem;color:var(--muted);line-height:1.6}
+.footer-col h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text);margin-bottom:.75rem}
+.footer-col a{display:block;font-size:.84rem;color:var(--muted);text-decoration:none;margin-bottom:.4rem;transition:color .14s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.25rem;font-size:.8rem;color:var(--muted);text-align:center}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Bu işlem ücretsiz mi?",
+        "acceptedAnswer":{"@type":"Answer","text":"Evet, günlük sınırlı ücretsiz kullanım vardır. Daha fazlası için kredi satın alınabilir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Dosyalarım saklanıyor mu?",
+        "acceptedAnswer":{"@type":"Answer","text":"Hayır. İş bittiğinde TTL ile otomatik temizleme yapılır."}
+      }
+    ]
+  }
+  </script>
+  <meta property="og:image" content="https://mirpdf.com/assets/og-blog.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og-blog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="tr" href="https://mirpdf.com/blog/pdf-sikistirma-nasil.html" />
+  <link rel="alternate" hreflang="x-default" href="https://mirpdf.com/blog/pdf-sikistirma-nasil.html" />
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mirpdf.com"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mirpdf.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Pdf Sikistirma Nasil", "item": "https://mirpdf.com/blog/pdf-sikistirma-nasil.html"}]}</script>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-mark"><i class="fas fa-file-pdf"></i></div>
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/pricing" class="btn-premium">Premium</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="article-wrap">
+    <section class="card" style="text-align:left;max-width:820px;margin:0 auto 2rem">
+      <h2 style="margin-bottom:1rem">PDF Sıkıştırma Nedir ve Neden Gereklidir?</h2>
+      <p>PDF dosyaları zaman zaman beklenmedik ölçüde büyük boyutlara ulaşabilir. İçinde onlarca yüksek çözünürlüklü görsel, gömülü font veya taranmış sayfa barındıran bir PDF kolayca 50–100 MB'ı geçebilir. Bu boyuttaki dosyaları e-posta ile göndermek, buluta yüklemek ya da müşteriye iletmek zorlaşır. PDF sıkıştırma; dosyanın kalitesini gözle görülür biçimde bozmadan boyutunu küçültme işlemidir.</p>
+
+      <h2 class="mir-mt-section">PDF Boyutu Neden Bu Kadar Büyür?</h2>
+      <p>Bir PDF'in büyük olmasının birkaç temel nedeni vardır:</p>
+      <ul style="margin:.5rem 0 1rem 1.2rem;line-height:2">
+        <li><strong>Yüksek çözünürlüklü görseller:</strong> Baskı için hazırlanan 300 DPI fotoğraflar, ekran görüntüsünde gereksiz yer kaplar.</li>
+        <li><strong>Gömülü fontlar:</strong> Her sayfa farklı bir font ailesi içeriyorsa bu fontların tamamı dosyaya eklenir.</li>
+        <li><strong>Tarayıcıdan oluşturulmuş PDF'ler:</strong> Fiziksel belgelerin taranmasıyla oluşan PDF'ler saf görsel içerdiğinden çok daha büyük olur.</li>
+        <li><strong>Meta veriler ve ekler:</strong> Revizyon geçmişi, yorumlar veya dosya ekleri boyutu şişirebilir.</li>
+      </ul>
+
+      <h2 class="mir-mt-section">Adım Adım PDF Sıkıştırma (MirPDF ile)</h2>
+      <ol style="margin:.5rem 0 1rem 1.2rem;line-height:2.2">
+        <li><strong>Sıkıştır sayfasına git:</strong> <a href="../tools/pdf-sikistir.html" class="mir-text-red">mirpdf.com/tools/pdf-sikistir</a> adresini aç.</li>
+        <li><strong>Dosyayı yükle:</strong> "Dosya Seç" butonuna tıkla ya da PDF'ini sürükle-bırak. Mobilde de aynı şekilde çalışır; fotoğraf galerisinden veya dosya uygulamasından PDF seçebilirsin.</li>
+        <li><strong>Sıkıştırma seviyesini seç:</strong> Üç seçenek sunulur — Hafif (görsel kayıp yok), Orta (önerilen, %40–60 küçülme) ve Güçlü (maksimum küçülme, ufak görsel kayıp olabilir).</li>
+        <li><strong>İşlemi başlat:</strong> "Sıkıştır" butonuna tıkla. Sunucu taraflı Ghostscript motoru devreye girer ve dosya işlenir.</li>
+        <li><strong>İndir:</strong> Birkaç saniye içinde küçültülmüş PDF hazır olur. "İndir" butonuna tıklayarak cihazına kaydet.</li>
+      </ol>
+
+      <h2 class="mir-mt-section">Ne Kadar Küçülme Beklenebilir?</h2>
+      <p>Küçülme oranı büyük ölçüde dosyanın içeriğine bağlıdır. Taranmış belgeler genellikle %50–70 oranında küçülür. Görsel ağırlıklı PDF'ler %30–50 küçülebilir. Yalnızca metin içeren belgeler ise zaten küçük olduğu için değişim daha azdır, %5–20 aralığında kalır.</p>
+      <p>Örneğin: 8 MB'lık taranan bir fatura belgesi, Orta seviyede sıkıştırıldığında genellikle 2–3 MB'a iner. Bu, e-posta gönderimi için yeterli bir boyuttur.</p>
+
+      <h2 class="mir-mt-section">E-Devlet ve E-Posta İçin Hangi Boyut İdeal?</h2>
+      <p>E-Devlet kapısında dosya yükleme limiti genellikle <strong>2 MB</strong> ile sınırlıdır. Gmail'de ek boyutu 25 MB, WhatsApp'ta 100 MB'dır. Muhasebe yazılımlarında ise limit platforma göre 5–10 MB arasında değişir. Genel kural: ofis belgelerini 1–3 MB altında tutmak en sağlıklı yaklaşımdır.</p>
+
+      <h2 class="mir-mt-section">Sıkıştırma Sonrası Kalite Bozulur mu?</h2>
+      <p>Bu en çok sorulan sorudur. Kısa cevap: Hafif ve Orta seviyelerde gözle görülür bir bozulma olmaz. Metinler keskin, tablolar net, imzalar okunabilir kalır. Güçlü seviyede ise baskıya gidecek belgeler için hafif bir netlik kaybı fark edilebilir; ancak ekranda okuma veya e-posta için bu seviye de yeterlidir.</p>
+      <p>Sıkıştırmadan önce orijinal dosyanın yedeğini almak her zaman iyi bir alışkanlıktır.</p>
+
+      <h2 class="mir-mt-section">Güvenli mi? Dosyalarım Saklanıyor mu?</h2>
+      <p>MirPDF, yüklenen dosyaları işlem tamamlandıktan sonra otomatik olarak siler. Sunucularda kalıcı depolama yapılmaz. Bu nedenle gizli belgeler, faturalar veya sözleşmeler için de kullanım uygundur. Dosya transferi şifreli HTTPS bağlantısı üzerinden gerçekleşir.</p>
+
+      <h2 class="mir-mt-section">Sık Sorulan Sorular</h2>
+      <p><strong>Sıkıştırma ücretsiz mi?</strong> Evet, günlük belirli sayıda dosya ücretsiz sıkıştırılabilir. Daha fazla işlem için kredi paketi veya Pro aboneliği seçilebilir.</p>
+      <p><strong>Telefonda da çalışır mı?</strong> Evet. Mobil tarayıcı üzerinden aynı araç tam işlevsel çalışır; uygulama indirmeye gerek yoktur.</p>
+      <p><strong>Şifreli PDF'leri sıkıştırabilir miyim?</strong> Şifreli PDF'lerin önce kilidinin açılması gerekir. Bunun için <a href="../tools/pdf-kilit-ac.html" class="mir-text-red">PDF Kilit Aç</a> aracını kullanabilirsin.</p>
+      <p><strong>Birden fazla PDF'yi aynı anda sıkıştırabilir miyim?</strong> Şu an için tek seferde bir dosya desteklenmektedir. Toplu işlem için Pro plan incelenebilir.</p>
+
+      <div style="margin-top:2rem;text-align:center">
+        <a class="cta" href="../tools/pdf-sikistir.html">PDF'ini Şimdi Sıkıştır →</a>
+      </div>
+    </section>
+
+    
+    <div class="mir-tip-card">
+      <p class="mir-label-blue">📚 Derinlemesine Okuma</p>
+      <div class="mir-tag-row">
+        <a href="../../../articles/pdf-sikistirma.html" class="mir-tag-chip">📄 PDF Sıkıştırma: Kapsamlı Rehber</a> <a href="../../../articles/pdf-boyutu-neden-buyuk.html" class="mir-tag-chip">📄 PDF Boyutu Neden Büyür?</a>
+      </div>
+    </div>
+    <footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="footer-brand-mark"><i class="fas fa-file-pdf"></i></div> MirPDF</div>
+        <p class="footer-desc">Ücretsiz, güvenli ve KVKK uyumlu online PDF araçları. Tarayıcıdan çalışır, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-bol">PDF Böl</a>
+        <a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR</a>
+        <a href="/pdf-imzala">PDF İmzala</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MirPDF — Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script>
+const t=document.getElementById('mobileToggle'),n=document.getElementById('mainNav');
+if(t&&n)t.addEventListener('click',()=>{const o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+</script>
+</div>
+</body>
+</html>

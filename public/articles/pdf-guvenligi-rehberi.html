@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0"/>
+<title>PDF Güvenliği Rehberi: Şifreleme ve Koruma (2026)</title>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-blog.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+<meta name="description" content="PDF güvenliği rehberi: AES-256 şifreleme, yazdırma kısıtlama, dijital imza ve hassas belge koruması. Kurumsal ve bireysel kullanıcılar için kapsamlı kılavuz."/>
+<link rel="canonical" href="https://mirpdf.com/articles/pdf-guvenligi-rehberi.html"/>
+<meta property="og:title" content="PDF Güvenliği Tam Rehber — Parola, KVKK, Filigran 2026"/>
+<meta property="og:description" content="PDF parola türleri, AES-256 şifreleme, KVKK uyumu, filigran ile belge takibi ve güvenli PDF paylaşım protokolü. Tam rehber."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mirpdf.com/articles/pdf-guvenligi-rehberi.html"/>
+  <meta property="og:locale" content="tr_TR"/>
+<meta name="article:published_time" content="2026-03-16"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PDF Güvenliği: Parola, Şifreleme, KVKK ve Güvenli Paylaşım","description":"PDF parola türleri, AES-256 şifreleme, KVKK uyumu, filigran ile belge takibi ve güvenli PDF paylaşım protokolü. Tam rehber.","datePublished":"2026-03-16","dateModified":"2026-03-16","author":{"@type":"Organization","name":"MirPDF","url":"https://mirpdf.com"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/brand/logo.png"}},"inLanguage":"tr-TR"}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico"/>
+
+
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script defer src="/assets/js/vitals.js"></script>
+
+  <meta name="twitter:description" content="PDF güvenliği: şifreleme, yazdırma kısıtlama ve dijital imza rehberi. Belgelerinizi kurumsal standartta koruyun."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="PDF Güvenliği Rehberi: Şifreleme ve Koruma (2026)"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-blog.png"/>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/css/article.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo"><img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF</a>
+      <nav class="main-nav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/pdf-sikistir" class="nav-cta">PDF Sıkıştır</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="art-layout">
+  <nav class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span><a href="/articles/">Makaleler</a><span>›</span><span>Güvenlik</span></nav>
+  <div class="article-header">
+    <div class="article-cat"><i class="fas fa-bookmark"></i> Güvenlik</div>
+    <div class="article-body">
+<h1 class="article-title">PDF Güvenliği: Parola, Şifreleme, KVKK ve Güvenli Paylaşım</h1>
+    <div class="article-meta">
+      <span><i class="fas fa-calendar-alt mir-icon-accent"></i>2026-03-16</span>
+      <span>·</span>
+      <span><i class="fas fa-clock mir-icon-accent"></i>11 dk okuma</span>
+      <span>·</span>
+      <span><i class="fas fa-shield-alt" style="color:#10b981;margin-right:.3rem"></i>KVKK Uyumlu</span>
+    </div>
+  </div>
+  <div class="body-text">
+<p>PDF dosyaları sadece bilgi taşımaz — çoğu zaman hassas kişisel ve finansal veri içerir. Kimlik fotokopisi, banka ekstresi, maaş bordrosu, sözleşme, pasaport — bunların yanlış kişilerin eline geçmesi ciddi sonuçlar doğurabilir.</p>
+
+<p>Bu rehberde PDF güvenliğinin teknik boyutlarını ve pratik önlemleri ele alıyoruz.</p>
+
+<h2>PDF'e Kim Erişebilir?</h2>
+
+<p>PDF'inizi e-posta ile gönderdiğinizde şu taraflar teorik olarak dosyaya erişebilir:</p>
+
+<ul>
+  <li>E-posta servis sağlayıcınız (Gmail, Outlook, Yandex)</li>
+  <li>Alıcının servis sağlayıcısı</li>
+  <li>İnternet servis sağlayıcıları (ISP)</li>
+  <li>Kullandığınız PDF işleme servisleri (sunucu tabanlı)</li>
+  <li>Bulut depolama servislerinin sunucuları</li>
+</ul>
+
+<p>Modern e-posta HTTPS ile şifreli gönderilir. Ancak e-posta içeriği servis sağlayıcıların sunucularında şifresiz saklanır. Bu nedenle gerçek güvenlik için end-to-end şifreleme veya PDF parolası gerekir.</p>
+
+<h2>PDF Parola Türleri</h2>
+
+<h3>Kullanıcı Parolası (Document Open Password)</h3>
+<p>Dosyayı açmak için parola gerekir. Yanlış parola girilirse PDF açılmaz. En güçlü koruma türü. KVKK açısından hassas belgeler için bu tercih edilmelidir.</p>
+
+<h3>Sahip Parolası (Permissions Password)</h3>
+<p>Dosya herkes tarafından açılabilir ama yazdırma, kopyalama, düzenleme gibi işlemler kısıtlanabilir. Birinin sözleşmenizi kopyalamasını istemiyorsanız bu parola kullanılır.</p>
+
+<div class="callout warn"><p><strong>⚠ Sahip parolası uyarısı:</strong> Sahip parolasının güvenliği görece zayıftır. Pek çok ücretsiz araç bu parolayı kırabilir. Gerçek güvenlik için kullanıcı parolası kullanın.</p></div>
+
+<h2>AES-256 Şifreleme</h2>
+
+<p>Modern PDF şifreleme AES-256 kullanır. Bu, günümüzün en güçlü simetrik şifreleme standartlarından biri. Güçlü bir parola (12+ karakter, harf+rakam+sembol) ile AES-256 şifrelenmiş bir PDF'i kırmak pratikte imkansız.</p>
+
+<p>Zayıf parola seçimi (123456, ad-soyad, doğum tarihi) tüm şifrelemeyi anlamsız kılar. Parola uzunluğu ve karmaşıklığı belirleyici faktördür.</p>
+
+<h2>Güçlü Parola Örnekleri</h2>
+
+<table class="data-table">
+  <thead><tr><th>Parola</th><th>Güç</th><th>Kırılma Süresi</th></tr></thead>
+  <tbody>
+    <tr><td>123456</td><td>Çok Zayıf</td><td>Anlık</td></tr>
+    <tr><td>ahmet2001</td><td>Zayıf</td><td>Dakikalar</td></tr>
+    <tr><td>Ankara2026!</td><td>Orta</td><td>Günler</td></tr>
+    <tr><td>K#9m$pL2&vQn</td><td>Güçlü</td><td>Milyonlarca yıl</td></tr>
+    <tr><td>Üçkağıt-Mavi-Yıldız-42</td><td>Çok Güçlü</td><td>Milyarlarca yıl</td></tr>
+  </tbody>
+</table>
+
+<p>Son satırdaki "passphrase" (parola cümlesi) yöntemi hem hatırlaması kolay hem de çok güçlü bir yöntemdir.</p>
+
+<h2>KVKK ve PDF Güvenliği</h2>
+
+<p>KVKK Madde 12 şunu söyler: "Veri sorumlusu, kişisel verilerin hukuka aykırı olarak işlenmesini önlemek, kişisel verilere hukuka aykırı olarak erişilmesini önlemek ve kişisel verilerin muhafazasını sağlamak amacıyla uygun güvenlik düzeyini temin etmeye yönelik gerekli her türlü teknik ve idari tedbirleri almak zorundadır."</p>
+
+<p>Bu muhasebeciler, sağlık çalışanları, avukatlar ve müşteri verisi işleyen herkes için PDF güvenliğini yasal zorunluluk haline getirir.</p>
+
+<div class="callout note"><p><strong>ℹ Pratik uygulama:</strong> Müşteriye finansal belge gönderirken: 1) PDF'i şifreleyin, 2) şifreyi SMS ile gönderin, 3) gönderim tarih ve yöntemini kaydedin. Bu üç adım KVKK uyumunuzu belgelendirir.</p></div>
+
+<h2>Filigran ile Belge Takibi</h2>
+
+<p>Gizli belgelerinizi kimin sızdırdığını bulmak istiyorsanız her kopyaya farklı filigran ekleyebilirsiniz: "GIZLI — Ahmet Yılmaz — 16.03.2026". Belge sızdığında kimin sızdırdığı belli olur.</p>
+
+<p>Bu yönteme "document fingerprinting" (belge parmak izi) denir ve kurumsal dünyada yaygın kullanılır.</p>
+
+<h2>Güvenli PDF Paylaşım Protokolü</h2>
+
+<ol>
+  <li><strong>Sıkıştır:</strong> Gereksiz metadata temizle, <a href="/pdf-metadata-duzenle">metadata düzenle</a> aracıyla yazar, şirket bilgilerini temizle</li>
+  <li><strong>Filigran ekle</strong> (isteğe bağlı): Alıcı adı + tarih</li>
+  <li><strong>Şifrele:</strong> <a href="/pdf-kilitle">PDF Kilitle</a> aracıyla güçlü parola</li>
+  <li><strong>Gönder:</strong> Şifreli PDF'i e-posta ile</li>
+  <li><strong>Parola ilet:</strong> SMS veya farklı kanal — asla aynı e-postada</li>
+  <li><strong>Onayla:</strong> Alıcıdan teslim alındı bildirimi al</li>
+</ol>
+
+<h2>PDF Metadatası: Görünmez Veri</h2>
+
+<p>Her PDF içinde görünmez metadata bulunur: dosyayı kimin oluşturduğu, hangi yazılımla, ne zaman. Bu bilgiler bazen istemeden hassas bilgi ifşa eder (çalışan adı, iç yazılım adı, şirket ağ yolu).</p>
+
+<p>Müşteriye veya dışarıya gönderilecek belgelerden metadata temizlemek için <a href="/pdf-metadata-duzenle">PDF Metadata Düzenle</a> aracını kullanın.</p>
+
+<div class="cta-block"><h3>PDF'inizi Güvenli Hale Getirin</h3><p>Şifrele, filigran ekle, metadata temizle. Ücretsiz.</p><a href="/pdf-kilitle" class="cta-btn">PDF Kilitle →</a></div>
+
+<h2>Sık Sorulan Sorular</h2>
+
+<details><summary>Parolayı unutursam ne olur?</summary>
+<p>Güçlü parola ile kilitlenmiş bir PDF'i parolasız açmak pratikte imkansız. Parolaları güvenli bir parola yöneticisinde saklayın (Bitwarden, 1Password).</p></details>
+
+<details><summary>Şifreli PDF e-devlet sistemlerine yüklenebilir mi?</summary>
+<p>Hayır. e-Devlet ve diğer kamu sistemleri şifreli PDF'leri okuyamaz. Yükleme öncesi <a href="/pdf-kilit-ac">PDF Kilit Aç</a> aracıyla şifreyi kaldırın.</p></details>
+
+<details><summary>Filigran sonradan kaldırılabilir mi?</summary>
+<p>Kötü niyetli bir kullanıcı gelişmiş araçlarla filigranı kaldırmaya çalışabilir. Ancak bu çaba izini bırakır ve yasal açıdan belge tahrif sayılır. Filigran caydırıcı bir önlem olarak etkilidir.</p></details>
+</div>
+</div>
+
+  <div class="mir-tip-card-lg">
+    <p class="mir-label-blue">📖 İlgili Rehberler</p>
+    <div class="mir-tag-row">
+      <a href="/articles/pdf-musteri-gonderme-guvenlik.html" class="mir-tag-chip">📝 Müşteriye Güvenli PDF Gönderme</a> <a href="/articles/pdf-sifre-koyma.html" class="mir-tag-chip">📝 PDF'e Şifre Koyma</a>
+    </div>
+  </div>
+
+</div><footer class="footer">
+  <div class="container"><div class="footer-grid">
+    <div>
+      <a href="/" style="color:#fff;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:.4rem;margin-bottom:.6rem;font-size:1rem">
+        <img src="/assets/icons/logo.svg" width="24" height="24" alt="MirPDF" style="border-radius:5px">MirPDF
+      </a>
+      <p style="font-size:.8rem;line-height:1.6;max-width:260px">Ücretsiz PDF araçları. Tarayıcıda çalışır, kayıt gerekmez.</p>
+    </div>
+    <div style="display:flex;gap:3rem;flex-wrap:wrap">
+      <div>
+        <div class="mir-footer-section-title">Araçlar</div>
+        <a href="/pdf-birlestir" class="mir-footer-link">PDF Birleştir</a>
+        <a href="/pdf-sikistir" class="mir-footer-link">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" class="mir-footer-link-sm">PDF → Word</a>
+      </div>
+      <div>
+        <div class="mir-footer-section-title">Yasal</div>
+        <a href="/legal/privacy.html" class="mir-footer-link">Gizlilik</a>
+        <a href="/legal/terms.html" class="mir-footer-link">Şartlar</a>
+        <a href="/legal/kvkk.html" class="mir-footer-link-sm">KVKK</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:.9rem auto 0;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem;font-size:.78rem">
+    © 2026 MirPDF — Tüm hakları saklıdır.
+  </div>
+</footer>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

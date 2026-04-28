@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0d0f1a"/>
+  <!-- M harfi — iki bacak + ortada V -->
+  <path d="M9 34V14l10 12 5-6 5 6 10-12v20" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- PDF kıvrım detayı — sağ alt köşe aksan çizgisi -->
+  <path d="M35 34h4" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

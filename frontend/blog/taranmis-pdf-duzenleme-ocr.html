@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0" />
+  <title>Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son | MirPDF</title>
+  <meta name="description" content="Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son" />
+  <meta name="keywords" content="taranmış pdf düzenleme, ocr türkçe, pdf metin çıkarma" />
+  <link rel="canonical" href="https://mirpdf.com/blog/taranmis-pdf-duzenleme-ocr.html" />
+  <link rel="alternate" hreflang="tr" href="https://mirpdf.com/blog/taranmis-pdf-duzenleme-ocr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://mirpdf.com/blog/taranmis-pdf-duzenleme-ocr.html" />
+  <meta property="og:title" content="Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son | MirPDF" />
+  <meta property="og:description" content="Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mirpdf.com/blog/taranmis-pdf-duzenleme-ocr.html" />
+  <meta property="og:image" content="https://mirpdf.com/assets/og-ocr.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og-ocr.png" />
+  <meta name="theme-color" content="#0f0f14" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous"/>
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--light:#94a3b8;--radius:18px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:background .15s,color .15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+.btn-premium{background:var(--text)!important;color:#fff!important;padding:.45rem 1.2rem!important;border-radius:10px;font-weight:700!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:67px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}.main-nav.open{display:flex}.main-nav a{width:100%;padding:.65rem 1rem}}
+.breadcrumb{background:var(--bg-soft);border-bottom:1px solid var(--border);padding:.6rem 0;font-size:.8rem;color:var(--muted)}
+.breadcrumb ol{display:flex;align-items:center;gap:.4rem;list-style:none;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--text)}
+.breadcrumb li:not(:last-child)::after{content:'›';margin-left:.4rem;color:var(--light)}
+.article-wrap{max-width:800px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.article-title{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem}
+.article-meta{display:flex;gap:.75rem;color:var(--muted);font-size:.83rem;margin-bottom:2rem;flex-wrap:wrap;align-items:center}
+.article-tag{background:#ede9fe;color:#6366f1;padding:.2rem .6rem;border-radius:6px;font-size:.72rem;font-weight:700}
+.article-body{font-size:.97rem;line-height:1.8;color:#374151}
+.article-body h2{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.article-body h3{font-size:1.05rem;font-weight:700;color:var(--text);margin:1.75rem 0 .5rem}
+.article-body p{margin-bottom:.9rem}
+.article-body ul,ol{padding-left:1.5rem;margin-bottom:.9rem}
+.article-body li{margin-bottom:.35rem}
+.article-body a{color:#2563eb;text-decoration:underline;text-underline-offset:3px}
+.article-body a:hover{color:#1d4ed8}
+.article-body strong{color:var(--text);font-weight:700}
+.cta-box{background:linear-gradient(135deg,#0d0f1a,#1e1b4b);color:#fff;border-radius:16px;padding:2rem;text-align:center;margin:2.5rem 0}
+.cta-box h3{font-size:1.15rem;font-weight:800;margin-bottom:.5rem}
+.cta-box p{color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:1.25rem}
+.cta-box a{display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.75rem;background:#6366f1;color:#fff;border-radius:10px;font-weight:700;text-decoration:none;font-size:.9rem}
+.site-footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:3rem 0 1.5rem;margin-top:4rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-brand{font-weight:800;font-size:1rem;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.footer-brand-mark{width:26px;height:26px;border-radius:7px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem}
+.footer-desc{font-size:.83rem;color:var(--muted);line-height:1.6}
+.footer-col h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text);margin-bottom:.75rem}
+.footer-col a{display:block;font-size:.84rem;color:var(--muted);text-decoration:none;margin-bottom:.4rem;transition:color .14s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.25rem;font-size:.8rem;color:var(--muted);text-align:center}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mirpdf.com"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mirpdf.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son", "item": "https://mirpdf.com/blog/taranmis-pdf-duzenleme-ocr.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son", "description": "Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son", "url": "https://mirpdf.com/blog/taranmis-pdf-duzenleme-ocr.html", "inLanguage": "tr", "publisher": {"@type": "Organization", "name": "MirPDF", "url": "https://mirpdf.com"}, "datePublished": "2026-02-26", "dateModified": "2026-02-26"}</script>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-mark"><i class="fas fa-file-pdf"></i></div>
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/pricing" class="btn-premium">Premium</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="article-wrap">
+    <nav class="breadcrumb" aria-label="İz yolu">
+  <div class="container">
+    <ol>
+      <li><a href="/">Ana Sayfa</a></li>
+      <li><a href="/articles/">Blog</a></li>
+      <li aria-current="page">Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son</li>
+    </ol>
+  </div>
+</nav>
+
+    <article>
+<h1 class="article-title">Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): Türkçe Karakter Sorununa Son</h1>
+<div class="article-meta"><span class="article-tag">MirPDF Rehberi</span></div>
+<div class="article-body">
+<p>Taranmış bir belge veya bir fotoğraf, bilgisayar için sadece bir resimdir. Üzerindeki yazıları seçemez, düzenleyemez veya arama yapamazsınız. İşte tam bu noktada OCR (Optik Karakter Tanıma) teknolojisi devreye girer. Bu rehberde, taranmış PDF'lerinizi nasıl düzenlenebilir, aranabilir metin belgelerine dönüştüreceğinizi, özellikle Türkçe karakterlerin (ç, ğ, ö, ş, ü) doğru tanınması için hangi yöntemleri kullanmanız gerektiğini detaylıca anlatacağız.</p>
+<p>OCR Nedir ve Nasıl Çalışır?</p>
+<p>OCR, bir görüntüdeki (taranmış belge, fotoğraf) basılı veya el yazısı karakterleri analiz eden, bunları tanıyan ve bilgisayarın okuyabileceği (düzenlenebilir) metin verisine dönüştüren bir teknolojidir. İyi bir OCR yazılımı, yazı tipini, boyutunu ve sayfa düzenini analiz ederek metni olabildiğince doğru bir şekilde yeniden oluşturur.</p>
+<h2>OCR Neden Gereklidir?</h2>
+<ul>
+  <li>Düzenleme: Taranmış bir fatura, sözleşme veya kitap sayfasındaki metni değiştirebilmek.</li>
+  <li>Arama Yapma: Uzun bir taranmış belge içinde kelime veya cümle arayabilmek.</li>
+  <li>Veri Çıkarma: Bir tablodaki verileri Excel'e aktarabilmek.</li>
+  <li>Arşivleme: Fiziksel belgeleri dijital ortama aktarırken metin tabanlı arşiv oluşturmak.</li>
+</ul>
+<h2>En İyi OCR Araçları ve Yöntemleri</h2>
+<ol>
+  <li>Adobe Acrobat (En Profesyonel ve Başarılı Seçenek)</li>
+</ol>
+<p>PDF'in mucidi olan Adobe, OCR konusunda da endüstri standardıdır .</p>
+<ul>
+  <li>Nasıl Yapılır (Adobe Acrobat Pro ile):</li>
+</ul>
+<ol>
+  <li>Taranmış PDF'inizi Acrobat'ta açın.</li>
+  <li>Sağ taraftaki "PDF'yi Düzenle" aracını tıklayın.</li>
+  <li>Acrobat, belgenin taranmış olduğunu algılayıp otomatik olarak OCR işlemini başlatacaktır. "Metin Tanıma" veya "OCR" ayarlarına girerek dili "Türkçe" olarak seçtiğinizden emin olun.</li>
+  <li>İşlem tamamlandığında, metinleri seçip düzenleyebilir, arama yapabilir hale gelecektir.</li>
+</ol>
+<ul>
+  <li>Adobe Acrobat Çevrimiçi: Adobe'nin çevrimiçi OCR aracı da ücretsiz olarak kullanılabilir. Dosyayı yükleyip "Metin Tanıma" işlemini başlatmanız yeterlidir.</li>
+</ul>
+<ol>
+  <li>ManselVision (Türkçe İçin Özel Çözüm)</li>
+</ol>
+<p>Türkçe, kendine özgü karakterleri (İ, ı, ç, ğ, ö, ş, ü) nedeniyle OCR yazılımları için zorlu bir dildir. Birçok uluslararası yazılım, bu karakterleri yanlış tanıyabilir. ManselVision, tamamen Türkçe belgeler için geliştirilmiş bir OCR yazılımıdır ve bu alandaki en başarılı çözümlerden biridir. Özellikle eski daktilo yazıları, gazete kupürleri veya düşük kaliteli faks çıktıları gibi zorlu belgelerde yüksek doğruluk oranı sunar.</p>
+<ol>
+  <li>Google Drive ve Dokümanlar (Ücretsiz ve Pratik)</li>
+</ol>
+<p>Hiçbir ücret ödemeden OCR yapmanın en kolay yollarından biri Google Drive'dır.</p>
+<ul>
+  <li>Nasıl Yapılır:</li>
+</ul>
+<ol>
+  <li>Taranmış PDF'inizi Google Drive'a yükleyin.</li>
+  <li>Dosyaya sağ tıklayın, "Uygulamayla aç" menüsünden "Google Dokümanlar"ı seçin.</li>
+  <li>Google Drive, PDF'inizdeki görüntüyü analiz ederek (OCR uygulayarak) metni düzenlenebilir bir Google Dokümanı'na dönüştürecektir.</li>
+  <li>Önemli Not: Google'ın OCR motoru Türkçe karakterlerde bazen hata yapabilir. Özellikle "İ" ve "I" harfleri sıkça karıştırılır. Bu nedenle, elde edilen metni mutlaka dikkatlice gözden geçirin ve düzeltin.</li>
+  <li>Daha sonra bu belgeyi "Dosya > İndir" menüsünden Word veya PDF olarak kaydedebilirsiniz.</li>
+</ol>
+<ol>
+  <li>Çevrimiçi OCR Araçları</li>
+</ol>
+<ul>
+  <li>OnlineOCR.net: Basit ve hızlı bir çözümdür. Birden fazla dili destekler, Türkçe de dahildir. Çıktı formatı olarak Word, Excel veya düz metin seçebilirsiniz.</li>
+  <li>iLovePDF OCR: iLovePDF'nin OCR aracı da taranmış belgeleri düzenlenebilir hale getirmek için kullanılabilir .</li>
+</ul>
+<p>Türkçe Karakter Sorunu ve Çözüm Önerileri</p>
+<p>Eğer kullandığınız OCR aracı Türkçe karakterleri düzgün tanımıyorsa:</p>
+<ul>
+  <li>Dil Seçeneğini Kontrol Edin: Kullandığınız aracın dil ayarlarında mutlaka "Türkçe"yi seçtiğinize emin olun.</li>
+  <li>Görüntü Kalitesini Artırın: OCR'in başarısı, kaynak görüntünün kalitesine doğrudan bağlıdır. Belgeyi yüksek çözünürlükte (en az 300 DPI) ve düzgün ışıkta taramaya özen gösterin.</li>
+  <li>Türkçe'ye Özel Yazılım Kullanın: Eğer profesyonel olarak çok sayıda Türkçe belge ile çalışıyorsanız, ManselVision gibi yerli bir yazılıma yatırım yapmak uzun vadede zaman ve emek tasarrufu sağlayacaktır.</li>
+</ul>
+      </div>
+      <div class="cta-box">
+        <h3>Bu rehberi uygulamaya koyun</h3>
+        <a href="/" class="primary">Tüm PDF Araçlarını Ücretsiz Kullan →</a>
+      </div>
+    
+    <div class="mir-tip-card">
+      <p class="mir-label-blue">📚 Derinlemesine Okuma</p>
+      <div class="mir-tag-row">
+        <a href="../../../articles/ocr-metin-tanima.html" class="mir-tag-chip">📄 OCR ile Metin Tanıma</a> <a href="../../../articles/ocr-nasil-calisir-turkce-rehber.html" class="mir-tag-chip">📄 OCR Nasıl Çalışır? Türkçe Rehber</a>
+      </div>
+    </div>
+    </article>
+
+    <footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="footer-brand-mark"><i class="fas fa-file-pdf"></i></div> MirPDF</div>
+        <p class="footer-desc">Ücretsiz, güvenli ve KVKK uyumlu online PDF araçları. Tarayıcıdan çalışır, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-bol">PDF Böl</a>
+        <a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR</a>
+        <a href="/pdf-imzala">PDF İmzala</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MirPDF — Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script>
+const t=document.getElementById('mobileToggle'),n=document.getElementById('mainNav');
+if(t&&n)t.addEventListener('click',()=>{const o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+</script>
+</div>
+</body>
+</html>

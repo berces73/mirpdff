@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+  <title>Giriş yapılıyor… — MirPDF</title>
+  <meta name="description" content="MirPDF Google OAuth yönlendirme sayfası. Güvenli giriş doğrulama işlemi tamamlanıyor, lütfen bekleyin. Sorun yaşıyorsanız sayfayı yenileyin."/>
+  <link rel="canonical" href="https://mirpdf.com/oauth-callback"/>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Figtree',system-ui,sans-serif;background:#f7f8fc;
+         min-height:100vh;display:flex;align-items:center;justify-content:center}
+    .card{background:#fff;border:1px solid #e3e6f0;border-radius:20px;
+          padding:2.5rem 2rem;text-align:center;max-width:360px;width:90%}
+    .spinner{width:40px;height:40px;border:3px solid #e3e6f0;
+             border-top-color:#6366f1;border-radius:50%;
+             animation:spin .7s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    h2{font-size:1.1rem;font-weight:700;color:#0d0f1a;margin-bottom:.4rem}
+    p{font-size:.88rem;color:#64748b}
+    .err{display:none;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;
+         border-radius:10px;padding:.75rem 1rem;margin-top:1rem;font-size:.875rem}
+  </style>
+  <meta property="og:url" content="https://mirpdf.com/oauth-callback"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Giriş yapılıyor… — MirPDF"/>
+  <meta name="twitter:description" content="MirPDF güvenli Google girişi doğrulanıyor. Lütfen bekleyin, ana sayfaya yönlendiriliyorsunuz."/>
+  <meta property="og:title" content="Giriş yapılıyor… — MirPDF"/>
+  <meta property="og:description" content="MirPDF Google OAuth yönlendirme sayfası. Güvenli giriş doğrulama işlemi tamamlanıyor, lütfen bekleyin. Sorun yaşıyorsanız sayfayı yenileyin."/>
+</head>
+<body>
+<div class="card">
+  <div class="spinner" id="spinner"></div>
+  <h1 id="title">Giriş yapılıyor…</h1>
+  <p id="sub">Lütfen bekleyin, hesabınıza yönlendiriliyorsunuz.</p>
+  <div class="err" id="errBox"></div>
+</div>
+<script type="module">
+import { saveToken } from "/assets/js/auth.js";
+
+const params   = new URLSearchParams(location.hash.replace(/^#/, ""));
+const token    = params.get("token");
+const redirect = params.get("redirect") || "/account";
+const errParam = new URLSearchParams(location.search).get("error");
+
+function showError(msg) {
+  document.getElementById("spinner").style.display = "none";
+  document.getElementById("title").textContent = "Giriş başarısız";
+  document.getElementById("sub").textContent = "";
+  const err = document.getElementById("errBox");
+  err.textContent = msg;
+  err.style.display = "block";
+  setTimeout(() => { location.href = "/login"; }, 3000);
+}
+
+const ERROR_MESSAGES = {
+  oauth_cancelled:       "Google ile giriş iptal edildi.",
+  invalid_state:         "Güvenlik doğrulaması başarısız. Tekrar deneyin.",
+  token_exchange_failed: "Google ile bağlantı kurulamadı. Tekrar deneyin.",
+  token_invalid:         "Google doğrulaması başarısız.",
+  no_email:              "Google hesabınızdan e-posta alınamadı.",
+  account_disabled:      "Bu hesap devre dışı bırakılmış.",
+};
+
+if (errParam) {
+  showError(ERROR_MESSAGES[errParam] || "Giriş sırasında bir hata oluştu.");
+} else if (token) {
+  try {
+    saveToken(decodeURIComponent(token));
+    const safeRedirect = redirect.startsWith("/") ? redirect : "/account";
+    location.replace(safeRedirect);
+  } catch (_) {
+    showError("Oturum kaydedilemedi. Tekrar deneyin.");
+  }
+} else {
+  showError("Geçersiz giriş bağlantısı.");
+}
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

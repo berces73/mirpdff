@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+  <title>API Anahtarlarım — MirPDF Geliştirici</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://mirpdf.com/developers/keys.html">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--primary:#6366f1;--primary-dark:#4f46e5;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--text:#0d0f1a;--muted:#64748b;--border:#e3e6f0;--bg:#f7f8fc;--radius:14px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;height:62px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
+.logo-mark{width:30px;height:30px;background:var(--text);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem}
+.nav-back{color:var(--muted);font-size:.88rem;text-decoration:none;display:flex;align-items:center;gap:.4rem}
+.nav-back:hover{color:var(--primary)}
+
+.wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.page-head h1{font-size:1.5rem;font-weight:800}
+.page-head p{color:var(--muted);font-size:.88rem;margin-top:.25rem}
+
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:10px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:opacity .15s,transform .1s;text-decoration:none}
+.btn:hover{opacity:.85;transform:translateY(-1px)}
+.btn-dark{background:var(--text);color:#fff}
+.btn-outline{background:#fff;border:1.5px solid var(--border);color:var(--text)}
+.btn-danger{background:#fef2f2;border:1.5px solid #fca5a5;color:#dc2626}
+.btn-sm{padding:.45rem .85rem;font-size:.8rem}
+.btn-icon{padding:.5rem;width:34px;height:34px;justify-content:center}
+
+/* Plan banner */
+.plan-banner{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.plan-info{display:flex;align-items:center;gap:.75rem}
+.plan-badge{padding:.3rem .85rem;border-radius:8px;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.plan-free{background:#f1f5f9;color:#64748b}
+.plan-pro{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+
+/* Key card */
+.key-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden;transition:border-color .15s}
+.key-card:hover{border-color:#c7d2fe}
+.key-card.revoked{opacity:.55}
+.key-head{display:flex;align-items:center;gap:.75rem;padding:1.1rem 1.25rem;cursor:pointer}
+.key-icon{width:36px;height:36px;border-radius:9px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:.9rem;flex-shrink:0}
+.key-icon.revoked{background:#fef2f2;color:#dc2626}
+.key-name{font-weight:700;font-size:.92rem}
+.key-meta{font-size:.78rem;color:var(--muted);margin-top:.1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.key-actions{display:flex;gap:.4rem;margin-left:auto;flex-shrink:0}
+.chevron{color:var(--muted);transition:transform .2s;font-size:.8rem;margin-left:.25rem}
+
+.key-body{display:none;border-top:1px solid var(--border);padding:1.25rem}
+.key-body.open{display:block}
+
+/* Usage bar */
+.usage-row{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.usage-label{font-size:.82rem;color:var(--muted);width:130px;flex-shrink:0}
+.usage-bar-wrap{flex:1}
+.usage-bar{height:7px;background:#e3e6f0;border-radius:4px;overflow:hidden}
+.usage-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--primary),#8b5cf6);transition:width .6s}
+.usage-fill.warn{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+.usage-nums{font-size:.78rem;color:var(--muted);margin-top:.25rem;text-align:right}
+
+/* Key value */
+.key-value-row{display:flex;align-items:center;gap:.5rem;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:.6rem .9rem;margin-bottom:.85rem}
+.key-value-row code{flex:1;font-family:'Fira Mono','Courier New',monospace;font-size:.82rem;color:#374151;word-break:break-all}
+.copy-btn{flex-shrink:0;background:#fff;border:1px solid var(--border);border-radius:7px;padding:.35rem .65rem;font-size:.75rem;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}
+.copy-btn:hover{color:var(--primary);border-color:#c7d2fe}
+
+/* Test endpoint */
+.test-box{background:#0d0f1a;border-radius:10px;padding:1rem 1.25rem;margin-bottom:.85rem;font-family:monospace;font-size:.78rem;color:#a5f3fc;overflow-x:auto}
+.test-box .comment{color:#6b7280}
+
+/* Stats mini */
+.stats-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:.85rem}
+.stat-mini{background:#f8fafc;border-radius:10px;padding:.75rem;text-align:center}
+.stat-mini-num{font-size:1.15rem;font-weight:800;color:var(--primary)}
+.stat-mini-lbl{font-size:.72rem;color:var(--muted)}
+
+/* Empty */
+.empty{text-align:center;padding:3.5rem 1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius)}
+.empty i{font-size:2.5rem;color:#c7d2fe;margin-bottom:1rem;display:block}
+.empty h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.empty p{font-size:.85rem;color:var(--muted);margin-bottom:1.25rem}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:300;align-items:center;justify-content:center}
+.modal-overlay.show{display:flex}
+.modal{background:#fff;border-radius:18px;padding:2rem;width:min(460px,92vw);box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.modal h2{font-size:1.05rem;font-weight:800;margin-bottom:.3rem}
+.modal p{font-size:.85rem;color:var(--muted);margin-bottom:1.25rem}
+.field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+.field label{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.field input,.field select{width:100%;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:.92rem;color:var(--text);outline:none;transition:border-color .15s}
+.field input:focus,.field select:focus{border-color:var(--primary)}
+.modal-actions{display:flex;gap:.6rem;justify-content:flex-end;margin-top:.5rem}
+.new-key-result{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:1rem;margin-bottom:1rem}
+.new-key-result .label{font-size:.75rem;font-weight:700;color:#15803d;margin-bottom:.5rem}
+.new-key-result code{font-family:monospace;font-size:.82rem;background:#fff;border:1px solid #bbf7d0;border-radius:7px;padding:.45rem .75rem;display:block;word-break:break-all;color:#166534;margin-bottom:.5rem}
+
+.skel{background:linear-gradient(90deg,#e3e6f0 25%,#f3f4f6 50%,#e3e6f0 75%);background-size:200%;animation:skel 1.4s infinite;border-radius:10px}
+@keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* Docs link */
+.docs-strip{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;font-size:.85rem}
+.docs-strip i{color:var(--primary);font-size:1.1rem}
+.docs-strip a{color:var(--primary);font-weight:700;text-decoration:none}
+.docs-strip a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-mark"><i class="fas fa-file-pdf"></i></div>
+      MirPDF
+    </a>
+    <a href="/account.html" class="nav-back"><i class="fas fa-arrow-left"></i> Hesabıma Dön</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <div>
+      <h1><i class="fas fa-key" style="color:var(--primary)"></i> API Anahtarları</h1>
+      <p>PDF işlemlerini otomatize etmek için anahtarlarınızı buradan yönetin.</p>
+    </div>
+    <button class="btn btn-dark" id="newKeyBtn" onclick="openModal()">
+      <i class="fas fa-plus"></i> Yeni Anahtar
+    </button>
+  </div>
+
+  <!-- Docs strip -->
+  <div class="docs-strip">
+    <i class="fas fa-book"></i>
+    <span>API'yi ilk kez mi kullanıyorsunuz? <a href="/developers/">Geliştirici dokümantasyonumuzu</a> inceleyin. &nbsp;|&nbsp; OpenAPI: <a href="/developers/openapi.yaml">openapi.yaml</a></span>
+  </div>
+
+  <!-- Plan banner -->
+  <div class="plan-banner" id="planBanner">
+    <div class="plan-info">
+      <div class="skel" style="width:70px;height:24px"></div>
+      <div class="skel" style="width:180px;height:16px"></div>
+    </div>
+  </div>
+
+  <!-- Keys list -->
+  <div id="keysList">
+    <div class="skel" style="height:66px;margin-bottom:.75rem"></div>
+    <div class="skel" style="height:66px;margin-bottom:.75rem"></div>
+  </div>
+</div>
+
+<!-- New Key Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>Yeni API Anahtarı Oluştur</h2>
+    <p>Anahtar bir kez gösterilir — lütfen güvenli bir yere kaydedin.</p>
+
+    <div class="new-key-result" id="newKeyResult">
+      <div class="label">✓ Anahtarınız oluşturuldu — kopyalayın, bir daha gösterilmeyecek.</div>
+      <code id="newKeyValue"></code>
+      <button class="btn btn-sm btn-outline" style="width:100%" onclick="copyNewKey()">
+        <i class="fas fa-copy"></i> Kopyala
+      </button>
+    </div>
+
+    <div id="newKeyForm">
+      <div class="field">
+        <label>Anahtar Adı</label>
+        <input type="text" id="keyName" placeholder="örn: Muhasebe botu" maxlength="64">
+      </div>
+      <div class="field">
+        <label>Kullanım Amacı <span style="font-weight:400;text-transform:none">(isteğe bağlı)</span></label>
+        <select id="keyPurpose">
+          <option value="">Seçin…</option>
+          <option value="Otomasyon">Otomasyon / Script</option>
+          <option value="Uygulama">Web/Mobil Uygulama</option>
+          <option value="Test">Test / Geliştirme</option>
+          <option value="Diğer">Diğer</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">İptal</button>
+      <button class="btn btn-dark" id="createBtn" onclick="createKey()">
+        <i class="fas fa-plus"></i> Oluştur
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+const JWT_KEY = 'mirpdf_jwt';
+let keys = [];
+let planInfo = {};
+
+/* ── Auth ── */
+function getToken() { return localStorage.getItem(JWT_KEY); }
+function authHeaders() {
+  const t = getToken();
+  return t ? { 'Authorization': 'Bearer ' + t, 'Content-Type': 'application/json' } : {};
+}
+
+/* ── Load data ── */
+async function load() {
+  const token = getToken();
+  if (!token) { location.href = '/login.html?redirect=' + encodeURIComponent(location.pathname); return; }
+
+  try {
+    const [keysRes, meRes] = await Promise.all([
+      fetch('/api/developer/keys', { headers: authHeaders() }),
+      fetch('/api/auth/me',         { headers: authHeaders() }),
+    ]);
+    const keysData = await keysRes.json();
+    const meData   = await meRes.json().catch(() => ({}));
+
+    planInfo = { plan: meData?.user?.role || 'free', email: meData?.user?.email || '' };
+    renderPlanBanner();
+
+    keys = keysData.keys || [];
+    renderKeys();
+  } catch (e) {
+    document.getElementById('keysList').innerHTML = `<div style="color:#dc2626;font-size:.88rem;padding:1rem">Veriler yüklenemedi: ${e.message}</div>`;
+  }
+}
+
+/* ── Plan banner ── */
+function renderPlanBanner() {
+  const plan = planInfo.plan;
+  const limits = { free: 500, basic: 5000, pro: 50000 };
+  const limit = limits[plan] || 500;
+  const badgeClass = plan === 'pro' ? 'plan-pro' : 'plan-free';
+  document.getElementById('planBanner').innerHTML = `
+    <div class="plan-info">
+      <span class="plan-badge ${badgeClass}">${plan.toUpperCase()}</span>
+      <span style="font-size:.88rem;color:var(--muted)">Aylık API limiti: <strong style="color:var(--text)">${limit.toLocaleString('tr-TR')} çağrı</strong></span>
+    </div>
+    ${plan !== 'pro' ? `<a href="/pricing.html" class="btn btn-sm btn-outline"><i class="fas fa-arrow-up"></i> Pro'ya Geç</a>` : '<span style="font-size:.82rem;color:var(--success)"><i class="fas fa-check"></i> Pro Plan</span>'}`;
+}
+
+/* ── Render keys ── */
+function renderKeys() {
+  const container = document.getElementById('keysList');
+  if (!keys.length) {
+    container.innerHTML = `
+      <div class="empty">
+        <i class="fas fa-key"></i>
+        <h3>Henüz API anahtarınız yok</h3>
+        <p>İlk anahtarınızı oluşturarak PDF işlemlerinizi otomatize etmeye başlayın.</p>
+        <button class="btn btn-dark" onclick="openModal()"><i class="fas fa-plus"></i> İlk Anahtarı Oluştur</button>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = keys.map((k, i) => {
+    const pct     = Math.min((k.calls_month / k.calls_limit) * 100, 100);
+    const isWarn  = pct >= 80;
+    const revoked = !!k.revoked_at;
+    return `
+    <div class="key-card ${revoked ? 'revoked' : ''}">
+      <div class="key-head" onclick="toggleKey(${i})">
+        <div class="key-icon ${revoked ? 'revoked' : ''}"><i class="fas fa-key"></i></div>
+        <div style="flex:1;min-width:0">
+          <div class="key-name">${esc(k.name)}</div>
+          <div class="key-meta">
+            <code style="background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:.75rem">${esc(k.key_prefix)}…</code>
+            <span>${k.plan.toUpperCase()}</span>
+            <span style="color:${isWarn ? '#ef4444' : 'inherit'}">${k.calls_month.toLocaleString('tr-TR')} / ${k.calls_limit.toLocaleString('tr-TR')} çağrı</span>
+            ${revoked ? '<span style="color:#dc2626;font-weight:700">● İptal edildi</span>' : ''}
+          </div>
+        </div>
+        <div class="key-actions" onclick="event.stopPropagation()">
+          ${!revoked ? `<button class="btn btn-sm btn-danger" onclick="revokeKey('${k.id}')"><i class="fas fa-trash"></i></button>` : ''}
+        </div>
+        <i class="fas fa-chevron-down chevron" id="chev-${i}"></i>
+      </div>
+      <div class="key-body" id="kbody-${i}">
+        <div class="stats-mini">
+          <div class="stat-mini"><div class="stat-mini-num">${k.calls_month.toLocaleString('tr-TR')}</div><div class="stat-mini-lbl">Bu ay</div></div>
+          <div class="stat-mini"><div class="stat-mini-num">${k.calls_limit.toLocaleString('tr-TR')}</div><div class="stat-mini-lbl">Aylık limit</div></div>
+          <div class="stat-mini"><div class="stat-mini-num">${Math.round(pct)}%</div><div class="stat-mini-lbl">Kullanım</div></div>
+        </div>
+        <div class="usage-row">
+          <div class="usage-label">Aylık kullanım</div>
+          <div class="usage-bar-wrap">
+            <div class="usage-bar"><div class="usage-fill ${isWarn ? 'warn' : ''}" style="width:${pct}%"></div></div>
+            <div class="usage-nums">${k.calls_month.toLocaleString('tr-TR')} / ${k.calls_limit.toLocaleString('tr-TR')}</div>
+          </div>
+        </div>
+        <div class="key-value-row">
+          <code>${esc(k.key_prefix)}••••••••••••••••••</code>
+          <button class="copy-btn" onclick="alert('Güvenlik nedeniyle tam anahtar tekrar gösterilmez. Lütfen yeni bir anahtar oluşturun.')">Tam Anahtar?</button>
+        </div>
+        <div class="test-box">
+<span class="comment"># Örnek: PDF sıkıştır</span>
+curl -X POST https://mirpdf.com/api/compress \\
+  -H "X-API-Key: ${esc(k.key_prefix)}••••" \\
+  -F "file=@belge.pdf" \\
+  -F "level=recommended"</div>
+        <div style="display:flex;gap:.5rem;font-size:.8rem;color:var(--muted)">
+          <i class="fas fa-calendar" style="margin-top:2px"></i>
+          Oluşturuldu: ${new Date(Number(k.created_at) || k.created_at).toLocaleDateString('tr-TR')}
+          ${revoked ? `&nbsp;·&nbsp; İptal: ${new Date(k.revoked_at).toLocaleDateString('tr-TR')}` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── Toggle expand ── */
+window.toggleKey = function(i) {
+  const body = document.getElementById('kbody-' + i);
+  const chev = document.getElementById('chev-' + i);
+  const open = body.classList.contains('open');
+  body.classList.toggle('open', !open);
+  chev.style.transform = open ? '' : 'rotate(180deg)';
+};
+
+/* ── Revoke ── */
+window.revokeKey = async function(id) {
+  if (!confirm('Bu anahtarı iptal etmek istediğinize emin misiniz?\nBu işlem geri alınamaz.')) return;
+  await fetch('/api/developer/keys/' + id, { method: 'DELETE', headers: authHeaders() });
+  load();
+};
+
+/* ── Modal ── */
+window.openModal = function() {
+  document.getElementById('modalOverlay').classList.add('show');
+  document.getElementById('newKeyResult').style.display = 'none';
+  document.getElementById('newKeyForm').style.display   = 'block';
+  document.getElementById('keyName').value   = '';
+  document.getElementById('keyPurpose').value = '';
+  document.getElementById('createBtn').disabled = false;
+  document.getElementById('createBtn').innerHTML = '<i class="fas fa-plus"></i> Oluştur';
+};
+window.closeModal = function() {
+  document.getElementById('modalOverlay').classList.remove('show');
+  load();
+};
+document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+/* ── Create key ── */
+window.createKey = async function() {
+  const name    = document.getElementById('keyName').value.trim() || 'API Anahtarım';
+  const purpose = document.getElementById('keyPurpose').value;
+  const btn     = document.getElementById('createBtn');
+  btn.disabled  = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Oluşturuluyor…';
+
+  try {
+    const res  = await fetch('/api/developer/keys', {
+      method: 'POST', headers: authHeaders(),
+      body: JSON.stringify({ name: name + (purpose ? ` (${purpose})` : '') }),
+    });
+    const data = await res.json();
+    if (!data.ok) { alert(data.error || 'Hata oluştu.'); btn.disabled=false; btn.innerHTML='<i class="fas fa-plus"></i> Oluştur'; return; }
+    document.getElementById('newKeyValue').textContent = data.key;
+    document.getElementById('newKeyResult').style.display = 'block';
+    document.getElementById('newKeyForm').style.display   = 'none';
+    btn.innerHTML = '<i class="fas fa-times"></i> Kapat';
+    btn.disabled  = false;
+    btn.onclick   = closeModal;
+  } catch { alert('Bağlantı hatası.'); btn.disabled=false; btn.innerHTML='<i class="fas fa-plus"></i> Oluştur'; }
+};
+
+window.copyNewKey = function() {
+  const val = document.getElementById('newKeyValue').textContent;
+  navigator.clipboard.writeText(val).then(() => {
+    const b = document.querySelector('#newKeyResult .btn');
+    const o = b.innerHTML;
+    b.innerHTML = '<i class="fas fa-check"></i> Kopyalandı!';
+    b.style.background = '#f0fdf4'; b.style.borderColor = '#86efac'; b.style.color = '#15803d';
+    setTimeout(() => { b.innerHTML = o; b.style = ''; }, 2000);
+  });
+};
+
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+load();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

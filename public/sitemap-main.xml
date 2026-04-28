@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://mirpdf.com/</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pricing</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/about</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/contact</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/faq</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/kurumsal/</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/developers/</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/status</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/changelog</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/articles/</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/privacy.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/terms.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/kvkk.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/cookies.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/security.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/dpa.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/legal/refund.html</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/yardim</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/smallpdf-alternatifi</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-bol</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-imzala</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-sayfa-ayikla</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-to-jpg</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-to-word</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/jpg-to-pdf</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/filigran-ekle</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-arka-plan-ekle</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/ocr</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-sayfa-kirp</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-duzenle</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-metadata-duzenle</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/qr-kod-ekle</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-kilitle</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/sayfa-sirala</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-sayfa-kopyala</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/sayfa-sil</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-dondur</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-kilit-ac</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-sikistir</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://mirpdf.com/pdf-birlestir</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url><loc>https://mirpdf.com/pricing/kurumsal</loc><lastmod>2026-03-21T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url>
+    <loc>https://mirpdf.com/pdf-sayfa-numarala</loc>
+    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

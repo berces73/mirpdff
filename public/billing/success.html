@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+  <title>Ödeme Başarılı — MirPDF</title>
+  <meta property="og:title" content="Ödeme Başarılı | MirPDF Pro"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="MirPDF Pro aktif edildi"/>
+  <meta name="twitter:description" content="MirPDF Pro aktif — OCR, Word/Excel dönüştürme ve toplu işlem özelliklerine hemen erişin. Teşekkürler!"/>
+  <meta name="description" content="MirPDF Pro aboneliğiniz aktif! Sunucu taraflı OCR, Word/Excel dönüştürme ve toplu işlem özelliklerine artık sınırsız erişebilirsiniz."/>
+  <link rel="canonical" href="https://mirpdf.com/billing/success"/>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{--bg:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+header{background:#fff;border-bottom:1px solid var(--border);padding:0 1.5rem;height:64px;display:flex;align-items:center}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.1rem}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
+.card{width:100%;max-width:500px;background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,.06)}
+.card-top{background:#0d0f1a;padding:2.5rem 2rem;text-align:center}
+.check-icon{width:64px;height:64px;border-radius:50%;background:rgba(16,185,129,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.6rem;border:2px solid rgba(16,185,129,.4)}
+.card-top h1{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.4rem}
+.card-top p{font-size:.9rem;color:rgba(255,255,255,.6)}
+.card-body{padding:2rem}
+.perk-list{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem}
+.perk{display:flex;align-items:center;gap:.75rem;font-size:.88rem;padding:.7rem .9rem;background:#f7f8fc;border:1px solid var(--border);border-radius:10px}
+.perk i{color:#10b981;flex-shrink:0;width:16px;text-align:center}
+.perk-loading{color:var(--muted);font-style:italic}
+.btns{display:flex;flex-direction:column;gap:.6rem}
+.btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:12px;font-size:.92rem;font-weight:700;text-decoration:none;transition:opacity .15s;border:none;font-family:inherit;cursor:pointer}
+.btn:hover{opacity:.88}
+.btn-primary{background:#0d0f1a;color:#fff}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--text)}
+.order-ref{text-align:center;font-size:.75rem;color:var(--muted);margin-top:1.25rem}
+footer{border-top:1px solid var(--border);padding:1.25rem;text-align:center;color:var(--muted);font-size:.8rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .4rem}
+</style>
+  <meta property="og:url" content="https://mirpdf.com/billing/success"/>
+  <meta property="og:description" content="MirPDF Pro aboneliğiniz aktif! Sunucu taraflı OCR, Word/Excel dönüştürme ve toplu işlem özelliklerine artık sınırsız erişebilirsiniz."/>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">
+    <img src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+    MirPDF
+  </a>
+</header>
+
+<main>
+  <div class="card">
+    <div class="card-top">
+      <div class="check-icon" style="font-size:2rem">🎉</div>
+      <h1>Tebrikler, hoş geldin!</h1>
+      <p style="font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:.25rem" id="cardSubtitle">Pro üyeliğin aktif — artık sınırsız PDF işleyebilirsin.</p>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.45)">Bir sonraki adım: ilk işlemini yap ↓</p>
+    </div>
+    <div class="card-body">
+      <div class="perk-list" id="perkList">
+        <div class="perk perk-loading"><i class="fas fa-spinner fa-spin"></i><span>Hesap bilgileri yükleniyor...</span></div>
+      </div>
+      <div class="btns">
+        <a href="/#tools" class="btn btn-primary"><i class="fas fa-rocket"></i> İlk PDF'imi İşle →</a>
+        <a href="/account" class="btn btn-outline"><i class="fas fa-user-circle"></i> Hesabıma Git</a>
+      </div>
+      <div class="order-ref" id="orderRef"></div>
+      <div style="margin-top:1.25rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1rem 1.25rem;font-size:.85rem;color:#15803d;text-align:center">
+        <strong>💡 İlk adım önerisi:</strong> Bir PDF'i OCR ile aranabilir yap →
+        <a href="/ocr" style="color:#15803d;font-weight:700;text-decoration:underline">OCR aracını dene</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/legal/privacy.html">Gizlilik</a>
+  <a href="/legal/terms.html">Kullanım Şartları</a>
+  <a href="/contact">İletişim</a>
+  <span style="margin-left:.5rem">© 2026 MirPDF</span>
+</footer>
+
+<script type="module">
+import { silentRefresh, invalidateMeCache, apiFetch } from "/assets/js/auth.js";
+invalidateMeCache();
+silentRefresh();
+
+const params = new URLSearchParams(location.search);
+const sessionId = params.get("session_id");
+
+async function loadPerks() {
+  try {
+    const resp = await apiFetch("/api/me");
+    if (!resp.ok) throw new Error("auth");
+    const data = await resp.json().catch(() => null);
+    const me = data?.data || data;
+    const role = me?.role || "free";
+    const balance = me?.credits?.balance;
+
+    const subtitle = document.getElementById("cardSubtitle");
+    const perkList = document.getElementById("perkList");
+
+    if (role === "pro" || role === "basic") {
+      if (subtitle) subtitle.textContent = "Pro üyeliğiniz aktif. Aşağıdaki özellikler kullanımınıza açık.";
+      const credits = (balance !== null && balance !== undefined) ? balance.toLocaleString("tr-TR") : "5.000";
+      perkList.innerHTML = `
+        <div class="perk"><i class="fas fa-bolt"></i><span>Hesabınıza <strong>${credits} kredi</strong> yüklendi</span></div>
+        <div class="perk"><i class="fas fa-infinity"></i><span>Sınırsız OCR ve PDF→Word dönüştürme</span></div>
+        <div class="perk"><i class="fas fa-layer-group"></i><span>Toplu işlem — 10 dosya aynı anda</span></div>
+        <div class="perk"><i class="fas fa-rocket"></i><span>Öncelikli sunucu — daha hızlı işlem</span></div>
+        <div class="perk"><i class="fas fa-envelope"></i><span>E-posta desteği aktif</span></div>`;
+    } else {
+      // Tek seferlik kredi paketi
+      const credits = (balance !== null && balance !== undefined) ? balance.toLocaleString("tr-TR") : null;
+      if (subtitle) subtitle.textContent = "Kredi paketiniz hesabınıza eklendi.";
+      perkList.innerHTML = credits
+        ? `<div class="perk"><i class="fas fa-bolt"></i><span>Hesabınızdaki toplam kredi: <strong>${credits}</strong></span></div>
+           <div class="perk"><i class="fas fa-infinity"></i><span>Krediler süresiz geçerlidir</span></div>
+           <div class="perk"><i class="fas fa-check"></i><span>OCR ve PDF→Word işlemlerinde kullanabilirsiniz</span></div>`
+        : `<div class="perk"><i class="fas fa-check"></i><span>Kredi paketiniz hesabınıza eklendi</span></div>`;
+    }
+
+    // Sipariş referansı
+    if (sessionId) {
+      const ref = document.getElementById("orderRef");
+      if (ref) ref.textContent = "Sipariş ref: " + sessionId.slice(-12).toUpperCase();
+    }
+  } catch (_) {
+    const perkList = document.getElementById("perkList");
+    if (perkList) perkList.innerHTML = `<div class="perk"><i class="fas fa-check"></i><span>Ödemeniz alındı. Hesabınız güncellendi.</span></div>`;
+  }
+}
+
+loadPerks();
+setTimeout(loadPerks, 2500);
+setTimeout(loadPerks, 6000);
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

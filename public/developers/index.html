@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>MirPDF API — PDF İşleme REST API | Geliştiriciler</title>
+  <meta name="description" content="MirPDF REST API ile PDF sıkıştırma, dönüştürme, OCR ve birleştirme işlemlerini otomatize edin. cURL, Python, JavaScript kod örnekleri.">
+    <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Geliştirici API | MirPDF"/>
+  <meta property="og:description" content="MirPDF PDF işleme API'si — entegrasyon dokümantasyonu."/>
+  <meta property="og:url" content="https://mirpdf.com/developers"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:site_name" content="MirPDF"/>
+  <link rel="canonical" href="https://mirpdf.com/developers">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{--bg:#0f172a;--bg2:#1e293b;--border:#334155;--text:#f1f5f9;--muted:#94a3b8;--primary:#6366f1;--green:#10b981;--yellow:#f59e0b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1000px;margin:0 auto;padding:0 1.5rem}
+header{border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1000px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.1rem}
+.logo-mark{width:30px;height:30px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem}
+.badge{background:rgba(99,102,241,.2);color:var(--primary);border:1px solid rgba(99,102,241,.4);padding:.15rem .6rem;border-radius:6px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-left:.4rem}
+/* HERO */
+.hero{padding:4rem 0 3rem;text-align:center}
+.hero h1{font-size:2.2rem;font-weight:800;margin-bottom:.75rem}
+.hero h1 span{color:var(--primary)}
+.hero p{color:var(--muted);max-width:540px;margin:0 auto 2rem;font-size:1rem}
+.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.5rem;background:var(--primary);color:#fff;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none}
+.btn-outline{display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.5rem;background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--border);border-radius:10px;font-weight:600;font-size:.9rem;text-decoration:none}
+/* DOCS */
+.docs-grid{display:grid;grid-template-columns:220px 1fr;gap:2rem;padding:2rem 0 5rem}
+.sidebar{position:sticky;top:80px;height:fit-content}
+.sidebar-group{margin-bottom:1.5rem}
+.sidebar-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.5rem}
+.sidebar a{display:block;padding:.35rem .6rem;border-radius:7px;text-decoration:none;color:var(--muted);font-size:.85rem;transition:.1s}
+.sidebar a:hover,.sidebar a.active{background:rgba(99,102,241,.15);color:var(--text)}
+/* ENDPOINT */
+.endpoint{margin-bottom:3rem;scroll-margin-top:100px}
+.endpoint-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.method{padding:.25rem .6rem;border-radius:6px;font-size:.75rem;font-weight:800;font-family:'JetBrains Mono',monospace}
+.method.post{background:rgba(16,185,129,.15);color:var(--green);border:1px solid rgba(16,185,129,.3)}
+.method.get{background:rgba(99,102,241,.15);color:var(--primary);border:1px solid rgba(99,102,241,.3)}
+.endpoint-path{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--text)}
+.endpoint h3{font-size:1.1rem;font-weight:700}
+.endpoint p{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+/* CODE BLOCK */
+.code-block{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.25rem}
+.code-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;border-bottom:1px solid var(--border);font-size:.78rem;color:var(--muted)}
+.code-lang{font-weight:700;color:var(--text)}
+.code-copy{background:none;border:1px solid var(--border);color:var(--muted);padding:.25rem .6rem;border-radius:6px;cursor:pointer;font-size:.72rem}
+.code-copy:hover{color:var(--text)}
+pre{padding:1rem;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:.82rem;line-height:1.6;color:#e2e8f0}
+.kw{color:#93c5fd} .str{color:#86efac} .cm{color:#64748b} .num{color:#fcd34d}
+/* PARAMS */
+.params-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-bottom:1rem}
+.params-table th{text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--border);color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+.params-table td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.params-table code{font-family:'JetBrains Mono',monospace;font-size:.78rem;background:rgba(99,102,241,.1);padding:.1rem .3rem;border-radius:4px;color:var(--primary)}
+.required{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.3);padding:.1rem .4rem;border-radius:4px;font-size:.7rem;font-weight:700}
+.optional{background:rgba(100,116,139,.15);color:var(--muted);border:1px solid var(--border);padding:.1rem .4rem;border-radius:4px;font-size:.7rem;font-weight:700}
+/* SECTION DIVIDER */
+.section-title{font-size:1.4rem;font-weight:800;margin-bottom:.4rem;padding-top:1rem}
+.section-sub{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+@media(max-width:768px){.docs-grid{grid-template-columns:1fr}.sidebar{display:none}}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .5rem}
+</style>
+  <meta name="twitter:description" content="MirPDF REST API ile PDF sıkıştırma, dönüştürme, OCR ve birleştirme işlemlerini otomatize edin. cURL, Python, JavaScript kod örnekleri."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="MirPDF API — PDF İşleme REST API | Geliştiriciler"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+      MirPDF <span class="badge">API</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <a href="/#tools" style="color:var(--muted);text-decoration:none;font-size:.88rem">Araçlar</a>
+      <a href="/pricing" style="color:var(--muted);text-decoration:none;font-size:.88rem">Fiyatlar</a>
+      <a href="/kurumsal" style="color:var(--muted);text-decoration:none;font-size:.88rem">Kurumsal</a>
+      <a href="/contact" style="background:var(--primary);color:#fff;padding:.4rem .9rem;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:700">API Erişimi İste</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <h1>MirPDF <span>REST API</span></h1>
+    <p>PDF işleme operasyonlarını iş akışlarınıza entegre edin. Sıkıştırma, OCR, dönüştürme ve daha fazlası.</p>
+    <div class="hero-btns">
+      <a href="/account#apiKeysSection" class="btn-primary"><i class="fas fa-key"></i> API Anahtarı Oluştur</a>
+      <a href="/kurumsal" class="btn-outline"><i class="fas fa-building"></i> Kurumsal Plan</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="docs-grid">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-label">Başlangıç</div>
+        <a href="#authentication" class="active">Kimlik Doğrulama</a>
+        <a href="#base-url">Base URL</a>
+        <a href="#errors">Hata Kodları</a>
+        <a href="#rate-limits">Rate Limits</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Araçlar</div>
+        <a href="#compress">PDF Sıkıştırma</a>
+        <a href="#pdf-to-word">PDF → Word</a>
+        <a href="#ocr">OCR</a>
+        <a href="#merge">PDF Birleştirme</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">İş Akışı</div>
+        <a href="#job-status">İş Durumu</a>
+        <a href="#job-result">Sonuç İndirme</a>
+        <a href="#webhooks">Webhooks</a>
+      </div>
+    </nav>
+
+    <!-- İçerik -->
+    <main>
+      <!-- AUTH -->
+      <div class="endpoint" id="authentication">
+        <h2 class="section-title">Kimlik Doğrulama</h2>
+        <p class="section-sub">Tüm API istekleri <code style="font-family:monospace;color:var(--primary)">Authorization</code> header'ı gerektirir.</p>
+        
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">cURL</span><button class="code-copy" onclick="copy(this)">Kopyala</button></div>
+          <pre><span class="cm"># Her istekte header ekleyin</span>
+<span class="kw">curl</span> -X POST https://mirpdf.com/api/compress   -H <span class="str">"Authorization: Bearer YOUR_API_KEY"</span>   -F <span class="str">"file=@belge.pdf"</span></pre>
+        </div>
+      </div>
+
+      <!-- BASE URL -->
+      <div class="endpoint" id="base-url">
+        <div class="endpoint-header">
+          <h3>Base URL</h3>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">URL</span></div>
+          <pre><span class="str">https://mirpdf.com/api</span></pre>
+        </div>
+      </div>
+
+      <!-- COMPRESS -->
+      <div class="endpoint" id="compress">
+        <h2 class="section-title">PDF Sıkıştırma</h2>
+        <p class="section-sub">PDF dosyasını sıkıştırarak boyutunu küçültün.</p>
+        
+        <div class="endpoint-header">
+          <span class="method post">POST</span>
+          <span class="endpoint-path">/api/compress</span>
+        </div>
+        <p>PDF dosyasını gönderip asenkron iş oluşturun. İş ID ile durumu takip edin.</p>
+        
+        <table class="params-table">
+          <tr><th>Parametre</th><th>Tip</th><th>Zorunluluk</th><th>Açıklama</th></tr>
+          <tr><td><code>file</code></td><td>File</td><td><span class="required">zorunlu</span></td><td>PDF dosyası (max 50MB)</td></tr>
+          <tr><td><code>level</code></td><td>string</td><td><span class="optional">opsiyonel</span></td><td><code>low</code> / <code>recommended</code> / <code>high</code> (varsayılan: recommended)</td></tr>
+        </table>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">cURL</span><button class="code-copy" onclick="copy(this)">Kopyala</button></div>
+          <pre><span class="kw">curl</span> -X POST https://mirpdf.com/api/compress   -H <span class="str">"Authorization: Bearer YOUR_API_KEY"</span>   -F <span class="str">"file=@belge.pdf"</span>   -F <span class="str">"level=recommended"</span></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copy(this)">Kopyala</button></div>
+          <pre><span class="kw">import</span> requests
+
+<span class="kw">with</span> <span class="kw">open</span>(<span class="str">"belge.pdf"</span>, <span class="str">"rb"</span>) <span class="kw">as</span> f:
+    response = requests.post(
+        <span class="str">"https://mirpdf.com/api/compress"</span>,
+        headers={<span class="str">"Authorization"</span>: <span class="str">"Bearer YOUR_API_KEY"</span>},
+        files={<span class="str">"file"</span>: f},
+        data={<span class="str">"level"</span>: <span class="str">"recommended"</span>}
+    )
+
+job = response.json()
+print(job[<span class="str">"data"</span>][<span class="str">"jobId"</span>])  <span class="cm"># İş ID'si</span></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">JavaScript</span><button class="code-copy" onclick="copy(this)">Kopyala</button></div>
+          <pre><span class="kw">const</span> formData = <span class="kw">new</span> FormData();
+formData.append(<span class="str">'file'</span>, fileInput.files[<span class="num">0</span>]);
+formData.append(<span class="str">'level'</span>, <span class="str">'recommended'</span>);
+
+<span class="kw">const</span> response = <span class="kw">await</span> fetch(<span class="str">'https://mirpdf.com/api/compress'</span>, {
+  method: <span class="str">'POST'</span>,
+  headers: { <span class="str">'Authorization'</span>: <span class="str">`Bearer ${apiKey}`</span> },
+  body: formData
+});
+
+<span class="kw">const</span> { data } = <span class="kw">await</span> response.json();
+console.log(data.jobId); <span class="cm">// Sonraki adım: iş durumu kontrolü</span></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Yanıt (200 OK)</span></div>
+          <pre>{
+  <span class="str">"ok"</span>: <span class="kw">true</span>,
+  <span class="str">"data"</span>: {
+    <span class="str">"jobId"</span>: <span class="str">"550e8400-e29b-41d4-a716-446655440000"</span>,
+    <span class="str">"status"</span>: <span class="str">"queued"</span>
+  }
+}</pre>
+        </div>
+      </div>
+
+      <!-- JOB STATUS -->
+      <div class="endpoint" id="job-status">
+        <h2 class="section-title">İş Durumu Kontrolü</h2>
+        <p class="section-sub">Gönderilen işin durumunu kontrol edin.</p>
+        
+        <div class="endpoint-header">
+          <span class="method get">GET</span>
+          <span class="endpoint-path">/api/jobs/{jobId}/status</span>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">cURL</span><button class="code-copy" onclick="copy(this)">Kopyala</button></div>
+          <pre><span class="kw">curl</span> https://mirpdf.com/api/jobs/<span class="str">JOB_ID</span>/status   -H <span class="str">"Authorization: Bearer YOUR_API_KEY"</span></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Yanıt — done (200 OK)</span></div>
+          <pre>{
+  <span class="str">"ok"</span>: <span class="kw">true</span>,
+  <span class="str">"data"</span>: {
+    <span class="str">"status"</span>: <span class="str">"done"</span>,
+    <span class="str">"download_url"</span>: <span class="str">"https://mirpdf.com/api/jobs/.../result"</span>,
+    <span class="str">"expires_at"</span>: <span class="num">1710000000000</span>
+  }
+}</pre>
+        </div>
+      </div>
+
+      <!-- HATA KODLARI -->
+      <div class="endpoint" id="errors">
+        <h2 class="section-title">Hata Kodları</h2>
+        <table class="params-table">
+          <tr><th>Kod</th><th>Anlam</th><th>Çözüm</th></tr>
+          <tr><td><code>401</code></td><td>API anahtarı geçersiz</td><td>API anahtarınızı kontrol edin</td></tr>
+          <tr><td><code>402</code></td><td>Kredi yetersiz</td><td>Kredi satın alın veya planı yükseltin</td></tr>
+          <tr><td><code>413</code></td><td>Dosya çok büyük</td><td>50MB altı dosya gönderin</td></tr>
+          <tr><td><code>415</code></td><td>Desteklenmeyen format</td><td>Yalnızca PDF gönderin</td></tr>
+          <tr><td><code>429</code></td><td>Rate limit aşıldı</td><td>Retry-After header'ını bekleyin</td></tr>
+          <tr><td><code>5xx</code></td><td>Sunucu hatası</td><td>Exponential backoff ile tekrar deneyin</td></tr>
+        </table>
+      </div>
+
+      <!-- RATE LIMITS -->
+      <div class="endpoint" id="rate-limits">
+        <h2 class="section-title">Rate Limits</h2>
+        <table class="params-table">
+          <tr><th>Plan</th><th>İstek/dakika</th><th>Dosya boyutu</th><th>Aylık limit</th></tr>
+          <tr><td>Ücretsiz</td><td>5</td><td>25 MB</td><td>150 kredi</td></tr>
+          <tr><td>Pro</td><td>60</td><td>50 MB</td><td>5.000 kredi</td></tr>
+          <tr><td>Enterprise</td><td>Özel</td><td>Özel</td><td>Özel</td></tr>
+        </table>
+      </div>
+
+      <!-- CTA -->
+      <div style="background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:16px;padding:2.5rem;text-align:center;margin-top:3rem">
+        <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem">API Erişimi Alın</h2>
+        <p style="color:#a5b4fc;margin-bottom:1.5rem;font-size:.9rem">Kurumsal plan ile tam API erişimi, yüksek limitler ve öncelikli destek.</p>
+        <a href="/account#apiKeysSection" style="display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.75rem;background:#6366f1;color:#fff;border-radius:10px;font-weight:700;text-decoration:none">
+          <i class="fas fa-envelope"></i> API Erişimi İste
+        </a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Ana Sayfa</a><a href="/pricing">Fiyatlar</a><a href="/kurumsal">Kurumsal</a>
+  <a href="/contact">İletişim</a><a href="/legal/terms.html">Şartlar</a><a href="/legal/privacy.html">Gizlilik</a>
+  <br><br><span>© 2026 MirPDF — 🇹🇷 Türkiye · KVKK Uyumlu</span>
+</footer>
+
+<script>
+function copy(btn) {
+  const pre = btn.closest('.code-block').querySelector('pre');
+  navigator.clipboard.writeText(pre.innerText).then(() => {
+    btn.textContent = 'Kopyalandı!';
+    setTimeout(() => btn.textContent = 'Kopyala', 2000);
+  });
+}
+// Sidebar aktif link
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.sidebar a').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+// Intersection Observer for sidebar
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      document.querySelectorAll('.sidebar a').forEach(l => l.classList.remove('active'));
+      document.querySelector(`.sidebar a[href="#${id}"]`)?.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.endpoint[id]').forEach(el => observer.observe(el));
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+</body>
+</html>

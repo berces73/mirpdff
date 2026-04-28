@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+  <title>Basın ve Medya Kiti — MirPDF</title>
+  <meta name="description" content="MirPDF basın kiti: logo, renk paleti, marka varlıkları, temel istatistikler ve medya iletişim bilgileri.">
+  <meta property="og:title" content="Basın ve Medya Kiti — MirPDF">
+  <meta property="og:url" content="https://mirpdf.com/press.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://mirpdf.com/press.html">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+<style>
+:root{--primary:#6366f1;--primary-dark:#4f46e5;--text:#0d0f1a;--muted:#64748b;--border:#e3e6f0;--bg:#f7f8fc}
+.press-hero{background:linear-gradient(135deg,#0d0f1a 0%,#1e1b4b 100%);color:#fff;padding:5rem 0 4rem;text-align:center}
+.press-hero .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a5b4fc;margin-bottom:1rem}
+.press-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:.75rem}
+.press-hero p{color:#c7d2fe;font-size:1.05rem;max-width:560px;margin:0 auto 2rem;line-height:1.7}
+.press-contact-pill{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.6rem 1.4rem;font-size:.88rem;color:#e0e7ff;text-decoration:none;transition:.2s}
+.press-contact-pill:hover{background:rgba(255,255,255,.18)}
+.section-title{font-size:1.35rem;font-weight:800;color:var(--text);margin-bottom:1.5rem}
+.section-sub{color:var(--muted);font-size:.9rem;margin-top:-.75rem;margin-bottom:1.5rem;line-height:1.6}
+.press-section{padding:3.5rem 0;border-bottom:1px solid var(--border)}
+.press-section:last-child{border-bottom:none}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;text-align:center}
+.stat-num{font-size:2rem;font-weight:800;color:var(--primary);line-height:1}
+.stat-lbl{color:var(--muted);font-size:.82rem;margin-top:.4rem;line-height:1.4}
+
+/* Colors */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+.color-card{border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.color-swatch{height:80px}
+.color-info{background:#fff;padding:.75rem;font-size:.82rem}
+.color-name{font-weight:700;color:var(--text)}
+.color-hex{color:var(--muted);font-family:monospace;cursor:pointer}
+.color-hex:hover{color:var(--primary)}
+
+/* Logo downloads */
+.logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.logo-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.logo-preview{padding:2rem;display:flex;align-items:center;justify-content:center;min-height:100px;font-size:1rem;font-weight:800}
+.logo-preview.dark-bg{background:#0d0f1a}
+.logo-preview.light-bg{background:#f7f8fc}
+.logo-preview.white-bg{background:#ffffff}
+.logo-actions{padding:.75rem;border-top:1px solid var(--border);display:flex;gap:.5rem}
+.dl-btn{flex:1;padding:.45rem .6rem;border:1px solid var(--border);border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer;background:#fff;color:var(--text);text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.3rem;transition:.15s}
+.dl-btn:hover{background:var(--bg);border-color:#c7d2fe;color:var(--primary)}
+
+/* Typography */
+.type-row{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:.75rem}
+.type-sample{line-height:1.4;color:var(--text)}
+.type-meta{font-size:.78rem;color:var(--muted);margin-top:.4rem;font-family:monospace}
+
+/* Boilerplate */
+.boilerplate-box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;position:relative}
+.boilerplate-box p{color:#374151;font-size:.92rem;line-height:1.75}
+.copy-float{position:absolute;top:1rem;right:1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.35rem .75rem;font-size:.75rem;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}
+.copy-float:hover{color:var(--primary);border-color:#c7d2fe}
+
+/* Timeline */
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:.5rem;bottom:.5rem;width:2px;background:linear-gradient(180deg,var(--primary),#c7d2fe)}
+.tl-item{position:relative;padding-bottom:1.5rem}
+.tl-dot{position:absolute;left:-1.75rem;top:.35rem;width:10px;height:10px;border-radius:50%;background:var(--primary);border:2px solid #fff;box-shadow:0 0 0 2px var(--primary)}
+.tl-date{font-size:.75rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.tl-text{font-size:.9rem;color:var(--text);font-weight:600}
+.tl-sub{font-size:.82rem;color:var(--muted)}
+
+/* Contact */
+.contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.contact-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem}
+.contact-card i{font-size:1.4rem;color:var(--primary);margin-bottom:.75rem;display:block}
+.contact-card h3{font-size:.92rem;font-weight:700;margin-bottom:.3rem}
+.contact-card p{font-size:.83rem;color:var(--muted);margin-bottom:.6rem;line-height:1.5}
+.contact-card a{color:var(--primary);font-weight:600;font-size:.85rem;text-decoration:none}
+
+/* Badges */
+.badge-row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.badge-item{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.5rem 1rem;font-size:.82rem;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/" class="logo"><i class="fas fa-file-pdf"></i> MirPDF</a>
+      <nav class="nav">
+        <a href="/about.html"   class="nav-link">Hakkımızda</a>
+        <a href="/contact.html" class="nav-link">İletişim</a>
+        <a href="/tools/"       class="nav-link">Araçlar</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="press-hero">
+  <div class="container">
+    <div class="eyebrow"><i class="fas fa-newspaper"></i> &nbsp; Basın & Medya Kiti</div>
+    <h1>MirPDF Medya Kaynakları</h1>
+    <p>Logo varlıkları, renk paleti, marka yönergeleri ve basın iletişim bilgilerini bu sayfada bulabilirsiniz.</p>
+    <a href="mailto:basin@mirpdf.com" class="press-contact-pill">
+      <i class="fas fa-envelope"></i> basin@mirpdf.com
+    </a>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- Temel İstatistikler -->
+  <section class="press-section">
+    <h2 class="section-title">Temel İstatistikler</h2>
+    <p class="section-sub">Güncel veriler için basin@mirpdf.com adresine yazabilirsiniz.</p>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">19+</div><div class="stat-lbl">PDF Aracı</div></div>
+      <div class="stat-card"><div class="stat-num">%100</div><div class="stat-lbl">Tarayıcı Tabanlı İşlem</div></div>
+      <div class="stat-card"><div class="stat-num">60+</div><div class="stat-lbl">SEO Makalesi</div></div>
+      <div class="stat-card"><div class="stat-num">KVKK</div><div class="stat-lbl">Uyumlu</div></div>
+      <div class="stat-card"><div class="stat-num">TR</div><div class="stat-lbl">Birincil Pazar</div></div>
+      <div class="stat-card"><div class="stat-num">2024</div><div class="stat-lbl">Kuruluş Yılı</div></div>
+    </div>
+  </section>
+
+  <!-- Renk Paleti -->
+  <section class="press-section">
+    <h2 class="section-title">Renk Paleti</h2>
+    <p class="section-sub">Renk değerlerini kopyalamak için üstüne tıklayın.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#6366f1"></div>
+        <div class="color-info">
+          <div class="color-name">Primary / İndigo</div>
+          <div class="color-hex" onclick="copyColor(this,'#6366f1')">#6366f1</div>
+          <div class="color-hex" onclick="copyColor(this,'rgb(99,102,241)')">rgb(99, 102, 241)</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#4f46e5"></div>
+        <div class="color-info">
+          <div class="color-name">Primary Dark</div>
+          <div class="color-hex" onclick="copyColor(this,'#4f46e5')">#4f46e5</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#8b5cf6"></div>
+        <div class="color-info">
+          <div class="color-name">Secondary / Mor</div>
+          <div class="color-hex" onclick="copyColor(this,'#8b5cf6')">#8b5cf6</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#0d0f1a"></div>
+        <div class="color-info">
+          <div class="color-name">Koyu / Dark</div>
+          <div class="color-hex" onclick="copyColor(this,'#0d0f1a')">#0d0f1a</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#10b981"></div>
+        <div class="color-info">
+          <div class="color-name">Success / Yeşil</div>
+          <div class="color-hex" onclick="copyColor(this,'#10b981')">#10b981</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#f7f8fc;border-top:1px solid #e3e6f0"></div>
+        <div class="color-info">
+          <div class="color-name">Arka Plan</div>
+          <div class="color-hex" onclick="copyColor(this,'#f7f8fc')">#f7f8fc</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tipografi -->
+  <section class="press-section">
+    <h2 class="section-title">Tipografi</h2>
+    <div class="type-row">
+      <div class="type-sample" style="font-size:2rem;font-weight:800;font-family:'Figtree',sans-serif">Aa — Figtree Bold 800</div>
+      <div class="type-meta">font-family: 'Figtree', sans-serif &nbsp;|&nbsp; weight: 800 &nbsp;|&nbsp; Google Fonts</div>
+    </div>
+    <div class="type-row">
+      <div class="type-sample" style="font-size:1.1rem;font-weight:600;font-family:'Figtree',sans-serif">Başlıklar ve alt başlıklar — Figtree SemiBold 600</div>
+      <div class="type-meta">font-weight: 600</div>
+    </div>
+    <div class="type-row">
+      <div class="type-sample" style="font-size:1rem;font-weight:400;font-family:'Figtree',sans-serif">Gövde metni ve açıklamalar — Figtree Regular 400 — MirPDF, Türkiye'nin PDF işleme platformudur.</div>
+      <div class="type-meta">font-weight: 400 &nbsp;|&nbsp; line-height: 1.6</div>
+    </div>
+  </section>
+
+  <!-- Logo Varlıkları -->
+  <section class="press-section">
+    <h2 class="section-title">Logo Varlıkları</h2>
+    <p class="section-sub">Logolar SVG formatındadır, her çözünürlükte net görüntülenir. Üçüncü taraf kullanımında lütfen orijinal renkleri ve oranları koruyun.</p>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <div class="logo-preview light-bg" style="color:#6366f1;font-size:1.3rem">
+          <i class="fas fa-file-pdf" style="margin-right:.4rem"></i> MirPDF
+        </div>
+        <div class="logo-actions">
+          <a href="/assets/brand/mirpdf-logo-color.svg"  class="dl-btn" download><i class="fas fa-download"></i> SVG</a>
+          <a href="/assets/brand/mirpdf-logo-color.png"  class="dl-btn" download><i class="fas fa-download"></i> PNG</a>
+        </div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-preview dark-bg" style="color:#fff;font-size:1.3rem">
+          <i class="fas fa-file-pdf" style="margin-right:.4rem"></i> MirPDF
+        </div>
+        <div class="logo-actions">
+          <a href="/assets/brand/mirpdf-logo-white.svg"  class="dl-btn" download><i class="fas fa-download"></i> SVG</a>
+          <a href="/assets/brand/mirpdf-logo-white.png"  class="dl-btn" download><i class="fas fa-download"></i> PNG</a>
+        </div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-preview white-bg" style="color:#0d0f1a;font-size:1.3rem;border-bottom:1px solid #e3e6f0">
+          <i class="fas fa-file-pdf" style="margin-right:.4rem;color:#6366f1"></i> MirPDF
+        </div>
+        <div class="logo-actions">
+          <a href="/assets/brand/mirpdf-logo-dark.svg"   class="dl-btn" download><i class="fas fa-download"></i> SVG</a>
+          <a href="/assets/brand/mirpdf-logo-dark.png"   class="dl-btn" download><i class="fas fa-download"></i> PNG</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1rem">
+      <i class="fas fa-info-circle"></i>
+      Logo dosyaları için basin@mirpdf.com adresine yazın.
+    </p>
+  </section>
+
+  <!-- Marka Yönergeleri -->
+  <section class="press-section">
+    <h2 class="section-title">Marka Kullanım Yönergeleri</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:1.25rem">
+        <div style="font-weight:700;color:#15803d;margin-bottom:.75rem"><i class="fas fa-check-circle"></i> Yapabilirsiniz</div>
+        <ul style="list-style:none;padding:0;font-size:.85rem;color:#374151;line-height:2">
+          <li>✅ Haber veya makalelerde "MirPDF" adını kullanabilirsiniz</li>
+          <li>✅ Logolarımızı editoryal içeriklerde kullanabilirsiniz</li>
+          <li>✅ Ürün ekran görüntüsü alıp yayınlayabilirsiniz</li>
+          <li>✅ "PDF aracı" veya "PDF platformu" olarak tanımlayabilirsiniz</li>
+        </ul>
+      </div>
+      <div style="background:#fef2f2;border:1px solid #fca5a5;border-radius:14px;padding:1.25rem">
+        <div style="font-weight:700;color:#dc2626;margin-bottom:.75rem"><i class="fas fa-times-circle"></i> Yapamazsınız</div>
+        <ul style="list-style:none;padding:0;font-size:.85rem;color:#374151;line-height:2">
+          <li>❌ Logolarımızı değiştiremez veya yeniden renklendirip yapamazsınız</li>
+          <li>❌ MirPDF'i rakip ürünlerle karıştırıcı şekilde sunamazsınız</li>
+          <li>❌ Marka adını ticari ürün adı olarak kullanamazsınız</li>
+          <li>❌ Logolarımızı resmi bağlantı izlenimi verecek şekilde kullanamazsınız</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boilerplate -->
+  <section class="press-section">
+    <h2 class="section-title">Hazır Açıklama Metni</h2>
+    <p class="section-sub">Haberlerinizde veya makalelerinizde kullanabilirsiniz.</p>
+
+    <div class="boilerplate-box" style="margin-bottom:1rem">
+      <button class="copy-float" onclick="copyBoilerplate('bp1',this)"><i class="fas fa-copy"></i> Kopyala</button>
+      <p id="bp1"><strong>Kısa versiyon (50 kelime):</strong><br>
+        MirPDF, Türkiye odaklı çevrimiçi PDF işleme platformudur. PDF sıkıştırma, birleştirme, bölme, dönüştürme ve düzenleme gibi 19 farklı araç sunan MirPDF; KVKK uyumlu altyapısı ve tarayıcı tabanlı çalışma modeliyle kullanıcıların dosyalarını sunuculara yüklemeden güvenle işlemesine olanak tanır.
+      </p>
+    </div>
+
+    <div class="boilerplate-box">
+      <button class="copy-float" onclick="copyBoilerplate('bp2',this)"><i class="fas fa-copy"></i> Kopyala</button>
+      <p id="bp2"><strong>Uzun versiyon (120 kelime):</strong><br>
+        MirPDF (mirpdf.com), Türkiye'nin önde gelen çevrimiçi PDF araçları platformudur. PDF sıkıştırma, birleştirme, bölme, Word/Excel/PowerPoint dönüşümü, OCR metin tanıma, dijital imza, filigran ekleme ve sayfa yönetimi dahil 19 farklı araç sunar. Platform; Cloudflare altyapısı üzerinde çalışarak düşük gecikme ve yüksek güvenilirlik sağlar. Tarayıcı tabanlı araçlar sayesinde kullanıcılar dosyalarını yerel olarak işleyebilir; sunucu tarafı işlemler için ise dosyalar 1 saat içinde otomatik olarak silinir. KVKK ve GDPR uyumlu gizlilik yaklaşımıyla kurumsal ve bireysel kullanıcılara hizmet veren MirPDF, smallpdf ve iLovePDF'e Türkçe dilinde yerel bir alternatif sunar.
+      </p>
+    </div>
+  </section>
+
+  <!-- Kilometre Taşları -->
+  <section class="press-section">
+    <h2 class="section-title">Kilometre Taşları</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024 — Kuruluş</div>
+        <div class="tl-text">MirPDF'in temelleri atıldı</div>
+        <div class="tl-sub">İlk PDF araçları ve Cloudflare Workers altyapısı kuruldu</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Erken 2025</div>
+        <div class="tl-text">19 araç, ödeme sistemi ve üyelik entegrasyonu</div>
+        <div class="tl-sub">Stripe, JWT auth, Cloudflare D1 + R2 + KV altyapısı tamamlandı</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2025 Q2</div>
+        <div class="tl-text">VPS tabanlı Office dönüşüm motoru eklendi</div>
+        <div class="tl-sub">Word, Excel ve PowerPoint → PDF sunucu tarafında işleniyor</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026</div>
+        <div class="tl-text">Geliştirici API, çok dil desteği ve v22 tam platform</div>
+        <div class="tl-sub">60+ SEO makalesi, 4 dil (TR/EN/DE/FR/ES), geliştirici API portalı</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medya İletişim -->
+  <section class="press-section">
+    <h2 class="section-title">Medya İletişim</h2>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <i class="fas fa-newspaper"></i>
+        <h3>Basın Soruları</h3>
+        <p>Röportaj talepleri, haber doğrulama ve basın bülteni istekleri için</p>
+        <a href="mailto:basin@mirpdf.com">basin@mirpdf.com</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Ortaklık & İş Birliği</h3>
+        <p>Entegrasyon ortaklıkları, içerik iş birlikleri ve kurumsal görüşmeler için</p>
+        <a href="mailto:kurumsal@mirpdf.com">kurumsal@mirpdf.com</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Güvenlik Açıklamaları</h3>
+        <p>Güvenlik açıklarını bildirmek için lütfen önce güvenlik sayfamızı inceleyin</p>
+        <a href="/legal/security.html">Güvenlik Politikası →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem">
+      <div class="badge-row">
+        <div class="badge-item"><i class="fas fa-clock" style="color:var(--primary)"></i> Yanıt süresi: 48 iş saati</div>
+        <div class="badge-item"><i class="fas fa-language" style="color:var(--primary)"></i> TR & EN</div>
+        <div class="badge-item"><i class="fas fa-file-pdf" style="color:var(--primary)"></i> Basın bülteni talep edilebilir</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer style="background:#0d0f1a;color:#fff;padding:2.5rem 0;margin-top:0">
+  <div class="container" style="text-align:center">
+    <p style="color:#94a3b8;font-size:.88rem">
+      © 2026 MirPDF &nbsp;·&nbsp;
+      <a href="/legal/privacy.html" style="color:#94a3b8">Gizlilik</a> &nbsp;·&nbsp;
+      <a href="/legal/terms.html"   style="color:#94a3b8">Şartlar</a> &nbsp;·&nbsp;
+      <a href="/about.html"         style="color:#94a3b8">Hakkımızda</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+function copyColor(el, val) {
+  navigator.clipboard.writeText(val).then(() => {
+    const orig = el.textContent;
+    el.textContent = '✓ Kopyalandı!';
+    el.style.color = '#10b981';
+    setTimeout(() => { el.textContent = orig; el.style.color = ''; }, 1800);
+  });
+}
+
+function copyBoilerplate(id, btn) {
+  const el = document.getElementById(id);
+  const text = el.innerText.replace(/^(Kısa|Uzun) versiyon[^:]+:\n/, '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Kopyalandı!';
+    btn.style.color = '#10b981';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.color = ''; }, 2000);
+  });
+}
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

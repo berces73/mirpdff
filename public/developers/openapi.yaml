@@ -1,0 +1,409 @@
+openapi: 3.0.3
+info:
+  title: MirPDF API
+  description: |
+    MirPDF PDF işleme API'si. Kredi bazlı erişim modeli.
+    Kimlik doğrulama: Authorization: Bearer <JWT>
+    Anonim kullanım: imzalı cid cookie ile
+  version: "1.0.0"
+  contact:
+    email: destek@mirpdf.com
+
+servers:
+  - url: https://mirpdf.com
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Error:
+      type: object
+      properties:
+        ok:      { type: boolean, example: false }
+        error:   { type: string }
+        message: { type: string }
+    JobStatusData:
+      type: object
+      properties:
+        job_id:        { type: string, format: uuid }
+        tool:          { type: string }
+        status:        { type: string, enum: [pending, running, done, failed] }
+        download_url:  { type: string, nullable: true }
+        error_message: { type: string, nullable: true }
+        created_at:    { type: integer }
+        updated_at:    { type: integer }
+
+paths:
+
+  /api/auth/register:
+    post:
+      summary: Kayıt ol
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:    { type: string, format: email }
+                password: { type: string, minLength: 10 }
+      responses:
+        "200": { description: "JWT token döner" }
+        "400": { description: "Geçersiz şifre/email" }
+        "409": { description: "Email zaten kayıtlı" }
+        "429": { description: "Rate limit" }
+
+  /api/auth/login:
+    post:
+      summary: Giriş yap
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:    { type: string, format: email }
+                password: { type: string }
+      responses:
+        "200": { description: "JWT + refresh_token cookie" }
+        "401": { description: "Hatalı giriş" }
+        "403": { description: "Email doğrulanmamış" }
+        "429": { description: "Rate limit" }
+
+  /api/auth/logout:
+    post:
+      summary: Çıkış yap
+      tags: [Auth]
+      security: [{ bearerAuth: [] }]
+      responses:
+        "200": { description: "Refresh token iptal edildi" }
+
+  /api/auth/refresh:
+    post:
+      summary: Access token yenile
+      tags: [Auth]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token: { type: string }
+      responses:
+        "200": { description: "Yeni JWT" }
+        "401": { description: "Refresh token geçersiz/süresi dolmuş" }
+
+  /api/auth/forgot:
+    post:
+      summary: Şifre sıfırlama e-postası
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email]
+              properties:
+                email: { type: string, format: email }
+      responses:
+        "200": { description: "Her zaman 200 döner (enum saldırısını önler)" }
+
+  /api/auth/reset:
+    post:
+      summary: Şifre sıfırla
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [token, password]
+              properties:
+                token:    { type: string }
+                password: { type: string, minLength: 10 }
+      responses:
+        "200": { description: "Şifre güncellendi" }
+        "400": { description: "Token geçersiz/süresi dolmuş" }
+
+  /api/auth/verify:
+    post:
+      summary: E-posta doğrula
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [token]
+              properties:
+                token: { type: string }
+      responses:
+        "200": { description: "E-posta doğrulandı" }
+        "400": { description: "Token geçersiz" }
+
+  /api/me:
+    get:
+      summary: Oturum bilgisi ve kredi bakiyesi
+      tags: [Auth]
+      security: [{ bearerAuth: [] }]
+      responses:
+        "200":
+          description: Kullanıcı bilgisi
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  data:
+                    type: object
+                    properties:
+                      sub:            { type: string }
+                      email:          { type: string }
+                      role:           { type: string, enum: [free, basic, pro] }
+                      email_verified: { type: boolean }
+                      balance:        { type: integer, nullable: true }
+
+  /api/credits/status:
+    get:
+      summary: Kredi bakiyesi
+      tags: [Krediler]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:        { type: boolean }
+                  remaining: { type: integer }
+
+  /api/credits/history:
+    get:
+      summary: İşlem geçmişi (son 100)
+      tags: [Krediler]
+      security: [{ bearerAuth: [] }]
+      responses:
+        "200": { description: "İşlem listesi" }
+
+  /api/compress:
+    post:
+      summary: PDF sıkıştır (3 kredi)
+      tags: [Araçlar]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:  { type: string, format: binary, description: "PDF, maks 50 MB" }
+                level: { type: string, enum: [screen, ebook, printer, recommended], default: recommended }
+                opId:  { type: string, description: "İdempotency key" }
+      responses:
+        "202": { description: "İş kuyruğa alındı — jobId döner" }
+        "402": { description: "Yetersiz kredi" }
+        "413": { description: "Dosya çok büyük" }
+        "415": { description: "Geçersiz dosya türü (PDF gerekli)" }
+        "429": { description: "Rate limit" }
+
+  /api/pdf-to-word:
+    post:
+      summary: PDF Word'e dönüştür (4 kredi)
+      tags: [Araçlar]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:   { type: string, format: binary }
+                format: { type: string, enum: [docx, odt], default: docx }
+      responses:
+        "202": { description: "İş kuyruğa alındı" }
+        "402": { description: "Yetersiz kredi" }
+
+  /api/ocr:
+    post:
+      summary: OCR — taranmış PDF'den metin (4 kredi)
+      tags: [Araçlar]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file: { type: string, format: binary }
+                lang: { type: string, default: "tur+eng", description: "Tesseract dil kodu" }
+      responses:
+        "202": { description: "İş kuyruğa alındı" }
+        "402": { description: "Yetersiz kredi" }
+
+  /api/jobs/{jobId}/status:
+    get:
+      summary: İş durumu sorgula
+      tags: [İşler]
+      parameters:
+        - in: path
+          name: jobId
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200":
+          description: İş durumu
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:   { type: boolean }
+                  data: { $ref: "#/components/schemas/JobStatusData" }
+        "404": { description: "İş bulunamadı" }
+
+  /api/jobs/{jobId}/result:
+    get:
+      summary: İş çıktısını indir
+      tags: [İşler]
+      parameters:
+        - in: path
+          name: jobId
+          required: true
+          schema: { type: string, format: uuid }
+        - in: query
+          name: t
+          required: false
+          schema: { type: string }
+          description: "İmzalı download token (CDN caching için)"
+      responses:
+        "200":
+          description: Dosya içeriği
+          content:
+            application/octet-stream: {}
+        "409": { description: "İş henüz tamamlanmadı" }
+        "404": { description: "İş bulunamadı" }
+
+  /api/batch-submit:
+    post:
+      summary: Toplu dosya işlemi — Pro/Enterprise (maks 20 dosya)
+      tags: [Toplu İşlem]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [tool, files]
+              properties:
+                tool:  { type: string, enum: [compress-strong, pdf-to-word, ocr] }
+                files: { type: array, items: { type: string, format: binary } }
+      responses:
+        "200":
+          description: Batch oluşturuldu
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:      { type: boolean }
+                  batchId: { type: string, format: uuid }
+                  jobs:    { type: array, items: { type: object } }
+        "402": { description: "Yetersiz kredi" }
+        "413": { description: "Dosya limiti aşıldı" }
+
+  /api/batches/{batchId}/status:
+    get:
+      summary: Batch durum sorgula
+      tags: [Toplu İşlem]
+      parameters:
+        - in: path
+          name: batchId
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200": { description: "Tüm işlerin durumu" }
+
+  /api/batches/{batchId}/zip:
+    get:
+      summary: Tamamlanan batch çıktılarını ZIP indir
+      tags: [Toplu İşlem]
+      parameters:
+        - in: path
+          name: batchId
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200":
+          description: ZIP dosyası
+          content:
+            application/zip: {}
+        "400": { description: "Henüz tamamlanan çıktı yok" }
+
+  /api/billing/plans:
+    get:
+      summary: Ödeme planları
+      tags: [Ödeme]
+      responses:
+        "200": { description: "Plan listesi" }
+
+  /api/billing/checkout:
+    post:
+      summary: Stripe Checkout oturumu oluştur
+      tags: [Ödeme]
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [plan]
+              properties:
+                plan: { type: string, enum: [credits100, credits500, sub_basic, sub_pro] }
+      responses:
+        "200": { description: "Stripe Checkout URL" }
+
+  /api/billing/portal:
+    post:
+      summary: Stripe Customer Portal
+      tags: [Ödeme]
+      security: [{ bearerAuth: [] }]
+      responses:
+        "200": { description: "Portal URL" }
+        "404": { description: "Aktif abonelik yok" }
+
+  /api/contact:
+    post:
+      summary: İletişim formu (5 mesaj/saat/IP)
+      tags: [Destek]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, message]
+              properties:
+                name:    { type: string, maxLength: 100 }
+                email:   { type: string, format: email }
+                subject: { type: string }
+                message: { type: string, minLength: 10, maxLength: 3000 }
+      responses:
+        "200": { description: "Mesaj iletildi" }
+        "400": { description: "Geçersiz istek" }
+        "429": { description: "Rate limit" }

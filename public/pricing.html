@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Fiyatlandırma — MirPDF</title>
+  <meta name="description" content="MirPDF fiyatlandırma planları. Ücretsiz günlük kullanım veya Pro plan ile sınırsız PDF işlemi Tarayıcıdan çalışır, kayıt gerekmez.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mirpdf.com/pricing"/>
+  <link rel="alternate" hreflang="tr" href="https://mirpdf.com/pricing"/>
+  <link rel="alternate" hreflang="x-default" href="https://mirpdf.com/pricing"/>
+  <link rel="alternate" hreflang="en" href="https://mirpdf.com/en/pricing"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <meta property="og:title" content="Fiyatlandırma — MirPDF"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mirpdf.com/pricing"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Fiyatlandırma — MirPDF"/>
+  <meta name="twitter:description" content="MirPDF fiyatlandırma planları. Ücretsiz günlük kullanım veya Pro plan ile sınırsız PDF işlemi."/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <script defer src="/assets/js/attribution.js"></script>
+<style>
+/* ── BASE ──────────────────────────────────────────── */
+:root{--bg:#fff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--radius:18px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* ── HEADER ────────────────────────────────────────── */
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:background .15s,color .15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+.nav-link--active{color:var(--text)!important;font-weight:700!important}
+.btn-premium{background:var(--text)!important;color:#fff!important;padding:.45rem 1.2rem!important;border-radius:10px;font-weight:700!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:67px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}.main-nav.show{display:flex}.main-nav a{width:100%;padding:.65rem 1rem}}
+
+/* ── PAGE HERO ─────────────────────────────────────── */
+.page-hero{text-align:center;padding:5rem 0 3rem;background:var(--bg-soft);border-bottom:1px solid var(--border)}
+.page-hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;letter-spacing:-.025em;margin-bottom:.75rem}
+.page-hero p{color:var(--muted);max-width:480px;margin:0 auto}
+.hero-link{color:#6366f1;font-weight:600}
+
+/* ── TRUST BADGES ──────────────────────────────────── */
+.hero-badges{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.25rem;margin-top:1.75rem;font-size:.85rem;color:var(--muted)}
+.trust-badge{display:flex;align-items:center;gap:.4rem}
+.badge-sep{color:var(--border)}
+.trust-strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2rem}
+.trust-strip .trust-badge{font-size:.82rem;color:var(--muted)}
+
+/* ── BILLING TOGGLE ────────────────────────────────── */
+.billing-toggle-wrap{display:flex;align-items:center;justify-content:center;gap:.85rem;margin:2.5rem 0 3rem;font-size:.9rem;font-weight:600;color:var(--muted)}
+.toggle{width:52px;height:28px;background:var(--border);border-radius:100px;position:relative;cursor:pointer;transition:background .2s;border:none}
+.toggle::after{content:'';position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.toggle.annual{background:var(--text)}.toggle.annual::after{left:28px}
+
+/* ── PLAN CARDS ────────────────────────────────────── */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;max-width:1100px;margin:0 auto;padding-bottom:5rem}
+.plan-card{background:var(--bg);border:1.5px solid var(--border);border-radius:22px;padding:2.25rem 2rem}
+.plan-card.featured{border-color:#0d0f1a;box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.plan-tag{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem}
+.plan-tag--row{display:flex;align-items:center;justify-content:space-between}
+.plan-name{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;margin-bottom:.3rem}
+.plan-price{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:1rem 0 .3rem}
+.plan-price sup{font-size:1.1rem;font-weight:600;vertical-align:super}
+.plan-price--md{font-size:2rem}
+.plan-price--md sup{font-size:.9rem}
+.plan-period{font-size:.82rem;color:var(--muted)}
+.plan-note{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+.plan-annual-price{display:none;font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:1rem 0 .3rem}
+.plan-annual-price sup{font-size:1.1rem;font-weight:600;vertical-align:super}
+.annual-billing .plan-monthly-price{display:none}
+.annual-billing .plan-annual-price{display:block}
+.plan-divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.75rem}
+.plan-features li{display:flex;align-items:center;gap:.7rem;font-size:.87rem;color:var(--muted)}
+.plan-features li i{color:#10b981;font-size:.8rem;flex-shrink:0}
+.plan-features li.muted-feat{color:#94a3b8}
+.plan-features li.muted-feat i{color:#cbd5e1}
+.plan-btn{display:block;width:100%;padding:.85rem;border-radius:12px;font-family:'Figtree',sans-serif;font-weight:700;font-size:.95rem;text-align:center;cursor:pointer;border:2px solid var(--border);background:var(--bg-soft);color:var(--text);transition:opacity .15s;text-decoration:none}
+.plan-btn:hover{opacity:.85}
+.plan-btn--dark{background:#0d0f1a;color:#fff;border-color:#0d0f1a;font-size:1rem;padding:1rem}
+.plan-btn--blue{background:#2563eb;color:#fff;border-color:#2563eb}
+.plan-btn--indigo{background:#6366f1;color:#fff;border-color:#6366f1}
+.plan-badge{font-size:.65rem;font-weight:800;padding:.2rem .65rem;border-radius:5px;letter-spacing:.04em}
+.plan-badge--dark{background:#0d0f1a;color:#fff}
+.plan-badge--blue{background:#2563eb;color:#fff;padding:.15rem .5rem}
+.plan-price-custom{font-size:1.5rem;font-weight:800;margin:1rem 0 .3rem}
+
+/* ── MANAGE SECTION ────────────────────────────────── */
+.manage-section{text-align:center;margin-bottom:2rem}
+.manage-btn{background:var(--bg-soft);border:1.5px solid var(--border);color:var(--text);padding:.8rem 1.8rem;border-radius:12px;font-family:'Figtree',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s}
+.manage-btn:hover{background:var(--bg-mute)}
+.manage-note{color:var(--muted);margin-bottom:12px}
+
+/* ── SELECTION GUIDE ───────────────────────────────── */
+.guide-strip{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.guide-card{border-radius:12px;padding:.75rem 1.25rem;font-size:.85rem}
+.guide-card--free{background:#f0fdf4;border:1px solid #86efac}
+.guide-card--pro{background:#eff6ff;border:1px solid #93c5fd}
+.guide-card--ent{background:#f5f3ff;border:1px solid #c4b5fd}
+
+/* ── SECTION HEADINGS ──────────────────────────────── */
+.section-title{text-align:center;font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+.section-sub{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+
+/* ── COMPARISON TABLE ──────────────────────────────── */
+.cmp-wrap{overflow-x:auto;border-radius:18px;border:1.5px solid var(--border);background:#fff}
+.cmp-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.cmp-th-feat{text-align:left;padding:1rem 1.25rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);width:50%}
+.cmp-th{text-align:center;padding:1rem;font-weight:700;color:var(--text)}
+.cmp-th--pro{font-weight:800;color:#0d0f1a;background:#f0f0f0}
+.cmp-th--ent{font-weight:800;color:#6366f1;background:#f5f3ff}
+.cmp-th__badge{font-size:.68rem;background:#0d0f1a;color:#fff;padding:.15rem .45rem;border-radius:4px;vertical-align:middle;margin-left:.3rem}
+.cmp-cat{background:#f8fafc}
+.cmp-cat td{padding:.55rem 1.25rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.cmp-cat--sep{border-top:2px solid var(--border)}
+.cmp-row{border-top:1px solid var(--border)}
+.cmp-td{padding:.75rem 1.25rem}
+.cmp-td--c{text-align:center}
+.cmp-td--pro{text-align:center;background:#f0f0f0}
+.cmp-td--ent{text-align:center;background:#f5f3ff}
+.cmp-td--pro.bold{font-weight:700}
+.cmp-td--ent.bold{font-weight:700;color:#6366f1}
+.icon-ok{color:#10b981}
+.icon-no{color:#cbd5e1}
+.limit-free{color:#dc2626;font-size:.82rem;font-weight:600}
+.limit-muted{color:var(--muted);font-size:.82rem}
+.cmp-cta-row{border-top:2px solid var(--border)}
+.cmp-cta-td{text-align:center;padding:1rem}
+.cmp-cta-td--pro{text-align:center;padding:1rem;background:#f0f0f0}
+.cmp-cta-td--ent{text-align:center;padding:1rem;background:#f5f3ff}
+.btn-outline-sm{display:inline-block;padding:.6rem 1.4rem;border-radius:10px;border:1.5px solid var(--border);color:var(--text);font-weight:700;font-size:.85rem;text-decoration:none}
+.btn-dark-sm{padding:.6rem 1.6rem;border-radius:10px;border:none;background:#0d0f1a;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn-indigo-sm{display:inline-block;padding:.6rem 1.4rem;border-radius:10px;background:#6366f1;color:#fff;font-weight:700;font-size:.85rem;text-decoration:none}
+
+/* ── GUARANTEE CARDS ───────────────────────────────── */
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.trust-card{display:flex;gap:.85rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem}
+.trust-card__icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-card__icon--green{background:#dcfce7;color:#16a34a}
+.trust-card__icon--blue{background:#dbeafe;color:#1d4ed8}
+.trust-card__icon--purple{background:#ede9fe;color:#7c3aed}
+.trust-card__icon--orange{background:#ffedd5;color:#c2410c}
+.trust-card__title{font-size:.9rem;font-weight:700;margin-bottom:.2rem}
+.trust-card__body{font-size:.81rem;color:var(--muted);line-height:1.5}
+
+/* ── REFUND BOX ────────────────────────────────────── */
+.refund-box{margin-top:2rem;text-align:center;padding:1.25rem;background:#fff;border-radius:12px;border:1px solid var(--border);max-width:560px;margin-left:auto;margin-right:auto}
+.refund-box p{font-size:.85rem;color:#374151;line-height:1.6}
+.refund-box small{font-size:.78rem;color:#64748b}
+.refund-link{color:#6366f1;font-weight:600}
+
+/* ── CREDIT PACKAGES ───────────────────────────────── */
+.credit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:600px;margin:0 auto}
+.credit-card{background:#f7f8fc;border:1.5px solid var(--border);border-radius:16px;padding:1.5rem;text-align:center}
+.credit-card--featured{border-color:#0d0f1a;position:relative}
+.credit-card__badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#0d0f1a;color:#fff;font-size:.68rem;font-weight:800;padding:.2rem .7rem;border-radius:100px;white-space:nowrap}
+.credit-card__label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.5rem}
+.credit-card__amount{font-size:2rem;font-weight:800;margin-bottom:.2rem}
+.credit-card__amount span{font-size:1rem;font-weight:600;color:var(--muted)}
+.credit-card__price{font-size:1.6rem;font-weight:800;color:#0d0f1a;margin-bottom:.75rem}
+.credit-card__list{list-style:none;padding:0;font-size:.82rem;color:var(--muted);text-align:left;margin-bottom:1rem}
+.credit-card__list li{margin-bottom:.3rem}
+.credit-card__btn{width:100%;padding:.65rem;border-radius:10px;background:#0d0f1a;color:#fff;border:none;font-weight:700;font-size:.88rem;cursor:pointer;font-family:inherit}
+.credit-note{text-align:center;font-size:.78rem;color:var(--muted);margin-top:1rem}
+
+/* ── FAQ ───────────────────────────────────────────── */
+.faq-section{padding:5rem 0;background:var(--bg-soft)}
+.faq-section h2{font-family:'Instrument Serif',serif;font-size:2rem;font-weight:400;text-align:center;margin-bottom:2.5rem}
+.faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;padding:1.3rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:'Figtree',sans-serif;font-size:.94rem;font-weight:700;color:var(--text);text-align:left}
+.faq-q i{color:var(--muted);font-size:.78rem;transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{font-size:.85rem;color:var(--muted);line-height:1.68;padding:0 1.5rem 1.3rem;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* ── FOOTER DARK ───────────────────────────────────── */
+.footer-dark{background:#0d0f1a;color:rgba(255,255,255,.6);padding:2.5rem 2rem 1.5rem;margin-top:3rem}
+.footer-dark__inner{max-width:1200px;margin:0 auto}
+.footer-dark__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-dark__brand{color:#fff;font-weight:800;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
+.footer-dark__tagline{font-size:.84rem;line-height:1.6}
+.footer-dark__heading{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.85rem}
+.footer-dark__link{display:block;color:rgba(255,255,255,.6);text-decoration:none;font-size:.84rem;margin-bottom:.4rem}
+.footer-dark__bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-dark__lang{color:rgba(255,255,255,.5);text-decoration:none}
+@media(max-width:768px){.footer-dark__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-dark__grid{grid-template-columns:1fr}}
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr}.credit-grid{grid-template-columns:1fr}}
+</style>
+  <meta property="og:description" content="MirPDF fiyatlandırma planları. Ücretsiz günlük kullanım veya Pro plan ile sınırsız PDF işlemi Tarayıcıdan çalışır, kayıt gerekmez."/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat"><i class="fas fa-bars"></i></button>
+      <nav class="main-nav" id="mainNav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing" class="nav-link--active">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/login" class="nav-auth-link">Giriş Yap</a>
+        <a href="/register" class="btn-premium">Ücretsiz Kayıt</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Basit, şeffaf fiyatlandırma</h1>
+    <p>Tarayıcı araçları (birleştir, böl, döndür, filigran vb.) tamamen ücretsiz ve sınırsız. OCR ve PDF→Word için günlük 7 ücretsiz işlem veya Pro plan gerekir.</p>
+    <p style="margin-top:.5rem;font-size:.85rem">Ekip kullanımı için? <a href="/kurumsal/" class="hero-link">Kurumsal planı inceleyin →</a></p>
+    <div class="hero-badges">
+      <div class="trust-badge"><i class="fas fa-shield-alt" style="color:#10b981"></i><span>14 günlük iade süresi</span></div>
+      <span class="badge-sep">|</span>
+      <div class="trust-badge"><i class="fas fa-lock" style="color:#6366f1"></i><span>Stripe ile güvenli ödeme</span></div>
+      <span class="badge-sep">|</span>
+      <div class="trust-badge"><i class="fas fa-times-circle"></i><span>İstediğin zaman iptal</span></div>
+      <span class="badge-sep">|</span>
+      <div class="trust-badge"><i class="fas fa-file-shield" style="color:#f59e0b"></i><span>KVKK uyumlu</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="bannerArea" style="padding-top:2rem"></div>
+  <div id="manageSection" class="manage-section mir-hidden">
+    <p class="manage-note">Aktif Pro aboneliğiniz var.</p>
+    <button class="manage-btn" onclick="openPortal()"><i class="fas fa-cog"></i> Aboneliği Yönet / İptal Et</button>
+  </div>
+
+  <div class="billing-toggle-wrap">
+    <span id="lblMonthly" class="mir-text-base">Aylık</span>
+    <button class="toggle" id="billingToggle" role="switch" aria-checked="false" aria-label="Fatura dönemi seç"></button>
+    <span id="lblAnnual" class="mir-text-muted">Yıllık</span>
+  </div>
+
+  <div class="pricing-grid">
+
+    <!-- FREE -->
+    <div class="plan-card">
+      <div class="plan-tag">Ücretsiz</div>
+      <div class="plan-name">Başlangıç</div>
+      <div class="plan-monthly-price plan-price"><sup>₺</sup>0</div>
+      <div class="plan-annual-price plan-price"><sup>₺</sup>0</div>
+      <div class="plan-period">sonsuza kadar ücretsiz</div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><i class="fas fa-check"></i>Tüm tarayıcı tabanlı araçlar</li>
+        <li><i class="fas fa-check"></i>PDF Birleştir, Böl, Döndür, Sıkıştır</li>
+        <li><i class="fas fa-check"></i>JPG ↔ PDF dönüştürme</li>
+        <li><i class="fas fa-check"></i>Filigran, QR Kod, Kilit</li>
+        <li class="muted-feat"><i class="fas fa-times"></i>OCR/PDF→Word: günlük 7 işlem</li>
+        <li class="muted-feat"><i class="fas fa-times"></i>Toplu işlem yok</li>
+        <li class="muted-feat"><i class="fas fa-times"></i>Öncelikli kuyruk yok</li>
+      </ul>
+      <a href="/#tools" class="plan-btn">Ücretsiz Kullan</a>
+    </div>
+
+    <!-- PRO -->
+    <div class="plan-card featured">
+      <div class="plan-tag plan-tag--row">
+        <span class="mir-text-primary">Pro</span>
+        <span class="plan-badge plan-badge--dark">EN ÇOK SEÇİLEN</span>
+      </div>
+      <div class="plan-name">Profesyonel</div>
+      <div class="plan-monthly-price plan-price"><sup>₺</sup>79</div>
+      <div class="plan-annual-price plan-price"><sup>₺</sup>63</div>
+      <div class="plan-period">/ ay · <span id="billedNotePro">aylık faturalandırılır</span></div>
+      <div class="plan-note">KDV dahil · İstediğin zaman iptal</div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><i class="fas fa-check"></i>Tüm ücretsiz özellikler</li>
+        <li><i class="fas fa-check"></i>Sınırsız OCR ve PDF→Word</li>
+        <li><i class="fas fa-check"></i>Toplu işlem — 10 dosya aynı anda</li>
+        <li><i class="fas fa-check"></i>ZIP olarak toplu indirme</li>
+        <li><i class="fas fa-check"></i>Öncelikli sunucu</li>
+        <li><i class="fas fa-check"></i>E-posta desteği</li>
+        <li><i class="fas fa-check"></i>İstediğin zaman iptal</li>
+      </ul>
+      <button class="plan-btn plan-btn--dark" id="checkoutBtn" onclick="startCheckout()" style="font-family:'Figtree',sans-serif">
+        Hemen Pro'ya Geç — Sınırsız Başla →
+      </button>
+    </div>
+
+    <!-- MUHASEBECI -->
+    <div class="plan-card" style="border-color:#2563eb">
+      <div class="plan-tag plan-tag--row">
+        <span class="mir-text-primary">Muhasebeci</span>
+        <span class="plan-badge plan-badge--blue">BÜRO</span>
+      </div>
+      <div class="plan-name">Muhasebeci</div>
+      <div class="plan-monthly-price plan-price plan-price--md"><sup>₺</sup>249</div>
+      <div class="plan-annual-price plan-price plan-price--md"><sup>₺</sup>199</div>
+      <div class="plan-period">/ ay · <span id="billedNoteMuh">aylık faturalandırılır</span></div>
+      <div class="plan-note">KDV dahil · DPA dahil</div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><i class="fas fa-check"></i>Tüm Pro özellikleri</li>
+        <li><i class="fas fa-check"></i>3 ekip kullanıcısı</li>
+        <li><i class="fas fa-check"></i>Aylık 5.000 OCR / PDF→Word kredisi</li>
+        <li><i class="fas fa-check"></i>DPA + KVKK sözleşmesi</li>
+        <li><i class="fas fa-check"></i>Türkçe e-fatura</li>
+        <li><i class="fas fa-check"></i>Öncelikli destek</li>
+      </ul>
+      <button class="plan-btn plan-btn--blue" id="checkoutBtnMuh" onclick="startCheckoutMuh()" style="font-family:'Figtree',sans-serif">
+        Hemen Başla →
+      </button>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="plan-card" style="border-color:#6366f1">
+      <div class="plan-tag" style="color:#6366f1">Kurumsal</div>
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price-custom">Teklif ile</div>
+      <div class="plan-period">ekip büyüklüğüne göre</div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><i class="fas fa-check"></i>Tüm Pro özellikleri</li>
+        <li><i class="fas fa-check"></i>Özel dosya boyutu limitleri</li>
+        <li><i class="fas fa-check"></i>Özel kredi limiti</li>
+        <li><i class="fas fa-check"></i>API tam erişimi</li>
+        <li><i class="fas fa-check"></i>Ekip yönetimi + merkezi fatura</li>
+        <li><i class="fas fa-check"></i>SLA garantisi</li>
+        <li><i class="fas fa-check"></i>DPA + KVKK dokümanları</li>
+        <li><i class="fas fa-check"></i>Adanmış teknik destek</li>
+      </ul>
+      <a href="/kurumsal/#iletisim" class="plan-btn plan-btn--indigo">
+        Teklif İste →
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Seçim rehberi -->
+<section style="padding:1rem 0 3rem;background:#fff">
+  <div class="container" style="max-width:900px;text-align:center">
+    <div style="text-align:center;margin-bottom:1.25rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Hangisini seçmeliyim?</div>
+    <div class="guide-strip">
+      <div class="guide-card guide-card--free"><strong style="color:#15803d">✓ Ücretsiz</strong><br><span style="font-size:.8rem;font-weight:400">Ayda 10'dan az PDF işliyorsan</span></div>
+      <div class="guide-card guide-card--pro"><strong style="color:#1d4ed8">✓ Pro</strong><br><span style="font-size:.8rem;font-weight:400">Düzenli PDF işin varsa</span></div>
+      <div class="guide-card guide-card--ent"><strong style="color:#6d28d9">Enterprise</strong> → Ekiple kullanacaksan</div>
+    </div>
+  </div>
+</section>
+
+<!-- Karşılaştırma tablosu -->
+<section style="padding:2rem 0 4rem">
+  <div class="container">
+    <h2 class="section-title">Tüm Özellikler</h2>
+    <p class="section-sub">Planları detaylı karşılaştırın</p>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border)">
+            <th class="cmp-th-feat">Özellik</th>
+            <th class="cmp-th">Ücretsiz</th>
+            <th class="cmp-th cmp-th--pro">Pro <span class="cmp-th__badge">₺79/ay</span></th>
+            <th class="cmp-th cmp-th--ent">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cmp-cat"><td colspan="4">📄 Temel PDF Araçları</td></tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">PDF Birleştir, Böl, Döndür, Sıkıştır</td>
+            <td class="cmp-td--c"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent"><i class="fas fa-check icon-ok"></i></td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">JPG ↔ PDF dönüştürme</td>
+            <td class="cmp-td--c"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent"><i class="fas fa-check icon-ok"></i></td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">Filigran, QR Kod, İmzala, Kilitle</td>
+            <td class="cmp-td--c"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent"><i class="fas fa-check icon-ok"></i></td>
+          </tr>
+          <tr class="cmp-cat cmp-cat--sep"><td colspan="4">⚡ Sunucu Gerektiren Araçlar</td></tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">OCR (metin tanıma)</td>
+            <td class="cmp-td--c limit-free">Günlük 7</td>
+            <td class="cmp-td--pro bold">Sınırsız</td>
+            <td class="cmp-td--ent bold">Sınırsız</td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">PDF → Word dönüştürme</td>
+            <td class="cmp-td--c limit-free">Günlük 7</td>
+            <td class="cmp-td--pro bold">Sınırsız</td>
+            <td class="cmp-td--ent bold">Sınırsız</td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">Toplu dosya işlemi</td>
+            <td class="cmp-td--c"><i class="fas fa-times icon-no"></i></td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent"><i class="fas fa-check icon-ok"></i></td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">Öncelikli işlem sırası</td>
+            <td class="cmp-td--c"><i class="fas fa-times icon-no"></i></td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent bold">Maksimum</td>
+          </tr>
+          <tr class="cmp-cat cmp-cat--sep"><td colspan="4">📊 Limitler</td></tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">Maksimum dosya boyutu</td>
+            <td class="cmp-td--c limit-muted">50 MB</td>
+            <td class="cmp-td--pro bold">50 MB</td>
+            <td class="cmp-td--ent bold">Özel</td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">Aylık kredi</td>
+            <td class="cmp-td--c limit-muted">10.000/ay</td>
+            <td class="cmp-td--pro bold">5.000/ay</td>
+            <td class="cmp-td--ent bold">Özel</td>
+          </tr>
+          <tr class="cmp-cat cmp-cat--sep"><td colspan="4">💬 Destek</td></tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">E-posta desteği</td>
+            <td class="cmp-td--c"><i class="fas fa-times icon-no"></i></td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent bold">Adanmış kanal</td>
+          </tr>
+          <tr class="cmp-row">
+            <td class="cmp-td">14 günlük iade süresi</td>
+            <td class="cmp-td--c">—</td>
+            <td class="cmp-td--pro"><i class="fas fa-check icon-ok"></i></td>
+            <td class="cmp-td--ent"><i class="fas fa-check icon-ok"></i></td>
+          </tr>
+          <tr class="cmp-cta-row">
+            <td class="cmp-td"></td>
+            <td class="cmp-cta-td"><a href="/#tools" class="btn-outline-sm">Başla</a></td>
+            <td class="cmp-cta-td--pro"><button onclick="startCheckout()" class="btn-dark-sm">Hemen Pro'ya Geç — Sınırsız Başla →</button></td>
+            <td class="cmp-cta-td--ent"><a href="/kurumsal/#iletisim" class="btn-indigo-sm">Teklif İste →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Güven -->
+<section style="padding:1.5rem 0;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="trust-strip">
+      <div class="trust-badge"><i class="fab fa-stripe" style="font-size:1.4rem;color:#6772e5"></i><span>Stripe ile ödeme</span></div>
+      <div class="trust-badge"><i class="fas fa-lock" style="color:#10b981"></i><span>256-bit SSL</span></div>
+      <div class="trust-badge"><i class="fas fa-shield-alt" style="color:#6366f1"></i><span>PCI DSS uyumlu</span></div>
+      <div class="trust-badge"><i class="fas fa-undo" style="color:#f59e0b"></i><span>14 gün iade süresi</span></div>
+      <div class="trust-badge"><i class="fas fa-file-shield" style="color:#ef4444"></i><span>KVKK uyumlu</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Ekstra Kredi -->
+<section style="padding:4rem 0 3rem">
+  <div class="container" style="max-width:900px">
+    <h2 class="section-title" style="font-size:1.3rem">Ekstra Kredi Satın Al</h2>
+    <p class="section-sub">Abonelik olmadan, tek seferlik kredi paketiyle ihtiyacınız kadar kullanın.</p>
+    <div class="credit-grid">
+      <div class="credit-card">
+        <div class="credit-card__label">Küçük Paket</div>
+        <div class="credit-card__amount">100 <span>kredi</span></div>
+        <div class="credit-card__price">₺19</div>
+        <ul class="credit-card__list">
+          <li>✓ ~50 OCR veya PDF→Word işlemi</li>
+          <li>✓ Süresiz geçerli</li>
+          <li>✓ Anında kullanıma hazır</li>
+        </ul>
+        <button onclick="startCreditsCheckout('credits100')" class="credit-card__btn" id="credits100Btn">100 Kredi Al</button>
+      </div>
+      <div class="credit-card credit-card--featured">
+        <div class="credit-card__badge">EN DEĞERLİ</div>
+        <div class="credit-card__label">Büyük Paket</div>
+        <div class="credit-card__amount">500 <span>kredi</span></div>
+        <div class="credit-card__price">₺49</div>
+        <ul class="credit-card__list">
+          <li>✓ ~250 OCR veya PDF→Word işlemi</li>
+          <li>✓ Süresiz geçerli</li>
+          <li>✓ Kredi başına ₺0.10</li>
+        </ul>
+        <button onclick="startCreditsCheckout('credits500')" class="credit-card__btn" id="credits500Btn">500 Kredi Al</button>
+      </div>
+    </div>
+    <p class="credit-note">1 kredi = 1 OCR veya 1 PDF→Word işlemi (2 kredi). Tarayıcı tabanlı araçlar (birleştir, böl, döndür vb.) tamamen ücretsizdir.</p>
+  </div>
+</section>
+
+<!-- İade garantisi -->
+<section style="background:var(--bg-soft);padding:3.5rem 0;border-top:1px solid var(--border)">
+  <div class="container" style="max-width:900px">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <h2 class="section-title">14 gün iade süresi</h2>
+      <p style="font-size:.88rem;color:var(--muted);margin-top:.5rem;max-width:480px;margin-left:auto;margin-right:auto">İlk ödemenizden itibaren 14 gün içinde iade talebi açabilirsiniz. Ayrıntılar iade politikasında açıkça yer alır.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-card__icon trust-card__icon--green"><i class="fas fa-undo"></i></div>
+        <div>
+          <div class="trust-card__title">14 Gün İade</div>
+          <div class="trust-card__body">İlk ödeme için 14 gün içinde iade talebi açabilirsiniz.</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card__icon trust-card__icon--blue"><i class="fas fa-times-circle"></i></div>
+        <div>
+          <div class="trust-card__title">İstediğin Zaman İptal</div>
+          <div class="trust-card__body">Dönem sonuna kadar Pro özellikleri devam eder.</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card__icon trust-card__icon--purple"><i class="fas fa-shield-alt"></i></div>
+        <div>
+          <div class="trust-card__title">Güvenli Ödeme</div>
+          <div class="trust-card__body">Kart bilgileri bizim sunucularımıza ulaşmaz.</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card__icon trust-card__icon--orange"><i class="fas fa-file-shield"></i></div>
+        <div>
+          <div class="trust-card__title">KVKK Uyumlu</div>
+          <div class="trust-card__body">Türk veri koruma mevzuatına tam uyum.</div>
+        </div>
+      </div>
+    </div>
+    <div class="refund-box">
+      <p>
+        <strong>İade talebi:</strong> <a href="/contact" class="refund-link">İletişim sayfasından</a> 14 gün içinde yazın.<br>
+        <small>Stripe üzerinden otomatik iade — 3–5 iş günü içinde hesabınıza yansır.</small>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SSS -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Sık sorulan sorular</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Ücretsiz plan gerçekten ücretsiz mi? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Evet. Tarayıcı tabanlı araçların tamamı sınırsız ve ücretsiz. OCR ve PDF→Word için günlük 7 kullanım hakkı verilir.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Dosyalarım sunucuya yükleniyor mu? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Tarayıcı tabanlı araçlarda dosyalarınız sunucuya gitmez. OCR ve PDF→Word için geçici yükleme gerekir; işlem sonrası dosya 60 dakika içinde otomatik silinir.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Pro aboneliği nasıl iptal ederim? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">"Aboneliği Yönet" butonuna tıklayıp Stripe portalı üzerinden istediğiniz zaman iptal edebilirsiniz. İptal sonrası dönem sonuna kadar Pro özelliklerini kullanmaya devam edersiniz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Ödeme güvenli mi? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Ödemeler Stripe altyapısıyla işlenir. Kart bilgileriniz bizim sunucularımıza hiç ulaşmaz, doğrudan Stripe'ın güvenli sistemine gider. Stripe PCI DSS Level 1 sertifikalıdır.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">İade politikası nedir? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">İlk ödemenizden itibaren 14 gün içinde iade talep edebilirsiniz. <a href="/contact" class="mir-text-primary">İletişim</a> sayfasından bizimle yazın. Onaylanan iadeler genelde 3–5 iş günü içinde hesabınıza yansır.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Kredi paketi ile abonelik arasındaki fark nedir? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Kredi paketi tek seferlik satın alımdır, süresiz geçerlidir. Abonelik aylık faturalandırılır ve her ay otomatik kredi yüklenir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-dark">
+  <div class="footer-dark__inner">
+    <div class="footer-dark__grid">
+      <div>
+        <a href="/" class="footer-dark__brand">
+          <img src="/assets/icons/logo.svg" width="28" height="28" alt="MirPDF" style="border-radius:7px">MirPDF
+        </a>
+        <p class="footer-dark__tagline">Ücretsiz online PDF araçları. Tarayıcıda çalışır, dosyalar cihazınızdan çıkmaz.</p>
+      </div>
+      <div>
+        <h4 class="footer-dark__heading">Araçlar</h4>
+        <a href="/pdf-birlestir" class="footer-dark__link">PDF Birleştir</a>
+        <a href="/pdf-sikistir" class="footer-dark__link">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" class="footer-dark__link">PDF → Word</a>
+        <a href="/ocr" class="footer-dark__link">OCR PDF</a>
+      </div>
+      <div>
+        <h4 class="footer-dark__heading">Şirket</h4>
+        <a href="/about" class="footer-dark__link">Hakkımızda</a>
+        <a href="/contact" class="footer-dark__link">İletişim</a>
+        <a href="/faq" class="footer-dark__link">SSS</a>
+        <a href="/yardim" class="footer-dark__link">Yardım</a>
+      </div>
+      <div>
+        <h4 class="footer-dark__heading">Yasal</h4>
+        <a href="/legal/privacy.html" class="footer-dark__link">Gizlilik</a>
+        <a href="/legal/terms.html" class="footer-dark__link">Şartlar</a>
+        <a href="/legal/kvkk.html" class="footer-dark__link">KVKK</a>
+        <a href="/legal/cookies.html" class="footer-dark__link">Çerezler</a>
+      </div>
+    </div>
+    <div class="footer-dark__bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <span><a href="/en/pricing" class="footer-dark__lang">🌐 English</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<script type="module" src="/assets/js/pricing-page.js"></script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
+

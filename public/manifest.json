@@ -1,0 +1,73 @@
+{
+  "name": "MirPDF",
+  "short_name": "MirPDF",
+  "description": "Türkçe PDF Araçları — Ücretsiz, KVKK Uyumlu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d0f1a",
+  "icons": [
+    {
+      "src": "/assets/brand/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "PDF Birleştir",
+      "short_name": "Birleştir",
+      "description": "Birden fazla PDF dosyasını tek belgede birleştir",
+      "url": "/pdf-birlestir",
+      "icons": [
+        {
+          "src": "/assets/brand/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "PDF Sıkıştır",
+      "short_name": "Sıkıştır",
+      "description": "PDF boyutunu küçült, kaliteyi koru",
+      "url": "/pdf-sikistir",
+      "icons": [
+        {
+          "src": "/assets/brand/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "PDF → Word",
+      "short_name": "PDF→Word",
+      "description": "PDF'i düzenlenebilir Word'e çevir",
+      "url": "/pdf-to-word",
+      "icons": [
+        {
+          "src": "/assets/brand/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/og/og-tools.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "label": "MirPDF — Ücretsiz PDF Araçları"
+    }
+  ]
+}

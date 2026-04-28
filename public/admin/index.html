@@ -1,0 +1,361 @@
+<!doctype html>
+<!-- ADMIN: PROTECTED BY WORKER ROUTE GUARD in _worker.js lines 243-268.
+     Direct access without valid JWT+admin role or ADMIN_SECRET_TOKEN → 302 to /admin/login.
+     This file is intentionally in /public/ but is NOT accessible without auth.
+     noindex + no-store headers applied via _headers. -->
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Admin Dashboard — MirPDF</title>
+  <meta name="description" content="MirPDF yönetim paneli. Kullanıcı yönetimi, iş istatistikleri, sistem durumu ve kredi işlemlerini buradan yönetin. Yetkili giriş gereklidir."/>
+  <link rel="canonical" href="https://mirpdf.com/admin/"/>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#0d0f1a;--bg-soft:#13162a;--bg-card:#181c31;--border:rgba(255,255,255,.09);--text:#f1f5f9;--muted:#94a3b8;--primary:#6366f1;--success:#10b981;--danger:#ef4444;--warning:#f59e0b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+/* SIDEBAR */
+.sidebar{position:fixed;left:0;top:0;width:230px;height:100vh;background:var(--bg-soft);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:100;overflow-y:auto}
+.sb-logo{display:flex;align-items:center;gap:.55rem;padding:1.25rem 1.25rem 1rem;font-weight:800;font-size:1.1rem;border-bottom:1px solid var(--border)}
+.sb-logo-mark{width:30px;height:30px;border-radius:8px;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;flex-shrink:0}
+.sb-badge{font-size:.68rem;background:rgba(99,102,241,.2);color:#a5b4fc;padding:.15rem .5rem;border-radius:5px;font-weight:700;letter-spacing:.05em;margin-left:.25rem}
+.sb-nav{padding:.75rem 0;flex:1}
+.sb-item{display:flex;align-items:center;gap:.6rem;padding:.65rem 1.25rem;font-size:.875rem;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;width:100%;text-align:left;font-family:inherit;border-radius:0;transition:.12s;text-decoration:none}
+.sb-item:hover,.sb-item.active{background:rgba(99,102,241,.12);color:var(--text)}
+.sb-item i{width:18px;text-align:center;font-size:.9rem}
+.sb-sep{border:none;border-top:1px solid var(--border);margin:.5rem 0}
+.sb-logout{margin:.75rem 1.25rem;display:flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:10px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5;cursor:pointer;font-size:.83rem;font-weight:600;font-family:inherit;transition:.12s;width:calc(100% - 2.5rem)}
+.sb-logout:hover{background:rgba(239,68,68,.2)}
+/* MAIN */
+.main{margin-left:230px;padding:2rem;min-height:100vh}
+.page-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem}
+.page-title{font-size:1.5rem;font-weight:800}
+.last-refresh{font-size:.78rem;color:var(--muted)}
+/* STATS GRID */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:1.75rem}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.25rem}
+.stat-label{font-size:.78rem;color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
+.stat-val{font-size:1.75rem;font-weight:800;line-height:1}
+.stat-sub{font-size:.78rem;color:var(--muted);margin-top:.3rem}
+.stat-up{color:var(--success)}
+.stat-down{color:var(--danger)}
+/* PANELS */
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.panel{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.25rem}
+.panel-full{grid-column:1/-1}
+.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.panel-title{font-size:.9rem;font-weight:700;display:flex;align-items:center;gap:.4rem}
+.panel-title i{color:var(--muted)}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:.83rem}
+.tbl th{color:var(--muted);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem .75rem;text-align:left;border-bottom:1px solid var(--border)}
+.tbl td{padding:.6rem .75rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:rgba(255,255,255,.025)}
+/* Badges */
+.b{display:inline-flex;padding:.2rem .55rem;border-radius:6px;font-size:.72rem;font-weight:700;letter-spacing:.03em}
+.b-pro{background:rgba(99,102,241,.2);color:#a5b4fc}
+.b-free{background:rgba(148,163,184,.1);color:var(--muted)}
+.b-ok{background:rgba(16,185,129,.15);color:#6ee7b7}
+.b-err{background:rgba(239,68,68,.15);color:#fca5a5}
+/* Health */
+.health-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
+.health-item{background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;text-align:center}
+.health-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-bottom:.4rem}
+.health-dot.ok{background:var(--success);box-shadow:0 0 8px var(--success)}
+.health-dot.err{background:var(--danger);box-shadow:0 0 8px var(--danger)}
+.health-dot.warn{background:var(--warning);box-shadow:0 0 8px var(--warning)}
+/* Btn */
+.btn-sm{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .8rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);font-family:inherit;transition:.12s}
+.btn-sm:hover{background:rgba(255,255,255,.1)}
+/* Loading */
+.skel{background:linear-gradient(90deg,rgba(255,255,255,.05) 25%,rgba(255,255,255,.1) 50%,rgba(255,255,255,.05) 75%);background-size:200% 100%;animation:skel 1.4s infinite;border-radius:6px;display:block}
+@keyframes skel{0%{background-position:200%}100%{background-position:-200%}}
+/* Mobile */
+@media(max-width:768px){.sidebar{width:100%;height:auto;position:relative}.main{margin-left:0}.panel-grid{grid-template-columns:1fr}}
+</style>
+  <meta property="og:url" content="https://mirpdf.com/admin/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Admin Dashboard — MirPDF"/>
+  <meta name="twitter:description" content="MirPDF yönetim paneli — kullanıcı yönetimi, iş istatistikleri, sistem durumu ve kredi işlemlerini yönetin."/>
+  <meta property="og:title" content="Admin Dashboard — MirPDF"/>
+  <meta property="og:description" content="MirPDF yönetim paneli. Kullanıcı yönetimi, iş istatistikleri, sistem durumu ve kredi işlemlerini buradan yönetin. Yetkili giriş gereklidir."/>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-logo-mark"><i class="fas fa-file-pdf"></i></div>
+    MirPDF <span class="sb-badge">ADMIN</span>
+  </div>
+  <nav class="sb-nav">
+    <a class="sb-item active" data-tab="dashboard" href="#dashboard">
+      <i class="fas fa-chart-bar"></i> Dashboard
+    </a>
+    <a class="sb-item" data-tab="health" href="#health">
+      <i class="fas fa-heartbeat"></i> Sistem Sağlığı
+    </a>
+    <a class="sb-item" data-tab="webhooks" href="#webhooks">
+      <i class="fas fa-exclamation-triangle"></i> Webhook Hatalar
+    </a>
+    <hr class="sb-sep">
+    <a class="sb-item" href="/" target="_blank">
+      <i class="fas fa-external-link-alt"></i> Siteyi Aç
+    </a>
+  </nav>
+  <button class="sb-logout" id="adminLogoutBtn">
+    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+  </button>
+</div>
+
+<main class="main">
+  <!-- DASHBOARD TAB -->
+  <div id="tab-dashboard">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Dashboard</h1>
+        <div class="last-refresh" id="lastRefresh">Yükleniyor…</div>
+      </div>
+      <button class="btn-sm" id="refreshBtn"><i class="fas fa-sync-alt"></i> Yenile</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><div class="stat-label">Toplam Kullanıcı</div><div class="stat-val skel" style="height:1.75rem;width:80px">&nbsp;</div></div>
+      <div class="stat-card"><div class="stat-label">Pro Üye</div><div class="stat-val skel" style="height:1.75rem;width:60px">&nbsp;</div></div>
+      <div class="stat-card"><div class="stat-label">Bugün Kayıt</div><div class="stat-val skel" style="height:1.75rem;width:50px">&nbsp;</div></div>
+      <div class="stat-card"><div class="stat-label">Bu Ay Gelir</div><div class="stat-val skel" style="height:1.75rem;width:90px">&nbsp;</div></div>
+    </div>
+
+    <!-- Panels -->
+    <div class="panel-grid">
+      <div class="panel panel-full">
+        <div class="panel-head">
+          <span class="panel-title"><i class="fas fa-users"></i> Son Kullanıcılar</span>
+        </div>
+        <div id="usersPanel"><span class="skel" style="height:3rem;width:100%;display:block"></span></div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <span class="panel-title"><i class="fas fa-credit-card"></i> Son İşlemler</span>
+        </div>
+        <div id="txPanel"><span class="skel" style="height:3rem;width:100%;display:block"></span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <span class="panel-title"><i class="fas fa-chart-line"></i> Gelir Özeti</span>
+        </div>
+        <div id="revenuePanel"><span class="skel" style="height:3rem;width:100%;display:block"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTH TAB -->
+  <div id="tab-health" class="mir-hidden">
+    <div class="page-head">
+      <h1 class="page-title">Sistem Sağlığı</h1>
+      <button class="btn-sm" id="healthRefreshBtn"><i class="fas fa-sync-alt"></i> Yenile</button>
+    </div>
+    <div class="health-grid" id="healthGrid">
+      <span class="skel" style="height:5rem;display:block"></span>
+    </div>
+  </div>
+
+  <!-- WEBHOOKS TAB -->
+  <div id="tab-webhooks" class="mir-hidden">
+    <div class="page-head">
+      <h1 class="page-title">Webhook Hataları</h1>
+    </div>
+    <div class="panel">
+      <div id="webhookPanel"><span class="skel" style="height:3rem;width:100%;display:block"></span></div>
+    </div>
+  </div>
+</main>
+
+<script type="module">
+// ── Session kontrolü ─────────────────────────────────────────
+const ADMIN_KEY = "mirpdf_admin_token";
+const ADMIN_EXP = "mirpdf_admin_exp";
+
+function getAdminToken() {
+  try {
+    const exp = Number(sessionStorage.getItem(ADMIN_EXP) || 0);
+    if (exp < Date.now()) {
+      sessionStorage.removeItem(ADMIN_KEY);
+      sessionStorage.removeItem(ADMIN_EXP);
+      return null;
+    }
+    return sessionStorage.getItem(ADMIN_KEY);
+  } catch (_) { return null; }
+}
+
+const adminToken = getAdminToken();
+if (!adminToken) { location.href = "/admin/login"; }
+
+async function adminFetch(path) {
+  const t = getAdminToken();
+  if (!t) { location.href = "/admin/login"; throw new Error("no token"); }
+  const resp = await fetch(path, {
+    credentials: "same-origin",
+    headers: { Authorization: `Bearer ${t}` },
+  });
+  if (resp.status === 401 || resp.status === 403) { location.href = "/admin/login"; throw new Error("unauth"); }
+  return resp;
+}
+
+// ── Tab router ────────────────────────────────────────────────
+document.querySelectorAll(".sb-item[data-tab]").forEach(a => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    const tab = a.dataset.tab;
+    document.querySelectorAll("[id^='tab-']").forEach(el => el.style.display = "none");
+    document.getElementById("tab-" + tab).style.display = "block";
+    document.querySelectorAll(".sb-item").forEach(x => x.classList.remove("active"));
+    a.classList.add("active");
+    if (tab === "health")   loadHealth();
+    if (tab === "webhooks") loadWebhooks();
+  });
+});
+
+// ── Çıkış ────────────────────────────────────────────────────
+document.getElementById("adminLogoutBtn")?.addEventListener("click", () => {
+  try { sessionStorage.removeItem(ADMIN_KEY); sessionStorage.removeItem(ADMIN_EXP); } catch (_) {}
+  location.href = "/admin/login";
+});
+
+// ── Helpers ──────────────────────────────────────────────────
+function fmtDate(ms) { return ms ? new Date(ms).toLocaleDateString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}) : "—"; }
+function fmtNum(n)   { return Number(n || 0).toLocaleString("tr-TR"); }
+function set(id, h)  { const el = document.getElementById(id); if (el) el.innerHTML = h; }
+
+// ── Dashboard ────────────────────────────────────────────────
+async function loadDashboard() {
+  try {
+    const resp = await adminFetch("/api/admin/dashboard");
+    const j = await resp.json().catch(() => null);
+    const d = j?.data || j || {};
+
+    // Stats
+    const stats = [
+      { label:"Toplam Kullanıcı", val: fmtNum(d.users?.total), sub: "" },
+      { label:"Pro Üye",         val: fmtNum(d.users?.pro),   sub: `${d.users?.total ? Math.round(d.users.pro/d.users.total*100) : 0}% dönüşüm` },
+      { label:"Bugün Kayıt",     val: fmtNum(d.users?.today), sub: "" },
+      { label:"Bu Ay Gelir",     val: d.revenue?.month_total_formatted || `₺${fmtNum(d.revenue?.month_total)}`, sub: "" },
+    ];
+    set("statsGrid", stats.map(s => `
+      <div class="stat-card">
+        <div class="stat-label">${s.label}</div>
+        <div class="stat-val">${s.val ?? "—"}</div>
+        ${s.sub ? `<div class="stat-sub">${s.sub}</div>` : ""}
+      </div>`).join(""));
+
+    // Son kullanıcılar
+    const users = d.users?.recent || [];
+    if (users.length) {
+      set("usersPanel", `<table class="tbl">
+        <thead><tr><th>E-posta</th><th>Plan</th><th>Doğrulama</th><th>Kayıt</th></tr></thead>
+        <tbody>${users.slice(0,10).map(u => `<tr>
+          <td>${u.email || "—"}</td>
+          <td><span class="b ${u.role==="pro"?"b-pro":"b-free"}">${u.role||"free"}</span></td>
+          <td><span class="b ${u.email_verified?"b-ok":"b-err"}">${u.email_verified?"✓":"✗"}</span></td>
+          <td>${fmtDate(u.created_at)}</td>
+        </tr>`).join("")}</tbody></table>`);
+    } else {
+      set("usersPanel", `<p style="color:var(--muted);font-size:.875rem">Kullanıcı yok.</p>`);
+    }
+
+    // Son işlemler
+    const txs = d.transactions?.recent || [];
+    if (txs.length) {
+      set("txPanel", `<table class="tbl">
+        <thead><tr><th>Kullanıcı</th><th>Tür</th><th>Kredi</th><th>Tarih</th></tr></thead>
+        <tbody>${txs.slice(0,8).map(t => `<tr>
+          <td class="mir-text-xs">${t.user_id?.slice(0,8)||"—"}…</td>
+          <td>${t.kind||"—"}</td>
+          <td style="color:var(--success);font-weight:700">+${t.amount}</td>
+          <td>${fmtDate(t.created_at)}</td>
+        </tr>`).join("")}</tbody></table>`);
+    } else {
+      set("txPanel", `<p style="color:var(--muted);font-size:.875rem">İşlem yok.</p>`);
+    }
+
+    // Gelir özeti
+    const rev = d.revenue || {};
+    set("revenuePanel", `
+      <div style="display:flex;flex-direction:column;gap:.75rem">
+        <div style="display:flex;justify-content:space-between;font-size:.875rem">
+          <span class="mir-text-muted">Bu ay</span>
+          <span style="font-weight:700">₺${fmtNum(rev.month_total)}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.875rem">
+          <span class="mir-text-muted">Toplam</span>
+          <span style="font-weight:700">₺${fmtNum(rev.all_time_total)}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.875rem">
+          <span class="mir-text-muted">Bu ay işlem</span>
+          <span style="font-weight:700">${fmtNum(rev.month_count)}</span>
+        </div>
+      </div>`);
+
+    document.getElementById("lastRefresh").textContent = "Son güncelleme: " + new Date().toLocaleTimeString("tr-TR");
+  } catch (e) {
+    if (e.message !== "unauth" && e.message !== "no token")
+      set("statsGrid", `<p class="mir-text-muted">Dashboard yüklenemedi.</p>`);
+  }
+}
+
+// ── Sistem sağlığı ───────────────────────────────────────────
+async function loadHealth() {
+  try {
+    const resp = await adminFetch("/api/admin/health");
+    const j = await resp.json().catch(() => null);
+    const h = j?.data || j || {};
+    const items = Object.entries(h).map(([k, v]) => {
+      const st = v === true || v === "ok" ? "ok" : v === "warn" ? "warn" : "err";
+      return `<div class="health-item">
+        <span class="health-dot ${st}"></span>
+        <div style="font-size:.8rem;font-weight:600;margin-bottom:.15rem">${k}</div>
+        <div style="font-size:.72rem;color:var(--muted)">${typeof v === "object" ? JSON.stringify(v).slice(0,40) : String(v)}</div>
+      </div>`;
+    });
+    set("healthGrid", items.length ? items.join("") : `<p class="mir-text-muted">Sağlık verisi yok.</p>`);
+  } catch (_) {}
+}
+
+// ── Webhook hataları ─────────────────────────────────────────
+async function loadWebhooks() {
+  try {
+    const resp = await adminFetch("/api/admin/webhook-failures");
+    const j = await resp.json().catch(() => null);
+    const failures = j?.failures || j?.data || [];
+    if (!failures.length) { set("webhookPanel", `<p style="color:var(--muted);font-size:.875rem">Webhook hatası yok.</p>`); return; }
+    set("webhookPanel", `<table class="tbl">
+      <thead><tr><th>Event ID</th><th>Tür</th><th>Hata</th><th>Tarih</th></tr></thead>
+      <tbody>${failures.slice(0,20).map(f => `<tr>
+        <td style="font-size:.75rem">${(f.event_id||"—").slice(0,12)}…</td>
+        <td>${f.event_type||"—"}</td>
+        <td style="color:#fca5a5;font-size:.78rem">${(f.error||"").slice(0,60)}</td>
+        <td>${fmtDate(f.created_at)}</td>
+      </tr>`).join("")}</tbody></table>`);
+  } catch (_) {}
+}
+
+// ── Init ─────────────────────────────────────────────────────
+loadDashboard();
+document.getElementById("refreshBtn")?.addEventListener("click", loadDashboard);
+document.getElementById("healthRefreshBtn")?.addEventListener("click", loadHealth);
+
+// Auto-refresh 60 saniyede bir
+setInterval(loadDashboard, 60_000);
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

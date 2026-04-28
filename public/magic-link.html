@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+  <title>Giriş bağlantısı — MirPDF</title>
+  <link rel="canonical" href="https://mirpdf.com/magic-link"/>
+  <meta name="description" content="Giriş bağlantısı — MirPDF — MirPDF ile ücretsiz, Türkçe PDF araçları. Kayıt gerekmez, tarayıcıda çalışır.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Figtree',system-ui,sans-serif;background:#f7f8fc;
+         min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
+    .card{background:#fff;border:1px solid #e3e6f0;border-radius:20px;
+          padding:2.5rem 2rem;text-align:center;max-width:380px;width:100%;
+          box-shadow:0 4px 24px rgba(0,0,0,.06)}
+    .icon{font-size:2.8rem;margin-bottom:1rem;display:block}
+    h1{font-size:1.25rem;font-weight:800;color:#0d0f1a;margin-bottom:.5rem}
+    p{font-size:.9rem;color:#64748b;line-height:1.6;margin-bottom:1.25rem}
+    .spinner{width:40px;height:40px;border:3px solid #e3e6f0;
+             border-top-color:#6366f1;border-radius:50%;
+             animation:spin .7s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .btn{display:inline-block;padding:.78rem 1.5rem;background:#0d0f1a;
+         color:#fff;border-radius:12px;font-weight:700;font-size:.95rem;
+         text-decoration:none;margin-top:.5rem}
+    .err{color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;
+         border-radius:10px;padding:.75rem 1rem;font-size:.875rem;margin-top:.5rem}
+  </style>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:url" content="https://mirpdf.com/magic-link"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Giriş bağlantısı — MirPDF"/>
+  <meta name="twitter:description" content="Giriş bağlantısı — MirPDF — MirPDF ile ücretsiz, Türkçe PDF araçları. Kayıt gerekmez, tarayıcıda çalışır."/>
+  <meta property="og:title" content="Giriş bağlantısı — MirPDF"/>
+  <meta property="og:description" content="Giriş bağlantısı — MirPDF — MirPDF ile ücretsiz, Türkçe PDF araçları. Kayıt gerekmez, tarayıcıda çalışır."/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="spinner"></div>
+  <h1>Doğrulanıyor…</h1>
+  <p>Giriş bağlantınız doğrulanıyor, lütfen bekleyin.</p>
+</div>
+<script type="module">
+import { saveToken } from "/assets/js/auth.js";
+
+const token = new URLSearchParams(location.search).get("token") || "";
+
+async function verify() {
+  if (!token) {
+    showResult("⚠️", "Geçersiz bağlantı", "Bu giriş bağlantısı geçersiz veya eksik.", true);
+    return;
+  }
+  try {
+    const resp = await fetch("/api/auth/magic/verify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token }),
+    });
+    const j = await resp.json().catch(() => null);
+    if (resp.ok && j?.ok && j.data?.token) {
+      saveToken(j.data.token);
+      showResult("✅", "Giriş başarılı!", "Hesabınıza yönlendiriliyorsunuz…", false);
+      setTimeout(() => location.replace("/account"), 1200);
+    } else if (resp.status === 400 && j?.error === "EXPIRED_TOKEN") {
+      showResult("⏰", "Bağlantı süresi dolmuş", "Bu giriş bağlantısının süresi dolmuş. Yeni bir bağlantı isteyin.", true);
+    } else {
+      showResult("❌", "Doğrulama başarısız", j?.message || "Bir hata oluştu. Tekrar deneyin.", true);
+    }
+  } catch (_) {
+    showResult("❌", "Bağlantı hatası", "Sunucuya ulaşılamadı. Sayfayı yenileyin.", true);
+  }
+}
+
+function showResult(icon, title, body, showLogin) {
+  document.getElementById("card").innerHTML = `
+    <span class="icon">${icon}</span>
+    <h2>${title}</h2>
+    <p>${body}</p>
+    ${showLogin ? '<a href="/login" class="btn">Giriş Sayfasına Git</a>' : ""}
+  `;
+}
+
+verify();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

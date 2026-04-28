@@ -1,0 +1,12 @@
+# ═══════════════════════════════════════════════════════════════
+# MirPDF — ads.txt (Google AdSense için zorunlu)
+# ═══════════════════════════════════════════════════════════════
+#
+# AKTIVASYON ADIMLARI:
+# 1. Google AdSense: https://adsense.google.com
+# 2. Hesap → Hesap Bilgileri → Yayıncı Kimliği (ca-pub-XXXXXXXXXXXXXXXX)
+# 3. Aşağıdaki satırı uncomment edip kendi Publisher ID'nizi girin
+# 4. Deploy et → AdSense panelinden site doğrula
+#
+# ⚠️  HENÜZ DOLDURMADIN — aşağıdaki satırı aktif et:
+# google.com, ca-pub-REPLACE_WITH_YOUR_PUBLISHER_ID, DIRECT, f08c47fec0942fa0

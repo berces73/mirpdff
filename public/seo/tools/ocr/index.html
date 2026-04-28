@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>OCR ile PDF'den Metin Çıkarma — Türkçe Destekli | MirPDF</title>
+  <meta name="description" content="PDF OCR online — ücretsiz, hızlı ve güvenli. Kayıt gerekmez, dosyalarınız tarayıcınızda kalır.">
+  <link rel="canonical" href="https://mirpdf.com/ocr">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="OCR ile PDF'den Metin Çıkarma — Türkçe Destekli | MirPDF">
+  <meta property="og:url" content="https://mirpdf.com/ocr"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:description" content="Taranmış PDF ve görsellerdeki yazıları dijital metne dönüştürün. Türkçe OCR desteği, e-devlet belgeleri, fatura ve dilekçeler için. Ücretsiz, kayıt gerekmez.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mirpdf.com/assets/og-home.png">
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"OCR — PDF ve Görselden Metin Çıkarma ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet, MirPDF'te bu araç ücretsiz kullanılabilir. Günde 3 işlem hakkı mevcuttur. Pro planla sınırsız kullanım sunulur."}},
+    {"@type":"Question","name":"OCR — PDF ve Görselden Metin Çıkarma nasıl yapılır?","acceptedAnswer":{"@type":"Answer","text":"Dosyanızı MirPDF'e yükleyin, gerekli ayarları yapın ve aracı çalıştırın. İşlem genellikle 10-30 saniye sürer."}}
+  ]}
+  </script>
+<style>
+:root{--bg:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+main{padding:2.5rem 0 5rem}
+h1{font-size:2rem;font-weight:800;margin-bottom:.6rem;line-height:1.2}
+h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem}
+h3{font-size:1rem;font-weight:700;margin:1.25rem 0 .4rem}
+p{margin-bottom:.75rem;color:#374151}
+.hero-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem;text-align:center}
+.hero-sub{color:var(--muted);font-size:.95rem;max-width:520px;margin:.5rem auto 1.5rem}
+.btn-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-cta:hover{background:#1e293b}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1rem;font-size:.78rem;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:.3rem}
+.trust i{color:#10b981;font-size:.7rem}
+.callout{display:flex;gap:.85rem;padding:1.1rem 1.25rem;border-radius:12px;margin:1.75rem 0;border:1.5px solid}
+.callout-icon{font-size:1.1rem;flex-shrink:0;line-height:1.6}
+.callout p{margin:0;font-size:.92rem;line-height:1.6}
+.callout strong{display:block;font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.callout-tip{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+.callout-tip p{color:#166534}
+.callout-note{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+.callout-note p{color:#1e40af}
+.callout-warning{background:#fffbeb;border-color:#fde68a;color:#92400e}
+.callout-warning p{color:#92400e}
+.article-body{font-size:17px;line-height:1.75;color:#374151}
+.article-body ul{list-style:none;margin:1.25rem 0;padding:0}
+.article-body ul li{padding:.35rem 0 .35rem 1.4rem;position:relative;color:#374151;border-bottom:1px solid var(--border)}
+.article-body ul li:last-child{border-bottom:none}
+.article-body ul li::before{content:'';position:absolute;left:4px;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.5}
+.article-body ol{list-style:none;counter-reset:step;margin:1.5rem 0;padding:0}
+.article-body ol li{counter-increment:step;display:grid;grid-template-columns:32px 1fr;column-gap:14px;align-items:start;padding:.6rem 0;border-bottom:1px solid var(--border);color:#374151}
+.article-body ol li:last-child{border-bottom:none}
+.article-body ol li::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-top:2px;border-radius:50%;background:#eef0f7;color:var(--text);font-weight:800;font-size:.75rem;border:1.5px solid var(--border);flex-shrink:0}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;margin-top:1rem}
+.related-card{display:flex;align-items:center;gap:.6rem;padding:.8rem;background:#fff;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text);font-size:.85rem;font-weight:600}
+.related-card:hover{border-color:var(--primary)}
+.related-card i{color:var(--primary)}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .4rem}
+</style>
+  <meta name="twitter:description" content="Taranmış PDF ve görsellerdeki yazıları dijital metne dönüştürün. Türkçe OCR desteği, e-devlet belgeleri, fatura ve dilekçeler için. Ücretsiz, kayıt gerekmez."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="OCR ile PDF'den Metin Çıkarma — Türkçe Destekli | MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og-home.png"/>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mainNav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/login" class="nav-link-auth">Giriş Yap</a>
+        <a href="/register" class="nav-btn mir-btn-primary">Ücretsiz Kayıt</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+  <div class="hero-card">
+    <h1>OCR — PDF ve Görselden Metin Çıkarma</h1>
+    <p class="hero-sub">Taranmış belgeler, fotoğraflanmış faturalar ve görüntü tabanlı PDF'lerdeki metni kopyalanabilir dijital yazıya dönüştürün. Türkçe karakter desteğiyle.</p>
+    <a href="/ocr" class="btn-cta"><i class="fas fa-search"></i> OCR Aracını Aç</a>
+    <div class="trust">
+      <span><i class="fas fa-check-circle"></i> Tamamen ücretsiz</span>
+      <span><i class="fas fa-check-circle"></i> Kayıt gerekmez</span>
+      <span><i class="fas fa-check-circle"></i> KVKK uyumlu</span>
+      <span><i class="fas fa-check-circle"></i> 60dk sonra silinir</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+<h2>OCR Nedir ve Neden Gereklidir?</h2>
+<p>OCR (Optical Character Recognition — Optik Karakter Tanıma), görüntülerin içindeki yazı karakterlerini bilgisayarın okuyabileceği dijital metne dönüştüren teknolojidir. Tarayıcıdan geçirilmiş belgeler, telefonla fotoğraflanan faturalar veya görüntü tabanlı PDF'ler aslında içinde gerçek metin barındırmaz — yalnızca piksellerden oluşan bir resimdir. OCR bu resimleri analiz ederek harfleri, rakamları ve noktalama işaretlerini tanır.</p>
+<p>Türkiye'de en sık karşılaşılan ihtiyaç: e-Devlet'ten indirilen bazı belgeler, eski taranmış evraklar ve banka dekontları metin tabanlı değil görüntü tabanlıdır. Bu belgeleri düzenlemek, içinden arama yapmak veya başka bir yere yapıştırmak için OCR şarttır.</p>
+
+<h2>MirPDF OCR Ne Zaman Kullanılır?</h2>
+<ul>
+<li><strong>Taranmış kimlik fotokopisi veya pasaport:</strong> İçindeki TC kimlik numarası ya da ad soyad metnini kopyalamak istiyorsunuz.</li>
+<li><strong>Eski fatura veya sözleşme:</strong> Belgeyi arşive alırken aranabilir hale getirmeniz gerekiyor.</li>
+<li><strong>Fotoğraflanmış not veya tutanak:</strong> Toplantı notlarını veya elden yazılmış tutanakları dijital metne çevirmek istiyorsunuz.</li>
+<li><strong>Görüntü tabanlı e-fatura:</strong> Bazı muhasebe sistemleri e-faturaları görüntü olarak kaydeder; bu belgelerden tutar veya KDV bilgisi almak gerekir.</li>
+<li><strong>Yabancı dilli belge:</strong> Vize başvurusu veya uluslararası sözleşmelerde yabancı metni çeviri araçlarına aktarmak istiyorsunuz.</li>
+</ul>
+
+<h2>OCR Nasıl Kullanılır? Adım Adım</h2>
+<ol>
+<li><strong>Dosyayı yükleyin</strong> — PDF veya görüntü dosyanızı (JPG, PNG, TIFF) sürükleyip bırakın ya da seçin. Maksimum dosya boyutu 50 MB'dır.</li>
+<li><strong>Dil seçin</strong> — Türkçe varsayılan olarak seçilidir. Belgenizde birden fazla dil varsa "Türkçe + İngilizce" seçeneğini kullanın.</li>
+<li><strong>OCR başlat</strong> — "Metni Çıkar" butonuna tıklayın. Sayfa sayısına göre 10–60 saniye sürer.</li>
+<li><strong>Sonucu inceleyin</strong> — Tanınan metin ekranda görünür; kopyalayabilir veya aranabilir PDF olarak indirebilirsiniz.</li>
+</ol>
+
+<div class="callout callout-tip">
+<div class="callout-icon">✓</div>
+<div><strong>En iyi sonuç için ipucu</strong>
+<p>Belgeyi taramadan önce 300 DPI veya üzeri çözünürlük kullanın. Düşük çözünürlüklü veya bulanık görüntülerde OCR doğruluğu önemli ölçüde düşer. Eğlenceli telefon fotoğraflarında sayfayı düz zemine koyup gün ışığında fotoğraflayın.</p></div>
+</div>
+
+<h2>Hangi Dosya Formatları Desteklenir?</h2>
+<p>MirPDF OCR aracı aşağıdaki giriş formatlarını kabul eder: <strong>PDF</strong> (tek veya çok sayfalı), <strong>JPG/JPEG</strong>, <strong>PNG</strong>, <strong>TIFF</strong> ve <strong>BMP</strong>. Çıktı olarak aranabilir PDF veya düz metin (.txt) alabilirsiniz.</p>
+
+<h2>OCR Doğruluğu Nedir?</h2>
+<p>Modern OCR motorları temiz, düzgün yazılmış metinlerde %95–99 doğruluk oranına ulaşır. El yazısı metinlerde bu oran %70–85 civarına düşebilir. Türkçeye özgü karakterler (ğ, ü, ş, ı, ö, ç) MirPDF'te tam desteklenir; bazı global araçların aksine bu karakterler bozulmadan aktarılır.</p>
+
+<div class="callout callout-note">
+<div class="callout-icon">ℹ</div>
+<div><strong>KVKK ve gizlilik</strong>
+<p>OCR işlemi sırasında belgeleriniz sunuculara yüklenir. MirPDF KVKK uyumludur; dosyalar 60 dakika sonra otomatik olarak silinir ve üçüncü taraflarla paylaşılmaz.</p></div>
+</div>
+
+<h2>Sık Sorulan Sorular</h2>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Türkçe karakterler doğru çıkar mı?</summary>
+<p class="mir-faq-a">Evet. MirPDF OCR motoru Türkçe karakter seti için özel eğitilmiştir. ğ, ü, ş, ı, ö, ç harfleri kesintisiz tanınır.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">El yazısını da okuyabilir mi?</summary>
+<p class="mir-faq-a">Kısmen. Düzenli ve okunaklı el yazısında %70–80 doğruluk elde edilebilir. Çok karmaşık el yazılarında sonuçlar güvenilmeyebilir; manuel düzenleme gerekebilir.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Çok sayfalı PDF'lerde çalışır mı?</summary>
+<p class="mir-faq-a">Evet, tüm sayfalar işlenir ve sonuç tek bir aranabilir PDF veya metin dosyasında birleştirilir. Ücretsiz planda 5 sayfaya kadar işlem yapılabilir; Pro planla sınırsız sayfa desteklenir.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">OCR ücretsiz mi?</summary>
+<p class="mir-faq-a">Günde 3 ücretsiz OCR işlemi yapabilirsiniz. Pro planla (₺79/ay) sınırsız OCR, öncelikli kuyruk ve toplu işlem desteği sunulur.</p>
+</details>
+
+  </div>
+
+  
+<h2>OCR Sonuçlarını Düzeltme ve İyileştirme</h2>
+<p>OCR çıktısı mükemmel olmayabilir. Özellikle düşük kaliteli taramalarda bazı karakterler yanlış tanınabilir. Sonucu elle kontrol ederek düzeltmek gerekebilir. En sık görülen hatalar şunlardır:</p>
+<ul>
+<li>Türkçe karakterlerin yanlış tanınması: "ş" yerine "s", "ğ" yerine "g" gibi.</li>
+<li>Benzer harflerin karışması: "l" ile "I" (büyük i), "0" ile "O" gibi.</li>
+<li>Satır sonlarının yanlış yorumlanması, özellikle iki sütunlu belgelerde.</li>
+<li>El yazısı kısımların atlanması veya hatalı okunması.</li>
+</ul>
+<p>Bu sorunları azaltmak için mümkünse belgelerinizi 300 DPI veya üzeri çözünürlükte tarayın. Renkli belgeler yerine siyah-beyaz tarama kaliteyi artırır.</p>
+
+<h2>Aranabilir PDF Nedir?</h2>
+<p>Normal bir taranmış PDF'te metin aslında görüntüdür — "Ctrl+F" ile içinde arama yapamazsınız ve metni kopyalayamazsınız. OCR işleminden sonra oluşturulan <strong>aranabilir PDF</strong> hem orijinal görüntüyü hem de altında gizli metin katmanını içerir. Bu sayede belge görsel olarak aynı kalır, ancak artık arama, kopyalama ve dijital imzalama mümkün hale gelir.</p>
+<p>Muhasebe arşivleri, hukuki belgeler ve resmi yazışmalar için aranabilir PDF formatı özellikle değerlidir: yılar sonra belge içinde anahtar kelimeyle arama yapabilirsiniz.</p>
+
+<h2>Ücretsiz ile Pro Plan Karşılaştırması</h2>
+<ul>
+<li><strong>Ücretsiz:</strong> Günde 3 OCR işlemi, en fazla 5 sayfa, standart işlem sırası.</li>
+<li><strong>Pro (₺79/ay):</strong> Sınırsız OCR, 200 sayfaya kadar, öncelikli kuyruk, toplu işlem desteği.</li>
+</ul>
+
+<h2>İlgili Araçlar</h2>
+  <div class="related-grid">
+<a href="/pdf-birlestir" class="related-card"><i class="fas fa-object-group"></i> PDF Birleştir</a>
+<a href="/pdf-sikistir" class="related-card"><i class="fas fa-compress"></i> PDF Küçült</a>
+<a href="/pdf-to-word" class="related-card"><i class="fas fa-file-word"></i> PDF → Word</a>
+<a href="/pdf-bol" class="related-card"><i class="fas fa-cut"></i> PDF Böl</a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
+          <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+          MirPDF
+        </a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları. 25 araç, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-bol">PDF Böl</a>
+        <a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR / Metin</a>
+        <a href="/pdf-kilitle">PDF Kilitle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/about">Hakkımızda</a>
+        <a href="/contact">İletişim</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/articles/">Blog</a>
+        <a href="/status">Sistem Durumu</a>
+      </div>
+      <div class="footer-col">
+        <h4>Yasal</h4>
+        <a href="/legal/privacy.html">Gizlilik Politikası</a>
+        <a href="/legal/terms.html">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+        <a href="/legal/security.html">Güvenlik</a>
+        <a href="/sitemap.xml">Site Haritası</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div class="footer-links-row">
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/terms.html">Şartlar</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

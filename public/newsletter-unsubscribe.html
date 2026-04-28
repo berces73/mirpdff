@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bülten Aboneliği — MirPDF</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:#f7f8fc;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+.card{background:#fff;border-radius:22px;padding:3rem 2.5rem;max-width:440px;width:100%;text-align:center;box-shadow:0 4px 32px rgba(0,0,0,.09)}
+.icon{font-size:3rem;margin-bottom:1rem}
+h1{font-size:1.4rem;font-weight:800;color:#0d0f1a;margin-bottom:.65rem}
+p{color:#64748b;line-height:1.65;font-size:.92rem;margin-bottom:1.5rem}
+.btn{display:inline-block;background:#6366f1;color:#fff;text-decoration:none;padding:.7rem 2rem;border-radius:12px;font-weight:700;font-size:.92rem;border:none;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn-outline{background:#f1f5f9;color:#374151;margin-right:.5rem}
+.loading{color:#94a3b8;font-size:.9rem}
+.error{color:#ef4444}
+.success{color:#10b981}
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="icon" id="icon">⏳</div>
+  <h1 id="title">İşleniyor…</h1>
+  <p id="desc" class="loading">Lütfen bekleyin.</p>
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const email  = params.get('email') || '';
+const token  = params.get('token') || '';
+
+async function run() {
+  if (!email || !token) {
+    show('❌','Geçersiz bağlantı','Bu bağlantı geçersiz veya eksik. Lütfen e-postanızdaki bağlantıyı kullanın.','error');
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}&token=${encodeURIComponent(token)}`, { method:'POST' });
+    const j   = await res.json().catch(()=>({}));
+    if (res.ok && j.ok) {
+      show('✅','Abonelik iptal edildi',`<strong>${email}</strong> adresi bülten listemizden kaldırıldı. Üzgünüz, yeniden görmek dileğiyle!`,'success');
+    } else if (res.status === 403) {
+      show('❌','Geçersiz token','Bu bağlantı artık geçerli değil. Lütfen yeni bir abonelik iptal talebi oluşturun.','error');
+    } else {
+      show('⚠️','Bir sorun oluştu','İsteğiniz işlenemedi. Lütfen destek@mirpdf.com adresine yazın.','error');
+    }
+  } catch {
+    show('⚠️','Bağlantı hatası','Sunucuya ulaşılamadı. Lütfen sayfayı yenileyin.','error');
+  }
+}
+
+function show(icon, title, desc, type) {
+  document.getElementById('icon').textContent  = icon;
+  document.getElementById('title').textContent = title;
+  const d = document.getElementById('desc');
+  d.innerHTML   = desc + `<br><br><a href="/" class="btn btn-outline">Anasayfa</a>`;
+  d.className   = type;
+}
+
+run();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>E-posta Doğrulama — MirPDF</title>
+  <meta name="description" content="E-posta Doğrulama — MirPDF — MirPDF ile ücretsiz, Türkçe PDF araçları. Kayıt gerekmez, tarayıcıda çalışır.">
+  <meta name="robots" content="noindex,nofollow">
+    <meta property="og:type" content="website"/>
+  <meta property="og:title" content="E-posta Doğrulama | MirPDF"/>
+  <meta property="og:description" content="MirPDF hesabınızı doğrulayın."/>
+  <meta property="og:url" content="https://mirpdf.com/account/verify"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:site_name" content="MirPDF"/>
+  <link rel="canonical" href="https://mirpdf.com/account/verify">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1;--success:#10b981;--danger:#ef4444}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg-soft);color:var(--text);line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
+.card{width:100%;max-width:400px;background:#fff;border:1px solid var(--border);border-radius:24px;padding:2.5rem 2rem;box-shadow:0 4px 24px rgba(0,0,0,.06);text-align:center}
+.icon{font-size:2.8rem;margin-bottom:1.2rem;display:block}
+.card h1{font-size:1.35rem;font-weight:800;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem;line-height:1.6}
+.btn{display:inline-block;padding:.72rem 1.5rem;background:var(--text);color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);margin-left:.5rem}
+.btn-ghost:hover{background:var(--bg-soft);opacity:1}
+.spinner{display:inline-block;width:2.5rem;height:2.5rem;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:1.2rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+  <meta name="twitter:description" content="E-posta Doğrulama — MirPDF — MirPDF ile ücretsiz, Türkçe PDF araçları. Kayıt gerekmez, tarayıcıda çalışır."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="E-posta Doğrulama — MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="spinner" id="spinner" aria-label="Yükleniyor"></div>
+  <h1 id="title">E-posta doğrulanıyor…</h1>
+  <p id="body">Lütfen bekle.</p>
+</div>
+
+<script type="module">
+import { saveToken, invalidateMeCache } from "/assets/js/auth.js";
+
+// Token hem ?token= hem #token= formatında gelebilir
+const params = new URLSearchParams(location.search.length > 1 ? location.search : location.hash.replace(/^#/, "?"));
+const token  = params.get("token") || "";
+
+const spinner = document.getElementById("spinner");
+const title   = document.getElementById("title");
+const body    = document.getElementById("body");
+
+function render(icon, t, b, actions = "") {
+  spinner.style.display = "none";
+  title.textContent = t;
+  body.innerHTML = b + (actions ? `<div style="margin-top:1.25rem">${actions}</div>` : "");
+  // icon emoji olarak göster
+  const iconEl = document.createElement("span");
+  iconEl.className = "icon";
+  iconEl.textContent = icon;
+  spinner.parentNode.insertBefore(iconEl, spinner);
+}
+
+if (!token) {
+  render("⚠️", "Token bulunamadı", "Doğrulama bağlantısı geçersiz veya eksik.",
+    `<a href="/" class="btn">Ana Sayfaya Dön</a>`);
+} else {
+  (async () => {
+    try {
+      const resp = await fetch("/api/auth/verify", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      const j = await resp.json().catch(() => null);
+
+      if (resp.ok && j?.ok) {
+        // Yeni token döndüyse kaydet — otomatik giriş
+        if (j.data?.token) { saveToken(j.data.token); invalidateMeCache(); }
+        // Hoş geldin ekranı
+        spinner.style.display = "none";
+        document.getElementById("card").innerHTML = `
+          <span style="font-size:3rem;display:block;margin-bottom:1rem">🎉</span>
+          <h1 style="font-size:1.35rem;font-weight:800;margin-bottom:.5rem;color:#0d0f1a">E-posta doğrulandı!</h1>
+          <p style="color:#64748b;font-size:.9rem;margin-bottom:1.25rem;line-height:1.6">Hesabın hazır. Hemen kullanmaya başlayabilirsin.</p>
+          <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;text-align:left">
+            <div style="font-size:.82rem;font-weight:700;color:#1d4ed8;margin-bottom:.6rem">⚡ Hesabına yüklendi:</div>
+            <div style="display:flex;flex-direction:column;gap:.4rem">
+              <div style="display:flex;align-items:center;gap:.5rem;font-size:.83rem;color:#374151">
+                <span style="width:20px;height:20px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:#1d4ed8;flex-shrink:0">5</span>
+                <span><strong>5 ücretsiz kredi</strong> — OCR, Sıkıştır, PDF→Word için</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.5rem;font-size:.83rem;color:#374151">
+                <span style="width:20px;height:20px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:#1d4ed8;flex-shrink:0">∞</span>
+                <span><strong>Sınırsız</strong> — Birleştir, Böl, Döndür ve daha fazlası</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.6rem">
+            <a href="/" style="display:block;padding:.78rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;text-align:center">
+              PDF Araçlarını Keşfet →
+            </a>
+            <a href="/account" style="display:block;padding:.7rem;background:transparent;color:#64748b;border:1.5px solid #e3e6f0;border-radius:12px;font-weight:600;font-size:.88rem;text-decoration:none;text-align:center">
+              Hesabıma Git
+            </a>
+          </div>
+          <p style="color:#94a3b8;font-size:.78rem;margin-top:1rem">3 saniye içinde yönlendiriliyorsun…</p>
+        `;
+        // Otomatik yönlendirme — giriş yapıldıysa hesaba, yapılmadıysa login'e
+        setTimeout(() => {
+          location.href = j.data?.token ? "/" : "/login?verified=1";
+        }, 3000);
+      } else if (resp.status === 400 && j?.error === "EXPIRED_TOKEN") {
+        render("⏰", "Bağlantı süresi dolmuş", "Bu doğrulama bağlantısı 24 saatte bir yenilenir.",
+          `<a href="/account" class="btn">Yeni Bağlantı İste</a><a href="/" class="btn btn-ghost">Ana Sayfa</a>`);
+      } else if (resp.status === 400 && j?.error === "INVALID_TOKEN") {
+        render("🔗", "Geçersiz bağlantı", "Bağlantı hatalı veya daha önce kullanıldı. E-postanızı kontrol edin.",
+          `<a href="/account" class="btn">Yeni Bağlantı İste</a><a href="/" class="btn btn-ghost">Ana Sayfa</a>`);
+      } else {
+        render("❌", "Doğrulama başarısız", j?.message || "Bir sorun oluştu.",
+          `<a href="/" class="btn">Ana Sayfaya Dön</a>`);
+      }
+    } catch (_) {
+      render("❌", "Bağlantı hatası", "Sunucuya ulaşılamadı. Sayfayı yenile.",
+        `<button class="btn" onclick="location.reload()">Tekrar Dene</button>`);
+    }
+  })();
+}
+</script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

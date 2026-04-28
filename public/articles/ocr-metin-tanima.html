@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/articles/ocr-metin-tanima.html"/>
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/articles/ocr-metin-tanima.html"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0"/>
+<title>İleri Seviye OCR Teknolojisi: Taranmış Belgeleri Metne Dönüştürme</title>
+<meta name="description" content="OCR teknolojisi ile taranmış belgelerinizi nasıl aranabilir hale getirebilirsiniz? Dil desteği, çözünürlük ve OCR algoritmaları hakkında teknik analiz."/>
+<link rel="canonical" href="https://mirpdf.com/articles/ocr-metin-tanima.html"/>
+<meta content="İleri Seviye OCR Teknolojisi: Taranmış Belgeleri Metne Dönüştürme" property="og:title"/>
+<meta content="OCR teknolojisi ile taranmış belgelerinizi nasıl aranabilir hale getirebilirsiniz? Dil desteği, çözünürlük ve OCR algoritmaları hakkında teknik analiz." property="og:description"/>
+<meta content="https://mirpdf.com/assets/icons/og-image.jpg" property="og:image"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+<meta content="article" property="og:type"/>
+<meta content="https://mirpdf.com/articles/ocr-metin-tanima.html" property="og:url"/>
+  <meta property="og:locale" content="tr_TR"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="İleri Seviye OCR Teknolojisi: Taranmış Belgeleri Metne Dönüştürme" name="twitter:title"/>
+<meta name="twitter:description" content="OCR teknolojisi ile taranmış belgelerinizi nasıl aranabilir hale getirebilirsiniz? Dil desteği, çözünürlük ve OCR algoritmaları hakkında teknik analiz."/>
+<meta content="https://mirpdf.com/assets/icons/og-image.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "OCR işlemi hangi dilleri destekliyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aracımız Türkçe dahil olmak üzere İngilizce, Almanca, Fransızca gibi yaygın dilleri ve özel karakterleri destekler."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "El yazısını metne çevirebilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OCR teknolojisi matbu (bilgisayar veya daktilo) yazılarda en iyi sonucu verir. Okunaklı el yazılarında kısmi başarı sağlansa da %100 doğruluk garanti edilmez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "OCR sonrası metin aranabilir olur mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, işlem sonucunda 'Searchable PDF' (Aranabilir PDF) elde edersiniz. Ctrl+F ile belge içinde arama yapabilirsiniz."
+          }
+        }
+      ]
+    }
+    </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://mirpdf.com/articles/ocr-metin-tanima.html"},"headline":"İleri Seviye OCR Teknolojisi: Taranmış Belgeleri Metne Dönüştürme","description":"OCR teknolojisi ile taranmış belgelerinizi nasıl aranabilir hale getirebilirsiniz? Dil desteği, çözünürlük ve OCR algoritmaları hakkında teknik analiz.","author":{"@type":"Organization","name":"MirPDF"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/logo.png"}},"image":"https://mirpdf.com/assets/icons/og-image.jpg","datePublished":"2026-02-26","dateModified":"2026-02-26"}</script>
+<link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico"/>
+
+
+
+  <script defer src="/assets/js/vitals.js"></script>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="İleri Seviye OCR Teknolojisi: Taranmış Belgeleri Metne Dönüştürme"/>
+  
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/css/article.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="reading-progress" id="rp"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" data-link="home" class="logo" aria-label="MirPDF Ana Sayfa">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mainNav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="/#tools" data-link="tools_anchor">Araçlar</a>
+        <a href="/articles/" data-link="blog_index">Blog</a>
+        <a href="/pricing" data-link="pricing">Fiyatlar</a>
+        <a href="/faq" data-link="faq">SSS</a>
+        <a href="/contact" data-link="contact">İletişim</a>
+        <a href="/pricing" data-link="pricing" class="btn-premium">Premium</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+<div class="article-wrap">
+<nav class="article-breadcrumb">
+  <a href="/">Ana Sayfa</a><span>›</span>
+  <a href="/articles/">Blog</a><span>›</span>
+  <span class="mir-text-base">Makale</span>
+</nav>
+<div class="article-body"><div class="mir-meta-row">
+  <span><i class="fas fa-clock mir-icon-accent"></i><span id="readTime">...</span> dakika okuma</span>
+  <span class="mir-text-light">|</span>
+  <span><i class="fas fa-calendar-alt mir-icon-accent"></i>Mart 2026</span>
+  <span class="mir-text-light">|</span>
+  <span><i class="fas fa-pen mir-icon-accent"></i>MirPDF Editörü</span>
+  <div class="mir-ml-auto-flex">
+    <a id="shareTwitter" href="#" target="_blank" rel="noopener"
+      class="mir-badge-blue">
+      <i class="fab fa-x-twitter"></i> Paylaş
+    </a>
+    <a id="shareWhatsapp" href="#" target="_blank" rel="noopener"
+      class="mir-badge-green">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a id="shareLinkedin" href="#" target="_blank" rel="noopener"
+      class="mir-badge-indigo">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </div>
+<h1>İleri Seviye OCR Teknolojisi: Taranmış Belgeleri Metne Dönüştürme</h1>
+<div class="mir-notice-row">
+  <img src="/assets/icons/logo.svg" width="28" height="28" alt="MirPDF" class="mir-logo-img-sm">
+  <div>
+    <span class="mir-text-bold">MirPDF Ekibi</span>
+    <span class="mir-mx">·</span>
+    <span>2 dk okuma</span>
+    <span class="mir-mx">·</span>
+    <span>Güncellendi: 2026</span>
+  </div>
+</div>
+
+<h2>OCR Teknolojisi Nasıl Çalışır?</h2>
+<p>OCR (Optical Character Recognition — Optik Karakter Tanıma), taranmış belge veya fotoğraftaki yazıları dijital ve düzenlenebilir metne dönüştüren teknolojidir. Bir belgeyi tarayıcıdan geçirdiğinizde sonuç aslında bir resimdir. OCR, bu resimdeki harfleri ve kelimeleri tanıyarak gerçek metin oluşturur.</p>
+
+<h3>OCR'ın Çalışma Aşamaları</h3>
+<p>Modern OCR motorları birkaç aşamalı bir işlem gerçekleştirir. Her aşama doğruluğu artırmaya katkı sağlar:</p>
+<ol>
+<li><strong>Ön İşleme:</strong> Görüntü düzleştirilir, gürültü giderilir, kontrast artırılır</li>
+<li><strong>Sayfa Düzeni Analizi:</strong> Paragraflar, başlıklar, tablolar ve görseller ayrıştırılır</li>
+<li><strong>Karakter Tanıma:</strong> Her karakter ayrı ayrı tanımlanır (sinir ağı tabanlı)</li>
+<li><strong>Dil Modeli:</strong> Bağlam analizi ile yanlış tanınan harfler düzeltilir</li>
+<li><strong>Çıktı Oluşturma:</strong> Tanınan metin PDF'e, Word'e veya düz metne aktarılır</li>
+</ol>
+
+<h3>Türkçe OCR Özellikleri</h3>
+<p>Türkçe, Latin alfabesi kullanan ama özel karakter seti içeren bir dil. ğ, ş, ı, ö, ü, ç harfleri standart Latin'den farklıdır. Bu nedenle Türkçe OCR için özel eğitilmiş dil modeli şarttır. Yanlış dil seçimi ğ yerine g, ş yerine s gibi hatalar üretir.</p>
+
+<div class="callout callout-tip">
+<span class="callout-icon">💡</span>
+<p><strong>İpucu:</strong> MirPDF OCR aracı Türkçe ve İngilizce karma belgeleri (Türkçe-İngilizce) aynı anda işleyebilir. Belgenizde her iki dil varsa karma mod seçin.</p>
+</div>
+
+<h3>OCR Doğruluğunu Etkileyen Faktörler</h3>
+<p>OCR teknolojisi mükemmel değildir. Doğruluk oranı birkaç faktöre bağlıdır:</p>
+<ul>
+<li><strong>Tarama çözünürlüğü:</strong> 300 DPI altı belgeler hatalı tanınır; 300-600 DPI idealdir</li>
+<li><strong>Yazı tipi:</strong> El yazısı ve el yapımı fontlar tanıma için zordur</li>
+<li><strong>Kağıt kalitesi:</strong> Sararmış, yırtık veya üzeri karalı belgeler doğruluğu düşürür</li>
+<li><strong>Eğiklik:</strong> 5 dereceden fazla eğik taramalar sorun yaratır</li>
+<li><strong>Gürültü:</strong> Tarayıcı gürültüsü ve gölgeler tanımayı zorlaştırır</li>
+</ul>
+
+<h3>OCR Sonuçlarını Doğrulama</h3>
+<p>OCR çıktısını kullanmadan önce kritik bölümleri mutlaka kontrol edin. Özellikle sayılar, özel isimler ve teknik terimler hatalı tanınabilir. Tablo yapıları bazen bozulur; tablo içeren belgelerde manuel düzeltme gerekebilir.</p>
+
+<div class="callout callout-note">
+<span class="callout-icon">ℹ️</span>
+<p><strong>Not:</strong> Yüksek kaliteli taramalarda Türkçe metin için %95+ doğruluk beklenebilir. Düşük kaliteli veya el yazılı belgeler için bu oran %70-80'e düşebilir.</p>
+</div>
+
+<h3>Sık Sorulan Sorular</h3>
+<p><strong>Dijital PDF'e OCR gerekli mi?</strong></p>
+<p>Hayır. Word'den veya bir uygulamadan oluşturulan PDF'lerde metin zaten seçilebilir durumdadır. OCR yalnızca taranmış veya fotoğraflanmış belgeler için gereklidir.</p>
+<p><strong>OCR sonrası dosya boyutu değişir mi?</strong></p>
+<p>Evet, hafifçe artar. Metin katmanı eklenmesi boyutu büyütür; ancak bu artış genellikle küçüktür.</p>
+<p><strong>El yazısını OCR ile metne çevirebilir miyim?</strong></p>
+<p>Düzgün el yazıları kısmen tanınabilir, ancak doğruluk oranı basılı metinden belirgin şekilde düşüktür. El yazısı için özel eğitilmiş araçlar daha iyi sonuç verir.</p>
+</div>
+<div class="article-cta">
+<h3>PDF Dosyanı Hemen Düzenle</h3>
+<p>Temel PDF araçlarını hesap açmadan kullanabilirsiniz. Daha yoğun işler için kredi veya Pro plan devreye girer.</p>
+<a href="/" class="article-cta-btn"><i class="fas fa-arrow-right"></i> MirPDF Araçlarını Aç</a>
+</div>
+</div>
+
+  <div class="mir-tip-card-lg">
+    <p class="mir-label-blue">📖 İlgili Rehberler</p>
+    <div class="mir-tag-row">
+      <a href="/articles/ocr-turkce-pdf-metin.html" class="mir-tag-chip">📝 Türkçe OCR ile Metin Çıkarma</a> <a href="/articles/taranmis-pdf-duzenleme-ocr.html" class="mir-tag-chip">📝 Taranmış PDF Düzenleme</a> <a href="/articles/ocr-turkce-karakter-sorunu.html" class="mir-tag-chip">📝 Türkçe Karakter Sorunları</a>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" data-link="home" class="logo" aria-label="MirPDF Ana Sayfa">
+          <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+          MirPDF
+        </a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları. 14+ araç, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-birlestir" data-link="tool_pdf_merge">PDF Birleştir</a>
+        <a href="/pdf-sikistir" data-link="tool_pdf_compress">PDF Sıkıştır</a>
+        <a href="/pdf-bol" data-link="tool_pdf_split">PDF Böl</a>
+        <a href="/pdf-to-word" data-link="tool_pdf_to_word">PDF → Word</a>
+        <a href="/ocr" data-link="tool_ocr">OCR / Metin</a>
+        <a href="/pdf-kilitle" data-link="tool_pdf_lock">PDF Kilitle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/about" data-link="about">Hakkımızda</a>
+        <a href="/contact" data-link="contact">İletişim</a>
+        <a href="/pricing" data-link="pricing">Fiyatlar</a>
+        <a href="/faq" data-link="faq">SSS</a>
+        <a href="/articles/" data-link="blog_index">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Yasal</h4>
+        <a href="/legal/privacy.html" data-link="legal_privacy">Gizlilik Politikası</a>
+        <a href="/legal/terms.html" data-link="legal_terms">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html" data-link="legal_kvkk">KVKK</a>
+        <a href="/legal/security.html" data-link="legal_security">Güvenlik</a>
+        <a href="/sitemap.xml" data-link="sitemap">Site Haritası</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div class="footer-links-row">
+        <a href="/legal/privacy.html" data-link="legal_privacy">Gizlilik</a>
+        <a href="/legal/terms.html" data-link="legal_terms">Şartlar</a>
+        <a href="/legal/kvkk.html" data-link="legal_kvkk">KVKK</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const toggle = document.getElementById('mobileToggle');
+const nav = document.getElementById('mainNav');
+if(toggle && nav){
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', open);
+  });
+}
+// mark active nav link
+const path = location.pathname;
+document.querySelectorAll('.main-nav a').forEach(a => {
+  if(a.getAttribute('href') && path.startsWith(a.getAttribute('href')) && a.getAttribute('href') !== '/') {
+    a.style.color = 'var(--text)';
+    a.style.background = 'var(--bg-soft)';
+  }
+});
+</script>
+<script>
+const rp=document.getElementById('rp');
+if(rp) window.addEventListener('scroll',()=>{rp.style.width=Math.min(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100,100)+'%';},{passive:true});
+</script>
+<script>
+(function(){
+  var content = document.querySelector('article.content') || document.querySelector('.article-body');
+  if(content){ var words = content.innerText.trim().split(/\s+/).length; var mins = Math.max(1,Math.round(words/200)); var el = document.getElementById('readTime'); if(el) el.textContent = mins; }
+  var url = encodeURIComponent(location.href); var title = encodeURIComponent(document.title);
+  var tw=document.getElementById('shareTwitter'), wa=document.getElementById('shareWhatsapp'), li=document.getElementById('shareLinkedin');
+  if(tw) tw.href='https://twitter.com/intent/tweet?url='+url+'&text='+title;
+  if(wa) wa.href='https://api.whatsapp.com/send?text='+title+'%20'+url;
+  if(li) li.href='https://www.linkedin.com/sharing/share-offsite/?url='+url;
+})();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

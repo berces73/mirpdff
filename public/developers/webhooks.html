@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+  <title>Webhooks — MirPDF Geliştirici</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://mirpdf.com/developers/webhooks.html">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--primary:#6366f1;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--text:#0d0f1a;--muted:#64748b;--border:#e3e6f0;--bg:#f7f8fc;--radius:14px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;height:62px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
+.logo-mark{width:30px;height:30px;background:var(--text);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem}
+.nav-back{color:var(--muted);font-size:.88rem;text-decoration:none;display:flex;align-items:center;gap:.4rem}
+.nav-back:hover{color:var(--primary)}
+.wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.page-head h1{font-size:1.5rem;font-weight:800}
+.page-head p{color:var(--muted);font-size:.88rem;margin-top:.25rem}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:10px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:opacity .15s,transform .1s;text-decoration:none}
+.btn:hover{opacity:.85;transform:translateY(-1px)}
+.btn-dark{background:var(--text);color:#fff}
+.btn-outline{background:#fff;border:1.5px solid var(--border);color:var(--text)}
+.btn-sm{padding:.4rem .8rem;font-size:.78rem}
+.btn-danger{background:#fef2f2;border:1.5px solid #fca5a5;color:#dc2626}
+.btn-success{background:#f0fdf4;border:1.5px solid #86efac;color:#15803d}
+
+/* Concept strip */
+.concept-strip{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:.84rem;color:#4338ca}
+.concept-strip strong{color:var(--primary)}
+.concept-strip code{background:#fff;border-radius:5px;padding:1px 6px;font-size:.78rem;border:1px solid #c7d2fe}
+
+/* Webhook card */
+.wh-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.wh-head{padding:1.1rem 1.25rem;display:flex;align-items:center;gap:.75rem}
+.wh-icon{width:36px;height:36px;border-radius:9px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:.9rem;flex-shrink:0}
+.wh-icon.inactive{background:#f1f5f9;color:var(--muted)}
+.wh-url{font-weight:700;font-size:.88rem;word-break:break-all}
+.wh-events{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.35rem}
+.event-chip{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:5px;background:#eef2ff;color:var(--primary)}
+.wh-badge-active{display:inline-flex;align-items:center;gap:.3rem;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:.2rem .6rem;font-size:.72rem;font-weight:700;color:#15803d}
+.wh-badge-inactive{display:inline-flex;align-items:center;gap:.3rem;background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:.2rem .6rem;font-size:.72rem;font-weight:700;color:var(--muted)}
+.wh-badge-fail{background:#fef2f2;border-color:#fca5a5;color:#dc2626}
+.wh-actions{display:flex;gap:.4rem;margin-left:auto;flex-shrink:0}
+.wh-body{display:none;border-top:1px solid var(--border);padding:1.25rem;background:#fafbff}
+.wh-body.open{display:block}
+.secret-row{display:flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.55rem .85rem;margin-bottom:.85rem}
+.secret-row code{flex:1;font-family:monospace;font-size:.78rem;color:#374151;word-break:break-all;filter:blur(4px);transition:filter .3s;cursor:pointer}
+.secret-row code.revealed{filter:none}
+.secret-hint{font-size:.75rem;color:var(--muted);margin-bottom:.85rem}
+.log-strip{font-size:.78rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap}
+.log-item{display:flex;align-items:center;gap:.3rem}
+.log-item.ok{color:var(--success)}
+.log-item.err{color:var(--danger)}
+
+/* Docs code */
+.code-block{background:#0d0f1a;border-radius:10px;padding:1rem 1.25rem;font-family:monospace;font-size:.77rem;color:#a5f3fc;overflow-x:auto;margin-bottom:.85rem}
+.code-block .green{color:#86efac}
+.code-block .yellow{color:#fef08a}
+.code-block .gray{color:#6b7280}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:300;align-items:center;justify-content:center}
+.modal-overlay.show{display:flex}
+.modal{background:#fff;border-radius:18px;padding:2rem;width:min(520px,94vw);box-shadow:0 24px 60px rgba(0,0,0,.18);max-height:90vh;overflow-y:auto}
+.modal h2{font-size:1.05rem;font-weight:800;margin-bottom:.3rem}
+.modal p{font-size:.85rem;color:var(--muted);margin-bottom:1.25rem}
+.field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.85rem}
+.field label{font-size:.74rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.field input{width:100%;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:.92rem;color:var(--text);outline:none;transition:border-color .15s}
+.field input:focus{border-color:var(--primary)}
+.events-grid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-bottom:1rem}
+.event-check{display:flex;align-items:center;gap:.5rem;font-size:.82rem;cursor:pointer;padding:.4rem .6rem;border:1.5px solid var(--border);border-radius:9px;transition:.15s}
+.event-check:hover{border-color:#c7d2fe;background:#eef2ff}
+.event-check input{accent-color:var(--primary)}
+.event-check.checked{border-color:#c7d2fe;background:#eef2ff;font-weight:600}
+.modal-actions{display:flex;gap:.6rem;justify-content:flex-end;margin-top:.5rem}
+.empty{text-align:center;padding:3.5rem 1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius)}
+.empty i{font-size:2.5rem;color:#c7d2fe;margin-bottom:1rem;display:block}
+.skel{background:linear-gradient(90deg,#e3e6f0 25%,#f3f4f6 50%,#e3e6f0 75%);background-size:200%;animation:skel 1.4s infinite;border-radius:10px}
+@keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo"><div class="logo-mark"><i class="fas fa-file-pdf"></i></div> MirPDF</a>
+    <a href="/account.html" class="nav-back"><i class="fas fa-arrow-left"></i> Hesabıma Dön</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <div>
+      <h1><i class="fas fa-satellite-dish" style="color:var(--primary)"></i> Webhooks</h1>
+      <p>PDF işlemleri tamamlandığında kendi sunucunuza otomatik bildirim gönderin.</p>
+    </div>
+    <button class="btn btn-dark" onclick="openModal()"><i class="fas fa-plus"></i> Yeni Webhook</button>
+  </div>
+
+  <div class="concept-strip">
+    <strong>Nasıl çalışır?</strong> Her olayda MirPDF, belirttiğiniz URL'ye
+    <code>POST</code> isteği gönderir. İmzayı <code>X-MirPDF-Signature</code>
+    başlığından doğrulayın. Belgelere bakın: <a href="/developers/" style="color:var(--primary);font-weight:700">developers/</a>
+  </div>
+
+  <div id="whList">
+    <div class="skel" style="height:72px;margin-bottom:.75rem"></div>
+    <div class="skel" style="height:72px"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>Yeni Webhook Ekle</h2>
+    <p>Bildirimlerin gönderileceği URL'yi ve olayları seçin.</p>
+
+    <div class="field">
+      <label>Endpoint URL <span style="color:#ef4444">*</span></label>
+      <input type="url" id="whUrl" placeholder="https://uygulamaniz.com/webhooks/mirpdf">
+    </div>
+
+    <div style="font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Dinlenecek Olaylar <span style="color:#ef4444">*</span></div>
+    <div class="events-grid" id="eventsGrid"></div>
+
+    <div class="code-block" style="font-size:.74rem">
+<span class="gray"># Gelen isteği Python'da doğrulama:</span>
+<span class="green">import</span> hmac, hashlib
+sig = request.headers[<span class="yellow">"X-MirPDF-Signature"</span>]
+expected = <span class="yellow">"sha256="</span> + hmac.new(
+    secret.encode(), request.body, hashlib.sha256
+).hexdigest()
+<span class="green">assert</span> hmac.compare_digest(sig, expected)</div>
+
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">İptal</button>
+      <button class="btn btn-dark" id="createWhBtn" onclick="createWebhook()"><i class="fas fa-plus"></i> Ekle</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const JWT_KEY = 'mirpdf_jwt';
+const EVENTS = [
+  { id:'job.completed',          label:'İşlem Tamamlandı',       desc:'PDF işlemi başarılı' },
+  { id:'job.failed',             label:'İşlem Başarısız',         desc:'PDF işlemi hatalı' },
+  { id:'credit.low',             label:'Kredi Az Kaldı',          desc:'Bakiye ≤5 kredi' },
+  { id:'subscription.created',   label:'Abonelik Başladı',        desc:'Yeni plan satın alındı' },
+  { id:'subscription.cancelled', label:'Abonelik İptal',          desc:'Plan sonlandırıldı' },
+];
+
+function getToken() { return localStorage.getItem(JWT_KEY); }
+function authH(json=true) {
+  const t = getToken();
+  const h = t ? { 'Authorization': 'Bearer ' + t } : {};
+  if (json) h['Content-Type'] = 'application/json';
+  return h;
+}
+
+/* ── Load ── */
+async function load() {
+  if (!getToken()) { location.href = '/login.html'; return; }
+  try {
+    const res  = await fetch('/api/webhooks', { headers: authH() });
+    const data = await res.json();
+    renderList(data.webhooks || []);
+  } catch {
+    document.getElementById('whList').innerHTML = '<div style="color:#dc2626;font-size:.88rem;padding:1rem">Yüklenemedi.</div>';
+  }
+}
+
+/* ── Render ── */
+function renderList(whs) {
+  const c = document.getElementById('whList');
+  if (!whs.length) {
+    c.innerHTML = `<div class="empty"><i class="fas fa-satellite-dish"></i><h3>Henüz webhook yok</h3><p>Webhook ekleyerek PDF işlemlerinizi gerçek zamanlı takip edin.</p><button class="btn btn-dark" onclick="openModal()"><i class="fas fa-plus"></i> İlk Webhook'u Ekle</button></div>`;
+    return;
+  }
+  c.innerHTML = whs.map((w, i) => {
+    const events = JSON.parse(w.events || '[]');
+    const isFail = w.failure_count >= 3;
+    const isOff  = !w.active;
+    let badgeHtml = w.active
+      ? (isFail ? `<span class="wh-badge-active wh-badge-fail"><i class="fas fa-exclamation-triangle"></i> ${w.failure_count} hata</span>` : '<span class="wh-badge-active"><i class="fas fa-circle"></i> Aktif</span>')
+      : '<span class="wh-badge-inactive"><i class="fas fa-pause-circle"></i> Pasif</span>';
+
+    return `
+    <div class="wh-card">
+      <div class="wh-head">
+        <div class="wh-icon ${isOff?'inactive':''}"><i class="fas fa-satellite-dish"></i></div>
+        <div style="flex:1;min-width:0">
+          <div class="wh-url">${esc(w.url)}</div>
+          <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.35rem">
+            ${badgeHtml}
+            <div class="wh-events">${events.map(e=>`<span class="event-chip">${e}</span>`).join('')}</div>
+          </div>
+        </div>
+        <div class="wh-actions">
+          <button class="btn btn-sm btn-outline" onclick="toggleBody(${i})" title="Detaylar"><i class="fas fa-chevron-down" id="chev${i}"></i></button>
+        </div>
+      </div>
+      <div class="wh-body" id="wb${i}">
+        <div class="secret-hint"><i class="fas fa-lock" style="color:var(--primary)"></i> İmzalama Secret'ı — doğrulamak için tıklayın</div>
+        <div class="secret-row">
+          <code id="sec${i}" onclick="revealSecret(${i})">${esc(w.secret||'••••••••••••••••')}</code>
+        </div>
+        <div class="log-strip">
+          <div class="log-item ${w.failure_count>0?'err':'ok'}"><i class="fas fa-${w.failure_count>0?'times-circle':'check-circle'}"></i> ${w.failure_count} başarısız gönderim</div>
+          ${w.last_triggered_at ? `<div class="log-item"><i class="fas fa-clock"></i> Son tetiklenme: ${new Date(w.last_triggered_at).toLocaleString('tr-TR')}</div>` : ''}
+        </div>
+        <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
+          <button class="btn btn-sm ${w.active?'btn-outline':'btn-success'}" onclick="toggleWh('${w.id}')">
+            <i class="fas fa-${w.active?'pause':'play'}"></i> ${w.active?'Duraklat':'Aktifleştir'}
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="testWh('${w.id}',this)"><i class="fas fa-paper-plane"></i> Test Gönder</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteWh('${w.id}')"><i class="fas fa-trash"></i> Sil</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+window.toggleBody = function(i) {
+  const b = document.getElementById('wb'+i);
+  const c = document.getElementById('chev'+i);
+  const open = b.classList.contains('open');
+  b.classList.toggle('open',!open);
+  c.style.transform = open?'':'rotate(180deg)';
+};
+
+window.revealSecret = function(i) {
+  document.getElementById('sec'+i).classList.toggle('revealed');
+};
+
+window.toggleWh = async function(id) {
+  await fetch('/api/webhooks/'+id+'/toggle', { method:'POST', headers:authH() });
+  load();
+};
+
+window.deleteWh = async function(id) {
+  if (!confirm('Bu webhook\'u silmek istediğinize emin misiniz?')) return;
+  await fetch('/api/webhooks/'+id, { method:'DELETE', headers:authH() });
+  load();
+};
+
+window.testWh = async function(id, btn) {
+  const orig = btn.innerHTML;
+  btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor…';
+  const res = await fetch('/api/webhooks/'+id+'/test', { method:'POST', headers:authH() });
+  const d   = await res.json().catch(()=>({}));
+  btn.disabled = false;
+  if (d.ok && d.success) {
+    btn.innerHTML = '<i class="fas fa-check"></i> Başarılı!';
+    btn.style.cssText = 'background:#f0fdf4;border-color:#86efac;color:#15803d';
+  } else {
+    btn.innerHTML = `<i class="fas fa-times"></i> Hata (${d.status||'timeout'})`;
+    btn.style.cssText = 'background:#fef2f2;border-color:#fca5a5;color:#dc2626';
+  }
+  setTimeout(() => { btn.innerHTML = orig; btn.style.cssText = ''; }, 3000);
+};
+
+/* ── Modal ── */
+window.openModal = function() {
+  document.getElementById('eventsGrid').innerHTML = EVENTS.map(e => `
+    <label class="event-check" id="lbl_${e.id}">
+      <input type="checkbox" value="${e.id}" onchange="toggleEventLabel(this)"> ${e.label}
+    </label>`).join('');
+  document.getElementById('whUrl').value = '';
+  document.getElementById('modalOverlay').classList.add('show');
+};
+window.closeModal = function() {
+  document.getElementById('modalOverlay').classList.remove('show');
+};
+window.toggleEventLabel = function(cb) {
+  document.getElementById('lbl_'+cb.value).classList.toggle('checked', cb.checked);
+};
+document.getElementById('modalOverlay').addEventListener('click', e => { if(e.target===e.currentTarget) closeModal(); });
+
+window.createWebhook = async function() {
+  const url    = document.getElementById('whUrl').value.trim();
+  const events = [...document.querySelectorAll('#eventsGrid input:checked')].map(c=>c.value);
+  const btn    = document.getElementById('createWhBtn');
+
+  if (!url) { alert('Lütfen bir URL girin.'); return; }
+  if (!events.length) { alert('En az bir olay seçin.'); return; }
+
+  btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+  const res = await fetch('/api/webhooks', {
+    method:'POST', headers:authH(),
+    body: JSON.stringify({ url, events }),
+  });
+  const data = await res.json().catch(()=>({}));
+  btn.disabled=false; btn.innerHTML='<i class="fas fa-plus"></i> Ekle';
+
+  if (!data.ok) { alert(data.message || 'Hata oluştu.'); return; }
+  closeModal();
+  load();
+};
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+load();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

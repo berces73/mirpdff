@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="alternate" hreflang="tr" href="https://mirpdf.com/"/>
+  <link rel="alternate" hreflang="en" href="https://mirpdf.com/en/"/>
+  <link rel="alternate" hreflang="fr" href="https://mirpdf.com/fr/"/>
+  <link rel="alternate" hreflang="de" href="https://mirpdf.com/de/"/>
+  <link rel="alternate" hreflang="es" href="https://mirpdf.com/es/"/>
+  <link rel="alternate" hreflang="x-default" href="https://mirpdf.com/"/><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<title>MirPDF — Herramientas PDF Gratis | Unir, Comprimir, Dividir</title>
+<meta name="description" content="Herramientas PDF gratuitas en el navegador — comprime, une, divide y convierte PDFs en línea. Sin registro, tus archivos nunca salen de tu dispositivo."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://mirpdf.com/es/"/><!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mirpdf.com/es/"/>
+<meta property="og:title" content="MirPDF — Herramientas PDF Gratuitas en Línea"/>
+<meta property="og:description" content="Herramientas PDF gratuitas y seguras en el navegador. Une, comprime, divide, convierte. Sin necesidad de subir archivos."/>
+<meta property="og:image" content="https://mirpdf.com/assets/icons/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:site_name" content="MirPDF"/>
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="MirPDF — Herramientas PDF Gratuitas en Línea"/>
+<meta name="twitter:description" content="Herramientas PDF en línea: comprime, une, divide y convierte en tu navegador. Sin registro, sin subir archivos."/>
+<meta name="twitter:image" content="https://mirpdf.com/assets/icons/og-image.jpg"/>
+<meta name="theme-color" content="#0d1117"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin=""/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MirPDF",
+  "url": "https://mirpdf.com/es/",
+  "description": "Herramientas PDF gratuitas y seguras en el navegador. Une, comprime, divide, convierte. Sin necesidad de subir archivos.",
+  "inLanguage": "es"
+}
+</script>
+<style>
+  :root{--red:#e63946;--red-dark:#c1121f;--bg:#ffffff;--bg2:#f7f8fc;--bg3:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--text-muted:#64748b;--radius:12px;--transition:0.22s ease}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+  .header{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+  .header-content{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+  .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-size:1.2rem;font-weight:700;color:var(--text)}
+  .logo i{color:var(--red);font-size:1.4rem}
+  nav a{color:var(--text-muted);text-decoration:none;padding:.4rem .75rem;border-radius:6px;font-size:.95rem;transition:background var(--transition),color var(--transition)}
+  nav a:hover{background:var(--bg3);color:var(--text)}
+  #mainNav{display:flex;gap:.25rem;align-items:center}
+  .lang-switch{background:var(--bg3);border:1px solid var(--border);color:var(--text-muted);padding:.3rem .7rem;border-radius:6px;font-size:.82rem;text-decoration:none}
+  #mobileMenuToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.45rem .7rem;border-radius:6px;cursor:pointer;font-size:1rem}
+  .hero{background:linear-gradient(135deg,#0d1117 0%,#1a1a2e 100%);color:#fff;padding:4rem 0 3.5rem;text-align:center}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem}
+  .hero p{font-size:1.1rem;opacity:.85;max-width:600px;margin:0 auto}
+  .tools-section{padding:3rem 0}
+  .tools-section h2{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem}
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1rem}
+  .tool-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;padding:1.5rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);transition:border-color var(--transition),transform var(--transition),box-shadow var(--transition)}
+  .tool-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(230,57,70,.15)}
+  .tool-card i{font-size:1.8rem;color:var(--red)}
+  .tool-card h3{font-size:.9rem;font-weight:700;margin:0}
+  .tool-card p{font-size:.75rem;color:var(--text-muted);margin:0;line-height:1.4}
+  .features-section{background:var(--bg2);padding:3rem 0;border-top:1px solid var(--border)}
+  .features-section h2{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem}
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+  .feature-item{display:flex;flex-direction:column;gap:.5rem}
+  .feature-item i{font-size:1.5rem;color:var(--red)}
+  .feature-item strong{font-weight:700}
+  .feature-item span{font-size:.9rem;color:var(--text-muted)}
+  .footer{border-top:1px solid var(--border);padding:1.5rem 0}
+  .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:var(--text-muted)}
+  .footer-links{display:flex;gap:1rem;flex-wrap:wrap}
+  .footer-links a{color:var(--text-muted);text-decoration:none}
+  .footer-links a:hover{color:var(--text)}
+  @media(max-width:700px){
+    #mainNav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem}
+    #mainNav.show{display:flex}
+    #mobileMenuToggle{display:block}
+    .footer-inner{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/es/" class="logo" aria-label="MirPDF Ana Sayfa">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+        <span>MirPDF</span>
+      </a>
+      <button id="mobileMenuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="/es/">Herramientas</a>
+        <a href="/es/pricing">Precios</a>
+        <a href="/es/about">Acerca de</a>
+        <a href="/es/faq">FAQ</a>
+        <a href="/en/" class="lang-switch">EN</a>
+        <a href="/" class="lang-switch">TR</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+<section class="hero">
+  <div class="container">
+    <h1>Herramientas PDF Gratuitas</h1>
+    <p>Todas tus herramientas PDF en un solo lugar. Gratis, en el navegador, sin registro.</p>
+  </div>
+</section>
+<section class="tools-section" id="tools">
+  <div class="container">
+    <h2>Herramientas PDF</h2>
+    <div class="tools-grid">
+      <a class="tool-card" href="/es/merge-pdf">
+        <i class="fas fa-object-group" aria-hidden="true"></i>
+        <h3>Unir PDF</h3>
+        <p>Combina varios PDFs en un solo archivo</p>
+      </a>
+      <a class="tool-card" href="/es/compress-pdf">
+        <i class="fas fa-compress" aria-hidden="true"></i>
+        <h3>Comprimir PDF</h3>
+        <p>Reduce el tamaño del archivo manteniendo la calidad</p>
+      </a>
+      <a class="tool-card" href="/es/split-pdf">
+        <i class="fas fa-scissors" aria-hidden="true"></i>
+        <h3>Dividir PDF</h3>
+        <p>Divide un PDF en archivos separados por página</p>
+      </a>
+      <a class="tool-card" href="/es/pdf-to-jpg">
+        <i class="fas fa-file-image" aria-hidden="true"></i>
+        <h3>PDF → JPG</h3>
+        <p>Convierte páginas PDF en imágenes JPG</p>
+      </a>
+      <a class="tool-card" href="/es/jpg-to-pdf">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+        <h3>JPG → PDF</h3>
+        <p>Convierte imágenes en un solo PDF</p>
+      </a>
+      <a class="tool-card" href="/es/rotate-pdf">
+        <i class="fas fa-rotate" aria-hidden="true"></i>
+        <h3>Rotar PDF</h3>
+        <p>Rota páginas 90°/180°/270°</p>
+      </a>
+      <a class="tool-card" href="/es/delete-pdf-pages">
+        <i class="fas fa-trash" aria-hidden="true"></i>
+        <h3>Eliminar páginas</h3>
+        <p>Elimina páginas no deseadas del PDF</p>
+      </a>
+      <a class="tool-card" href="/es/reorder-pdf-pages">
+        <i class="fas fa-sort" aria-hidden="true"></i>
+        <h3>Reordenar páginas</h3>
+        <p>Reorganiza las páginas en cualquier orden</p>
+      </a>
+      <a class="tool-card" href="/es/lock-pdf">
+        <i class="fas fa-lock" aria-hidden="true"></i>
+        <h3>Bloquear PDF</h3>
+        <p>Añade protección con contraseña</p>
+      </a>
+      <a class="tool-card" href="/es/add-qr-code-pdf">
+        <i class="fas fa-qrcode" aria-hidden="true"></i>
+        <h3>Añadir QR</h3>
+        <p>Incrusta un código QR en tu PDF</p>
+      </a>
+      <a class="tool-card" href="/es/pdf-to-word">
+        <i class="fas fa-file-word" aria-hidden="true"></i>
+        <h3>PDF → Word</h3>
+        <p>Convierte PDF en documento Word editable</p>
+      </a>
+      <a class="tool-card" href="/es/excel-to-pdf">
+        <i class="fas fa-file-excel" aria-hidden="true"></i>
+        <h3>Excel → PDF</h3>
+        <p>Convierte hojas Excel en PDF</p>
+      </a>
+      <a class="tool-card" href="/es/number-pdf-pages">
+        <i class="fas fa-font" aria-hidden="true"></i>
+        <h3>Numerar páginas</h3>
+        <p>Añade números de página a tu PDF</p>
+      </a>
+      <a class="tool-card" href="/es/crop-pdf">
+        <i class="fas fa-crop" aria-hidden="true"></i>
+        <h3>Recortar PDF</h3>
+        <p>Recorta los márgenes de las páginas PDF</p>
+      </a>
+      <a class="tool-card" href="/es/unlock-pdf">
+        <i class="fas fa-unlock" aria-hidden="true"></i>
+        <h3>Desbloquear PDF</h3>
+        <p>Elimina la protección con contraseña</p>
+      </a>
+      <a class="tool-card" href="/es/sign-pdf">
+        <i class="fas fa-signature" aria-hidden="true"></i>
+        <h3>Firmar PDF</h3>
+        <p>Firma tus PDFs en línea</p>
+      </a>
+      <a class="tool-card" href="/es/watermark-pdf">
+        <i class="fas fa-water" aria-hidden="true"></i>
+        <h3>Marca de agua PDF</h3>
+        <p>Añade marca de agua de texto o imagen</p>
+      </a>
+      <a class="tool-card" href="/es/ocr-pdf">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <h3>OCR PDF</h3>
+        <p>Haz que los PDFs escaneados sean buscables</p>
+      </a>
+      <a class="tool-card" href="/es/pdf-background">
+        <i class="fas fa-image" aria-hidden="true"></i>
+        <h3>Fondo PDF</h3>
+        <p>Añade imagen de fondo a tu PDF</p>
+      </a>
+      <a class="tool-card" href="/es/duplicate-pdf-pages">
+        <i class="fas fa-copy" aria-hidden="true"></i>
+        <h3>Duplicar páginas</h3>
+        <p>Duplica páginas en tu PDF</p>
+      </a>
+      <a class="tool-card" href="/es/ppt-to-pdf">
+        <i class="fas fa-file-powerpoint" aria-hidden="true"></i>
+        <h3>PPT → PDF</h3>
+        <p>Convierte PowerPoint en PDF</p>
+      </a>
+      <a class="tool-card" href="/es/word-to-pdf">
+        <i class="fas fa-file-word" aria-hidden="true"></i>
+        <h3>Word → PDF</h3>
+        <p>Convierte Word en PDF</p>
+      </a>
+      <a class="tool-card" href="/es/extract-pdf-pages">
+        <i class="fas fa-scissors" aria-hidden="true"></i>
+        <h3>Extraer páginas</h3>
+        <p>Extrae páginas específicas</p>
+      </a>
+      <a class="tool-card" href="/es/edit-pdf">
+        <i class="fas fa-pen" aria-hidden="true"></i>
+        <h3>Editar PDF</h3>
+        <p>Anota y edita tus PDFs</p>
+      </a>
+      <a class="tool-card" href="/es/edit-pdf-metadata">
+        <i class="fas fa-tags" aria-hidden="true"></i>
+        <h3>Metadatos PDF</h3>
+        <p>Edita título, autor y propiedades</p>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="features-section">
+  <div class="container">
+    <h2>¿Por qué MirPDF?</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fas fa-shield-halved" aria-hidden="true"></i>
+        <strong>Privacidad total</strong>
+        <span>Tus archivos nunca salen de tu dispositivo. Todo el procesamiento ocurre localmente en tu navegador.</span>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-bolt" aria-hidden="true"></i>
+        <strong>Procesamiento instantáneo</strong>
+        <span>Sin subidas, sin esperas. Selecciona un archivo, aplica la operación, descarga al instante.</span>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-circle-check" aria-hidden="true"></i>
+        <strong>Completamente gratis</strong>
+        <span>Sin registro requerido. Sin límites diarios. Usa todas las herramientas PDF sin restricciones.</span>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-mobile-screen" aria-hidden="true"></i>
+        <strong>Funciona en todas partes</strong>
+        <span>Compatible con móvil, tablet y escritorio. Navegadores modernos soportados. Sin instalación.</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p>© 2026 MirPDF — Todos los derechos reservados.</p>
+      <nav class="footer-links">
+        <a href="/legal/privacy.html">Privacy</a>
+        <a href="/legal/terms.html">Terms</a>
+        <a href="/es/contact">Contacto</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script>
+const toggle = document.getElementById('mobileMenuToggle');
+const nav = document.getElementById('mainNav');
+toggle?.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('show');
+  toggle.setAttribute('aria-expanded', String(isOpen));
+});
+document.addEventListener('click', (e) => {
+  if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+    nav.classList.remove('show');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+});
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

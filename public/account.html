@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Hesabım — MirPDF</title>
+  <meta property="og:title" content="Hesabım | MirPDF"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mirpdf.com/account"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:description" content="MirPDF hesabınızı yönetin. Kredi bakiyenizi görün, planınızı yükseltin ve işlem geçmişinize erişin."/>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="MirPDF hesabınızı yönetin. Kredi bakiyenizi görün, planınızı yükseltin ve işlem geçmişinize erişin Tarayıcıdan çalışır, kayıt gerekmez.">
+  <link rel="canonical" href="https://mirpdf.com/account">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--radius:18px;--primary:#6366f1;--success:#10b981;--danger:#ef4444;--warning:#f59e0b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg-soft);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+/* HEADER */
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:.15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+.btn-premium{background:var(--text)!important;color:#fff!important;padding:.45rem 1.2rem!important;border-radius:10px;font-weight:700!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:67px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}.main-nav.show{display:flex}.main-nav a{width:100%;padding:.65rem 1rem}}
+/* PAGE */
+.page-wrap{max-width:760px;margin:0 auto;padding:2.5rem 1rem 4rem}
+.page-title{font-size:1.75rem;font-weight:800;margin-bottom:.25rem}
+.page-sub{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.section{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.75rem;margin-bottom:1.25rem}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.section-title{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.section-title i{color:var(--muted);font-size:.9rem}
+/* Info rows */
+.info-row{display:flex;align-items:center;justify-content:space-between;padding:.65rem 0;border-bottom:1px solid var(--border);font-size:.9rem}
+.info-row:last-child{border-bottom:none;padding-bottom:0}
+.info-label{color:var(--muted);font-size:.84rem}
+.info-val{font-weight:600}
+/* Role badge */
+.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .75rem;border-radius:8px;font-size:.78rem;font-weight:700;letter-spacing:.03em}
+.badge-free{background:var(--bg-mute);color:var(--muted)}
+.badge-pro{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+.badge-verified{background:#f0fdf4;color:#15803d;border:1px solid #86efac}
+.badge-unverified{background:#fef9c3;color:#a16207;border:1px solid #fde68a}
+/* Credit bar */
+.credit-bar-wrap{margin-top:.5rem}
+.credit-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:.5rem 0}
+.credit-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .5s}
+.credit-bar-fill.low{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+.credit-nums{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.2rem;border-radius:11px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:opacity .15s,transform .1s;text-decoration:none}
+.btn:hover{opacity:.85;transform:translateY(-1px)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-dark{background:var(--text);color:#fff}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--text)}
+.btn-outline:hover{background:var(--bg-soft);opacity:1}
+.btn-danger{background:#fef2f2;border:1.5px solid #fca5a5;color:#dc2626}
+.btn-danger:hover{background:#fee2e2;opacity:1}
+.btn-sm{padding:.5rem .9rem;font-size:.82rem}
+/* Alert */
+.alert{border-radius:12px;padding:.85rem 1rem;font-size:.875rem;margin-bottom:1.25rem;display:none}
+.alert-warn{background:#fef9c3;border:1px solid #fde68a;color:#a16207}
+.alert-ok{background:#f0fdf4;border:1px solid #86efac;color:#15803d}
+/* Change password form */
+.cpw-form{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+.field label{font-size:.82rem;font-weight:600}
+.field input{padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.92rem;font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s}
+.field input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(99,102,241,.12)}
+.form-row{display:flex;gap:.75rem;margin-top:.25rem}
+/* Loading skeleton */
+.skel{background:linear-gradient(90deg,var(--border) 25%,var(--bg-mute) 50%,var(--border) 75%);background-size:200% 100%;animation:skel-anim 1.4s infinite;border-radius:8px;height:1rem;display:inline-block}
+@keyframes skel-anim{0%{background-position:200%}100%{background-position:-200%}}
+/* Transactions */
+.tx-list{display:flex;flex-direction:column;gap:.5rem}
+.tx-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem .85rem;background:var(--bg-soft);border-radius:10px;font-size:.84rem}
+.tx-kind{font-weight:600}
+.tx-amount{color:var(--success);font-weight:700}
+.tx-date{color:var(--muted);font-size:.78rem}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem;margin-top:2rem}
+footer a{color:var(--muted)}
+
+/* Kredi kullanim grafiği */
+.usage-chart{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin:1rem 0}
+.usage-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:3px}
+.usage-bar{width:100%;border-radius:4px 4px 0 0;background:var(--border);min-height:4px}
+.usage-bar.filled{background:linear-gradient(180deg,#6366f1,#8b5cf6)}
+.usage-day{font-size:.6rem;color:var(--muted);text-align:center}
+/* Başarı rozetleri */
+.achievement-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.75rem;margin-top:.75rem}
+.achievement{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:.9rem .75rem;text-align:center;transition:.15s}
+.achievement.earned{background:linear-gradient(135deg,#fdf4ff,#fce7f3);border-color:#e879f9}
+.achievement.locked{opacity:.45;filter:grayscale(1)}
+.achievement-icon{font-size:1.6rem;margin-bottom:.4rem}
+.achievement-name{font-size:.75rem;font-weight:700;color:var(--text);line-height:1.3}
+.achievement-desc{font-size:.65rem;color:var(--muted);margin-top:.15rem}
+/* Upgrade widget */
+.upgrade-widget{background:linear-gradient(135deg,#ede9fe,#e0e7ff);border:1.5px solid #c4b5fd;border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.upgrade-widget h4{font-size:.95rem;font-weight:700;color:#4c1d95;margin-bottom:.2rem}
+.upgrade-widget p{font-size:.8rem;color:#6d28d9;margin:0}
+.upgrade-cta{display:inline-flex;align-items:center;gap:.35rem;padding:.55rem 1.1rem;background:#7c3aed;color:#fff;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none;flex-shrink:0;white-space:nowrap}
+</style>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:description" content="MirPDF hesabınızı yönetin. Kredi bakiyenizi görün, planınızı yükseltin ve işlem geçmişinize erişin Tarayıcıdan çalışır, kayıt gerekmez."/>
+  <meta name="twitter:title" content="Hesabım — MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation">
+        <a href="/#tools">Araçlar</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/account" style="color:var(--text);font-weight:700">Hesabım</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <h1 class="page-title">Hesabım</h1>
+  <p class="page-sub" id="pageSubtitle">Bilgilerini ve plan durumunu görüntüle.</p>
+
+  <div class="alert alert-warn" id="verifyAlert">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+    E-posta adresin henüz doğrulanmadı. Gelen kutunu kontrol et.
+    <button id="resendVerifyBtn" style="margin-left:.75rem;background:none;border:none;color:#a16207;font-weight:700;cursor:pointer;font-family:inherit;font-size:.875rem;text-decoration:underline">Tekrar gönder</button>
+  </div>
+
+  <!-- Profil -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-user" aria-hidden="true"></i> Profil</span>
+      <button class="btn btn-outline btn-sm" id="toggleProfileEditBtn">Düzenle</button>
+    </div>
+    <div id="welcomeBanner" style="background:linear-gradient(135deg,#f0f0ff 0%,#e8e8fe 100%);border:1px solid #c7d2fe;border-radius:14px;padding:1rem 1.25rem;margin-bottom:1.25rem;display:none">
+      <div style="font-size:1rem;font-weight:700;color:#4338ca" id="welcomeMsg">Hoş geldin 👋</div>
+      <div style="font-size:.82rem;color:#6366f1;margin-top:.2rem" id="welcomeSub"></div>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Ad Soyad</span>
+      <span class="info-val" id="infoName"><span class="skel" style="width:120px"></span></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">E-posta</span>
+      <span class="info-val" id="infoEmail"><span class="skel" style="width:160px"></span></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Üyelik</span>
+      <span id="infoRole"><span class="skel" style="width:60px"></span></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">E-posta Durumu</span>
+      <span id="infoVerified"><span class="skel" style="width:80px"></span></span>
+    </div>
+
+    <!-- Profil düzenleme formu -->
+    <div id="profileEditForm" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem">
+        <div class="field" style="margin-bottom:0">
+          <label for="editFirstName" style="font-size:.82rem;font-weight:600">Ad</label>
+          <input id="editFirstName" type="text" maxlength="64" style="padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.92rem;font-family:inherit;outline:none;width:100%">
+        </div>
+        <div class="field" style="margin-bottom:0">
+          <label for="editLastName" style="font-size:.82rem;font-weight:600">Soyad</label>
+          <input id="editLastName" type="text" maxlength="64" style="padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.92rem;font-family:inherit;outline:none;width:100%">
+        </div>
+      </div>
+      <div style="display:flex;gap:.75rem">
+        <button class="btn btn-dark btn-sm" id="profileSaveBtn">Kaydet</button>
+        <button class="btn btn-outline btn-sm" id="profileCancelBtn">İptal</button>
+      </div>
+      <div id="profileMsg" style="margin-top:.6rem;font-size:.875rem"></div>
+    </div>
+
+    <!-- E-posta değiştirme formu -->
+    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+        <span style="font-size:.84rem;font-weight:600">E-posta Adresi Değiştir</span>
+        <button class="btn btn-outline btn-sm" id="toggleEmailChangeBtn">Değiştir</button>
+      </div>
+      <div id="emailChangeForm" class="mir-hidden">
+        <div class="field" style="margin-bottom:.75rem">
+          <label for="newEmail" style="font-size:.82rem;font-weight:600">Yeni E-posta</label>
+          <input id="newEmail" type="email" placeholder="yeni@email.com" style="padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.92rem;font-family:inherit;outline:none;width:100%">
+        </div>
+        <div class="field" style="margin-bottom:.75rem">
+          <label for="emailChangePw" style="font-size:.82rem;font-weight:600">Mevcut Şifre (doğrulama için)</label>
+          <input id="emailChangePw" type="password" placeholder="••••••••" style="padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.92rem;font-family:inherit;outline:none;width:100%">
+        </div>
+        <div style="display:flex;gap:.75rem">
+          <button class="btn btn-dark btn-sm" id="emailChangeSaveBtn">Doğrulama Gönder</button>
+          <button class="btn btn-outline btn-sm" id="emailChangeCancelBtn">İptal</button>
+        </div>
+        <div id="emailChangeMsg" style="margin-top:.6rem;font-size:.875rem"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kredi -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-bolt" aria-hidden="true"></i> Kredi Bakiyesi</span>
+      <a href="/pricing" class="btn btn-outline btn-sm" id="upgradeBtn">Pro'ya Geç</a>
+    </div>
+    <div class="credit-bar-wrap" id="creditWrap">
+      <div style="font-size:1.6rem;font-weight:800" id="creditNum"><span class="skel" style="width:40px;height:1.6rem"></span></div>
+      <div class="credit-bar"><div class="credit-bar-fill mir-w-0" id="creditBarFill"></div></div>
+      <div class="credit-nums">
+        <span>0</span>
+        <span id="creditMax">—</span>
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:.75rem">
+      Ücretsiz planda her gün 5 kredi yüklenir. Pro planda aylık 5.000 kredi.
+    </p>
+  </section>
+
+  <!-- Plan -->
+  <section class="section" id="planSection">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-crown" aria-hidden="true"></i> Plan</span>
+    </div>
+    <div id="planContent">
+      <span class="skel" style="width:100%;height:4rem;display:block;border-radius:12px"></span>
+    </div>
+  </section>
+
+  <!-- Şifre değiştir -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-lock" aria-hidden="true"></i> Güvenlik</span>
+      <button class="btn btn-outline btn-sm" id="toggleCpwBtn">Şifre Değiştir</button>
+    </div>
+    <div class="cpw-form" id="cpwForm">
+      <div class="field">
+        <label for="cpwCurrent">Mevcut Şifre</label>
+        <input id="cpwCurrent" type="password" autocomplete="current-password" placeholder="••••••••">
+      </div>
+      <div class="field">
+        <label for="cpwNew">Yeni Şifre</label>
+        <input id="cpwNew" type="password" autocomplete="new-password" placeholder="En az 8 karakter">
+        <div style="height:4px;border-radius:4px;background:var(--border);overflow:hidden;margin-top:.4rem">
+          <div id="cpwPwBar" style="height:100%;border-radius:4px;width:0;transition:width .3s,background .3s"></div>
+        </div>
+        <span id="cpwPwHint" style="font-size:.75rem;color:var(--muted);margin-top:.25rem;display:block">En az 8 karakter</span>
+      </div>
+      <div class="form-row">
+        <button class="btn btn-dark btn-sm" id="cpwSubmit">Güncelle</button>
+        <button class="btn btn-outline btn-sm" id="cpwCancel">İptal</button>
+      </div>
+      <div id="cpwMsg" style="margin-top:.75rem;font-size:.875rem"></div>
+    </div>
+  </section>
+
+
+  <!-- Başarı Rozetleri -->
+  <section class="section" id="achievementsSection">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-medal" aria-hidden="true"></i> Başarı Rozetleri</span>
+    </div>
+    <div class="achievement-grid" id="achievementGrid">
+      <span class="skel" style="height:90px;border-radius:12px;display:block"></span>
+      <span class="skel" style="height:90px;border-radius:12px;display:block"></span>
+      <span class="skel" style="height:90px;border-radius:12px;display:block"></span>
+    </div>
+  </section>
+
+  <!-- Haftalık Kullanım -->
+  <section class="section" id="usageSection">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-chart-bar" aria-hidden="true"></i> Bu Hafta</span>
+      <span class="mir-text-tiny-muted" id="weekTotal">—</span>
+    </div>
+    <div class="usage-chart" id="usageChart">
+      <!-- JS ile doldurulur -->
+    </div>
+    <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.25rem" id="usageHint"></p>
+  </section>
+
+  <!-- İşlem geçmişi -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-history" aria-hidden="true"></i> İşlem Geçmişi</span>
+    </div>
+
+    <!-- PDF İşlemleri (son 10 job) -->
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem">
+      Son PDF İşlemleri
+    </p>
+    <div id="jobList" style="margin-bottom:1.5rem">
+      <span class="skel" style="width:100%;height:2.5rem;display:block;border-radius:10px"></span>
+    </div>
+
+    <!-- Kredi Hareketleri -->
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem">
+      Kredi Hareketleri
+    </p>
+    <div class="tx-list" id="txList">
+      <span class="skel" style="width:100%;height:2.5rem;display:block;border-radius:10px"></span>
+    </div>
+  </section>
+
+  <!-- Aktif Oturumlar -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-laptop" aria-hidden="true"></i> Aktif Oturumlar</span>
+      <button class="btn btn-outline btn-sm" id="revokeAllBtn">Tümünü Kapat</button>
+    </div>
+    <div id="sessionList">
+      <span class="skel" style="width:100%;height:3rem;display:block;border-radius:10px"></span>
+    </div>
+  </section>
+
+  <!-- Çıkış -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Oturum</span>
+      <button class="btn btn-danger btn-sm" id="logoutBtn">
+        <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Çıkış Yap
+      </button>
+    </div>
+  </section>
+
+  <!-- GDPR: Verilerimi İndir -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-download" aria-hidden="true"></i> Verilerimi İndir</span>
+    </div>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem;line-height:1.6">
+      KVKK / GDPR kapsamında hesabınızdaki tüm verileri (profil, işlem geçmişi, PDF operasyonları) JSON formatında indirebilirsiniz.
+    </p>
+    <button class="btn btn-outline btn-sm" id="exportDataBtn">
+      <i class="fas fa-file-download" aria-hidden="true"></i> Verileri İndir (JSON)
+    </button>
+    <div id="exportMsg" style="margin-top:.6rem;font-size:.875rem"></div>
+  </section>
+
+  <!-- Hesabı Sil (KVKK Madde 7 — veri silme hakkı) -->
+  <section class="section" style="border-color:#fca5a5">
+    <div class="section-head">
+      <span class="section-title" style="color:#dc2626"><i class="fas fa-trash-alt" aria-hidden="true"></i> Hesabı Sil</span>
+    </div>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem;line-height:1.6">
+      Hesabınızı kalıcı olarak silebilirsiniz. Bu işlem geri alınamaz. KVKK kapsamındaki tüm kişisel verileriniz 30 gün içinde sistemlerimizden silinir.
+    </p>
+    <div id="deleteAccountArea">
+      <button class="btn" id="deleteAccountBtn"
+        style="background:#fef2f2;color:#dc2626;border:1.5px solid #fca5a5;font-size:.875rem;padding:.55rem 1.1rem;border-radius:10px;cursor:pointer;font-family:inherit;font-weight:600">
+        <i class="fas fa-trash-alt" aria-hidden="true"></i> Hesabımı Sil
+      </button>
+      <div id="deleteConfirmBox" style="display:none;margin-top:1rem;background:#fef2f2;border:1px solid #fca5a5;border-radius:12px;padding:1rem">
+        <p style="font-size:.875rem;font-weight:600;color:#dc2626;margin-bottom:.75rem">
+          ⚠️ Bu işlem geri alınamaz. Tüm verileriniz silinecek. Onaylamak için e-posta adresinizi yazın:
+        </p>
+        <input id="deleteEmailConfirm" type="email" placeholder="E-posta adresiniz"
+          style="width:100%;padding:.6rem .9rem;border:1.5px solid #fca5a5;border-radius:9px;font-size:.875rem;font-family:inherit;margin-bottom:.6rem;outline:none">
+        <div style="display:flex;gap:.6rem">
+          <button id="deleteConfirmBtn" class="btn"
+            style="background:#dc2626;color:#fff;border:none;padding:.6rem 1.1rem;border-radius:9px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit">
+            Evet, Hesabımı Sil
+          </button>
+          <button id="deleteCancelBtn" class="btn"
+            style="background:#fff;color:#64748b;border:1px solid #e3e6f0;padding:.6rem 1.1rem;border-radius:9px;font-size:.85rem;cursor:pointer;font-family:inherit">
+            Vazgeç
+          </button>
+        </div>
+        <div id="deleteMsg" style="display:none;margin-top:.6rem;font-size:.85rem"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Anahtarları -->
+  <section class="section" id="apiKeysSection">
+    <div class="section-head">
+      <span class="section-title"><i class="fas fa-key" aria-hidden="true"></i> API Anahtarları</span>
+      <button class="btn btn-outline btn-sm" id="newKeyBtn" onclick="openNewKeyModal()">+ Yeni Anahtar</button>
+    </div>
+    <p style="font-size:.84rem;color:var(--muted);margin-bottom:1rem">
+      Uygulamalarınızı MirPDF API'siyle entegre edin.
+      <a href="/developers/" class="mir-text-primary">API dökümantasyonu →</a>
+    </p>
+    <div id="apiKeysList"><div class="skel" style="height:48px;border-radius:10px"></div></div>
+  </section>
+</div>
+
+<!-- Yeni API Key Modal -->
+<div id="newKeyModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:300;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:18px;padding:2rem;width:min(420px,92vw);box-shadow:0 24px 60px rgba(0,0,0,.18)">
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:1rem">Yeni API Anahtarı</h3>
+    <label style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:.3rem">Anahtar adı</label>
+    <input id="newKeyName" type="text" placeholder="örn: Muhasebe botu" maxlength="64"
+      style="width:100%;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:.92rem;margin-bottom:1rem">
+    <div id="newKeyResult" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:1rem;margin-bottom:1rem">
+      <div style="font-size:.78rem;font-weight:700;color:#15803d;margin-bottom:.4rem">✓ Anahtarınız oluşturuldu — şimdi kopyalayın, bir daha gösterilmeyecek.</div>
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <code id="newKeyValue" style="flex:1;font-size:.8rem;background:#fff;border:1px solid #bbf7d0;border-radius:7px;padding:.4rem .7rem;word-break:break-all;color:#166534"></code>
+        <button onclick="copyNewKey()" style="flex-shrink:0;background:#15803d;color:#fff;border:none;border-radius:7px;padding:.4rem .7rem;font-weight:700;cursor:pointer;font-size:.82rem">Kopyala</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:.6rem;justify-content:flex-end">
+      <button onclick="closeNewKeyModal()" style="background:none;border:1px solid var(--border);border-radius:9px;padding:.55rem 1.1rem;font-family:inherit;font-size:.88rem;cursor:pointer">İptal</button>
+      <button id="createKeyBtn" onclick="createKey()" style="background:#0d0f1a;color:#fff;border:none;border-radius:9px;padding:.55rem 1.25rem;font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer">Oluştur</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    © 2026 MirPDF &nbsp;·&nbsp;
+    <a href="/legal/privacy.html">Gizlilik</a> &nbsp;·&nbsp;
+    <a href="/legal/terms.html">Şartlar</a> &nbsp;·&nbsp;
+    <a href="/referral.html">Davet Et</a>
+  </div>
+</footer>
+
+<script type="module">
+import { requireAuthOrRedirect, fetchMe, logout, invalidateMeCache, apiFetch } from "/assets/js/auth.js";
+
+if (!requireAuthOrRedirect("/account")) { /* yönlendirildi */ }
+
+// ── Yardımcılar ───────────────────────────────────────────────
+function set(id, html)  { const el = document.getElementById(id); if (el) el.innerHTML = html; }
+function setText(id, t) { const el = document.getElementById(id); if (el) el.textContent = t; }
+function fmtDate(ms) {
+  if (!ms) return "—";
+  const ts = ms < 1e12 ? ms * 1000 : ms;
+  return new Date(ts).toLocaleDateString("tr-TR", { day:"numeric", month:"short", year:"numeric" });
+}
+function escHtml(s) {
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// ── Ana yükleme ───────────────────────────────────────────────
+(async () => {
+  const me = await fetchMe(true);
+  if (!me) { location.href = "/login"; return; }
+
+  window._meEmail = me.email || "";
+  const isPro      = me.role === "pro";
+  const isVerified = !!me.email_verified;
+  const balance    = me.balance ?? 0;
+  const maxCredits = isPro ? 5000 : 150;
+
+  // Profil
+  setText("infoEmail", me.email || "—");
+  setText("infoName", [me.first_name, me.last_name].filter(Boolean).join(" ") || "—");
+
+  // Profil düzenleme input'larını doldur
+  const fn = document.getElementById("editFirstName");
+  const ln = document.getElementById("editLastName");
+  if (fn) fn.value = me.first_name || "";
+  if (ln) ln.value = me.last_name  || "";
+
+  // Hoşgeldin banner
+  const wb = document.getElementById("welcomeBanner");
+  if (wb) {
+    const h = new Date().getHours();
+    const greeting = h < 12 ? "Günaydın" : h < 18 ? "İyi günler" : "İyi akşamlar";
+    const nick = (me.email || "").split("@")[0];
+    document.getElementById("welcomeMsg").textContent = `${greeting}, ${nick} 👋`;
+    document.getElementById("welcomeSub").textContent = isPro
+      ? "Pro planındasın — tüm araçlar sınırsız kullanımında."
+      : `${balance} kredin kaldı. Pro'ya geçerek aylık 5.000 kredi kazan.`;
+    wb.style.display = "block";
+  }
+
+  set("infoRole", isPro
+    ? `<span class="badge badge-pro"><i class="fas fa-crown"></i> Pro</span>`
+    : `<span class="badge badge-free">Ücretsiz</span>`);
+
+  set("infoVerified", isVerified
+    ? `<span class="badge badge-verified"><i class="fas fa-check"></i> Doğrulandı</span>`
+    : `<span class="badge badge-unverified"><i class="fas fa-exclamation"></i> Doğrulanmadı</span>`);
+
+  if (!isVerified) document.getElementById("verifyAlert").style.display = "block";
+
+  // Kredi bar
+  setText("creditNum", String(balance));
+  setText("creditMax", String(maxCredits));
+  const fill = document.getElementById("creditBarFill");
+  if (fill) {
+    const pct = Math.min(100, Math.round((balance / maxCredits) * 100));
+    fill.style.width = pct + "%";
+    if (balance <= 5) fill.classList.add("low");
+  }
+
+  // Upgrade butonu
+  if (isPro) {
+    const ub = document.getElementById("upgradeBtn");
+    if (ub) ub.textContent = "Planı Yönet";
+  }
+
+  // Plan kartı
+  set("planContent", isPro
+    ? `<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+        <div>
+          <div style="font-weight:700;margin-bottom:.2rem">Pro Plan aktif 🎉</div>
+          <div style="font-size:.85rem;color:var(--muted)">Aylık 5.000 kredi · Öncelikli işleme · Toplu dönüştürme</div>
+        </div>
+        <button class="btn btn-outline btn-sm" id="portalBtn"><i class="fas fa-cog"></i> Aboneliği Yönet</button>
+       </div>`
+    : `<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+        <div>
+          <div style="font-weight:700;margin-bottom:.2rem">Ücretsiz Plan</div>
+          <div style="font-size:.85rem;color:var(--muted)">Günlük 5 kredi · Tarayıcı araçları sınırsız</div>
+        </div>
+        <a href="/pricing" class="btn btn-dark btn-sm"><i class="fas fa-crown"></i> Pro'ya Geç — ₺79/ay</a>
+       </div>
+       <div class="upgrade-widget" style="margin-top:1rem">
+         <div>
+           <h4>Pro'ya Geçmeye Hazır mısınız?</h4>
+           <p>Sınırsız kullanım · Toplu dönüştürme · Reklamsız · ₺79/ay</p>
+         </div>
+         <a href="/pricing" class="upgrade-cta"><i class="fas fa-crown"></i> Pro'ya Geç</a>
+       </div>`);
+
+  document.getElementById("portalBtn")?.addEventListener("click", async () => {
+    const btn = document.getElementById("portalBtn");
+    btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    try {
+      const resp = await apiFetch("/api/billing/portal", { method: "POST" });
+      const j = await resp.json().catch(() => null);
+      if (j?.ok && j.data?.url) { location.href = j.data.url; }
+      else { alert(j?.message || "Portal açılamadı."); btn.disabled = false; btn.innerHTML = '<i class="fas fa-cog"></i> Aboneliği Yönet'; }
+    } catch (_) { alert("Bağlantı hatası."); btn.disabled = false; btn.innerHTML = '<i class="fas fa-cog"></i> Aboneliği Yönet'; }
+  });
+
+  loadJobs();
+  loadTransactions();
+  loadAchievements();
+  loadUsageChart();
+  loadApiKeys();
+  loadSessions();
+})();
+
+// ── Son PDF İşlemleri ─────────────────────────────────────────
+const TOOL_NAMES = {
+  "compress-strong":"PDF Sıkıştır","pdf-to-word":"PDF → Word","ocr":"OCR",
+  "pdf-split":"PDF Böl","pdf-merge":"PDF Birleştir","pdf-rotate":"PDF Döndür",
+  "pdf-delete-page":"Sayfa Sil","pdf-sort":"Sayfa Sırala","pdf-lock":"PDF Kilitle",
+  "pdf-unlock":"Kilit Aç","pdf-watermark":"Filigran Ekle","pdf-sign":"PDF İmzala",
+  "pdf-edit":"PDF Düzenle","pdf-to-jpg":"PDF → JPG","jpg-to-pdf":"JPG → PDF","pdf-qr":"QR Kod Ekle",
+};
+const JOB_STATUS = {
+  done:    { label:"Tamamlandı", color:"#059669", bg:"#d1fae5" },
+  failed:  { label:"Başarısız",  color:"#dc2626", bg:"#fee2e2" },
+  pending: { label:"Bekliyor",   color:"#d97706", bg:"#fef3c7" },
+  running: { label:"İşleniyor",  color:"#2563eb", bg:"#dbeafe" },
+};
+
+async function loadJobs() {
+  const el = document.getElementById("jobList");
+  if (!el) return;
+  try {
+    const resp = await apiFetch("/api/jobs/history?limit=10");
+    if (!resp.ok) { el.innerHTML = `<p style="color:var(--muted);font-size:.875rem">İşlem geçmişi yüklenemedi.</p>`; return; }
+    const j = await resp.json().catch(() => null);
+    const jobs = j?.data || [];
+    if (!jobs.length) {
+      el.innerHTML = `<p style="color:var(--muted);font-size:.875rem">Henüz PDF işlemi yok. <a href="/#tools" class="mir-text-primary">Araçları keşfet →</a></p>`;
+      return;
+    }
+    el.innerHTML = jobs.map(job => {
+      const st = JOB_STATUS[job.status] || JOB_STATUS.pending;
+      const toolName = TOOL_NAMES[job.tool] || job.tool;
+      const sizeTxt = job.output_bytes ? ` · ${(job.output_bytes/1024).toFixed(0)} KB` : "";
+      return `<div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem .9rem;border:1px solid var(--border);border-radius:10px;margin-bottom:.4rem;gap:.5rem;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:.65rem">
+          <div style="width:32px;height:32px;border-radius:8px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <i class="fas fa-file-pdf" style="color:#6366f1;font-size:.8rem"></i>
+          </div>
+          <div>
+            <div style="font-size:.88rem;font-weight:600">${toolName}</div>
+            <div class="mir-text-tiny-muted">${fmtDate(job.created_at)}${sizeTxt}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem">
+          <span style="font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:6px;background:${st.bg};color:${st.color}">${st.label}</span>
+          ${job.status === "done"
+            ? `<a href="/api/jobs/${job.job_id}/result" style="font-size:.78rem;font-weight:600;color:#6366f1;text-decoration:none;padding:.2rem .55rem;border:1px solid #c7d2fe;border-radius:6px"><i class="fas fa-download"></i> İndir</a>`
+            : ""}
+        </div>
+      </div>`;
+    }).join("");
+  } catch (_) {
+    document.getElementById("jobList").innerHTML = `<p style="color:var(--muted);font-size:.875rem">İşlem geçmişi yüklenemedi.</p>`;
+  }
+}
+
+// ── Kredi Hareketleri ─────────────────────────────────────────
+async function loadTransactions() {
+  try {
+    const resp = await apiFetch("/api/credits/history");
+    if (!resp.ok) { set("txList", `<p style="color:var(--muted);font-size:.875rem">Geçmiş yüklenemedi.</p>`); return; }
+    const j = await resp.json().catch(() => null);
+    const txs = j?.data?.items || [];
+    if (!txs.length) { set("txList", `<p style="color:var(--muted);font-size:.875rem">Henüz işlem yok.</p>`); return; }
+    const kindLabel = { purchase:"Satın Alma", daily:"Günlük Kredi", refund:"İade", subscription:"Abonelik" };
+    set("txList", txs.slice(0,15).map(tx => `
+      <div class="tx-item">
+        <div>
+          <div class="tx-kind">${kindLabel[tx.kind] || tx.kind}</div>
+          <div class="tx-date">${fmtDate(tx.created_at)}</div>
+        </div>
+        <div class="tx-amount">+${tx.amount} kredi</div>
+      </div>`).join(""));
+  } catch (_) {
+    set("txList", `<p style="color:var(--muted);font-size:.875rem">Geçmiş yüklenemedi.</p>`);
+  }
+}
+
+// ── Başarı Rozetleri ──────────────────────────────────────────
+async function loadAchievements() {
+  const grid = document.getElementById("achievementGrid");
+  if (!grid) return;
+  const histResp = await apiFetch("/api/jobs/history?limit=50").catch(() => null);
+  const hist = histResp ? await histResp.json().catch(() => ({})) : {};
+  const jobs = hist?.data || [];
+  const jobCount = jobs.length;
+  const ACHIEVEMENTS = [
+    { icon:"🚀", name:"İlk Adım",    desc:"İlk PDF işleminizi yaptınız",  earned: jobCount >= 1 },
+    { icon:"⚡", name:"Hızlı Başla", desc:"5 PDF işlemi tamamlandı",      earned: jobCount >= 5 },
+    { icon:"📦", name:"Üretken",     desc:"20 PDF işlemi tamamlandı",     earned: jobCount >= 20 },
+    { icon:"🏆", name:"Pro Ruhu",    desc:"50 PDF işlemi tamamlandı",     earned: jobCount >= 50 },
+    { icon:"🔒", name:"Güvenli",     desc:"Bir PDF kilitlediniz",         earned: jobs.some(j => j.tool === "protect") },
+    { icon:"🔍", name:"Araştırmacı", desc:"OCR kullandınız",              earned: jobs.some(j => j.tool === "ocr") },
+    { icon:"📄", name:"Birleştirici",desc:"PDF birleştirdiniz",           earned: jobs.some(j => j.tool === "merge") },
+    { icon:"📱", name:"Mobil Ninja", desc:"Telefondan işlem yaptınız",    earned: /Mobi/i.test(navigator.userAgent) && jobCount > 0 },
+  ];
+  grid.innerHTML = ACHIEVEMENTS.map(a => `
+    <div class="achievement ${a.earned ? "earned" : "locked"}" title="${a.desc}">
+      <div class="achievement-icon">${a.icon}</div>
+      <div class="achievement-name">${a.name}</div>
+      <div class="achievement-desc">${a.desc}</div>
+    </div>`).join("");
+}
+
+// ── Haftalık Kullanım Grafiği ─────────────────────────────────
+async function loadUsageChart() {
+  const chart = document.getElementById("usageChart");
+  const hint  = document.getElementById("usageHint");
+  const total = document.getElementById("weekTotal");
+  if (!chart) return;
+  const histResp = await apiFetch("/api/jobs/history?limit=50").catch(() => null);
+  const hist = histResp ? await histResp.json().catch(() => ({})) : {};
+  const jobs = hist?.data || [];
+  const days = ["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"];
+  const today = new Date();
+  const counts = Array(7).fill(0);
+  jobs.forEach(job => {
+    const ts = job.created_at < 1e12 ? job.created_at * 1000 : job.created_at;
+    const diff = Math.floor((today - new Date(ts)) / 86400000);
+    if (diff >= 0 && diff < 7) counts[6 - diff]++;
+  });
+  const maxCount = Math.max(...counts, 1);
+  const weekSum = counts.reduce((a,b) => a+b, 0);
+  if (total) total.textContent = weekSum + " işlem";
+  chart.innerHTML = counts.map((c, i) => {
+    const heightPct = Math.max(8, Math.round((c / maxCount) * 100));
+    const dayIdx = (today.getDay() + 6 - (6 - i)) % 7;
+    return `<div class="usage-bar-wrap">
+      <div style="height:60px;display:flex;align-items:flex-end;width:100%">
+        <div class="usage-bar ${c > 0 ? "filled" : ""}" style="height:${heightPct}%;width:100%" title="${days[dayIdx]}: ${c} işlem"></div>
+      </div>
+      <div class="usage-day">${days[dayIdx]}</div>
+    </div>`;
+  }).join("");
+  if (hint) hint.textContent = weekSum === 0
+    ? "Bu hafta henüz işlem yok."
+    : `Bu hafta ${weekSum} işlem tamamlandı.`;
+}
+
+// ── API Anahtarları ───────────────────────────────────────────
+async function loadApiKeys() {
+  const list = document.getElementById("apiKeysList");
+  if (!list) return;
+  try {
+    const res  = await apiFetch("/api/developer/keys");
+    const data = await res.json();
+    if (!data.ok || !data.keys.length) {
+      list.innerHTML = `<div style="font-size:.84rem;color:var(--muted);padding:.75rem 0">Henüz API anahtarınız yok. Yukarıdan oluşturun.</div>`;
+      return;
+    }
+    list.innerHTML = data.keys.map(k => `
+      <div style="display:flex;align-items:center;gap:.75rem;padding:.75rem;border:1px solid var(--border);border-radius:10px;margin-bottom:.5rem;${k.revoked_at ? "opacity:.45" : ""}">
+        <div style="flex:1;min-width:0">
+          <div style="font-weight:700;font-size:.88rem">${escHtml(k.name)}</div>
+          <div style="font-size:.78rem;color:var(--muted);margin-top:.15rem">
+            <code style="background:var(--bg-soft);padding:1px 5px;border-radius:4px">${escHtml(k.key_prefix)}…</code>
+            &nbsp;·&nbsp; ${k.plan.toUpperCase()}
+            &nbsp;·&nbsp; ${k.calls_month.toLocaleString("tr-TR")} / ${k.calls_limit.toLocaleString("tr-TR")} çağrı
+            ${k.revoked_at ? ' &nbsp;·&nbsp; <span style="color:#dc2626">İptal edildi</span>' : ""}
+          </div>
+        </div>
+        ${!k.revoked_at ? `<button onclick="revokeKey('${k.id}')" style="background:none;border:1px solid var(--border);border-radius:7px;padding:.3rem .7rem;font-size:.78rem;cursor:pointer;color:var(--muted);white-space:nowrap">İptal Et</button>` : ""}
+      </div>`).join("");
+  } catch (_) {
+    list.innerHTML = `<div style="font-size:.84rem;color:#dc2626">Anahtarlar yüklenemedi.</div>`;
+  }
+}
+
+window.openNewKeyModal = function() {
+  document.getElementById("newKeyModal").style.display = "flex";
+  document.getElementById("newKeyResult").style.display = "none";
+  document.getElementById("newKeyName").value = "";
+  document.getElementById("createKeyBtn").disabled = false;
+  document.getElementById("createKeyBtn").onclick = createKey;
+};
+
+window.closeNewKeyModal = function() {
+  document.getElementById("newKeyModal").style.display = "none";
+  loadApiKeys();
+};
+
+window.createKey = async function() {
+  const name = document.getElementById("newKeyName").value.trim() || "API Anahtarım";
+  const btn  = document.getElementById("createKeyBtn");
+  btn.disabled = true; btn.textContent = "Oluşturuluyor…";
+  try {
+    const res  = await apiFetch("/api/developer/keys", {
+      method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ name })
+    });
+    const data = await res.json();
+    if (!data.ok) { alert(data.error || "Hata oluştu."); btn.disabled=false; btn.textContent="Oluştur"; return; }
+    document.getElementById("newKeyValue").textContent = data.key;
+    document.getElementById("newKeyResult").style.display = "block";
+    btn.textContent = "Kapat";
+    btn.onclick = window.closeNewKeyModal;
+  } catch (_) { alert("Bağlantı hatası."); btn.disabled=false; btn.textContent="Oluştur"; }
+};
+
+window.copyNewKey = function() {
+  const val = document.getElementById("newKeyValue").textContent;
+  navigator.clipboard.writeText(val).then(() => {
+    const b = document.querySelector("#newKeyResult button");
+    if (b) { b.textContent = "Kopyalandı ✓"; b.style.background = "#059669";
+      setTimeout(() => { b.textContent = "Kopyala"; b.style.background = "#15803d"; }, 2000); }
+  });
+};
+
+window.revokeKey = async function(id) {
+  if (!confirm("Bu anahtarı iptal etmek istediğinize emin misiniz?")) return;
+  await apiFetch(`/api/developer/keys/${id}`, { method:"DELETE" });
+  loadApiKeys();
+};
+
+// ── E-posta doğrulama tekrar gönder ──────────────────────────
+document.getElementById("resendVerifyBtn")?.addEventListener("click", async (e) => {
+  e.target.disabled = true; e.target.textContent = "Gönderiliyor…";
+  try {
+    await apiFetch("/api/auth/request-verify", {
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body: JSON.stringify({ email: window._meEmail || "" })
+    });
+    e.target.textContent = "Gönderildi ✓";
+  } catch (_) { e.target.disabled = false; e.target.textContent = "Tekrar gönder"; }
+});
+
+// ── Şifre değiştir ────────────────────────────────────────────
+const cpwForm = document.getElementById("cpwForm");
+const cpwMsg  = document.getElementById("cpwMsg");
+
+document.getElementById("toggleCpwBtn")?.addEventListener("click", () => {
+  const open = cpwForm.style.display === "block";
+  cpwForm.style.display = open ? "none" : "block";
+  document.getElementById("toggleCpwBtn").textContent = open ? "Şifre Değiştir" : "Kapat";
+});
+
+document.getElementById("cpwCancel")?.addEventListener("click", () => {
+  cpwForm.style.display = "none";
+  document.getElementById("toggleCpwBtn").textContent = "Şifre Değiştir";
+  cpwMsg.textContent = "";
+});
+
+document.getElementById("cpwNew")?.addEventListener("input", () => {
+  const v = document.getElementById("cpwNew").value;
+  let s = 0;
+  if (v.length >= 8) s++; if (v.length >= 12) s++;
+  if (/[A-Z]/.test(v)) s++; if (/[0-9]/.test(v)) s++; if (/[^A-Za-z0-9]/.test(v)) s++;
+  const bar = document.getElementById("cpwPwBar");
+  const hint = document.getElementById("cpwPwHint");
+  if (bar) { bar.style.width = Math.min(100, s*20) + "%"; bar.style.background = s<=1?"#ef4444":s<=3?"#f59e0b":"#10b981"; }
+  if (hint) hint.textContent = v.length===0?"En az 8 karakter":(["","Çok zayıf","Zayıf","Orta","İyi","Güçlü"][s]||"Güçlü");
+});
+
+document.getElementById("cpwSubmit")?.addEventListener("click", async () => {
+  const cur = document.getElementById("cpwCurrent").value;
+  const nw  = document.getElementById("cpwNew").value;
+  if (!cur || nw.length < 8) { cpwMsg.textContent = "Mevcut şifre ve en az 8 karakterli yeni şifre gerekli."; cpwMsg.style.color = "var(--danger)"; return; }
+  const btn = document.getElementById("cpwSubmit");
+  btn.disabled = true;
+  try {
+    const resp = await apiFetch("/api/auth/change-password", {
+      method:"POST", body: JSON.stringify({ currentPassword: cur, newPassword: nw }),
+    });
+    const j = await resp.json().catch(() => null);
+    if (resp.ok && j?.ok) {
+      cpwMsg.textContent = "Şifre güncellendi."; cpwMsg.style.color = "var(--success)";
+      document.getElementById("cpwCurrent").value = "";
+      document.getElementById("cpwNew").value = "";
+    } else {
+      cpwMsg.textContent = j?.message || "Güncelleme başarısız."; cpwMsg.style.color = "var(--danger)";
+    }
+  } catch (_) { cpwMsg.textContent = "Bağlantı hatası."; cpwMsg.style.color = "var(--danger)"; }
+  finally { btn.disabled = false; }
+});
+
+// ── Çıkış ─────────────────────────────────────────────────────
+// ── GDPR Veri Export ──────────────────────────────────────────────────────
+document.getElementById("exportDataBtn")?.addEventListener("click", async () => {
+  const btn = document.getElementById("exportDataBtn");
+  const msg = document.getElementById("exportMsg");
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Hazırlanıyor…';
+  msg.textContent = "";
+  try {
+    const resp = await apiFetch("/api/auth/export-data", { method: "POST" });
+    if (!resp.ok) { msg.textContent = "Dışa aktarma başarısız."; msg.style.color = "var(--danger)"; return; }
+    const blob = await resp.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href = url;
+    a.download = `mirpdf-data-${new Date().toISOString().slice(0,10)}.json`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    msg.textContent = "Verileriniz indirildi ✓"; msg.style.color = "var(--success)";
+  } catch (_) { msg.textContent = "Bağlantı hatası."; msg.style.color = "var(--danger)"; }
+  finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-file-download"></i> Verileri İndir (JSON)'; }
+});
+
+document.getElementById("logoutBtn")?.addEventListener("click", () => logout("/"));
+
+// ── Hesabı Sil ────────────────────────────────────────────────
+document.getElementById("deleteAccountBtn")?.addEventListener("click", () => {
+  document.getElementById("deleteConfirmBox").style.display = "block";
+  document.getElementById("deleteEmailConfirm").value = "";
+  document.getElementById("deleteMsg").style.display = "none";
+  document.getElementById("deleteAccountBtn").style.display = "none";
+});
+
+document.getElementById("deleteCancelBtn")?.addEventListener("click", () => {
+  document.getElementById("deleteConfirmBox").style.display = "none";
+  document.getElementById("deleteAccountBtn").style.display = "inline-flex";
+});
+
+document.getElementById("deleteConfirmBtn")?.addEventListener("click", async () => {
+  const typed    = (document.getElementById("deleteEmailConfirm").value || "").trim().toLowerCase();
+  const expected = (window._meEmail || "").toLowerCase();
+  const deleteMsg = document.getElementById("deleteMsg");
+
+  if (!typed) { deleteMsg.textContent = "Lütfen e-posta adresinizi girin."; deleteMsg.style.color = "#dc2626"; deleteMsg.style.display = "block"; return; }
+  if (typed !== expected) { deleteMsg.textContent = "E-posta adresi eşleşmiyor."; deleteMsg.style.color = "#dc2626"; deleteMsg.style.display = "block"; return; }
+
+  const btn = document.getElementById("deleteConfirmBtn");
+  btn.disabled = true; btn.textContent = "Siliniyor…";
+  deleteMsg.style.display = "none";
+
+  try {
+    const resp = await apiFetch("/api/auth/delete-account", {
+      method:"POST", headers:{"content-type":"application/json"},
+      body: JSON.stringify({ email: typed, confirm: true }),
+    });
+    const data = await resp.json().catch(() => ({}));
+    if (resp.ok && data.ok) {
+      deleteMsg.textContent = "✅ Hesabınız silindi. Yönlendiriliyorsunuz…";
+      deleteMsg.style.color = "#059669"; deleteMsg.style.display = "block";
+      setTimeout(() => logout("/"), 2500);
+    } else {
+      deleteMsg.textContent = data.error === "WRONG_EMAIL" ? "E-posta adresi hatalı." : (data.message || "Bir hata oluştu.");
+      deleteMsg.style.color = "#dc2626"; deleteMsg.style.display = "block";
+      btn.disabled = false; btn.textContent = "Evet, Hesabımı Sil";
+    }
+  } catch (_) {
+    deleteMsg.textContent = "Bağlantı hatası."; deleteMsg.style.color = "#dc2626"; deleteMsg.style.display = "block";
+    btn.disabled = false; btn.textContent = "Evet, Hesabımı Sil";
+  }
+});
+
+// ── Mobil nav ─────────────────────────────────────────────────
+document.getElementById("mobileToggle")?.addEventListener("click", function() {
+  const nav = document.getElementById("mainNav");
+  const open = nav.classList.toggle("show");
+  this.setAttribute("aria-expanded", String(open));
+});
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+
+  // Onboarding hint: yeni Pro için göster
+  (function(){
+    const hint = document.getElementById("onboardingHint");
+    if (!hint) return;
+    try {
+      const seen = localStorage.getItem("mirpdf_onboard_seen");
+      if (seen) return;
+    } catch(_) {}
+    // me verisi yüklendikten sonra kontrol
+    window.addEventListener("mirpdf:me-loaded", function(e) {
+      const role = e.detail?.role;
+      if (role === "pro" || role === "basic") {
+        hint.style.display = "block";
+        try { localStorage.setItem("mirpdf_onboard_seen", "1"); } catch(_) {}
+      }
+    }, { once: true });
+  })();
+
+</body>
+</html>

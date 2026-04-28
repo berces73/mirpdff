@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0"/>
+  <title>E-posta Doğrulama — MirPDF</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Figtree',sans-serif;background:#f7f8fc;color:var(--text);
+         min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
+    .card{width:100%;max-width:400px;background:#fff;border:1px solid var(--border);
+          border-radius:24px;padding:2.5rem 2rem;box-shadow:0 4px 24px rgba(0,0,0,.06);text-align:center}
+    .spinner{display:inline-block;width:2.5rem;height:2.5rem;border:3px solid var(--border);
+             border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:1.2rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .btn{display:block;width:100%;padding:.78rem;background:#0d0f1a;color:#fff;border-radius:12px;
+         font-weight:700;font-size:.95rem;text-decoration:none;text-align:center;margin-bottom:.6rem}
+    .btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--border);font-size:.88rem}
+  </style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="spinner" id="spinner"></div>
+  <h1 id="title" style="font-size:1.35rem;font-weight:800;margin-bottom:.5rem">Doğrulanıyor…</h1>
+  <p id="body" style="color:var(--muted);font-size:.9rem;margin-bottom:1.25rem">Lütfen bekle.</p>
+</div>
+
+<script type="module">
+const params = new URLSearchParams(location.search.length > 1 ? location.search : location.hash.replace(/^#/,"?"));
+const token  = params.get("token") || "";
+const spinner = document.getElementById("spinner");
+
+if (!token) {
+  spinner.style.display = "none";
+  document.getElementById("title").textContent = "Geçersiz bağlantı";
+  document.getElementById("body").innerHTML = `Doğrulama bağlantısı eksik veya geçersiz.<br>
+    <a href="/register" style="color:var(--primary);font-weight:700;text-decoration:none;display:inline-block;margin-top:1rem">Tekrar kayıt ol →</a>`;
+} else {
+  (async () => {
+    try {
+      const resp = await fetch("/api/auth/verify", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      const j = await resp.json().catch(() => null);
+
+      if (resp.ok && j?.ok) {
+        if (j.data?.token) {
+          try { localStorage.setItem("mirpdf_jwt", j.data.token); } catch(_) {}
+        }
+        document.getElementById("card").innerHTML = `
+          <span style="font-size:3rem;display:block;margin-bottom:1rem">🎉</span>
+          <h1 style="font-size:1.35rem;font-weight:800;margin-bottom:.5rem;color:#0d0f1a">E-posta doğrulandı!</h1>
+          <p style="color:#64748b;font-size:.9rem;margin-bottom:1.25rem;line-height:1.6">Hesabın hazır. Hemen kullanmaya başlayabilirsin.</p>
+          <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;text-align:left">
+            <div style="font-size:.82rem;font-weight:700;color:#1d4ed8;margin-bottom:.6rem">⚡ Hesabına yüklendi:</div>
+            <div style="font-size:.83rem;color:#374151;display:flex;flex-direction:column;gap:.4rem">
+              <div>✓ <strong>5 ücretsiz kredi</strong> — OCR, Sıkıştır, PDF→Word için</div>
+              <div>✓ <strong>Sınırsız</strong> Birleştir, Böl, Döndür ve daha fazlası</div>
+            </div>
+          </div>
+          <a href="/" class="btn">PDF Araçlarını Keşfet →</a>
+          <a href="/account" class="btn btn-ghost">Hesabıma Git</a>
+        `;
+      } else if (resp.status === 400) {
+        spinner.style.display = "none";
+        document.getElementById("title").textContent = "Bağlantı süresi dolmuş";
+        document.getElementById("body").innerHTML = `Bu doğrulama bağlantısı artık geçerli değil.<br>
+          <a href="/account" style="color:var(--primary);font-weight:700;text-decoration:none;display:inline-block;margin-top:1rem">Yeni bağlantı iste →</a>`;
+      } else {
+        spinner.style.display = "none";
+        document.getElementById("title").textContent = "Doğrulama başarısız";
+        document.getElementById("body").innerHTML = (j?.message || "Bir sorun oluştu.") +
+          `<br><a href="/" style="color:var(--primary);font-weight:700;text-decoration:none;display:inline-block;margin-top:1rem">Ana Sayfaya Dön</a>`;
+      }
+    } catch(_) {
+      spinner.style.display = "none";
+      document.getElementById("title").textContent = "Bağlantı hatası";
+      document.getElementById("body").innerHTML = `Sunucuya ulaşılamadı.<br>
+        <button onclick="location.reload()" style="margin-top:1rem;padding:.6rem 1.2rem;background:#0d0f1a;color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-family:inherit">Tekrar Dene</button>`;
+    }
+  })();
+}
+</script>
+</body>
+</html>

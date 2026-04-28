@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MirPDF Sitemap Index — v22
+  Google ve diğer arama motorları bu dosyayı kullanır.
+  robots.txt'de: Sitemap: https://mirpdf.com/sitemap-index.xml
+  Güncelleme tarihi: 2026-04-06
+-->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Ana sayfalar: anasayfa, hakkımızda, fiyatlar, iletişim, SSS, blog listesi -->
+  <sitemap>
+    <loc>https://mirpdf.com/sitemap-main.xml</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </sitemap>
+
+  <!-- 19 araç sayfası -->
+  <sitemap>
+    <loc>https://mirpdf.com/sitemap-tools.xml</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </sitemap>
+
+  <!-- 60+ Türkçe makale / blog -->
+  <sitemap>
+    <loc>https://mirpdf.com/sitemap-articles.xml</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </sitemap>
+
+  <!-- SEO cluster sayfaları (rehberler, karşılaştırmalar, sezon) -->
+  <sitemap>
+    <loc>https://mirpdf.com/sitemap-seo.xml</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </sitemap>
+
+  <!-- İngilizce sayfalar -->
+  <sitemap>
+    <loc>https://mirpdf.com/sitemap-en.xml</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </sitemap>
+
+  <!-- Çok dilli sayfalar (DE, FR, ES) -->
+  <sitemap>
+    <loc>https://mirpdf.com/sitemap-multilang.xml</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </sitemap>
+
+</sitemapindex>

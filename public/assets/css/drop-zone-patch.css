@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════════════════
+   drop-zone UX patch — animasyonlar, pulse, step mesajları
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Drag-over shimmer pulse ─────────────────────────────── */
+@keyframes tp-zone-pulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(99,102,241,.25); }
+  50%       { box-shadow: 0 0 0 12px rgba(99,102,241,.0); }
+}
+
+.tp-dropzone--over {
+  animation: tp-zone-pulse .9s ease-in-out infinite;
+}
+
+/* Köşelerden içe akan köşe aksan — drag sırasında canlı çerçeve */
+.tp-dropzone--over::before,
+.tp-dropzone--over::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.tp-dropzone--over::before {
+  background:
+    linear-gradient(90deg,  #6366f1 40%, transparent 40%) top    left  / 30px 2px no-repeat,
+    linear-gradient(180deg, #6366f1 40%, transparent 40%) top    right / 2px 30px no-repeat,
+    linear-gradient(90deg,  transparent 60%, #6366f1 60%) bottom right / 30px 2px no-repeat,
+    linear-gradient(180deg, transparent 60%, #6366f1 60%) bottom left  / 2px 30px no-repeat;
+  animation: tp-corner-in .2s ease-out both;
+}
+@keyframes tp-corner-in {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── 2. Step mesajları — progress label gelişmiş stili ──────── */
+.tp-progress__label {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  transition: opacity .2s;
+}
+
+/* Progress fill rengi araç tipine göre — body[data-tool] ile */
+body[data-tool="compress"] .tp-progress__fill  { background: linear-gradient(90deg,#f97316,#fb923c); }
+body[data-tool="merge"]    .tp-progress__fill  { background: linear-gradient(90deg,#ef4444,#f87171); }
+body[data-tool="split"]    .tp-progress__fill  { background: linear-gradient(90deg,#d97706,#fbbf24); }
+body[data-tool="pdf-to-word"] .tp-progress__fill { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+body[data-tool="ocr"]      .tp-progress__fill  { background: linear-gradient(90deg,#0d9488,#34d399); }
+body[data-tool="rotate"]   .tp-progress__fill  { background: linear-gradient(90deg,#059669,#34d399); }
+body[data-tool="protect"]  .tp-progress__fill  { background: linear-gradient(90deg,#65a30d,#a3e635); }
+body[data-tool="unlock"]   .tp-progress__fill  { background: linear-gradient(90deg,#dc2626,#f87171); }
+body[data-tool="reorder"]  .tp-progress__fill  { background: linear-gradient(90deg,#4f46e5,#818cf8); }
+body[data-tool="extract"]  .tp-progress__fill  { background: linear-gradient(90deg,#e11d48,#fb7185); }
+body[data-tool="word-to-pdf"]  .tp-progress__fill { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+body[data-tool="excel-to-pdf"] .tp-progress__fill { background: linear-gradient(90deg,#16a34a,#4ade80); }
+body[data-tool="ppt-to-pdf"]   .tp-progress__fill { background: linear-gradient(90deg,#d97706,#fbbf24); }
+
+/* Progress bar step animasyonu — label değiştiğinde titreşir */
+@keyframes tp-label-pop {
+  0%   { opacity: 0; transform: translateY(3px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.tp-progress__label {
+  animation: tp-label-pop .18s ease-out;
+}
+
+/* ── 3. Başarı checkmark animasyonu ─────────────────────────── */
+.tp-result__icon {
+  /* Emoji'yi kaldır, SVG checkmark ile değiştir */
+  font-size: 0 !important;
+  display: flex;
+  justify-content: center;
+  margin-bottom: .75rem;
+}
+.tp-result__icon::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #dcfce7;
+  border: 3px solid #16a34a;
+  position: relative;
+  animation: tp-check-circle .4s cubic-bezier(.34,1.56,.64,1) both;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 36px 36px;
+}
+
+@keyframes tp-check-circle {
+  0%   { transform: scale(0) rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.15) rotate(3deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+/* Başarı metninin de animasyonu */
+.tp-result__title {
+  animation: tp-result-title .3s ease-out .25s both;
+}
+@keyframes tp-result-title {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Savings badge — büyük, net */
+.tp-result__savings {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #15803d !important;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 100px;
+  padding: .3rem 1rem;
+  display: inline-block;
+  margin-bottom: 1.5rem !important;
+  animation: tp-result-title .3s ease-out .35s both;
+}
+
+/* ── 4. İndirme butonu pulse ────────────────────────────────── */
+@keyframes tp-download-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0   rgba(16,185,129,.5);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(16,185,129,.0);
+    transform: translateY(-2px);
+  }
+}
+
+.tp-result__download {
+  animation: tp-download-pulse 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer sweep üstünde */
+.tp-result__download::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+  animation: tp-btn-sweep 2.4s ease-in-out 1.2s infinite;
+}
+@keyframes tp-btn-sweep {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* ── 5. Dosya yüklenince thumbnail spring in ────────────────── */
+.tp-thumb {
+  animation: tp-thumb-spring .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes tp-thumb-spring {
+  from { opacity: 0; transform: scale(.8) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── 6. Go butonu yüklenince ortaya çıkış ───────────────────── */
+.tp-btn--primary:not(.tp-btn--hidden) {
+  animation: tp-btn-appear .25s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes tp-btn-appear {
+  from { opacity: 0; transform: scale(.9) translateY(4px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── 7. Hata mesajı shake ───────────────────────────────────── */
+@keyframes tp-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+.tp-status--error {
+  animation: tp-shake .4s ease-out both;
+}
+
+/* ── 8. Upload icon hover — çıkart hareketi ─────────────────── */
+.tp-dropzone__icon svg,
+.tp-dropzone__icon i {
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.tp-dropzone:hover .tp-dropzone__icon svg,
+.tp-dropzone:hover .tp-dropzone__icon i {
+  transform: translateY(-5px) scale(1.1);
+}
+
+
+/* ── .drop alias — legacy tools (pdf-sayfa-kirp etc) ───────────────────── */
+.drop.tp-dropzone--over {
+  animation: tp-zone-pulse .9s ease-in-out infinite;
+}
+
+.drop.tp-dropzone--over::before,
+.drop.tp-dropzone--over::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.drop.tp-dropzone--over::before {
+  background:
+    linear-gradient(90deg,  #6366f1 40%, transparent 40%) top    left  / 30px 2px no-repeat,
+    linear-gradient(180deg, #6366f1 40%, transparent 40%) top    right / 2px 30px no-repeat,
+    linear-gradient(90deg,  transparent 60%, #6366f1 60%) bottom right / 30px 2px no-repeat,
+    linear-gradient(180deg, transparent 60%, #6366f1 60%) bottom left  / 2px 30px no-repeat;
+  animation: tp-corner-in .2s ease-out both;
+}
+
+/* .drop-zone.tp-dropzone--over alias (tool-shell.css uses .drop-zone.over) */
+.drop-zone.tp-dropzone--over {
+  border-color: var(--accent, #6366f1) !important;
+  border-style: solid;
+  background: var(--bg3, #f5f3ff) !important;
+  animation: dzPulse .6s ease infinite alternate, tp-zone-pulse .9s ease-in-out infinite;
+}
+.drop-zone.tp-dropzone--over::before,
+.drop-zone.tp-dropzone--over::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.drop-zone.tp-dropzone--over::before {
+  background:
+    linear-gradient(90deg,  #6366f1 40%, transparent 40%) top    left  / 30px 2px no-repeat,
+    linear-gradient(180deg, #6366f1 40%, transparent 40%) top    right / 2px 30px no-repeat,
+    linear-gradient(90deg,  transparent 60%, #6366f1 60%) bottom right / 30px 2px no-repeat,
+    linear-gradient(180deg, transparent 60%, #6366f1 60%) bottom left  / 2px 30px no-repeat;
+  animation: tp-corner-in .2s ease-out both;
+}

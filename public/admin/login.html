@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Admin Girişi — MirPDF</title>
+  <meta name="description" content="MirPDF yönetici girişi. Sadece yetkili personel erişebilir. Güvenli Bearer token kimlik doğrulaması ile korunan yönetim arayüzü."/>
+  <link rel="canonical" href="https://mirpdf.com/admin/login"/>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#0d0f1a;--bg-soft:#13162a;--border:rgba(255,255,255,.1);--text:#f1f5f9;--muted:#94a3b8;--primary:#6366f1;--danger:#ef4444}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
+.card{width:100%;max-width:400px;background:var(--bg-soft);border:1px solid var(--border);border-radius:24px;padding:2.5rem 2rem;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem;margin-bottom:2rem;justify-content:center}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.card h1{font-size:1.3rem;font-weight:800;margin-bottom:.3rem;text-align:center}
+.card .sub{color:var(--muted);font-size:.875rem;text-align:center;margin-bottom:2rem}
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
+.field label{font-size:.82rem;font-weight:600;color:var(--muted)}
+.pass-wrap{position:relative}
+.pass-wrap input{width:100%;padding:.75rem 2.8rem .75rem 1rem;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:12px;font-size:.95rem;font-family:inherit;outline:none;color:var(--text);transition:border-color .15s}
+.pass-wrap input:focus{border-color:var(--primary)}
+.pass-toggle{position:absolute;right:.85rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);padding:0;font-size:.9rem}
+.btn{width:100%;padding:.85rem;background:#6366f1;color:#fff;border:none;border-radius:12px;font-size:.97rem;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s}
+.btn:hover:not(:disabled){opacity:.88}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.msg{display:none;border-radius:10px;padding:.7rem 1rem;font-size:.875rem;margin-bottom:1rem;text-align:center}
+.msg-err{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.35);color:#fca5a5}
+.msg-ok{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.35);color:#6ee7b7}
+.warn-box{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:.85rem 1rem;font-size:.82rem;color:#fbbf24;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
+</style>
+  <meta property="og:url" content="https://mirpdf.com/admin/login"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Admin Girişi — MirPDF"/>
+  <meta name="twitter:description" content="MirPDF yönetim paneline güvenli giriş. Bearer token kimlik doğrulaması ile korunan yetkili personel arayüzü."/>
+  <meta property="og:title" content="Admin Girişi — MirPDF"/>
+  <meta property="og:description" content="MirPDF yönetici girişi. Sadece yetkili personel erişebilir. Güvenli Bearer token kimlik doğrulaması ile korunan yönetim arayüzü."/>
+</head>
+<body>
+
+<div class="card">
+  <a href="/" class="logo">
+    <img src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+    MirPDF
+  </a>
+
+  <h1>Admin Paneli</h1>
+  <p class="sub">Yalnızca yetkili personel.</p>
+
+  <div class="warn-box">
+    <i class="fas fa-shield-halved" style="margin-top:.1rem;flex-shrink:0"></i>
+    <span>Bu alan izlenmektedir. Yetkisiz erişim girişimleri kayıt altına alınır.</span>
+  </div>
+
+  <div class="msg msg-err" id="msgErr" role="alert" aria-live="polite"></div>
+  <div class="msg msg-ok"  id="msgOk"  role="status" aria-live="polite"></div>
+
+  <div class="field">
+    <label for="tokenInput">Admin Token</label>
+    <div class="pass-wrap">
+      <input id="tokenInput" type="password" autocomplete="off" placeholder="••••••••••••" spellcheck="false">
+      <button class="pass-toggle" type="button" aria-label="Token göster/gizle" id="passToggle">
+        <i class="fas fa-eye" id="passIcon"></i>
+      </button>
+    </div>
+  </div>
+
+  <button class="btn" id="submitBtn">
+    <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Giriş Yap
+  </button>
+</div>
+
+<script type="module">
+// Admin token session storage'da saklanır — sekme kapanınca temizlenir
+const ADMIN_KEY  = "mirpdf_admin_token";
+const ADMIN_EXP  = "mirpdf_admin_exp";
+
+function getAdminToken() {
+  try {
+    const exp = Number(sessionStorage.getItem(ADMIN_EXP) || 0);
+    if (exp < Date.now()) { sessionStorage.removeItem(ADMIN_KEY); sessionStorage.removeItem(ADMIN_EXP); return null; }
+    return sessionStorage.getItem(ADMIN_KEY);
+  } catch (_) { return null; }
+}
+
+// Zaten oturum açıksa dashboard'a git
+if (getAdminToken()) { location.href = "/admin/"; }
+
+const tokenEl  = document.getElementById("tokenInput");
+const submitBtn = document.getElementById("submitBtn");
+const msgErr   = document.getElementById("msgErr");
+const msgOk    = document.getElementById("msgOk");
+
+function showErr(m) { msgErr.textContent = m; msgErr.style.display = "block"; msgOk.style.display = "none"; }
+function showOk(m)  { msgOk.textContent  = m; msgOk.style.display  = "block"; msgErr.style.display = "none"; }
+
+document.getElementById("passToggle")?.addEventListener("click", () => {
+  const show = tokenEl.type === "password";
+  tokenEl.type = show ? "text" : "password";
+  document.getElementById("passIcon").className = show ? "fas fa-eye-slash" : "fas fa-eye";
+});
+
+// Rate limit: frontend tarafında art arda deneme koruması
+let attempts = 0;
+let lockedUntil = 0;
+
+async function doLogin() {
+  msgErr.style.display = msgOk.style.display = "none";
+
+  if (Date.now() < lockedUntil) {
+    const secs = Math.ceil((lockedUntil - Date.now()) / 1000);
+    showErr(`🔒 Çok fazla deneme. ${secs} saniye bekle.`);
+    const btn = document.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.style.background = "#dc2626"; btn.textContent = `${secs}s bekle...`; }
+    const countdown = setInterval(() => {
+      const remaining = Math.ceil((lockedUntil - Date.now()) / 1000);
+      if (remaining <= 0) {
+        clearInterval(countdown);
+        if (btn) { btn.disabled = false; btn.style.background = ""; btn.textContent = "Giriş Yap"; }
+      } else {
+        if (btn) btn.textContent = `${remaining}s bekle...`;
+      }
+    }, 1000);
+    return;
+  }
+
+  const token = tokenEl.value.trim();
+  if (!token) { showErr("Token gerekli."); return; }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Doğrulanıyor…';
+
+  try {
+    const resp = await fetch("/api/admin/auth", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token }),
+    });
+    const j = await resp.json().catch(() => null);
+
+    if (resp.ok && j?.ok && j.data?.token) {
+      // Session token kaydet — 2 saat
+      const expMs = Date.now() + (j.data.expiresIn || 7200) * 1000;
+      try {
+        sessionStorage.setItem(ADMIN_KEY, j.data.token);
+        sessionStorage.setItem(ADMIN_EXP, String(expMs));
+      } catch (_) {}
+      showOk("Giriş başarılı, yönlendiriliyor…");
+      tokenEl.value = "";
+      attempts = 0;
+      setTimeout(() => { location.href = "/admin/"; }, 600);
+      return;
+    }
+
+    attempts++;
+    if (attempts >= 3) { lockedUntil = Date.now() + 30_000; attempts = 0; }
+
+    if (resp.status === 429) {
+      showErr("Çok fazla deneme. Lütfen bekle.");
+    } else {
+      showErr("Geçersiz token.");
+    }
+  } catch (_) {
+    showErr("Bağlantı hatası.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Giriş Yap';
+  }
+}
+
+submitBtn.addEventListener("click", doLogin);
+tokenEl.addEventListener("keydown", e => { if (e.key === "Enter") doLogin(); });
+
+// Otomatik odak
+tokenEl.focus();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

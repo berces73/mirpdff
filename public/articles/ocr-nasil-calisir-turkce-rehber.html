@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0"/>
+<title>OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma Rehberi | MirPDF</title>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-blog.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+<meta name="description" content="Optik Karakter Tanıma (OCR) teknolojisi, Türkçe OCR'ın zorlukları, Tesseract, doğruluk faktörleri ve taranan PDF'den metin çıkarma adım adım."/>
+<link rel="canonical" href="https://mirpdf.com/articles/ocr-nasil-calisir-turkce-rehber.html"/>
+<meta property="og:title" content="OCR Nasıl Çalışır? Türkçe OCR Rehberi 2026"/>
+<meta property="og:description" content="Optik Karakter Tanıma (OCR) teknolojisi, Türkçe OCR'ın zorlukları, Tesseract, doğruluk faktörleri ve taranan PDF'den metin çıkarma adım adım."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mirpdf.com/articles/ocr-nasil-calisir-turkce-rehber.html"/>
+  <meta property="og:locale" content="tr_TR"/>
+<meta name="article:published_time" content="2026-03-16"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma Rehberi","description":"Optik Karakter Tanıma (OCR) teknolojisi, Türkçe OCR'ın zorlukları, Tesseract, doğruluk faktörleri ve taranan PDF'den metin çıkarma adım adım.","datePublished":"2026-03-16","dateModified":"2026-03-16","author":{"@type":"Organization","name":"MirPDF","url":"https://mirpdf.com"},"publisher":{"@type":"Organization","name":"MirPDF","logo":{"@type":"ImageObject","url":"https://mirpdf.com/assets/brand/logo.png"}},"inLanguage":"tr-TR"}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico"/>
+
+
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script defer src="/assets/js/vitals.js"></script>
+
+  <meta name="twitter:description" content="Optik Karakter Tanıma (OCR) teknolojisi, Türkçe OCR'ın zorlukları, Tesseract, doğruluk faktörleri ve taranan PDF'den metin çıkarma adım adım."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma Rehberi | MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-blog.png"/>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/css/article.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo"><img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF</a>
+      <nav class="main-nav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/pdf-sikistir" class="nav-cta">PDF Sıkıştır</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="art-layout">
+  <nav class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span><a href="/articles/">Makaleler</a><span>›</span><span>Teknoloji</span></nav>
+  <div class="article-header">
+    <div class="article-cat"><i class="fas fa-bookmark"></i> Teknoloji</div>
+    <div class="article-body">
+<h1 class="article-title">OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma Rehberi</h1>
+<div class="mir-notice-row">
+  <img src="/assets/icons/logo.svg" width="28" height="28" alt="MirPDF" class="mir-logo-img-sm">
+  <div>
+    <span class="mir-text-bold">MirPDF Ekibi</span>
+    <span class="mir-mx">·</span>
+    <span>3 dk okuma</span>
+    <span class="mir-mx">·</span>
+    <span>Güncellendi: 2026</span>
+  </div>
+</div>
+    <div class="article-meta">
+      <span><i class="fas fa-calendar-alt mir-icon-accent"></i>2026-03-16</span>
+      <span>·</span>
+      <span><i class="fas fa-clock mir-icon-accent"></i>9 dk okuma</span>
+      <span>·</span>
+      <span><i class="fas fa-shield-alt" style="color:#10b981;margin-right:.3rem"></i>KVKK Uyumlu</span>
+    </div>
+  </div>
+  <div class="body-text">
+<p>Elinizdeki PDF'i bilgisayara kopyalayıp yapıştırmak istiyorsunuz ama metin seçilemiyor. Ya da Word'e dönüştürmek istiyorsunuz ama hiçbir şey çıkmıyor. Sorun şu: PDF taranan bir belge, yani metin değil resim.</p>
+
+<p>Çözüm OCR — Optik Karakter Tanıma. Bu rehberde OCR'ın nasıl çalıştığını, Türkçe OCR'ın özelliklerini ve MirPDF'te nasıl kullanılacağını açıklıyoruz.</p>
+
+<h2>OCR Nedir?</h2>
+
+<p>OCR (Optical Character Recognition — Optik Karakter Tanıma), görüntü içindeki metin karakterlerini bilgisayarın anlayabileceği metin verisine dönüştüren teknolojidir. İlk OCR sistemleri 1950'lere dayanır. Günümüzde derin öğrenme ile çok daha yüksek doğruluk oranlarına ulaşıldı.</p>
+
+<h2>OCR'ın Çalışma Adımları</h2>
+
+<h3>1. Ön İşleme (Preprocessing)</h3>
+<p>Ham görüntü OCR'a hazırlanır. Bu aşama çok kritik — kötü ön işleme doğruluğu dramatik biçimde düşürür.</p>
+<ul>
+  <li><strong>Gri tonlamaya çevirme:</strong> Renkli görüntü gri yapılır, bu OCR'a gereksiz bilgi yüklemez.</li>
+  <li><strong>Binarizasyon:</strong> Gri görüntü siyah-beyaza dönüştürülür (Otsu eşikleme gibi algoritmalar).</li>
+  <li><strong>Gürültü giderme:</strong> Nokta, leke, çizgiler temizlenir.</li>
+  <li><strong>Eğim düzeltme (Deskew):</strong> Tarama sırasında eğik giren belgeler düzeltilir.</li>
+  <li><strong>DPI normalizasyonu:</strong> OCR için optimum DPI 300 — daha düşük DPI doğruluğu düşürür.</li>
+</ul>
+
+<h3>2. Sayfa Segmentasyonu</h3>
+<p>Görüntü bölgelere ayrılır: başlıklar, paragraflar, tablolar, görseller, kenar çubukları. Bu ayrım hangi bölgenin okunacağını belirler.</p>
+
+<h3>3. Satır ve Kelime Segmentasyonu</h3>
+<p>Her metin bölgesi satırlara, satırlar kelimelere, kelimeler karakterlere bölünür. Karakterler arası boşluk analizi kritik.</p>
+
+<h3>4. Karakter Tanıma</h3>
+<p>Modern OCR sistemleri bu aşamada derin öğrenme (LSTM ağları) kullanır. Her karakter sınıflandırılır. En olası karakter ve güven skoru (confidence score) üretilir.</p>
+
+<h3>5. Dil Modeli ile Düzeltme</h3>
+<p>Tanınan karakterler dil modeli (n-gram, sözlük) ile doğrulanır. "İnsanh" yazan yerde dil modeli "insanlık" olabileceğini önerir.</p>
+
+<h2>Türkçe OCR'ın Zorlukları</h2>
+
+<p>Türkçe, Latin alfabesi kullanan ama özgün karakterler içeren bir dil: ğ, ş, ı, ö, ü, ç, İ. Bu karakterler OCR sistemleri için özel zorluk yaratır:</p>
+
+<ul>
+  <li><strong>ı (noktasız i):</strong> Birçok OCR sisteminde "l" (L) veya "i" olarak tanınır.</li>
+  <li><strong>İ (büyük noktalı İ):</strong> "I" veya "L" olarak karışabilir.</li>
+  <li><strong>ğ:</strong> "g" veya "g̈" olarak tanınabilir.</li>
+  <li><strong>Ş ve ş:</strong> Genellikle iyi tanınır, cedilla bağlantısı bazen kaçar.</li>
+</ul>
+
+<div class="callout note"><p><strong>ℹ Tesseract ve Türkçe:</strong> MirPDF'in OCR motoru Tesseract, Google tarafından geliştirilen açık kaynak OCR motorudur. Tesseract Türkçe için 'tur' dil paketine sahiptir ve Türkçe karakterleri doğru tanır. MirPDF'te varsayılan OCR dili Türkçe+İngilizce kombine olarak ayarlanmıştır.</p></div>
+
+<h2>OCR Doğruluğunu Etkileyen Faktörler</h2>
+
+<table class="data-table">
+  <thead><tr><th>Faktör</th><th>İyi OCR</th><th>Kötü OCR</th></tr></thead>
+  <tbody>
+    <tr><td>Görüntü çözünürlüğü</td><td>300+ DPI</td><td>150 DPI altı</td></tr>
+    <tr><td>Metin/arka plan kontrast</td><td>Yüksek kontrast (siyah/beyaz)</td><td>Düşük kontrast, gri metin</td></tr>
+    <tr><td>Yazı tipi</td><td>Düz sans-serif (Arial, Helvetica)</td><td>El yazısı, süslü fontlar</td></tr>
+    <tr><td>Belge durumu</td><td>Temiz, düz belge</td><td>Kırışık, katlanmış, soluk</td></tr>
+    <tr><td>Sayfa eğriliği</td><td>0–2 derece</td><td>5+ derece</td></tr>
+    <tr><td>Arkaplan gürültüsü</td><td>Temiz arka plan</td><td>Noktalı, desenli arka plan</td></tr>
+  </tbody>
+</table>
+
+<h2>Ne Zaman OCR Gerekir?</h2>
+
+<ul>
+  <li>Taranan belgelerden metin kopyalamak istediğinizde</li>
+  <li>PDF'i Word veya Excel'e dönüştürmek istediğinizde</li>
+  <li>Belge içinde metin araması yapmak istediğinizde</li>
+  <li>Belgeyi ekran okuyucu ile erişilebilir kılmak istediğinizde</li>
+  <li>Görüntü PDF'ini aranabilir arşiv haline getirmek istediğinizde</li>
+</ul>
+
+<h2>OCR Sonrası Ne Yapılmalı?</h2>
+
+<p>OCR mükemmel değildir. Özellikle düşük kaliteli taranan belgelerde hatalar olabilir. OCR çıktısını kullanmadan önce:</p>
+
+<ol>
+  <li>Kritik bilgileri (isim, tarih, tutar) elle doğrulayın</li>
+  <li>Türkçe karakter hatalarını kontrol edin (ı/i, İ/I, ğ/g)</li>
+  <li>Tablolardaki sayısal verileri orijinal belgeyle karşılaştırın</li>
+  <li>Yasal belgeler için OCR çıktısına değil orijinal belgeye güvenin</li>
+</ol>
+
+<div class="cta-block"><h3>OCR ile Metninizi Çıkarın</h3><p>Taranan belgelerden metin çıkarmak artık kolay. Pro plan gerekir.</p><a href="/ocr" class="cta-btn">OCR Aracını Aç →</a></div>
+
+<h2>Sık Sorulan Sorular</h2>
+
+<details><summary>OCR ne kadar doğru sonuç verir?</summary>
+<p>İyi kaliteli taranmış belgelerde (300 DPI, temiz) doğruluk %95–99 arasında. Kötü kalitede bu oran %70–85'e düşebilir. Türkçe dil paketi ile Türkçe karakterler doğru tanınır.</p></details>
+
+<details><summary>El yazısı OCR ile tanınabilir mi?</summary>
+<p>Standart OCR motorları basılı metin için geliştirilmiştir. El yazısı tanıma (HTR - Handwritten Text Recognition) farklı, daha gelişmiş algoritmalar gerektirir. MirPDF el yazısı OCR sunmaz.</p></details>
+
+<details><summary>OCR'lı PDF ile normal PDF farkı ne?</summary>
+<p>Normal (taranmış) PDF: her sayfa bir görüntü, metin seçilemiyor, arama çalışmıyor. OCR'lı PDF: görüntünün altında metin katmanı var, seçilebilir, aranabilir ve kopyalanabilir. Dosya boyutu biraz artar.</p></details>
+</div>
+</div>
+
+  <div class="mir-tip-card-lg">
+    <p class="mir-label-blue">📖 İlgili Rehberler</p>
+    <div class="mir-tag-row">
+      <a href="/articles/ocr-turkce-pdf-metin.html" class="mir-tag-chip">📝 Türkçe PDF'den Metin Çıkarma</a> <a href="/articles/ocr-turkce-karakter-sorunu.html" class="mir-tag-chip">📝 OCR Türkçe Karakter Sorunları</a>
+    </div>
+  </div>
+
+</div><footer class="footer">
+  <div class="container"><div class="footer-grid">
+    <div>
+      <a href="/" style="color:#fff;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:.4rem;margin-bottom:.6rem;font-size:1rem">
+        <img src="/assets/icons/logo.svg" width="24" height="24" alt="MirPDF" style="border-radius:5px">MirPDF
+      </a>
+      <p style="font-size:.8rem;line-height:1.6;max-width:260px">Ücretsiz PDF araçları. Tarayıcıda çalışır, kayıt gerekmez.</p>
+    </div>
+    <div style="display:flex;gap:3rem;flex-wrap:wrap">
+      <div>
+        <div class="mir-footer-section-title">Araçlar</div>
+        <a href="/pdf-birlestir" class="mir-footer-link">PDF Birleştir</a>
+        <a href="/pdf-sikistir" class="mir-footer-link">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" class="mir-footer-link-sm">PDF → Word</a>
+      </div>
+      <div>
+        <div class="mir-footer-section-title">Yasal</div>
+        <a href="/legal/privacy.html" class="mir-footer-link">Gizlilik</a>
+        <a href="/legal/terms.html" class="mir-footer-link">Şartlar</a>
+        <a href="/legal/kvkk.html" class="mir-footer-link-sm">KVKK</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:.9rem auto 0;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem;font-size:.78rem">
+    © 2026 MirPDF — Tüm hakları saklıdır.
+  </div>
+</footer>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Yönlendiriliyor…</title>
+  <meta name="description" content="MirPDF e-posta doğrulama sayfası. Hesabınızı aktive edin ve tüm PDF araçlarına tam erişim kazanın. Doğrulama bağlantısı e-postanıza gönderildi."/>
+  <link rel="canonical" href="https://mirpdf.com/auth/verify"/>
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:url" content="https://mirpdf.com/auth/verify"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Yönlendiriliyor…"/>
+  <meta name="twitter:description" content="MirPDF hesap doğrulama — e-postanızdaki bağlantıya tıklayarak hesabınızı aktive edin."/>
+  <meta property="og:title" content="Yönlendiriliyor…"/>
+  <meta property="og:description" content="MirPDF e-posta doğrulama sayfası. Hesabınızı aktive edin ve tüm PDF araçlarına tam erişim kazanın. Doğrulama bağlantısı e-postanıza gönderildi."/>
+</head>
+<body>
+  <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Yönlendiriliyor</h1>
+<script>
+  // /auth/verify?token=X  →  /account/verify?token=X
+  const p = new URLSearchParams(location.search);
+  const t = p.get("token") || "";
+  location.replace("/account/verify" + (t ? "?token=" + encodeURIComponent(t) : ""));
+</script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

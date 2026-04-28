@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kullanıcı Yönetimi — MirPDF Admin</title>
+  <style>
+    :root{--bg:#f7f8fc;--card:#fff;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1;--danger:#ef4444;--success:#10b981}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Figtree',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    .topbar{background:#0d0f1a;color:#fff;padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+    .topbar a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.85rem}
+    .topbar a:hover{color:#fff}
+    .wrap{max-width:1200px;margin:0 auto;padding:2rem 1.5rem}
+    h1{font-size:1.4rem;font-weight:800;margin-bottom:1.5rem}
+    .toolbar{display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
+    .toolbar input,.toolbar select{padding:.6rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;outline:none;background:#fff}
+    .toolbar input{flex:1;min-width:200px}
+    .toolbar input:focus,.toolbar select:focus{border-color:var(--primary)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+    table{width:100%;border-collapse:collapse;font-size:.85rem}
+    th{background:var(--bg);padding:.7rem 1rem;text-align:left;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+    td{padding:.7rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:#fafafa}
+    .badge{display:inline-flex;align-items:center;gap:.25rem;padding:.2rem .6rem;border-radius:6px;font-size:.72rem;font-weight:700}
+    .badge-pro{background:#ede9fe;color:#6d28d9}
+    .badge-free{background:#f1f5f9;color:#64748b}
+    .badge-disabled{background:#fef2f2;color:#dc2626}
+    .badge-verified{background:#f0fdf4;color:#15803d}
+    .badge-unverified{background:#fef9c3;color:#a16207}
+    .action-btns{display:flex;gap:.4rem;flex-wrap:wrap}
+    .btn{padding:.35rem .75rem;border-radius:7px;font-size:.78rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:opacity .15s}
+    .btn:hover{opacity:.8}
+    .btn-sm-primary{background:#0d0f1a;color:#fff}
+    .btn-sm-outline{background:#fff;color:var(--muted);border:1px solid var(--border)}
+    .btn-sm-danger{background:#fef2f2;color:#dc2626;border:1px solid #fca5a5}
+    .btn-sm-success{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
+    .btn-sm-warn{background:#fefce8;color:#a16207;border:1px solid #fde68a}
+    .pagination{display:flex;align-items:center;gap:.5rem;margin-top:1rem;justify-content:flex-end;font-size:.85rem;color:var(--muted)}
+    .pagination button{padding:.35rem .75rem;border-radius:7px;font-size:.82rem;font-weight:600;cursor:pointer;background:#fff;border:1px solid var(--border)}
+    .pagination button:disabled{opacity:.4;cursor:not-allowed}
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:100;align-items:center;justify-content:center;padding:1rem}
+    .modal-overlay.open{display:flex}
+    .modal{background:#fff;border-radius:16px;padding:1.5rem;width:min(500px,100%);max-height:90vh;overflow-y:auto}
+    .modal h2{font-size:1.1rem;font-weight:800;margin-bottom:1rem}
+    .field{margin-bottom:.9rem}
+    .field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.3rem;color:var(--muted)}
+    .field input,.field select{width:100%;padding:.6rem .85rem;border:1.5px solid var(--border);border-radius:9px;font-size:.9rem;font-family:inherit;outline:none}
+    .field input:focus,.field select:focus{border-color:var(--primary)}
+    .modal-footer{display:flex;gap:.5rem;justify-content:flex-end;margin-top:1.25rem}
+    #toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#0d0f1a;color:#fff;padding:.75rem 1.5rem;border-radius:12px;font-size:.875rem;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:200}
+    #toast.show{opacity:1}
+    .empty{text-align:center;padding:3rem;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <strong>MirPDF Admin</strong>
+  <div style="display:flex;gap:1rem">
+    <a href="/admin/">Dashboard</a>
+    <a href="/admin/users.html" style="color:#fff">Kullanıcılar</a>
+    <a href="/admin/revenue-dashboard.html">Gelir</a>
+    <a href="/admin/seo-editor.html">SEO</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <h1>Kullanıcı Yönetimi</h1>
+
+  <div class="toolbar">
+    <input type="text" id="searchInput" placeholder="E-posta, ad veya soyad ara…">
+    <select id="roleFilter">
+      <option value="">Tüm Roller</option>
+      <option value="free">Ücretsiz</option>
+      <option value="pro">Pro</option>
+      <option value="disabled">Devre Dışı</option>
+    </select>
+    <span id="totalCount" style="padding:.6rem .5rem;font-size:.85rem;color:var(--muted);white-space:nowrap"></span>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Kullanıcı</th>
+          <th>Rol</th>
+          <th>E-posta</th>
+          <th>Kayıt</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody id="userTable">
+        <tr><td colspan="5" class="empty">Yükleniyor…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button id="prevBtn" disabled>← Önceki</button>
+    <span id="pageInfo">—</span>
+    <button id="nextBtn" disabled>Sonraki →</button>
+  </div>
+</div>
+
+<!-- Düzenleme Modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <h2>Kullanıcı Düzenle</h2>
+    <input type="hidden" id="editUserId">
+    <div class="field">
+      <label>Ad</label>
+      <input type="text" id="editFirstName" maxlength="64">
+    </div>
+    <div class="field">
+      <label>Soyad</label>
+      <input type="text" id="editLastName" maxlength="64">
+    </div>
+    <div class="field">
+      <label>Rol</label>
+      <select id="editRole">
+        <option value="free">free</option>
+        <option value="pro">pro</option>
+        <option value="disabled">disabled</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>
+        <input type="checkbox" id="editVerified" style="margin-right:.4rem">
+        E-posta doğrulandı
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        <input type="checkbox" id="editUnlock" style="margin-right:.4rem">
+        Hesap kilidini aç (failed_attempts sıfırla)
+      </label>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-sm-outline" onclick="closeModal()">İptal</button>
+      <button class="btn btn-sm-primary" onclick="saveUser()">Kaydet</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const API = "/api/admin";
+let currentPage = 1;
+const LIMIT = 50;
+let searchTimer;
+
+async function apiFetch(url, opts={}) {
+  const token = sessionStorage.getItem("admin_token")||"";
+  return fetch(url, {
+    ...opts,
+    headers: { "Content-Type":"application/json", "Authorization":`Bearer ${token}`, ...(opts.headers||{}) },
+    body: opts.body ? (typeof opts.body === "string" ? opts.body : JSON.stringify(opts.body)) : undefined,
+  });
+}
+
+function toast(msg, ok=true) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.className = "show";
+  el.style.background = ok ? "#0d0f1a" : "#dc2626";
+  setTimeout(() => el.className = "", 2500);
+}
+
+function fmtDate(ms) {
+  if (!ms) return "—";
+  return new Date(ms).toLocaleDateString("tr-TR",{day:"numeric",month:"short",year:"numeric"});
+}
+
+async function loadUsers() {
+  const q    = document.getElementById("searchInput").value.trim();
+  const role = document.getElementById("roleFilter").value;
+  const params = new URLSearchParams({ page: currentPage, limit: LIMIT });
+  if (q)    params.set("q", q);
+  if (role) params.set("role", role);
+
+  const resp = await apiFetch(`${API}/users?${params}`);
+  if (resp.status === 401) { location.href="/admin/login"; return; }
+  const j = await resp.json().catch(()=>({}));
+  const users = j?.data?.users || [];
+  const total = j?.data?.total || 0;
+
+  document.getElementById("totalCount").textContent = `${total} kullanıcı`;
+  document.getElementById("pageInfo").textContent = `Sayfa ${currentPage} / ${Math.ceil(total/LIMIT)||1}`;
+  document.getElementById("prevBtn").disabled = currentPage <= 1;
+  document.getElementById("nextBtn").disabled = currentPage * LIMIT >= total;
+
+  const tbody = document.getElementById("userTable");
+  if (!users.length) { tbody.innerHTML = `<tr><td colspan="5" class="empty">Kullanıcı bulunamadı.</td></tr>`; return; }
+
+  tbody.innerHTML = users.map(u => {
+    const name = [u.first_name, u.last_name].filter(Boolean).join(" ") || "—";
+    const roleBadge = u.role === "pro"
+      ? `<span class="badge badge-pro">Pro</span>`
+      : u.role === "disabled"
+        ? `<span class="badge badge-disabled">Devre Dışı</span>`
+        : `<span class="badge badge-free">Ücretsiz</span>`;
+    const verBadge = u.email_verified
+      ? `<span class="badge badge-verified">✓ Doğru</span>`
+      : `<span class="badge badge-unverified">✗ Doğrulanmadı</span>`;
+    const locked = u.locked_until && Date.now() < Number(u.locked_until) ? "⚠️ Kilitli" : "";
+    return `<tr>
+      <td>
+        <div style="font-weight:600;font-size:.88rem">${u.email}</div>
+        <div style="font-size:.75rem;color:var(--muted)">${name} ${locked}</div>
+      </td>
+      <td>${roleBadge}</td>
+      <td>${verBadge}</td>
+      <td style="font-size:.8rem;color:var(--muted)">${fmtDate(u.created_at)}</td>
+      <td>
+        <div class="action-btns">
+          <button class="btn btn-sm-outline" onclick="openEdit('${u.id}','${u.first_name||""}','${u.last_name||""}','${u.role}',${!!u.email_verified})">Düzenle</button>
+          <button class="btn btn-sm-warn" onclick="sendReset('${u.id}')">Şifre Sıfırla</button>
+          ${!u.email_verified ? `<button class="btn btn-sm-success" onclick="verifyEmail('${u.id}')">Doğrula</button>` : ""}
+          ${u.role !== "disabled"
+            ? `<button class="btn btn-sm-danger" onclick="toggleDisable('${u.id}','disable')">Devre Dışı</button>`
+            : `<button class="btn btn-sm-success" onclick="toggleDisable('${u.id}','enable')">Aktifleştir</button>`}
+          <button class="btn btn-sm-danger" style="border-color:#fca5a5" onclick="deleteUser('${u.id}','${u.email}')">Sil</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join("");
+}
+
+function openEdit(id, fn, ln, role, verified) {
+  document.getElementById("editUserId").value = id;
+  document.getElementById("editFirstName").value = fn;
+  document.getElementById("editLastName").value = ln;
+  document.getElementById("editRole").value = role;
+  document.getElementById("editVerified").checked = verified;
+  document.getElementById("editUnlock").checked = false;
+  document.getElementById("editModal").classList.add("open");
+}
+
+function closeModal() { document.getElementById("editModal").classList.remove("open"); }
+
+async function saveUser() {
+  const id = document.getElementById("editUserId").value;
+  const body = {
+    first_name:     document.getElementById("editFirstName").value.trim(),
+    last_name:      document.getElementById("editLastName").value.trim(),
+    role:           document.getElementById("editRole").value,
+    email_verified: document.getElementById("editVerified").checked,
+    unlock:         document.getElementById("editUnlock").checked,
+  };
+  const resp = await apiFetch(`${API}/users/${id}`, { method:"PATCH", body });
+  if (resp.ok) { toast("Güncellendi ✓"); closeModal(); loadUsers(); }
+  else { toast("Güncelleme başarısız", false); }
+}
+
+async function toggleDisable(id, action) {
+  const label = action === "disable" ? "devre dışı bırakmak" : "aktifleştirmek";
+  if (!confirm(`Bu kullanıcıyı ${label} istiyor musunuz?`)) return;
+  const resp = await apiFetch(`${API}/users/${id}/${action}`, { method:"POST" });
+  if (resp.ok) { toast(action === "disable" ? "Devre dışı bırakıldı" : "Aktifleştirildi"); loadUsers(); }
+  else toast("İşlem başarısız", false);
+}
+
+async function verifyEmail(id) {
+  const resp = await apiFetch(`${API}/users/${id}/verify-email`, { method:"POST" });
+  if (resp.ok) { toast("E-posta doğrulandı ✓"); loadUsers(); }
+  else toast("İşlem başarısız", false);
+}
+
+async function sendReset(id) {
+  if (!confirm("Bu kullanıcıya şifre sıfırlama e-postası gönderilsin mi?")) return;
+  const resp = await apiFetch(`${API}/users/${id}/send-reset`, { method:"POST" });
+  if (resp.ok) toast("Sıfırlama e-postası gönderildi ✓");
+  else toast("Gönderilemedi", false);
+}
+
+async function deleteUser(id, email) {
+  if (!confirm(`"${email}" hesabını kalıcı olarak silmek istiyor musunuz?\n\nBu işlem geri alınamaz.`)) return;
+  const resp = await apiFetch(`${API}/users/${id}`, { method:"DELETE", body: { confirm:true } });
+  if (resp.ok) { toast("Hesap silindi"); loadUsers(); }
+  else toast("Silme başarısız", false);
+}
+
+document.getElementById("prevBtn").addEventListener("click", () => { currentPage--; loadUsers(); });
+document.getElementById("nextBtn").addEventListener("click", () => { currentPage++; loadUsers(); });
+document.getElementById("searchInput").addEventListener("input", () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => { currentPage=1; loadUsers(); }, 400);
+});
+document.getElementById("roleFilter").addEventListener("change", () => { currentPage=1; loadUsers(); });
+
+loadUsers();
+</script>
+</body>
+</html>

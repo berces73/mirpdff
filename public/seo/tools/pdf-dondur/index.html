@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>PDF Sayfası Döndürme — Ters veya Yatay Sayfaları Düzelt | MirPDF</title>
+  <meta name="description" content="PDF Döndür online — ücretsiz, hızlı ve güvenli. Kayıt gerekmez, dosyalarınız tarayıcınızda kalır.">
+  <link rel="canonical" href="https://mirpdf.com/pdf-dondur">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="PDF Sayfası Döndürme — Ters veya Yatay Sayfaları Düzelt | MirPDF">
+  <meta property="og:url" content="https://mirpdf.com/pdf-dondur"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:description" content="PDF sayfalarını 90°, 180° veya 270° döndürün. Ters taranmış veya yanlış yönlü sayfaları düzeltin. Ücretsiz online, kayıt gerekmez.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mirpdf.com/assets/og-home.png">
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"PDF Sayfa Döndürme ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet, MirPDF'te bu araç ücretsiz kullanılabilir. Günde 3 işlem hakkı mevcuttur. Pro planla sınırsız kullanım sunulur."}},
+    {"@type":"Question","name":"PDF Sayfa Döndürme nasıl yapılır?","acceptedAnswer":{"@type":"Answer","text":"Dosyanızı MirPDF'e yükleyin, gerekli ayarları yapın ve aracı çalıştırın. İşlem genellikle 10-30 saniye sürer."}}
+  ]}
+  </script>
+<style>
+:root{--bg:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+main{padding:2.5rem 0 5rem}
+h1{font-size:2rem;font-weight:800;margin-bottom:.6rem;line-height:1.2}
+h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem}
+h3{font-size:1rem;font-weight:700;margin:1.25rem 0 .4rem}
+p{margin-bottom:.75rem;color:#374151}
+.hero-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem;text-align:center}
+.hero-sub{color:var(--muted);font-size:.95rem;max-width:520px;margin:.5rem auto 1.5rem}
+.btn-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-cta:hover{background:#1e293b}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1rem;font-size:.78rem;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:.3rem}
+.trust i{color:#10b981;font-size:.7rem}
+.callout{display:flex;gap:.85rem;padding:1.1rem 1.25rem;border-radius:12px;margin:1.75rem 0;border:1.5px solid}
+.callout-icon{font-size:1.1rem;flex-shrink:0;line-height:1.6}
+.callout p{margin:0;font-size:.92rem;line-height:1.6}
+.callout strong{display:block;font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.callout-tip{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+.callout-tip p{color:#166534}
+.callout-note{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+.callout-note p{color:#1e40af}
+.callout-warning{background:#fffbeb;border-color:#fde68a;color:#92400e}
+.callout-warning p{color:#92400e}
+.article-body{font-size:17px;line-height:1.75;color:#374151}
+.article-body ul{list-style:none;margin:1.25rem 0;padding:0}
+.article-body ul li{padding:.35rem 0 .35rem 1.4rem;position:relative;color:#374151;border-bottom:1px solid var(--border)}
+.article-body ul li:last-child{border-bottom:none}
+.article-body ul li::before{content:'';position:absolute;left:4px;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.5}
+.article-body ol{list-style:none;counter-reset:step;margin:1.5rem 0;padding:0}
+.article-body ol li{counter-increment:step;display:grid;grid-template-columns:32px 1fr;column-gap:14px;align-items:start;padding:.6rem 0;border-bottom:1px solid var(--border);color:#374151}
+.article-body ol li:last-child{border-bottom:none}
+.article-body ol li::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-top:2px;border-radius:50%;background:#eef0f7;color:var(--text);font-weight:800;font-size:.75rem;border:1.5px solid var(--border);flex-shrink:0}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;margin-top:1rem}
+.related-card{display:flex;align-items:center;gap:.6rem;padding:.8rem;background:#fff;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text);font-size:.85rem;font-weight:600}
+.related-card:hover{border-color:var(--primary)}
+.related-card i{color:var(--primary)}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .4rem}
+</style>
+  <meta name="twitter:description" content="PDF sayfalarını 90°, 180° veya 270° döndürün. Ters taranmış veya yanlış yönlü sayfaları düzeltin. Ücretsiz online, kayıt gerekmez."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="PDF Sayfası Döndürme — Ters veya Yatay Sayfaları Düzelt | MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og-home.png"/>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mainNav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/login" class="nav-link-auth">Giriş Yap</a>
+        <a href="/register" class="nav-btn mir-btn-primary">Ücretsiz Kayıt</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+  <div class="hero-card">
+    <h1>PDF Sayfa Döndürme</h1>
+    <p class="hero-sub">Ters veya yan taranmış PDF sayfalarını doğru yönüne çevirin. Seçili sayfalar veya tüm belge için toplu döndürme.</p>
+    <a href="/pdf-dondur" class="btn-cta"><i class="fas fa-rotate-right"></i> Sayfayı Döndür</a>
+    <div class="trust">
+      <span><i class="fas fa-check-circle"></i> Tamamen ücretsiz</span>
+      <span><i class="fas fa-check-circle"></i> Kayıt gerekmez</span>
+      <span><i class="fas fa-check-circle"></i> KVKK uyumlu</span>
+      <span><i class="fas fa-check-circle"></i> 60dk sonra silinir</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+<h2>PDF Sayfa Neden Döndürülür?</h2>
+<p>Belgeleri tararken veya mobil kamerayla fotoğraflayıp PDF'e çevirirken bazı sayfalar ters veya yan gelebilir. Özellikle aşağıdaki durumlarda döndürme aracı kullanılır:</p>
+<ul>
+<li><strong>Ters taranmış belgeler:</strong> Tarayıcıya belgeyi ters koyarak taranmış sayfalar 180° döndürülmesi gerekir.</li>
+<li><strong>Telefonla çekilen belgeler:</strong> Fotoğraf yatay çekilmiş, PDF'te yan dönük görünüyor.</li>
+<li><strong>Geniş tablolar:</strong> Bazı sayfalarda yatay (landscape) tablo var, diğerleri dikey (portrait) — yönleri eşitlemek istiyorsunuz.</li>
+<li><strong>Tarama hataları:</strong> Otomatik belge besleyicili tarayıcılarda bazı sayfalar yanlış yönde gelebilir.</li>
+</ul>
+
+<h2>Döndürme Nasıl Yapılır?</h2>
+<ol>
+<li><strong>PDF'inizi yükleyin</strong> — Sayfa önizlemeleri görünür.</li>
+<li><strong>Sayfaları seçin</strong> — Tek sayfa, birden fazla sayfa veya tümü seçilebilir.</li>
+<li><strong>Döndürme açısını belirleyin</strong> — 90° saat yönünde, 90° saat yönünün tersine veya 180° seçenekleri mevcuttur.</li>
+<li><strong>"Uygula ve İndir"</strong> butonuyla düzeltilmiş PDF'i alın.</li>
+</ol>
+
+<h2>Döndürme Açıları ve Kullanım Durumları</h2>
+<div style="overflow-x:auto;margin:1rem 0">
+<table style="width:100%;border-collapse:collapse;font-size:.88rem">
+<tr><th style="background:#f8fafc;padding:.7rem 1rem;text-align:left;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#64748b;border-bottom:2px solid #e3e6f0">Açı</th><th style="background:#f8fafc;padding:.7rem 1rem;text-align:left;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#64748b;border-bottom:2px solid #e3e6f0">Ne Zaman</th></tr>
+<tr><td class="mir-row-pad">90° saat yönünde</td><td class="mir-row-pad">Belge sol yana yatık göründüğünde</td></tr>
+<tr><td class="mir-row-pad">90° saat yönü tersine</td><td class="mir-row-pad">Belge sağ yana yatık göründüğünde</td></tr>
+<tr><td class="mir-row-pad">180°</td><td class="mir-row-pad">Belge tamamen ters (baş aşağı) göründüğünde</td></tr>
+</table>
+</div>
+
+<h2>Sık Sorulan Sorular</h2>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Yalnızca belirli sayfaları döndürebilir miyim?</summary>
+<p class="mir-faq-a">Evet. Önizlemeden döndürmek istediğiniz sayfaları tek tek seçebilirsiniz; diğer sayfalar etkilenmez.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Kalite bozulur mu?</summary>
+<p class="mir-faq-a">Hayır. PDF döndürme yalnızca sayfa yönelim bilgisini değiştirir; içerik ve kalite etkilenmez.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Portrait ve landscape karışık PDF mümkün mü?</summary>
+<p class="mir-faq-a">Evet. Her sayfa bağımsız döndürülebilir; bir PDF'te portrait ve landscape sayfalar bir arada olabilir.</p>
+</details>
+
+  </div>
+
+  
+<h2>Toplu Döndürme: Tüm Sayfaları Aynı Anda Döndürme</h2>
+<p>Tüm sayfaları aynı yönde döndürmek istiyorsanız "Tümünü Seç" seçeneğiyle tek işlemde halledersiniz. Tarayıcınıza belgeyi ters yüklediğinizde tüm sayfalar 180° döndürülmesi gerekir — bunu tek seferde yapabilirsiniz.</p>
+
+<h2>Tarama Cihazı Ayarları ile Döndürme Sorununu Kök Nedeninde Çözme</h2>
+<p>Sürekli aynı yönde döndürme sorunuyla karşılaşıyorsanız sorunu kaynakta çözebilirsiniz:</p>
+<ul>
+<li>Tarayıcı yazılımında sayfa yönü (orientation) ayarını "Otomatik Algıla" veya "Dikey (Portrait)" olarak değiştirin.</li>
+<li>Otomatik belge besleyici (ADF) kullanıyorsanız belgeleri daima okuma yönünde (metin yukarı bakacak şekilde) yerleştirin.</li>
+<li>Telefon uygulamasıyla tarıyorsanız uygulamanın otomatik düzeltme (auto-correct) özelliğini etkinleştirin.</li>
+</ul>
+
+<h2>Döndürme ve Sıralama Birlikte</h2>
+<p>Bazı sayfaları döndürüp aynı zamanda sırasını değiştirmeniz gerekiyorsa önce döndürme, ardından <a href="/sayfa-sirala">Sayfa Sıralama</a> işlemi yapmanız önerilir. Böylece her adımı ayrı ve kontrollü şekilde gerçekleştirirsiniz.</p>
+
+
+<h2>Yanlış Yönde Taranmış Belgeleri Düzeltme: Yaygın Senaryolar</h2>
+<p>Tarama hatalarının en yaygın nedenleri ve çözümleri:</p>
+<ul>
+<li><strong>Belge ters yüklendi (180°):</strong> Tarayıcı yatağına belgeyi metin aşağı bakacak şekilde koydunuz. Sonuç 180° döndürme ile düzelir.</li>
+<li><strong>Belge yan yüklendi (90°):</strong> Dikey belgeyi yatay koyduğunuzda sayfa 90° döner. Saat yönünde veya tersine 90° döndürme düzeltir.</li>
+<li><strong>ADF (Otomatik Besleme) yanlış yön:</strong> Belge besleyiciye yanlış yönde girdi. Hangi yöne döndüğüne bakarak 90° veya 180° seçin.</li>
+</ul>
+
+<h2>Döndürme ile Yeniden Boyutlandırma Arasındaki Fark</h2>
+<p>PDF döndürme yalnızca sayfa yönelimini değiştirir; sayfa boyutunu (A4, Letter vb.) veya içerik ölçeğini etkilemez. "Sayfayı döndür" ile "sayfayı yeniden boyutlandır" farklı işlemlerdir. Döndürme sonrası sayfa hâlâ A4'tür, yalnızca 90° çevrilmiş haldedir.</p>
+
+<h2>Döndürme ve Diğer Araçların Birlikte Kullanımı</h2>
+<p>Sıkça kullanılan kombinasyonlar:</p>
+<ul>
+<li>Döndür + Sırala: Tüm sayfaları döndürün, ardından <a href="/sayfa-sirala">sıralama</a> yapın.</li>
+<li>Döndür + Birleştir: Farklı yönlerdeki belgeleri döndürerek aynı yöne getirin, sonra <a href="/pdf-birlestir">birleştirin</a>.</li>
+<li>Döndür + Sıkıştır: Döndürme boyutu etkilemez, ancak sonraki adımda <a href="/pdf-sikistir">sıkıştırma</a> boyutu düşürür.</li>
+</ul>
+
+
+<h2>MirPDF ile Pdf Dondur: Sık Karşılaşılan Sorular</h2>
+<p>Bu araç hakkında kullanıcılarımızdan sıkça gelen sorulara aşağıda yanıt veriyoruz.</p>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Türkiye'den erişilebilir mi?</summary>
+<p class="mir-faq-a">Evet. MirPDF Türkiye merkezli bir hizmettir. Sunucularımız Türkiye'den hızlı erişim için geliştirilmiştir ve KVKK mevzuatına tabidir.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Dosyalarım güvende mi?</summary>
+<p class="mir-faq-a">Evet. Tüm dosya aktarımları SSL/TLS şifreleme ile korunur. Yüklediğiniz belgeler 60 dakika sonra sunucularımızdan kalıcı olarak silinir. Hiçbir zaman üçüncü taraflarla paylaşılmaz.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Mobil cihazlarda çalışır mı?</summary>
+<p class="mir-faq-a">Evet. MirPDF mobil uyumlu tasarımla geliştirilmiştir. iPhone, Android telefon ve tabletlerde tarayıcıdan tam işlevsellikle kullanabilirsiniz. Ek uygulama yüklemeye gerek yoktur.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Ücretsiz plan ile Pro plan arasındaki fark nedir?</summary>
+<p class="mir-faq-a">Ücretsiz planda günlük kullanım kredisi bulunur. Pro plan, sınırsız OCR/PDF→Word, toplu işlem ve öncelikli kuyrukla daha düzenli bir iş akışı sağlar.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Bu araçla ilgili destek alabilir miyim?</summary>
+<p class="mir-faq-a">Evet. Sorularınız için <a href="/contact" class="mir-text-primary">İletişim sayfamızdan</a> veya <a href="/yardim" class="mir-text-primary">Yardım Merkezi'mize</a> başvurabilirsiniz. Pro kullanıcılar öncelikli destek alır.</p>
+</details>
+
+<div class="mir-cta-box">
+<p class="mir-card-title">MirPDF'i Deneyin</p>
+<p class="mir-text-sm-mb">Türkiye'nin en hızlı PDF aracı — kayıt gerekmez, tamamen ücretsiz başlayın.</p>
+<a href="/" class="mir-btn-dark">PDF Araçlarını Aç →</a>
+</div>
+
+
+<h2>PDF Döndürme: Kurumsal Belge Standartları</h2>
+<p>Resmi belgelerde sayfa yönü tutarlılığı önemlidir. Bazı kurumlar belgelerin tamamının dikey (portrait) veya yatay (landscape) olmasını zorunlu kılar. Örneğin SGK'ya gönderilen belgeler dikey sayfa tercih ederken geniş tablolu mali raporlar yatay sayfada daha okunabilirdir. MirPDF döndürme aracıyla her sayfayı ayrı ayrı veya toplu olarak doğru yöne getirebilirsiniz.</p>
+<p>Tarama öncesi hazırlık: Belgeleri tarayıcıya yüklemeden önce hepsini aynı yöne getirmek uzun vadede zaman kazandırır. Ancak acil durumlarda yanlış taranmış belgeleri döndürme aracıyla anında düzeltmek mümkündür.</p>
+<h2>Döndürme Sonrası Kalite Kontrolü</h2>
+<p>Döndürme işlemi sonrası belgeyi mutlaka önizleyin. Özellikle dikkat edilmesi gerekenler:</p>
+<ul>
+<li>Metin doğru yönde ve okunabilir mi?</li>
+<li>Tablolar ve grafikler tam görünüyor mu?</li>
+<li>Sayfalar arasında yön tutarlılığı sağlandı mı?</li>
+<li>Barkod veya QR kodlar döndükten sonra hâlâ okunabilir mi?</li>
+</ul>
+<p>Bu kontrolleri yapmadan belgeyi göndermek, alıcı tarafında olumsuz izlenim yaratabilir. Birkaç saniyelik önizleme incelemesi bu riski ortadan kaldırır.</p>
+
+<h2>İlgili Araçlar</h2>
+  <div class="related-grid">
+<a href="/sayfa-sirala" class="related-card"><i class="fas fa-sort"></i> Sayfa Sırala</a>
+<a href="/sayfa-sil" class="related-card"><i class="fas fa-trash"></i> Sayfa Sil</a>
+<a href="/pdf-birlestir" class="related-card"><i class="fas fa-object-group"></i> PDF Birleştir</a>
+<a href="/pdf-bol" class="related-card"><i class="fas fa-cut"></i> PDF Böl</a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
+          <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+          MirPDF
+        </a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları. 25 araç, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-bol">PDF Böl</a>
+        <a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR / Metin</a>
+        <a href="/pdf-kilitle">PDF Kilitle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/about">Hakkımızda</a>
+        <a href="/contact">İletişim</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/articles/">Blog</a>
+        <a href="/status">Sistem Durumu</a>
+      </div>
+      <div class="footer-col">
+        <h4>Yasal</h4>
+        <a href="/legal/privacy.html">Gizlilik Politikası</a>
+        <a href="/legal/terms.html">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+        <a href="/legal/security.html">Güvenlik</a>
+        <a href="/sitemap.xml">Site Haritası</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div class="footer-links-row">
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/terms.html">Şartlar</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

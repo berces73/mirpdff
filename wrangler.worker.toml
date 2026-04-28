@@ -1,0 +1,109 @@
+name = "mirpdf-worker"
+main = "_worker.js"
+compatibility_date = "2026-02-24"
+
+[[durable_objects.bindings]]
+name = "CREDIT_COUNTER"
+class_name = "CreditCounter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["CreditCounter"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mirpdf-db"
+database_id = "bc17d385-2ca6-49fe-9774-51f132982188"
+
+[[r2_buckets]]
+binding = "PDF_R2"
+bucket_name = "mirpdf-files"
+
+[[r2_buckets]]
+binding = "CLEANUP_LOG_BUCKET"
+bucket_name = "mirpdf-cleanup-logs"
+
+[[queues.producers]]
+queue = "pdf-jobs"
+binding = "JOB_QUEUE"
+
+[[kv_namespaces]]
+binding = "RATE_KV"
+id = "95806282dcd44a2f91d68f035219d6be"
+
+[[kv_namespaces]]
+binding = "CACHE_INDEX"
+id = "2ebf70fd4e1c496ca7e9eb2cb958792f"
+
+[[kv_namespaces]]
+binding = "CIRCUIT_KV"
+id = "4429f8216ff745ce94c2776e23682e3a"
+
+[triggers]
+crons = ["*/10 * * * *", "0 3 1 * *"]
+
+[vars]
+INDEX_SECONDARY = "0"
+INTERNAL_LINKS_CRON = "0 3 1 * *"
+
+APP_ORIGIN = "https://mirpdf.com"
+ALLOWED_ORIGIN = "https://mirpdf.com"
+JWT_TTL_SECONDS      = "86400"
+REFRESH_TTL_SECONDS  = "2592000"
+REQUIRE_EMAIL_VERIFIED = "1"
+FREE_STARTING_CREDITS = "25"
+FREE_DAILY_CREDITS = "15"
+
+QUEUE_MODE = "on"
+
+ALERT_WEBHOOK_URL = ""
+ALERT_ERROR_THRESHOLD = "20"
+
+EMAIL_FROM = "MirPDF <no-reply@mirpdf.com>"
+EMAIL_VERIFY_TTL_SECONDS = "86400"
+RESET_TTL_SECONDS = "3600"
+CONTACT_EMAIL = "destek@mirpdf.com"
+
+RL_AUTH_VERIFY_PER_HOUR   = "10"
+RL_AUTH_REFRESH_PER_HOUR  = "60"
+RL_AUTH_FORGOT_PER_HOUR   = "10"
+RL_AUTH_RESET_PER_HOUR    = "20"
+RL_AUTH_CHANGE_PER_HOUR   = "20"
+RL_JOB_PER_MINUTE         = "10"
+RL_AUTH_REGISTER_PER_HOUR = "5"
+RL_AUTH_LOGIN_PER_HOUR    = "20"
+RL_UPLOAD_PER_MINUTE      = "12"
+RL_POLL_PER_MINUTE        = "60"
+
+WORD_MAX_MB    = "25"
+OCR_MAX_MB     = "25"
+MAX_UPLOAD_MB  = "50"
+
+PROCESSOR_URL = "http://62.238.1.213:3001"
+
+STRIPE_WEBHOOK_TOLERANCE_SECONDS    = "300"
+STRIPE_PRICE_BASIC                  = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_PRICE_PRO                    = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_PRICE_CREDITS100             = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_PRICE_CREDITS500             = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_SUB_PRICE_BASIC              = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_SUB_PRICE_PRO                = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_SUB_PRICE_BASIC_ANNUAL       = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_SUB_PRICE_PRO_ANNUAL         = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_SUB_PRICE_MUHASEBECI         = "BURAYA_STRIPE_PRICE_ID"
+STRIPE_SUB_PRICE_MUHASEBECI_ANNUAL  = "BURAYA_STRIPE_PRICE_ID"
+SUB_BASIC_MONTHLY_CREDITS           = "2000"
+SUB_PRO_MONTHLY_CREDITS             = "10000"
+
+JOB_TTL_SECONDS       = "3600"
+CLEANUP_GRACE_SECONDS = "600"
+CLEANUP_BATCH         = "200"
+
+TURNSTILE_SITE_KEY = ""
+
+GOOGLE_CLIENT_ID        = ""
+OAUTH_STATE_TTL_SECONDS = "600"
+
+MAGIC_LINK_TTL_SECONDS = "900"
+
+VAPID_SUBJECT = "mailto:destek@mirpdf.com"

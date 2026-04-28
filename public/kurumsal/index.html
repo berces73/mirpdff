@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/kurumsal/"/>
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/kurumsal/"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0"/>
+<title>Muhasebe Büroları için PDF Platformu — MirPDF Kurumsal</title>
+<meta name="description" content="Muhasebeci ve mali müşavirler için KVKK uyumlu PDF araçları. e-Fatura, SGK, muhtasar belgelerini saniyeler içinde işleyin. 3 kullanıcıya kadar aylık ₺249."/>
+<link rel="canonical" href="https://mirpdf.com/kurumsal/"/>
+<meta property="og:title" content="Muhasebe Büroları için PDF Platformu — MirPDF"/>
+  <meta property="og:url" content="https://mirpdf.com/kurumsal/"/>
+  <meta property="og:locale" content="tr_TR"/>
+<meta property="og:description" content="e-Fatura sıkıştırma, SGK belgesi birleştirme, muhtasar arşivi. KVKK uyumlu, ₺249/ay'dan başlayan ekip planları."/>
+<meta property="og:type" content="website"/>
+<link rel="icon" type="image/x-icon" href="/assets/brand/favicon/favicon.ico"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"MirPDF Muhasebeci Planı","description":"Muhasebe büroları için KVKK uyumlu PDF platformu. e-Fatura, SGK, muhtasar belge işleme.","url":"https://mirpdf.com/kurumsal/","offers":[{"@type":"Offer","name":"Muhasebeci","price":"249","priceCurrency":"TRY","priceSpecification":{"@type":"UnitPriceSpecification","price":"249","priceCurrency":"TRY","billingDuration":"P1M"}},{"@type":"Offer","name":"Büro","price":"449","priceCurrency":"TRY"}]}</script>
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--ac:#2563eb;--ac-soft:#eff6ff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* NAV */
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.1rem}
+.logo-mark{width:32px;height:32px;background:var(--text);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem}
+.nav{display:flex;align-items:center;gap:.1rem}
+.nav a{text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:500;padding:.4rem .8rem;border-radius:9px;transition:.15s}
+.nav a:hover{background:var(--bg-soft);color:var(--text)}
+.nav-cta{background:var(--text)!important;color:#fff!important;padding:.4rem 1.1rem!important;font-weight:700!important}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);padding:.35rem .6rem;border-radius:8px;cursor:pointer}
+
+/* HERO */
+.hero{background:var(--text);color:#fff;padding:5rem 0 4.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:#93c5fd;font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1.25rem}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin-bottom:1.1rem}
+.hero h1 em{color:#93c5fd;font-style:normal}
+.hero-lead{color:rgba(255,255,255,.72);font-size:1.05rem;max-width:560px;line-height:1.65;margin-bottom:2rem}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:.4rem;background:#2563eb;color:#fff;padding:.8rem 1.75rem;border-radius:11px;font-weight:700;font-size:.95rem;text-decoration:none;transition:.15s}
+.btn-primary:hover{background:#1d4ed8}
+.btn-ghost{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.22);padding:.8rem 1.5rem;border-radius:11px;font-weight:600;font-size:.92rem;text-decoration:none;transition:.15s}
+.btn-ghost:hover{background:rgba(255,255,255,.15)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2.5rem}
+.trust-item{display:flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.55);font-size:.82rem}
+.trust-item i{color:#34d399}
+
+/* PAIN SECTION */
+.pain-section{padding:4rem 0;background:var(--bg-soft)}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.pain-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem;border-left:3px solid #e2e8f0}
+.pain-card.active{border-left-color:var(--ac)}
+.pain-icon{font-size:1.4rem;margin-bottom:.6rem}
+.pain-card h3{font-size:.95rem;font-weight:700;margin-bottom:.35rem}
+.pain-card p{font-size:.84rem;color:var(--muted);line-height:1.6}
+.pain-arrow{text-align:center;font-size:.82rem;color:var(--muted);margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+
+/* ROI CALC */
+.roi-section{padding:4.5rem 0}
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.5rem}
+.roi-inputs{background:var(--bg-soft);border:1px solid var(--border);border-radius:18px;padding:2rem}
+.roi-label{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;display:block}
+.roi-slider{width:100%;margin:0 0 1.25rem;accent-color:var(--ac)}
+.roi-val{font-weight:700;color:var(--ac)}
+.roi-result{background:var(--text);color:#fff;border-radius:18px;padding:2rem;text-align:center}
+.roi-result-num{font-family:'Instrument Serif',serif;font-size:3.5rem;font-weight:400;line-height:1;color:#93c5fd;margin:.5rem 0}
+.roi-result-label{font-size:.9rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem}
+.roi-breakdown{text-align:left;display:flex;flex-direction:column;gap:.6rem;border-top:1px solid rgba(255,255,255,.12);padding-top:1.25rem;margin-top:.5rem}
+.roi-row{display:flex;justify-content:space-between;font-size:.84rem;color:rgba(255,255,255,.65)}
+.roi-row strong{color:#fff}
+
+/* USE CASES */
+.usecases-section{padding:4rem 0;background:var(--bg-soft)}
+.usecases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2rem}
+.usecase-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.6rem;display:flex;gap:1rem}
+.usecase-icon{width:42px;height:42px;border-radius:10px;background:var(--ac-soft);color:var(--ac);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.usecase-card h3{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.usecase-card p{font-size:.84rem;color:var(--muted);line-height:1.6}
+.usecase-card .tool-link{font-size:.8rem;color:var(--ac);text-decoration:none;font-weight:600;margin-top:.4rem;display:inline-block}
+
+/* PRICING */
+.pricing-section{padding:4.5rem 0}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.plan{background:var(--bg-soft);border:1.5px solid var(--border);border-radius:18px;padding:2rem}
+.plan.featured{background:#fff;border-color:var(--ac);box-shadow:0 12px 40px rgba(37,99,235,.12)}
+.plan-badge{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.5rem}
+.plan.featured .plan-badge{color:var(--ac)}
+.plan-name{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;margin-bottom:.25rem}
+.plan-price{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:.75rem 0 .2rem}
+.plan-price sup{font-size:1rem;font-weight:600;vertical-align:super}
+.plan-period{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem}
+.plan-features li{display:flex;align-items:flex-start;gap:.6rem;font-size:.85rem;color:var(--muted);line-height:1.4}
+.plan-features li i.fa-check{color:#10b981;flex-shrink:0;margin-top:.2rem}
+.plan-features li i.fa-times{color:#cbd5e1;flex-shrink:0;margin-top:.2rem}
+.plan-btn{display:block;width:100%;padding:.82rem;border-radius:11px;font-family:'Figtree',sans-serif;font-weight:700;font-size:.92rem;text-align:center;cursor:pointer;border:none;background:var(--text);color:#fff;transition:.15s;text-decoration:none}
+.plan.featured .plan-btn{background:var(--ac)}
+.plan-btn:hover{opacity:.87}
+.plan-note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem}
+.plan-highlight{background:var(--ac-soft);color:var(--ac);font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:6px;display:inline-block;margin-bottom:.75rem}
+
+/* TESTIMONIALS */
+.testimonials-section{padding:4rem 0;background:var(--bg-soft)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem}
+.testi-stars{color:#f59e0b;font-size:.85rem;margin-bottom:.75rem}
+.testi-text{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:1rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.65rem}
+.testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--bg-mute);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:var(--muted)}
+.testi-name{font-size:.84rem;font-weight:700}
+.testi-role{font-size:.75rem;color:var(--muted)}
+
+/* CONTACT */
+.contact-section{padding:5rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3.5rem;align-items:start}
+.contact-left h2{font-family:'Instrument Serif',serif;font-size:2rem;font-weight:400;margin-bottom:.75rem;line-height:1.2}
+.contact-left p{color:var(--muted);font-size:.92rem;line-height:1.65;margin-bottom:1.5rem}
+.contact-points{display:flex;flex-direction:column;gap:.85rem}
+.contact-point{display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem}
+.contact-point i{color:var(--ac);margin-top:.15rem;width:16px;flex-shrink:0}
+.contact-form-wrap{background:var(--bg-soft);border:1px solid var(--border);border-radius:18px;padding:2rem}
+.field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
+.field label{font-size:.8rem;font-weight:600;color:var(--text)}
+.field input,.field select,.field textarea{padding:.65rem 1rem;border:1.5px solid var(--border);border-radius:9px;font-size:.9rem;font-family:inherit;outline:none;background:#fff;color:var(--text);transition:.15s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.field textarea{resize:vertical;min-height:90px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.btn-submit{width:100%;padding:.85rem;background:var(--text);color:#fff;border:none;border-radius:11px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;margin-top:.25rem}
+.btn-submit:hover{background:#1e293b}
+#formMsg{display:none;padding:.7rem 1rem;border-radius:9px;font-size:.875rem;margin-bottom:.75rem}
+#formMsg.ok{background:#f0fdf4;border:1px solid #86efac;color:#15803d}
+#formMsg.err{background:#fef2f2;border:1px solid #fca5a5;color:#dc2626}
+.form-note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:.5rem}
+
+/* FOOTER */
+.footer{background:var(--text);color:rgba(255,255,255,.6);padding:3.5rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand p{font-size:.84rem;line-height:1.65;max-width:230px;margin-top:.6rem}
+.footer-col h4{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.85rem}
+.footer-col a{display:block;font-size:.84rem;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:.45rem;transition:.15s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.78rem;flex-wrap:wrap;gap:.5rem}
+.footer-bottom a{color:rgba(255,255,255,.45);text-decoration:none}
+
+/* Sticky CTA */
+.sticky-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;display:none}
+.sticky-cta.show{display:block}
+.sticky-cta a{display:flex;align-items:center;gap:.5rem;background:var(--ac);color:#fff;padding:.75rem 1.4rem;border-radius:100px;font-weight:700;font-size:.88rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,99,235,.35);transition:.15s}
+.sticky-cta a:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(37,99,235,.45)}
+
+@media(max-width:900px){
+  .pain-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .roi-grid,.usecases-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  #mobileToggle{display:block}
+  .nav{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}
+  .nav.show{display:flex}
+  .pain-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+}
+</style>
+  <meta name="twitter:description" content="e-Fatura sıkıştırma, SGK belgesi birleştirme, muhtasar arşivi. KVKK uyumlu, ₺249/ay"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Muhasebe Büroları için PDF Platformu — MirPDF Kurumsal"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo"><img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF</a>
+      <button id="mobileToggle" onclick="document.getElementById('mainNav').classList.toggle('show')">☰</button>
+      <nav class="nav" id="mainNav">
+        <a href="/#tools">Araçlar</a>
+        <a href="/e-fatura/">e-Fatura</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="#iletisim" class="nav-cta">Demo İste</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><i class="fas fa-calculator"></i> Muhasebe Büroları için</div>
+    <h1>Her gün PDF'le boğuşmak<br><em>zorunlu değil</em></h1>
+    <p class="hero-lead">e-Fatura sıkıştırma, SGK belgesi birleştirme, muhtasar arşivi — muhasebe büronuzun PDF işlerini dakikalardan saniyelere indirin. KVKK uyumlu, Türkçe destek.</p>
+    <div class="hero-ctas">
+      <a href="#iletisim" class="btn-primary"><i class="fas fa-calendar-alt"></i> Ücretsiz Demo İste</a>
+      <a href="#fiyatlar" class="btn-ghost"><i class="fas fa-tag"></i> Fiyatları Gör</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item"><i class="fas fa-check-circle"></i> KVKK & DPA hazır</span>
+      <span class="trust-item"><i class="fas fa-check-circle"></i> Türkçe fatura (KDV dahil)</span>
+      <span class="trust-item"><i class="fas fa-check-circle"></i> 3 kullanıcıdan büyük ekiplere</span>
+      <span class="trust-item"><i class="fas fa-check-circle"></i> İstediğin zaman iptal</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-label">Tanıdık geliyor mu?</div>
+    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400;margin-bottom:.4rem">Muhasebe bürosunun günlük PDF sorunları</h2>
+    <div class="pain-grid">
+      <div class="pain-card active">
+        <div class="pain-icon">📧</div>
+        <h3>"Dosya çok büyük, gönderilemiyor"</h3>
+        <p>e-Fatura PDF'i e-postayla göndermek istiyorsunuz ama Gmail/Outlook boyut limitini aşıyor. Her seferinde farklı program arıyorsunuz.</p>
+      </div>
+      <div class="pain-card active">
+        <div class="pain-icon">📂</div>
+        <h3>Dağınık belge arşivi</h3>
+        <p>Müşterinin SGK bildirgeleri, muhtasar beyannameleri, sözleşmeleri — hepsi ayrı ayrı. Denetim geldiğinde saatler kayboluyor.</p>
+      </div>
+      <div class="pain-card active">
+        <div class="pain-icon">🏛️</div>
+        <h3>GİB / e-Devlet yükleme hataları</h3>
+        <p>"Dosya boyutu çok büyük", "format desteklenmiyor" — portal her seferinde farklı bir hata veriyor, ne yapacağınızı bilmiyorsunuz.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🖨️</div>
+        <h3>İmza için yazıcıya koşmak</h3>
+        <p>Vekâletname, sözleşme, onay belgesi — yazdırıp imzalayıp tekrar taramak. Dijital imza varken bu iş akışı çok zaman alıyor.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">👥</div>
+        <h3>Asistan da aynı araçlara erişemiyor</h3>
+        <p>Kişisel hesabınızı paylaşmak zorunda kalıyorsunuz. Kimin hangi belgeye dokunduğunu takip edemiyorsunuz.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <h3>Farklı araçlara farklı abonelikler</h3>
+        <p>Adobe aylık $$$, başka bir servis dolar bazlı, biri ücretsiz ama limitsiz değil. Hesap-kitap yapmak yorucu.</p>
+      </div>
+    </div>
+    <div class="pain-arrow">
+      <span>MirPDF Kurumsal bunların hepsini tek çatı altında çözüyor</span>
+      <i class="fas fa-arrow-down"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section class="roi-section" id="roi">
+  <div class="container">
+    <div class="section-label">Tasarruf hesapla</div>
+    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400">Büronuz aylık ne kadar zaman kazanır?</h2>
+    <div class="roi-grid">
+      <div class="roi-inputs">
+        <label class="roi-label">Kaç kişi çalışıyor? <span class="roi-val" id="v-kisi">3</span></label>
+        <input type="range" class="roi-slider" id="s-kisi" min="1" max="15" value="3" oninput="calcRoi()">
+        <label class="roi-label">Günde kaç PDF belgesiyle uğraşıyorsunuz? <span class="roi-val" id="v-belge">20</span></label>
+        <input type="range" class="roi-slider" id="s-belge" min="5" max="100" value="20" oninput="calcRoi()">
+        <label class="roi-label">Ortalama saat ücretiniz (₺)? <span class="roi-val" id="v-ucret">300</span></label>
+        <input type="range" class="roi-slider" id="s-ucret" min="100" max="1000" step="50" value="300" oninput="calcRoi()">
+      </div>
+      <div class="roi-result">
+        <div style="font-size:.88rem;color:rgba(255,255,255,.55);margin-bottom:.25rem">Aylık kazanılan süre</div>
+        <div class="roi-result-num" id="roi-saat">4.5 saat</div>
+        <div class="roi-result-label">daha hızlı çalışma süresi</div>
+        <div class="roi-breakdown">
+          <div class="roi-row"><span>Aylık tasarruf (maliyet)</span><strong id="roi-tl">₺1.350</strong></div>
+          <div class="roi-row"><span>MirPDF Muhasebeci planı</span><strong>₺249/ay</strong></div>
+          <div class="roi-row"><span>Net tasarruf</span><strong id="roi-net" style="color:#34d399">₺1.101</strong></div>
+        </div>
+        <a href="#iletisim" class="btn-primary" style="margin-top:1.25rem;width:100%;justify-content:center">
+          Bu tasarrufu başlat →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="usecases-section">
+  <div class="container">
+    <div class="section-label">Kullanım senaryoları</div>
+    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400;margin-bottom:.4rem">Muhasebe bürosunun PDF iş akışları</h2>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="fas fa-file-invoice"></i></div>
+        <div>
+          <h3>e-Fatura ve e-Arşiv İşlemleri</h3>
+          <p>GİB limitini aşan faturaları sıkıştırın, aylık paketleri birleştirin, muhasebeciye tek dosya gönderin.</p>
+          <a href="/e-fatura/" class="tool-link">e-Fatura PDF rehberi →</a>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="fas fa-users"></i></div>
+        <div>
+          <h3>SGK Bildirge Arşivi</h3>
+          <p>Aylık SGK bildirgelerini birleştirip numaralandırın. Denetim için yıllık paket hazır olsun.</p>
+          <a href="/pdf-birlestir" class="tool-link">PDF Birleştir →</a>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="fas fa-file-signature"></i></div>
+        <div>
+          <h3>Sözleşme ve Vekaletname İmzalama</h3>
+          <p>Müşteri belgelerini yazdırmadan dijital olarak imzalayın, WhatsApp veya e-posta ile iletin.</p>
+          <a href="/pdf-imzala" class="tool-link">PDF İmzala →</a>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="fas fa-folder-open"></i></div>
+        <div>
+          <h3>Müşteri Dosya Arşivi</h3>
+          <p>Her müşteri için yıllık belge paketlerini sayfalandırılmış PDF arşivine dönüştürün.</p>
+          <a href="/pdf-sayfa-numarala" class="tool-link">Sayfa Numaralandır →</a>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="fas fa-lock"></i></div>
+        <div>
+          <h3>Gizli Belge Gönderimi</h3>
+          <p>KVKK kapsamında hassas müşteri belgelerini şifreli PDF olarak gönderin.</p>
+          <a href="/pdf-kilitle" class="tool-link">PDF Kilitle →</a>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="fas fa-compress-alt"></i></div>
+        <div>
+          <h3>Diploma ve Kimlik Belgeleri</h3>
+          <p>Yeni personel belgelerini (diploma, kimlik, ikametgah) boyut limitine uygun hale getirin.</p>
+          <a href="/pdf-sikistir" class="tool-link">PDF Sıkıştır →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="fiyatlar">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label" style="text-align:center">Fiyatlandırma</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:2rem;font-weight:400">Büro büyüklüğünüze göre plan seçin</h2>
+      <p style="color:var(--muted);font-size:.92rem;margin-top:.4rem">KDV dahil · Türkçe e-fatura · İstediğiniz zaman iptal</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Solo -->
+      <div class="plan">
+        <div class="plan-badge">Tek Kullanıcı</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><sup>₺</sup>79</div>
+        <div class="plan-period">/ ay · 1 kullanıcı</div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Tüm tarayıcı araçları (sınırsız)</li>
+          <li><i class="fas fa-check"></i>Aylık 1.000 OCR / PDF→Word kredisi</li>
+          <li><i class="fas fa-check"></i>Toplu dosya işlemi</li>
+          <li><i class="fas fa-check"></i>E-posta desteği</li>
+          <li><i class="fas fa-times"></i>Birden fazla kullanıcı</li>
+          <li><i class="fas fa-times"></i>DPA / KVKK sözleşmesi</li>
+          <li><i class="fas fa-times"></i>Kurumsal e-fatura</li>
+        </ul>
+        <a href="/pricing" class="plan-btn" style="background:var(--bg-mute);color:var(--text);border:1.5px solid var(--border)">Pro'ya Geç →</a>
+        <div class="plan-note">Serbest muhasebeciler için</div>
+      </div>
+
+      <!-- Muhasebeci -->
+      <div class="plan featured">
+        <div class="plan-highlight">En Çok Tercih Edilen</div>
+        <div class="plan-badge">Muhasebe Bürosu</div>
+        <div class="plan-name">Muhasebeci</div>
+        <div class="plan-price"><sup>₺</sup>249</div>
+        <div class="plan-period">/ ay · 3 kullanıcıya kadar</div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Tüm Pro özellikleri</li>
+          <li><i class="fas fa-check"></i>3 ekip kullanıcısı</li>
+          <li><i class="fas fa-check"></i>Aylık 5.000 OCR / PDF→Word kredisi</li>
+          <li><i class="fas fa-check"></i>Merkezi fatura yönetimi</li>
+          <li><i class="fas fa-check"></i>DPA + KVKK sözleşmesi</li>
+          <li><i class="fas fa-check"></i>Türkçe e-fatura (KDV'li)</li>
+          <li><i class="fas fa-check"></i>Öncelikli telefon/WhatsApp desteği</li>
+        </ul>
+        <a href="#iletisim" class="plan-btn">Başlamak İstiyorum →</a>
+        <div class="plan-note">Kişi başı ₺83/ay · En popüler seçim</div>
+      </div>
+
+      <!-- Büro -->
+      <div class="plan">
+        <div class="plan-badge">Büyük Büro / Şirket</div>
+        <div class="plan-name">Büro</div>
+        <div class="plan-price"><sup>₺</sup>449</div>
+        <div class="plan-period">/ ay · 10 kullanıcıya kadar</div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Tüm Muhasebeci özellikleri</li>
+          <li><i class="fas fa-check"></i>10 ekip kullanıcısı</li>
+          <li><i class="fas fa-check"></i>Aylık 15.000 kredi</li>
+          <li><i class="fas fa-check"></i>API tam erişimi</li>
+          <li><i class="fas fa-check"></i>SLA garantisi (%99.9)</li>
+          <li><i class="fas fa-check"></i>Özel onboarding</li>
+          <li><i class="fas fa-check"></i>Özel boyut limitleri</li>
+        </ul>
+        <a href="#iletisim" class="plan-btn" style="background:var(--bg-mute);color:var(--text);border:1.5px solid var(--border)">Teklif Al →</a>
+        <div class="plan-note">10+ kullanıcı için özel fiyat</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-label">Kullanıcı Görüşleri</div>
+    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400;margin-bottom:.25rem">Muhasebeciler ne diyor?</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"e-Fatura boyut sorununu çözdük. Artık her ay GİB portalına yüklerken format hatası almıyoruz. Asistanım da kullanabiliyor."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div><div class="testi-name">A. Koçak</div><div class="testi-role">SMMM, İstanbul</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Müşterilerimizin yıllık fatura arşivlerini birleştirip numaralandırıyoruz. Vergi dairesi denetiminde 2 saatlik iş 15 dakikaya indi."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SY</div>
+          <div><div class="testi-name">S. Yılmaz</div><div class="testi-role">Mali Müşavir, Ankara</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Adobe'den geçtik. Türkçe e-fatura kesiliyor, KVKK sözleşmesi var, fiyat makul. Özellikle müşteri belgelerini şifreli gönderme çok işimize yarıyor."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MÖ</div>
+          <div><div class="testi-name">M. Öztürk</div><div class="testi-role">YMM, İzmir</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="iletisim">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2>Demo isteyin,<br>size özel kurulum yapalım</h2>
+        <p>Büronuzun iş akışına göre en uygun planı birlikte belirleyelim. 30 dakikalık ücretsiz demo ile başlayın.</p>
+        <div class="contact-points">
+          <div class="contact-point"><i class="fas fa-phone"></i><div><strong>WhatsApp / Telefon</strong><br><span class="mir-text-muted">Yanıt süresi: genellikle 2 saat içinde</span></div></div>
+          <div class="contact-point"><i class="fas fa-envelope"></i><div><strong>destek@mirpdf.com</strong><br><span class="mir-text-muted">Kurumsal teklifler için doğrudan yazın</span></div></div>
+          <div class="contact-point"><i class="fas fa-file-contract"></i><div><strong>DPA & KVKK sözleşmesi</strong><br><span class="mir-text-muted">Müşterilerinizin verilerini güvende tutun</span></div></div>
+          <div class="contact-point"><i class="fas fa-file-invoice-dollar"></i><div><strong>Türkçe e-fatura</strong><br><span class="mir-text-muted">KDV dahil, muhasebe sisteminize uygun</span></div></div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div id="formMsg"></div>
+        <div class="field-row">
+          <div class="field">
+            <label>Ad Soyad *</label>
+            <input type="text" id="f-name" placeholder="Ahmet Koçak">
+          </div>
+          <div class="field">
+            <label>Büro / Şirket Adı *</label>
+            <input type="text" id="f-company" placeholder="Koçak Mali Müşavirlik">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>E-posta *</label>
+            <input type="email" id="f-email" placeholder="ahmet@ornek.com">
+          </div>
+          <div class="field">
+            <label>Telefon</label>
+            <input type="tel" id="f-phone" placeholder="0532 000 00 00">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Kaç kişilik ekip?</label>
+            <select id="f-team">
+              <option value="1">1 kişi (Serbest)</option>
+              <option value="2-3" selected>2–3 kişi</option>
+              <option value="4-10">4–10 kişi</option>
+              <option value="10+">10+ kişi</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>İlgilendiğiniz plan</label>
+            <select id="f-plan">
+              <option value="muhasebeci" selected>Muhasebeci (₺249/ay)</option>
+              <option value="buro">Büro (₺449/ay)</option>
+              <option value="enterprise">Enterprise (Teklif)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Notunuz (isteğe bağlı)</label>
+          <textarea id="f-note" placeholder="Örn: e-fatura ve SGK arşivi için kullanmak istiyorum..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">Demo İste — Ücretsiz</button>
+        <div class="form-note">En geç 1 iş günü içinde dönüş yapılır · Spam yok</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="color:#fff"><img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF</a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları. Muhasebe büroları için kurumsal planlar.</p>
+      </div>
+      <div class="footer-col"><h4>Araçlar</h4>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-imzala">PDF İmzala</a>
+        <a href="/pdf-kilitle">PDF Kilitle</a>
+        <a href="/e-fatura/">e-Fatura PDF</a>
+      </div>
+      <div class="footer-col"><h4>Şirket</h4>
+        <a href="/about">Hakkımızda</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/contact">İletişim</a>
+        <a href="/articles/">Blog</a>
+      </div>
+      <div class="footer-col"><h4>Yasal</h4>
+        <a href="/legal/kvkk.html">KVKK</a>
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/dpa.html">DPA</a>
+        <a href="/legal/terms.html">Şartlar</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF · Tüm hakları saklıdır</span>
+      <span><a href="/legal/privacy.html">Gizlilik</a> · <a href="/legal/kvkk.html">KVKK</a> · <a href="/legal/terms.html">Şartlar</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="#iletisim"><i class="fas fa-calendar-alt"></i> Demo İste</a>
+</div>
+
+<script>
+// ROI calculator
+function calcRoi(){
+  const kisi   = +document.getElementById('s-kisi').value;
+  const belge  = +document.getElementById('s-belge').value;
+  const ucret  = +document.getElementById('s-ucret').value;
+  document.getElementById('v-kisi').textContent   = kisi;
+  document.getElementById('v-belge').textContent  = belge;
+  document.getElementById('v-ucret').textContent  = '₺'+ucret;
+  // Her belge başına ortalama 1.5 dk kazanç
+  const dakika_gun = belge * 1.5;
+  const dakika_ay  = dakika_gun * 22 * kisi;
+  const saat_ay    = (dakika_ay / 60).toFixed(1);
+  const tl_ay      = Math.round((dakika_ay / 60) * ucret);
+  const net        = tl_ay - 249;
+  document.getElementById('roi-saat').textContent = saat_ay + ' saat';
+  document.getElementById('roi-tl').textContent   = '₺'+tl_ay.toLocaleString('tr-TR');
+  document.getElementById('roi-net').textContent  = (net>0?'₺'+net.toLocaleString('tr-TR'):'-');
+}
+calcRoi();
+
+// Form
+function submitForm(){
+  const name    = document.getElementById('f-name').value.trim();
+  const company = document.getElementById('f-company').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const msg     = document.getElementById('formMsg');
+  if (!name || !company || !email) {
+    msg.className='show err'; msg.style.display='block';
+    msg.textContent = 'Ad, büro adı ve e-posta zorunludur.'; return;
+  }
+  const body = {
+    name, company, email,
+    phone:   document.getElementById('f-phone').value,
+    team:    document.getElementById('f-team').value,
+    plan:    document.getElementById('f-plan').value,
+    note:    document.getElementById('f-note').value,
+    source:  'kurumsal'
+  };
+  fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) })
+    .then(r => {
+      if(r.ok){ msg.className='ok'; msg.style.display='block'; msg.textContent='✓ Talebiniz alındı! En geç 1 iş günü içinde dönüş yapacağız.'; }
+      else throw new Error();
+    })
+    .catch(()=>{ msg.className='err'; msg.style.display='block'; msg.textContent='Gönderim başarısız. destek@mirpdf.com adresine doğrudan yazabilirsiniz.'; });
+}
+
+// Sticky CTA
+window.addEventListener('scroll',()=>{
+  document.getElementById('stickyCta').classList.toggle('show', window.scrollY>400);
+});
+</script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

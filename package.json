@@ -25,7 +25,5 @@
     "test:report": "playwright show-report",
     "lint:html": "node scripts/head-quality.js"
   },
-  "devDependencies": {
-    "@playwright/test": "^1.44.0"
-  }
+  "devDependencies": {}
 }

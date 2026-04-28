@@ -1,0 +1,17 @@
+name: Deploy Worker
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiEmail: mehmetkant217@gmail.com
+          apiKey: ${{ secrets.CF_API_KEY }}
+          command: deploy --config wrangler.worker.toml

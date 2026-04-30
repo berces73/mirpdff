@@ -4,6 +4,14 @@
 # ============================================================
 
 # ── 1. Tool Clean URLs (/slug → /tools/*.html) ──────────────
+/pricing         /pricing.html         200
+/faq             /faq.html             200
+/contact         /contact.html         200
+/about           /about.html           200
+/yardim          /yardim.html          200
+/login           /login.html           200
+/register        /register.html        200
+/articles/       /articles/index.html  200
 /pdf-birlestir           /tools/pdf-birlestir.html           200
 /pdf-sikistir            /tools/pdf-sikistir.html            200
 /pdf-bol                 /tools/pdf-bol.html                 200
@@ -127,7 +135,6 @@
 /terms           /legal/terms.html     301
 /kvkk            /legal/kvkk.html      301
 
-/pricing         /pricing.html         200
 
 /articles/:slug.html   /articles/:slug.html   200
 /articles/*            /articles/:splat       200

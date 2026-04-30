@@ -124,8 +124,8 @@ function injectNavStyles() {
   styleEl.textContent = darkCSS;
   document.head.appendChild(styleEl);
   const saved = localStorage.getItem("mirpdf_theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = saved || (prefersDark ? "dark" : "light");
+  // Only apply dark if USER explicitly chose it — don't follow system preference
+  const theme = saved || "light";
   if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
   function addDarkToggle() {
     if (document.getElementById("__dark_toggle")) return;

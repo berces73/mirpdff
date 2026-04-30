@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
@@ -16,10 +16,52 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
 <style>
+/* ─── FORCE LIGHT MODE — override nav.js dark theme ─ */
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: #f8fafc !important;
+  color: #111827 !important;
+}
+html[data-theme="dark"] .help-nav { background: rgba(255,255,255,.96) !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .nav-logo,
+html[data-theme="dark"] .nav-links-help a { color: #111827 !important; }
+html[data-theme="dark"] .help-hero { background: #ffffff !important; }
+html[data-theme="dark"] .flow-card,
+html[data-theme="dark"] .cat-card,
+html[data-theme="dark"] .faq-item,
+html[data-theme="dark"] .support-card,
+html[data-theme="dark"] .solution-panel { background: #ffffff !important; border-color: #e5e7eb !important; color: #111827 !important; }
+html[data-theme="dark"] .fc-title,
+html[data-theme="dark"] .fsb-title,
+html[data-theme="dark"] .cat-card h3,
+html[data-theme="dark"] .support-card h3,
+html[data-theme="dark"] .faq-btn,
+html[data-theme="dark"] .help-hero h1,
+html[data-theme="dark"] .sp-title { color: #111827 !important; }
+html[data-theme="dark"] .fc-desc,
+html[data-theme="dark"] .cat-card p,
+html[data-theme="dark"] .support-card p,
+html[data-theme="dark"] .faq-body,
+html[data-theme="dark"] .step-text { color: #6b7280 !important; }
+html[data-theme="dark"] .section-label,
+html[data-theme="dark"] .hero-eyebrow,
+html[data-theme="dark"] .cat-count,
+html[data-theme="dark"] .trust-item { color: #9ca3af !important; }
+html[data-theme="dark"] .pop-tag { background: #ffffff !important; color: #6b7280 !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .support-trust { background: #f1f5f9 !important; }
+html[data-theme="dark"] .st-num { color: #111827 !important; }
+html[data-theme="dark"] .help-footer { background: #ffffff !important; color: #9ca3af !important; }
+html[data-theme="dark"] .qpill { background: #ffffff !important; color: #6b7280 !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .search-wrap input { background: #ffffff !important; color: #111827 !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .divider { border-color: #f3f4f6 !important; }
+html[data-theme="dark"] .faq-chevron { color: #9ca3af !important; }
+html[data-theme="dark"] .sp-pro-hint { background: #eff6ff !important; border-color: #bfdbfe !important; }
+html[data-theme="dark"] .sp-pro-hint p { color: #1e40af !important; }
+
 /* ─── RESET & BASE ─────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --white:#ffffff;
+  --white:#ffffff !important;
   --bg:#f8fafc;
   --bg2:#f1f5f9;
   --border:#e5e7eb;
@@ -37,7 +79,23 @@
   --shadow-md:0 4px 24px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+/* FORCE OVERRIDE style.css dark variables */
+html,body{background:#f8fafc !important;color:#111827 !important}
+.help-hero{background:#ffffff !important}
+.smart-section,.cat-section,.popular-section,.support-section,.faq-section-block{background:transparent !important}
+.flow-card,.cat-card,.faq-item,.support-card,.solution-panel{background:#ffffff !important;color:#111827 !important}
+.flow-card:hover,.cat-card:hover{background:#ffffff !important}
+.fc-title,.fsb-title,.cat-card h3,.support-card h3,.faq-btn,.sp-title,.sol-step .step-text,.help-hero h1{color:#111827 !important}
+.fc-desc,.cat-card p,.support-card p,.faq-body,.faq-body p{color:#6b7280 !important}
+.section-label,.hero-eyebrow,.cat-count,.trust-item,.st-label{color:#9ca3af !important}
+.help-nav{background:rgba(255,255,255,.96) !important}
+.nav-logo,.nav-links-help a{color:#111827 !important}
+.popular-tags .pop-tag{background:#ffffff !important;color:#6b7280 !important;border-color:#e5e7eb !important}
+.support-trust{background:#f1f5f9 !important}
+.st-num{color:#111827 !important}
+.divider{border-color:#f3f4f6 !important}
+.help-footer{background:#ffffff !important;color:#9ca3af !important}
+body{font-family:'Figtree',sans-serif;background:#f8fafc;color:#111827;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .container{max-width:900px;margin:0 auto;padding:0 1.5rem}
 .container--wide{max-width:1100px;margin:0 auto;padding:0 1.5rem}
@@ -684,6 +742,11 @@ document.querySelectorAll('.qpill').forEach(pill => {
     if (id) triggerFlow(id);
   });
 });
+</script>
+<script>
+// Force light mode on help page — override system dark preference
+document.documentElement.setAttribute('data-theme', 'light');
+localStorage.removeItem('mirpdf_theme');
 </script>
 <script type="module">
 import { initNav } from "/assets/js/nav.js";

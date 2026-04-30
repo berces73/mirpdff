@@ -46,8 +46,8 @@ crons = ["*/10 * * * *", "0 3 1 * *"]
 INDEX_SECONDARY = "0"
 INTERNAL_LINKS_CRON = "0 3 1 * *"
 
-APP_ORIGIN = "https://mirpdf.com"
-ALLOWED_ORIGIN = "https://mirpdf.com"
+APP_ORIGIN = "https://mirpdff.pages.dev"
+ALLOWED_ORIGIN = "https://mirpdff.pages.dev"
 JWT_TTL_SECONDS      = "86400"
 REFRESH_TTL_SECONDS  = "2592000"
 REQUIRE_EMAIL_VERIFIED = "1"

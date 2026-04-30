@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+  <title>Yardım Merkezi — MirPDF</title>
+  <meta name="description" content="MirPDF yardım merkezi: teknik sorunlar, hesap yönetimi, ödeme desteği ve güvenlik konularında hızlı cevaplar.">
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Yardım Merkezi | MirPDF"/>
+  <meta property="og:description" content="Sorununuzu saniyeler içinde çözün. Dosya, hesap, ödeme ve teknik destek."/>
+  <meta property="og:url" content="https://mirpdf.com/yardim"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <link rel="canonical" href="https://mirpdf.com/yardim">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+<style>
+/* ─── FORCE LIGHT MODE — override nav.js dark theme ─ */
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: #f8fafc !important;
+  color: #111827 !important;
+}
+html[data-theme="dark"] .help-nav { background: rgba(255,255,255,.96) !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .nav-logo,
+html[data-theme="dark"] .nav-links-help a { color: #111827 !important; }
+html[data-theme="dark"] .help-hero { background: #ffffff !important; }
+html[data-theme="dark"] .flow-card,
+html[data-theme="dark"] .cat-card,
+html[data-theme="dark"] .faq-item,
+html[data-theme="dark"] .support-card,
+html[data-theme="dark"] .solution-panel { background: #ffffff !important; border-color: #e5e7eb !important; color: #111827 !important; }
+html[data-theme="dark"] .fc-title,
+html[data-theme="dark"] .fsb-title,
+html[data-theme="dark"] .cat-card h3,
+html[data-theme="dark"] .support-card h3,
+html[data-theme="dark"] .faq-btn,
+html[data-theme="dark"] .help-hero h1,
+html[data-theme="dark"] .sp-title { color: #111827 !important; }
+html[data-theme="dark"] .fc-desc,
+html[data-theme="dark"] .cat-card p,
+html[data-theme="dark"] .support-card p,
+html[data-theme="dark"] .faq-body,
+html[data-theme="dark"] .step-text { color: #6b7280 !important; }
+html[data-theme="dark"] .section-label,
+html[data-theme="dark"] .hero-eyebrow,
+html[data-theme="dark"] .cat-count,
+html[data-theme="dark"] .trust-item { color: #9ca3af !important; }
+html[data-theme="dark"] .pop-tag { background: #ffffff !important; color: #6b7280 !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .support-trust { background: #f1f5f9 !important; }
+html[data-theme="dark"] .st-num { color: #111827 !important; }
+html[data-theme="dark"] .help-footer { background: #ffffff !important; color: #9ca3af !important; }
+html[data-theme="dark"] .qpill { background: #ffffff !important; color: #6b7280 !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .search-wrap input { background: #ffffff !important; color: #111827 !important; border-color: #e5e7eb !important; }
+html[data-theme="dark"] .divider { border-color: #f3f4f6 !important; }
+html[data-theme="dark"] .faq-chevron { color: #9ca3af !important; }
+html[data-theme="dark"] .sp-pro-hint { background: #eff6ff !important; border-color: #bfdbfe !important; }
+html[data-theme="dark"] .sp-pro-hint p { color: #1e40af !important; }
+
+/* ─── RESET & BASE ─────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#ffffff !important;
+  --bg:#f8fafc;
+  --bg2:#f1f5f9;
+  --border:#e5e7eb;
+  --border2:#f3f4f6;
+  --text:#111827;
+  --muted:#6b7280;
+  --light:#9ca3af;
+  --blue:#2563eb;
+  --blue-light:#eff6ff;
+  --blue-dark:#1d4ed8;
+  --green:#16a34a;
+  --green-light:#f0fdf4;
+  --radius:14px;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);
+  --shadow-md:0 4px 24px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
+}
+html{scroll-behavior:smooth}
+/* FORCE OVERRIDE style.css dark variables */
+html,body{background:#f8fafc !important;color:#111827 !important}
+.help-hero{background:#ffffff !important}
+.smart-section,.cat-section,.popular-section,.support-section,.faq-section-block{background:transparent !important}
+.flow-card,.cat-card,.faq-item,.support-card,.solution-panel{background:#ffffff !important;color:#111827 !important}
+.flow-card:hover,.cat-card:hover{background:#ffffff !important}
+.fc-title,.fsb-title,.cat-card h3,.support-card h3,.faq-btn,.sp-title,.sol-step .step-text,.help-hero h1{color:#111827 !important}
+.fc-desc,.cat-card p,.support-card p,.faq-body,.faq-body p{color:#6b7280 !important}
+.section-label,.hero-eyebrow,.cat-count,.trust-item,.st-label{color:#9ca3af !important}
+.help-nav{background:rgba(255,255,255,.96) !important}
+.nav-logo,.nav-links-help a{color:#111827 !important}
+.popular-tags .pop-tag{background:#ffffff !important;color:#6b7280 !important;border-color:#e5e7eb !important}
+.support-trust{background:#f1f5f9 !important}
+.st-num{color:#111827 !important}
+.divider{border-color:#f3f4f6 !important}
+.help-footer{background:#ffffff !important;color:#9ca3af !important}
+body{font-family:'Figtree',sans-serif;background:#f8fafc;color:#111827;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:0 1.5rem}
+.container--wide{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* ─── NAV ──────────────────────────────────────── */
+.help-nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center}
+.help-nav .container--wide{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.1rem;color:var(--text)}
+.nav-links-help{display:flex;align-items:center;gap:.25rem}
+.nav-links-help a{font-size:.85rem;font-weight:500;color:var(--muted);padding:.4rem .75rem;border-radius:8px;transition:.15s}
+.nav-links-help a:hover{color:var(--text);background:var(--bg2)}
+.nav-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--text);color:#fff;padding:.45rem 1.1rem;border-radius:9px;font-size:.84rem;font-weight:700;margin-left:.5rem;transition:.15s}
+.nav-cta:hover{background:#1f2937}
+
+/* ─── HERO ─────────────────────────────────────── */
+.help-hero{background:var(--white);border-bottom:1px solid var(--border);padding:3.5rem 0 2.5rem}
+.hero-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
+.help-hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:400;line-height:1.15;letter-spacing:-.025em;color:var(--text);margin-bottom:.75rem}
+.help-hero p{font-size:1rem;color:var(--muted);max-width:480px;line-height:1.7;margin-bottom:1.75rem}
+
+/* Search */
+.search-wrap{position:relative;max-width:520px}
+.search-wrap input{width:100%;padding:.85rem 1.1rem .85rem 3rem;border:1.5px solid var(--border);border-radius:12px;font-family:'Figtree',sans-serif;font-size:.95rem;color:var(--text);background:#fff;outline:none;transition:.15s}
+.search-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.08)}
+.search-wrap .si{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--light);font-size:.9rem;pointer-events:none}
+.search-suggestions{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-md);display:none;z-index:100}
+.search-suggestions.open{display:block}
+.ss-item{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;cursor:pointer;font-size:.88rem;color:var(--muted);transition:.1s;border-radius:8px;margin:.3rem}
+.ss-item:hover{background:var(--bg);color:var(--text)}
+.ss-icon{width:28px;height:28px;border-radius:7px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+
+/* Quick pills */
+.quick-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.qpill{display:inline-flex;align-items:center;gap:.4rem;padding:.38rem .85rem;border:1px solid var(--border);border-radius:100px;font-size:.8rem;font-weight:600;color:var(--muted);background:#fff;cursor:pointer;transition:.15s}
+.qpill:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+
+/* Trust bar */
+.trust-bar{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--border2)}
+.trust-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--light)}
+.trust-item i{color:var(--green);font-size:.75rem}
+
+/* ─── SMART FLOW ────────────────────────────────── */
+.smart-section{padding:3rem 0 0}
+.section-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--light);margin-bottom:1rem}
+.flow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.75rem;margin-bottom:3rem}
+.flow-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.35rem;cursor:pointer;transition:.18s;display:flex;align-items:flex-start;gap:1rem;text-align:left}
+.flow-card:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.flow-card.active{border-color:var(--blue);background:var(--blue-light)}
+.fc-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.fc-title{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.15rem}
+.fc-desc{font-size:.78rem;color:var(--muted);line-height:1.4}
+
+/* Solution panel */
+.solution-panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;margin-bottom:2rem;display:none}
+.solution-panel.visible{display:block}
+.sp-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem}
+.sp-title{font-size:1.05rem;font-weight:700;color:var(--text)}
+.sp-close{background:none;border:none;color:var(--light);cursor:pointer;font-size:1rem;padding:.25rem;border-radius:6px;transition:.15s}
+.sp-close:hover{color:var(--text);background:var(--bg2)}
+.solution-steps{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.25rem}
+.sol-step{display:flex;gap:.85rem;align-items:flex-start}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-text{font-size:.88rem;color:var(--text);line-height:1.55}
+.step-text strong{color:var(--text)}
+.sp-pro-hint{background:var(--blue-light);border:1px solid #bfdbfe;border-radius:10px;padding:.85rem 1rem;display:flex;align-items:center;gap:.75rem;margin-top:1rem}
+.sp-pro-hint p{font-size:.82rem;color:#1e40af;line-height:1.5}
+.sp-pro-hint a{font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+
+/* ─── CATEGORY CARDS ────────────────────────────── */
+.cat-section{padding:2.5rem 0 0}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem;margin-bottom:3rem}
+.cat-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.5rem;text-decoration:none;color:var(--text);transition:.18s;display:block}
+.cat-card:hover{border-color:#c7d2fe;box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.cat-card-top{display:flex;align-items:center;gap:.85rem;margin-bottom:.75rem}
+.cat-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.cat-card h3{font-size:.95rem;font-weight:700;color:var(--text)}
+.cat-card p{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:.85rem}
+.cat-count{font-size:.72rem;font-weight:600;color:var(--light);display:flex;align-items:center;gap:.3rem}
+
+/* ─── FAQ SECTIONS ──────────────────────────────── */
+.faq-section-block{padding:2rem 0 0}
+.faq-section-block:first-of-type{padding-top:0}
+.fsb-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border2)}
+.fsb-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.fsb-title{font-size:1rem;font-weight:700;color:var(--text)}
+.faq-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:2.5rem}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:11px;overflow:hidden;transition:.12s}
+.faq-item:hover{border-color:#d1d5db}
+.faq-btn{width:100%;text-align:left;padding:.95rem 1.15rem;background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);display:flex;align-items:center;justify-content:space-between;gap:.75rem;transition:.12s}
+.faq-chevron{color:var(--light);font-size:.7rem;transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-body{display:none;padding:0 1.15rem 1rem;font-size:.875rem;color:var(--muted);line-height:1.68}
+.faq-body a{color:var(--blue);font-weight:600}
+.faq-body a:hover{text-decoration:underline}
+.faq-item.open .faq-body{display:block}
+
+/* Pro nudge inside FAQ */
+.faq-pro-nudge{background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin-top:.65rem;font-size:.8rem;color:#1e40af}
+.faq-pro-nudge a{color:var(--blue);font-weight:700}
+
+/* ─── POPULAR ISSUES ────────────────────────────── */
+.popular-section{padding:0 0 2.5rem}
+.popular-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.pop-tag{padding:.38rem .85rem;border:1px solid var(--border);border-radius:100px;font-size:.8rem;font-weight:600;color:var(--muted);background:#fff;cursor:pointer;transition:.15s}
+.pop-tag:hover{background:var(--text);color:#fff;border-color:var(--text)}
+
+/* ─── DIVIDER ────────────────────────────────────── */
+.divider{border:none;border-top:1px solid var(--border2);margin:2.5rem 0 0}
+
+/* ─── SUPPORT CTA ───────────────────────────────── */
+.support-section{padding:3rem 0 5rem}
+.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.support-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;display:flex;flex-direction:column;gap:.5rem}
+.support-card-icon{width:42px;height:42px;border-radius:12px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:.25rem}
+.support-card h3{font-size:1rem;font-weight:700;color:var(--text)}
+.support-card p{font-size:.85rem;color:var(--muted);line-height:1.55;flex:1}
+.support-card .sc-btn{display:inline-flex;align-items:center;gap:.4rem;margin-top:.75rem;padding:.6rem 1.2rem;border-radius:9px;font-size:.84rem;font-weight:700;transition:.15s;align-self:flex-start}
+.sc-btn-primary{background:var(--text);color:#fff}
+.sc-btn-primary:hover{background:#1f2937}
+.sc-btn-outline{border:1.5px solid var(--border);color:var(--text)}
+.sc-btn-outline:hover{border-color:var(--text);background:var(--bg)}
+.support-trust{background:var(--bg2);border-radius:var(--radius);padding:1.25rem 1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.st-item{text-align:center}
+.st-num{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:var(--text);display:block}
+.st-label{font-size:.72rem;color:var(--light);font-weight:500}
+
+/* ─── FOOTER ────────────────────────────────────── */
+.help-footer{background:#fff;border-top:1px solid var(--border);padding:1.75rem 0;text-align:center;color:var(--light);font-size:.8rem}
+.help-footer a{color:var(--light);margin:0 .6rem;transition:.15s}
+.help-footer a:hover{color:var(--text)}
+
+/* ─── MOBILE ────────────────────────────────────── */
+@media(max-width:680px){
+  .nav-links-help{display:none}
+  .flow-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .support-grid{grid-template-columns:1fr}
+  .support-trust{grid-template-columns:repeat(3,1fr);gap:.5rem}
+  .help-hero{padding:2.5rem 0 2rem}
+  .help-hero h1{font-size:1.75rem}
+}
+</style>
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="help-nav">
+  <div class="container--wide">
+    <a href="/" class="nav-logo">
+      <img src="/assets/icons/logo.svg" width="30" height="30" alt="" loading="eager" style="border-radius:8px">
+      MirPDF
+    </a>
+    <div class="nav-links-help">
+      <a href="/#tools">Araçlar</a>
+      <a href="/articles/">Blog</a>
+      <a href="/pricing">Fiyatlar</a>
+      <a href="/faq">SSS</a>
+      <a href="/contact">İletişim</a>
+      <a href="/login">Giriş Yap</a>
+      <a href="/register" class="nav-cta">Ücretsiz Kayıt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="help-hero">
+  <div class="container">
+    <div class="hero-eyebrow"><span></span>Destek Merkezi</div>
+    <h1>Sorununuzu<br>saniyeler içinde çözün.</h1>
+    <p>Aşağıdan durumunuzu seçin ya da arama yapın. Çoğu sorunun cevabı burada.</p>
+
+    <!-- Smart search -->
+    <div class="search-wrap" id="searchWrap">
+      <i class="fas fa-search si"></i>
+      <input type="search" id="helpSearch" placeholder="PDF yüklenmiyor, şifremi unuttum…" autocomplete="off" aria-label="Yardım ara">
+      <div class="search-suggestions" id="searchSug"></div>
+    </div>
+
+    <!-- Quick pills -->
+    <div class="quick-pills">
+      <button class="qpill" onclick="triggerFlow('upload')"><i class="fas fa-upload"></i> PDF yükleyemiyorum</button>
+      <button class="qpill" onclick="triggerFlow('slow')"><i class="fas fa-clock"></i> İşlem çok yavaş</button>
+      <button class="qpill" onclick="triggerFlow('password')"><i class="fas fa-key"></i> Şifremi unuttum</button>
+      <button class="qpill" onclick="triggerFlow('payment')"><i class="fas fa-credit-card"></i> Ödeme sorunu</button>
+      <button class="qpill" onclick="triggerFlow('pro')"><i class="fas fa-bolt"></i> Pro aktif değil</button>
+    </div>
+
+    <!-- Trust -->
+    <div class="trust-bar">
+      <div class="trust-item"><i class="fas fa-check-circle"></i> Dosyalar 60 dk sonra silinir</div>
+      <div class="trust-item"><i class="fas fa-check-circle"></i> KVKK uyumlu</div>
+      <div class="trust-item"><i class="fas fa-check-circle"></i> 256-bit şifreleme</div>
+      <div class="trust-item"><i class="fas fa-check-circle"></i> 1 iş günü içinde yanıt</div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <!-- SMART FLOW -->
+    <section class="smart-section" id="flowSection">
+      <p class="section-label">Ne yapmak istiyorsunuz?</p>
+      <div class="flow-grid">
+        <div class="flow-card" onclick="showSolution('upload')" id="fc-upload">
+          <div class="fc-icon" style="background:#eff6ff"><i class="fas fa-cloud-upload-alt" style="color:#2563eb"></i></div>
+          <div>
+            <div class="fc-title">PDF yükleyemiyorum</div>
+            <div class="fc-desc">Dosya yüklenmiyor, limit hatası veya format sorunu</div>
+          </div>
+        </div>
+        <div class="flow-card" onclick="showSolution('slow')" id="fc-slow">
+          <div class="fc-icon" style="background:#fff7ed"><i class="fas fa-hourglass-half" style="color:#ea580c"></i></div>
+          <div>
+            <div class="fc-title">İşlem çok yavaş / takıldı</div>
+            <div class="fc-desc">OCR, sıkıştırma veya dönüşüm uzun sürüyor</div>
+          </div>
+        </div>
+        <div class="flow-card" onclick="showSolution('password')" id="fc-password">
+          <div class="fc-icon" style="background:#f0fdf4"><i class="fas fa-key" style="color:#16a34a"></i></div>
+          <div>
+            <div class="fc-title">Hesabıma giremiyorum</div>
+            <div class="fc-desc">Şifre sıfırlama, e-posta doğrulama sorunu</div>
+          </div>
+        </div>
+        <div class="flow-card" onclick="showSolution('payment')" id="fc-payment">
+          <div class="fc-icon" style="background:#fdf4ff"><i class="fas fa-credit-card" style="color:#9333ea"></i></div>
+          <div>
+            <div class="fc-title">Ödeme yaptım ama çalışmıyor</div>
+            <div class="fc-desc">Pro aktif değil, ödeme başarısız veya iade</div>
+          </div>
+        </div>
+        <div class="flow-card" onclick="showSolution('output')" id="fc-output">
+          <div class="fc-icon" style="background:#fef9c3"><i class="fas fa-file-alt" style="color:#ca8a04"></i></div>
+          <div>
+            <div class="fc-title">Çıkan dosya hatalı</div>
+            <div class="fc-desc">Bozuk sonuç, Türkçe karakter sorunu, OCR hatası</div>
+          </div>
+        </div>
+        <div class="flow-card" onclick="showSolution('delete')" id="fc-delete">
+          <div class="fc-icon" style="background:#fef2f2"><i class="fas fa-trash-alt" style="color:#ef4444"></i></div>
+          <div>
+            <div class="fc-title">Dosyam silinecek mi?</div>
+            <div class="fc-desc">Veri güvenliği, saklama süresi, KVKK</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution panels -->
+      <div class="solution-panel" id="sol-upload">
+        <div class="sp-header">
+          <div class="sp-title"><i class="fas fa-cloud-upload-alt" style="color:#2563eb;margin-right:.4rem"></i>PDF Yüklenmiyor — Adım Adım Çözüm</div>
+          <button class="sp-close" onclick="closeSolution('upload')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="solution-steps">
+          <div class="sol-step"><div class="step-num">1</div><div class="step-text"><strong>Dosya boyutunu kontrol edin.</strong> Ücretsiz planda 50 MB sınırı var. Büyük dosyaları önce <a href="/pdf-sikistir" style="color:#2563eb;font-weight:600">sıkıştırın</a>.</div></div>
+          <div class="sol-step"><div class="step-num">2</div><div class="step-text"><strong>Format uyumluluğunu kontrol edin.</strong> Araç yalnızca PDF kabul ediyorsa JPG/Word göndermeyin. Dönüşüm için <a href="/jpg-to-pdf" style="color:#2563eb;font-weight:600">JPG→PDF</a> veya <a href="/word-to-pdf" style="color:#2563eb;font-weight:600">Word→PDF</a> kullanın.</div></div>
+          <div class="sol-step"><div class="step-num">3</div><div class="step-text"><strong>Tarayıcıyı değiştirin.</strong> Chrome veya Firefox'un güncel sürümü en kararlı çalışır. Safari'de sorun yaşanabilir.</div></div>
+          <div class="sol-step"><div class="step-num">4</div><div class="step-text"><strong>Dosya şifreli mi?</strong> Şifre korumalı PDF'leri önce <a href="/pdf-kilit-ac" style="color:#2563eb;font-weight:600">kilidi açın</a>, sonra yükleyin.</div></div>
+        </div>
+        <div class="sp-pro-hint"><i class="fas fa-bolt" style="color:#2563eb;flex-shrink:0"></i><p>Büyük dosyalarla sık çalışıyorsanız <a href="/pricing">Pro planında</a> limit 200 MB'a çıkar ve toplu işlem yapabilirsiniz.</p></div>
+      </div>
+
+      <div class="solution-panel" id="sol-slow">
+        <div class="sp-header">
+          <div class="sp-title"><i class="fas fa-hourglass-half" style="color:#ea580c;margin-right:.4rem"></i>İşlem Yavaş — Ne Yapmalısınız?</div>
+          <button class="sp-close" onclick="closeSolution('slow')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="solution-steps">
+          <div class="sol-step"><div class="step-num">1</div><div class="step-text"><strong>Bekleme süresi normalse sabırlı olun.</strong> OCR ve sıkıştırma 10–90 saniye arasında sürebilir. 2 dakikayı geçmeden sayfayı yenilemeyin.</div></div>
+          <div class="sol-step"><div class="step-num">2</div><div class="step-text"><strong>2 dakika geçtiyse:</strong> Sayfayı yenileyin (Ctrl+R), dosyayı yeniden yükleyin ve tekrar deneyin.</div></div>
+          <div class="sol-step"><div class="step-num">3</div><div class="step-text"><strong>Çok büyük belgeleri bölün.</strong> 100+ sayfalık belgeler için önce <a href="/pdf-bol" style="color:#2563eb;font-weight:600">PDF bölün</a>, parça parça işleyin.</div></div>
+          <div class="sol-step"><div class="step-num">4</div><div class="step-text"><strong>Sorun devam ederse</strong> bildirin — sistem durumunu <a href="/status" style="color:#2563eb;font-weight:600">burada</a> kontrol edebilirsiniz.</div></div>
+        </div>
+        <div class="sp-pro-hint"><i class="fas fa-bolt" style="color:#2563eb;flex-shrink:0"></i><p>Pro planda işlemler öncelikli sıraya alınır ve büyük belgeler daha hızlı işlenir. <a href="/pricing">Pro planına bakın →</a></p></div>
+      </div>
+
+      <div class="solution-panel" id="sol-password">
+        <div class="sp-header">
+          <div class="sp-title"><i class="fas fa-key" style="color:#16a34a;margin-right:.4rem"></i>Hesap Erişim Sorunu</div>
+          <button class="sp-close" onclick="closeSolution('password')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="solution-steps">
+          <div class="sol-step"><div class="step-num">1</div><div class="step-text"><strong>Şifre sıfırlama bağlantısı isteyin.</strong> <a href="/forgot-password" style="color:#2563eb;font-weight:600">Şifremi Unuttum</a> sayfasına gidin, e-postanızı yazın. 5 dakika içinde bağlantı gelir.</div></div>
+          <div class="sol-step"><div class="step-num">2</div><div class="step-text"><strong>E-posta gelmiyorsa</strong> spam/gereksiz klasörünü kontrol edin. Yine yoksa 10 dakika bekleyin ve tekrar isteyin.</div></div>
+          <div class="sol-step"><div class="step-num">3</div><div class="step-text"><strong>Sıfırlama bağlantısı 1 saat içinde geçerliliğini yitirir.</strong> Süresi dolduysa yeni bir bağlantı isteyin.</div></div>
+          <div class="sol-step"><div class="step-num">4</div><div class="step-text"><strong>Hâlâ giremiyorsanız</strong> hangi e-postayla kayıt olduğunuzu belirterek <a href="/contact" style="color:#2563eb;font-weight:600">bize yazın</a>.</div></div>
+        </div>
+      </div>
+
+      <div class="solution-panel" id="sol-payment">
+        <div class="sp-header">
+          <div class="sp-title"><i class="fas fa-credit-card" style="color:#9333ea;margin-right:.4rem"></i>Ödeme Sorunu</div>
+          <button class="sp-close" onclick="closeSolution('payment')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="solution-steps">
+          <div class="sol-step"><div class="step-num">1</div><div class="step-text"><strong>Ödedim ama Pro aktif değil:</strong> Sayfayı yenileyin, çıkış yapıp tekrar giriş yapın. Webhook gecikmesi 1–3 dakika sürebilir.</div></div>
+          <div class="sol-step"><div class="step-num">2</div><div class="step-text"><strong>Ödeme başarısız olduysa:</strong> Kart limiti, yabancı işlem reddi veya hatalı kart numarası olabilir. Farklı bir kart deneyin.</div></div>
+          <div class="sol-step"><div class="step-num">3</div><div class="step-text"><strong>İade talebi:</strong> İlk ödemeden itibaren 14 gün içinde iade hakkınız var. <a href="/contact" style="color:#2563eb;font-weight:600">İletişim formu</a> üzerinden sipariş tarihiyle başvurun.</div></div>
+          <div class="sol-step"><div class="step-num">4</div><div class="step-text"><strong>Aboneliği iptal etmek için:</strong> Hesabım → Plan → Aboneliği Yönet → Stripe portalında iptal.</div></div>
+        </div>
+      </div>
+
+      <div class="solution-panel" id="sol-output">
+        <div class="sp-header">
+          <div class="sp-title"><i class="fas fa-file-alt" style="color:#ca8a04;margin-right:.4rem"></i>Çıkan Dosya Hatalı</div>
+          <button class="sp-close" onclick="closeSolution('output')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="solution-steps">
+          <div class="sol-step"><div class="step-num">1</div><div class="step-text"><strong>OCR'de Türkçe karakter sorunu:</strong> Kaynak belgede 300 DPI+ tarama kalitesi olması gerekir. Düşük çözünürlüklü fotoğraflar OCR başarısını düşürür.</div></div>
+          <div class="sol-step"><div class="step-num">2</div><div class="step-text"><strong>Word dönüşümde bozulma:</strong> Karmaşık tablolar ve gömülü fontlar dönüşümü zorlaştırır. Basit belgeler için sonuç genellikle iyidir.</div></div>
+          <div class="sol-step"><div class="step-num">3</div><div class="step-text"><strong>Sıkıştırma sonrası düşük kalite:</strong> Sıkıştırma seviyesini düşürün — az sıkıştırma seçeneğini kullanın.</div></div>
+        </div>
+      </div>
+
+      <div class="solution-panel" id="sol-delete">
+        <div class="sp-header">
+          <div class="sp-title"><i class="fas fa-shield-alt" style="color:#ef4444;margin-right:.4rem"></i>Dosya Güvenliği ve Saklama Süresi</div>
+          <button class="sp-close" onclick="closeSolution('delete')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="solution-steps">
+          <div class="sol-step"><div class="step-num">1</div><div class="step-text"><strong>Birleştirme, bölme, döndürme</strong> gibi temel araçlar tamamen <strong>tarayıcınızda</strong> çalışır. Dosyanız sunucuya hiç gitmez.</div></div>
+          <div class="sol-step"><div class="step-num">2</div><div class="step-text"><strong>OCR, sıkıştırma, PDF→Word</strong> araçlarında dosya işlem için geçici olarak sunucuya gider ve <strong>60 dakika sonra otomatik silinir.</strong></div></div>
+          <div class="sol-step"><div class="step-num">3</div><div class="step-text"><strong>Hiçbir dosya üçüncü taraflarla paylaşılmaz.</strong> Tüm transferler 256-bit TLS şifrelemesiyle korunur. Detaylar: <a href="/legal/security.html" style="color:#2563eb;font-weight:600">Güvenlik Politikası</a></div></div>
+          <div class="sol-step"><div class="step-num">4</div><div class="step-text"><strong>KVKK kapsamında</strong> hesabınızı sildiğinizde tüm kişisel verileriniz 30 gün içinde kalıcı olarak kaldırılır.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- POPULAR ISSUES -->
+    <section class="popular-section" style="padding-top:2.5rem">
+      <p class="section-label">Popüler Aramalar</p>
+      <div class="popular-tags">
+        <span class="pop-tag" onclick="scrollToAnchor('#dosya-islemleri')">Dosya yüklenmiyor</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#hesap')">Şifremi unuttum</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#odeme')">Pro aktif değil</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#guvenlik')">Dosyam güvende mi?</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#teknik')">OCR çalışmıyor</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#odeme')">İade talebi</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#hesap')">Hesap silme</span>
+        <span class="pop-tag" onclick="scrollToAnchor('#teknik')">Tarayıcı uyumsuzluğu</span>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CATEGORY CARDS -->
+    <section class="cat-section">
+      <p class="section-label" style="margin-top:2.5rem">Konuya Göre Göz Atın</p>
+      <div class="cat-grid">
+        <a href="#dosya-islemleri" class="cat-card">
+          <div class="cat-card-top">
+            <div class="cat-icon" style="background:#eff6ff"><i class="fas fa-file-pdf" style="color:#2563eb"></i></div>
+            <h3>Dosya İşlemleri</h3>
+          </div>
+          <p>Yükleme hataları, format sorunları, boyut sınırı ve çıktı kalitesi.</p>
+          <div class="cat-count"><i class="fas fa-chevron-right"></i> 4 konu</div>
+        </a>
+        <a href="#hesap" class="cat-card">
+          <div class="cat-card-top">
+            <div class="cat-icon" style="background:#f0fdf4"><i class="fas fa-user" style="color:#16a34a"></i></div>
+            <h3>Hesap &amp; Giriş</h3>
+          </div>
+          <p>Şifre sıfırlama, e-posta doğrulama, hesap silme ve güvenlik.</p>
+          <div class="cat-count"><i class="fas fa-chevron-right"></i> 3 konu</div>
+        </a>
+        <a href="#odeme" class="cat-card">
+          <div class="cat-card-top">
+            <div class="cat-icon" style="background:#faf5ff"><i class="fas fa-credit-card" style="color:#9333ea"></i></div>
+            <h3>Ödeme &amp; Abonelik</h3>
+          </div>
+          <p>Pro satın alma, iade, iptal, fatura ve kredi sorunları.</p>
+          <div class="cat-count"><i class="fas fa-chevron-right"></i> 4 konu</div>
+        </a>
+        <a href="#guvenlik" class="cat-card">
+          <div class="cat-card-top">
+            <div class="cat-icon" style="background:#fef9c3"><i class="fas fa-shield-alt" style="color:#ca8a04"></i></div>
+            <h3>Güvenlik &amp; Gizlilik</h3>
+          </div>
+          <p>Dosya saklama süresi, KVKK hakları, şifreleme ve gizlilik.</p>
+          <div class="cat-count"><i class="fas fa-chevron-right"></i> 2 konu</div>
+        </a>
+        <a href="#teknik" class="cat-card">
+          <div class="cat-card-top">
+            <div class="cat-icon" style="background:#fef2f2"><i class="fas fa-wrench" style="color:#ef4444"></i></div>
+            <h3>Teknik Sorunlar</h3>
+          </div>
+          <p>Araç çalışmıyor, OCR hatası, tarayıcı uyumluluğu.</p>
+          <div class="cat-count"><i class="fas fa-chevron-right"></i> 2 konu</div>
+        </a>
+        <a href="/faq" class="cat-card">
+          <div class="cat-card-top">
+            <div class="cat-icon" style="background:#f0f9ff"><i class="fas fa-question-circle" style="color:#0ea5e9"></i></div>
+            <h3>Sık Sorulan Sorular</h3>
+          </div>
+          <p>Genel kullanım, fiyatlandırma ve ürün hakkında en sık sorulanlar.</p>
+          <div class="cat-count"><i class="fas fa-chevron-right"></i> SSS sayfasına git</div>
+        </a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- FAQ BLOCKS -->
+    <section style="padding:2.5rem 0 0">
+
+      <div class="faq-section-block" id="dosya-islemleri">
+        <div class="fsb-header">
+          <div class="fsb-icon" style="background:#eff6ff"><i class="fas fa-file-pdf" style="color:#2563eb"></i></div>
+          <span class="fsb-title">Dosya İşlemleri</span>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn">Dosyam neden yüklenmiyor? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">En sık nedenler: (1) 50 MB üst sınırın aşılması, (2) desteklenmeyen format, (3) bozuk veya şifreli dosya, (4) bağlantı kesintisi. Önce <a href="/pdf-sikistir">sıkıştırın</a>, sonra Chrome veya Firefox ile tekrar deneyin.
+              <div class="faq-pro-nudge"><i class="fas fa-bolt" style="margin-right:.4rem"></i>Sık büyük dosya işliyorsanız <a href="/pricing">Pro plan</a> ile 200 MB limiti ve toplu işlem kazanın.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">İşlemim çok uzun sürüyor <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">OCR ve sıkıştırma belge yapısına göre 10–90 saniye sürer. 2 dakikayı geçtiyse sayfayı yenileyip tekrar deneyin. Sorun devam ederse belge türü ve boyutunu belirterek <a href="/contact">bize yazın</a>.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Çıkan dosya bozuk veya hatalı görünüyor <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">PDF→Word dönüşümlerinde karmaşık tablo veya gömülü font bozulmaya yol açabilir. OCR için 300 DPI+ tarama kalitesi önerilir. El yazısı içeren belgeler için başarı oranı düşük olabilir.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Dosyam ne kadar süre saklanır? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">Sunucuya giden dosyalar işlem tamamlandıktan <strong>60 dakika sonra otomatik silinir.</strong> Birleştirme ve bölme gibi tarayıcı tabanlı araçlarda dosya zaten sunucuya gitmez. Detaylar: <a href="/legal/security.html">Güvenlik Politikası</a>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section-block" id="hesap">
+        <div class="fsb-header">
+          <div class="fsb-icon" style="background:#f0fdf4"><i class="fas fa-user" style="color:#16a34a"></i></div>
+          <span class="fsb-title">Hesap &amp; Giriş</span>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn">Şifremi unuttum, ne yapmalıyım? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body"><a href="/forgot-password">Şifremi Unuttum</a> sayfasına gidin, e-postanızı yazın. 5 dakika içinde sıfırlama bağlantısı gelir. Spam klasörünü kontrol edin. Bağlantı 1 saat geçerliliğini yitirir.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Doğrulama e-postası gelmedi <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">Önce spam/gereksiz klasörünü kontrol edin. <a href="/account">Hesabım</a> sayfasından "Doğrulama e-postasını tekrar gönder" butonuna tıklayın. E-posta sağlayıcınız blokluyorsa farklı bir adresle kayıt olmayı deneyin.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Hesabımı nasıl silebilirim? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body"><a href="/account">Hesabım</a> → en altta "Hesabı Sil" bölümü. E-posta adresinizi girerek onaylayın. KVKK kapsamındaki tüm verileriniz 30 gün içinde kalıcı olarak silinir. Aktif Pro aboneliğiniz varsa önce iptal edin.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section-block" id="odeme">
+        <div class="fsb-header">
+          <div class="fsb-icon" style="background:#faf5ff"><i class="fas fa-credit-card" style="color:#9333ea"></i></div>
+          <span class="fsb-title">Ödeme &amp; Abonelik</span>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn">Ödemem başarısız oldu, neden? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">En sık nedenler: yetersiz bakiye, kart limiti, bankanın yabancı işlemi reddetmesi. Farklı kart veya ödeme yöntemiyle tekrar deneyin. Sorun devam ederse bankanızla iletişime geçin veya <a href="/contact">bize yazın</a>.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Pro aboneliğimi nasıl iptal ederim? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body"><a href="/account">Hesabım</a> → Plan → "Aboneliği Yönet" → Stripe portalında iptal. İptal ettiğinizde mevcut dönem sonuna kadar Pro özelliklerine erişiminiz devam eder.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Ödedim ama Pro özellikleri aktif değil <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">Sayfayı yenileyip çıkış yapıp tekrar giriş yapın. Webhook gecikmesi 1–3 dakika sürebilir. Sorun devam ederse ödeme tarih/saatiyle birlikte <a href="/contact">destek ekibine yazın</a>, en geç 24 saatte çözülür.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Para iadesi alabilir miyim? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">İlk ödemeden itibaren 14 gün içinde iade talep edebilirsiniz. <a href="/contact">İletişim formu</a> üzerinden sipariş bilgilerinizle başvurun. Detaylar: <a href="/legal/refund.html">İade Politikası</a>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section-block" id="guvenlik">
+        <div class="fsb-header">
+          <div class="fsb-icon" style="background:#fef9c3"><i class="fas fa-shield-alt" style="color:#ca8a04"></i></div>
+          <span class="fsb-title">Güvenlik &amp; Gizlilik</span>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn">Dosyalarım güvende mi? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">Birleştirme, bölme, sayfa silme gibi araçlar tamamen tarayıcınızda çalışır — sunucuya hiç gitmez. OCR ve dönüşüm araçlarında dosya geçici olarak sunucuya gider ve <strong>60 dakika içinde otomatik silinir.</strong> Detaylar: <a href="/legal/security.html">Güvenlik Politikası</a>.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">KVKK kapsamında haklarım neler? <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">Verilerinize erişim, düzeltme, silme ve taşıma haklarınız bulunmaktadır. Hesabınızı sildiğinizde tüm kişisel verileriniz 30 gün içinde kaldırılır. Detaylar: <a href="/legal/kvkk.html">KVKK Politikası</a>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section-block" id="teknik">
+        <div class="fsb-header">
+          <div class="fsb-icon" style="background:#fef2f2"><i class="fas fa-wrench" style="color:#ef4444"></i></div>
+          <span class="fsb-title">Teknik Sorunlar</span>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn">Araç çalışmıyor veya sayfa açılmıyor <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">Tarayıcı önbelleğini temizleyin (Ctrl+Shift+R). Chrome veya Firefox'un güncel sürümünü kullanın. Sistem durumunu <a href="/status">status sayfasından</a> kontrol edin. Sorun devam ederse <a href="/contact">bildirin</a>.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">OCR sonucu yanlış / Türkçe karakterler bozuk <i class="fas fa-chevron-down faq-chevron"></i></button>
+            <div class="faq-body">OCR kalitesi kaynak belgenin netliğine bağlıdır. En iyi sonuç için 300 DPI+ tarama yapın, iyi aydınlatmada çekin, eğik olmayan belgeler kullanın. Çok fazla el yazısı içeren belgeler için başarı oranı düşebilir.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- SUPPORT CTA -->
+    <section class="support-section">
+      <p class="section-label" style="margin-bottom:1.25rem">Hâlâ çözüm bulamadınız mı?</p>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-card-icon" style="background:#eff6ff"><i class="fas fa-envelope" style="color:#2563eb"></i></div>
+          <h3>E-posta Desteği</h3>
+          <p>Mesajınıza çoğu zaman <strong>1 iş günü içinde</strong> dönüş yapıyoruz. Belge türü ve hata mesajını eklemeniz süreci hızlandırır.</p>
+          <a href="/contact" class="sc-btn sc-btn-primary"><i class="fas fa-paper-plane"></i> E-posta Gönder</a>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon" style="background:#f0fdf4"><i class="fas fa-question-circle" style="color:#16a34a"></i></div>
+          <h3>Sık Sorulan Sorular</h3>
+          <p>Genel kullanım, fiyatlandırma ve ürün hakkında en sık sorulan soruların cevapları tek sayfada.</p>
+          <a href="/faq" class="sc-btn sc-btn-outline"><i class="fas fa-arrow-right"></i> SSS Sayfasına Git</a>
+        </div>
+      </div>
+      <div class="support-trust">
+        <div class="st-item">
+          <span class="st-num">24s</span>
+          <span class="st-label">Ortalama yanıt süresi</span>
+        </div>
+        <div class="st-item">
+          <span class="st-num">%98</span>
+          <span class="st-label">Çözüm oranı</span>
+        </div>
+        <div class="st-item">
+          <span class="st-num">60dk</span>
+          <span class="st-label">Dosya silme süresi</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="help-footer">
+  <div class="container">
+    <a href="/">Ana Sayfa</a>
+    <a href="/faq">SSS</a>
+    <a href="/contact">İletişim</a>
+    <a href="/legal/privacy.html">Gizlilik</a>
+    <a href="/legal/kvkk.html">KVKK</a>
+    <a href="/status">Sistem Durumu</a>
+    <div style="margin-top:1rem;color:var(--light)">© 2026 MirPDF</div>
+  </div>
+</footer>
+
+<script>
+/* ── FAQ accordion ── */
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ── Smart flow ── */
+function triggerFlow(id) {
+  document.getElementById('flowSection')?.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(() => showSolution(id), 400);
+}
+function showSolution(id) {
+  document.querySelectorAll('.solution-panel').forEach(p => p.classList.remove('visible'));
+  document.querySelectorAll('.flow-card').forEach(c => c.classList.remove('active'));
+  const panel = document.getElementById('sol-' + id);
+  const card = document.getElementById('fc-' + id);
+  if (panel) { panel.classList.add('visible'); panel.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+  if (card) card.classList.add('active');
+}
+function closeSolution(id) {
+  document.getElementById('sol-' + id)?.classList.remove('visible');
+  document.getElementById('fc-' + id)?.classList.remove('active');
+}
+
+/* ── Search ── */
+const suggestions = [
+  {icon:'fa-upload', text:'PDF yükleyemiyorum', action:()=>triggerFlow('upload')},
+  {icon:'fa-clock', text:'İşlem yavaş / takıldı', action:()=>triggerFlow('slow')},
+  {icon:'fa-key', text:'Şifremi unuttum', action:()=>triggerFlow('password')},
+  {icon:'fa-credit-card', text:'Ödeme sorunu', action:()=>triggerFlow('payment')},
+  {icon:'fa-file-alt', text:'Çıkan dosya hatalı', action:()=>triggerFlow('output')},
+  {icon:'fa-shield-alt', text:'Dosyam güvende mi?', action:()=>triggerFlow('delete')},
+  {icon:'fa-user', text:'Hesabıma giremiyorum', action:()=>triggerFlow('password')},
+];
+
+const inp = document.getElementById('helpSearch');
+const sug = document.getElementById('searchSug');
+
+function renderSuggestions(q) {
+  const filtered = q ? suggestions.filter(s => s.text.toLowerCase().includes(q.toLowerCase())) : suggestions.slice(0,5);
+  if (!filtered.length) { sug.classList.remove('open'); return; }
+  sug.innerHTML = filtered.map((s,i) => `
+    <div class="ss-item" data-idx="${i}">
+      <div class="ss-icon"><i class="fas ${s.icon}" style="color:#6b7280;font-size:.75rem"></i></div>
+      ${s.text}
+    </div>`).join('');
+  sug.querySelectorAll('.ss-item').forEach((el,i) => {
+    el.addEventListener('mousedown', e => { e.preventDefault(); filtered[i].action(); inp.value = ''; sug.classList.remove('open'); });
+  });
+  sug.classList.add('open');
+}
+
+inp?.addEventListener('focus', () => renderSuggestions(inp.value));
+inp?.addEventListener('input', () => renderSuggestions(inp.value));
+inp?.addEventListener('blur', () => setTimeout(() => sug.classList.remove('open'), 150));
+inp?.addEventListener('keydown', e => {
+  if (e.key === 'Escape') sug.classList.remove('open');
+  if (e.key === 'Enter') { sug.classList.remove('open'); renderSuggestions(inp.value); }
+});
+
+/* ── Popular tags ── */
+function scrollToAnchor(anchor) {
+  document.querySelector(anchor)?.scrollIntoView({behavior:'smooth'});
+}
+
+/* ── Quick pills ── */
+document.querySelectorAll('.qpill').forEach(pill => {
+  pill.addEventListener('click', function() {
+    const id = this.getAttribute('onclick').match(/triggerFlow\('([^']+)'\)/)?.[1];
+    if (id) triggerFlow(id);
+  });
+});
+</script>
+<script>
+// Force light mode on help page — override system dark preference
+document.documentElement.setAttribute('data-theme', 'light');
+localStorage.removeItem('mirpdf_theme');
+</script>
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

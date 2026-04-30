@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Kayıt Ol — MirPDF</title>
+  <meta property="og:title" content="Ücretsiz Kayıt Ol | MirPDF"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mirpdf.com/register"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:description" content="MirPDF hesabı oluşturun. Günlük ücretsiz kredi, işlem geçmişi ve ödeme yönetimi tek yerde toplansın."/>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="MirPDF hesabı oluşturun. Günlük ücretsiz kredi, işlem geçmişi, abonelik yönetimi ve daha düzenli bir çalışma akışı için tek panel kullanın.">
+  <link rel="canonical" href="https://mirpdf.com/register">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--radius:18px;--primary:#6366f1;--danger:#ef4444;--success:#10b981}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg-soft);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.main-nav{display:flex;align-items:center;gap:.1rem}
+.main-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:.45rem .9rem;border-radius:10px;transition:.15s}
+.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
+#mobileToggle{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:67px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}.main-nav.show{display:flex}.main-nav a{width:100%;padding:.65rem 1rem}}
+.auth-wrap{min-height:calc(100vh - 66px);display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
+.auth-card{width:100%;max-width:440px;background:#fff;border:1px solid var(--border);border-radius:24px;padding:2.25rem 2rem;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.auth-card h1{font-size:1.55rem;font-weight:800;margin-bottom:.3rem}
+.auth-card .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.75rem}
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.1rem}
+.field label{font-size:.84rem;font-weight:600}
+.field input{padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:12px;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s;background:#fff}
+.field input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(99,102,241,.12)}
+.field input.err{border-color:var(--danger)}
+.pass-wrap{position:relative}
+.pass-wrap input{padding-right:2.8rem}
+.pass-toggle{position:absolute;right:.85rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);font-size:.95rem;padding:0}
+.pw-strength{height:4px;border-radius:4px;margin-top:.4rem;background:var(--border);overflow:hidden}
+.pw-strength-bar{height:100%;border-radius:4px;width:0;transition:width .3s,background .3s}
+.pw-hint{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+.btn-auth{width:100%;padding:.82rem;background:var(--text);color:#fff;border:none;border-radius:12px;font-size:.97rem;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s,transform .1s;margin-top:.25rem}
+.btn-auth:hover:not(:disabled){opacity:.88;transform:translateY(-1px)}
+.btn-auth:disabled{opacity:.55;cursor:not-allowed}
+.msg-err{display:none;background:#fef2f2;border:1px solid #fca5a5;color:#dc2626;border-radius:10px;padding:.7rem 1rem;font-size:.875rem;margin-bottom:1rem}
+.msg-ok{display:none;background:#f0fdf4;border:1px solid #86efac;color:#15803d;border-radius:10px;padding:.7rem 1rem;font-size:.875rem;margin-bottom:1rem}
+.auth-footer{text-align:center;margin-top:1.4rem;font-size:.875rem;color:var(--muted)}
+.auth-footer a{color:var(--text);font-weight:600;text-decoration:none}
+.auth-footer a:hover{text-decoration:underline}
+.terms-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:.9rem;line-height:1.5}
+.terms-note a{color:var(--muted);text-decoration:underline}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted)}
+</style>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <script defer src="/assets/js/attribution.js"></script>
+  <meta property="og:description" content="MirPDF"/>
+  <meta name="twitter:title" content="Kayıt Ol — MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+<link rel="stylesheet" href="/style.css">
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation">
+        <a href="/#tools">Araçlar</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/login">Giriş Yap</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="auth-wrap">
+  <div class="auth-card">
+    <h1>Hesap oluştur</h1>
+    <p class="sub">Kayıt olunca <strong style="color:#0d0f1a">5 ücretsiz kredi</strong> hediye — OCR, sıkıştır ve PDF→Word için hemen kullan.</p>
+
+    <div class="msg-err" id="msgErr" role="alert" aria-live="polite"></div>
+    <div class="msg-ok"  id="msgOk"  role="status" aria-live="polite"></div>
+
+    <!-- Sosyal Kayıt -->
+    <div id="socialBtns" style="display:none;margin-bottom:1.25rem">
+      <a id="googleBtn" href="/api/auth/oauth/google" style="
+        display:flex;align-items:center;justify-content:center;gap:.65rem;
+        width:100%;padding:.78rem;border:1.5px solid #e3e6f0;border-radius:12px;
+        background:#fff;text-decoration:none;color:#0d0f1a;font-weight:600;
+        font-size:.92rem;transition:border-color .15s,box-shadow .15s;margin-bottom:.6rem
+      " onmouseover="this.style.borderColor='#6366f1';this.style.boxShadow='0 0 0 3px rgba(99,102,241,.1)'"
+         onmouseout="this.style.borderColor='#e3e6f0';this.style.boxShadow='none'">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Google ile Kayıt Ol
+      </a>
+    </div>
+    <div id="divider" style="display:none;position:relative;text-align:center;margin:.25rem 0 1.25rem">
+      <div style="position:absolute;inset:50% 0 auto;border-top:1px solid #e3e6f0"></div>
+      <span style="position:relative;background:#fff;padding:0 .75rem;font-size:.78rem;color:#94a3b8;font-weight:600">veya e-posta ile</span>
+    </div>
+
+    <form id="registerForm" onsubmit="doRegister(event)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+      <div class="field" style="margin-bottom:0">
+        <label for="firstName">Ad</label>
+        <input id="firstName" type="text" autocomplete="given-name" placeholder="Adınız" required>
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="lastName">Soyad</label>
+        <input id="lastName" type="text" autocomplete="family-name" placeholder="Soyadınız" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">E-posta</label>
+      <input id="email" type="email" autocomplete="email" placeholder="ornek@mail.com" required>
+    </div>
+
+    <div class="field">
+      <label for="password">Şifre</label>
+      <div class="pass-wrap">
+        <input id="password" type="password" autocomplete="new-password" placeholder="En az 10 karakter" required>
+        <button class="pass-toggle" type="button" aria-label="Şifreyi göster/gizle" id="passToggle">
+          <i class="fas fa-eye" id="passIcon"></i>
+        </button>
+      </div>
+      <div class="pw-strength"><div class="pw-strength-bar" id="pwBar"></div></div>
+      <span class="pw-hint" id="pwHint">En az 10 karakter, büyük harf ve rakam içermeli</span>
+    </div>
+
+    <div class="field">
+      <label for="password2">Şifre Tekrar</label>
+      <div class="pass-wrap">
+        <input id="password2" type="password" autocomplete="new-password" placeholder="Şifrenizi tekrar girin" required>
+        <button class="pass-toggle" type="button" aria-label="Şifreyi göster/gizle" id="passToggle2">
+          <i class="fas fa-eye" id="passIcon2"></i>
+        </button>
+      </div>
+      <span id="pw2Hint" style="font-size:.75rem;color:var(--muted);margin-top:.25rem;display:block"></span>
+    </div>
+
+    <!-- Cloudflare Turnstile (site key /api/config'den dinamik yüklenir) -->
+    <div id="turnstileWidget" style="margin:.5rem 0;min-height:65px">
+      <div style="height:65px;background:#f7f8fc;border:1px solid #e3e6f0;border-radius:8px;display:flex;align-items:center;justify-content:center">
+        <span style="font-size:.8rem;color:#94a3b8">Bot koruması yükleniyor…</span>
+      </div>
+    </div>
+
+    <button class="btn-auth" id="submitBtn" type="submit">
+      <i class="fas fa-user-plus" aria-hidden="true"></i> Kayıt Ol
+    </button>
+    </form>
+
+    <div style="display:flex;align-items:flex-start;gap:.6rem;margin-top:.75rem;margin-bottom:.25rem">
+      <input type="checkbox" id="termsCheck" style="margin-top:.15rem;width:15px;height:15px;accent-color:#6366f1;flex-shrink:0;cursor:pointer">
+      <label for="termsCheck" style="font-size:.78rem;color:#64748b;line-height:1.5;cursor:pointer">
+        <a href="/legal/terms.html" target="_blank" style="color:#6366f1;text-decoration:underline">Kullanım Şartları</a>'nı
+        ve <a href="/legal/privacy.html" target="_blank" style="color:#6366f1;text-decoration:underline">Gizlilik Politikası</a>'nı
+        okudum, kabul ediyorum.
+      </label>
+    </div>
+
+    <div class="auth-footer">
+      Zaten hesabın var mı? <a href="/login">Giriş yap</a>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--border)">
+      <span style="display:flex;align-items:center;gap:.3rem;font-size:.75rem;color:var(--muted)">
+        <i class="fas fa-gift" style="color:#10b981;font-size:.7rem"></i> Ücretsiz başla
+      </span>
+      <span style="display:flex;align-items:center;gap:.3rem;font-size:.75rem;color:var(--muted)">
+        <i class="fas fa-lock" style="color:#6366f1;font-size:.7rem"></i> SSL şifreli
+      </span>
+      <span style="display:flex;align-items:center;gap:.3rem;font-size:.75rem;color:var(--muted)">
+        <i class="fas fa-times-circle" style="color:#64748b;font-size:.7rem"></i> İptal her zaman
+      </span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 MirPDF &nbsp;·&nbsp;
+    <a href="/legal/privacy.html">Gizlilik</a> &nbsp;·&nbsp;
+    <a href="/legal/terms.html">Şartlar</a>
+  </div>
+</footer>
+
+<script type="module">
+import { saveToken, getSafeRedirect, isLoggedIn } from "/assets/js/auth.js";
+
+if (isLoggedIn()) location.href = getSafeRedirect("/account");
+
+(async () => {
+  try {
+    const resp = await fetch("/api/config");
+    const cfg  = await resp.json().catch(() => ({}));
+    if (cfg.googleOAuthEnabled) {
+      document.getElementById("socialBtns").style.display = "block";
+      document.getElementById("divider").style.display = "block";
+    }
+  } catch (_) {}
+})();
+
+// Turnstile'ı /api/config'den site key alarak başlat
+(async () => {
+  try {
+    const cfgResp = await fetch("/api/config");
+    const cfg = await cfgResp.json().catch(() => ({}));
+    const siteKey = cfg.turnstileSiteKey;
+
+    if (siteKey) {
+      // Turnstile script'i yükle
+      await new Promise((resolve) => {
+        const s = document.createElement("script");
+        s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+        s.async = true;
+        s.onload = resolve;
+        s.onerror = resolve; // hata olsa bile devam et
+        document.head.appendChild(s);
+      });
+
+      // Widget oluştur
+      const widget = document.getElementById("turnstileWidget");
+      if (widget && window.turnstile) {
+        widget.innerHTML = "";
+        window.turnstile.render(widget, {
+          sitekey: siteKey,
+          theme: "light",
+          language: "tr",
+        });
+      }
+    } else {
+      // Site key yoksa widget'ı gizle (Turnstile devre dışı)
+      const widget = document.getElementById("turnstileWidget");
+      if (widget) widget.style.display = "none";
+    }
+  } catch (_) {
+    const widget = document.getElementById("turnstileWidget");
+    if (widget) widget.style.display = "none";
+  }
+})();
+
+const emailEl   = document.getElementById("email");
+const passEl    = document.getElementById("password");
+const pass2El   = document.getElementById("password2");
+const submitBtn = document.getElementById("submitBtn");
+const msgErr    = document.getElementById("msgErr");
+const msgOk     = document.getElementById("msgOk");
+const pwBar     = document.getElementById("pwBar");
+const pwHint    = document.getElementById("pwHint");
+const pw2Hint   = document.getElementById("pw2Hint");
+
+function showErr(msg) { msgErr.textContent = msg; msgErr.style.display = "block"; msgOk.style.display = "none"; }
+function showOk(msg)  { msgOk.textContent  = msg; msgOk.style.display  = "block"; msgErr.style.display = "none"; }
+function clearMsgs()  { msgErr.style.display = msgOk.style.display = "none"; }
+
+// Şifre gücü
+passEl.addEventListener("input", () => {
+  const v = passEl.value;
+  let score = 0;
+  if (v.length >= 10) score++;
+  if (v.length >= 14) score++;
+  if (/[A-Z]/.test(v)) score++;
+  if (/[0-9]/.test(v)) score++;
+  if (/[^A-Za-z0-9]/.test(v)) score++;
+  const pct = Math.min(100, score * 20);
+  const col = score <= 1 ? "#ef4444" : score <= 3 ? "#f59e0b" : "#10b981";
+  pwBar.style.width = pct + "%";
+  pwBar.style.background = col;
+  const labels = ["", "Çok zayıf", "Zayıf", "Orta", "İyi", "Güçlü"];
+  pwHint.textContent = v.length === 0 ? "En az 10 karakter, büyük harf ve rakam içermeli" : (labels[score] || "Güçlü");
+  // Şifre tekrar kontrolü
+  if (pass2El.value) checkPass2Match();
+});
+
+// Şifre tekrar eşleşme kontrolü
+function checkPass2Match() {
+  if (!pass2El.value) { pw2Hint.textContent = ""; return true; }
+  const match = passEl.value === pass2El.value;
+  pw2Hint.textContent = match ? "✓ Şifreler eşleşiyor" : "✗ Şifreler eşleşmiyor";
+  pw2Hint.style.color = match ? "#15803d" : "#dc2626";
+  return match;
+}
+pass2El?.addEventListener("input", checkPass2Match);
+
+document.getElementById("passToggle")?.addEventListener("click", () => {
+  const show = passEl.type === "password";
+  passEl.type = show ? "text" : "password";
+  document.getElementById("passIcon").className = show ? "fas fa-eye-slash" : "fas fa-eye";
+});
+document.getElementById("passToggle2")?.addEventListener("click", () => {
+  const show = pass2El.type === "password";
+  pass2El.type = show ? "text" : "password";
+  document.getElementById("passIcon2").className = show ? "fas fa-eye-slash" : "fas fa-eye";
+});
+
+async function doRegister(e) {
+  if (e) e.preventDefault();
+  clearMsgs();
+  const firstName = document.getElementById("firstName")?.value.trim();
+  const lastName  = document.getElementById("lastName")?.value.trim();
+  const email     = emailEl.value.trim().toLowerCase();
+  const password  = passEl.value;
+  const password2 = pass2El.value;
+  const termsCheck = document.getElementById("termsCheck");
+
+  if (!firstName) { showErr("Ad gerekli."); document.getElementById("firstName").focus(); return; }
+  if (!lastName)  { showErr("Soyad gerekli."); document.getElementById("lastName").focus(); return; }
+  if (!email) { showErr("E-posta adresi gerekli."); emailEl.focus(); return; }
+  if (password.length < 10) { showErr("Şifre en az 10 karakter olmalı."); passEl.focus(); return; }
+  if (!/[A-Z]/.test(password)) { showErr("Şifre en az bir büyük harf içermeli."); passEl.focus(); return; }
+  if (!/[0-9]/.test(password)) { showErr("Şifre en az bir rakam içermeli."); passEl.focus(); return; }
+  if (password !== password2) { showErr("Şifreler eşleşmiyor."); pass2El.focus(); return; }
+  if (termsCheck && !termsCheck.checked) {
+    showErr("Devam etmek için kullanım şartlarını kabul etmelisiniz."); return;
+  }
+
+  // Turnstile token al
+  const tsToken = document.querySelector("[name='cf-turnstile-response']")?.value || "";
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Kayıt yapılıyor…';
+
+  try {
+    const resp = await fetch("/api/auth/register", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password, firstName, lastName, turnstileToken: tsToken }),
+    });
+    const j = await resp.json().catch(() => null);
+
+    if (resp.ok && j?.ok && j.data?.token) {
+      saveToken(j.data.token);
+      // E-posta doğrulama bekleme ekranını göster
+      document.querySelector(".auth-card").innerHTML = `
+        <div style="text-align:center;padding:.5rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">📬</div>
+          <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem;color:#0d0f1a">E-postanı kontrol et 📬</h2>
+          <p style="color:#64748b;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">
+            <strong style="color:#0d0f1a">${email}</strong> adresine doğrulama bağlantısı gönderdik.<br>
+            Gelen kutunu (ve spam/junk klasörünü) kontrol et.
+          </p>
+          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1rem;margin-bottom:1.5rem;font-size:.85rem;color:#15803d">
+            ✓ Doğrulamanın ardından <strong>5 ücretsiz kredi</strong> hesabına yüklenir.
+          </div>
+          <a href="/login" style="display:inline-block;padding:.72rem 1.5rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:.92rem;text-decoration:none">Giriş Sayfasına Git →</a>
+          <p style="margin-top:1rem;font-size:.78rem;color:#94a3b8">
+            E-posta gelmedi mi?
+            <button onclick="resendVerification('${email}')" style="background:none;border:none;color:#6366f1;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;padding:0">Tekrar gönder</button>
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    if (resp.status === 409) {
+      showErr("Bu e-posta zaten kayıtlı. Giriş yapmayı dene.");
+    } else if (resp.status === 429) {
+      showErr("Çok fazla deneme. Lütfen bekle.");
+    } else {
+      showErr(j?.message || "Kayıt sırasında bir hata oluştu.");
+    }
+  } catch (_) {
+    showErr("Bağlantı hatası. Lütfen tekrar dene.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fas fa-user-plus"></i> Kayıt Ol';
+  }
+}
+
+async function resendVerification(email) {
+  try {
+    await fetch("/api/auth/request-verify", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    const btn = document.querySelector("button[onclick*='resendVerification']");
+    if (btn) { btn.textContent = "Gönderildi ✓"; btn.disabled = true; }
+  } catch (_) {}
+}
+
+submitBtn.addEventListener("click", doRegister);
+[emailEl, passEl].forEach(el => el.addEventListener("keydown", e => { if (e.key === "Enter") doRegister(); }));
+
+document.getElementById("mobileToggle")?.addEventListener("click", function() {
+  const nav = document.getElementById("mainNav");
+  const open = nav.classList.toggle("show");
+  this.setAttribute("aria-expanded", String(open));
+});
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+</body>
+</html>

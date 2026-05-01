@@ -167,13 +167,13 @@ a{color:inherit;text-decoration:none}
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .hero-sub{
-  font-size:1.1rem;color:var(--muted);
+  font-size:1.1rem;color:#374151;
   max-width:540px;margin:0 auto 3rem;line-height:1.75;
 }
 .trust-row{
   display:flex;align-items:center;justify-content:center;
   flex-wrap:wrap;gap:.75rem 1.5rem;
-  font-size:.88rem;color:var(--muted);font-weight:500;
+  font-size:.88rem;color:#374151;font-weight:500;
 }
 .trust-item{
   display:flex;align-items:center;gap:.4rem;
@@ -781,68 +781,84 @@ initNav();
 <!-- ── FOOTER ─────────────────────────────────────────────────── -->
 
 <!-- Misyon / Vizyon + Ekip Bölümü -->
-<section style="background:#f7f8fc;padding:3.5rem 0;border-top:1px solid #e3e6f0">
-  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+<section style="background:#f8fafc;padding:5rem 0;border-top:1px solid #e5e7eb">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem">
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:18px;padding:2rem">
-        <div style="width:44px;height:44px;border-radius:12px;background:#ede9fe;display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <i class="fas fa-bullseye" style="color:#6366f1;font-size:1.1rem"></i>
+    <!-- Eyebrow -->
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <span style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:.75rem">Kimiz?</span>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:400;letter-spacing:-.025em;line-height:1.2;color:#111827;margin-bottom:.75rem">
+        Türkiye için yapılan<br>bir PDF platformu
+      </h2>
+      <p style="font-size:.9375rem;color:#6b7280;line-height:1.7;max-width:480px;margin:0 auto">
+        Küçük bir ekip, büyük bir ihtiyaç. Türkçe arayüz, gizlilik odaklı mimari ve gerçekten ücretsiz bir temel katman.
+      </p>
+    </div>
+
+    <!-- Mission / Vision -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:2rem">
+        <div style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="18" height="18" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
         </div>
-        <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:.6rem;color:#0d0f1a">Misyonumuz</h3>
-        <p style="color:#64748b;font-size:.9rem;line-height:1.7">
-          PDF işlemlerini herkes için erişilebilir, hızlı ve güvenli hale getirmek. 
-          Kayıt gerekmeden, dosyalarınız sunucuda saklanmadan, Türkçe arayüzle.
+        <h3 style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.5rem;letter-spacing:-.01em">Misyon</h3>
+        <p style="color:#6b7280;font-size:.875rem;line-height:1.7;margin:0">
+          PDF işlemlerini herkes için erişilebilir, hızlı ve güvenli hale getirmek. Kayıt gerekmeden, dosyalar saklanmadan, Türkçe arayüzle.
         </p>
       </div>
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:18px;padding:2rem">
-        <div style="width:44px;height:44px;border-radius:12px;background:#d1fae5;display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <i class="fas fa-eye" style="color:#10b981;font-size:1.1rem"></i>
+      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:2rem">
+        <div style="width:40px;height:40px;border-radius:10px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="18" height="18" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
-        <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:.6rem;color:#0d0f1a">Vizyonumuz</h3>
-        <p style="color:#64748b;font-size:.9rem;line-height:1.7">
-          Türkiye'nin ve Türkçe konuşan dünyanın en güvenilen PDF platformu olmak. 
-          KVKK uyumluluğu ve şeffaflığı temel değer olarak koruyarak büyümek.
+        <h3 style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.5rem;letter-spacing:-.01em">Vizyon</h3>
+        <p style="color:#6b7280;font-size:.875rem;line-height:1.7;margin:0">
+          Türkiye'nin ve Türkçe konuşan dünyanın en güvenilen PDF platformu. KVKK uyumluluğu ve şeffaflığı temel değer olarak koruyarak büyümek.
         </p>
       </div>
     </div>
 
-    <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;color:#0d0f1a;text-align:center">Temel Değerlerimiz</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem">
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:14px;padding:1.4rem;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:.6rem">🔒</div>
-        <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;color:#0d0f1a">Gizlilik Önce</div>
-        <p style="color:#64748b;font-size:.82rem;line-height:1.5">Dosyalarınız işlem sonrası silinir. Satılmaz, paylaşılmaz.</p>
+    <!-- Values -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:4rem">
+      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:center">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">🔒</div>
+        <div style="font-size:.875rem;font-weight:700;color:#111827;margin-bottom:.35rem">Gizlilik Önce</div>
+        <p style="font-size:.8125rem;color:#9ca3af;line-height:1.55;margin:0">İşlem sonrası dosyalar silinir. Satılmaz, paylaşılmaz.</p>
       </div>
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:14px;padding:1.4rem;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:.6rem">⚡</div>
-        <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;color:#0d0f1a">Hız</div>
-        <p style="color:#64748b;font-size:.82rem;line-height:1.5">Cloudflare Edge Network ile dünyanın her yerinden hızlı erişim.</p>
+      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:center">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">⚡</div>
+        <div style="font-size:.875rem;font-weight:700;color:#111827;margin-bottom:.35rem">Global Hız</div>
+        <p style="font-size:.8125rem;color:#9ca3af;line-height:1.55;margin:0">Cloudflare Edge ile dünyanın her yerinden düşük gecikme.</p>
       </div>
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:14px;padding:1.4rem;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:.6rem">🇹🇷</div>
-        <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;color:#0d0f1a">Yerli</div>
-        <p style="color:#64748b;font-size:.82rem;line-height:1.5">KVKK uyumlu, Türkçe destek, Türk kullanıcılar için tasarlandı.</p>
+      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:center">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">🇹🇷</div>
+        <div style="font-size:.875rem;font-weight:700;color:#111827;margin-bottom:.35rem">Türkçe Öncelik</div>
+        <p style="font-size:.8125rem;color:#9ca3af;line-height:1.55;margin:0">KVKK uyumlu altyapı, Türk kullanıcılar için tasarlandı.</p>
       </div>
     </div>
 
-    <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;color:#0d0f1a;text-align:center">Arkamızda Kim Var?</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;max-width:700px;margin:0 auto">
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:16px;padding:1.5rem;text-align:center">
-        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;color:#fff;font-size:1.4rem;font-weight:800">M</div>
-        <div style="font-weight:700;font-size:.95rem;color:#0d0f1a">MirPDF Ekibi</div>
-        <div style="color:#64748b;font-size:.82rem;margin-top:.3rem">Yazılım & Ürün</div>
-        <div style="display:flex;justify-content:center;gap:.5rem;margin-top:.75rem">
-          <a href="https://twitter.com/mirpdf" target="_blank" rel="noopener" style="color:#94a3b8;font-size:.9rem;text-decoration:none"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://linkedin.com/company/mirpdf" target="_blank" rel="noopener" style="color:#94a3b8;font-size:.9rem;text-decoration:none"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+    <!-- Team -->
+    <div style="border-top:1px solid #f3f4f6;padding-top:3.5rem">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;display:block;margin-bottom:.5rem">Ekip</span>
+        <h3 style="font-size:1.375rem;font-weight:700;color:#111827;letter-spacing:-.02em">Arkamızda kim var?</h3>
       </div>
-      <div style="background:#fff;border:1px solid #e3e6f0;border-radius:16px;padding:1.5rem;text-align:center">
-        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;color:#fff;font-size:1.4rem;font-weight:800">K</div>
-        <div style="font-weight:700;font-size:.95rem;color:#0d0f1a">Kullanıcı Topluluğu</div>
-        <div style="color:#64748b;font-size:.82rem;margin-top:.3rem">10.000+ Aktif Kullanıcı</div>
-        <div style="display:flex;justify-content:center;gap:.5rem;margin-top:.75rem">
-          <a href="/contact" style="color:#94a3b8;font-size:.9rem;text-decoration:none"><i class="fas fa-envelope"></i></a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:640px;margin:0 auto">
+        <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:1.75rem;text-align:center">
+          <div style="width:56px;height:56px;border-radius:50%;background:#111827;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:-.02em">M</div>
+          <div style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.25rem">MirPDF Ekibi</div>
+          <div style="font-size:.75rem;color:#9ca3af;margin-bottom:.85rem">Yazılım &amp; Ürün Geliştirme</div>
+          <div style="display:flex;justify-content:center;gap:.6rem">
+            <a href="https://twitter.com/mirpdf" target="_blank" rel="noopener" style="width:30px;height:30px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.8rem;transition:.15s;text-decoration:none"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/company/mirpdf" target="_blank" rel="noopener" style="width:30px;height:30px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.8rem;transition:.15s;text-decoration:none"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:1.75rem;text-align:center">
+          <div style="width:56px;height:56px;border-radius:50%;background:#f0fdf4;border:2px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.25rem">🌱</div>
+          <div style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.25rem">Kullanıcı Topluluğu</div>
+          <div style="font-size:.75rem;color:#9ca3af;margin-bottom:.85rem">10.000+ Aktif Kullanıcı</div>
+          <div style="display:flex;justify-content:center;gap:.6rem">
+            <a href="/contact" style="width:30px;height:30px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.8rem;text-decoration:none"><i class="fas fa-envelope"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -850,38 +866,7 @@ initNav();
   </div>
 </section>
 
-
-<section style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border,#e3e6f0)">
-  <h2 style="font-size:1.25rem;font-weight:800;margin-bottom:1rem">Ekip ve misyon</h2>
-  <p style="color:var(--muted,#64748b);line-height:1.75;margin-bottom:1rem">
-    MirPDF, Türkiye'deki kullanıcıların PDF işlemleri için İngilizce arayüzlü yabancı platformlara 
-    bağımlı olduğunu gözlemleyen küçük bir geliştirici ekibi tarafından kuruldu. Hedefimiz tek: 
-    herkesin anlayacağı dilde, gizliliği ön planda tutan, gerçekten ücretsiz bir araç seti sunmak.
-  </p>
-  <p style="color:var(--muted,#64748b);line-height:1.75;margin-bottom:1.5rem">
-    Platform Cloudflare'in küresel altyapısı üzerinde çalışıyor. Tarayıcı tabanlı araçlarda 
-    dosyalarınız sunucuya hiç gitmiyor; sunucu gerektiren araçlarda ise işlem sonrası 
-    dosyalar 60 dakika içinde otomatik siliniyor. Kod, şeffaf ve denetlenebilir kalıyor.
-  </p>
-  <div style="display:flex;flex-wrap:wrap;gap:1rem">
-    <div style="flex:1;min-width:180px;background:var(--bg-soft,#f7f8fc);border-radius:12px;padding:1.25rem">
-      <div style="font-size:1.5rem;margin-bottom:.5rem">🇹🇷</div>
-      <div style="font-weight:700;font-size:.9rem;margin-bottom:.3rem">Türkçe odaklı</div>
-      <div style="font-size:.82rem;color:var(--muted,#64748b)">Türk kullanıcılar için tasarlandı. KVKK uyumlu altyapı.</div>
-    </div>
-    <div style="flex:1;min-width:180px;background:var(--bg-soft,#f7f8fc);border-radius:12px;padding:1.25rem">
-      <div style="font-size:1.5rem;margin-bottom:.5rem">🔒</div>
-      <div style="font-weight:700;font-size:.9rem;margin-bottom:.3rem">Gizlilik önce</div>
-      <div style="font-size:.82rem;color:var(--muted,#64748b)">Temel araçlarda sıfır sunucu iletişimi. Hiçbir dosya kalıcı saklanmaz.</div>
-    </div>
-    <div style="flex:1;min-width:180px;background:var(--bg-soft,#f7f8fc);border-radius:12px;padding:1.25rem">
-      <div style="font-size:1.5rem;margin-bottom:.5rem">⚡</div>
-      <div style="font-weight:700;font-size:.9rem;margin-bottom:.3rem">Açık altyapı</div>
-      <div style="font-size:.82rem;color:var(--muted,#64748b)">Cloudflare Workers + D1 + R2. Global CDN, düşük gecikme.</div>
-    </div>
-  </div>
-</section>
-<footer class="footer">
+<footer<footer<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">

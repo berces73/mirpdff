@@ -70,10 +70,31 @@ export async function initNav() {
   const toggle = document.getElementById("mobileToggle");
   if (toggle && !toggle.dataset.navBound) {
     toggle.dataset.navBound = "1";
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const open = nav.classList.toggle("show");
       toggle.setAttribute("aria-expanded", String(open));
+      toggle.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      // overlay
+      let ov = document.getElementById("__nav_overlay");
+      if (open) {
+        if (!ov) {
+          ov = document.createElement("div");
+          ov.id = "__nav_overlay";
+          ov.style.cssText = "position:fixed;inset:0;z-index:250;background:rgba(0,0,0,.3);";
+          document.body.appendChild(ov);
+          ov.addEventListener("click", () => closeNav());
+        }
+      } else {
+        ov?.remove();
+      }
     });
+  }
+  function closeNav() {
+    nav.classList.remove("show");
+    toggle?.setAttribute("aria-expanded", "false");
+    toggle && (toggle.innerHTML = '<i class="fas fa-bars"></i>');
+    document.getElementById("__nav_overlay")?.remove();
   }
 }
 function injectNavStyles() {
@@ -120,7 +141,7 @@ function injectNavStyles() {
         display:flex;align-items:center;justify-content:center;
         background:none;border:1.5px solid var(--border,#e3e6f0);
         color:var(--text,#0d0f1a);padding:.4rem .65rem;border-radius:9px;
-        cursor:pointer;font-size:1rem;
+        cursor:pointer;font-size:1rem;position:relative;z-index:400;
       }
       #mainNav{
         display:none;flex-direction:column;align-items:stretch;

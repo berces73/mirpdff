@@ -271,6 +271,9 @@
   </div>
 </section>
 
+<div id="tool-app"></div>
+
+
 <div class="tool-area">
   <div class="drop-zone" id="dropZone">
     <input type="file" id="fileInput" accept="application/pdf">
@@ -689,7 +692,6 @@ function showInlineUpsell() {
 </script>
 
 <script defer src="/assets/js/toast.js"></script>
-<script defer src="/assets/js/mobile-menu.js"></script>
 <script>
 function ceSetStatus(msg,type){const e=document.getElementById('status');if(!e)return;e.className='ce-status show '+type;e.innerHTML=type==='loading'?'<div class="ce-spin"></div>'+msg:msg;}
 function ceClearStatus(){const e=document.getElementById('status');if(e)e.className='ce-status';}

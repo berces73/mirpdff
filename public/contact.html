@@ -23,30 +23,85 @@
 <link rel="icon" type="image/x-icon" href="/assets/brand/favicon/favicon.ico">
 
 <link rel="stylesheet" href="/assets/css/legal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
-@media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
-.c-card{background:#fff;border:1px solid #e9ecef;border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:.75rem}
-.c-card-icon{font-size:2rem;line-height:1}
-.c-card h3{font-size:1.1rem;font-weight:700;margin:0;color:#1a1a2e}
-.c-card p{font-size:.92rem;color:#555;margin:0;line-height:1.6}
-.c-card a{color:#2563eb;font-weight:600;text-decoration:none}
-.c-card a:hover{text-decoration:underline}
-.c-badge{display:inline-block;font-size:.75rem;font-weight:600;padding:.2rem .6rem;border-radius:6px;background:#eff6ff;color:#2563eb;margin-top:.25rem}
-.c-form-wrap{background:#fff;border:1px solid #e9ecef;border-radius:16px;padding:2.5rem;max-width:600px;margin:3rem auto 0}
-.c-form-wrap h2{font-size:1.3rem;font-weight:700;margin:0 0 1.5rem;color:#1a1a2e}
-.cf-row{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
-.cf-label{font-size:.85rem;font-weight:600;color:#374151}
-.cf-input,.cf-select,.cf-textarea{width:100%;padding:.65rem .9rem;border:1.5px solid #d1d5db;border-radius:10px;font-size:.95rem;font-family:inherit;color:#1a1a2e;background:#fafafa;box-sizing:border-box;transition:border .2s}
-.cf-input:focus,.cf-select:focus,.cf-textarea:focus{outline:none;border-color:#2563eb;background:#fff}
-.cf-textarea{resize:vertical;min-height:130px}
-.cf-btn{width:100%;padding:.8rem;background:#2563eb;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s}
-.cf-btn:hover{background:#1d4ed8}
-.cf-note{font-size:.8rem;color:#6b7280;margin-top:1rem;text-align:center}
-.cf-success{display:none;background:#d1fae5;border:1px solid #6ee7b7;border-radius:10px;padding:1.25rem;text-align:center;color:#065f46;font-weight:600}
-.hours-table{width:100%;border-collapse:collapse;margin-top:.5rem}
-.hours-table td{padding:.4rem .2rem;font-size:.88rem;color:#555;border-bottom:1px solid #f0f0f0}
-.hours-table td:last-child{text-align:right;font-weight:600;color:#1a1a2e}
+/* ── Contact Layout ── */
+.contact-wrap{
+  max-width:1060px;margin:0 auto;padding:3rem 1.5rem 5rem;
+  display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;
+}
+@media(max-width:780px){
+  .contact-wrap{grid-template-columns:1fr;padding:2rem 1.25rem 4rem;}
+}
+
+/* ── Left: info cards ── */
+.ci-section-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem;}
+.ci-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:1.4rem 1.5rem;margin-bottom:1rem;
+}
+.ci-card-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem;}
+.ci-icon{
+  width:38px;height:38px;border-radius:10px;background:#111827;
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;
+}
+.ci-card-head h3{font-size:1rem;font-weight:700;margin:0;color:var(--text);}
+.ci-card p{font-size:.875rem;color:var(--muted);margin:0 0 .7rem;line-height:1.6;}
+.ci-link{color:var(--blue);font-size:.875rem;font-weight:600;text-decoration:none;}
+.ci-link:hover{text-decoration:underline;}
+.ci-badge{
+  display:inline-block;font-size:.72rem;font-weight:600;
+  padding:.18rem .55rem;border-radius:5px;background:#eff6ff;color:#2563eb;margin-top:.25rem;
+}
+
+/* ── Response times ── */
+.resp-list{list-style:none;padding:0;margin:.5rem 0 0;}
+.resp-list li{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.875rem;color:var(--text2);
+}
+.resp-list li:last-child{border-bottom:none;}
+.resp-list li strong{color:var(--text);font-weight:700;}
+
+/* ── Right: Form ── */
+.cf-card{
+  background:#fff;border:1px solid var(--border);border-radius:18px;
+  padding:2.5rem;box-shadow:var(--shadow-lg);
+}
+.cf-card-title{font-size:1.25rem;font-weight:800;color:var(--text);margin:0 0 .35rem;}
+.cf-card-sub{font-size:.875rem;color:var(--muted);margin:0 0 2rem;}
+
+.cf-row{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem;}
+.cf-label{font-size:.82rem;font-weight:700;color:var(--text2);letter-spacing:.01em;}
+.cf-input,.cf-select,.cf-textarea{
+  width:100%;padding:.68rem 1rem;
+  border:1.5px solid var(--border);border-radius:10px;
+  font-size:.94rem;font-family:inherit;color:var(--text);
+  background:var(--bg2);box-sizing:border-box;transition:border .2s,background .2s;
+}
+.cf-input:focus,.cf-select:focus,.cf-textarea:focus{
+  outline:none;border-color:#2563eb;background:#fff;
+  box-shadow:0 0 0 3px rgba(37,99,235,.08);
+}
+.cf-textarea{resize:vertical;min-height:130px;}
+.cf-btn{
+  width:100%;padding:.85rem;background:#111827;color:#fff;
+  border:none;border-radius:11px;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:background .2s,transform .1s;letter-spacing:.01em;
+}
+.cf-btn:hover{background:#1f2937;}
+.cf-btn:active{transform:scale(.99);}
+.cf-btn:disabled{opacity:.65;cursor:not-allowed;}
+.cf-note{font-size:.78rem;color:var(--muted);margin-top:.9rem;text-align:center;line-height:1.5;}
+.cf-success{
+  display:none;background:#d1fae5;border:1px solid #6ee7b7;
+  border-radius:12px;padding:2rem;text-align:center;color:#065f46;font-weight:700;font-size:1rem;
+}
+.cf-success i{font-size:2rem;display:block;margin-bottom:.5rem;}
+
+/* ── name+email row ── */
+.cf-two{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:480px){.cf-two{grid-template-columns:1fr;}}
 </style>
 <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
   <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
@@ -77,68 +132,80 @@
   <p class="l-hero-meta">Teknik sorun, ödeme, kurumsal kullanım veya veri talepleri için doğrudan bize yazın. Çoğu mesaja <strong>bir iş günü içinde</strong> dönüş yapıyoruz.</p>
 </div>
 
-<div class="l-layout mir-block">
+<div class="contact-wrap">
 
-  <div class="contact-grid">
+  <!-- ── Sol: İletişim Bilgileri ── -->
+  <div class="ci-left">
 
-    <div class="c-card">
-      <div class="c-card-icon">📧</div>
-      <h3>E-posta ile Ulaşın</h3>
-      <p>Teknik sorunlar, hesap işlemleri ve kullanım sırasında takıldığınız her konu için doğrudan bize yazabilirsiniz.</p>
-      <a href="mailto:destek@mirpdf.com">destek@mirpdf.com</a>
-      <span class="c-badge">Çoğu talep: 1 iş günü</span>
+    <p class="ci-section-title">İletişim Kanalları</p>
+
+    <div class="ci-card">
+      <div class="ci-card-head">
+        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+        <h3>E-posta ile Ulaşın</h3>
+      </div>
+      <p>Teknik sorunlar, hesap işlemleri ve kullanım sırasında takıldığınız her konu için doğrudan yazabilirsiniz.</p>
+      <a class="ci-link" href="mailto:destek@mirpdf.com">destek@mirpdf.com</a>
+      <br><span class="ci-badge">Çoğu talep: 1 iş günü</span>
     </div>
 
-    <div class="c-card">
-      <div class="c-card-icon">🏢</div>
-      <h3>Kurumsal Kullanım</h3>
-      <p>Ekip kullanımı, API erişimi, toplu iş akışları ve kurumsal evrak süreçleri için kısa bir ihtiyaç görüşmesi planlayabiliriz.</p>
-      <a href="mailto:destek@mirpdf.com?subject=Kurumsal%20Gorusme%20Talebi">Kurumsal teklif alın →</a>
-      <span class="c-badge">API erişimi mevcut</span>
+    <div class="ci-card">
+      <div class="ci-card-head">
+        <div class="ci-icon"><i class="fas fa-building"></i></div>
+        <h3>Kurumsal Kullanım</h3>
+      </div>
+      <p>Ekip lisansı, API erişimi ve toplu iş akışları için bir ihtiyaç görüşmesi planlayabiliriz.</p>
+      <a class="ci-link" href="mailto:destek@mirpdf.com?subject=Kurumsal%20Gorusme%20Talebi">Kurumsal teklif alın →</a>
+      <br><span class="ci-badge">API erişimi mevcut</span>
     </div>
 
-    <div class="c-card">
-      <div class="c-card-icon">🔒</div>
-      <h3>KVKK Başvurusu</h3>
-      <p>6698 sayılı KVKK kapsamındaki erişim, düzeltme, silme veya itiraz talepleriniz için resmi başvurunuzu bu kanal üzerinden iletebilirsiniz.</p>
-      <a href="mailto:destek@mirpdf.com?subject=KVKK%20Basvurusu">KVKK başvurusu gönderin →</a>
-      <a href="/legal/kvkk.html" style="display:block;margin-top:.25rem;font-size:.85rem">KVKK Aydınlatma Metni →</a>
+    <div class="ci-card">
+      <div class="ci-card-head">
+        <div class="ci-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>KVKK Başvurusu</h3>
+      </div>
+      <p>Erişim, düzeltme, silme veya itiraz taleplerinizi bu kanal üzerinden iletebilirsiniz.</p>
+      <a class="ci-link" href="mailto:destek@mirpdf.com?subject=KVKK%20Basvurusu">Başvuru gönderin →</a>
+      <br><a class="ci-link" href="/legal/kvkk.html" style="font-weight:500;color:var(--muted)">KVKK Aydınlatma Metni →</a>
     </div>
 
-    <div class="c-card">
-      <div class="c-card-icon">⏰</div>
-      <h3>Yanıt Süreleri</h3>
-      <p>Her talep aynı hızda kapanmayabilir; ama hangi sırada olduğunu yanıtsız bırakmamaya çalışıyoruz.</p>
-      <table class="hours-table">
-        <tr><td>Teknik destek</td><td>24 saat</td></tr>
-        <tr><td>Fatura / ödeme</td><td>12 saat</td></tr>
-        <tr><td>KVKK başvuruları</td><td>30 gün (yasal)</td></tr>
-        <tr><td>Kurumsal teklifler</td><td>48 saat</td></tr>
-      </table>
+    <p class="ci-section-title" style="margin-top:2rem">Yanıt Süreleri</p>
+    <div class="ci-card">
+      <ul class="resp-list">
+        <li>Teknik destek <strong>24 saat</strong></li>
+        <li>Fatura / ödeme <strong>12 saat</strong></li>
+        <li>KVKK başvuruları <strong>30 gün (yasal)</strong></li>
+        <li>Kurumsal teklifler <strong>48 saat</strong></li>
+      </ul>
     </div>
 
   </div>
 
-  <div class="c-form-wrap">
-    <h2>📝 Mesaj Gönderin</h2>
+  <!-- ── Sağ: Form ── -->
+  <div class="cf-card">
+    <p class="cf-card-title">Mesaj Gönderin</p>
+    <p class="cf-card-sub">Formu doldurun, en kısa sürede size dönelim.</p>
 
     <div id="cf-success" class="cf-success">
-      ✅ Mesajınız alındı! En kısa sürede size dönüş yapacağız.
+      <i class="fas fa-check-circle"></i>
+      Mesajınız alındı! En kısa sürede size dönüş yapacağız.
     </div>
 
     <div id="cf-form">
-      <div class="cf-row">
-        <label class="cf-label" for="cf-name">Adınız Soyadınız</label>
-        <input class="cf-input" type="text" id="cf-name" placeholder="Adınız Soyadınız" autocomplete="name">
+      <div class="cf-two">
+        <div class="cf-row" style="margin-bottom:0">
+          <label class="cf-label" for="cf-name">Ad Soyad</label>
+          <input class="cf-input" type="text" id="cf-name" placeholder="Ad Soyad" autocomplete="name">
+        </div>
+        <div class="cf-row" style="margin-bottom:0">
+          <label class="cf-label" for="cf-email">E-posta <span style="color:var(--red)">*</span></label>
+          <input class="cf-input" type="email" id="cf-email" placeholder="ornek@mail.com" required autocomplete="email">
+        </div>
       </div>
-      <div class="cf-row">
-        <label class="cf-label" for="cf-email">E-posta Adresiniz *</label>
-        <input class="cf-input" type="email" id="cf-email" placeholder="ornek@mail.com" required autocomplete="email">
-      </div>
-      <div class="cf-row">
+      <div class="cf-row" style="margin-top:1.25rem">
         <label class="cf-label" for="cf-subject">Konu</label>
         <select class="cf-select" id="cf-subject">
-          <option value="">Konu seçin...</option>
+          <option value="">Konu seçin…</option>
           <option value="Teknik Destek">Teknik Destek</option>
           <option value="Hesap ve Ödeme">Hesap ve Ödeme</option>
           <option value="Kurumsal Kullanım">Kurumsal Kullanım</option>
@@ -148,11 +215,13 @@
         </select>
       </div>
       <div class="cf-row">
-        <label class="cf-label" for="cf-msg">Mesajınız *</label>
-        <textarea class="cf-textarea" id="cf-msg" placeholder="Sorunuzu veya talebinizi buraya yazın..." required></textarea>
+        <label class="cf-label" for="cf-msg">Mesajınız <span style="color:var(--red)">*</span></label>
+        <textarea class="cf-textarea" id="cf-msg" placeholder="Sorunuzu veya talebinizi buraya yazın…" required></textarea>
       </div>
-      <button class="cf-btn" type="button" onclick="submitForm()">📨 Mesaj Gönder</button>
-      <p class="cf-note">Formdaki bilgiler yalnızca talebinizi yanıtlamak için kullanılır ve doğrudan <strong>destek@mirpdf.com</strong> destek akışına düşer.</p>
+      <button class="cf-btn" type="button" id="cf-submit" onclick="submitForm()">
+        <i class="fas fa-paper-plane" style="margin-right:.5rem"></i>Mesaj Gönder
+      </button>
+      <p class="cf-note">Bilgileriniz yalnızca talebinizi yanıtlamak için kullanılır ve <strong>destek@mirpdf.com</strong> akışına iletilir.</p>
     </div>
   </div>
 

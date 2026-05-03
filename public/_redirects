@@ -1,17 +1,17 @@
 # ============================================================
-# MirPDF — _redirects (Cloudflare Pages)
-# Bölümler: 1) Tool clean URLs  2) Legacy aliases  3) SEO hubs  4) Legal / misc
+# MirPDF  _redirects (Cloudflare Pages)
+# Blmler: 1) Tool clean URLs  2) Legacy aliases  3) SEO hubs  4) Legal / misc
 # ============================================================
 
-# ── 1. Tool Clean URLs (/slug → /tools/*.html) ──────────────
+#  1. Tool Clean URLs (/slug  /tools/*.html) 
 
 # Trailing slash canonicalization
 
-# ── 2. Legacy & Alias Redirects (301) ───────────────────────
+#  2. Legacy & Alias Redirects (301) 
 
-# Bozuk slug'ların doğru hedeflere yönlendirmesi
+# Bozuk slug'larn doru hedeflere ynlendirmesi
 
-# ── 3. SEO Hub Pages ─────────────────────────────────────────
+#  3. SEO Hub Pages 
 /mobil/*                /seo/mobil/:splat              200
 
 /ogrenci/*              /seo/ogrenci/:splat            200
@@ -25,86 +25,86 @@
 /cozum/*                /seo/cozum/:splat              200
 
 
-# SEO long-tail sayfaları
+# SEO long-tail sayfalar
 
-# SEO tool sayfaları
+# SEO tool sayfalar
 
 # Genel SEO wildcard
 /seo/*    /seo/:splat    200
 
-# ── 4. Legal, Articles, Misc ─────────────────────────────────
+#  4. Legal, Articles, Misc 
 
 
 /articles/:slug.html   /articles/:slug.html   200
 /articles/*            /articles/:splat       200
 
 
-# /en/ → Türkçe
+# /en/  Trke
 
-# ── 5. Rehberler alias katmanı ────────────────────────────────
+#  5. Rehberler alias katman 
 
 # Trailing-slash-siz versiyonlar
 
-# ── 6. Eksik SEO alias'lar ────────────────────────────────────
+#  6. Eksik SEO alias'lar 
 
-# ── 8. /en/ sayfaları ─────────────────────────────────────────
+#  8. /en/ sayfalar 
 
-# ── 9. seo/tools/compress/* → pdf-sikistir yönlendir ─────────
+#  9. seo/tools/compress/*  pdf-sikistir ynlendir 
 /seo/tools/compress/*         /seo/tools/pdf-sikistir/:splat        301
 
-# ── 10. TR ana sayfa clean URL'leri ──────────────────────────
+#  10. TR ana sayfa clean URL'leri 
 
-# ── 11. Alias seo/tools klasörleri → canonical ───────────────
+#  11. Alias seo/tools klasrleri  canonical 
 /seo/tools/jpg-den-pdf/*         /seo/tools/jpg-to-pdf/:splat        301
 /seo/tools/pdf-den-jpg/*         /seo/tools/pdf-to-jpg/:splat        301
 
-# ── 12. Article alias redirects ─────────────────────────────
+#  12. Article alias redirects 
 
-# ── 13. Tool alias canonicalize ─────────────────────────────
+#  13. Tool alias canonicalize 
 
-# ── 14. pdf-numaralandir → SEO sayfası ─────────────
+#  14. pdf-numaralandir  SEO sayfas 
 
-# ── 15. CSS canonical ────────────────────────────────
+#  15. CSS canonical 
 
-# ── Auth & Account ───────────────────────────────────────────
+#  Auth & Account 
 
-# ── Admin ────────────────────────────────────────────────────
+#  Admin 
 
-# ── Yeni Sayfalar (status, changelog, kurumsal, developers) ──
+#  Yeni Sayfalar (status, changelog, kurumsal, developers) 
 
-# Yardım Merkezi
+# Yardm Merkezi
 
-# ── muhasebe SEO cluster ─────────────────────────────────────────────────────
+#  muhasebe SEO cluster 
 
-# ── Devlet PDF Limitleri ────────────────────────────────────────────────────
+#  Devlet PDF Limitleri 
 
-# ── Sezonluk içerik ─────────────────────────────────────────────────────────
+#  Sezonluk ierik 
 
-# ── Pricing kurumsal ─────────────────────────────────────────────────────────
-# ── e-Fatura SEO cluster ────────────────────────────────────────
+#  Pricing kurumsal 
+#  e-Fatura SEO cluster 
 # Legal sayfalar clean URL
 
-# PNG → PDF redirect
+# PNG  PDF redirect
 
-# Office → PDF araçları
+# Office  PDF aralar
 
-# SEO landing sayfaları
+# SEO landing sayfalar
 
 # == BROKEN LINK FIXES (auto-generated) ==
 
-# ── v48: Broken link fixes ──────────────────────────────────────
+#  v48: Broken link fixes 
 
 # == New authority articles ==
 
-# ── Blog → Articles/Rehberler 301 redirects (frontend/blog legacy) ──
+#  Blog  Articles/Rehberler 301 redirects (frontend/blog legacy) 
 
-# ── EN tool clean URLs ─────────────────────────────────────────────────────
+#  EN tool clean URLs 
 
-# ── DE / FR / ES tool clean URLs ────────────────────────
+#  DE / FR / ES tool clean URLs 
 
-# ── New articles ──
+#  New articles 
 
-# ── Locale general pages ──
+#  Locale general pages 
 
 # Tools listing redirect
 /merge-pdf            /pdf-birlestir   301
@@ -202,3 +202,17 @@
 /blog/adobe-acrobat-ucretsiz-alternatif.html   /seo/rehberler/adobe-acrobat-ucretsiz-alternatif.html   301
 /blog/android-pdf-birlestirme.html             /seo/rehberler/android-pdf-birlestirme.html             301
 /blog/chromebook-pdf-donusturme.html           /articles/pdf-to-word-donusturme.html                   301
+
+# Office to PDF tools
+/word-to-pdf    /tools/word-to-pdf.html    200
+/word-to-pdf/   /tools/word-to-pdf.html    200
+/excel-to-pdf   /tools/excel-to-pdf.html   200
+/excel-to-pdf/  /tools/excel-to-pdf.html   200
+/ppt-to-pdf     /tools/ppt-to-pdf.html     200
+/ppt-to-pdf/    /tools/ppt-to-pdf.html     200
+
+# Legal trailing slash
+/legal/kvkk/        /legal/kvkk.html        200
+/legal/privacy/     /legal/privacy.html     200
+/legal/terms/       /legal/terms.html       200
+/legal/cookies/     /legal/cookies.html     200

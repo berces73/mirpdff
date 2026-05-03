@@ -242,6 +242,13 @@ if (urlErr) {
   if (msgErr) { msgErr.textContent = errs[urlErr] || "Giriş sırasında hata oluştu."; msgErr.style.display = "block"; }
 }
 
+// Şifre sıfırlama başarı mesajı
+const urlReset = new URLSearchParams(location.search).get("reset");
+if (urlReset === "success") {
+  const msgOk2 = document.getElementById("msgOk");
+  if (msgOk2) { msgOk2.textContent = "✓ Şifreniz başarıyla sıfırlandı. Yeni şifrenizle giriş yapabilirsiniz."; msgOk2.style.display = "block"; }
+}
+
 // E-posta doğrulama sonrası başarı mesajı
 const urlVerified = new URLSearchParams(location.search).get("verified");
 if (urlVerified === "1") {
@@ -348,8 +355,10 @@ async function doLogin(e) {
       const remember = document.getElementById("rememberMe")?.checked;
       saveToken(j.data.token, remember);
       showOk("Giriş başarılı ✓");
-      // Güvenli redirect — yalnızca site içi path
-      setTimeout(() => { location.href = getSafeRedirect("/account"); }, 400);
+      // İlk giriş mi? /welcome'a yönlendir
+      const isFirst = j.data?.isFirstLogin || false;
+      const dest = getSafeRedirect(isFirst ? "/welcome" : "/account");
+      setTimeout(() => { location.href = dest; }, 400);
       return;
     }
 

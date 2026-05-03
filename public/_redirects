@@ -205,3 +205,6 @@
 /ppt-to-pdf/    /tools/ppt-to-pdf.html     200
 
 # Legal trailing slash
+
+/welcome    /welcome.html    200
+/welcome/   /welcome.html    200

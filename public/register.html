@@ -356,8 +356,8 @@ async function doRegister(e) {
       // E-posta doğrulama bekleme ekranını göster
       document.querySelector(".auth-card").innerHTML = `
         <div style="text-align:center;padding:.5rem 0">
-          <div style="font-size:3rem;margin-bottom:1rem">📬</div>
-          <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem;color:#0d0f1a">E-postanı kontrol et 📬</h2>
+          <div style="width:72px;height:72px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem"><i class="fas fa-envelope" style="font-size:1.75rem;color:#059669"></i></div>
+          <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem;color:#0d0f1a">E-postanı kontrol et</h2>
           <p style="color:#64748b;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">
             <strong style="color:#0d0f1a">${email}</strong> adresine doğrulama bağlantısı gönderdik.<br>
             Gelen kutunu (ve spam/junk klasörünü) kontrol et.
@@ -365,7 +365,7 @@ async function doRegister(e) {
           <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1rem;margin-bottom:1.5rem;font-size:.85rem;color:#15803d">
             ✓ Doğrulamanın ardından <strong>5 ücretsiz kredi</strong> hesabına yüklenir.
           </div>
-          <a href="/login" style="display:inline-block;padding:.72rem 1.5rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:.92rem;text-decoration:none">Giriş Sayfasına Git →</a>
+          <a href="/login" style="display:inline-block;padding:.72rem 1.5rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:.92rem;text-decoration:none"><i class="fas fa-sign-in-alt" style="margin-right:.4rem"></i>Giriş Yap →</a>
           <p style="margin-top:1rem;font-size:.78rem;color:#94a3b8">
             E-posta gelmedi mi?
             <button onclick="resendVerification('${email}')" style="background:none;border:none;color:#6366f1;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;padding:0">Tekrar gönder</button>

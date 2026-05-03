@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+<title>MirPDF'e Hoş Geldin!</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/assets/brand/favicon/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:#f7f8fc;color:#0d0f1a;min-height:100vh;display:flex;flex-direction:column}
+header{background:#fff;border-bottom:1px solid #e3e6f0;padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#0d0f1a;font-weight:800;font-size:1.1rem}
+main{flex:1;padding:3rem 1.5rem 5rem}
+.wrap{max-width:780px;margin:0 auto}
+.hero{text-align:center;margin-bottom:3rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#d1fae5;border:1px solid #6ee7b7;color:#065f46;font-size:.78rem;font-weight:700;padding:.35rem .9rem;border-radius:20px;margin-bottom:1.25rem;letter-spacing:.04em}
+.hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;margin-bottom:.75rem;line-height:1.2}
+.hero h1 span{background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1rem;color:#64748b;max-width:480px;margin:0 auto;line-height:1.65}
+/* Credits card */
+.credits-card{background:linear-gradient(135deg,#0d0f1a,#1e2235);border-radius:20px;padding:2rem;margin-bottom:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.credits-left h3{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+.credits-amount{font-size:2.5rem;font-weight:900;color:#fff}
+.credits-amount span{font-size:1rem;font-weight:500;color:rgba(255,255,255,.5)}
+.credits-sub{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.25rem}
+.credits-btns{display:flex;flex-direction:column;gap:.6rem}
+.btn-white{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#0d0f1a;font-size:.88rem;font-weight:700;padding:.65rem 1.25rem;border-radius:11px;text-decoration:none;transition:.15s;white-space:nowrap}
+.btn-white:hover{background:#f1f3f7}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:.88rem;font-weight:600;padding:.65rem 1.25rem;border-radius:11px;text-decoration:none;transition:.15s;border:1px solid rgba(255,255,255,.15)}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+/* Steps */
+.section-title{font-size:1.1rem;font-weight:800;color:#0d0f1a;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+@media(max-width:600px){.steps{grid-template-columns:1fr}}
+.step-card{background:#fff;border:1px solid #e3e6f0;border-radius:16px;padding:1.5rem;position:relative;transition:.2s}
+.step-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.07);transform:translateY(-2px)}
+.step-num{position:absolute;top:-10px;left:1.25rem;width:22px;height:22px;border-radius:50%;background:#0d0f1a;color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.step-icon{width:44px;height:44px;border-radius:12px;background:#f1f0ff;color:#6366f1;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.9rem}
+.step-card h4{font-size:.92rem;font-weight:700;margin-bottom:.3rem}
+.step-card p{font-size:.8rem;color:#64748b;line-height:1.55}
+.step-card a{display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:700;color:#6366f1;text-decoration:none;margin-top:.65rem}
+/* Quick tools */
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:2rem}
+@media(max-width:500px){.tools-grid{grid-template-columns:1fr}}
+.tool-chip{display:flex;align-items:center;gap:.75rem;background:#fff;border:1px solid #e3e6f0;border-radius:14px;padding:1rem 1.1rem;text-decoration:none;color:#0d0f1a;transition:.15s}
+.tool-chip:hover{border-color:#6366f1;box-shadow:0 4px 16px rgba(99,102,241,.1);transform:translateY(-1px)}
+.tool-chip-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.tool-chip-body strong{display:block;font-size:.875rem;font-weight:700}
+.tool-chip-body span{font-size:.75rem;color:#64748b}
+/* Pro banner */
+.pro-banner{background:#fff;border:1.5px solid #e3e6f0;border-radius:18px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.pro-banner-left{display:flex;align-items:center;gap:1rem}
+.pro-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.pro-banner h4{font-size:1rem;font-weight:800;margin-bottom:.2rem}
+.pro-banner p{font-size:.83rem;color:#64748b}
+.btn-pro{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:.88rem;font-weight:700;padding:.7rem 1.4rem;border-radius:11px;text-decoration:none;transition:.15s;white-space:nowrap}
+.btn-pro:hover{opacity:.9}
+footer{border-top:1px solid #e3e6f0;padding:1.25rem 1.5rem;text-align:center;color:#94a3b8;font-size:.8rem}
+footer a{color:#94a3b8;text-decoration:none;margin:0 .4rem}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">
+    <img src="/assets/icons/logo.svg" width="32" height="32" alt="MirPDF" style="border-radius:9px">
+    MirPDF
+  </a>
+  <a href="/account" style="display:flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:#64748b;text-decoration:none;background:#f7f8fc;border:1px solid #e3e6f0;padding:.4rem .85rem;border-radius:9px">
+    <i class="fas fa-user-circle"></i> Hesabım
+  </a>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-badge"><i class="fas fa-check-circle"></i> Hesap oluşturuldu</div>
+      <h1>MirPDF'e <span>hoş geldin</span> 👋</h1>
+      <p>Hesabın hazır. Aşağıdan başlamak istediğin aracı seç veya önce hızlı bir tur at.</p>
+    </div>
+
+    <!-- Kredi kartı -->
+    <div class="credits-card">
+      <div class="credits-left">
+        <h3>Mevcut Krediniz</h3>
+        <div class="credits-amount" id="creditAmount">— <span>kredi</span></div>
+        <div class="credits-sub">Her gün 15 ücretsiz kredi yüklenir · OCR ve PDF→Word işlemlerinde kullanılır</div>
+      </div>
+      <div class="credits-btns">
+        <a href="/ocr" class="btn-white"><i class="fas fa-eye"></i> OCR ile Başla</a>
+        <a href="/account" class="btn-ghost"><i class="fas fa-chart-bar"></i> Kredi Geçmişim</a>
+      </div>
+    </div>
+
+    <!-- Başlangıç adımları -->
+    <p class="section-title"><i class="fas fa-rocket" style="color:#6366f1"></i> 3 Adımda Başla</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-icon"><i class="fas fa-file-upload"></i></div>
+        <h4>PDF Yükle</h4>
+        <p>Sürükle-bırak veya cihazından seç. 50 MB'a kadar ücretsiz.</p>
+        <a href="/pdf-sikistir">Denemeye başla <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-icon"><i class="fas fa-sliders-h"></i></div>
+        <h4>İşlemi Seç</h4>
+        <p>22'den fazla araç: sıkıştır, birleştir, dönüştür, OCR ve daha fazlası.</p>
+        <a href="/#tools">Tüm araçlar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-icon"><i class="fas fa-download"></i></div>
+        <h4>İndir</h4>
+        <p>Sonuç saniyeler içinde hazır. Dosyalar otomatik silinir.</p>
+        <a href="/account">Hesabım <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Hızlı araçlar -->
+    <p class="section-title"><i class="fas fa-bolt" style="color:#f59e0b"></i> Popüler Araçlar</p>
+    <div class="tools-grid">
+      <a href="/pdf-sikistir" class="tool-chip">
+        <div class="tool-chip-icon" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-compress-alt"></i></div>
+        <div class="tool-chip-body"><strong>PDF Sıkıştır</strong><span>Boyutu küçült, kaliteyi koru</span></div>
+      </a>
+      <a href="/pdf-birlestir" class="tool-chip">
+        <div class="tool-chip-icon" style="background:#e0f2fe;color:#0369a1"><i class="fas fa-object-group"></i></div>
+        <div class="tool-chip-body"><strong>PDF Birleştir</strong><span>Birden fazla PDF tek dosya</span></div>
+      </a>
+      <a href="/ocr" class="tool-chip">
+        <div class="tool-chip-icon" style="background:#fef3c7;color:#d97706"><i class="fas fa-eye"></i></div>
+        <div class="tool-chip-body"><strong>OCR / Metin Tanı</strong><span>Taranmış PDF'ten metin çıkar</span></div>
+      </a>
+      <a href="/pdf-to-word" class="tool-chip">
+        <div class="tool-chip-icon" style="background:#dbeafe;color:#1d4ed8"><i class="fas fa-file-word"></i></div>
+        <div class="tool-chip-body"><strong>PDF → Word</strong><span>Düzenlenebilir .docx dosyası</span></div>
+      </a>
+      <a href="/word-to-pdf" class="tool-chip">
+        <div class="tool-chip-icon" style="background:#fee2e2;color:#dc2626"><i class="fas fa-file-pdf"></i></div>
+        <div class="tool-chip-body"><strong>Word → PDF</strong><span>Profesyonel PDF oluştur</span></div>
+      </a>
+      <a href="/pdf-bol" class="tool-chip">
+        <div class="tool-chip-icon" style="background:#fef9c3;color:#ca8a04"><i class="fas fa-cut"></i></div>
+        <div class="tool-chip-body"><strong>PDF Böl</strong><span>Sayfaları ayır veya parçala</span></div>
+      </a>
+    </div>
+
+    <!-- Pro banner -->
+    <div class="pro-banner">
+      <div class="pro-banner-left">
+        <div class="pro-icon"><i class="fas fa-crown"></i></div>
+        <div>
+          <h4>Pro'ya Geç — Sınırsız Kullan</h4>
+          <p>5.000 kredi/ay · Toplu işlem · Öncelikli sunucu · E-posta desteği</p>
+        </div>
+      </div>
+      <a href="/pricing" class="btn-pro"><i class="fas fa-arrow-up"></i> Pro Planı Gör</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/legal/privacy.html">Gizlilik</a>
+  <a href="/legal/terms.html">Şartlar</a>
+  <a href="/contact">İletişim</a>
+  <span>© 2026 MirPDF</span>
+</footer>
+
+<script type="module">
+import { apiFetch } from "/assets/js/auth.js";
+(async () => {
+  try {
+    const r = await apiFetch("/api/me");
+    if (!r.ok) return;
+    const d = await r.json();
+    const balance = d?.data?.credits?.balance ?? d?.credits?.balance;
+    if (balance !== null && balance !== undefined) {
+      document.getElementById("creditAmount").innerHTML =
+        `<span style="font-size:2.5rem;font-weight:900;color:#fff">${balance.toLocaleString("tr-TR")}</span> <span style="font-size:1rem;color:rgba(255,255,255,.5)">kredi</span>`;
+    }
+  } catch(_) {}
+})();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

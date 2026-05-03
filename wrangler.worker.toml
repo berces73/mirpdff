@@ -47,7 +47,7 @@ INDEX_SECONDARY = "0"
 INTERNAL_LINKS_CRON = "0 3 1 * *"
 
 APP_ORIGIN = "https://mirpdff.pages.dev"
-ALLOWED_ORIGIN = "https://mirpdff.pages.dev"
+ALLOWED_ORIGIN = "https://mirpdff.pages.dev,https://mirpdf.com"
 JWT_TTL_SECONDS      = "86400"
 REFRESH_TTL_SECONDS  = "2592000"
 REQUIRE_EMAIL_VERIFIED = "1"

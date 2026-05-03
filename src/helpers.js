@@ -6,18 +6,21 @@
 export const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 
 // ---- CORS ----
-export function corsHeaders(env) {
-  // K4: Never fall back to wildcard.
-  const allowed = (env.ALLOWED_ORIGIN || "").trim();
+export function corsHeaders(env, requestOrigin) {
+  const raw = (env.ALLOWED_ORIGIN || "").trim();
+  const allowed = raw.split(",").map(o => o.trim()).filter(Boolean);
   const base = {
     "access-control-allow-methods": "GET,POST,OPTIONS",
     "access-control-allow-headers": "content-type,authorization,x-client-id",
     "access-control-max-age": "86400",
     "vary": "origin",
   };
-  if (allowed && allowed !== "*") {
-    base["access-control-allow-origin"] = allowed;
-    base["access-control-allow-credentials"] = "true";
+  if (allowed.length > 0) {
+    const origin = requestOrigin || allowed[0];
+    if (allowed.includes(origin) || allowed.includes("*")) {
+      base["access-control-allow-origin"] = origin;
+      base["access-control-allow-credentials"] = "true";
+    }
   }
   return base;
 }

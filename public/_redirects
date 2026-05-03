@@ -4,42 +4,111 @@
 # ============================================================
 
 # ── 1. Tool Clean URLs (/slug → /tools/*.html) ──────────────
-/pdf-birlestir           /tools/pdf-birlestir.html           200
-/pdf-sikistir            /tools/pdf-sikistir.html            200
-/pdf-bol                 /tools/pdf-bol.html                 200
-/pdf-to-jpg              /tools/pdf-to-jpg.html              200
-/jpg-to-pdf              /tools/jpg-to-pdf.html              200
-/pdf-dondur              /tools/pdf-dondur.html              200
-/sayfa-sil               /tools/sayfa-sil.html               200
-/sayfa-sirala            /tools/sayfa-sirala.html            200
-/pdf-kilitle             /tools/pdf-kilitle.html             200
-/qr-kod-ekle             /tools/qr-kod-ekle.html             200
-/pdf-to-word             /tools/pdf-to-word.html             200
-/ocr                     /tools/ocr.html                     200
-/filigran-ekle           /tools/filigran-ekle.html           200
-/pdf-kilit-ac            /tools/pdf-kilit-ac.html            200
-/pdf-imzala              /tools/pdf-imzala.html              200
-/pdf-duzenle             /tools/pdf-duzenle.html             200
-/pdf-metadata-duzenle    /tools/pdf-metadata-duzenle.html    200
-/pdf-sayfa-kirp          /tools/pdf-sayfa-kirp.html          200
-/pdf-arka-plan-ekle      /tools/pdf-arka-plan-ekle.html      200
-/pdf-sayfa-kopyala       /tools/pdf-sayfa-kopyala.html       200
-/pdf-sayfa-ayikla        /tools/pdf-sayfa-ayikla.html        200
 
 # Trailing slash canonicalization
-/pdf-birlestir/   /pdf-birlestir   301
-/pdf-sikistir/    /pdf-sikistir    301
-/pdf-bol/         /pdf-bol         301
-/pdf-dondur/      /pdf-dondur      301
-/sayfa-sil/       /sayfa-sil       301
-/sayfa-sirala/    /sayfa-sirala    301
-/pdf-kilitle/     /pdf-kilitle     301
-/pdf-kilit-ac/    /pdf-kilit-ac    301
 
 # ── 2. Legacy & Alias Redirects (301) ───────────────────────
+
+# Bozuk slug'ların doğru hedeflere yönlendirmesi
+
+# ── 3. SEO Hub Pages ─────────────────────────────────────────
+/mobil/*                /seo/mobil/:splat              200
+
+/ogrenci/*              /seo/ogrenci/:splat            200
+
+/resmi-basvuru/*        /seo/resmi-basvuru/:splat      200
+
+/limit/*                /seo/limit/:splat              200
+
+/karsilastirma/*        /seo/karsilastirma/:splat      200
+
+/cozum/*                /seo/cozum/:splat              200
+
+
+# SEO long-tail sayfaları
+
+# SEO tool sayfaları
+
+# Genel SEO wildcard
+/seo/*    /seo/:splat    200
+
+# ── 4. Legal, Articles, Misc ─────────────────────────────────
+
+
+/articles/:slug.html   /articles/:slug.html   200
+/articles/*            /articles/:splat       200
+
+
+# /en/ → Türkçe
+
+# ── 5. Rehberler alias katmanı ────────────────────────────────
+
+# Trailing-slash-siz versiyonlar
+
+# ── 6. Eksik SEO alias'lar ────────────────────────────────────
+
+# ── 8. /en/ sayfaları ─────────────────────────────────────────
+
+# ── 9. seo/tools/compress/* → pdf-sikistir yönlendir ─────────
+/seo/tools/compress/*         /seo/tools/pdf-sikistir/:splat        301
+
+# ── 10. TR ana sayfa clean URL'leri ──────────────────────────
+
+# ── 11. Alias seo/tools klasörleri → canonical ───────────────
+/seo/tools/jpg-den-pdf/*         /seo/tools/jpg-to-pdf/:splat        301
+/seo/tools/pdf-den-jpg/*         /seo/tools/pdf-to-jpg/:splat        301
+
+# ── 12. Article alias redirects ─────────────────────────────
+
+# ── 13. Tool alias canonicalize ─────────────────────────────
+
+# ── 14. pdf-numaralandir → SEO sayfası ─────────────
+
+# ── 15. CSS canonical ────────────────────────────────
+
+# ── Auth & Account ───────────────────────────────────────────
+
+# ── Admin ────────────────────────────────────────────────────
+
+# ── Yeni Sayfalar (status, changelog, kurumsal, developers) ──
+
+# Yardım Merkezi
+
+# ── muhasebe SEO cluster ─────────────────────────────────────────────────────
+
+# ── Devlet PDF Limitleri ────────────────────────────────────────────────────
+
+# ── Sezonluk içerik ─────────────────────────────────────────────────────────
+
+# ── Pricing kurumsal ─────────────────────────────────────────────────────────
+# ── e-Fatura SEO cluster ────────────────────────────────────────
+# Legal sayfalar clean URL
+
+# PNG → PDF redirect
+
+# Office → PDF araçları
+
+# SEO landing sayfaları
+
+# == BROKEN LINK FIXES (auto-generated) ==
+
+# ── v48: Broken link fixes ──────────────────────────────────────
+
+# == New authority articles ==
+
+# ── Blog → Articles/Rehberler 301 redirects (frontend/blog legacy) ──
+
+# ── EN tool clean URLs ─────────────────────────────────────────────────────
+
+# ── DE / FR / ES tool clean URLs ────────────────────────
+
+# ── New articles ──
+
+# ── Locale general pages ──
+
+# Tools listing redirect
 /merge-pdf            /pdf-birlestir   301
 /compress-pdf         /pdf-sikistir    301
-/compress             /pdf-sikistir    301
 /split-pdf            /pdf-bol         301
 /rotate-pdf           /pdf-dondur      301
 /delete-page          /sayfa-sil       301
@@ -48,9 +117,13 @@
 /add-qr-code          /qr-kod-ekle     301
 /pdf-to-image         /pdf-to-jpg      301
 /image-to-pdf         /jpg-to-pdf      301
+/ocr-pdf              /ocr             301
+/rehberler/foto%C4%9Fraftan-pdf-olusturma/        /seo/rehberler/fotograftan-pdf-olusturma.html    301
+/rehberler/pdf-acilam%C4%B1yor-cozum/             /seo/rehberler/pdf-acilmiyor-cozum.html          301
+/rehberler/pdf-muzik-tabanl%C4%B1-mi-taranmis-mi/ /seo/rehberler/pdf-muzik-tabanli-mi-taranmis-mi.html 301
+/compress             /pdf-sikistir    301
 /jpg-den-pdf          /jpg-to-pdf      301
 /pdf-sifrele          /pdf-kilitle     301
-/ocr-pdf              /ocr             301
 /pdf-den-jpg          /pdf-to-jpg      301
 /pdf-editor           /pdf-duzenle     301
 /pdf-donustur         /pdf-to-word     301
@@ -62,45 +135,6 @@
 /pdf-onar             /articles/pdf-onarma.html             301
 /pdf-to-pdfa          /articles/pdf-a-arsivleme.html        301
 /pdf-resim-cikar      /articles/pdf-resim-ayiklama.html     301
-
-# Bozuk slug'ların doğru hedeflere yönlendirmesi
-/rehberler/foto%C4%9Fraftan-pdf-olusturma/        /seo/rehberler/fotograftan-pdf-olusturma.html    301
-/rehberler/pdf-acilam%C4%B1yor-cozum/             /seo/rehberler/pdf-acilmiyor-cozum.html          301
-/rehberler/pdf-muzik-tabanl%C4%B1-mi-taranmis-mi/ /seo/rehberler/pdf-muzik-tabanli-mi-taranmis-mi.html 301
-
-# ── 3. SEO Hub Pages ─────────────────────────────────────────
-/mobil                  /seo/mobil/index.html          200
-/mobil/                 /seo/mobil/index.html          200
-/mobil/*                /seo/mobil/:splat              200
-
-/ogrenci                /seo/ogrenci/index.html        200
-/ogrenci/               /seo/ogrenci/index.html        200
-/ogrenci/*              /seo/ogrenci/:splat            200
-
-/resmi-basvuru          /seo/resmi-basvuru/index.html  200
-/resmi-basvuru/         /seo/resmi-basvuru/index.html  200
-/resmi-basvuru/*        /seo/resmi-basvuru/:splat      200
-
-/limit                  /seo/limit/index.html          200
-/limit/                 /seo/limit/index.html          200
-/limit/*                /seo/limit/:splat              200
-
-/karsilastirma          /seo/karsilastirma/index.html  200
-/karsilastirma/         /seo/karsilastirma/index.html  200
-/karsilastirma/*        /seo/karsilastirma/:splat      200
-
-/cozum                  /seo/cozum/index.html          200
-/cozum/                 /seo/cozum/index.html          200
-/cozum/*                /seo/cozum/:splat              200
-
-/resmi-basvurular-icin-pdf-cozumleri   /seo/resmi-basvurular-icin-pdf-cozumleri/index.html  200
-/resmi-basvurular-icin-pdf-cozumleri/  /seo/resmi-basvurular-icin-pdf-cozumleri/index.html  200
-
-# SEO long-tail sayfaları
-/pdf-okunabilirlik-rehberi    /seo/pdf-okunabilirlik-rehberi/index.html   200
-/pdf-okunabilirlik-rehberi/   /seo/pdf-okunabilirlik-rehberi/index.html   200
-/pdf-tarama-ayarlari          /seo/pdf-tarama-ayarlari/index.html         200
-/pdf-tarama-ayarlari/         /seo/pdf-tarama-ayarlari/index.html         200
 /pdf-metin-ara                /seo/pdf-metin-ara/index.html               301
 /pdf-metin-ara/               /seo/pdf-metin-ara/index.html               301
 /pdf-onizleme                 /seo/cozum/pdf-onizleme/index.html          301
@@ -109,207 +143,42 @@
 /pdf-resim-ekleme/            /seo/pdf-resim-ekleme/index.html            301
 /pdf-metin-ekleme             /seo/pdf-metin-ekleme/index.html            301
 /pdf-metin-ekleme/            /seo/pdf-metin-ekleme/index.html            301
-/pdf-metadata-temizleme       /seo/pdf-metadata-temizleme/index.html      200
-/pdf-metadata-temizleme/      /seo/pdf-metadata-temizleme/index.html      200
-
-# SEO tool sayfaları
-/seo/pdf-sikistir    /seo/tools/pdf-sikistir/index.html   200
-/seo/pdf-birlestir   /seo/tools/pdf-birlestir/index.html  200
-/seo/pdf-kilit-ac    /seo/tools/pdf-kilit-ac/index.html   200
-
-# Genel SEO wildcard
-/seo/*    /seo/:splat    200
-
-# ── 4. Legal, Articles, Misc ─────────────────────────────────
 /privacy.html    /legal/privacy.html   301
 /privacy         /legal/privacy.html   301
 /terms.html      /legal/terms.html     301
 /terms           /legal/terms.html     301
 /kvkk            /legal/kvkk.html      301
-
-
-/articles/:slug.html   /articles/:slug.html   200
-/articles/*            /articles/:splat       200
-
 /assets/icons/favicon.ico   /favicon.ico   200
-
-# /en/ → Türkçe
 /en/#tools         /                      301
 /en/articles/      /articles/             301
 /en/privacy.html   /legal/privacy.html    301
-
-# ── 5. Rehberler alias katmanı ────────────────────────────────
-/rehberler/adobe-acrobat-ucretsiz-alternatif/    /seo/rehberler/adobe-acrobat-ucretsiz-alternatif.html    200
-/rehberler/android-pdf-birlestirme/              /seo/rehberler/android-pdf-birlestirme.html              200
-/rehberler/fatura-pdf-word-cevirme/              /seo/rehberler/fatura-pdf-word-cevirme.html              200
-/rehberler/fotograftan-pdf-olusturma/            /seo/rehberler/fotograftan-pdf-olusturma.html            200
-/rehberler/iphone-pdf-duzenleme/                 /seo/rehberler/iphone-pdf-duzenleme.html                 200
-/rehberler/is-basvurusu-cv-pdf/                  /seo/rehberler/is-basvurusu-cv-pdf.html                  200
-/rehberler/kvkk-uyumlu-pdf/                      /seo/rehberler/kvkk-uyumlu-pdf.html                      200
-/rehberler/mac-pdf-kucultme/                     /seo/rehberler/mac-pdf-kucultme.html                     200
-/rehberler/pdf-acilmiyor-cozum/                  /seo/rehberler/pdf-acilmiyor-cozum.html                  200
-/rehberler/pdf-excel-donusturme/                 /seo/rehberler/pdf-excel-donusturme.html                 200
-/rehberler/pdf-filigran-marka-koruma/            /seo/rehberler/pdf-filigran-marka-koruma.html            200
-/rehberler/pdf-imza-atma-yazdirmadan/            /seo/rehberler/pdf-imza-atma-yazdirmadan.html            200
-/rehberler/pdf-kucultme-rehberi/                 /seo/rehberler/pdf-kucultme-rehberi.html                 200
-/rehberler/pdf-muzik-tabanli-mi-taranmis-mi/     /seo/rehberler/pdf-muzik-tabanli-mi-taranmis-mi.html     200
-/rehberler/pdf-powerpoint-donusturme/            /seo/rehberler/pdf-powerpoint-donusturme.html            200
-/rehberler/smallpdf-ilovepdf-karsilastirma/      /seo/rehberler/smallpdf-ilovepdf-karsilastirma.html      200
-/rehberler/sozlesmeye-online-imza/               /seo/rehberler/sozlesmeye-online-imza.html               200
-/rehberler/ucretsiz-pdf-sikistirma-araclari/     /seo/rehberler/ucretsiz-pdf-sikistirma-araclari.html     200
-/rehberler/windows-pdf-birlestirme-programsiz/   /seo/rehberler/windows-pdf-birlestirme-programsiz.html   200
-/rehberler/wordu-pdf-yapma/                      /seo/rehberler/wordu-pdf-yapma.html                      200
-
-# Trailing-slash-siz versiyonlar
-/rehberler/adobe-acrobat-ucretsiz-alternatif    /seo/rehberler/adobe-acrobat-ucretsiz-alternatif.html    200
-/rehberler/android-pdf-birlestirme              /seo/rehberler/android-pdf-birlestirme.html              200
-/rehberler/fatura-pdf-word-cevirme              /seo/rehberler/fatura-pdf-word-cevirme.html              200
-/rehberler/fotograftan-pdf-olusturma            /seo/rehberler/fotograftan-pdf-olusturma.html            200
-/rehberler/iphone-pdf-duzenleme                 /seo/rehberler/iphone-pdf-duzenleme.html                 200
-/rehberler/is-basvurusu-cv-pdf                  /seo/rehberler/is-basvurusu-cv-pdf.html                  200
-/rehberler/kvkk-uyumlu-pdf                      /seo/rehberler/kvkk-uyumlu-pdf.html                      200
-/rehberler/mac-pdf-kucultme                     /seo/rehberler/mac-pdf-kucultme.html                     200
-/rehberler/pdf-acilmiyor-cozum                  /seo/rehberler/pdf-acilmiyor-cozum.html                  200
-/rehberler/pdf-excel-donusturme                 /seo/rehberler/pdf-excel-donusturme.html                 200
-/rehberler/pdf-filigran-marka-koruma            /seo/rehberler/pdf-filigran-marka-koruma.html            200
-/rehberler/pdf-imza-atma-yazdirmadan            /seo/rehberler/pdf-imza-atma-yazdirmadan.html            200
-/rehberler/pdf-kucultme-rehberi                 /seo/rehberler/pdf-kucultme-rehberi.html                 200
-/rehberler/pdf-muzik-tabanli-mi-taranmis-mi     /seo/rehberler/pdf-muzik-tabanli-mi-taranmis-mi.html     200
-/rehberler/pdf-powerpoint-donusturme            /seo/rehberler/pdf-powerpoint-donusturme.html            200
-/rehberler/smallpdf-ilovepdf-karsilastirma      /seo/rehberler/smallpdf-ilovepdf-karsilastirma.html      200
-/rehberler/sozlesmeye-online-imza               /seo/rehberler/sozlesmeye-online-imza.html               200
-/rehberler/ucretsiz-pdf-sikistirma-araclari     /seo/rehberler/ucretsiz-pdf-sikistirma-araclari.html     200
-/rehberler/windows-pdf-birlestirme-programsiz   /seo/rehberler/windows-pdf-birlestirme-programsiz.html   200
-/rehberler/wordu-pdf-yapma                      /seo/rehberler/wordu-pdf-yapma.html                      200
-
-# ── 6. Eksik SEO alias'lar ────────────────────────────────────
-/pdf-basvuru-nedir/     /seo/pdf-basvuru-nedir/index.html               200
-/pdf-basvuru-nedir      /seo/pdf-basvuru-nedir/index.html               200
-/pdf-sayfa-numaralandirma/  /seo/pdf-sayfa-numaralandirma/index.html    200
-/pdf-sikistir-nasil-yapilir/  /seo/pdf-sikistir-nasil-yapilir/index.html  200
-/pdf-sikistir-nasil-yapilir   /seo/pdf-sikistir-nasil-yapilir/index.html  200
-
-# ── 8. /en/ sayfaları ─────────────────────────────────────────
-/en/                /en/index.html          200
 /en/index.html      /en/index.html          200
 /en/about           /en/about.html          200
 /en/contact         /en/contact.html        200
 /en/pricing         /en/pricing.html        200
 /en/faq             /en/faq.html            200
 /en/cookie-policy   /en/cookie-policy.html  200
-
-# ── 9. seo/tools/compress/* → pdf-sikistir yönlendir ─────────
 /seo/tools/compress           /seo/tools/pdf-sikistir/index.html   301
 /seo/tools/compress/          /seo/tools/pdf-sikistir/index.html   301
-/seo/tools/compress/*         /seo/tools/pdf-sikistir/:splat        301
-
-# ── 10. TR ana sayfa clean URL'leri ──────────────────────────
-/contact        /contact.html       200
-/faq            /faq.html           200
-/contact/       /contact.html       200
-/faq/           /faq.html           200
-
-# ── 11. Alias seo/tools klasörleri → canonical ───────────────
 /seo/tools/jpg-den-pdf           /seo/tools/jpg-to-pdf/index.html   301
 /seo/tools/jpg-den-pdf/          /seo/tools/jpg-to-pdf/index.html   301
-/seo/tools/jpg-den-pdf/*         /seo/tools/jpg-to-pdf/:splat        301
 /seo/tools/pdf-den-jpg           /seo/tools/pdf-to-jpg/index.html   301
 /seo/tools/pdf-den-jpg/          /seo/tools/pdf-to-jpg/index.html   301
-/seo/tools/pdf-den-jpg/*         /seo/tools/pdf-to-jpg/:splat        301
-
-# ── 12. Article alias redirects ─────────────────────────────
-
-# ── 13. Tool alias canonicalize ─────────────────────────────
 /pdf-sifrele/         /pdf-kilitle       301
 /pdf-editor/          /pdf-duzenle       301
-
-# ── 14. pdf-numaralandir → SEO sayfası ─────────────
 /pdf-sayfa-numaralandirma  /seo/pdf-sayfa-numaralandirma/  200
-/pdf-sayfa-numarala        /tools/pdf-sayfa-numarala.html  200
-
-# ── 15. CSS canonical ────────────────────────────────
 /styles.css   /style.css   301
-
-# ── Auth & Account ───────────────────────────────────────────
-/login               /login.html              200
-/register            /register.html           200
-/forgot-password     /forgot-password.html    200
-/reset-password      /reset-password.html     200
-/account             /account.html            200
-/account/            /account.html            200
 /account/verify      /account/verify.html     200
 /account/verify/     /account/verify.html     200
 /auth/verify         /account/verify.html     301
 /auth/verify/        /account/verify.html     301
 /billing/success     /billing/success.html    200
 /billing/cancel      /billing/cancel.html     200
-
-# ── Admin ────────────────────────────────────────────────────
 /admin/login         /admin/login.html        200
 /admin/login/        /admin/login.html        200
-/admin               /admin/index.html       200
-/admin/              /admin/index.html       200
-
-# ── Yeni Sayfalar (status, changelog, kurumsal, developers) ──
-/status              /status.html             200
-/status/             /status.html             200
-/changelog           /changelog.html          200
-/changelog/          /changelog.html          200
-/kurumsal            /kurumsal/index.html     200
-/developers          /developers/index.html   200
-
-# Yardım Merkezi
-/yardim              /yardim.html          200
-/yardim/             /yardim.html          200
 /help                /yardim.html          301
-
-# ── muhasebe SEO cluster ─────────────────────────────────────────────────────
-/muhasebe                                         /seo/muhasebe/index.html                                    200
-/muhasebe/                                        /seo/muhasebe/index.html                                    200
-/muhasebe/muhasebeci-pdf-programi                 /seo/muhasebe/muhasebeci-pdf-programi/index.html            200
-/muhasebe/muhasebeci-pdf-programi/                /seo/muhasebe/muhasebeci-pdf-programi/index.html            200
-/muhasebe/musteri-belgesi-pdf-gonderimi           /seo/muhasebe/musteri-belgesi-pdf-gonderimi/index.html      200
-/muhasebe/musteri-belgesi-pdf-gonderimi/          /seo/muhasebe/musteri-belgesi-pdf-gonderimi/index.html      200
-/muhasebe/sgk-belgesi-pdf                         /seo/muhasebe/sgk-belgesi-pdf/index.html                    200
-/muhasebe/sgk-belgesi-pdf/                        /seo/muhasebe/sgk-belgesi-pdf/index.html                    200
-/muhasebe/yil-sonu-arsiv-pdf                      /seo/muhasebe/yil-sonu-arsiv-pdf/index.html                 200
-/muhasebe/yil-sonu-arsiv-pdf/                     /seo/muhasebe/yil-sonu-arsiv-pdf/index.html                 200
-
-# ── Devlet PDF Limitleri ────────────────────────────────────────────────────
-/devlet-pdf-limitleri                /devlet-pdf-limitleri/index.html      200
-/devlet-pdf-limitleri/               /devlet-pdf-limitleri/index.html      200
-
-# ── Sezonluk içerik ─────────────────────────────────────────────────────────
-/sezon/kyk-basvuru-pdf-hazirlik      /sezon/kyk-basvuru-pdf-hazirlik/index.html  200
-/sezon/kyk-basvuru-pdf-hazirlik/     /sezon/kyk-basvuru-pdf-hazirlik/index.html  200
-/sezon/vergi-beyanname-pdf           /sezon/vergi-beyanname-pdf/index.html        200
-/sezon/vergi-beyanname-pdf/          /sezon/vergi-beyanname-pdf/index.html        200
-/sezon/staj-basvuru-pdf              /sezon/staj-basvuru-pdf/index.html           200
-/sezon/staj-basvuru-pdf/             /sezon/staj-basvuru-pdf/index.html           200
-
-# ── Pricing kurumsal ─────────────────────────────────────────────────────────
 /pricing/kurumsal                    /pricing/kurumsal.html                 200
 /pricing/muhasebe                    /pricing/kurumsal.html                 301
-# ── e-Fatura SEO cluster ────────────────────────────────────────
-/e-fatura                                           /seo/e-fatura/index.html                                              200
-/e-fatura/                                          /seo/e-fatura/index.html                                              200
-/e-fatura/e-fatura-pdf-kucultme                     /seo/e-fatura/e-fatura-pdf-kucultme/index.html                        200
-/e-fatura/e-fatura-pdf-kucultme/                    /seo/e-fatura/e-fatura-pdf-kucultme/index.html                        200
-/e-fatura/e-arsiv-fatura-pdf-birlestirme            /seo/e-fatura/e-arsiv-fatura-pdf-birlestirme/index.html               200
-/e-fatura/e-arsiv-fatura-pdf-birlestirme/           /seo/e-fatura/e-arsiv-fatura-pdf-birlestirme/index.html               200
-/e-fatura/e-fatura-pdf-2mb-altina                   /seo/e-fatura/e-fatura-pdf-2mb-altina/index.html                      200
-/e-fatura/e-fatura-pdf-2mb-altina/                  /seo/e-fatura/e-fatura-pdf-2mb-altina/index.html                      200
-/e-fatura/e-arsiv-fatura-boyutu-kucultme            /seo/e-fatura/e-arsiv-fatura-boyutu-kucultme/index.html               200
-/e-fatura/e-arsiv-fatura-boyutu-kucultme/           /seo/e-fatura/e-arsiv-fatura-boyutu-kucultme/index.html               200
-/e-fatura/gib-portal-pdf-yukleme-hatasi             /seo/e-fatura/gib-portal-pdf-yukleme-hatasi/index.html                200
-/e-fatura/gib-portal-pdf-yukleme-hatasi/            /seo/e-fatura/gib-portal-pdf-yukleme-hatasi/index.html                200
-/e-fatura/muhasebe-fatura-pdf-arsivleme             /seo/e-fatura/muhasebe-fatura-pdf-arsivleme/index.html                200
-/e-fatura/muhasebe-fatura-pdf-arsivleme/            /seo/e-fatura/muhasebe-fatura-pdf-arsivleme/index.html                200
-/e-fatura/e-fatura-pdf-imzalama                     /seo/e-fatura/e-fatura-pdf-imzalama/index.html                        200
-/e-fatura/e-fatura-pdf-imzalama/                    /seo/e-fatura/e-fatura-pdf-imzalama/index.html                        200
-/e-fatura/e-fatura-pdf-donusturme                   /seo/e-fatura/e-fatura-pdf-donusturme/index.html                      200
-/e-fatura/e-fatura-pdf-donusturme/                  /seo/e-fatura/e-fatura-pdf-donusturme/index.html                      200
-# Legal sayfalar clean URL
 /legal/privacy      /legal/privacy.html     200
 /legal/terms        /legal/terms.html       200
 /legal/kvkk         /legal/kvkk.html        200
@@ -317,504 +186,19 @@
 /legal/security     /legal/security.html    200
 /legal/refund       /legal/refund.html      200
 /legal/dpa          /legal/dpa.html         200
-
-# PNG → PDF redirect
 /png-to-pdf    /jpg-to-pdf    301
 /png-pdf       /jpg-to-pdf    301
 /pdf-to-png    /pdf-to-jpg    301
-
-# Office → PDF araçları
-/word-to-pdf    /tools/word-to-pdf.html    200
-/word-to-pdf/   /tools/word-to-pdf.html    200
-/excel-to-pdf    /tools/excel-to-pdf.html    200
-/excel-to-pdf/   /tools/excel-to-pdf.html    200
-/ppt-to-pdf    /tools/ppt-to-pdf.html    200
-/ppt-to-pdf/   /tools/ppt-to-pdf.html    200
-
-# SEO landing sayfaları
-/pdf-kucultme/                                /seo/tools/pdf-sikistir/index.html                      200
 /pdf-boyutu-kucultme                          /seo/tools/pdf-sikistir/index.html                      301
 /pdf-sikistirma                               /seo/tools/pdf-sikistir/index.html                      301
 /pdf-compress                                 /pdf-sikistir                                           301
 /smallpdf-alternatifi                         /seo/karsilastirma/smallpdf-ilovepdf-pdfplatform.html   200
 /ilovepdf-alternatifi                         /seo/karsilastirma/smallpdf-ilovepdf-pdfplatform.html   301
-
-# == BROKEN LINK FIXES (auto-generated) ==
-/cozum/jpg-pdf-yapma   /seo/cozum/jpg-pdf-yapma/index.html   200
-/cozum/jpg-pdf-yapma/   /seo/cozum/jpg-pdf-yapma/index.html   200
-/cozum/pdf-birlestirme-adim-adim   /seo/cozum/pdf-birlestirme-adim-adim/index.html   200
-/cozum/pdf-birlestirme-adim-adim/   /seo/cozum/pdf-birlestirme-adim-adim/index.html   200
-/cozum/pdf-bozuk-dosya   /seo/cozum/pdf-bozuk-dosya/index.html   200
-/cozum/pdf-bozuk-dosya/   /seo/cozum/pdf-bozuk-dosya/index.html   200
-/cozum/pdf-format-hatasi   /seo/cozum/pdf-format-hatasi/index.html   200
-/cozum/pdf-format-hatasi/   /seo/cozum/pdf-format-hatasi/index.html   200
-/cozum/pdf-jpg-donusturme   /seo/cozum/pdf-jpg-donusturme/index.html   200
-/cozum/pdf-jpg-donusturme/   /seo/cozum/pdf-jpg-donusturme/index.html   200
-/cozum/pdf-kilit-acma   /seo/cozum/pdf-kilit-acma/index.html   200
-/cozum/pdf-kilit-acma/   /seo/cozum/pdf-kilit-acma/index.html   200
-/cozum/pdf-koruma-ekleme   /seo/cozum/pdf-koruma-ekleme/index.html   200
-/cozum/pdf-koruma-ekleme/   /seo/cozum/pdf-koruma-ekleme/index.html   200
-/cozum/pdf-ocr-metin-cikarma   /seo/cozum/pdf-ocr-metin-cikarma/index.html   200
-/cozum/pdf-ocr-metin-cikarma/   /seo/cozum/pdf-ocr-metin-cikarma/index.html   200
-/cozum/pdf-okunmuyor   /seo/cozum/pdf-okunmuyor/index.html   200
-/cozum/pdf-okunmuyor/   /seo/cozum/pdf-okunmuyor/index.html   200
-/cozum/pdf-sayfa-silme   /seo/cozum/pdf-sayfa-silme/index.html   200
-/cozum/pdf-sayfa-silme/   /seo/cozum/pdf-sayfa-silme/index.html   200
-/cozum/pdf-sayfa-siralama   /seo/cozum/pdf-sayfa-siralama/index.html   200
-/cozum/pdf-sayfa-siralama/   /seo/cozum/pdf-sayfa-siralama/index.html   200
-/cozum/pdf-sifreleme   /seo/cozum/pdf-sifreleme/index.html   200
-/cozum/pdf-sifreleme/   /seo/cozum/pdf-sifreleme/index.html   200
-/cozum/pdf-sikistirma-etkili   /seo/cozum/pdf-sikistirma-etkili/index.html   200
-/cozum/pdf-sikistirma-etkili/   /seo/cozum/pdf-sikistirma-etkili/index.html   200
-/cozum/sifreli-pdf   /seo/cozum/sifreli-pdf/index.html   200
-/cozum/sifreli-pdf/   /seo/cozum/sifreli-pdf/index.html   200
-/cozum/tarama-pdf-netlestirme   /seo/cozum/tarama-pdf-netlestirme/index.html   200
-/cozum/tarama-pdf-netlestirme/   /seo/cozum/tarama-pdf-netlestirme/index.html   200
-/limit/10-mb-pdf-siniri   /seo/limit/10-mb-pdf-siniri/index.html   200
-/limit/10-mb-pdf-siniri/   /seo/limit/10-mb-pdf-siniri/index.html   200
-/limit/2-mb-pdf-siniri   /seo/limit/2-mb-pdf-siniri/index.html   200
-/limit/2-mb-pdf-siniri/   /seo/limit/2-mb-pdf-siniri/index.html   200
-/limit/5-mb-pdf-siniri   /seo/limit/5-mb-pdf-siniri/index.html   200
-/limit/5-mb-pdf-siniri/   /seo/limit/5-mb-pdf-siniri/index.html   200
-/limit/500kb-pdf-yapma   /seo/limit/500kb-pdf-yapma/index.html   200
-/limit/500kb-pdf-yapma/   /seo/limit/500kb-pdf-yapma/index.html   200
-/limit/dosya-boyutu-olcme   /seo/limit/dosya-boyutu-olcme/index.html   200
-/limit/dosya-boyutu-olcme/   /seo/limit/dosya-boyutu-olcme/index.html   200
-/limit/e-posta-pdf-boyut-limiti   /seo/limit/e-posta-pdf-boyut-limiti/index.html   200
-/limit/e-posta-pdf-boyut-limiti/   /seo/limit/e-posta-pdf-boyut-limiti/index.html   200
-/limit/pdf-2mb-altina   /seo/limit/pdf-2mb-altina/index.html   200
-/limit/pdf-2mb-altina/   /seo/limit/pdf-2mb-altina/index.html   200
-/limit/pdf-5mb-altina   /seo/limit/pdf-5mb-altina/index.html   200
-/limit/pdf-5mb-altina/   /seo/limit/pdf-5mb-altina/index.html   200
-/limit/pdf-boyut-neden-buyuk   /seo/limit/pdf-boyut-neden-buyuk/index.html   200
-/limit/pdf-boyut-neden-buyuk/   /seo/limit/pdf-boyut-neden-buyuk/index.html   200
-/limit/pdf-boyut-siniri-tablosu   /seo/limit/pdf-boyut-siniri-tablosu/index.html   200
-/limit/pdf-boyut-siniri-tablosu/   /seo/limit/pdf-boyut-siniri-tablosu/index.html   200
-/limit/pdf-dosya-boyutu-nasil-azaltilir   /seo/limit/pdf-dosya-boyutu-nasil-azaltilir/index.html   200
-/limit/pdf-dosya-boyutu-nasil-azaltilir/   /seo/limit/pdf-dosya-boyutu-nasil-azaltilir/index.html   200
-/limit/pdf-sikistirinca-kalite-duser-mi   /seo/limit/pdf-sikistirinca-kalite-duser-mi/index.html   200
-/limit/pdf-sikistirinca-kalite-duser-mi/   /seo/limit/pdf-sikistirinca-kalite-duser-mi/index.html   200
-/limit/pdf-yukleme-limit-sorunu   /seo/limit/pdf-yukleme-limit-sorunu/index.html   200
-/limit/pdf-yukleme-limit-sorunu/   /seo/limit/pdf-yukleme-limit-sorunu/index.html   200
-/limit/tarama-pdf-boyutu-nasil-dusurulur   /seo/limit/tarama-pdf-boyutu-nasil-dusurulur/index.html   200
-/limit/tarama-pdf-boyutu-nasil-dusurulur/   /seo/limit/tarama-pdf-boyutu-nasil-dusurulur/index.html   200
-/limit/whatsapp-pdf-boyut-limiti   /seo/limit/whatsapp-pdf-boyut-limiti/index.html   200
-/limit/whatsapp-pdf-boyut-limiti/   /seo/limit/whatsapp-pdf-boyut-limiti/index.html   200
-/limit/yuksek-kaliteli-pdf-kucultme   /seo/limit/yuksek-kaliteli-pdf-kucultme/index.html   200
-/limit/yuksek-kaliteli-pdf-kucultme/   /seo/limit/yuksek-kaliteli-pdf-kucultme/index.html   200
-/mobil/android-pdf-duzenleme   /seo/mobil/android-pdf-duzenleme/index.html   200
-/mobil/android-pdf-duzenleme/   /seo/mobil/android-pdf-duzenleme/index.html   200
-/mobil/android-pdf-kucultme   /seo/mobil/android-pdf-kucultme/index.html   200
-/mobil/android-pdf-kucultme/   /seo/mobil/android-pdf-kucultme/index.html   200
-/mobil/fotograftan-pdf-yapma-boyut-dusurme   /seo/mobil/fotograftan-pdf-yapma-boyut-dusurme/index.html   200
-/mobil/fotograftan-pdf-yapma-boyut-dusurme/   /seo/mobil/fotograftan-pdf-yapma-boyut-dusurme/index.html   200
-/mobil/ipad-pdf-duzenleme   /seo/mobil/ipad-pdf-duzenleme/index.html   200
-/mobil/ipad-pdf-duzenleme/   /seo/mobil/ipad-pdf-duzenleme/index.html   200
-/mobil/iphone-pdf-boyut-azaltma   /seo/mobil/iphone-pdf-boyut-azaltma/index.html   200
-/mobil/iphone-pdf-boyut-azaltma/   /seo/mobil/iphone-pdf-boyut-azaltma/index.html   200
-/mobil/mobilde-pdf-imzalama   /seo/mobil/mobilde-pdf-imzalama/index.html   200
-/mobil/mobilde-pdf-imzalama/   /seo/mobil/mobilde-pdf-imzalama/index.html   200
-/mobil/mobilde-pdf-okuma-ipuclari   /seo/mobil/mobilde-pdf-okuma-ipuclari/index.html   200
-/mobil/mobilde-pdf-okuma-ipuclari/   /seo/mobil/mobilde-pdf-okuma-ipuclari/index.html   200
-/mobil/mobilde-pdf-sayfa-silme   /seo/mobil/mobilde-pdf-sayfa-silme/index.html   200
-/mobil/mobilde-pdf-sayfa-silme/   /seo/mobil/mobilde-pdf-sayfa-silme/index.html   200
-/mobil/tablette-pdf-birlestirme   /seo/mobil/tablette-pdf-birlestirme/index.html   200
-/mobil/tablette-pdf-birlestirme/   /seo/mobil/tablette-pdf-birlestirme/index.html   200
-/mobil/telefonla-pdf-birlestirme   /seo/mobil/telefonla-pdf-birlestirme/index.html   200
-/mobil/telefonla-pdf-birlestirme/   /seo/mobil/telefonla-pdf-birlestirme/index.html   200
-/mobil/telefonla-pdf-boyutu-kucultme   /seo/mobil/telefonla-pdf-boyutu-kucultme/index.html   200
-/mobil/telefonla-pdf-boyutu-kucultme/   /seo/mobil/telefonla-pdf-boyutu-kucultme/index.html   200
-/mobil/telefonla-pdf-kesfet   /seo/mobil/telefonla-pdf-kesfet/index.html   200
-/mobil/telefonla-pdf-kesfet/   /seo/mobil/telefonla-pdf-kesfet/index.html   200
-/mobil/telefonla-pdf-kilit-acma   /seo/mobil/telefonla-pdf-kilit-acma/index.html   200
-/mobil/telefonla-pdf-kilit-acma/   /seo/mobil/telefonla-pdf-kilit-acma/index.html   200
-/mobil/whatsapp-pdf-kucultme   /seo/mobil/whatsapp-pdf-kucultme/index.html   200
-/mobil/whatsapp-pdf-kucultme/   /seo/mobil/whatsapp-pdf-kucultme/index.html   200
-/ogrenci/ales-basvurusu-pdf   /seo/ogrenci/ales-basvurusu-pdf/index.html   200
-/ogrenci/ales-basvurusu-pdf/   /seo/ogrenci/ales-basvurusu-pdf/index.html   200
-/ogrenci/burs-basvurusu-pdf   /seo/ogrenci/burs-basvurusu-pdf/index.html   200
-/ogrenci/burs-basvurusu-pdf/   /seo/ogrenci/burs-basvurusu-pdf/index.html   200
-/ogrenci/diploma-pdf-kucultme   /seo/ogrenci/diploma-pdf-kucultme/index.html   200
-/ogrenci/diploma-pdf-kucultme/   /seo/ogrenci/diploma-pdf-kucultme/index.html   200
-/ogrenci/erasmus-basvurusu-pdf   /seo/ogrenci/erasmus-basvurusu-pdf/index.html   200
-/ogrenci/erasmus-basvurusu-pdf/   /seo/ogrenci/erasmus-basvurusu-pdf/index.html   200
-/ogrenci/kyk-basvurusu-pdf-2mb-altina   /seo/ogrenci/kyk-basvurusu-pdf-2mb-altina/index.html   200
-/ogrenci/kyk-basvurusu-pdf-2mb-altina/   /seo/ogrenci/kyk-basvurusu-pdf-2mb-altina/index.html   200
-/ogrenci/kyk-pdf-format-hatasi   /seo/ogrenci/kyk-pdf-format-hatasi/index.html   200
-/ogrenci/kyk-pdf-format-hatasi/   /seo/ogrenci/kyk-pdf-format-hatasi/index.html   200
-/ogrenci/mezuniyet-belgesi-pdf   /seo/ogrenci/mezuniyet-belgesi-pdf/index.html   200
-/ogrenci/mezuniyet-belgesi-pdf/   /seo/ogrenci/mezuniyet-belgesi-pdf/index.html   200
-/ogrenci/staj-basvurusu-pdf   /seo/ogrenci/staj-basvurusu-pdf/index.html   200
-/ogrenci/staj-basvurusu-pdf/   /seo/ogrenci/staj-basvurusu-pdf/index.html   200
-/ogrenci/transkript-pdf-birlestirme   /seo/ogrenci/transkript-pdf-birlestirme/index.html   200
-/ogrenci/transkript-pdf-birlestirme/   /seo/ogrenci/transkript-pdf-birlestirme/index.html   200
-/ogrenci/transkript-pdf-sikistirma   /seo/ogrenci/transkript-pdf-sikistirma/index.html   200
-/ogrenci/transkript-pdf-sikistirma/   /seo/ogrenci/transkript-pdf-sikistirma/index.html   200
-/ogrenci/universite-basvuru-pdf-yukleme-hatasi   /seo/ogrenci/universite-basvuru-pdf-yukleme-hatasi/index.html   200
-/ogrenci/universite-basvuru-pdf-yukleme-hatasi/   /seo/ogrenci/universite-basvuru-pdf-yukleme-hatasi/index.html   200
-/ogrenci/universite-kayit-pdf-boyutu   /seo/ogrenci/universite-kayit-pdf-boyutu/index.html   200
-/ogrenci/universite-kayit-pdf-boyutu/   /seo/ogrenci/universite-kayit-pdf-boyutu/index.html   200
-/ogrenci/yatay-gecis-pdf   /seo/ogrenci/yatay-gecis-pdf/index.html   200
-/ogrenci/yatay-gecis-pdf/   /seo/ogrenci/yatay-gecis-pdf/index.html   200
-/resmi-basvuru/cv-ve-diploma-pdf-tek-dosya-yapma   /seo/resmi-basvuru/cv-ve-diploma-pdf-tek-dosya-yapma/index.html   200
-/resmi-basvuru/cv-ve-diploma-pdf-tek-dosya-yapma/   /seo/resmi-basvuru/cv-ve-diploma-pdf-tek-dosya-yapma/index.html   200
-/resmi-basvuru/dilekce-pdf   /seo/resmi-basvuru/dilekce-pdf/index.html   200
-/resmi-basvuru/dilekce-pdf/   /seo/resmi-basvuru/dilekce-pdf/index.html   200
-/resmi-basvuru/e-devlet-pdf-boyutu-buyuk-hatasi   /seo/resmi-basvuru/e-devlet-pdf-boyutu-buyuk-hatasi/index.html   200
-/resmi-basvuru/e-devlet-pdf-boyutu-buyuk-hatasi/   /seo/resmi-basvuru/e-devlet-pdf-boyutu-buyuk-hatasi/index.html   200
-/resmi-basvuru/e-devlet-pdf-format-hatasi   /seo/resmi-basvuru/e-devlet-pdf-format-hatasi/index.html   200
-/resmi-basvuru/e-devlet-pdf-format-hatasi/   /seo/resmi-basvuru/e-devlet-pdf-format-hatasi/index.html   200
-/resmi-basvuru/e-devlet-pdf-okunmuyor   /seo/resmi-basvuru/e-devlet-pdf-okunmuyor/index.html   200
-/resmi-basvuru/e-devlet-pdf-okunmuyor/   /seo/resmi-basvuru/e-devlet-pdf-okunmuyor/index.html   200
-/resmi-basvuru/e-devlet-pdf-yuklemiyor   /seo/resmi-basvuru/e-devlet-pdf-yuklemiyor/index.html   200
-/resmi-basvuru/e-devlet-pdf-yuklemiyor/   /seo/resmi-basvuru/e-devlet-pdf-yuklemiyor/index.html   200
-/resmi-basvuru/e-devlet-sifreli-pdf-yukleme   /seo/resmi-basvuru/e-devlet-sifreli-pdf-yukleme/index.html   200
-/resmi-basvuru/e-devlet-sifreli-pdf-yukleme/   /seo/resmi-basvuru/e-devlet-sifreli-pdf-yukleme/index.html   200
-/resmi-basvuru/e-imza-pdf   /seo/resmi-basvuru/e-imza-pdf/index.html   200
-/resmi-basvuru/e-imza-pdf/   /seo/resmi-basvuru/e-imza-pdf/index.html   200
-/resmi-basvuru/ehliyet-yenileme-pdf   /seo/resmi-basvuru/ehliyet-yenileme-pdf/index.html   200
-/resmi-basvuru/ehliyet-yenileme-pdf/   /seo/resmi-basvuru/ehliyet-yenileme-pdf/index.html   200
-/resmi-basvuru/emeklilik-basvuru-pdf   /seo/resmi-basvuru/emeklilik-basvuru-pdf/index.html   200
-/resmi-basvuru/emeklilik-basvuru-pdf/   /seo/resmi-basvuru/emeklilik-basvuru-pdf/index.html   200
-/resmi-basvuru/ikametgah-belgesi-pdf   /seo/resmi-basvuru/ikametgah-belgesi-pdf/index.html   200
-/resmi-basvuru/ikametgah-belgesi-pdf/   /seo/resmi-basvuru/ikametgah-belgesi-pdf/index.html   200
-/resmi-basvuru/is-basvurusu-pdf   /seo/resmi-basvuru/is-basvurusu-pdf/index.html   200
-/resmi-basvuru/is-basvurusu-pdf/   /seo/resmi-basvuru/is-basvurusu-pdf/index.html   200
-/resmi-basvuru/iskur-pdf-yuklemiyor-cozumu   /seo/resmi-basvuru/iskur-pdf-yuklemiyor-cozumu/index.html   200
-/resmi-basvuru/iskur-pdf-yuklemiyor-cozumu/   /seo/resmi-basvuru/iskur-pdf-yuklemiyor-cozumu/index.html   200
-/resmi-basvuru/nufus-cuzdani-fotokopisi-pdf   /seo/resmi-basvuru/nufus-cuzdani-fotokopisi-pdf/index.html   200
-/resmi-basvuru/nufus-cuzdani-fotokopisi-pdf/   /seo/resmi-basvuru/nufus-cuzdani-fotokopisi-pdf/index.html   200
-/resmi-basvuru/pasaport-basvurusu-pdf-boyutu   /seo/resmi-basvuru/pasaport-basvurusu-pdf-boyutu/index.html   200
-/resmi-basvuru/pasaport-basvurusu-pdf-boyutu/   /seo/resmi-basvuru/pasaport-basvurusu-pdf-boyutu/index.html   200
-/resmi-basvuru/saglik-raporu-pdf   /seo/resmi-basvuru/saglik-raporu-pdf/index.html   200
-/resmi-basvuru/saglik-raporu-pdf/   /seo/resmi-basvuru/saglik-raporu-pdf/index.html   200
-/resmi-basvuru/veraset-ilmuhaberi-pdf   /seo/resmi-basvuru/veraset-ilmuhaberi-pdf/index.html   200
-/resmi-basvuru/veraset-ilmuhaberi-pdf/   /seo/resmi-basvuru/veraset-ilmuhaberi-pdf/index.html   200
-/resmi-basvuru/vergi-dairesi-dilekce-pdf   /seo/resmi-basvuru/vergi-dairesi-dilekce-pdf/index.html   200
-/resmi-basvuru/vergi-dairesi-dilekce-pdf/   /seo/resmi-basvuru/vergi-dairesi-dilekce-pdf/index.html   200
-/resmi-basvuru/vize-basvurusu-pdf   /seo/resmi-basvuru/vize-basvurusu-pdf/index.html   200
-/resmi-basvuru/vize-basvurusu-pdf/   /seo/resmi-basvuru/vize-basvurusu-pdf/index.html   200
-
-# ── v48: Broken link fixes ──────────────────────────────────────
-
-# == New authority articles ==
 /articles/pdf-boyutu-neden-buyuk        /articles/pdf-boyutu-neden-buyuk.html        200
 /articles/e-devlet-pdf-hatalari-cozum   /articles/e-devlet-pdf-hatalari-cozum.html   200
 /articles/tarayicide-pdf-isleme-teknoloji /articles/tarayicide-pdf-isleme-teknoloji.html 200
 /articles/ocr-nasil-calisir-turkce-rehber /articles/ocr-nasil-calisir-turkce-rehber.html 200
 /articles/pdf-guvenligi-rehberi          /articles/pdf-guvenligi-rehberi.html          200
-
-# ── Blog → Articles/Rehberler 301 redirects (frontend/blog legacy) ──
 /blog/adobe-acrobat-ucretsiz-alternatif.html   /seo/rehberler/adobe-acrobat-ucretsiz-alternatif.html   301
 /blog/android-pdf-birlestirme.html             /seo/rehberler/android-pdf-birlestirme.html             301
 /blog/chromebook-pdf-donusturme.html           /articles/pdf-to-word-donusturme.html                   301
-/blog/fatura-pdf-word-cevirme.html             /seo/rehberler/fatura-pdf-word-cevirme.html             301
-/blog/fotograftan-pdf-olusturma.html           /seo/rehberler/fotograftan-pdf-olusturma.html           301
-/blog/iphone-pdf-duzenleme.html                /seo/rehberler/iphone-pdf-duzenleme.html                301
-/blog/is-basvurusu-cv-pdf.html                 /seo/rehberler/is-basvurusu-cv-pdf.html                 301
-/blog/mac-pdf-kucultme.html                    /seo/rehberler/mac-pdf-kucultme.html                    301
-/blog/ocr-turkce-karakter-sorunu.html          /seo/tools/ocr/problemler/ocr-turkce-karakter-tanimiyor.html   301
-/blog/ocr-turkce-pdf-metin.html                /articles/ocr-metin-tanima.html                         301
-/blog/pdf-acilamiyor-cozum.html                /seo/rehberler/pdf-acilmiyor-cozum.html                 301
-/blog/pdf-boyutu-kuculmüyor.html               /seo/limit/pdf-boyut-neden-buyuk/index.html             301
-/blog/pdf-excel-donusturme.html                /seo/rehberler/pdf-excel-donusturme.html                301
-/blog/pdf-imza-atma-yazdirmadan.html           /seo/rehberler/pdf-imza-atma-yazdirmadan.html           301
-/blog/pdf-musteri-gonderme-guvenlik.html       /articles/pdf-guvenligi-rehberi.html                    301
-/blog/pdf-powerpoint-donusturme.html           /seo/rehberler/pdf-powerpoint-donusturme.html           301
-/blog/pdf-sayfa-silme-siralama.html            /articles/pdf-sayfa-silme-online.html                   301
-/blog/pdf-sifre-koyma.html                     /articles/pdf-sifreleme.html                            301
-/blog/pdf-sikistirma-nasil.html                /articles/pdf-sikistirma.html                           301
-/blog/pdf-word-bozuluyor.html                  /seo/tools/pdf-to-word/problemler/pdf-word-cevirince-bozuluyor.html   301
-/blog/sifreli-pdf-acma.html                    /articles/sifreli-pdf-acma.html                         301
-/blog/sifreli-pdf-sifre-unuttum.html           /seo/tools/pdf-kilit-ac/problemler/pdf-sifre-unuttum.html   301
-/blog/smallpdf-ilovepdf-karsilastirma.html     /seo/rehberler/smallpdf-ilovepdf-karsilastirma.html     301
-/blog/taranmis-pdf-duzenleme-ocr.html          /articles/ocr-metin-tanima.html                         301
-/blog/telefon-pdf-word-yapma.html              /articles/telefonda-word-pdf-yapma.html                 301
-/blog/toplu-pdf-birlestirme.html               /seo/tools/pdf-birlestir/problemler/toplu-pdf-birlestirme.html   301
-/blog/ucretsiz-pdf-sikistirma-araclari.html    /seo/rehberler/ucretsiz-pdf-sikistirma-araclari.html    301
-/blog/windows-pdf-birlestirme-programsiz.html  /seo/rehberler/windows-pdf-birlestirme-programsiz.html  301
-/blog/index.html                               /articles/                                               301
-/blog/                                         /articles/                                               301
-/blog                                          /articles/                                               301
-
-# ── EN tool clean URLs ─────────────────────────────────────────────────────
-/en/merge-pdf    /en/tools/merge-pdf.html    200
-/en/merge-pdf/   /en/merge-pdf               301
-/en/split-pdf    /en/tools/split-pdf.html    200
-/en/split-pdf/   /en/split-pdf               301
-/en/compress-pdf    /en/tools/compress-pdf.html    200
-/en/compress-pdf/   /en/compress-pdf               301
-/en/pdf-to-word    /en/tools/pdf-to-word.html    200
-/en/pdf-to-word/   /en/pdf-to-word               301
-/en/ocr-pdf    /en/tools/ocr-pdf.html    200
-/en/ocr-pdf/   /en/ocr-pdf               301
-/en/jpg-to-pdf    /en/tools/jpg-to-pdf.html    200
-/en/jpg-to-pdf/   /en/jpg-to-pdf               301
-/en/pdf-to-jpg    /en/tools/pdf-to-jpg.html    200
-/en/pdf-to-jpg/   /en/pdf-to-jpg               301
-/en/rotate-pdf    /en/tools/rotate-pdf.html    200
-/en/rotate-pdf/   /en/rotate-pdf               301
-/en/delete-pdf-pages    /en/tools/delete-pdf-pages.html    200
-/en/delete-pdf-pages/   /en/delete-pdf-pages               301
-/en/reorder-pdf-pages    /en/tools/reorder-pdf-pages.html    200
-/en/reorder-pdf-pages/   /en/reorder-pdf-pages               301
-/en/lock-pdf    /en/tools/lock-pdf.html    200
-/en/lock-pdf/   /en/lock-pdf               301
-/en/unlock-pdf    /en/tools/unlock-pdf.html    200
-/en/unlock-pdf/   /en/unlock-pdf               301
-/en/sign-pdf    /en/tools/sign-pdf.html    200
-/en/sign-pdf/   /en/sign-pdf               301
-/en/edit-pdf    /en/tools/edit-pdf.html    200
-/en/edit-pdf/   /en/edit-pdf               301
-/en/watermark-pdf    /en/tools/watermark-pdf.html    200
-/en/watermark-pdf/   /en/watermark-pdf               301
-/en/add-qr-code-pdf    /en/tools/add-qr-code-pdf.html    200
-/en/add-qr-code-pdf/   /en/add-qr-code-pdf               301
-/en/edit-pdf-metadata    /en/tools/edit-pdf-metadata.html    200
-/en/edit-pdf-metadata/   /en/edit-pdf-metadata               301
-/en/crop-pdf    /en/tools/crop-pdf.html    200
-/en/crop-pdf/   /en/crop-pdf               301
-/en/pdf-background    /en/tools/pdf-background.html    200
-/en/pdf-background/   /en/pdf-background               301
-/en/duplicate-pdf-pages    /en/tools/duplicate-pdf-pages.html    200
-/en/duplicate-pdf-pages/   /en/duplicate-pdf-pages               301
-/en/extract-pdf-pages    /en/tools/extract-pdf-pages.html    200
-/en/extract-pdf-pages/   /en/extract-pdf-pages               301
-/en/number-pdf-pages    /en/tools/number-pdf-pages.html    200
-/en/number-pdf-pages/   /en/number-pdf-pages               301
-/en/word-to-pdf    /en/tools/word-to-pdf.html    200
-/en/word-to-pdf/   /en/word-to-pdf               301
-/en/excel-to-pdf    /en/tools/excel-to-pdf.html    200
-/en/excel-to-pdf/   /en/excel-to-pdf               301
-/en/ppt-to-pdf    /en/tools/ppt-to-pdf.html    200
-/en/ppt-to-pdf/   /en/ppt-to-pdf               301
-
-# ── DE / FR / ES tool clean URLs ────────────────────────
-/de/merge-pdf    /de/merge-pdf.html    200
-/de/merge-pdf/   /de/merge-pdf         301
-/de/split-pdf    /de/split-pdf.html    200
-/de/split-pdf/   /de/split-pdf         301
-/de/compress-pdf    /de/compress-pdf.html    200
-/de/compress-pdf/   /de/compress-pdf         301
-/de/pdf-to-word    /de/pdf-to-word.html    200
-/de/pdf-to-word/   /de/pdf-to-word         301
-/de/ocr-pdf    /de/ocr-pdf.html    200
-/de/ocr-pdf/   /de/ocr-pdf         301
-/de/jpg-to-pdf    /de/jpg-to-pdf.html    200
-/de/jpg-to-pdf/   /de/jpg-to-pdf         301
-/de/pdf-to-jpg    /de/pdf-to-jpg.html    200
-/de/pdf-to-jpg/   /de/pdf-to-jpg         301
-/de/rotate-pdf    /de/rotate-pdf.html    200
-/de/rotate-pdf/   /de/rotate-pdf         301
-/de/delete-pdf-pages    /de/delete-pdf-pages.html    200
-/de/delete-pdf-pages/   /de/delete-pdf-pages         301
-/de/reorder-pdf-pages    /de/reorder-pdf-pages.html    200
-/de/reorder-pdf-pages/   /de/reorder-pdf-pages         301
-/de/lock-pdf    /de/lock-pdf.html    200
-/de/lock-pdf/   /de/lock-pdf         301
-/de/unlock-pdf    /de/unlock-pdf.html    200
-/de/unlock-pdf/   /de/unlock-pdf         301
-/de/sign-pdf    /de/sign-pdf.html    200
-/de/sign-pdf/   /de/sign-pdf         301
-/de/edit-pdf    /de/edit-pdf.html    200
-/de/edit-pdf/   /de/edit-pdf         301
-/de/watermark-pdf    /de/watermark-pdf.html    200
-/de/watermark-pdf/   /de/watermark-pdf         301
-/de/add-qr-code-pdf    /de/add-qr-code-pdf.html    200
-/de/add-qr-code-pdf/   /de/add-qr-code-pdf         301
-/de/edit-pdf-metadata    /de/edit-pdf-metadata.html    200
-/de/edit-pdf-metadata/   /de/edit-pdf-metadata         301
-/de/crop-pdf    /de/crop-pdf.html    200
-/de/crop-pdf/   /de/crop-pdf         301
-/de/pdf-background    /de/pdf-background.html    200
-/de/pdf-background/   /de/pdf-background         301
-/de/duplicate-pdf-pages    /de/duplicate-pdf-pages.html    200
-/de/duplicate-pdf-pages/   /de/duplicate-pdf-pages         301
-/de/extract-pdf-pages    /de/extract-pdf-pages.html    200
-/de/extract-pdf-pages/   /de/extract-pdf-pages         301
-/de/number-pdf-pages    /de/number-pdf-pages.html    200
-/de/number-pdf-pages/   /de/number-pdf-pages         301
-/de/word-to-pdf    /de/word-to-pdf.html    200
-/de/word-to-pdf/   /de/word-to-pdf         301
-/de/excel-to-pdf    /de/excel-to-pdf.html    200
-/de/excel-to-pdf/   /de/excel-to-pdf         301
-/de/ppt-to-pdf    /de/ppt-to-pdf.html    200
-/de/ppt-to-pdf/   /de/ppt-to-pdf         301
-/fr/merge-pdf    /fr/merge-pdf.html    200
-/fr/merge-pdf/   /fr/merge-pdf         301
-/fr/split-pdf    /fr/split-pdf.html    200
-/fr/split-pdf/   /fr/split-pdf         301
-/fr/compress-pdf    /fr/compress-pdf.html    200
-/fr/compress-pdf/   /fr/compress-pdf         301
-/fr/pdf-to-word    /fr/pdf-to-word.html    200
-/fr/pdf-to-word/   /fr/pdf-to-word         301
-/fr/ocr-pdf    /fr/ocr-pdf.html    200
-/fr/ocr-pdf/   /fr/ocr-pdf         301
-/fr/jpg-to-pdf    /fr/jpg-to-pdf.html    200
-/fr/jpg-to-pdf/   /fr/jpg-to-pdf         301
-/fr/pdf-to-jpg    /fr/pdf-to-jpg.html    200
-/fr/pdf-to-jpg/   /fr/pdf-to-jpg         301
-/fr/rotate-pdf    /fr/rotate-pdf.html    200
-/fr/rotate-pdf/   /fr/rotate-pdf         301
-/fr/delete-pdf-pages    /fr/delete-pdf-pages.html    200
-/fr/delete-pdf-pages/   /fr/delete-pdf-pages         301
-/fr/reorder-pdf-pages    /fr/reorder-pdf-pages.html    200
-/fr/reorder-pdf-pages/   /fr/reorder-pdf-pages         301
-/fr/lock-pdf    /fr/lock-pdf.html    200
-/fr/lock-pdf/   /fr/lock-pdf         301
-/fr/unlock-pdf    /fr/unlock-pdf.html    200
-/fr/unlock-pdf/   /fr/unlock-pdf         301
-/fr/sign-pdf    /fr/sign-pdf.html    200
-/fr/sign-pdf/   /fr/sign-pdf         301
-/fr/edit-pdf    /fr/edit-pdf.html    200
-/fr/edit-pdf/   /fr/edit-pdf         301
-/fr/watermark-pdf    /fr/watermark-pdf.html    200
-/fr/watermark-pdf/   /fr/watermark-pdf         301
-/fr/add-qr-code-pdf    /fr/add-qr-code-pdf.html    200
-/fr/add-qr-code-pdf/   /fr/add-qr-code-pdf         301
-/fr/edit-pdf-metadata    /fr/edit-pdf-metadata.html    200
-/fr/edit-pdf-metadata/   /fr/edit-pdf-metadata         301
-/fr/crop-pdf    /fr/crop-pdf.html    200
-/fr/crop-pdf/   /fr/crop-pdf         301
-/fr/pdf-background    /fr/pdf-background.html    200
-/fr/pdf-background/   /fr/pdf-background         301
-/fr/duplicate-pdf-pages    /fr/duplicate-pdf-pages.html    200
-/fr/duplicate-pdf-pages/   /fr/duplicate-pdf-pages         301
-/fr/extract-pdf-pages    /fr/extract-pdf-pages.html    200
-/fr/extract-pdf-pages/   /fr/extract-pdf-pages         301
-/fr/number-pdf-pages    /fr/number-pdf-pages.html    200
-/fr/number-pdf-pages/   /fr/number-pdf-pages         301
-/fr/word-to-pdf    /fr/word-to-pdf.html    200
-/fr/word-to-pdf/   /fr/word-to-pdf         301
-/fr/excel-to-pdf    /fr/excel-to-pdf.html    200
-/fr/excel-to-pdf/   /fr/excel-to-pdf         301
-/fr/ppt-to-pdf    /fr/ppt-to-pdf.html    200
-/fr/ppt-to-pdf/   /fr/ppt-to-pdf         301
-/es/merge-pdf    /es/merge-pdf.html    200
-/es/merge-pdf/   /es/merge-pdf         301
-/es/split-pdf    /es/split-pdf.html    200
-/es/split-pdf/   /es/split-pdf         301
-/es/compress-pdf    /es/compress-pdf.html    200
-/es/compress-pdf/   /es/compress-pdf         301
-/es/pdf-to-word    /es/pdf-to-word.html    200
-/es/pdf-to-word/   /es/pdf-to-word         301
-/es/ocr-pdf    /es/ocr-pdf.html    200
-/es/ocr-pdf/   /es/ocr-pdf         301
-/es/jpg-to-pdf    /es/jpg-to-pdf.html    200
-/es/jpg-to-pdf/   /es/jpg-to-pdf         301
-/es/pdf-to-jpg    /es/pdf-to-jpg.html    200
-/es/pdf-to-jpg/   /es/pdf-to-jpg         301
-/es/rotate-pdf    /es/rotate-pdf.html    200
-/es/rotate-pdf/   /es/rotate-pdf         301
-/es/delete-pdf-pages    /es/delete-pdf-pages.html    200
-/es/delete-pdf-pages/   /es/delete-pdf-pages         301
-/es/reorder-pdf-pages    /es/reorder-pdf-pages.html    200
-/es/reorder-pdf-pages/   /es/reorder-pdf-pages         301
-/es/lock-pdf    /es/lock-pdf.html    200
-/es/lock-pdf/   /es/lock-pdf         301
-/es/unlock-pdf    /es/unlock-pdf.html    200
-/es/unlock-pdf/   /es/unlock-pdf         301
-/es/sign-pdf    /es/sign-pdf.html    200
-/es/sign-pdf/   /es/sign-pdf         301
-/es/edit-pdf    /es/edit-pdf.html    200
-/es/edit-pdf/   /es/edit-pdf         301
-/es/watermark-pdf    /es/watermark-pdf.html    200
-/es/watermark-pdf/   /es/watermark-pdf         301
-/es/add-qr-code-pdf    /es/add-qr-code-pdf.html    200
-/es/add-qr-code-pdf/   /es/add-qr-code-pdf         301
-/es/edit-pdf-metadata    /es/edit-pdf-metadata.html    200
-/es/edit-pdf-metadata/   /es/edit-pdf-metadata         301
-/es/crop-pdf    /es/crop-pdf.html    200
-/es/crop-pdf/   /es/crop-pdf         301
-/es/pdf-background    /es/pdf-background.html    200
-/es/pdf-background/   /es/pdf-background         301
-/es/duplicate-pdf-pages    /es/duplicate-pdf-pages.html    200
-/es/duplicate-pdf-pages/   /es/duplicate-pdf-pages         301
-/es/extract-pdf-pages    /es/extract-pdf-pages.html    200
-/es/extract-pdf-pages/   /es/extract-pdf-pages         301
-/es/number-pdf-pages    /es/number-pdf-pages.html    200
-/es/number-pdf-pages/   /es/number-pdf-pages         301
-/es/word-to-pdf    /es/word-to-pdf.html    200
-/es/word-to-pdf/   /es/word-to-pdf         301
-/es/excel-to-pdf    /es/excel-to-pdf.html    200
-/es/excel-to-pdf/   /es/excel-to-pdf         301
-/es/ppt-to-pdf    /es/ppt-to-pdf.html    200
-/es/ppt-to-pdf/   /es/ppt-to-pdf         301
-
-# ── New articles ──
-/articles/adobe-acrobat-ucretsiz-alternatif    /articles/adobe-acrobat-ucretsiz-alternatif.html    200
-/articles/android-pdf-birlestirme    /articles/android-pdf-birlestirme.html    200
-/articles/chromebook-pdf-donusturme    /articles/chromebook-pdf-donusturme.html    200
-/articles/e-devlet-pdf-donusturme    /articles/e-devlet-pdf-donusturme.html    200
-/articles/e-devlet-pdf-kucultme-2mb    /articles/e-devlet-pdf-kucultme-2mb.html    200
-/articles/e-fatura-efatura-pdf-rehberi    /articles/e-fatura-efatura-pdf-rehberi.html    200
-/articles/fatura-pdf-word-cevirme    /articles/fatura-pdf-word-cevirme.html    200
-/articles/fotograftan-pdf-olusturma    /articles/fotograftan-pdf-olusturma.html    200
-/articles/imza-icin-pdf-duzenleme    /articles/imza-icin-pdf-duzenleme.html    200
-/articles/index    /articles/index.html    200
-/articles/iphone-pdf-duzenleme    /articles/iphone-pdf-duzenleme.html    200
-/articles/is-basvurusu-cv-pdf    /articles/is-basvurusu-cv-pdf.html    200
-/articles/jpg-pdf-donusturme    /articles/jpg-pdf-donusturme.html    200
-/articles/jpg-pdf-yapma-ucretsiz    /articles/jpg-pdf-yapma-ucretsiz.html    200
-/articles/kvkk-uyumlu-pdf-araci    /articles/kvkk-uyumlu-pdf-araci.html    200
-/articles/mac-pdf-kucultme    /articles/mac-pdf-kucultme.html    200
-/articles/ocr-turkce-karakter-sorunu    /articles/ocr-turkce-karakter-sorunu.html    200
-/articles/ocr-turkce-pdf-metin    /articles/ocr-turkce-pdf-metin.html    200
-/articles/pdf-8-temel-islem-rehberi    /articles/pdf-8-temel-islem-rehberi.html    200
-/articles/pdf-acilamiyor-cozum    /articles/pdf-acilamiyor-cozum.html    200
-/articles/pdf-birlestirme-mobil    /articles/pdf-birlestirme-mobil.html    200
-/articles/pdf-birlestirme-rehberi-2026    /articles/pdf-birlestirme-rehberi-2026.html    200
-/articles/pdf-birlestirme    /articles/pdf-birlestirme.html    200
-/articles/pdf-boyutu-kuculmuyor    /articles/pdf-boyutu-kuculmuyor.html    200
-/articles/pdf-excel-donusturme    /articles/pdf-excel-donusturme.html    200
-/articles/pdf-imza-atma-yazdirmadan    /articles/pdf-imza-atma-yazdirmadan.html    200
-/articles/pdf-kucultme-outlook-icin    /articles/pdf-kucultme-outlook-icin.html    200
-/articles/pdf-musteri-gonderme-guvenlik    /articles/pdf-musteri-gonderme-guvenlik.html    200
-/articles/pdf-not-ekleme    /articles/pdf-not-ekleme.html    200
-/articles/pdf-powerpoint-donusturme    /articles/pdf-powerpoint-donusturme.html    200
-/articles/pdf-sayfa-duzenleme    /articles/pdf-sayfa-duzenleme.html    200
-/articles/pdf-sayfa-silme-siralama    /articles/pdf-sayfa-silme-siralama.html    200
-/articles/pdf-sifre-koyma    /articles/pdf-sifre-koyma.html    200
-/articles/pdf-sifresi-nasil-kaldirilir    /articles/pdf-sifresi-nasil-kaldirilir.html    200
-/articles/pdf-sikistirma-nasil    /articles/pdf-sikistirma-nasil.html    200
-/articles/pdf-to-word-donusturme-kaliteli    /articles/pdf-to-word-donusturme-kaliteli.html    200
-/articles/pdf-word-bozuluyor    /articles/pdf-word-bozuluyor.html    200
-/articles/qr-kod-gorsele-ekleme    /articles/qr-kod-gorsele-ekleme.html    200
-/articles/sifreli-pdf-sifre-unuttum    /articles/sifreli-pdf-sifre-unuttum.html    200
-/articles/smallpdf-ilovepdf-karsilastirma    /articles/smallpdf-ilovepdf-karsilastirma.html    200
-/articles/taranmis-pdf-duzenleme-ocr    /articles/taranmis-pdf-duzenleme-ocr.html    200
-/articles/telefon-pdf-word-yapma    /articles/telefon-pdf-word-yapma.html    200
-/articles/toplu-pdf-birlestirme    /articles/toplu-pdf-birlestirme.html    200
-/articles/ucretsiz-pdf-sikistirma-araclari    /articles/ucretsiz-pdf-sikistirma-araclari.html    200
-/articles/windows-pdf-birlestirme-programsiz    /articles/windows-pdf-birlestirme-programsiz.html    200
-/articles/word-pdf-ceviri-bicimlendirme    /articles/word-pdf-ceviri-bicimlendirme.html    200
-
-# ── Locale general pages ──
-/fr/pricing    /fr/pricing.html    200
-/fr/pricing/   /fr/pricing         301
-/fr/about    /fr/about.html    200
-/fr/about/   /fr/about         301
-/fr/faq    /fr/faq.html    200
-/fr/faq/   /fr/faq         301
-/fr/contact    /fr/contact.html    200
-/fr/contact/   /fr/contact         301
-/de/pricing    /de/pricing.html    200
-/de/pricing/   /de/pricing         301
-/de/about    /de/about.html    200
-/de/about/   /de/about         301
-/de/faq    /de/faq.html    200
-/de/faq/   /de/faq         301
-/de/contact    /de/contact.html    200
-/de/contact/   /de/contact         301
-/es/pricing    /es/pricing.html    200
-/es/pricing/   /es/pricing         301
-/es/about    /es/about.html    200
-/es/about/   /es/about         301
-/es/faq    /es/faq.html    200
-/es/faq/   /es/faq         301
-/es/contact    /es/contact.html    200
-/es/contact/   /es/contact         301
-
-# Tools listing redirect
-/tools                  /index.html#tools       301
-/tools/                 /index.html#tools       301

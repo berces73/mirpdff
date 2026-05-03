@@ -1,32 +1,18 @@
-# MirPDF robots.txt — v22
-# Güncelleme: 2026-04-06
-
 User-agent: *
 Allow: /
 
-# Gizli / auth sayfaları
-Disallow: /admin/
-Disallow: /private/
+# Gizli sayfalar
+Disallow: /account
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
 Disallow: /api/
-Disallow: /auth/
-Disallow: /billing/
-Disallow: /cms/
-Disallow: /account/verify
-Disallow: /magic-link
-Disallow: /oauth-callback
+Disallow: /seo/
 
-# Noindex sayfaları (kullanıcı paneli)
-Disallow: /account.html
-Disallow: /arama.html
+# SEO izin
+Allow: /articles/
+Allow: /tools/
+Allow: /assets/
 
-# Sitemap Index (Google'ın önerdiği standart yol)
-Sitemap: https://mirpdf.com/sitemap-index.xml
-
-# Bireysel sitemaplar (eski/mevcut referanslar için)
 Sitemap: https://mirpdf.com/sitemap.xml
-Sitemap: https://mirpdf.com/sitemap-main.xml
-Sitemap: https://mirpdf.com/sitemap-tools.xml
-Sitemap: https://mirpdf.com/sitemap-articles.xml
-Sitemap: https://mirpdf.com/sitemap-seo.xml
-Sitemap: https://mirpdf.com/sitemap-en.xml
-Sitemap: https://mirpdf.com/sitemap-multilang.xml

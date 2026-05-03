@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>PDF Birleştirme — Birden Fazla PDF'i Tek Dosyaya Birleştir | MirPDF</title>
+  <meta name="description" content="PDF Birleştir online — ücretsiz, hızlı ve güvenli. Kayıt gerekmez, dosyalarınız tarayıcınızda kalır.">
+  <link rel="canonical" href="https://mirpdf.com/pdf-birlestir">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="PDF Birleştirme — Birden Fazla PDF'i Tek Dosyaya Birleştir | MirPDF">
+  <meta property="og:url" content="https://mirpdf.com/pdf-birlestir"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:description" content="Birden fazla PDF dosyasını tek belgede birleştirin. SGK, transkript, diploma ve başvuru belgelerini tek PDF yapın. Ücretsiz online, kayıt gerekmez.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mirpdf.com/assets/og-home.png">
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"PDF Birleştirme ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet, MirPDF'te bu araç ücretsiz kullanılabilir. Günde 3 işlem hakkı mevcuttur. Pro planla sınırsız kullanım sunulur."}},
+    {"@type":"Question","name":"PDF Birleştirme nasıl yapılır?","acceptedAnswer":{"@type":"Answer","text":"Dosyanızı MirPDF'e yükleyin, gerekli ayarları yapın ve aracı çalıştırın. İşlem genellikle 10-30 saniye sürer."}}
+  ]}
+  </script>
+<style>
+:root{--bg:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+main{padding:2.5rem 0 5rem}
+h1{font-size:2rem;font-weight:800;margin-bottom:.6rem;line-height:1.2}
+h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem}
+h3{font-size:1rem;font-weight:700;margin:1.25rem 0 .4rem}
+p{margin-bottom:.75rem;color:#374151}
+.hero-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem;text-align:center}
+.hero-sub{color:var(--muted);font-size:.95rem;max-width:520px;margin:.5rem auto 1.5rem}
+.btn-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:#0d0f1a;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-cta:hover{background:#1e293b}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1rem;font-size:.78rem;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:.3rem}
+.trust i{color:#10b981;font-size:.7rem}
+.callout{display:flex;gap:.85rem;padding:1.1rem 1.25rem;border-radius:12px;margin:1.75rem 0;border:1.5px solid}
+.callout-icon{font-size:1.1rem;flex-shrink:0;line-height:1.6}
+.callout p{margin:0;font-size:.92rem;line-height:1.6}
+.callout strong{display:block;font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.callout-tip{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+.callout-tip p{color:#166534}
+.callout-note{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+.callout-note p{color:#1e40af}
+.callout-warning{background:#fffbeb;border-color:#fde68a;color:#92400e}
+.callout-warning p{color:#92400e}
+.article-body{font-size:17px;line-height:1.75;color:#374151}
+.article-body ul{list-style:none;margin:1.25rem 0;padding:0}
+.article-body ul li{padding:.35rem 0 .35rem 1.4rem;position:relative;color:#374151;border-bottom:1px solid var(--border)}
+.article-body ul li:last-child{border-bottom:none}
+.article-body ul li::before{content:'';position:absolute;left:4px;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.5}
+.article-body ol{list-style:none;counter-reset:step;margin:1.5rem 0;padding:0}
+.article-body ol li{counter-increment:step;display:grid;grid-template-columns:32px 1fr;column-gap:14px;align-items:start;padding:.6rem 0;border-bottom:1px solid var(--border);color:#374151}
+.article-body ol li:last-child{border-bottom:none}
+.article-body ol li::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-top:2px;border-radius:50%;background:#eef0f7;color:var(--text);font-weight:800;font-size:.75rem;border:1.5px solid var(--border);flex-shrink:0}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;margin-top:1rem}
+.related-card{display:flex;align-items:center;gap:.6rem;padding:.8rem;background:#fff;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text);font-size:.85rem;font-weight:600}
+.related-card:hover{border-color:var(--primary)}
+.related-card i{color:var(--primary)}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .4rem}
+</style>
+  <meta name="twitter:description" content="Birden fazla PDF dosyasını tek belgede birleştirin. SGK, transkript, diploma ve başvuru belgelerini tek PDF yapın. Ücretsiz online, kayıt gerekmez."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="PDF Birleştirme — Birden Fazla PDF'i Tek Dosyaya Birleştir | MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og-home.png"/>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mainNav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="/#tools">Araçlar</a>
+        <a href="/articles/">Blog</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/contact">İletişim</a>
+        <a href="/login" class="nav-link-auth">Giriş Yap</a>
+        <a href="/register" class="nav-btn mir-btn-primary">Ücretsiz Kayıt</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+  <div class="hero-card">
+    <h1>PDF Birleştirme</h1>
+    <p class="hero-sub">Ayrı ayrı PDF dosyalarınızı tek belgede toplayın. Sürükle-bırak ile sıralama, 20 dosyaya kadar destek.</p>
+    <a href="/pdf-birlestir" class="btn-cta"><i class="fas fa-object-group"></i> PDF'leri Birleştir</a>
+    <div class="trust">
+      <span><i class="fas fa-check-circle"></i> Tamamen ücretsiz</span>
+      <span><i class="fas fa-check-circle"></i> Kayıt gerekmez</span>
+      <span><i class="fas fa-check-circle"></i> KVKK uyumlu</span>
+      <span><i class="fas fa-check-circle"></i> 60dk sonra silinir</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+<h2>PDF Birleştirme Neden Gerekir?</h2>
+<p>Resmi başvurularda, iş ve eğitim süreçlerinde belgeler ayrı dosyalar halinde toplanır. Ancak sistem veya alıcı tek bir PDF talep eder. Bu durumda birleştirme zorunlu hale gelir.</p>
+
+<h2>En Sık Kullanım Senaryoları</h2>
+<ul>
+<li><strong>KYK burs başvurusu:</strong> Gelir belgesi, nüfus cüzdanı fotokopisi ve öğrenci belgesi ayrı PDF'ler; sistem tek dosya istiyor.</li>
+<li><strong>SGK işlemleri:</strong> Birden fazla dönem çalışma belgesi tek PDF'e toplanıyor.</li>
+<li><strong>İş başvurusu:</strong> CV, diploma ve referans mektupları tek dosyada sunuluyor.</li>
+<li><strong>E-fatura arşivi:</strong> Aylık e-faturaları tek PDF'e dönüştürüp muhasebe programına yükleme.</li>
+<li><strong>Vize başvurusu:</strong> Pasaport, banka dekontu, seyahat sigortası aynı dosyada.</li>
+</ul>
+
+<h2>Birleştirme Adımları</h2>
+<ol>
+<li><strong>PDF dosyalarını yükleyin</strong> — Birden fazla dosyayı aynı anda seçebilirsiniz.</li>
+<li><strong>Sırayı düzenleyin</strong> — Dosyaları sürükleyip bırakarak PDF'te görünecekleri sırayı belirleyin.</li>
+<li><strong>"Birleştir" butonuna tıklayın</strong> — Dosyalar birleştirilir; işlem genellikle 10–30 saniye sürer.</li>
+<li><strong>Birleştirilmiş PDF'i indirin.</strong></li>
+</ol>
+
+<h2>Birleştirme Sonrası Boyut Fazla mı?</h2>
+<p>Birleştirilen her PDF'in boyutu toplanır. Sonuç çok büyükse <a href="/pdf-sikistir">PDF Sıkıştırma aracını</a> kullanarak boyutu düşürün. Özellikle taranmış belgeleri birleştirmeden önce ayrı ayrı sıkıştırırsanız sonuç çok daha küçük olur.</p>
+
+<div class="callout callout-tip">
+<div class="callout-icon">✓</div>
+<div><strong>Belge boyutu sınırı olan sistemler için</strong>
+<p>E-Devlet (5 MB), KYK (2 MB) gibi sistemlere yüklemeden önce birleştirme sonrası boyutu kontrol edin. Gerekirse sıkıştırın.</p></div>
+</div>
+
+<h2>Kaç Dosya Birleştirilebilir?</h2>
+<p>Ücretsiz planda aynı anda 5 dosyaya kadar birleştirme yapılabilir. Pro planla (₺79/ay) 20 dosyaya kadar toplu birleştirme ve öncelikli işlem sırası sunulur.</p>
+
+<h2>Sık Sorulan Sorular</h2>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Birleştirilen PDF'lerin şifresi varsa ne olur?</summary>
+<p class="mir-faq-a">Şifreli PDF'ler birleştirilmeden önce kilit açılmalıdır. <a href="/pdf-kilit-ac" class="mir-text-primary">PDF Kilit Açma aracını</a> kullanın.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Sırayı sonradan değiştirebilir miyim?</summary>
+<p class="mir-faq-a">Birleştirme sonrası sırayı değiştirmek için <a href="/sayfa-sirala" class="mir-text-primary">Sayfa Sıralama aracını</a> kullanın.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">PDF ve görüntü birlikte birleştirilebilir mi?</summary>
+<p class="mir-faq-a">JPG ve PNG görüntüler önce <a href="/jpg-to-pdf" class="mir-text-primary">JPG → PDF aracıyla</a> PDF'e çevrilmeli, ardından diğer PDF'lerle birleştirilmelidir.</p>
+</details>
+
+  </div>
+
+  
+<h2>Birleştirme Öncesi Hazırlık</h2>
+<p>Daha iyi sonuç için birleştirmeden önce şu adımları uygulayın:</p>
+<ul>
+<li><strong>Boyutları küçültün:</strong> Büyük taranmış belgeler birleştirme sonrası çok büyük PDF oluşturabilir. Önce her belgeyi <a href="/pdf-sikistir">PDF Sıkıştırma</a> ile küçültün.</li>
+<li><strong>Şifreleri kaldırın:</strong> Şifreli PDF'leri birleştiremezsiniz; önce <a href="/pdf-kilit-ac">kilit açma aracını</a> kullanın.</li>
+<li><strong>Sıralamayı planlayın:</strong> Hangi belgenin ilk geleceğini önceden belirleyin; yüklerken bu sırayı ayarlayın.</li>
+</ul>
+
+<h2>E-Fatura Arşivi İçin PDF Birleştirme</h2>
+<p>Muhasebe için yaygın kullanım: aylık veya yıllık e-fatura PDF'lerini tek arşiv dosyasında toplama. Örneğin Ocak 2026 faturalarını tarih sırasıyla birleştirip "2026-01-faturalar.pdf" olarak kaydedin. Böylece arama ve arşivleme çok daha kolay hale gelir.</p>
+
+<h2>Boyut Yönetimi: Birleştirme Sonrası Sıkıştırma</h2>
+<p>Birleştirilen dosyanın boyutu beklentinizin üzerinde çıkabilir. Özellikle her belge yüksek kaliteli taranmış görüntüler içeriyorsa toplam boyut hızlıca 50–100 MB'a ulaşabilir. Bu durumda <a href="/pdf-sikistir">PDF Sıkıştırma aracıyla</a> boyutu otomatik olarak düşürün; görsel kalite büyük ölçüde korunur.</p>
+
+
+<h2>Toplu PDF Birleştirme: Pro Plan Avantajları</h2>
+<p>Düzenli olarak çok sayıda belge birleştirme ihtiyacınız varsa (muhasebe, insan kaynakları, hukuk gibi alanlarda) Pro plan ciddi zaman tasarrufu sağlar:</p>
+<ul>
+<li>Tek seferde 20 dosyaya kadar yükleme</li>
+<li>Öncelikli işlem kuyruğu — büyük dosyalar daha hızlı işlenir</li>
+<li>Reklamsız kullanım — süreç kesintisiz devam eder</li>
+</ul>
+
+<h2>SGK ve Devlet Kurumlarına Toplu Belge Gönderimi</h2>
+<p>SGK e-hizmetleri, ÇSGB portalı ve çeşitli devlet sistemleri belgeleri tek PDF olarak ister. Hizmet dönemi belgesi, iş kazası raporu veya yıllık bordro bildirimi gibi birden fazla belgeden oluşan paketleri PDF birleştirme aracıyla hazırlayabilirsiniz.</p>
+<p>Dikkat: E-Devlet sistemlerinin çoğu en fazla 5–10 MB PDF kabul eder. Birleştirme sonrası boyut bu sınırı aşıyorsa <a href="/pdf-sikistir">PDF Sıkıştırma</a> ile boyutu düşürün.</p>
+
+
+<h2>MirPDF ile Pdf Birlestir: Sık Karşılaşılan Sorular</h2>
+<p>Bu araç hakkında kullanıcılarımızdan sıkça gelen sorulara aşağıda yanıt veriyoruz.</p>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Türkiye'den erişilebilir mi?</summary>
+<p class="mir-faq-a">Evet. MirPDF Türkiye merkezli bir hizmettir. Sunucularımız Türkiye'den hızlı erişim için geliştirilmiştir ve KVKK mevzuatına tabidir.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Dosyalarım güvende mi?</summary>
+<p class="mir-faq-a">Evet. Tüm dosya aktarımları SSL/TLS şifreleme ile korunur. Yüklediğiniz belgeler 60 dakika sonra sunucularımızdan kalıcı olarak silinir. Hiçbir zaman üçüncü taraflarla paylaşılmaz.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Mobil cihazlarda çalışır mı?</summary>
+<p class="mir-faq-a">Evet. MirPDF mobil uyumlu tasarımla geliştirilmiştir. iPhone, Android telefon ve tabletlerde tarayıcıdan tam işlevsellikle kullanabilirsiniz. Ek uygulama yüklemeye gerek yoktur.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Ücretsiz plan ile Pro plan arasındaki fark nedir?</summary>
+<p class="mir-faq-a">Ücretsiz planda günlük kredi ve temel limitler geçerlidir. Pro planda sınırsız OCR/PDF→Word, toplu işlem, öncelikli kuyruk ve daha akıcı bir çalışma akışı sunulur.</p>
+</details>
+<details class="mir-faq-item">
+<summary class="mir-faq-q">Bu araçla ilgili destek alabilir miyim?</summary>
+<p class="mir-faq-a">Evet. Sorularınız için <a href="/contact" class="mir-text-primary">İletişim sayfamızdan</a> veya <a href="/yardim" class="mir-text-primary">Yardım Merkezi'mize</a> başvurabilirsiniz. Pro kullanıcılar öncelikli destek alır.</p>
+</details>
+
+<div class="mir-cta-box">
+<p class="mir-card-title">MirPDF'i Deneyin</p>
+<p class="mir-text-sm-mb">Türkiye'nin en hızlı PDF aracı — kayıt gerekmez, tamamen ücretsiz başlayın.</p>
+<a href="/" class="mir-btn-dark">PDF Araçlarını Aç →</a>
+</div>
+
+<h2>İlgili Araçlar</h2>
+  <div class="related-grid">
+<a href="/pdf-bol" class="related-card"><i class="fas fa-cut"></i> PDF Böl</a>
+<a href="/pdf-sikistir" class="related-card"><i class="fas fa-compress"></i> PDF Küçült</a>
+<a href="/sayfa-sirala" class="related-card"><i class="fas fa-sort"></i> Sayfa Sırala</a>
+<a href="/jpg-to-pdf" class="related-card"><i class="fas fa-file-pdf"></i> JPG → PDF</a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
+          <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+          MirPDF
+        </a>
+        <p>Türkçe, ücretsiz ve güvenli PDF araçları. 25 araç, kayıt gerekmez.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Araçlar</h4>
+        <a href="/pdf-birlestir">PDF Birleştir</a>
+        <a href="/pdf-sikistir">PDF Sıkıştır</a>
+        <a href="/pdf-bol">PDF Böl</a>
+        <a href="/pdf-to-word">PDF → Word</a>
+        <a href="/ocr">OCR / Metin</a>
+        <a href="/pdf-kilitle">PDF Kilitle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Şirket</h4>
+        <a href="/about">Hakkımızda</a>
+        <a href="/contact">İletişim</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
+        <a href="/articles/">Blog</a>
+        <a href="/status">Sistem Durumu</a>
+      </div>
+      <div class="footer-col">
+        <h4>Yasal</h4>
+        <a href="/legal/privacy.html">Gizlilik Politikası</a>
+        <a href="/legal/terms.html">Kullanım Şartları</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+        <a href="/legal/security.html">Güvenlik</a>
+        <a href="/sitemap.xml">Site Haritası</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div class="footer-links-row">
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/terms.html">Şartlar</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

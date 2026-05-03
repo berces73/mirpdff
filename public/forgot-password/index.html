@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Şifremi Unuttum — MirPDF</title>
+  <meta name="description" content="MirPDF şifrenizi sıfırlayın. E-posta adresinizi girin, sıfırlama bağlantısı gönderelim."/>
+  <meta name="robots" content="noindex,nofollow"/>
+  <link rel="canonical" href="https://mirpdf.com/forgot-password"/>
+  <meta property="og:title" content="Şifremi Unuttum — MirPDF"/>
+  <meta property="og:description" content="MirPDF şifrenizi sıfırlayın. E-posta adresinizi girin, sıfırlama bağlantısı gönderelim."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mirpdf.com/forgot-password"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Şifremi Unuttum — MirPDF"/>
+  <meta name="twitter:description" content="MirPDF şifrenizi sıfırlayın. E-posta adresinizi girin, sıfırlama bağlantısı gönderelim."/>
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#ffffff;--bg-soft:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1;--danger:#ef4444}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;background:var(--bg-soft);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.18rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.auth-wrap{min-height:calc(100vh - 66px);display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
+.auth-card{width:100%;max-width:420px;background:#fff;border:1px solid var(--border);border-radius:24px;padding:2.25rem 2rem;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.auth-card h1{font-size:1.4rem;font-weight:800;margin-bottom:.3rem}
+.auth-card .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.75rem;line-height:1.5}
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.1rem}
+.field label{font-size:.84rem;font-weight:600}
+.field input{padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:12px;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s}
+.field input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(99,102,241,.12)}
+.btn-auth{width:100%;padding:.82rem;background:var(--text);color:#fff;border:none;border-radius:12px;font-size:.97rem;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s;margin-top:.25rem}
+.btn-auth:hover:not(:disabled){opacity:.88}
+.btn-auth:disabled{opacity:.55;cursor:not-allowed}
+.msg-err{display:none;background:#fef2f2;border:1px solid #fca5a5;color:#dc2626;border-radius:10px;padding:.7rem 1rem;font-size:.875rem;margin-bottom:1rem}
+.msg-ok{display:none;background:#f0fdf4;border:1px solid #86efac;color:#15803d;border-radius:10px;padding:.7rem 1rem;font-size:.875rem;margin-bottom:1rem}
+.auth-footer{text-align:center;margin-top:1.4rem;font-size:.875rem;color:var(--muted)}
+.auth-footer a{color:var(--text);font-weight:600;text-decoration:none}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted)}
+</style>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo"><img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">MirPDF</a>
+    </div>
+  </div>
+</header>
+
+<main class="auth-wrap">
+  <div class="auth-card">
+    <h1>Şifremi unuttum</h1>
+    <p class="sub">E-posta adresini gir. Şifre sıfırlama bağlantısı gönderelim.</p>
+
+    <div class="msg-err" id="msgErr" role="alert" aria-live="polite"></div>
+    <div class="msg-ok"  id="msgOk"  role="status" aria-live="polite"></div>
+
+    <div class="field">
+      <label for="email">E-posta</label>
+      <input id="email" type="email" autocomplete="email" placeholder="ornek@mail.com" required>
+    </div>
+
+    <button class="btn-auth" id="submitBtn">
+      <i class="fas fa-paper-plane" aria-hidden="true"></i> Sıfırlama Bağlantısı Gönder
+    </button>
+
+    <div class="auth-footer">
+      <a href="/login"><i class="fas fa-arrow-left" style="font-size:.8rem"></i> Girişe dön</a>
+    </div>
+  </div>
+</main>
+
+<footer><div class="container">© 2026 MirPDF &nbsp;·&nbsp; <a href="/legal/privacy.html">Gizlilik</a> &nbsp;·&nbsp; <a href="/legal/terms.html">Kullanım Şartları</a> &nbsp;·&nbsp; <a href="/contact">İletişim</a></div></footer>
+
+<script type="module">
+const emailEl  = document.getElementById("email");
+const submitBtn = document.getElementById("submitBtn");
+const msgErr   = document.getElementById("msgErr");
+const msgOk    = document.getElementById("msgOk");
+
+function showErr(m) { msgErr.textContent = m; msgErr.style.display = "block"; msgOk.style.display = "none"; }
+function showOk(m)  { msgOk.textContent  = m; msgOk.style.display  = "block"; msgErr.style.display = "none"; }
+
+async function doForgot() {
+  msgErr.style.display = msgOk.style.display = "none";
+  const email = emailEl.value.trim().toLowerCase();
+  if (!email) { showErr("E-posta adresi gerekli."); return; }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor…';
+
+  try {
+    const resp = await fetch("/api/auth/forgot", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    // Kullanıcı numaralandırma önlemi: her zaman aynı mesaj
+    showOk("Eğer bu e-posta kayıtlıysa, sıfırlama bağlantısı gönderildi. Gelen kutunu kontrol et.");
+    if (resp.status === 429) showErr("Çok fazla deneme. Lütfen bekle.");
+  } catch (_) {
+    showErr("Bağlantı hatası. Tekrar dene.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Sıfırlama Bağlantısı Gönder';
+  }
+}
+
+submitBtn.addEventListener("click", doForgot);
+emailEl.addEventListener("keydown", e => { if (e.key === "Enter") doForgot(); });
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+
+<script type="module">
+import { initLangSwitcher } from "/assets/js/lang-switcher.js";
+initLangSwitcher();
+</script>
+</body>
+</html>

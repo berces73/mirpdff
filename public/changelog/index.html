@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Değişiklik Günlüğü — MirPDF</title>
+  <meta property="og:title" content="Yenilikler | MirPDF"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mirpdf.com/changelog"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:description" content="MirPDF güncellemeleri: yeni özellikler, iyileştirmeler ve hata düzeltmeleri Tarayıcıdan çalışır, kayıt gerekmez."/>
+  <meta name="description" content="MirPDF güncellemeleri: yeni özellikler, iyileştirmeler ve hata düzeltmeleri Tarayıcıdan çalışır, kayıt gerekmez.">
+  <link rel="canonical" href="https://mirpdf.com/changelog">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#f7f8fc;--bg-soft:#ffffff;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+.container{max-width:780px;margin:0 auto;padding:0 1.5rem}
+header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.15rem}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+#mainNav{display:flex;align-items:center;gap:.1rem}
+main{padding:2.5rem 0 5rem}
+.page-title{font-size:2rem;font-weight:800;margin-bottom:.35rem}
+.page-sub{color:var(--muted);font-size:.95rem;margin-bottom:2.5rem}
+/* Timeline */
+.timeline{position:relative;padding-left:2.25rem}
+.timeline::before{content:'';position:absolute;left:.6rem;top:.5rem;bottom:.5rem;width:2px;background:var(--border);border-radius:2px}
+.entry{position:relative;margin-bottom:2.5rem}
+.entry-dot{position:absolute;left:-1.65rem;top:.35rem;width:14px;height:14px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 2px var(--border);background:var(--primary)}
+.entry-dot.minor{background:var(--muted)}
+.entry-dot.fix{background:#f59e0b}
+.entry-header{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin-bottom:.6rem}
+.entry-version{font-size:1.05rem;font-weight:800}
+.entry-date{font-size:.82rem;color:var(--muted)}
+.entry-badge{font-size:.72rem;font-weight:700;padding:.18rem .55rem;border-radius:6px}
+.entry-badge.major{background:#ede9fe;color:#4c1d95}
+.entry-badge.minor{background:#f1f5f9;color:#475569}
+.entry-badge.patch{background:#fef3c7;color:#92400e}
+.entry-body{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem}
+.change-group{margin-bottom:.75rem}
+.change-group:last-child{margin-bottom:0}
+.change-group-label{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+.change-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.change-list li{font-size:.9rem;display:flex;align-items:flex-start;gap:.5rem}
+.change-list li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:.45rem}
+.change-list.new li::before{background:#10b981}
+.change-list.improved li::before{background:var(--primary)}
+.change-list.fixed li::before{background:#f59e0b}
+.change-list.removed li::before{background:#ef4444}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .5rem}
+footer a:hover{color:var(--text)}
+@media(max-width:480px){.timeline{padding-left:1.5rem}.entry-dot{left:-.95rem}}
+</style>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:description" content="MirPDF güncellemeleri: yeni özellikler, iyileştirmeler ve hata düzeltmeleri Tarayıcıdan çalışır, kayıt gerekmez."/>
+  <meta name="twitter:title" content="Değişiklik Günlüğü — MirPDF"/>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-default.jpg"/>
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="mir-logo-img">
+        MirPDF
+      </a>
+      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false"
+        style="display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:9px;cursor:pointer;font-size:1rem">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="mainNav"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="page-title">Değişiklik Günlüğü</h1>
+    <p class="page-sub">MirPDF'teki tüm güncellemeler — yeni özellikler, iyileştirmeler ve düzeltmeler.</p>
+
+    <div class="timeline">
+
+      <!-- v1.16 -->
+      <div class="entry">
+        <div class="entry-dot"></div>
+        <div class="entry-header">
+          <span class="entry-version">v1.16</span>
+          <span class="entry-date">Mart 2026</span>
+          <span class="entry-badge major">Major</span>
+        </div>
+        <div class="entry-body">
+          <div class="change-group">
+            <div class="change-group-label">Yeni</div>
+            <ul class="change-list new">
+              <li>Gelir atıfı (revenue attribution) altyapısı: hangi kanaldan gelen kullanıcıların Pro'ya geçtiği artık izleniyor.</li>
+              <li>Sistem durumu sayfası (<code>/status</code>) ve değişiklik günlüğü (<code>/changelog</code>) eklendi.</li>
+              <li>Kurumsal landing sayfası (<code>/kurumsal</code>) yayına alındı; DPA, SLA ve özel limit bilgileri içeriyor.</li>
+              <li>Geliştirici sayfası (<code>/developers</code>) OpenAPI şeması bağlantısıyla güncellendi.</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label">İyileştirme</div>
+            <ul class="change-list improved">
+              <li>Footer'lara Kullanım Şartları ve İletişim bağlantıları eklendi (forgot-password, reset-password, faq).</li>
+              <li>Nav.js initNav() tüm sayfalarda tutarlı hale getirildi.</li>
+              <li>SEO cluster'ları genişletildi: 80+ yeni sayfayla resmi-başvuru, mobil ve öğrenci segmentleri.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v1.15 -->
+      <div class="entry">
+        <div class="entry-dot"></div>
+        <div class="entry-header">
+          <span class="entry-version">v1.15</span>
+          <span class="entry-date">Şubat 2026</span>
+          <span class="entry-badge major">Major</span>
+        </div>
+        <div class="entry-body">
+          <div class="change-group">
+            <div class="change-group-label">Yeni</div>
+            <ul class="change-list new">
+              <li>SEO batch: 200+ sayfa otomatik üretildi (cozum, limit, mobil, ogrenci, resmi-basvuru).</li>
+              <li>Revenue attribution D1 migration (v16): conversion_events tablosu.</li>
+              <li>Admin dashboard: gelir ve dönüşüm raporları.</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label">İyileştirme</div>
+            <ul class="change-list improved">
+              <li>Circuit breaker mantığı job dispatch'e eklendi: 5 başarısızlık sonrası OPEN → 60 sn sonra HALF_OPEN.</li>
+              <li>Job sonucu için imzalı indirme URL'leri (download token, 1 saatlik TTL).</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label">Düzeltme</div>
+            <ul class="change-list fixed">
+              <li>Büyük PDF dosyalarında OCR zaman aşımı sorunu giderildi.</li>
+              <li>Stripe webhook signature doğrulama hata mesajı netleştirildi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v1.14 -->
+      <div class="entry">
+        <div class="entry-dot"></div>
+        <div class="entry-header">
+          <span class="entry-version">v1.14</span>
+          <span class="entry-date">Ocak 2026</span>
+          <span class="entry-badge major">Major</span>
+        </div>
+        <div class="entry-body">
+          <div class="change-group">
+            <div class="change-group-label">Yeni</div>
+            <ul class="change-list new">
+              <li>PDF İmzala aracı (canvas tabanlı el yazısı / metin imzası).</li>
+              <li>PDF Kilitle / Kilit Aç araçları.</li>
+              <li>QR Kod Ekle aracı.</li>
+              <li>Filigran Ekle aracı.</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label">İyileştirme</div>
+            <ul class="change-list improved">
+              <li>Cloudflare Queue entegrasyonu: QUEUE_MODE=on ile job'lar kuyruktan işleniyor.</li>
+              <li>R2 çıktı anahtarları için imzalı URL desteği.</li>
+              <li>Paywall bileşeni yeniden tasarlandı; kredi badge'i nav'a taşındı.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v1.13 -->
+      <div class="entry">
+        <div class="entry-dot minor"></div>
+        <div class="entry-header">
+          <span class="entry-version">v1.13</span>
+          <span class="entry-date">Aralık 2025</span>
+          <span class="entry-badge minor">Minor</span>
+        </div>
+        <div class="entry-body">
+          <div class="change-group">
+            <div class="change-group-label">Yeni</div>
+            <ul class="change-list new">
+              <li>E-posta doğrulama akışı (verify token, Resend entegrasyonu).</li>
+              <li>Şifremi Unuttum / Sıfırla akışı.</li>
+              <li>Günlük ücretsiz kredi yenileme (FREE_DAILY_CREDITS).</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label">Düzeltme</div>
+            <ul class="change-list fixed">
+              <li>Cookie tabanlı istemci ID'si imzalama hatası düzeltildi.</li>
+              <li>JWT yenileme yarış koşulu giderildi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v1.12 -->
+      <div class="entry">
+        <div class="entry-dot minor"></div>
+        <div class="entry-header">
+          <span class="entry-version">v1.12</span>
+          <span class="entry-date">Kasım 2025</span>
+          <span class="entry-badge minor">Minor</span>
+        </div>
+        <div class="entry-body">
+          <div class="change-group">
+            <div class="change-group-label">Yeni</div>
+            <ul class="change-list new">
+              <li>Stripe abonelik entegrasyonu (Basic ve Pro planlar).</li>
+              <li>Kredi satın alma (100 ve 500 kredi paketleri).</li>
+              <li>Billing success ve cancel sayfaları.</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label">İyileştirme</div>
+            <ul class="change-list improved">
+              <li>D1 migration sistemi: versiyonlı SQL dosyaları ile yönetim.</li>
+              <li>Durable Object tabanlı kredi sayacı; atomic consume + refund.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v1.0 -->
+      <div class="entry">
+        <div class="entry-dot minor"></div>
+        <div class="entry-header">
+          <span class="entry-version">v1.0</span>
+          <span class="entry-date">Ekim 2025</span>
+          <span class="entry-badge patch">İlk Sürüm</span>
+        </div>
+        <div class="entry-body">
+          <div class="change-group">
+            <div class="change-group-label">Yeni</div>
+            <ul class="change-list new">
+              <li>PDF Sıkıştır, PDF Böl, PDF Birleştir, PDF→Word, OCR araçları.</li>
+              <li>Cloudflare Workers + D1 + R2 altyapısı.</li>
+              <li>Anonim kredi sistemi (cookie tabanlı istemci ID).</li>
+              <li>KVKK uyumlu veri saklama politikası (60 dakika TTL).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div>
+</main>
+
+<footer style="background:#0d0f1a;color:rgba(255,255,255,.6);padding:2.5rem 2rem 1.5rem;margin-top:3rem">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem">
+      <div>
+        <a href="/" style="color:#fff;font-weight:800;font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+          <img src="/assets/icons/logo.svg" width="28" height="28" alt="MirPDF" loading="lazy" style="border-radius:7px">MirPDF
+        </a>
+        <p style="font-size:.83rem;line-height:1.6">Ücretsiz online PDF araçları. Tarayıcıda çalışır, dosyalar cihazınızdan çıkmaz.</p>
+      </div>
+      <div>
+        <h4 class="mir-footer-section-title">Araçlar</h4>
+        <a href="/pdf-birlestir" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">PDF Birleştir</a>
+        <a href="/pdf-sikistir" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">PDF → Word</a>
+        <a href="/ocr" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">OCR PDF</a>
+      </div>
+      <div>
+        <h4 class="mir-footer-section-title">Şirket</h4>
+        <a href="/about" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Hakkımızda</a>
+        <a href="/contact" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">İletişim</a>
+        <a href="/faq" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">SSS</a>
+        <a href="/pricing" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Fiyatlar</a>
+      </div>
+      <div>
+        <h4 class="mir-footer-section-title">Yasal</h4>
+        <a href="/legal/privacy.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Gizlilik</a>
+        <a href="/legal/terms.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Şartlar</a>
+        <a href="/legal/kvkk.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">KVKK</a>
+        <a href="/legal/cookies.html" class="mir-footer-link" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Çerezler</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;font-size:.79rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;align-items:center">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <div style="display:flex;gap:1rem">
+        <a href="/en/" class="mir-footer-link-xs">🇬🇧 English</a>
+        <a href="https://twitter.com/mirpdf" class="mir-footer-link-xs">𝕏</a>
+        <a href="/status" class="mir-footer-link-xs">Status</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+import { initNav } from "/assets/js/nav.js";
+initNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+  <link rel="dns-prefetch" href="https://plausible.io"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>Word'ü PDF'e Çevir — Ücretsiz DOCX/DOC → PDF | MirPDF</title>
+  <meta name="description" content="Word belgesini (DOCX/DOC) PDF'e dönüştür. Biçimlendirme, tablolar ve görseller korunur. İşlem sonrası dosya otomatik silinir. Ücretsiz, KVKK uyumlu."/>
+  
+    <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Word'ü PDF'e Çevir — Ücretsiz DOCX → PDF | MirPDF"/>
+  <meta property="og:description" content="DOCX veya DOC dosyanızı saniyeler içinde PDF'e çevirin. Biçimlendirme korunur. Ücretsiz, KVKK uyumlu."/>
+  <meta property="og:url" content="https://mirpdf.com/word-to-pdf"/>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:site_name" content="MirPDF"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Word'ü PDF'e Çevir — Ücretsiz DOCX → PDF | MirPDF"/>
+  <meta name="twitter:description" content="DOCX veya DOC dosyanızı saniyeler içinde PDF'e çevirin. Biçimlendirme korunur. Ücretsiz, KVKK uyumlu."/>
+  <link rel="canonical" href="https://mirpdf.com/word-to-pdf">
+  <link rel="alternate" hreflang="tr" href="https://mirpdf.com/word-to-pdf"/>
+  <link rel="alternate" hreflang="x-default" href="https://mirpdf.com/word-to-pdf"/>
+  <link rel="alternate" hreflang="de" href="https://mirpdf.com/de/word-to-pdf"/>
+  <link rel="alternate" hreflang="fr" href="https://mirpdf.com/fr/word-to-pdf"/>
+  <link rel="alternate" hreflang="es" href="https://mirpdf.com/es/word-to-pdf"/>
+  <link rel="alternate" hreflang="en" href="https://mirpdf.com/en/word-to-pdf"/>
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/assets/brand/favicon/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/tool-shell.css"/>
+  <link rel="stylesheet" href="/assets/css/drop-zone.css"/>
+  <link rel="stylesheet" href="/assets/css/drop-zone-patch.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script defer src="/assets/js/vitals.js"></script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Word dosyası PDF'e nasıl çevrilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Word dosyanızı yükleyin, otomatik olarak PDF'e dönüştürülür. İşlem sunucuda gerçekleşir ve 60 dakika sonra dosyalar silinir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Word'den PDF'e çevirmek ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, temel dönüştürme işlemi tamamen ücretsizdir. Pro plan ile daha büyük dosyalar ve toplu işlem yapabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Word formatlaması PDF'de bozulur mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genellikle hayır. Tablolar, görseller ve yazı tipleri korunur. Nadiren bazı özel fontlarda küçük farklılıklar olabilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DOCX ve DOC formatları destekleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, hem .docx hem de .doc formatları desteklenmektedir."
+      }
+    }
+  ]
+}
+  </script>
+<style>
+:root{--bg:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+main{padding:3rem 0 5rem}
+.tool-hero{text-align:center;margin-bottom:3rem}
+.tool-icon{width:72px;height:72px;border-radius:18px;background:#2563eb;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.8rem}
+h1{font-size:2rem;font-weight:800;margin-bottom:.6rem;line-height:1.2}
+.hero-sub{color:var(--muted);font-size:1rem;max-width:520px;margin:0 auto 2rem}
+/* Coming soon card */
+.coming-card{background:#fff;border:2px solid var(--border);border-radius:18px;padding:3rem 2rem;text-align:center}
+.coming-icon{font-size:3rem;margin-bottom:1rem}
+.coming-title{font-size:1.2rem;font-weight:800;margin-bottom:.5rem}
+.coming-sub{font-size:.9rem;color:var(--muted);max-width:440px;margin:0 auto 2rem;line-height:1.6}
+.alt-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.75rem}
+.alt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;max-width:500px;margin:0 auto}
+.alt-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1rem;border-radius:12px;font-weight:700;font-size:.88rem;text-decoration:none;transition:.15s;border:2px solid transparent}
+.alt-btn--primary{background:#0d0f1a;color:#fff}
+.alt-btn--primary:hover{background:#1e293b}
+.alt-btn--ghost{background:#fff;color:var(--text);border-color:var(--border)}
+.alt-btn--ghost:hover{border-color:var(--primary);color:var(--primary)}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem 0}
+.step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center}
+.step-num{font-size:1.5rem;font-weight:800;color:var(--primary);margin-bottom:.6rem}
+.step h3{font-size:.9rem;font-weight:700;margin-bottom:.3rem}
+.step p{font-size:.82rem;color:var(--muted)}
+.info-box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin:2rem 0}
+.info-box h2{font-size:1.1rem;font-weight:700;margin-bottom:.75rem}
+.info-box p,.info-box li{font-size:.88rem;color:var(--muted);line-height:1.7}
+.info-box ul{padding-left:1.4rem;margin-top:.5rem}
+.faq-list{margin:2rem 0}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:.5rem;overflow:hidden}
+.faq-btn{width:100%;text-align:left;padding:.9rem 1.1rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;color:var(--text);display:flex;align-items:center;justify-content:space-between}
+.faq-body{display:none;padding:.1rem 1.1rem 1rem;font-size:.875rem;color:var(--muted);line-height:1.65}
+.faq-item.open .faq-body{display:block}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin:1.5rem 0}
+.related-card{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);font-size:.88rem;font-weight:600;transition:.15s}
+.related-card:hover{border-color:var(--primary);color:var(--primary)}
+footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .4rem}
+@media(max-width:600px){.steps{grid-template-columns:1fr}.alt-grid{grid-template-columns:1fr}}
+
+@media(max-width:700px){
+  #mobileToggle{display:flex!important}
+  #mainNav.show{display:flex!important;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);z-index:999;align-items:center;justify-content:center;gap:1.5rem}
+  #mainNav.show a{font-size:1.1rem!important;padding:.75rem 1.5rem!important}
+  #mobileClose{display:flex!important;position:fixed;top:1.5rem;right:1.5rem;z-index:1000}
+}
+#mobileToggle{display:none;background:none;border:1px solid #e3e6f0;border-radius:8px;padding:.4rem .6rem;cursor:pointer;font-size:1rem;color:#0d0f1a;align-items:center}
+#mobileClose{display:none;background:none;border:1px solid #e3e6f0;border-radius:8px;padding:.4rem .6rem;cursor:pointer;font-size:1rem;color:#0d0f1a;align-items:center}
+</style>
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://mirpdf.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Araçlar",
+      "item": "https://mirpdf.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Word Dosyasını PDF'e Dönüştürün",
+      "item": "https://mirpdf.com/word-to-pdf"
+    }
+  ]
+}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Word'den PDF'e Dönüştürme",
+  "description": "MirPDF ile word'den pdf'e dönüştürme için adım adım rehber.",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "MirPDF"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Word Dosyasını Yükleyin",
+      "text": "DOCX veya DOC dosyanızı araca yükleyin.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Dönüştürmeyi Başlatın",
+      "text": "\"PDF'e Çevir\" butonuna tıklayın.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "İşlemi Bekleyin",
+      "text": "Sunucu Word dosyanızı PDF formatına dönüştürür.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "PDF'i İndirin",
+      "text": "Biçimlendirme korunmuş PDF dosyasını indirin.",
+      "position": 4
+    }
+  ],
+  "totalTime": "PT2M",
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Word belgesi (DOCX/DOC)"
+    }
+  ]
+}
+</script>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body data-tool="word-to-pdf">
+
+<nav class="nav" aria-label="Ana navigasyon">
+  <a href="/" class="nav-logo">
+    <img src="/assets/icons/logo.svg" loading="eager" width="32" height="32" alt="" class="mir-logo-img">
+    MirPDF
+  </a>
+  <button aria-label="Menüyü aç" id="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+  <div class="nav-links">
+    <a href="/#tools">Araçlar</a>
+    <a href="/articles/">Blog</a>
+    <a href="/pricing">Fiyatlar</a>
+    <a href="/faq">SSS</a>
+    <a href="/yardim">Yardım</a>
+    <a href="/contact">İletişim</a>
+    <a href="/register" class="nav-btn mir-btn-primary">Ücretsiz Kayıt</a>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="İz yolu">
+  <div class="container">
+    <ol>
+      <li><a href="/">Ana Sayfa</a></li>
+      <li><a href="/#tools">Araçlar</a></li>
+      <li aria-current="page">Word → PDF</li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+<section class="tool-hero">
+  <div class="container">
+    <div class="tool-hero__icon" aria-hidden="true" style="display:none"><i class="fas fa-file-word"></i></div>
+    <h1 class="tool-hero__title">Word Dosyasını PDF'e Dönüştürün</h1>
+    <p class="tool-hero__desc">DOCX ve DOC dosyalarını PDF'e çevir. Biçimlendirme ve fontlar korunur.</p>
+    <div class="tool-hero__badges">
+      <span class="badge badge--green"><i class="fas fa-lock" aria-hidden="true"></i> KVKK Uyumlu</span>
+      <span class="badge"><i class="fas fa-bolt" aria-hidden="true"></i> Hızlı</span>
+      <span class="badge"><i class="fas fa-gift" aria-hidden="true"></i> Ücretsiz</span>
+      <span class="badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Güvenli</span>
+    </div>
+  </div>
+</section>
+
+  <div class="container">
+    <div class="tool-hero">
+      <div class="tool-icon"><i class="fas fa-file-word" class="tc-icon-white"></i></div>
+      <h1>Word Dosyasını PDF'e Dönüştürün</h1>
+<div class="mir-flex-wrap-gap">
+  <span class="hero-badge"><i class="fas fa-shield-alt" class="tc-icon-green"></i> KVKK Uyumlu</span>
+  <span class="hero-badge"><i class="fas fa-bolt" class="tc-icon-amber"></i> Hızlı</span>
+  <span class="hero-badge"><i class="fas fa-gift" class="tc-icon-indigo"></i> Ücretsiz</span>
+  <span class="hero-badge"><i class="fas fa-lock" class="tc-icon-cyan"></i> Güvenli</span>
+</div>
+      <p class="hero-sub">DOCX veya DOC dosyanızı PDF'e çevirin. Biçimlendirme korunur, KVKK uyumlu.</p>
+    </div>
+
+    <div id="tool-app"></div>
+
+    <!-- Nasıl çalışır -->
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><p class="step-title">DOCX Yükleyin</p><p>Dosyanızı seçin veya sürükleyip bırakın.</p></div>
+      <div class="step"><div class="step-num">02</div><p class="step-title">Dönüştür</p><p>Sunucumuz DOCX dosyanızı PDF'e çevirir.</p></div>
+      <div class="step"><div class="step-num">03</div><p class="step-title">İndirin</p><p>PDF'inizi indirin. Dosyalar 60dk sonra silinir.</p></div>
+    </div>
+
+    <!-- Bilgi kutusu -->
+    <div class="info-box">
+      <h2>DOCX'i Neden PDF'e Çevirmeliyim?</h2>
+      <p>PDF formatı, belgelerin her cihazda aynı görünmesini sağlar. DOCX dosyalarınızı PDF'e çevirmek için birkaç sebep:</p>
+      <ul>
+        <li>Her cihaz ve işletim sisteminde aynı görünüm</li>
+        <li>Yazı tipi ve biçimlendirme korunur</li>
+        <li>E-posta ve paylaşım için standart format</li>
+        <li>Baskıya hazır, düzenlemeye kapalı</li>
+        <li>Resmi belgelerde (e-devlet, kurumsal) PDF zorunlu</li>
+      </ul>
+    </div>
+
+    <!-- SSS -->
+    <h2 class="mir-h2-tool">Sık Sorulan Sorular</h2>
+    
+<!-- ── Zengin İçerik Bölümü ──────────────────── -->
+<style>
+.rc-wrap{max-width:900px;margin:0 auto;padding:0 2rem 2rem}
+.rc-intro{background:#f8f9ff;border-left:3px solid #6366f1;border-radius:0 12px 12px 0;padding:1.1rem 1.4rem;margin-bottom:2rem;color:#374151;font-size:.95rem;line-height:1.7}
+.rc-h2{font-size:1.1rem;font-weight:800;margin:2rem 0 1rem;color:#0d0f1a}
+.rc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2rem}
+.rc-card{background:#fff;border:1px solid #e9ecef;border-radius:12px;padding:1rem 1.1rem}
+.rc-card-title{font-weight:700;font-size:.88rem;margin-bottom:.35rem;color:#0d0f1a}
+.rc-card-desc{font-size:.82rem;color:#6c757d;line-height:1.6}
+.rc-uc{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+.rc-uc-item{display:flex;gap:.85rem;padding:.85rem 1rem;background:#fafbfc;border-radius:10px;align-items:flex-start}
+.rc-uc-dot{width:8px;height:8px;border-radius:50%;background:#6366f1;margin-top:.45rem;flex-shrink:0}
+.rc-uc-title{font-weight:700;font-size:.87rem;margin-bottom:.2rem}
+.rc-uc-desc{font-size:.83rem;color:#6c757d;line-height:1.6}
+.rc-tips{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:2rem}
+.rc-tips ul{margin:.5rem 0 0 1.2rem;padding:0}
+.rc-tips li{font-size:.85rem;color:#166534;line-height:1.65;margin-bottom:.3rem}
+@media(max-width:700px){.rc-wrap{padding:0 1rem 2rem}}
+</style>
+<div class="rc-wrap">
+<p class="rc-intro">Word belgelerini PDF'e dönüştürmek, belgelerin her cihazda aynı görünmesini sağlar. Fonlar, tablolar, sayfa düzeni — hepsi aynen korunur. E-posta, resmi başvuru veya arşivleme için standart format PDF'tir.</p>
+<h2 class="rc-h2">Neden Word yerine PDF?</h2>
+<div class="rc-grid">
+<div class="rc-card"><div class="rc-card-title">Evrensel uyumluluk</div><div class="rc-card-desc">PDF her cihazda, her işletim sisteminde aynı görünür. Word dosyası farklı Office sürümlerinde bozulabilir.</div></div>
+<div class="rc-card"><div class="rc-card-title">Font bağımsızlığı</div><div class="rc-card-desc">PDF, fontları içine gömer. Alıcının bilgisayarında font yüklü olmasa da belge doğru görünür.</div></div>
+<div class="rc-card"><div class="rc-card-title">Düzenleme koruması</div><div class="rc-card-desc">PDF formatı içeriği değiştirmeyi zorlaştırır. Resmi belgeler ve sözleşmeler için tercih edilir.</div></div>
+<div class="rc-card"><div class="rc-card-title">Dosya boyutu</div><div class="rc-card-desc">Karmaşık Word dosyaları PDF olarak genellikle daha küçük boyut alır ve daha hızlı paylaşılır.</div></div>
+</div>
+<h2 class="rc-h2">Hangi durumlar için Word → PDF?</h2>
+<div class="rc-grid">
+<div class="rc-card"><div class="rc-card-title">İş başvurusu ve CV</div><div class="rc-card-desc">İşe başvururken CV'ni PDF olarak gönder. Düzen bozulmaz, profesyonel görünür. HR sistemleri PDF tercih eder.</div></div>
+<div class="rc-card"><div class="rc-card-title">Resmi yazışmalar</div><div class="rc-card-desc">Kurumsal yazılar, dilekçeler ve raporlar PDF olarak gönderildiğinde resmiyet kazanır.</div></div>
+<div class="rc-card"><div class="rc-card-title">Fatura ve teklif</div><div class="rc-card-desc">Müşteriye gönderilen teklif veya fatura PDF olarak sunulduğunda değiştirilme riski ortadan kalkar.</div></div>
+<div class="rc-card"><div class="rc-card-title">Arşivleme</div><div class="rc-card-desc">Uzun vadeli saklama için PDF/A standardı kullanılır. Word dosyaları yıllar sonra düzgün açılmayabilir.</div></div>
+</div>
+<h2 class="rc-h2">Ne Zaman Kullanılır?</h2>
+<div class="rc-uc">
+<div class="rc-uc-item"><div class="rc-uc-dot"></div><div><div class="rc-uc-title">CV gönderme</div><div class="rc-uc-desc">Özgeçmişini Word'de hazırla, PDF'e çevirerek gönder. Tüm iş başvuru platformları PDF formatını destekler.</div></div></div>
+<div class="rc-uc-item"><div class="rc-uc-dot"></div><div><div class="rc-uc-title">Sözleşme imzalama</div><div class="rc-uc-desc">Sözleşmeyi Word'de düzenle, PDF'e çevir. Ardından PDF İmzala aracıyla dijital imza ekle.</div></div></div>
+<div class="rc-uc-item"><div class="rc-uc-dot"></div><div><div class="rc-uc-title">Üniversite ve resmi başvuru</div><div class="rc-uc-desc">YÖK, ÖSYM, e-Devlet sistemleri çoğunlukla PDF formatında belge ister.</div></div></div>
+<div class="rc-uc-item"><div class="rc-uc-dot"></div><div><div class="rc-uc-title">Müşteri teklifi</div><div class="rc-uc-desc">Teklif belgesini PDF olarak sun — müşteri içeriği değiştiremez, düzen her cihazda korunur.</div></div></div>
+</div>
+<div class="rc-tips">
+<strong class="tc-text-green">💡 İpuçları</strong>
+<ul>
+<li>Dönüşüm öncesi Word'deki tüm izlenen değişiklikleri kabul et — PDF'te track change işaretleri çıkabilir.</li>
+<li>Tablolar içeren belgeler için 'Sayfa düzenini koru' seçeneği aktif olmalı.</li>
+<li>Türkçe karakterler (ç, ş, ğ, ü, ö, ı) için Türkçe dil desteği olan dönüştürücü kullan.</li>
+<li>Dosya boyutu büyükse dönüşüm sonrasında PDF Sıkıştır aracıyla boyutu küçültebilirsin.</li>
+<li>Çok sayfalı belgeler için sayfa numarası ayarlarını dönüşüm öncesinde kontrol et.</li>
+</ul>
+</div>
+</div>
+
+<div class="faq-list">
+      <div class="faq-item"><button class="faq-btn">Word dosyası PDF'e nasıl çevrilir?<i class="fas fa-chevron-down mir-text-tiny-muted"></i></button><div class="faq-body">Word dosyanızı yükleyin, otomatik olarak PDF'e dönüştürülür. İşlem sunucuda gerçekleşir ve 60 dakika sonra dosyalar silinir.</div></div>
+      <div class="faq-item"><button class="faq-btn">Word'den PDF'e çevirmek ücretsiz mi?<i class="fas fa-chevron-down mir-text-tiny-muted"></i></button><div class="faq-body">Evet, temel dönüştürme işlemi tamamen ücretsizdir. Pro plan ile daha büyük dosyalar ve toplu işlem yapabilirsiniz.</div></div>
+      <div class="faq-item"><button class="faq-btn">Word formatlaması PDF'de bozulur mu?<i class="fas fa-chevron-down mir-text-tiny-muted"></i></button><div class="faq-body">Genellikle hayır. Tablolar, görseller ve yazı tipleri korunur. Nadiren bazı özel fontlarda küçük farklılıklar olabilir.</div></div>
+      <div class="faq-item"><button class="faq-btn">DOCX ve DOC formatları destekleniyor mu?<i class="fas fa-chevron-down mir-text-tiny-muted"></i></button><div class="faq-body">Evet, hem .docx hem de .doc formatları desteklenmektedir.</div></div>
+    </div>
+
+    <!-- İlgili araçlar -->
+    <h2 class="mir-h2-tool">İlgili Araçlar</h2>
+    <div class="related-grid">
+      <a href="/pdf-to-word" class="related-card"><i class="fas fa-file-word" class="tc-icon-blue-lg"></i>PDF → Word</a>
+      <a href="/pdf-birlestir" class="related-card"><i class="fas fa-object-group" class="tc-icon-indigo-lg"></i>PDF Birleştir</a>
+      <a href="/pdf-sikistir" class="related-card"><i class="fas fa-compress" class="tc-icon-green-lg"></i>PDF Sıkıştır</a>
+      <a href="/ocr" class="related-card"><i class="fas fa-search" class="tc-icon-amber-lg"></i>OCR Metin Çıkar</a>
+    
+      <a href="/pdf-kilitle" class="related-card"><i class="fas fa-lock" class="tc-icon-amber-lg"></i>PDF Kilitle</a>
+      <a href="/filigran-ekle" class="related-card"><i class="fas fa-stamp" class="tc-icon-purple-lg"></i>Filigran Ekle</a>
+    </div>
+  </div>
+</main>
+
+
+<style>
+.ct-wrap{max-width:900px;margin:0 auto;padding:0 2rem 1rem}
+.ct-intro{color:var(--muted);font-size:.96rem;line-height:1.7;margin-bottom:2rem;padding:1.1rem 1.4rem;background:var(--bg2,#f8f9fa);border-radius:12px;border-left:3px solid #2563eb}
+.ct-section-title{font-size:1.1rem;font-weight:800;margin:2rem 0 1rem;display:flex;align-items:center;gap:.5rem;color:var(--text)}
+.ct-section-title::before{content:'';width:4px;height:1em;background:#2563eb;border-radius:2px;flex-shrink:0;display:inline-block}
+.ct-steps{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem}
+.ct-step{display:flex;align-items:flex-start;gap:1rem;padding:.9rem 1.1rem;background:var(--bg,#fff);border:1px solid var(--border,#e9ecef);border-radius:12px}
+.ct-step-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0}
+.ct-step-title{font-weight:700;font-size:.9rem;margin-bottom:.2rem;color:var(--text)}
+.ct-step-desc{font-size:.84rem;color:var(--muted);line-height:1.6}
+.ct-uc{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.5rem}
+.ct-uc-item{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 1.1rem;background:var(--bg2,#f8f9fa);border-radius:11px}
+.ct-uc-dot{width:8px;height:8px;border-radius:50%;margin-top:.45rem;flex-shrink:0}
+.ct-uc-title{font-weight:700;font-size:.88rem;margin-bottom:.2rem;color:var(--text)}
+.ct-uc-desc{font-size:.84rem;color:var(--muted);line-height:1.6}
+@media(max-width:700px){.ct-wrap{padding:0 1rem 1rem}}
+</style>
+<div class="ct-wrap">
+  <p class="ct-intro">Word dosyanı evrensel PDF formatına dönüştür. Her cihazda aynı görünen, yazı tipi veya düzen bozulması olmayan, göndermeye hazır PDF.</p>
+  <h2 class="ct-section-title">Nasıl Kullanılır?</h2>
+  <div class="ct-steps">
+      <div class="ct-step"><div class="ct-step-num" class="mir-badge-blue">1</div><div><div class="ct-step-title">Word dosyasını yükle</div><div class="ct-step-desc">DOCX veya DOC dosyasını seç. Dosya güvenli bağlantıyla sunucuya gönderilir, 1 saat sonra otomatik silinir.</div></div></div>
+      <div class="ct-step"><div class="ct-step-num" class="mir-badge-blue">2</div><div><div class="ct-step-title">Dönüştürmeyi başlat</div><div class="ct-step-desc">'PDF'e Dönüştür' butonuna bas. Sayfa sayısına göre 5-30 saniye sürer.</div></div></div>
+      <div class="ct-step"><div class="ct-step-num" class="mir-badge-blue">3</div><div><div class="ct-step-title">PDF'i indir</div><div class="ct-step-desc">Dönüştürülen PDF'i indir. Word yüklü olmayan her cihazda açılır.</div></div></div>
+  </div>
+  <h2 class="ct-section-title">Nerede Kullanılır?</h2>
+  <div class="ct-uc">
+      <div class="ct-uc-item"><div class="ct-uc-dot mir-btn-primary"></div><div><div class="ct-uc-title">Resmi başvurular</div><div class="ct-uc-desc">İş başvurusu, burs dilekçesi, devlet kurumu başvurusu — hepsi PDF ister. Word'ünü tek adımda dönüştür, formatın bozulmadan gider.</div></div></div>
+      <div class="ct-uc-item"><div class="ct-uc-dot mir-btn-primary"></div><div><div class="ct-uc-title">Müşteri teklifleri ve raporlar</div><div class="ct-uc-desc">DOCX olarak gönderilen belgeler farklı Word sürümlerinde bozulabilir. PDF gönder, alıcıda tam istediğin gibi görünsün.</div></div></div>
+      <div class="ct-uc-item"><div class="ct-uc-dot mir-btn-primary"></div><div><div class="ct-uc-title">Baskıya hazırlık</div><div class="ct-uc-desc">PDF baskı endüstrisinin standardıdır. Grafik tasarımcıya veya matbaaya PDF gönder, kenar boşlukları ve fontlar tam korunur.</div></div></div>
+      <div class="ct-uc-item"><div class="ct-uc-dot mir-btn-primary"></div><div><div class="ct-uc-title">Arşivleme</div><div class="ct-uc-desc">Word dosyaları sürüme bağlıdır. PDF gelecekte de aynı görünür. Önemli belgelerini PDF olarak arşivle.</div></div></div>
+  </div>
+</div>
+
+<section class="mir-section-wrap" style="padding-top:0">
+  <h2 class="mir-h2">Neden MirPDF ile Word'ü PDF'e Çevirin?</h2>
+  <div class="mir-grid-2">
+    <div class="mir-info-card">
+      <div class="mir-step-title">Biçimlendirme Korunur</div>
+      <div class="mir-step-desc">Font, renk, tablo ve görseller birebir aktarılır.</div>
+    </div>
+    <div class="mir-info-card">
+      <div class="mir-step-title">Evrensel Format</div>
+      <div class="mir-step-desc">PDF her platformda aynı görünür.</div>
+    </div>
+    <div class="mir-info-card">
+      <div class="mir-step-title">Hızlı</div>
+      <div class="mir-step-desc">Saniyeler içinde dönüşüm tamamlanır.</div>
+    </div>
+    <div class="mir-info-card">
+      <div class="mir-step-title">Güvenli</div>
+      <div class="mir-step-desc">Dosyanız işlem sonrası 1 saat içinde otomatik silinir.</div>
+    </div>
+  </div>
+</section>
+
+<section class="mir-section-wrap" style="padding-top:2.5rem">
+  <h2 class="mir-h2">Nasıl Kullanılır?</h2>
+  <div class="mir-steps-list">
+    <div class="mir-step-row"><div class="mir-step-num">1</div><div><div class="mir-step-title">Word Dosyasını Yükleyin</div><div class="mir-step-desc">DOCX veya DOC dosyanızı sürükleyin veya seçin.</div></div></div>
+    <div class="mir-step-row"><div class="mir-step-num">2</div><div><div class="mir-step-title">Dönüşümü Başlatın</div><div class="mir-step-desc">"PDF'e Çevir" butonuna tıklayın.</div></div></div>
+    <div class="mir-step-row"><div class="mir-step-num">3</div><div><div class="mir-step-title">PDF'i İndirin</div><div class="mir-step-desc">Biçimlendirmesi korunmuş PDF dosyanızı indirin.</div></div></div>
+  </div>
+</section>
+
+<footer style="background:#fff;border-top:1px solid #e5e7eb;padding:32px 0 20px;margin-top:3rem">
+  <div style="max-width:860px;margin:0 auto;padding:0 1.5rem">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;margin-bottom:2rem">
+      <div>
+        <div style="font-weight:700;font-size:.875rem;color:#111827;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem">
+          <img src="/assets/icons/logo.svg" width="20" height="20" alt="" style="border-radius:5px"> MirPDF
+        </div>
+        <p style="font-size:.75rem;color:#9ca3af;line-height:1.6;max-width:180px">Ücretsiz PDF araçları. Tarayıcıda çalışır, kayıt gerekmez.</p>
+      </div>
+      <div>
+        <div style="font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#111827;margin-bottom:.6rem">Araçlar</div>
+        <a href="/pdf-birlestir" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">PDF Birleştir</a>
+        <a href="/pdf-sikistir" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">PDF → Word</a>
+        <a href="/ocr" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">OCR / Metin</a>
+      </div>
+      <div>
+        <div style="font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#111827;margin-bottom:.6rem">Yasal</div>
+        <a href="/legal/privacy.html" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">Gizlilik</a>
+        <a href="/legal/terms.html" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">Şartlar</a>
+        <a href="/legal/kvkk.html" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">KVKK</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #f3f4f6;padding-top:14px;font-size:.6875rem;color:#9ca3af;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+      <span>© 2026 MirPDF</span>
+      <div><a href="/legal/privacy.html" style="color:#9ca3af;margin-left:12px;text-decoration:none">Gizlilik</a><a href="/legal/terms.html" style="color:#9ca3af;margin-left:12px;text-decoration:none">Şartlar</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => btn.closest('.faq-item').classList.toggle('open'));
+});
+</script>
+<script type="module" src="/assets/js/tool-page.js"></script>
+<script type="module">
+import { initToolNav } from "/assets/js/tool-nav.js";
+initToolNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+
+<script defer src="/assets/js/tool-content.js"></script>
+<script defer src="/assets/js/toast.js"></script>
+</body>
+</html>

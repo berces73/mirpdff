@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/ocr"/>
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/ocr"/>
+  <link rel="alternate" hreflang="de" href="https://mirpdf.com/de/ocr-pdf"/>
+  <link rel="alternate" hreflang="fr" href="https://mirpdf.com/fr/ocr-pdf"/>
+  <link rel="alternate" hreflang="es" href="https://mirpdf.com/es/ocr-pdf"/>
+  <link rel="alternate" hreflang="en" href="https://mirpdf.com/en/ocr-pdf"/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+  <link rel="dns-prefetch" href="https://plausible.io"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0">
+  <title>OCR — PDF'ten Metin Çıkarma (Türkçe+İngilizce) | MirPDF</title>
+  <meta name="description" content="Taranmış PDF'lerden OCR ile metin çıkar. Türkçe ve İngilizce desteği. Aranabilir PDF çıktısı. Ücretsiz, güvenli sunucu işlemi."/>
+  
+  <link rel="canonical" href="https://mirpdf.com/ocr">
+  <meta property="og:title" content="OCR — PDF'ten Metin Çıkarma (Türkçe+İngilizce) | MirPDF">
+  <meta property="og:url" content="https://mirpdf.com/ocr"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:description" content="Taranmış PDF'lerden OCR ile metin çıkar. Türkçe ve İngilizce desteği.">
+  <meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="OCR — PDF"/>
+  <meta name="twitter:description" content="Taranmış PDF'lerden OCR ile metin çıkar. Türkçe ve İngilizce desteği. Aranabilir PDF çıktısı. Ücretsiz, güvenli sunucu işlemi."/>
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/x-icon" href="/assets/brand/favicon/favicon.ico">
+<noscript>
+</noscript>
+  <script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
+  <script defer src="/assets/js/vitals.js"></script>
+
+      <link rel="stylesheet" href="/assets/css/tool-shell.css"/>
+  <link rel="stylesheet" href="/assets/css/drop-zone.css"/>
+  <link rel="stylesheet" href="/assets/css/drop-zone-patch.css"/>
+  
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu araç ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, bu araç tamamen ücretsizdir. Pro plan ile daha fazla özellik ve kredi kazanabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yüklediğim dosyalar güvende mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Dosyalarınız yalnızca işlem süresince sunucuda kalır ve 60 dakika sonra otomatik olarak silinir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi tarayıcılar destekleniyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chrome, Firefox, Safari, Edge ve tüm modern tarayıcılar desteklenmektedir."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://mirpdf.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Araçlar",
+      "item": "https://mirpdf.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "PDF'den OCR ile Metin Çıkarın",
+      "item": "https://mirpdf.com/ocr"
+    }
+  ]
+}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "PDF OCR ile Metin Tanıma",
+  "description": "MirPDF ile pdf ocr ile metin tanıma için adım adım rehber.",
+  "tool": {
+    "@type": "HowToTool",
+    "name": "MirPDF"
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "PDF Dosyasını Yükleyin",
+      "text": "OCR aracına taranmış veya görüntü içeren PDF dosyanızı yükleyin.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Dil Seçimini Yapın",
+      "text": "Türkçe, İngilizce veya karma dil seçeneğini belirleyin.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "OCR İşlemini Başlatın",
+      "text": "\"Başlat\" butonuna tıklayın. Tesseract motoru metni analiz eder.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Metni İndirin",
+      "text": "Tanınan metin PDF içine gömülür veya metin dosyası olarak indirilir.",
+      "position": 4
+    }
+  ],
+  "totalTime": "PT3M",
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "PDF dosyası"
+    }
+  ]
+}
+</script>
+  <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body data-tool="ocr">
+<nav class="nav" aria-label="Ana navigasyon">
+  <a href="/" class="nav-logo">
+    <img src="/assets/icons/logo.svg" loading="eager" width="32" height="32" alt="" class="mir-logo-img">
+    MirPDF
+  </a>
+  <button aria-label="Menüyü aç" id="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+  <div class="nav-links">
+    <a href="/#tools">Araçlar</a>
+    <a href="/articles/">Blog</a>
+    <a href="/pricing">Fiyatlar</a>
+    <a href="/faq">SSS</a>
+    <a href="/yardim">Yardım</a>
+    <a href="/contact">İletişim</a>
+    <a href="/register" class="nav-btn mir-btn-primary">Ücretsiz Kayıt</a>
+  </div>
+</nav>
+<nav class="breadcrumb" aria-label="İz yolu">
+  <div class="container">
+    <ol>
+      <li><a href="/">Ana Sayfa</a></li>
+      <li><a href="/#tools">Araçlar</a></li>
+      <li aria-current="page">OCR / Metin Tanıma</li>
+    </ol>
+  </div>
+</nav>
+
+<section class="tool-hero">
+  <div class="container">
+    <div class="tool-hero__icon" aria-hidden="true" style="display:none"><i class="fas fa-search"></i></div>
+    <h1 class="tool-hero__title">PDF'den OCR ile Metin Çıkarın</h1>
+    <p class="tool-hero__desc">Taranan PDF'lerdeki metni Tesseract OCR ile tanı. Türkçe + İngilizce desteklenir.</p>
+    <div class="tool-hero__badges">
+      <span class="badge badge--green"><i class="fas fa-lock" aria-hidden="true"></i> KVKK Uyumlu</span>
+      <span class="badge"><i class="fas fa-bolt" aria-hidden="true"></i> Hızlı</span>
+      <span class="badge"><i class="fas fa-gift" aria-hidden="true"></i> Ücretsiz</span>
+      <span class="badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Güvenli</span>
+    </div>
+  </div>
+</section>
+
+
+<div id="tool-app"></div>
+
+  <div class="features">
+      <div class="feat">
+        <div class="feat-icon">🇹🇷</div>
+        <p class="feat-title">Türkçe destek</p>
+        <p>Türkçe karakter desteği ile yüksek tanıma doğruluğu.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🔒</div>
+        <p class="feat-title">Otomatik silme</p>
+        <p>Dosyalar işlem sonrası otomatik silinir.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📋</div>
+        <p class="feat-title">Kopyalanabilir metin</p>
+        <p>Çıkarılan metni kopyala veya indir.</p>
+      </div>
+  </div>
+</div>
+
+
+<section class="related-tools-section">
+  <h2>İlgili Araçlar</h2>
+  <div class="mir-tag-row"><a href="/pdf-to-word" class="mir-related-tag">PDF → Word</a><a href="/pdf-sikistir" class="mir-related-tag">PDF Sıkıştır</a><a href="/pdf-bol" class="mir-related-tag">PDF Böl</a><a href="/pdf-to-jpg" class="mir-related-tag">PDF → JPG</a></div>
+</section>
+
+
+<div class="mir-related-articles" class="mir-info-box-lg">
+  <p class="mir-label-gray">📚 İlgili Makaleler</p>
+  <div class="mir-flex-wrap">
+    <a href="/articles/ocr-turkce-pdf-metin" class="mir-tag-chip">Türkçe PDF OCR ile Metin Çıkarma</a> <a href="/articles/taranmis-pdf-duzenleme-ocr" class="mir-tag-chip">Taranmış PDF'i Düzenlenebilir Hale Getirme (OCR): </a> <a href="/articles/ocr-turkce-karakter-sorunu" class="mir-tag-chip">OCR Türkçe Karakter Tanımıyor: Sorunun Nedenleri v</a>
+  </div>
+</div>
+<section class="faq-section" aria-labelledby="faq-heading-ocr">
+      <h2 id="faq-heading-ocr">Sık Sorulan Sorular</h2>
+      <details class="faq-item">
+        <summary>OCR işlemi sunucuda mı gerçekleşir?</summary>
+        <p>Evet. OCR yüksek doğruluk için güvenli sunucu altyapısında işlenir. Dosyanız işlem sonrası otomatik silinir.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Türkçe karakterler doğru tanınıyor mu?</summary>
+        <p>Evet. Motor Türkçe karakter ve özel harfleri destekler.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Taranmış olmayan PDF'de de çalışıyor mu?</summary>
+        <p>Evet. Metin katmanı olmayan veya görüntü tabanlı her PDF'de çalışır.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Çıktı formatı ne?</summary>
+        <p>Metin olarak kopyalanabilir veya aranabilir PDF olarak indirilebilir.</p>
+      </details>
+
+    </section>
+<section class="mir-section-wrap" style="padding-top:2.5rem">
+  <h2 class="mir-h2">Nasıl Kullanılır?</h2>
+  <div class="mir-steps-list">
+    <div class="mir-step-row"><div class="mir-step-num">1</div><div><div class="mir-step-title">PDF veya Görseli Yükleyin</div><div class="mir-step-desc">Taranmış PDF, JPG veya PNG dosyanızı yükleyin.</div></div></div>
+    <div class="mir-step-row"><div class="mir-step-num">2</div><div><div class="mir-step-title">Dil Seçin</div><div class="mir-step-desc">Türkçe dahil 50+ dil desteklenir.</div></div></div>
+    <div class="mir-step-row"><div class="mir-step-num">3</div><div><div class="mir-step-title">OCR Başlatın</div><div class="mir-step-desc">"Metni Çıkar" butonuna tıklayın. 10-60 saniye sürer.</div></div></div>
+    <div class="mir-step-row"><div class="mir-step-num">4</div><div><div class="mir-step-title">Sonucu İndirin</div><div class="mir-step-desc">Metin içeren PDF veya düz metin dosyasını indirin.</div></div></div>
+  </div>
+</section>
+
+<section class="mir-section-wrap" style="padding-top:0">
+  <h2 class="mir-h2">Özellikler</h2>
+  <div class="mir-grid-2">
+    <div class="mir-info-card"><div class="mir-step-title">Türkçe Desteği</div><div class="mir-step-desc">ş, ğ, ı gibi Türkçe karakterler doğru tanınır.</div></div>
+    <div class="mir-info-card"><div class="mir-step-title">50+ Dil</div><div class="mir-step-desc">Türkçe dahil 50'den fazla dil desteklenir.</div></div>
+    <div class="mir-info-card"><div class="mir-step-title">Yüksek Doğruluk</div><div class="mir-step-desc">Tesseract OCR motoru ile yüksek tanıma başarısı.</div></div>
+    <div class="mir-info-card"><div class="mir-step-title">Hızlı</div><div class="mir-step-desc">10-60 saniye içinde sonuç alın.</div></div>
+  </div>
+</section>
+
+<footer style="background:#fff;border-top:1px solid #e5e7eb;padding:32px 0 20px;margin-top:3rem">
+  <div style="max-width:860px;margin:0 auto;padding:0 1.5rem">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;margin-bottom:2rem">
+      <div>
+        <div style="font-weight:700;font-size:.875rem;color:#111827;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem">
+          <img src="/assets/icons/logo.svg" width="20" height="20" alt="" style="border-radius:5px"> MirPDF
+        </div>
+        <p style="font-size:.75rem;color:#9ca3af;line-height:1.6;max-width:180px">Ücretsiz PDF araçları. Tarayıcıda çalışır, kayıt gerekmez.</p>
+      </div>
+      <div>
+        <div style="font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#111827;margin-bottom:.6rem">Araçlar</div>
+        <a href="/pdf-birlestir" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">PDF Birleştir</a>
+        <a href="/pdf-sikistir" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">PDF Sıkıştır</a>
+        <a href="/pdf-to-word" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">PDF → Word</a>
+        <a href="/ocr" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">OCR / Metin</a>
+      </div>
+      <div>
+        <div style="font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#111827;margin-bottom:.6rem">Yasal</div>
+        <a href="/legal/privacy.html" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">Gizlilik</a>
+        <a href="/legal/terms.html" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">Şartlar</a>
+        <a href="/legal/kvkk.html" style="display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.3rem;text-decoration:none">KVKK</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #f3f4f6;padding-top:14px;font-size:.6875rem;color:#9ca3af;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+      <span>© 2026 MirPDF</span>
+      <div><a href="/legal/privacy.html" style="color:#9ca3af;margin-left:12px;text-decoration:none">Gizlilik</a><a href="/legal/terms.html" style="color:#9ca3af;margin-left:12px;text-decoration:none">Şartlar</a></div>
+    </div>
+  </div>
+</footer>
+
+
+<section class="testimonials-section">
+  <h2>Kullanıcılar Ne Diyor?</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Eski mahkeme kararlarını tarıyorum, metin çıkarmam gerekiyor. Türkçe OCR'ı doğru çalışıyor — özellikle eski Türkçe belgeler için çok işlevsel."</p>
+      <div class="testimonial-author">Hasan Ö. <span>— Avukat, Bursa</span></div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"10 yıllık kağıt arşivimi dijitalleştiriyorum. Tesseract'ın Türkçe desteği gerçekten iyi."</p>
+      <div class="testimonial-author">Ayşe D. <span>— Mali Müşavir, İstanbul</span></div>
+    </div>
+  </div>
+</section>
+<script type="module" src="/assets/js/tool-page.js"></script>
+<script>
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const dzFile = document.getElementById('dzFile');
+const dzFileName = document.getElementById('dzFileName');
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('tp-dropzone--over'); });
+dropZone.addEventListener('dragleave', e => { if(!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('tp-dropzone--over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('tp-dropzone--over');
+  const dt = new DataTransfer();
+  [...e.dataTransfer.files].forEach(f => dt.items.add(f));
+  fileInput.files = dt.files;
+  fileInput.dispatchEvent(new Event('change'));
+});
+fileInput.addEventListener('change', () => {
+  if (fileInput.files[0]) { dzFileName.textContent=fileInput.files[0].name; dzFile.classList.add('show'); }
+});
+</script>
+
+<script type="module">
+import { initToolNav } from "/assets/js/tool-nav.js";
+initToolNav();
+</script>
+<script defer src="/assets/js/cookie-consent.js"></script>
+
+<script defer src="/assets/js/tool-content.js"></script>
+<script defer src="/assets/js/toast.js"></script>
+</body>
+</html>

@@ -242,3 +242,137 @@ body[data-tool="ppt-to-pdf"]   .tp-progress__fill { background: linear-gradient(
     linear-gradient(180deg, transparent 60%, #6366f1 60%) bottom left  / 2px 30px no-repeat;
   animation: tp-corner-in .2s ease-out both;
 }
+
+/* ══════════════════════════════════════════════
+   MirPDF SaaS Upgrade — Smallpdf-level Tool UI
+   ══════════════════════════════════════════════ */
+
+/* ── 1. Hero: daha büyük, daha net ── */
+.tool-hero {
+  background: #fff !important;
+  border-bottom: 1px solid #e3e6f0;
+  padding: 2.75rem 1.5rem 2.25rem !important;
+  text-align: center;
+}
+.tool-hero__icon {
+  font-size: 2.75rem !important;
+  margin-bottom: .75rem;
+}
+.tool-hero__title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  color: #0d0f1a !important;
+  margin-bottom: .6rem !important;
+  letter-spacing: -.02em;
+}
+.tool-hero__desc {
+  font-size: 1.05rem !important;
+  color: #64748b !important;
+  max-width: 560px !important;
+  margin: 0 auto 1.25rem !important;
+  line-height: 1.6 !important;
+}
+.tool-hero__badges {
+  gap: .5rem !important;
+}
+.badge {
+  font-size: .8rem !important;
+  font-weight: 600 !important;
+  padding: .3rem .85rem !important;
+  border-radius: 100px !important;
+}
+
+/* ── 2. Dropzone: Smallpdf gibi büyük, net ── */
+.tp-dropzone {
+  border: 2.5px dashed #c7d2fe !important;
+  border-radius: 20px !important;
+  background: #f5f3ff !important;
+  padding: 3.5rem 2rem !important;
+  max-width: 680px;
+  margin: 0 auto 1rem !important;
+  transition: border-color .2s, background .2s, transform .15s !important;
+}
+.tp-dropzone:hover {
+  border-color: #6366f1 !important;
+  background: #ede9fe !important;
+  transform: scale(1.01) !important;
+}
+.tp-dropzone--over {
+  border-color: #6366f1 !important;
+  background: #e0e7ff !important;
+}
+.tp-dropzone__icon {
+  font-size: 3.5rem !important;
+  color: #6366f1 !important;
+  opacity: .85 !important;
+  margin-bottom: 1.25rem !important;
+}
+.tp-dropzone__label {
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #0d0f1a !important;
+  margin-bottom: .35rem !important;
+}
+.tp-dropzone__sub {
+  font-size: .9rem !important;
+  color: #64748b !important;
+  margin-bottom: .85rem !important;
+}
+
+/* ── 3. Büyük CTA butonu (Smallpdf: "DOSYALARI SEÇ") ── */
+.tp-select-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+  background: #0d0f1a !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  padding: .9rem 2.25rem !important;
+  border-radius: 12px !important;
+  border: none !important;
+  cursor: pointer !important;
+  letter-spacing: .03em !important;
+  transition: background .15s, transform .1s !important;
+  margin-top: .5rem !important;
+  text-transform: uppercase;
+  font-family: inherit !important;
+}
+.tp-select-btn:hover {
+  background: #1f2937 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── 4. Trust bar altına ── */
+#tool-app::after,
+.tool-app::after {
+  content: '🔒 KVKK Uyumlu · SSL Şifreli · Dosyalar 1 saat içinde silinir';
+  display: block;
+  text-align: center;
+  font-size: .78rem;
+  color: #94a3b8;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── 5. Tool app container ── */
+#tool-app, .tool-app {
+  max-width: 780px !important;
+  margin: 2rem auto !important;
+  padding: 0 1.25rem !important;
+}
+
+/* ── 6. Run button (işlem butonu) büyük ── */
+.tp-run-btn, .run-btn, .btn-primary {
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  padding: .85rem 2rem !important;
+  border-radius: 12px !important;
+  letter-spacing: .02em !important;
+}
+
+/* ── 7. Sayfa genelinde font Inter ── */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif !important;
+}

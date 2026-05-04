@@ -332,8 +332,11 @@ function createDropZone(opts = {}) {
   zone.innerHTML = `
     <div class="tp-dropzone__icon">${icon}</div>
     <div class="tp-dropzone__label">${label}</div>
-    <div class="tp-dropzone__sub">${sublabel} • Maks ${maxMb} MB${multiple ? " • Birden fazla dosya" : ""}</div>
-    <div class="tp-dropzone__formats">${accept.replace(/\./g,"").toUpperCase().replace(/,/g," · ")}</div>
+    <div class="tp-dropzone__sub">veya tıklayarak seç • Maks ${maxMb} MB${multiple ? " • Birden fazla dosya" : ""}</div>
+    <button type="button" class="tp-select-btn" onclick="event.stopPropagation();this.closest('.tp-dropzone').querySelector('input[type=file]').click()">
+      <i class="fas fa-folder-open"></i> Dosyaları Seç
+    </button>
+    <div class="tp-dropzone__formats" style="margin-top:.75rem">${accept.replace(/\./g,"").toUpperCase().replace(/,/g," · ")}</div>
   `;
   zone.appendChild(inp);
   zone.addEventListener("click", (e) => {

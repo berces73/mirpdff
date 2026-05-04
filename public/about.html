@@ -1,1065 +1,451 @@
-<!DOCTYPE html>
-<html lang="tr" data-theme="light">
+<!doctype html>
+<html lang="tr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5.0"/>
-<title>Hakkımızda | MirPDF — Güvenli Online PDF Araçları</title>
-<meta name="description" content="MirPDF, tarayıcıdan çalışan ücretsiz PDF araçları sunar. Sıkıştır, birleştir, dönüştür — kurulum yok, kayıt yok. Dosyalar işlem sonrası otomatik silinir."/>
-
-<link rel="canonical" href="https://mirpdf.com/about"/>
-<link rel="alternate" hreflang="tr" href="https://mirpdf.com/about"/>
-<link rel="alternate" hreflang="en" href="https://mirpdf.com/en/about"/>
-<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/about"/>
-<meta property="og:title" content="Hakkımızda | MirPDF"/>
-<meta property="og:description" content="MirPDF, tarayıcı üzerinden kullanılan hızlı ve güvenli PDF araçları sunar. Bazı işlemler tarayıcıda, bazıları sunucuda gerçekleştirilir."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://mirpdf.com/about"/>
-  <meta property="og:locale" content="tr_TR"/>
-<meta property="og:image" content="https://mirpdf.com/assets/icons/og-image.jpg"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-<meta property="og:site_name" content="MirPDF"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Hakkımızda | MirPDF"/>
-<meta name="twitter:description" content="MirPDF, tarayıcı üzerinden kullanılan hızlı ve güvenli PDF araçları sunar. Bazı işlemler tarayıcıda, bazıları sunucuda gerçekleştirilir."/>
-<meta name="twitter:image" content="https://mirpdf.com/assets/icons/og-image.jpg"/>
-<link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico"/>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "MirPDF",
-  "url": "https://mirpdf.com",
-  "description": "MirPDF, tarayıcı tabanlı, güvenli ve hızlı PDF araçları sunan Türkçe bir online platformdur.",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://mirpdf.com/assets/icons/og-image.jpg"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "destek@mirpdf.com",
-    "contactType": "customer support",
-    "availableLanguage": "Turkish"
-  }
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+<title>Hakkımızda | MirPDF</title>
+<meta name="description" content="MirPDF, Türkiye için geliştirilmiş ücretsiz ve güvenli PDF araçları platformudur.">
+<link rel="canonical" href="https://mirpdf.com/about">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="/assets/brand/favicon/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
 <style>
-/* ── TOKENS ─────────────────────────────────────────────────── */
-:root {
-  --bg:       #ffffff;
-  --bg-soft:  #f7f8fc;
-  --bg-mute:  #eef0f7;
-  --border:   #e3e6f0;
-  --text:     #0d0f1a;
-  --muted:    #64748b;
-  --light:    #94a3b8;
-  --radius:   18px;
-  --radius-sm:12px;
-  --ease:     cubic-bezier(.22,.68,0,1.2);
-  --shadow:   0 8px 32px rgba(13,15,26,.08);
-  --shadow-sm:0 2px 10px rgba(13,15,26,.06);
-}
-
-/* ── RESET ───────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Figtree',ui-sans-serif,system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
+  background:#fff;color:#0d0f1a;line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
-img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 
-/* ── LAYOUT ──────────────────────────────────────────────────── */
-.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-.section{padding:6rem 0}
-.section-sm{padding:4rem 0}
-
-/* ── HEADER ──────────────────────────────────────────────────── */
-.header{
-  position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,.93);
+/* ── Header ── */
+.hdr{
+  position:sticky;top:0;z-index:300;
+  background:rgba(255,255,255,.97);
   backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid #e4e7ed;
 }
-.header-inner{
-  display:flex;align-items:center;
-  justify-content:space-between;
-  height:66px;gap:1rem;
+.hdr-i{
+  max-width:1100px;margin:0 auto;padding:0 1.5rem;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
 }
-.logo{
-  display:flex;align-items:center;gap:.55rem;
-  color:var(--text);font-weight:800;font-size:1.18rem;
-}
-.logo-mark{
-  width:34px;height:34px;border-radius:10px;
-  background:var(--text);
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:.85rem;font-weight:900;
-  font-family:'Figtree',sans-serif;
-}
-.main-nav{display:flex;align-items:center;gap:.1rem}
-.main-nav a{
-  color:var(--muted);font-size:.9rem;font-weight:500;
-  padding:.45rem .9rem;border-radius:10px;
-  transition:background .15s,color .15s;
-}
-.main-nav a:hover{background:var(--bg-soft);color:var(--text)}
-.main-nav a.active{color:var(--text);background:var(--bg-soft);font-weight:600}
-.btn-premium{
-  background:var(--text)!important;color:#fff!important;
-  padding:.45rem 1.2rem!important;border-radius:10px;
-  font-weight:700!important;font-size:.9rem;
-}
-.btn-premium:hover{opacity:.82!important}
-#mobileToggle{
-  display:none;background:none;border:1px solid var(--border);
-  color:var(--text);padding:.4rem .7rem;border-radius:9px;
-  cursor:pointer;font-size:1rem;line-height:1;
+.logo{display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:1.1rem;color:#0d0f1a}
+.snav{display:flex;align-items:center;gap:.25rem}
+.snav a{color:#64748b;font-size:.875rem;font-weight:500;padding:.4rem .8rem;border-radius:9px;transition:.15s}
+.snav a:hover{background:#f7f8fc;color:#0d0f1a}
+.snav .cta{background:#0d0f1a;color:#fff!important;font-weight:700;padding:.45rem 1.1rem;border-radius:9px}
+.snav .cta:hover{background:#1f2937}
+#mt{display:none;background:none;border:1.5px solid #e4e7ed;color:#0d0f1a;
+  padding:.4rem .65rem;border-radius:9px;cursor:pointer;font-size:1rem;z-index:400}
+@media(max-width:700px){
+  #mt{display:flex;align-items:center;justify-content:center}
+  .snav{display:none;flex-direction:column;align-items:stretch;
+    position:absolute;top:64px;left:0;right:0;
+    background:#fff;border-bottom:1px solid #e4e7ed;
+    box-shadow:0 12px 32px rgba(0,0,0,.1);
+    padding:1rem 1.25rem 1.5rem;gap:.15rem;z-index:300}
+  .snav.show{display:flex}
+  .snav a{padding:.7rem 1rem;border-radius:10px;font-size:.95rem;border:none;background:none}
+  .snav .cta{margin-top:.5rem;text-align:center;padding:.8rem}
 }
 
-/* ── HERO ────────────────────────────────────────────────────── */
+/* ── Layout ── */
+.wrap{max-width:680px;margin:0 auto;padding:0 1.5rem}
+.wrap-wide{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* ── Hero ── */
 .hero{
-  padding:7rem 0 5rem;
-  position:relative;overflow:hidden;
+  padding:6rem 1.5rem 5rem;
+  text-align:center;
+  border-bottom:1px solid #f1f3f7;
 }
-.hero::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(var(--border) 1px,transparent 1px),
-    linear-gradient(90deg,var(--border) 1px,transparent 1px);
-  background-size:48px 48px;opacity:.35;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%);
+.hero-label{
+  display:inline-block;font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;
+  margin-bottom:1.5rem;
 }
-.hero-inner{
-  position:relative;z-index:1;
-  text-align:center;max-width:760px;margin:0 auto;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:.45rem;
-  background:var(--bg-soft);border:1px solid var(--border);
-  color:var(--muted);font-size:.75rem;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;
-  padding:.35rem 1rem;border-radius:100px;margin-bottom:2rem;
-}
-.hero-eyebrow .dot{
-  width:6px;height:6px;border-radius:50%;background:#10b981;
-  animation:pulse 2s ease-in-out infinite;
-}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
 .hero h1{
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(2.6rem,6vw,4.2rem);
-  font-weight:400;line-height:1.1;
-  letter-spacing:-.03em;margin-bottom:1.25rem;
+  font-size:clamp(2rem,5vw,3.25rem);
+  font-weight:900;line-height:1.1;
+  letter-spacing:-.04em;
+  color:#0d0f1a;
+  margin-bottom:1.5rem;
+  max-width:600px;margin-left:auto;margin-right:auto;
 }
-.hero h1 em{
-  font-style:italic;
-  background:linear-gradient(125deg,#ef4444 0%,#9333ea 55%,#2563eb 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.hero p{
+  font-size:1.0625rem;color:#374151;
+  line-height:1.75;max-width:520px;
+  margin:0 auto 2.5rem;
 }
-.hero-sub{
-  font-size:1.1rem;color:#374151;
-  max-width:540px;margin:0 auto 3rem;line-height:1.75;
+.hero-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:#0d0f1a;color:#fff;
+  font-size:.9rem;font-weight:700;
+  padding:.8rem 1.75rem;border-radius:11px;
+  transition:.15s;
 }
-.trust-row{
-  display:flex;align-items:center;justify-content:center;
-  flex-wrap:wrap;gap:.75rem 1.5rem;
-  font-size:.88rem;color:#374151;font-weight:500;
-}
-.trust-item{
-  display:flex;align-items:center;gap:.4rem;
-}
-.trust-check{
-  width:20px;height:20px;border-radius:50%;
-  background:#ecfdf5;border:1.5px solid #6ee7b7;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.65rem;color:#059669;flex-shrink:0;
-  font-weight:800;
-}
+.hero-btn:hover{background:#1f2937}
 
-/* ── STATS ───────────────────────────────────────────────────── */
-.stats{
-  background:var(--text);padding:3.5rem 0;
+/* ── Section ── */
+.section{padding:5.5rem 1.5rem;border-bottom:1px solid #f1f3f7}
+.section:last-of-type{border-bottom:none}
+.section-label{
+  display:block;font-size:.7rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:#94a3b8;margin-bottom:1.25rem;
 }
-.stats-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:2rem;text-align:center;
+.section h2{
+  font-size:clamp(1.5rem,3vw,2.1rem);
+  font-weight:800;letter-spacing:-.03em;
+  line-height:1.2;color:#0d0f1a;
+  margin-bottom:1.25rem;
 }
-.stat-num{
-  font-family:'Instrument Serif',serif;
-  font-size:2.8rem;font-weight:400;color:#fff;
-  line-height:1;margin-bottom:.35rem;letter-spacing:-.02em;
-}
-.stat-label{font-size:.88rem;color:rgba(255,255,255,.55);font-weight:500}
-
-/* ── VALUES ──────────────────────────────────────────────────── */
-.values-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
-}
-.value-card{
-  background:var(--bg);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:2rem 1.75rem;
-  transition:all .22s var(--ease);
-  position:relative;overflow:hidden;
-}
-.value-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,var(--bg-soft) 0%,transparent 60%);
-  opacity:0;transition:opacity .22s;
-}
-.value-card:hover{
-  border-color:rgba(99,102,241,.3);
-  transform:translateY(-3px);
-  box-shadow:var(--shadow);
-}
-.value-card:hover::before{opacity:1}
-.value-icon{
-  font-size:2rem;margin-bottom:1.1rem;
-  position:relative;z-index:1;
-}
-.value-title{
-  font-size:1rem;font-weight:700;
-  color:var(--text);margin-bottom:.5rem;
-  position:relative;z-index:1;
-}
-.value-desc{
-  font-size:.88rem;line-height:1.65;
-  color:var(--muted);position:relative;z-index:1;
-}
-
-/* ── ABOUT SPLIT ─────────────────────────────────────────────── */
-.about-split{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:5rem;align-items:center;
-}
-.about-label{
-  font-size:.72rem;font-weight:800;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:1rem;
-}
-.about-split h2{
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(1.8rem,3vw,2.5rem);
-  font-weight:400;line-height:1.2;
-  letter-spacing:-.02em;margin-bottom:1.25rem;
-}
-.about-split p{
-  font-size:.97rem;color:var(--muted);
+.section p{
+  font-size:.9375rem;color:#374151;
   line-height:1.8;margin-bottom:1rem;
 }
-.about-split p:last-child{margin-bottom:0}
-.about-visual{
-  background:var(--bg-soft);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:2.5rem;
-  display:flex;flex-direction:column;gap:1rem;
+.section p:last-child{margin-bottom:0}
+.section strong{color:#0d0f1a;font-weight:700}
+
+/* ── Stats row — sadece sayılar, çizgi ── */
+.stats{
+  padding:4rem 1.5rem;
+  border-bottom:1px solid #f1f3f7;
 }
-.about-visual-item{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 1.25rem;background:var(--bg);
-  border:1px solid var(--border);border-radius:var(--radius-sm);
-  font-size:.9rem;font-weight:600;color:var(--text);
-  transition:all .18s;
+.stats-grid{
+  max-width:800px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;
 }
-.about-visual-item:hover{border-color:#c7d2fe;transform:translateX(3px)}
-.about-visual-item .avi{
-  width:36px;height:36px;border-radius:9px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;flex-shrink:0;
+.stat{
+  text-align:center;padding:0 1rem;
+  border-right:1px solid #e4e7ed;
+}
+.stat:last-child{border-right:none}
+.stat-n{
+  font-size:2.25rem;font-weight:900;
+  color:#0d0f1a;letter-spacing:-.04em;
+  line-height:1;margin-bottom:.35rem;
+}
+.stat-l{font-size:.78rem;color:#94a3b8;font-weight:500}
+@media(max-width:560px){
+  .stats-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .stat{border-right:none}
 }
 
-/* ── TOOLS GRID ──────────────────────────────────────────────── */
-.tools-section{background:var(--bg-soft)}
-.tools-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
-}
-.tool-item{
-  display:flex;align-items:center;gap:.85rem;
-  background:var(--bg);border:1.5px solid var(--border);
-  border-radius:var(--radius-sm);padding:1.1rem 1.25rem;
-  transition:all .18s var(--ease);cursor:default;
-}
-.tool-item:hover{
-  border-color:rgba(99,102,241,.35);
-  box-shadow:var(--shadow-sm);transform:translateY(-1px);
-}
-.tool-emoji{
-  width:40px;height:40px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.15rem;flex-shrink:0;
-}
-.tool-info{}
-.tool-name{font-size:.92rem;font-weight:700;color:var(--text)}
-.tool-desc{font-size:.8rem;color:var(--muted);margin-top:.1rem}
-
-/* ── SECURITY ────────────────────────────────────────────────── */
-.security-section{
-  background:var(--text);color:#fff;
-  position:relative;overflow:hidden;
-}
-.security-section::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size:40px 40px;
-}
-.security-inner{position:relative;z-index:1}
-.security-grid{
+/* ── İki sütun ── */
+.two-col{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:5rem;align-items:center;
+  gap:5rem;align-items:start;
 }
-.security-section h2{
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(1.8rem,3vw,2.5rem);
-  font-weight:400;line-height:1.2;
-  color:#fff;margin-bottom:1.25rem;letter-spacing:-.02em;
-}
-.security-section p{
-  color:rgba(255,255,255,.65);
-  font-size:.97rem;line-height:1.8;margin-bottom:1rem;
-}
-.security-section p:last-child{margin-bottom:0}
-.security-pills{
-  display:flex;flex-direction:column;gap:.75rem;
-}
-.security-pill{
-  display:flex;align-items:flex-start;gap:1rem;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;padding:1.25rem;
-  transition:background .18s;
-}
-.security-pill:hover{background:rgba(255,255,255,.1)}
-.pill-icon{
-  width:38px;height:38px;border-radius:10px;
-  background:rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;flex-shrink:0;
-}
-.pill-title{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.2rem}
-.pill-desc{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.55}
+@media(max-width:760px){.two-col{grid-template-columns:1fr;gap:3rem}}
 
-/* ── CTA ─────────────────────────────────────────────────────── */
-.cta-section{padding:7rem 0}
-.cta-inner{
-  text-align:center;max-width:620px;margin:0 auto;
+/* ── Liste — kutucuksuz ── */
+.plain-list{list-style:none;padding:0;margin:1.5rem 0 0}
+.plain-list li{
+  display:flex;align-items:flex-start;gap:.85rem;
+  padding:.85rem 0;border-bottom:1px solid #f1f3f7;
+  font-size:.9rem;color:#374151;line-height:1.65;
+}
+.plain-list li:last-child{border-bottom:none}
+.plain-list li i{color:#94a3b8;font-size:.85rem;margin-top:.2rem;flex-shrink:0}
+
+/* ── Araçlar — sadece metin listesi ── */
+.tool-list{
+  columns:2;column-gap:3rem;
+  list-style:none;padding:0;margin:1.5rem 0 0;
+}
+.tool-list li{
+  padding:.6rem 0;border-bottom:1px solid #f1f3f7;
+  font-size:.9rem;color:#374151;break-inside:avoid;
+}
+.tool-list li a{color:#374151;font-weight:500}
+.tool-list li a:hover{color:#0d0f1a}
+@media(max-width:560px){.tool-list{columns:1}}
+
+/* ── Koyu bölüm ── */
+.dark-section{
+  background:#0d0f1a;
+  padding:5.5rem 1.5rem;
+}
+.dark-section .section-label{color:rgba(255,255,255,.3)}
+.dark-section h2{color:#fff}
+.dark-section p{color:rgba(255,255,255,.6)}
+.dark-section strong{color:#fff}
+.dark-list{list-style:none;padding:0;margin:1.5rem 0 0}
+.dark-list li{
+  display:flex;align-items:flex-start;gap:.85rem;
+  padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07);
+  font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.65;
+}
+.dark-list li:last-child{border-bottom:none}
+.dark-list li i{color:rgba(255,255,255,.25);font-size:.85rem;margin-top:.2rem;flex-shrink:0}
+
+/* ── CTA ── */
+.cta-section{
+  padding:7rem 1.5rem;text-align:center;
 }
 .cta-section h2{
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(2rem,4vw,3rem);
-  font-weight:400;letter-spacing:-.025em;
-  line-height:1.15;margin-bottom:1rem;
+  font-size:clamp(1.75rem,4vw,2.75rem);
+  font-weight:900;letter-spacing:-.04em;
+  line-height:1.15;color:#0d0f1a;margin-bottom:1rem;
 }
 .cta-section p{
-  font-size:1.05rem;color:var(--muted);
-  margin-bottom:2.5rem;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;
+  font-size:1rem;color:#64748b;
+  max-width:440px;margin:0 auto 2.5rem;line-height:1.7;
 }
-.cta-btns{
-  display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap;
-}
-.btn{
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.btn-dark{
   display:inline-flex;align-items:center;gap:.5rem;
-  font-family:'Figtree',sans-serif;font-weight:700;font-size:.95rem;
-  padding:.8rem 1.9rem;border-radius:12px;
-  transition:all .2s var(--ease);cursor:pointer;border:none;
-  text-decoration:none;line-height:1;
+  background:#0d0f1a;color:#fff;
+  font-size:.9rem;font-weight:700;
+  padding:.8rem 1.75rem;border-radius:11px;transition:.15s;
 }
-.btn-dark{background:var(--text);color:#fff}
-.btn-dark:hover{opacity:.85;transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn-outline{
-  background:transparent;color:var(--text);
-  border:1.5px solid var(--border);
+.btn-dark:hover{background:#1f2937}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:none;color:#374151;
+  border:1.5px solid #e4e7ed;
+  font-size:.9rem;font-weight:600;
+  padding:.8rem 1.75rem;border-radius:11px;transition:.15s;
 }
-.btn-outline:hover{
-  background:var(--bg-soft);border-color:var(--light);
-  transform:translateY(-1px);
-}
+.btn-ghost:hover{background:#f7f8fc}
 
-/* ── SECTION HEADING ─────────────────────────────────────────── */
-.section-head{margin-bottom:3.5rem}
-.section-head .label{
-  font-size:.72rem;font-weight:800;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);
-  display:block;margin-bottom:.7rem;
+/* ── Footer ── */
+.footer{background:#0d0f1a;padding:3.5rem 1.5rem 2rem}
+.footer-i{max-width:1100px;margin:0 auto}
+.footer-g{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:2.5rem;margin-bottom:2.5rem;
 }
-.section-head h2{
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(1.8rem,3vw,2.4rem);
-  font-weight:400;letter-spacing:-.02em;
-  line-height:1.2;color:var(--text);margin-bottom:.6rem;
+@media(max-width:760px){.footer-g{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-g{grid-template-columns:1fr}}
+.f-brand{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:800;margin-bottom:.65rem}
+.f-desc{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.6}
+.f-col h4{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.85rem}
+.f-col a{display:block;color:rgba(255,255,255,.55);font-size:.84rem;margin-bottom:.45rem;transition:.12s}
+.f-col a:hover{color:#fff}
+.f-bot{
+  border-top:1px solid rgba(255,255,255,.07);
+  padding-top:1.5rem;display:flex;
+  justify-content:space-between;flex-wrap:wrap;
+  gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.3);
 }
-.section-head p{
-  font-size:1rem;color:var(--muted);max-width:520px;line-height:1.7;
-}
-
-/* ── DIVIDER ─────────────────────────────────────────────────── */
-.divider{height:1px;background:var(--border);margin:0}
-
-/* ── FOOTER ──────────────────────────────────────────────────── */
-.footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2rem}
-.footer-grid{
-  display:grid;grid-template-columns:1.6fr repeat(3,1fr);
-  gap:3rem;margin-bottom:3rem;
-}
-.footer-brand p{font-size:.86rem;color:var(--muted);margin-top:.7rem;line-height:1.65;max-width:250px}
-.footer-col h4{
-  font-size:.78rem;font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--text);margin-bottom:.9rem;
-}
-.footer-col a{
-  display:block;font-size:.86rem;color:var(--muted);
-  margin-bottom:.5rem;transition:color .14s;
-}
-.footer-col a:hover{color:var(--text)}
-.footer-bottom{
-  border-top:1px solid var(--border);padding-top:1.5rem;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:.75rem;font-size:.8rem;color:var(--muted);
-}
-.footer-bottom a{color:var(--muted)}
-.footer-bottom a:hover{color:var(--text)}
-.footer-links-row{display:flex;gap:1.25rem}
-
-/* ── RESPONSIVE ──────────────────────────────────────────────── */
-@media(max-width:1024px){
-  .values-grid{grid-template-columns:repeat(2,1fr)}
-  .stats-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
-}
-@media(max-width:900px){
-  .about-split,.security-grid{grid-template-columns:1fr;gap:3rem}
-  .tools-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .section{padding:4rem 0}
-  .hero{padding:5rem 0 3.5rem}
-  .values-grid{grid-template-columns:1fr}
-  .tools-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr}
-  #mobileToggle{display:block}
-  .main-nav{
-    display:none;flex-direction:column;
-    position:absolute;top:66px;left:0;right:0;
-    background:#fff;border-bottom:1px solid var(--border);
-    padding:1rem;z-index:99;
-  }
-  .main-nav.show{display:flex}
-  .main-nav a{width:100%;padding:.65rem 1rem}
-}
-
-/* ── FORCE LIGHT OVERRIDES ─── */
-html, body { background:#ffffff !important; color:#111827 !important; }
-.security-section { background:#0f172a !important; }
-.about-visual { background:#f8fafc !important; border:1px solid #e5e7eb !important; border-radius:16px !important; padding:1.5rem !important; }
-.about-visual-item { background:#ffffff !important; border:1px solid #e5e7eb !important; border-radius:10px !important; color:#374151 !important; padding:.75rem 1rem !important; font-size:.875rem !important; font-weight:500 !important; }
-.value-card { background:#ffffff !important; border:1px solid #e5e7eb !important; color:#111827 !important; }
-.value-title { color:#111827 !important; }
-.value-desc { color:#6b7280 !important; }
-.section-head h2 { color:#111827 !important; }
-.section-head p { color:#6b7280 !important; }
-.about-split h2 { color:#111827 !important; }
-.about-split p { color:#374151 !important; }
-.about-label { color:#9ca3af !important; }
-.tool-item { background:#ffffff !important; border:1px solid #e5e7eb !important; }
-.tool-name { color:#111827 !important; }
-.tool-desc { color:#6b7280 !important; }
-.stat-num { color:#111827 !important; }
-.stat-label { color:#6b7280 !important; }
-.stats-section { background:#f8fafc !important; }
-.label { color:#9ca3af !important; background:transparent !important; }
-.hero-badge { background:#f3f4f6 !important; color:#9ca3af !important; }
-.hero-title { color:#111827 !important; }
-.hero-sub { color:#374151 !important; }
-.trust-row { color:#374151 !important; }
-.trust-row i { color:#22c55e !important; }
-.divider { border-color:#f3f4f6 !important; }
-</style>
-<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
-<link rel="stylesheet" href="/style.css">
-<script>document.documentElement.setAttribute('data-theme','light');</script>
-<style id="__global_mobile">
-/* ── Global Mobile Nav Fix ── */
-#mobileToggle,#nav-toggle{
-  display:none;background:none;
-  border:1.5px solid #e3e6f0;color:#0d0f1a;
-  padding:.4rem .65rem;border-radius:9px;
-  cursor:pointer;font-size:1rem;
-  position:relative;z-index:400;
-  align-items:center;justify-content:center;
-}
-@media(max-width:700px){
-  #mobileToggle,#nav-toggle{display:flex!important}
-  
-  /* nav-links (tool sayfaları) */
-  .nav-links{
-    display:none!important;flex-direction:column!important;
-    position:absolute!important;top:64px!important;left:0!important;right:0!important;
-    background:#fff!important;border-bottom:1px solid #e3e6f0!important;
-    box-shadow:0 12px 32px rgba(0,0,0,.12)!important;
-    padding:1rem 1.25rem 1.5rem!important;gap:.15rem!important;z-index:300!important;
-  }
-  .nav-links.open,.nav-links.show{display:flex!important}
-  .nav-links a{
-    padding:.7rem 1rem!important;border-radius:10px!important;
-    font-size:.95rem!important;color:#374151!important;
-    text-decoration:none!important;font-weight:500!important;
-    border:none!important;background:none!important;
-  }
-  .nav-links a:hover{background:#f7f8fc!important;color:#0d0f1a!important}
-  .nav-links .nav-btn,.nav-links .mir-btn-primary{
-    margin-top:.5rem!important;padding:.8rem 1rem!important;
-    text-align:center!important;border-radius:11px!important;
-  }
-
-  /* mainNav (diğer sayfalar) */  
-  #mainNav:not(.desktop-only){
-    display:none!important;flex-direction:column!important;
-    position:absolute!important;top:64px!important;left:0!important;right:0!important;
-    background:#fff!important;border-bottom:1px solid #e3e6f0!important;
-    box-shadow:0 12px 32px rgba(0,0,0,.12)!important;
-    padding:1rem 1.25rem 1.5rem!important;gap:.15rem!important;z-index:300!important;
-  }
-  #mainNav.show{display:flex!important}
-  #mainNav a{
-    padding:.7rem 1rem!important;border-radius:10px!important;
-    font-size:.95rem!important;color:#374151!important;
-    text-decoration:none!important;font-weight:500!important;
-    white-space:normal!important;
-    border:none!important;background:none!important;
-  }
-  #mainNav a:hover{background:#f7f8fc!important;color:#0d0f1a!important}
-  
-  /* Footer linkler */
-  footer a{text-decoration:none!important}
-}
-
-/* ── Global Footer Link Color Fix ── */
-footer.sf a,footer.sf div,
-.sf a,.sfi a,
-.fcol a,.fbot a,
-footer[style*="background:#0d"] a,
-footer[style*="background: #0d"] a{
-  color:rgba(255,255,255,.65)!important;
-  text-decoration:none!important;
-}
-footer.sf a:hover,.fcol a:hover,.fbot a:hover{color:#fff!important}
-
-/* Light footer */
-footer:not(.sf) a{
-  text-decoration:none;
-  color:inherit;
-}
+.f-bot a{color:rgba(255,255,255,.3);margin-left:.75rem}
+.f-bot a:hover{color:#fff}
 </style>
 </head>
 <body>
 
-<!-- ── HEADER ─────────────────────────────────────────────────── -->
-<header class="header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
-        <div class="logo-mark" aria-hidden="true">PDF</div>
-        MirPDF
-      </a>
-      <button id="mobileToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">☰</button>
-      <nav class="main-nav" id="mainNav" aria-label="Ana navigasyon">
-        <a href="/">Ana Sayfa</a>
-        <a href="/#tools">Araçlar</a>
-        <a href="/articles/">Blog</a>
-        <a href="/contact">İletişim</a>
-        <a href="/about" class="active">Hakkımızda</a>
-      </nav>
-    </div>
+<header class="hdr">
+  <div class="hdr-i">
+    <a href="/" class="logo">
+      <img src="/assets/icons/logo.svg" width="32" height="32" alt="MirPDF" style="border-radius:9px">
+      MirPDF
+    </a>
+    <button id="mt" aria-label="Menü" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <nav class="snav" id="mainNav">
+      <a href="/#tools">Araçlar</a>
+      <a href="/articles/">Blog</a>
+      <a href="/pricing">Fiyatlar</a>
+      <a href="/contact">İletişim</a>
+      <a href="/login">Giriş Yap</a>
+      <a href="/register" class="cta">Ücretsiz Kayıt</a>
+    </nav>
   </div>
 </header>
-<script type="module">
-import { initNav } from "/assets/js/nav.js";
-initNav();
-</script>
 
-<main id="main-content">
+<!-- Hero -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">
-        <span class="dot" aria-hidden="true"></span>
-        Hakkımızda
-      </div>
-      <h1>PDF işlerini <em>daha az uğraştıran</em> hale getiriyoruz</h1>
-      <p class="hero-sub">
-        MirPDF'i, Türkiye'de en sık yapılan PDF işlerini gereksiz kurulum ve yabancı arayüz karmaşası olmadan çözmek için geliştirdik. Hangi aracın cihazınızda, hangisinin güvenli sunucu işleminde çalıştığını açıkça belirtiriz; dosya akışını gizlemeyiz.
-      </p>
-      <div style="margin-bottom:2.5rem">
-        <a href="/#tools" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--text);color:#fff;font-family:'Figtree',sans-serif;font-weight:700;font-size:.95rem;padding:.8rem 2rem;border-radius:12px;text-decoration:none;transition:opacity .18s" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
-          PDF Araçlarına Git <span aria-hidden="true">→</span>
-        </a>
-      </div>
-      <div class="trust-row" role="list">
-        <div class="trust-item" role="listitem">
-          <span class="trust-check" aria-hidden="true">✓</span>
-          Açık veri akışı
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check" aria-hidden="true">✓</span>
-          Türkçe öncelikli deneyim
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check" aria-hidden="true">✓</span>
-          Hesap kullanımı opsiyonel
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check" aria-hidden="true">✓</span>
-          Tarayıcıdan çalışma
-        </div>
-      </div>
-    </div>
+  <div class="wrap">
+    <span class="hero-label">Hakkımızda</span>
+    <h1>PDF işlerini daha az karmaşık yapıyoruz</h1>
+    <p>MirPDF'i, Türkiye'de en sık yapılan PDF işlemlerini gereksiz kurulum ve yabancı dil engeli olmadan çözmek için geliştirdik.</p>
+    <a href="/#tools" class="hero-btn">Araçlara Git <i class="fas fa-arrow-right"></i></a>
   </div>
 </section>
 
-<!-- ── STATS BAR ──────────────────────────────────────────────── -->
-<div class="stats" role="region" aria-label="Platform istatistikleri">
-  <div class="container">
-    <div class="stats-grid">
-      <div>
-        <div class="stat-num">22+</div>
-        <div class="stat-label">Aktif araç</div>
-      </div>
-      <div>
-        <div class="stat-num">2</div>
-        <div class="stat-label">İşlem modeli</div>
-      </div>
-      <div>
-        <div class="stat-num">7/24</div>
-        <div class="stat-label">Erişim</div>
-      </div>
-      <div>
-        <div class="stat-num">Opsiyonel</div>
-        <div class="stat-label">Hesap kullanımı</div>
-      </div>
-    </div>
+<!-- Stats -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-n">22+</div><div class="stat-l">Aktif araç</div></div>
+    <div class="stat"><div class="stat-n">7/24</div><div class="stat-l">Erişim</div></div>
+    <div class="stat"><div class="stat-n">%0</div><div class="stat-l">Kayıt zorunluluğu</div></div>
+    <div class="stat"><div class="stat-n">1 sa</div><div class="stat-l">Maks. dosya süresi</div></div>
   </div>
 </div>
 
-<!-- ── 2. VALUES / FEATURES ───────────────────────────────────── -->
+<!-- Neden MirPDF -->
 <section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="label">Neden MirPDF?</span>
-      <h2>Gösteriş için değil, günlük iş için tasarlandı</h2>
-      <p>MirPDF'i pazarlama cümlelerinden önce işini yapan bir ürün olarak kurguladık: neyin ücretsiz olduğu, neyin sunucuda çalıştığı ve neyin hesap gerektirdiği net olsun istedik.</p>
-    </div>
-    <div class="values-grid">
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">🔒</div>
-        <h3 class="value-title">Şeffaf İşleme Modeli</h3>
-        <p class="value-desc">Birleştirme, bölme, döndürme gibi araçlar cihazınızda çalışır. OCR, sıkıştırma ve PDF dönüşümleri ise işlem için sunucu kullanır. Her iki yolu da açıkça söyleriz.</p>
-      </article>
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">⚡</div>
-        <h3 class="value-title">Abartısız Performans</h3>
-        <p class="value-desc">Küçük ve orta boy belgelerde işlemler hızlıdır; büyük dosyalarda süre belge yapısına ve bağlantınıza göre değişir. Kullanıcıya gerçekçi beklenti vermeyi tercih ediyoruz.</p>
-      </article>
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">🎯</div>
-        <h3 class="value-title">Sade Akış</h3>
-        <p class="value-desc">Dosyanızı yükleyip işlemi seçmeniz yeterli olsun istedik. Hesap açmak yalnızca kredi, abonelik ve geçmiş takibi gerektiğinde devreye girer.</p>
-      </article>
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">🏗️</div>
-        <h3 class="value-title">Sürdürülebilir Altyapı</h3>
-        <p class="value-desc">Cloudflare, R2, D1, Ghostscript, LibreOffice ve Tesseract gibi üretimde karşılığı olan bileşenleri kullanıyoruz. Amaç süslü teknoloji listesi değil, istikrarlı çıktı üretmek.</p>
-      </article>
+  <div class="wrap-wide">
+    <div class="two-col">
+      <div>
+        <span class="section-label">Yaklaşımımız</span>
+        <h2>Çıkış noktamız basitti</h2>
+        <p>Türkiye'de PDF işi yapan çoğu kullanıcı ya İngilizce arayüzlerle boğuşuyordu ya da dosyasının nereye gittiğini bilmiyordu. Özellikle başvuru, muhasebe ve ofis işlerinde bu sürtünme her gün tekrar ediyordu.</p>
+        <p>MirPDF'i şu dengeyi kurmak için tasarladık: <strong>Türkçe ve sade bir deneyim, hangi verinin nerede işlendiği konusunda tam şeffaflık ve gerçekten kullanılabilir bir ücretsiz katman.</strong></p>
+        <p>Gösteriş için değil, günlük iş için tasarlandı. Neyin ücretsiz olduğu, neyin sunucuda çalıştığı ve neyin hesap gerektirdiği nettir.</p>
+      </div>
+      <div>
+        <span class="section-label">Ne sunuyoruz</span>
+        <h2>Platform ilkeleri</h2>
+        <ul class="plain-list">
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Tarayıcı tabanlı araçlarda dosyalar cihazınızdan çıkmaz — sunucuya hiçbir şey gönderilmez</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>OCR ve PDF dönüşüm araçlarında dosyalar işlem sonrası otomatik silinir, en geç 1 saat</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Hangi aracın nasıl çalıştığı her sayfada açıkça belirtilir</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Temel araçlara hesap açmadan erişilir</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Kişisel veri satılmaz, üçüncü taraflarla ticari amaçla paylaşılmaz</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>6698 sayılı KVKK kapsamında şeffaf veri işleme</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- Araçlar -->
+<section class="section" style="background:#fafbfc">
+  <div class="wrap-wide">
+    <span class="section-label">Araçlar</span>
+    <h2>22 araç, tek platform</h2>
+    <p style="max-width:480px;color:#374151;font-size:.9375rem;line-height:1.8;margin-bottom:0">Tarayıcıda veya sunucuda çalışan, Türkçe arayüzlü araçlar. Tümüne ana sayfadan ulaşabilirsiniz.</p>
+    <ul class="tool-list" style="margin-top:2rem">
+      <li><a href="/pdf-birlestir">PDF Birleştir</a></li>
+      <li><a href="/pdf-sikistir">PDF Sıkıştır</a></li>
+      <li><a href="/pdf-bol">PDF Böl</a></li>
+      <li><a href="/pdf-to-word">PDF → Word</a></li>
+      <li><a href="/word-to-pdf">Word → PDF</a></li>
+      <li><a href="/excel-to-pdf">Excel → PDF</a></li>
+      <li><a href="/ppt-to-pdf">PowerPoint → PDF</a></li>
+      <li><a href="/ocr">OCR / Metin Tanıma</a></li>
+      <li><a href="/pdf-to-jpg">PDF → JPG</a></li>
+      <li><a href="/jpg-to-pdf">JPG → PDF</a></li>
+      <li><a href="/pdf-kilitle">PDF Kilitle</a></li>
+      <li><a href="/pdf-kilit-ac">PDF Kilit Aç</a></li>
+      <li><a href="/filigran-ekle">Filigran Ekle</a></li>
+      <li><a href="/qr-kod-ekle">QR Kod Ekle</a></li>
+      <li><a href="/pdf-dondur">PDF Döndür</a></li>
+      <li><a href="/sayfa-sil">Sayfa Sil</a></li>
+      <li><a href="/sayfa-sirala">Sayfa Sırala</a></li>
+      <li><a href="/pdf-sayfa-ayikla">Sayfa Ayıkla</a></li>
+      <li><a href="/pdf-metadata-duzenle">Meta Veri Düzenle</a></li>
+      <li><a href="/pdf-sayfa-kirp">Sayfa Kırp</a></li>
+    </ul>
+  </div>
+</section>
 
-<!-- ── 3. PLATFORM DETAYLI AÇIKLAMA ──────────────────────────── -->
+<!-- Güvenlik — koyu -->
+<section class="dark-section">
+  <div class="wrap-wide">
+    <div class="two-col">
+      <div>
+        <span class="section-label">Güvenlik</span>
+        <h2>Dosyalarınız güvende</h2>
+        <p>Yüklediğiniz dosyalar yalnızca istenen işlemi gerçekleştirmek için kullanılır. MirPDF dosyalarınızı okumaz, saklamaz veya paylaşmaz.</p>
+        <p>Platform Cloudflare altyapısı üzerinde çalışır. Tüm bağlantılar TLS 1.2+ ile şifrelenir. DDoS ve WAF koruması aktiftir.</p>
+      </div>
+      <div>
+        <ul class="dark-list">
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Tarayıcı araçlarında dosya sunucuya ulaşmaz</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Sunucu araçlarında dosyalar 1 saat içinde silinir</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>TLS 1.2+ ile şifreli bağlantı</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Cloudflare WAF ve DDoS koruması</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>JWT tabanlı kimlik doğrulama</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>KVKK uyumlu veri işleme</li>
+          <li><i class="fas fa-circle" style="font-size:.4rem;margin-top:.5rem"></i>Ödeme bilgileri Stripe'ta işlenir, MirPDF'e ulaşmaz</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Altyapı -->
 <section class="section">
-  <div class="container">
-    <div class="about-split">
-      <div>
-        <p class="about-label">Platform hakkında</p>
-        <h2>MirPDF neden geliştirildi?</h2>
-        <p>
-          Çıkış noktamız basitti: Türkiye'de PDF işi yapan çoğu kullanıcı ya İngilizce, kalabalık arayüzlerle uğraşıyor ya da dosyasının nereye gittiğini tam olarak bilmeden işlem yapıyordu. Özellikle başvuru, muhasebe, okul ve ofis işlerinde bu sürtünme her gün tekrar ediyordu.
-        </p>
-        <p>
-          MirPDF'i şu dengeyi kurmak için tasarladık: <strong>Türkçe ve sade bir ürün deneyimi, hangi verinin nerede işlendiği konusunda açıklık ve gerçekten kullanılabilir bir ücretsiz katman.</strong>
-        </p>
-        <p>
-          Platform Cloudflare altyapısı üzerinde çalışır. Tarayıcı tabanlı araçlarda dosyalar cihazınızdan çıkmaz; OCR veya PDF→Word gibi sunucu gerektiren işlerde ise yüklenen dosyalar işlem tamamlandıktan sonra otomatik olarak silinir. Yani mesele yalnızca hız değil, hangi aracın nasıl çalıştığını anlaşılır biçimde anlatabilmek.
-        </p>
-      </div>
-      <div class="about-visual" aria-label="Platform özellikleri">
-        <div class="about-visual-item">
-          <div class="avi" style="background:#f0fdf4" aria-hidden="true">🌍</div>
-          Türkçe öncelikli tasarım
-        </div>
-        <div class="about-visual-item">
-          <div class="avi" style="background:#eff6ff" aria-hidden="true">⚡</div>
-          Cloudflare global CDN altyapısı
-        </div>
-        <div class="about-visual-item">
-          <div class="avi" style="background:#fefce8" aria-hidden="true">🔐</div>
-          KVKK uyumlu veri işleme
-        </div>
-        <div class="about-visual-item">
-          <div class="avi" style="background:#fdf4ff" aria-hidden="true">🤖</div>
-          Tesseract OCR — Türkçe destek
-        </div>
-        <div class="about-visual-item">
-          <div class="avi" style="background:#fff1f2" aria-hidden="true">💳</div>
-          Stripe ile güvenli ödeme
-        </div>
-        <div class="about-visual-item">
-          <div class="avi" style="background:#f0f9ff" aria-hidden="true">📂</div>
-          LibreOffice dönüştürme motoru
-        </div>
-      </div>
-    </div>
+  <div class="wrap">
+    <span class="section-label">Teknik altyapı</span>
+    <h2>Gerçek işte kullanılan bileşenler</h2>
+    <p>Cloudflare Workers, D1, R2 ve Durable Objects üzerinde çalışır. Sunucu tarafı işlemler için LibreOffice, Ghostscript ve Tesseract OCR kullanılır. Türkçe karakter tanıma özel olarak optimize edilmiştir.</p>
+    <p>Amaç süslü teknoloji listesi değil, istikrarlı çıktı üretmek. Dosya güvenliği, ölçeklenebilirlik ve şeffaf işleme modeli temel tasarım kriterleridir.</p>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── 4. ARAÇLAR ─────────────────────────────────────────────── -->
-<section class="section tools-section">
-  <div class="container">
-    <div class="section-head">
-      <span class="label">PDF Araçları</span>
-      <h2>Popüler araçlar</h2>
-      <p>En çok kullanılan PDF araçları. Tüm araçlara ana sayfadan ulaşabilirsiniz.</p>
-    </div>
-    <div class="tools-grid">
-      <a href="/pdf-birlestir" class="tool-item">
-        <div class="tool-emoji" style="background:#fef3f2" aria-hidden="true">🔗</div>
-        <div class="tool-info">
-          <div class="tool-name">PDF Birleştir</div>
-          <div class="tool-desc">Birden fazla PDF'i tek dosyada birleştir</div>
-        </div>
-      </a>
-      <a href="/pdf-sikistir" class="tool-item">
-        <div class="tool-emoji" style="background:#fff7ed" aria-hidden="true">🗜️</div>
-        <div class="tool-info">
-          <div class="tool-name">PDF Sıkıştır</div>
-          <div class="tool-desc">Dosya boyutunu kaliteyi koruyarak küçült</div>
-        </div>
-      </a>
-      <a href="/pdf-bol" class="tool-item">
-        <div class="tool-emoji" style="background:#fffbeb" aria-hidden="true">✂️</div>
-        <div class="tool-info">
-          <div class="tool-name">PDF Böl</div>
-          <div class="tool-desc">Belirli sayfaları ayır veya bölümlere ayır</div>
-        </div>
-      </a>
-      <a href="/pdf-to-word" class="tool-item">
-        <div class="tool-emoji" style="background:#eff6ff" aria-hidden="true">📝</div>
-        <div class="tool-info">
-          <div class="tool-name">PDF → Word</div>
-          <div class="tool-desc">PDF'i düzenlenebilir Word belgesine dönüştür</div>
-        </div>
-      </a>
-      <a href="/jpg-to-pdf" class="tool-item">
-        <div class="tool-emoji" style="background:#fdf4ff" aria-hidden="true">🖼️</div>
-        <div class="tool-info">
-          <div class="tool-name">Görsel → PDF</div>
-          <div class="tool-desc">JPG, PNG görsellerden PDF oluştur</div>
-        </div>
-      </a>
-      <a href="/ocr" class="tool-item">
-        <div class="tool-emoji" style="background:#f0fdfa" aria-hidden="true">🔍</div>
-        <div class="tool-info">
-          <div class="tool-name">OCR / Metin Tanıma</div>
-          <div class="tool-desc">Taranmış belgelerden metin çıkar</div>
-        </div>
-      </a>
-      <a href="/sayfa-sil" class="tool-item">
-        <div class="tool-emoji" style="background:#fff1f2" aria-hidden="true">🗑️</div>
-        <div class="tool-info">
-          <div class="tool-name">Sayfa Sil</div>
-          <div class="tool-desc">PDF'ten istenmeyen sayfaları kaldır</div>
-        </div>
-      </a>
-      <a href="/sayfa-sirala" class="tool-item">
-        <div class="tool-emoji" style="background:#eef2ff" aria-hidden="true">🔢</div>
-        <div class="tool-info">
-          <div class="tool-name">Sayfa Sırala</div>
-          <div class="tool-desc">Sayfaları istediğin sırayla yeniden düzenle</div>
-        </div>
-      </a>
-      <a href="/filigran-ekle" class="tool-item">
-        <div class="tool-emoji" style="background:#fdf4ff" aria-hidden="true">💧</div>
-        <div class="tool-info">
-          <div class="tool-name">Filigran Ekle</div>
-          <div class="tool-desc">PDF'e metin veya görsel filigran ekle</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ── 5. GÜVENLİK ────────────────────────────────────────────── -->
-<section class="section security-section" aria-labelledby="security-heading">
-  <div class="container security-inner">
-    <div class="security-grid">
-      <div>
-        <p style="font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem">Güvenlik ve Gizlilik</p>
-        <h2 id="security-heading">Dosyalarınız güvende, gizliliğiniz korunuyor</h2>
-        <p>
-          Yüklediğiniz dosyalar yalnızca istenen işlemi gerçekleştirmek amacıyla kullanılır. MirPDF, dosyalarınızı üçüncü taraflarla paylaşmaz, satmaz veya ticari amaçla kullanmaz.
-        </p>
-        <p>
-          MirPDF'in araçları iki kategoriye ayrılır: <strong>Birleştirme, bölme, döndürme</strong> gibi araçlar tamamen tarayıcınızda çalışır — sunucuya hiçbir şey gönderilmez. <strong>OCR ve PDF→Word</strong> gibi işlemler ise sunucu tarafında gerçekleşir; bu araçlarda yüklenen dosyalar işlem tamamlandıktan sonra otomatik olarak silinir.
-        </p>
-      </div>
-      <div class="security-pills">
-        <div class="security-pill">
-          <div class="pill-icon" aria-hidden="true">🌐</div>
-          <div>
-            <div class="pill-title">Tarayıcıda işlenen araçlar</div>
-            <div class="pill-desc">PDF birleştirme, bölme, döndürme, sayfa silme/sıralama gibi araçlar tamamen tarayıcınızda çalışır. Bu araçlarda dosyalarınız hiçbir sunucuya gönderilmez.</div>
-          </div>
-        </div>
-        <div class="security-pill">
-          <div class="pill-icon" aria-hidden="true">⚙️</div>
-          <div>
-            <div class="pill-title">Sunucuda işlenen araçlar</div>
-            <div class="pill-desc">OCR, PDF→Word, PDF sıkıştırma gibi karmaşık işlemler sunucu tarafında gerçekleşir. Bu araçlarda yüklenen dosyalar işlem tamamlandıktan sonra en geç 1 saat içinde otomatik silinir.</div>
-          </div>
-        </div>
-        <div class="security-pill">
-          <div class="pill-icon" aria-hidden="true">🔐</div>
-          <div>
-            <div class="pill-title">Şifreli bağlantı</div>
-            <div class="pill-desc">Sitemizdeki tüm veri iletişimi TLS ile şifrelenir. Cloudflare altyapısı üzerinden DDoS ve WAF koruması sağlanır.</div>
-          </div>
-        </div>
-        <div class="security-pill">
-          <div class="pill-icon" aria-hidden="true">📋</div>
-          <div>
-            <div class="pill-title">KVKK uyumlu</div>
-            <div class="pill-desc">Kişisel veriler 6698 sayılı KVKK çerçevesinde işlenir. Veri saklama süreleri gizlilik politikamızda açıkça belirtilmiştir.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── 6. CTA ──────────────────────────────────────────────────── -->
+<!-- CTA -->
 <section class="cta-section">
-  <div class="container">
-    <div class="cta-inner">
-      <h2>PDF Araçlarını Hemen Kullanın</h2>
-      <p>Temel araçlara hesap açmadan başlayabilir, isterseniz hesabınızla kredi, abonelik ve işlem geçmişinizi tek yerde yönetebilirsiniz.</p>
-      <div class="cta-btns">
-        <a href="/#tools" class="btn btn-dark">
-          PDF Araçlarını Aç
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="/articles/" class="btn btn-outline">
-          Blog'u Keşfet
-        </a>
-      </div>
+  <div class="wrap">
+    <h2>Hemen başlayın</h2>
+    <p>Temel araçlara hesap açmadan erişebilirsiniz. Pro plan ile 5.000 kredi/ay ve öncelikli işleme.</p>
+    <div class="cta-btns">
+      <a href="/#tools" class="btn-dark">PDF Araçlarını Aç <i class="fas fa-arrow-right"></i></a>
+      <a href="/pricing" class="btn-ghost">Fiyatlar</a>
     </div>
   </div>
 </section>
 
-</main>
-
-<!-- ── FOOTER ─────────────────────────────────────────────────── -->
-
-<!-- Misyon / Vizyon + Ekip Bölümü -->
-<section style="background:#f8fafc;padding:5rem 0;border-top:1px solid #e5e7eb">
-  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
-
-    <!-- Eyebrow -->
-    <div style="text-align:center;margin-bottom:3.5rem">
-      <span style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:.75rem">Kimiz?</span>
-      <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:400;letter-spacing:-.025em;line-height:1.2;color:#111827;margin-bottom:.75rem">
-        Türkiye için yapılan<br>bir PDF platformu
-      </h2>
-      <p style="font-size:.9375rem;color:#6b7280;line-height:1.7;max-width:480px;margin:0 auto">
-        Küçük bir ekip, büyük bir ihtiyaç. Türkçe arayüz, gizlilik odaklı mimari ve gerçekten ücretsiz bir temel katman.
-      </p>
-    </div>
-
-    <!-- Mission / Vision -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
-      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:2rem">
-        <div style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <svg width="18" height="18" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
-        </div>
-        <h3 style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.5rem;letter-spacing:-.01em">Misyon</h3>
-        <p style="color:#6b7280;font-size:.875rem;line-height:1.7;margin:0">
-          PDF işlemlerini herkes için erişilebilir, hızlı ve güvenli hale getirmek. Kayıt gerekmeden, dosyalar saklanmadan, Türkçe arayüzle.
-        </p>
-      </div>
-      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:2rem">
-        <div style="width:40px;height:40px;border-radius:10px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <svg width="18" height="18" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3 style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.5rem;letter-spacing:-.01em">Vizyon</h3>
-        <p style="color:#6b7280;font-size:.875rem;line-height:1.7;margin:0">
-          Türkiye'nin ve Türkçe konuşan dünyanın en güvenilen PDF platformu. KVKK uyumluluğu ve şeffaflığı temel değer olarak koruyarak büyümek.
-        </p>
-      </div>
-    </div>
-
-    <!-- Values -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:4rem">
-      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:center">
-        <div style="font-size:1.5rem;margin-bottom:.75rem">🔒</div>
-        <div style="font-size:.875rem;font-weight:700;color:#111827;margin-bottom:.35rem">Gizlilik Önce</div>
-        <p style="font-size:.8125rem;color:#9ca3af;line-height:1.55;margin:0">İşlem sonrası dosyalar silinir. Satılmaz, paylaşılmaz.</p>
-      </div>
-      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:center">
-        <div style="font-size:1.5rem;margin-bottom:.75rem">⚡</div>
-        <div style="font-size:.875rem;font-weight:700;color:#111827;margin-bottom:.35rem">Global Hız</div>
-        <p style="font-size:.8125rem;color:#9ca3af;line-height:1.55;margin:0">Cloudflare Edge ile dünyanın her yerinden düşük gecikme.</p>
-      </div>
-      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:center">
-        <div style="font-size:1.5rem;margin-bottom:.75rem">🇹🇷</div>
-        <div style="font-size:.875rem;font-weight:700;color:#111827;margin-bottom:.35rem">Türkçe Öncelik</div>
-        <p style="font-size:.8125rem;color:#9ca3af;line-height:1.55;margin:0">KVKK uyumlu altyapı, Türk kullanıcılar için tasarlandı.</p>
-      </div>
-    </div>
-
-    <!-- Team -->
-    <div style="border-top:1px solid #f3f4f6;padding-top:3.5rem">
-      <div style="text-align:center;margin-bottom:2.5rem">
-        <span style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;display:block;margin-bottom:.5rem">Ekip</span>
-        <h3 style="font-size:1.375rem;font-weight:700;color:#111827;letter-spacing:-.02em">Arkamızda kim var?</h3>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:640px;margin:0 auto">
-        <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:1.75rem;text-align:center">
-          <div style="width:56px;height:56px;border-radius:50%;background:#111827;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:-.02em">M</div>
-          <div style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.25rem">MirPDF Ekibi</div>
-          <div style="font-size:.75rem;color:#9ca3af;margin-bottom:.85rem">Yazılım &amp; Ürün Geliştirme</div>
-          <div style="display:flex;justify-content:center;gap:.6rem">
-            <a href="https://twitter.com/mirpdf" target="_blank" rel="noopener" style="width:30px;height:30px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.8rem;transition:.15s;text-decoration:none"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/company/mirpdf" target="_blank" rel="noopener" style="width:30px;height:30px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.8rem;transition:.15s;text-decoration:none"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-        <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:1.75rem;text-align:center">
-          <div style="width:56px;height:56px;border-radius:50%;background:#f0fdf4;border:2px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.25rem">🌱</div>
-          <div style="font-size:.9375rem;font-weight:700;color:#111827;margin-bottom:.25rem">Kullanıcı Topluluğu</div>
-          <div style="font-size:.75rem;color:#9ca3af;margin-bottom:.85rem">10.000+ Aktif Kullanıcı</div>
-          <div style="display:flex;justify-content:center;gap:.6rem">
-            <a href="/contact" style="width:30px;height:30px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.8rem;text-decoration:none"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer<footer<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
-          <div class="logo-mark" aria-hidden="true">PDF</div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-i">
+    <div class="footer-g">
+      <div>
+        <a href="/" class="f-brand">
+          <img src="/assets/icons/logo.svg" width="28" height="28" alt="MirPDF" style="border-radius:7px">
           MirPDF
         </a>
-        <p>Türkçe, ücretsiz ve güvenli PDF araçları. 14+ araç, kayıt gerekmez.</p>
+        <p class="f-desc">Ücretsiz online PDF araçları. Tarayıcıda çalışır, dosyalar cihazınızdan çıkmaz.</p>
       </div>
-      <div class="footer-col">
+      <div class="f-col">
         <h4>Araçlar</h4>
         <a href="/pdf-birlestir">PDF Birleştir</a>
         <a href="/pdf-sikistir">PDF Sıkıştır</a>
         <a href="/pdf-bol">PDF Böl</a>
         <a href="/pdf-to-word">PDF → Word</a>
         <a href="/ocr">OCR / Metin</a>
-        <a href="/filigran-ekle">Filigran Ekle</a>
-        <a href="/sayfa-sil">Sayfa Sil</a>
       </div>
-      <div class="footer-col">
+      <div class="f-col">
         <h4>Şirket</h4>
         <a href="/about">Hakkımızda</a>
         <a href="/contact">İletişim</a>
+        <a href="/pricing">Fiyatlar</a>
+        <a href="/faq">SSS</a>
         <a href="/articles/">Blog</a>
       </div>
-      <div class="footer-col">
+      <div class="f-col">
         <h4>Yasal</h4>
-        <a href="/legal/privacy.html">Gizlilik Politikası</a>
-        <a href="/legal/terms.html">Kullanım Şartları</a>
-        <a href="/legal/kvkk.html">KVKK</a>
-        <a href="/sitemap.xml">Site Haritası</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
-      <div class="footer-links-row">
         <a href="/legal/privacy.html">Gizlilik</a>
         <a href="/legal/terms.html">Şartlar</a>
         <a href="/legal/kvkk.html">KVKK</a>
+        <a href="/legal/cookies.html">Çerezler</a>
+        <a href="/legal/security.html">Güvenlik</a>
       </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
+      <span>
+        <a href="/legal/privacy.html">Gizlilik</a>
+        <a href="/legal/terms.html">Şartlar</a>
+        <a href="/legal/kvkk.html">KVKK</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<script>
-const toggle = document.getElementById('mobileToggle');
-const nav    = document.getElementById('mainNav');
-if(toggle && nav){
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('show');
-    toggle.setAttribute('aria-expanded', open);
-    toggle.textContent = open ? '✕' : '☰';
-  });
-}
-</script>
-
 <script defer src="/assets/js/cookie-consent.js"></script>
 <script>
 (function(){
-  var mt=document.getElementById('mobileToggle')||document.getElementById('nav-toggle');
-  var nav=document.getElementById('mainNav')||document.querySelector('.nav-links');
+  var mt=document.getElementById('mt'),nav=document.getElementById('mainNav');
   if(!mt||!nav)return;
-  if(mt.dataset.nb)return;
-  mt.dataset.nb='1';
   mt.addEventListener('click',function(e){
     e.stopPropagation();
-    var open=nav.classList.toggle('show');
-    if(nav.classList.contains('nav-links'))nav.classList.toggle('open',open);
-    mt.setAttribute('aria-expanded',String(open));
-    mt.innerHTML=open?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
-    var ov=document.getElementById('__nv');
-    if(open){
-      if(!ov){
-        ov=document.createElement('div');
-        ov.id='__nv';
-        ov.style.cssText='position:fixed;inset:0;z-index:249;background:rgba(0,0,0,.4)';
-        document.body.appendChild(ov);
-        ov.addEventListener('click',closeNav);
-      }
-    } else { ov&&ov.remove(); }
+    var o=nav.classList.toggle('show');
+    mt.setAttribute('aria-expanded',String(o));
+    mt.innerHTML=o?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
+    var ov=document.getElementById('__ov');
+    if(o){if(!ov){ov=document.createElement('div');ov.id='__ov';ov.style.cssText='position:fixed;inset:0;z-index:249;background:rgba(0,0,0,.4)';document.body.appendChild(ov);ov.addEventListener('click',close);}}
+    else ov&&ov.remove();
   });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',closeNav);
-  });
-  function closeNav(){
-    nav.classList.remove('show','open');
-    mt.setAttribute('aria-expanded','false');
-    mt.innerHTML='<i class="fas fa-bars"></i>';
-    var ov=document.getElementById('__nv');
-    if(ov)ov.remove();
-  }
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  function close(){nav.classList.remove('show');mt.setAttribute('aria-expanded','false');mt.innerHTML='<i class="fas fa-bars"></i>';var ov=document.getElementById('__ov');if(ov)ov.remove();}
 })();
 </script>
 </body>
 </html>
-<!-- cache bust Fri May  1 21:05:36 UTC 2026 -->

@@ -332,11 +332,8 @@ function createDropZone(opts = {}) {
   zone.innerHTML = `
     <div class="tp-dropzone__icon">${icon}</div>
     <div class="tp-dropzone__label">${label}</div>
-    <div class="tp-dropzone__sub">veya tıklayarak seç • Maks ${maxMb} MB${multiple ? " • Birden fazla dosya" : ""}</div>
-    <button type="button" class="tp-select-btn" onclick="event.stopPropagation();this.closest('.tp-dropzone').querySelector('input[type=file]').click()">
-      <i class="fas fa-folder-open"></i> Dosyaları Seç
-    </button>
-    <div class="tp-dropzone__formats" style="margin-top:.75rem">${accept.replace(/\./g,"").toUpperCase().replace(/,/g," · ")}</div>
+    <div class="tp-dropzone__sub">${sublabel} • Maks ${maxMb} MB${multiple ? " • Birden fazla dosya" : ""}</div>
+    <div class="tp-dropzone__formats">${accept.replace(/\./g,"").toUpperCase().replace(/,/g," · ")}</div>
   `;
   zone.appendChild(inp);
   zone.addEventListener("click", (e) => {
@@ -2118,38 +2115,6 @@ function renderTrustWidget(root, tool) {
   `;
   root.appendChild(trust);
 }
-function injectSubBlock(root) {
-  if (root.querySelector(".tool-sub-block")) return;
-  // Hero'daki desc ve badge içeriklerini al
-  const heroDesc = document.querySelector(".tool-hero__desc");
-  const heroBadges = document.querySelector(".tool-hero__badges");
-  if (!heroDesc && !heroBadges) return;
-
-  const block = document.createElement("div");
-  block.className = "tool-sub-block";
-
-  if (heroDesc) {
-    const desc = document.createElement("p");
-    desc.className = "tool-sub-desc";
-    desc.innerHTML = heroDesc.innerHTML;
-    block.appendChild(desc);
-  }
-
-  if (heroBadges) {
-    const badgeWrap = document.createElement("div");
-    badgeWrap.className = "tool-sub-badges";
-    heroBadges.querySelectorAll(".badge").forEach(b => {
-      const nb = document.createElement("span");
-      nb.className = "tool-sub-badge" + (b.classList.contains("badge--green") ? " tool-sub-badge--green" : "");
-      nb.innerHTML = b.innerHTML;
-      badgeWrap.appendChild(nb);
-    });
-    block.appendChild(badgeWrap);
-  }
-
-  root.appendChild(block);
-}
-
 function main() {
   initExitIntent();
   const tool = detectToolFromPage();

@@ -29,6 +29,79 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"e-Fatura XML doğrudan açılabilir mi?","acceptedAnswer":{"@type":"Answer","text":"XML dosyası metin editörü veya tarayıcıda açılır; ancak tablo formatında okunabilir değildir. PDF görüntüsü için entegratör veya GİB portali gerekir."}},{"@type":"Question","name":"e-Fatura ile e-Arşiv fatura PDF'i aynı yöntemle mi indirilir?","acceptedAnswer":{"@type":"Answer","text":"e-Arşiv faturalar genellikle doğrudan entegratörden PDF olarak indirilir. e-Faturalar için GİB portali veya entegratör yazılım kullanılır."}},{"@type":"Question","name":"XML faturayı Word'e dönüştürebilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Teknik olarak mümkün olsa da yasal açıdan anlamsızdır. e-Fatura verilerini düzenlemeniz gerekmez; yalnızca görüntüleme ve arşivleme için PDF formatı kullanın."}},{"@type":"Question","name":"Birden fazla XML faturayı PDF'e toplu dönüştürebilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Entegratör yazılımınız toplu PDF dışa aktarmayı destekliyorsa bu yolu kullanın. GİB portali genellikle tek tek indirmeye izin verir."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://mirpdf.com/"},{"@type":"ListItem","position":2,"name":"e-Fatura PDF","item":"https://mirpdf.com/e-fatura/"},{"@type":"ListItem","position":3,"name":"e-Fatura XML→PDF Dönüştürme","item":"https://mirpdf.com/e-fatura/e-fatura-pdf-donusturme/"}]}</script>
   <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+<style id="__global_mobile">
+/* ── Global Mobile Nav Fix ── */
+#mobileToggle,#nav-toggle{
+  display:none;background:none;
+  border:1.5px solid #e3e6f0;color:#0d0f1a;
+  padding:.4rem .65rem;border-radius:9px;
+  cursor:pointer;font-size:1rem;
+  position:relative;z-index:400;
+  align-items:center;justify-content:center;
+}
+@media(max-width:700px){
+  #mobileToggle,#nav-toggle{display:flex!important}
+  
+  /* nav-links (tool sayfaları) */
+  .nav-links{
+    display:none!important;flex-direction:column!important;
+    position:absolute!important;top:64px!important;left:0!important;right:0!important;
+    background:#fff!important;border-bottom:1px solid #e3e6f0!important;
+    box-shadow:0 12px 32px rgba(0,0,0,.12)!important;
+    padding:1rem 1.25rem 1.5rem!important;gap:.15rem!important;z-index:300!important;
+  }
+  .nav-links.open,.nav-links.show{display:flex!important}
+  .nav-links a{
+    padding:.7rem 1rem!important;border-radius:10px!important;
+    font-size:.95rem!important;color:#374151!important;
+    text-decoration:none!important;font-weight:500!important;
+    border:none!important;background:none!important;
+  }
+  .nav-links a:hover{background:#f7f8fc!important;color:#0d0f1a!important}
+  .nav-links .nav-btn,.nav-links .mir-btn-primary{
+    margin-top:.5rem!important;padding:.8rem 1rem!important;
+    text-align:center!important;border-radius:11px!important;
+  }
+
+  /* mainNav (diğer sayfalar) */  
+  #mainNav:not(.desktop-only){
+    display:none!important;flex-direction:column!important;
+    position:absolute!important;top:64px!important;left:0!important;right:0!important;
+    background:#fff!important;border-bottom:1px solid #e3e6f0!important;
+    box-shadow:0 12px 32px rgba(0,0,0,.12)!important;
+    padding:1rem 1.25rem 1.5rem!important;gap:.15rem!important;z-index:300!important;
+  }
+  #mainNav.show{display:flex!important}
+  #mainNav a{
+    padding:.7rem 1rem!important;border-radius:10px!important;
+    font-size:.95rem!important;color:#374151!important;
+    text-decoration:none!important;font-weight:500!important;
+    white-space:normal!important;
+    border:none!important;background:none!important;
+  }
+  #mainNav a:hover{background:#f7f8fc!important;color:#0d0f1a!important}
+  
+  /* Footer linkler */
+  footer a{text-decoration:none!important}
+}
+
+/* ── Global Footer Link Color Fix ── */
+footer.sf a,footer.sf div,
+.sf a,.sfi a,
+.fcol a,.fbot a,
+footer[style*="background:#0d"] a,
+footer[style*="background: #0d"] a{
+  color:rgba(255,255,255,.65)!important;
+  text-decoration:none!important;
+}
+footer.sf a:hover,.fcol a:hover,.fbot a:hover{color:#fff!important}
+
+/* Light footer */
+footer:not(.sf) a{
+  text-decoration:none;
+  color:inherit;
+}
+</style>
 </head>
 <body>
 <div class="reading-progress" id="rp"></div>
@@ -268,5 +341,41 @@ import { initLangSwitcher } from "/assets/js/lang-switcher.js";
 initLangSwitcher();
 </script>
 <script src="/assets/js/cookie-consent.js" defer></script>
+<script>
+(function(){
+  var mt=document.getElementById('mobileToggle')||document.getElementById('nav-toggle');
+  var nav=document.getElementById('mainNav')||document.querySelector('.nav-links');
+  if(!mt||!nav)return;
+  if(mt.dataset.nb)return;
+  mt.dataset.nb='1';
+  mt.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=nav.classList.toggle('show');
+    if(nav.classList.contains('nav-links'))nav.classList.toggle('open',open);
+    mt.setAttribute('aria-expanded',String(open));
+    mt.innerHTML=open?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
+    var ov=document.getElementById('__nv');
+    if(open){
+      if(!ov){
+        ov=document.createElement('div');
+        ov.id='__nv';
+        ov.style.cssText='position:fixed;inset:0;z-index:249;background:rgba(0,0,0,.4)';
+        document.body.appendChild(ov);
+        ov.addEventListener('click',closeNav);
+      }
+    } else { ov&&ov.remove(); }
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',closeNav);
+  });
+  function closeNav(){
+    nav.classList.remove('show','open');
+    mt.setAttribute('aria-expanded','false');
+    mt.innerHTML='<i class="fas fa-bars"></i>';
+    var ov=document.getElementById('__nv');
+    if(ov)ov.remove();
+  }
+})();
+</script>
 </body>
 </html>

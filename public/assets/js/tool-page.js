@@ -2118,6 +2118,38 @@ function renderTrustWidget(root, tool) {
   `;
   root.appendChild(trust);
 }
+function injectSubBlock(root) {
+  if (root.querySelector(".tool-sub-block")) return;
+  // Hero'daki desc ve badge içeriklerini al
+  const heroDesc = document.querySelector(".tool-hero__desc");
+  const heroBadges = document.querySelector(".tool-hero__badges");
+  if (!heroDesc && !heroBadges) return;
+
+  const block = document.createElement("div");
+  block.className = "tool-sub-block";
+
+  if (heroDesc) {
+    const desc = document.createElement("p");
+    desc.className = "tool-sub-desc";
+    desc.innerHTML = heroDesc.innerHTML;
+    block.appendChild(desc);
+  }
+
+  if (heroBadges) {
+    const badgeWrap = document.createElement("div");
+    badgeWrap.className = "tool-sub-badges";
+    heroBadges.querySelectorAll(".badge").forEach(b => {
+      const nb = document.createElement("span");
+      nb.className = "tool-sub-badge" + (b.classList.contains("badge--green") ? " tool-sub-badge--green" : "");
+      nb.innerHTML = b.innerHTML;
+      badgeWrap.appendChild(nb);
+    });
+    block.appendChild(badgeWrap);
+  }
+
+  root.appendChild(block);
+}
+
 function main() {
   initExitIntent();
   const tool = detectToolFromPage();

@@ -659,8 +659,8 @@ async function doRegister(e) {
     }
 
     if (resp.status === 409) showErr("Bu e-posta zaten kayıtlı. Giriş yapmayı dene.");
-    else if (resp.status === 429) showErr("Çok fazla deneme. Lütfen bekle.");
-    else showErr(j?.message || "Kayıt sırasında bir hata oluştu.");
+    else if (resp.status === 429) showErr("Çok fazla deneme. Lütfen 1 saat bekle.");
+    else showErr((j?.message || j?.error || "Hata: " + resp.status + " — " + JSON.stringify(j)));
   } catch (_) {
     showErr("Bağlantı hatası. Lütfen tekrar dene.");
   } finally {

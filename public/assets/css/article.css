@@ -468,3 +468,244 @@ pre code { background: none; border: none; padding: 0; color: inherit; }
   .data-table th, .data-table td { padding: .5rem .65rem; }
   .cta-block { padding: 1.5rem 1.25rem; }
 }
+
+/* ══════════════════════════════════════════════
+   MirPDF Article v5 — SaaS Level Mobile Fix
+   ══════════════════════════════════════════════ */
+
+/* ── 1. Doğru sıra: h1 en üste, meta alta ── */
+.article-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* h1 en üste çık */
+.article-body h1:first-of-type {
+  order: -2;
+  font-size: clamp(1.65rem, 4.5vw, 2.4rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -.03em !important;
+  color: #0d0f1a !important;
+  margin-bottom: 1rem !important;
+  margin-top: 0 !important;
+}
+
+/* Meta row h1'in altına */
+.mir-meta-row {
+  order: -1;
+  display: flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+  font-size: .78rem !important;
+  color: #94a3b8 !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 1.5rem !important;
+  border-bottom: 1px solid #f1f3f7;
+  padding-bottom: 1rem;
+}
+.mir-meta-row span { display: flex; align-items: center; gap: .25rem; }
+.mir-icon-accent { color: #cbd5e1 !important; font-size: .7rem !important; }
+
+/* Yazar bloğunu gizle (tekrar) */
+.mir-notice-row {
+  display: none !important;
+}
+
+/* Paylaş butonlarını sağa ve küçük tut */
+.mir-ml-auto-flex {
+  margin-left: auto !important;
+  display: flex !important;
+  gap: .35rem !important;
+}
+.mir-badge-blue, .mir-badge-green, .mir-badge-indigo {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .25rem !important;
+  font-size: .72rem !important;
+  font-weight: 600 !important;
+  padding: .2rem .6rem !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+}
+.mir-badge-blue   { background: #eff6ff !important; color: #2563eb !important; }
+.mir-badge-green  { background: #f0fdf4 !important; color: #16a34a !important; }
+.mir-badge-indigo { background: #eef2ff !important; color: #4f46e5 !important; }
+
+/* ── 2. Body text düzeltmeleri ── */
+.article-body p,
+.body-text p,
+.article-body > p {
+  font-size: .9375rem !important;
+  line-height: 1.78 !important;
+  color: #374151 !important;
+  margin-bottom: 1rem !important;
+}
+.article-body h2,
+.body-text h2 {
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  color: #0d0f1a !important;
+  margin-top: 2.25rem !important;
+  margin-bottom: .6rem !important;
+  letter-spacing: -.02em !important;
+  border-top: 1px solid #f1f3f7;
+  padding-top: .75rem;
+}
+.article-body h3,
+.body-text h3 {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: .4rem !important;
+}
+
+/* ── 3. Callout — emojisiz, FA ikonlu ── */
+.callout, .callout-tip, .callout-warning, .callout-note {
+  display: flex !important;
+  gap: .75rem !important;
+  padding: .9rem 1.1rem !important;
+  border-radius: 12px !important;
+  margin: 1.25rem 0 !important;
+  font-size: .875rem !important;
+  line-height: 1.6 !important;
+  border: 1px solid !important;
+}
+.callout-tip    { background: #f0fdf4 !important; border-color: #bbf7d0 !important; color: #14532d !important; }
+.callout-warning{ background: #fffbeb !important; border-color: #fde68a !important; color: #78350f !important; }
+.callout-note   { background: #eff6ff !important; border-color: #bfdbfe !important; color: #1e3a8a !important; }
+.callout-icon   { font-style: normal; flex-shrink: 0; font-size: 1rem; }
+
+/* ── 4. Article CTA — kurumsal ── */
+.article-cta {
+  background: linear-gradient(135deg, #0d0f1a, #1e2235) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  text-align: center !important;
+  margin: 2.5rem 0 !important;
+}
+.article-cta h3 {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  margin-bottom: .4rem !important;
+}
+.article-cta p {
+  font-size: .875rem !important;
+  color: rgba(255,255,255,.65) !important;
+  margin-bottom: 1.25rem !important;
+}
+.article-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+  background: #fff !important;
+  color: #0d0f1a !important;
+  font-size: .9rem !important;
+  font-weight: 700 !important;
+  padding: .7rem 1.5rem !important;
+  border-radius: 11px !important;
+  text-decoration: none !important;
+  transition: background .15s !important;
+}
+.article-cta-btn:hover { background: #f1f3f7 !important; }
+
+/* ── 5. İlgili rehberler chip'leri ── */
+.mir-tip-card-lg {
+  background: #f7f8fc !important;
+  border: 1px solid #e3e6f0 !important;
+  border-radius: 14px !important;
+  padding: 1.25rem !important;
+  margin: 1.5rem 0 !important;
+}
+.mir-label-blue { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #64748b; margin-bottom: .75rem !important; }
+.mir-tag-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.mir-tag-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .3rem !important;
+  background: #fff !important;
+  border: 1px solid #e3e6f0 !important;
+  color: #374151 !important;
+  font-size: .8rem !important;
+  font-weight: 600 !important;
+  padding: .35rem .8rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: .15s !important;
+}
+.mir-tag-chip:hover { border-color: #6366f1; color: #4f46e5; background: #eef2ff !important; }
+
+/* ── 6. Footer düzelt ── */
+.footer {
+  background: #0d0f1a !important;
+  padding: 2.5rem 1.5rem 1.5rem !important;
+  margin-top: 3rem;
+}
+.footer-inner { max-width: 720px; margin: 0 auto; }
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr !important;
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+@media(max-width:520px){ .footer-grid { grid-template-columns: 1fr !important; } }
+.footer-grid a, .footer-grid div {
+  color: rgba(255,255,255,.55) !important;
+  font-size: .82rem !important;
+  text-decoration: none !important;
+  display: block;
+  margin-bottom: .4rem;
+}
+.footer-grid a:hover { color: #fff !important; }
+.mir-footer-section-title {
+  font-size: .65rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1em !important;
+  color: rgba(255,255,255,.35) !important;
+  margin-bottom: .75rem !important;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  padding-top: 1.25rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: .5rem !important;
+  font-size: .75rem !important;
+  color: rgba(255,255,255,.35) !important;
+}
+.footer-bottom a { color: rgba(255,255,255,.35) !important; text-decoration: none !important; margin-left: .5rem; }
+.footer-bottom a:hover { color: #fff !important; }
+
+/* ── 7. Reading progress bar ── */
+.reading-progress {
+  position: fixed !important;
+  top: 0; left: 0 !important;
+  width: 0; height: 3px !important;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6) !important;
+  z-index: 9999 !important;
+  transition: width .1s !important;
+}
+
+/* ── 8. Mobil nav (article pages) ── */
+@media(max-width:700px){
+  #mobileToggle { display: flex !important; }
+  .main-nav {
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 64px !important; left: 0 !important; right: 0 !important;
+    background: #fff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08) !important;
+    padding: .75rem 1.25rem 1.25rem !important;
+    gap: .25rem !important; z-index: 300 !important;
+  }
+  .main-nav.show { display: flex !important; }
+  .main-nav a { padding: .75rem 1rem !important; border-bottom: 1px solid #f0f2f7 !important; font-size: .95rem !important; }
+  .main-nav a:last-child { border-bottom: none !important; margin-top: .5rem !important; }
+  .mir-ml-auto-flex { display: none !important; }
+}

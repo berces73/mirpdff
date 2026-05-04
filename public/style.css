@@ -851,3 +851,19 @@ button:focus {
 .mir-btn-dark{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:#0d0f1a;color:#fff;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none}
 .mir-link-sm{display:block;color:#64748b;text-decoration:none;font-size:.85rem}
 .mir-cta-box{background:#f8fafc;border:1px solid #e3e6f0;border-radius:14px;padding:1.5rem;margin:2rem 0;text-align:center}
+
+/* ── Footer link rengi global fix ── */
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-dark a,
+footer.dark a,
+footer[style*="background:#0d"] a,
+footer[style*="background: #0d"] a {
+  color: rgba(255,255,255,.6);
+}
+.footer-dark a:hover,
+footer.dark a:hover {
+  color: #fff;
+}

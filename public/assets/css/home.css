@@ -968,3 +968,85 @@ body {
 /* ── Modal ── */
 .modal { border-radius: 16px !important; }
 .modal-tool-btn { border-radius: 10px !important; font-size: .875rem !important; font-weight: 600 !important; }
+
+/* ── Footer Fix — .footer class ── */
+footer.footer {
+  background: #0d0f1a !important;
+  color: rgba(255,255,255,.55) !important;
+}
+footer.footer .footer-brand p,
+footer.footer .footer-brand span {
+  color: rgba(255,255,255,.45) !important;
+}
+footer.footer .footer-col h4 {
+  color: rgba(255,255,255,.3) !important;
+  font-size: .68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1em !important;
+  margin-bottom: .85rem !important;
+}
+footer.footer .footer-col a,
+footer.footer .footer-col p {
+  color: rgba(255,255,255,.55) !important;
+  text-decoration: none !important;
+  font-size: .84rem !important;
+  display: block !important;
+  margin-bottom: .4rem !important;
+  transition: color .12s !important;
+}
+footer.footer .footer-col a:hover {
+  color: #fff !important;
+}
+footer.footer .footer-bottom {
+  color: rgba(255,255,255,.3) !important;
+  font-size: .75rem !important;
+  border-top: 1px solid rgba(255,255,255,.07) !important;
+  padding-top: 1.25rem !important;
+  margin-top: 1.5rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: .5rem !important;
+}
+footer.footer .footer-bottom a,
+footer.footer .footer-links-row a {
+  color: rgba(255,255,255,.3) !important;
+  text-decoration: none !important;
+  margin-left: .6rem !important;
+  transition: color .12s !important;
+}
+footer.footer .footer-bottom a:hover,
+footer.footer .footer-links-row a:hover {
+  color: #fff !important;
+}
+footer.footer .social-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important; height: 34px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 8px !important;
+  color: rgba(255,255,255,.5) !important;
+  text-decoration: none !important;
+  font-size: .9rem !important;
+  transition: .15s !important;
+  margin-right: .4rem !important;
+}
+footer.footer .social-link:hover {
+  border-color: rgba(255,255,255,.3) !important;
+  color: #fff !important;
+}
+footer.footer .logo,
+footer.footer .logo MirPDF {
+  color: #fff !important;
+}
+footer.footer .footer-brand .logo {
+  color: #fff !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+}
+/* Newsletter bölümü */
+footer.footer [style*="font-weight:700"] {
+  color: #fff !important;
+}

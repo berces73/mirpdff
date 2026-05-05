@@ -607,3 +607,86 @@ hr{border:none;border-top:1px solid #f1f3f7;margin:2rem 0}
   .main-nav .nav-cta { margin-top: .5rem !important; text-align: center !important; padding: .8rem 1rem !important; }
   .article-wrap { padding: 1.25rem 1rem 4rem; }
 }
+
+/* ══════════════════════════════════════════
+   Mobile Typography Fix — v8
+   ══════════════════════════════════════════ */
+
+/* Temel mobil yazı boyutu */
+@media(max-width:700px){
+  .article-wrap{
+    padding:1.25rem 1.1rem 4rem !important;
+  }
+  
+  /* H1 */
+  .article-title,.article-body h1{
+    font-size:1.45rem !important;
+    line-height:1.2 !important;
+    letter-spacing:-.02em !important;
+    word-break:break-word !important;
+  }
+  
+  /* H2 */
+  .article-body h2,.body-text h2{
+    font-size:1.05rem !important;
+    line-height:1.3 !important;
+    margin-top:2rem !important;
+    word-break:break-word !important;
+  }
+  
+  /* H3 */
+  .article-body h3,.body-text h3{
+    font-size:.95rem !important;
+    margin-top:1.25rem !important;
+  }
+  
+  /* Paragraf */
+  .article-body p,.body-text p{
+    font-size:.9rem !important;
+    line-height:1.75 !important;
+    margin-bottom:1rem !important;
+    overflow-wrap:break-word !important;
+    word-break:break-word !important;
+  }
+  
+  /* Liste */
+  .article-body li,.body-text li{
+    font-size:.9rem !important;
+    line-height:1.7 !important;
+  }
+  
+  /* Callout */
+  .callout{
+    margin:1.25rem -.1rem !important;
+    padding:.75rem .9rem !important;
+  }
+  .callout p{font-size:.875rem !important}
+  
+  /* Tablo — yatay scroll */
+  .data-table,.article-body table,.body-text table{
+    font-size:.78rem !important;
+    min-width:500px;
+  }
+  .article-body .table-wrap,
+  .body-text .table-wrap{
+    overflow-x:auto !important;
+    margin:1.25rem -.1rem !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  
+  /* Meta */
+  .article-meta{
+    font-size:.73rem !important;
+    gap:.35rem !important;
+  }
+  
+  /* Breadcrumb */
+  .breadcrumb{
+    font-size:.73rem !important;
+  }
+  
+  /* Article cat */
+  .article-cat{
+    font-size:.68rem !important;
+  }
+}

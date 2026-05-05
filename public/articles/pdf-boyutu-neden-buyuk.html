@@ -123,7 +123,7 @@ footer:not(.sf) a{
 <div class="art-layout">
   <nav class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span><a href="/articles/">Makaleler</a><span>›</span><span>Teknik Rehber</span></nav>
   <div class="article-header">
-    <div class="article-cat"><i class="fas fa-bookmark"></i> Teknik Rehber</div>
+    <div class="article-cat">Teknik Rehber</div>
     <div class="article-body">
 <h1 class="article-title">PDF Boyutu Neden Bu Kadar Büyük?</h1>
     <div class="article-meta">
@@ -131,7 +131,7 @@ footer:not(.sf) a{
       <span>·</span>
       <span><i class="fas fa-clock mir-icon-accent"></i>12 dk okuma</span>
       <span>·</span>
-      <span><i class="fas fa-shield-alt" style="color:#10b981;margin-right:.3rem"></i>KVKK Uyumlu</span>
+      <span><span style="color:#94a3b8">KVKK Uyumlu</span></span>
     </div>
   </div>
   <div class="body-text">
@@ -151,7 +151,7 @@ footer:not(.sf) a{
 
 <p>Örnek: Arial Regular fontu yaklaşık 500 KB yer kaplar. Eğer belgenizde 4 farklı font kullanıyorsanız (normal, kalın, italik, kalın-italik) ve tüm bunlar gömülüyse, sadece fontlar için 2 MB alan harcanmış olabilir.</p>
 
-<div class="callout tip"><p><strong>💡 Boyut ipucu:</strong> Font gömme yerine 'yalnızca kullanılan karakterleri göm' (font subsetting) seçeneğini kullanın. Bu, tüm font yerine yalnızca belgede geçen karakterleri gömer. Türkçe metin için bu genellikle %70–80 tasarruf demektir.</p></div>
+<div class="callout callout-tip"><p><strong>Boyut ipucu:</strong> Font gömme yerine 'yalnızca kullanılan karakterleri göm' (font subsetting) seçeneğini kullanın. Bu, tüm font yerine yalnızca belgede geçen karakterleri gömer. Türkçe metin için bu genellikle %70–80 tasarruf demektir.</p></div>
 
 <p>Muhasebe yazılımları (Logo, Mikro, Paraşüt) e-fatura PDF'lerini oluştururken genellikle tüm fontu gömer. Bu yüzden tek sayfalık faturalar 3–5 MB olabilir. Çözüm: sıkıştırma sonrası yazılımın font embedding ayarlarını kontrol edin.</p>
 
@@ -177,7 +177,7 @@ footer:not(.sf) a{
 <h3>Görsel Sıkıştırma Yöntemi</h3>
 <p>PDF içindeki görseller JPEG, PNG veya TIFF formatında saklanabilir. JPEG kayıplı sıkıştırma kullanır ve çok küçük dosyalar üretir. PNG kayıpsız sıkıştırma kullanır, grafik ve ekran görüntüleri için daha iyidir ama büyüktür.</p>
 
-<div class="callout warn"><p><strong>⚠ Dikkat:</strong> Firmalar PDF'e logo eklerken PNG kullanmak isterler (şeffaflık için). Ancak yüksek çözünürlüklü PNG logo tek başına 2–3 MB yer kaplayabilir. Logo boyutunu 300×150 piksel, JPEG kalite 85 ile düzenleyin.</p></div>
+<div class="callout callout-warning"><p><strong>Dikkat:</strong> Firmalar PDF'e logo eklerken PNG kullanmak isterler (şeffaflık için). Ancak yüksek çözünürlüklü PNG logo tek başına 2–3 MB yer kaplayabilir. Logo boyutunu 300×150 piksel, JPEG kalite 85 ile düzenleyin.</p></div>
 
 <h3>Renk Profili</h3>
 <p>Profesyonel tasarım araçları bazen CMYK renk profili gömülü PDF'ler oluşturur. Bu renk profili dosyası 500 KB–2 MB yer kaplayabilir. Dijital kullanım için RGB renk profiline geçmek dosya boyutunu küçültür.</p>
@@ -190,7 +190,7 @@ footer:not(.sf) a{
 
 <p><strong>Taranmış PDF:</strong> Her sayfa aslında bir fotoğraf (raster görüntü). 10 sayfalık taranmış belge 30–100 MB olabilir — her sayfa bir fotoğraf dosyası.</p>
 
-<div class="callout note"><p><strong>ℹ OCR çözümü:</strong> Taranmış PDF'leri hem boyut olarak küçültmek hem de metin aranabilir yapmak için OCR (Optik Karakter Tanıma) kullanın. MirPDF'in OCR aracı Tesseract motoru ile Türkçe metin tanıma yapabilmektedir.</p></div>
+<div class="callout callout-note"><p><strong>OCR çözümü:</strong> Taranmış PDF'leri hem boyut olarak küçültmek hem de metin aranabilir yapmak için OCR (Optik Karakter Tanıma) kullanın. MirPDF'in OCR aracı Tesseract motoru ile Türkçe metin tanıma yapabilmektedir.</p></div>
 
 <h2>Faktör 4: Gömülü Metadata ve Yapısal Veriler</h2>
 
@@ -213,7 +213,7 @@ footer:not(.sf) a{
 
 <p>Önemli not: Görsel sıkıştırma dijital imzaları bozmaz, çünkü imzalar kriptografik hash değerleri üzerinden çalışır. Ancak aşırı agresif sıkıştırma veya PDF yeniden oluşturma imzaları geçersiz kılabilir.</p>
 
-<div class="callout tip"><p><strong>✓ Güvenli kural:</strong> e-imzalı belgelerde sıkıştırırken 'Orta Kalite' seçeneğini tercih edin. 'Yüksek Sıkıştırma' yalnızca imzasız arşiv belgeler için uygundur.</p></div>
+<div class="callout callout-tip"><p><strong>✓ Güvenli kural:</strong> e-imzalı belgelerde sıkıştırırken 'Orta Kalite' seçeneğini tercih edin. 'Yüksek Sıkıştırma' yalnızca imzasız arşiv belgeler için uygundur.</p></div>
 
 <h2>Faktör 6: Katmanlar ve Şeffaflık Efektleri</h2>
 
@@ -250,7 +250,7 @@ footer:not(.sf) a{
   <li>Zaten sıkıştırılmış PDF'ler: %0–5 azalma veya hafif artış</li>
 </ul>
 
-<div class="callout warn"><p><strong>⚠ Beklenti yönetimi:</strong> Zaten iyileştirilmiş bir PDF'i tekrar sıkıştırmaya çalışmak boyutu artırabilir. Bu normal bir davranış — sıkıştırma şablonu veriyi yeniden paketler ve küçük overhead ekler.</p></div>
+<div class="callout callout-warning"><p><strong>Beklenti yönetimi:</strong> Zaten iyileştirilmiş bir PDF'i tekrar sıkıştırmaya çalışmak boyutu artırabilir. Bu normal bir davranış — sıkıştırma şablonu veriyi yeniden paketler ve küçük overhead ekler.</p></div>
 
 <h2>Pratik Çözüm: Ne Zaman Ne Kullanılmalı?</h2>
 

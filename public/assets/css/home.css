@@ -1050,3 +1050,86 @@ footer.footer .footer-brand .logo {
 footer.footer [style*="font-weight:700"] {
   color: #fff !important;
 }
+
+/* ══════════════════════════════════════════
+   Mobile Hero + Plan Cards Fix
+   ══════════════════════════════════════════ */
+@media(max-width:700px){
+
+  /* Trust badges — tek sütun, temiz */
+  .trust-row,.tbadge-row{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:.35rem !important;
+    padding:0 1rem !important;
+  }
+  .tbadge{
+    border-right:none !important;
+    border-bottom:1px solid #f1f3f7 !important;
+    padding:.4rem 0 !important;
+    width:100% !important;
+    font-size:.82rem !important;
+  }
+  .tbadge:last-child{border-bottom:none !important}
+
+  /* Plan cards — dikey yığın */
+  .plan-cards{
+    grid-template-columns:1fr !important;
+    max-width:100% !important;
+    border-radius:12px !important;
+  }
+  .plan-card{
+    border-right:none !important;
+    border-bottom:1px solid #e4e7ed !important;
+    padding:1rem !important;
+  }
+  .plan-card:last-child{border-bottom:none !important}
+
+  /* Upload zone text */
+  .upload-zone h3{font-size:.95rem !important}
+  .upload-zone p{font-size:.8rem !important}
+
+  /* Micro guidance */
+  .micro-guidance{
+    font-size:.78rem !important;
+    text-align:center !important;
+    padding:0 1rem !important;
+  }
+
+  /* Section title */
+  .section-title{
+    font-size:clamp(1.75rem,8vw,2.5rem) !important;
+    letter-spacing:-.03em !important;
+  }
+
+  /* Quick bar */
+  .quick-pill{
+    font-size:.75rem !important;
+    padding:.25rem .6rem !important;
+  }
+}
+
+/* ── Pricing page mobil ── */
+@media(max-width:700px){
+  .page-hero h1{
+    font-size:1.65rem !important;
+    font-weight:900 !important;
+    letter-spacing:-.03em !important;
+    line-height:1.15 !important;
+  }
+  .page-hero p{
+    font-size:.9rem !important;
+    line-height:1.7 !important;
+  }
+  .hero-badges{
+    gap:.65rem !important;
+    font-size:.78rem !important;
+  }
+}
+
+/* ── Global font override ── */
+body, h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif !important;
+}
+h1 { font-weight: 900 !important; letter-spacing: -.04em !important; }
+h2 { font-weight: 800 !important; letter-spacing: -.03em !important; }

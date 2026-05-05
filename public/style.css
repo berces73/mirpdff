@@ -867,3 +867,24 @@ footer[style*="background: #0d"] a {
 footer.dark a:hover {
   color: #fff;
 }
+
+/* ── Global Font ── */
+body,h1,h2,h3,h4,h5,h6,button,input,select,textarea{
+  font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif !important;
+}
+/* Serif font override */
+[style*="Instrument Serif"],[style*="Playfair"],[style*="Georgia"]{
+  font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif !important;
+}
+h1{font-weight:900 !important;letter-spacing:-.04em !important}
+h2{font-weight:800 !important;letter-spacing:-.03em !important}
+
+@media(max-width:700px){
+  .page-hero h1,.hero h1{
+    font-size:clamp(1.5rem,6vw,2rem) !important;
+    line-height:1.15 !important;
+  }
+  .plan-grid,.pricing-grid{
+    grid-template-columns:1fr !important;
+  }
+}

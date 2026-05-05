@@ -1,4 +1,16 @@
 
+/* ── CSS Variable Fallbacks ── */
+:root {
+  --bg: #fff;
+  --bg-soft: #f7f8fc;
+  --bg-mute: #eef0f7;
+  --border: #e3e6f0;
+  --text: #0d0f1a;
+  --muted: #64748b;
+  --primary: #6366f1;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
 /* ─── TOKENS ─── */
 :root {
   --bg:      #ffffff;
@@ -483,7 +495,7 @@ body { font-family: 'Figtree', sans-serif; background: var(--bg); color: var(--t
 .upload-zone  { animation: fadeUp .5s .23s both; }
 .trust-row    { animation: fadeUp .5s .28s both; }
 
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.reveal { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
 /* ─── RESPONSIVE ─── */

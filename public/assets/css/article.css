@@ -1,3 +1,11 @@
+:root {
+  --bg: #fff;
+  --bg-soft: #f7f8fc;
+  --border: #e3e6f0;
+  --text: #0d0f1a;
+  --muted: #64748b;
+  --primary: #6366f1;
+}
 /* ══════════════════════════════════════════
    MirPDF Article CSS — v7 Clean & Professional
    ══════════════════════════════════════════ */

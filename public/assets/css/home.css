@@ -562,73 +562,105 @@ body {
   color: #0d0f1a !important;
 }
 
-/* ── Trust badges — salt metin, çizgi ── */
+/* ── Trust row ── */
 .trust-row {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
+  align-items: center !important;
   gap: 0 !important;
-  margin: 1.5rem auto 0 !important;
-  max-width: 640px !important;
+  margin: 1.75rem auto 0 !important;
+  max-width: 680px !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  background: #fff !important;
 }
 .tbadge {
   background: none !important;
   border: none !important;
   border-radius: 0 !important;
-  padding: .3rem .75rem !important;
+  border-right: 1px solid #e5e7eb !important;
+  padding: .75rem 1.1rem !important;
   font-size: .78rem !important;
-  color: #64748b !important;
-  font-weight: 500 !important;
-  border-right: 1px solid #e4e7ed !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  color: #111111 !important;
+  letter-spacing: -.005em !important;
+  white-space: nowrap !important;
+  flex: 1 !important;
+  text-align: center !important;
 }
 .tbadge:last-child { border-right: none !important; }
-.tbadge i { color: #94a3b8 !important; margin-right: .3rem !important; }
+.tbadge i { display: none !important; }
 
-/* ── Plan cards — kutusuz, tablo gibi ── */
+/* ── Plan cards ── */
 .plan-cards {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 0 !important;
-  border: 1px solid #e4e7ed !important;
+  border: 1px solid #e5e7eb !important;
   border-radius: 12px !important;
   overflow: hidden !important;
   max-width: 580px !important;
   margin: 1.5rem auto 0 !important;
-  background: none !important;
+  background: #fff !important;
 }
 .plan-card {
   background: #fff !important;
   border: none !important;
-  border-right: 1px solid #e4e7ed !important;
+  border-right: 1px solid #e5e7eb !important;
   border-radius: 0 !important;
-  padding: 1.1rem 1rem !important;
+  padding: 1.4rem 1rem !important;
   text-align: center !important;
   box-shadow: none !important;
 }
 .plan-card:last-child { border-right: none !important; }
 .plan-card-icon {
-  font-size: 1.1rem !important;
+  font-size: 1.4rem !important;
   font-weight: 900 !important;
-  color: #0d0f1a !important;
-  margin-bottom: .3rem !important;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  color: #111111 !important;
+  letter-spacing: -.04em !important;
+  line-height: 1 !important;
+  margin-bottom: .5rem !important;
+}
+.plan-card-icon--pro {
+  font-size: .7rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  background: #111 !important;
+  color: #fff !important;
+  padding: .2rem .55rem !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
 }
 .plan-card-title {
-  font-size: .78rem !important;
-  font-weight: 700 !important;
-  color: #0d0f1a !important;
+  font-size: .72rem !important;
+  font-weight: 800 !important;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  color: #111111 !important;
   text-transform: uppercase !important;
-  letter-spacing: .06em !important;
-  margin-bottom: .25rem !important;
+  letter-spacing: .08em !important;
+  margin-bottom: .3rem !important;
 }
-.plan-card-title--pro { color: #6366f1 !important; }
+.plan-card-title--pro { color: #2563eb !important; }
 .plan-card-desc {
-  font-size: .75rem !important;
-  color: #64748b !important;
-  line-height: 1.5 !important;
+  font-size: .78rem !important;
+  font-weight: 500 !important;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  color: #555555 !important;
+  line-height: 1.55 !important;
 }
-.plan-card-desc--pro { color: #374151 !important; }
-.plan-card--pro { background: #fafbfc !important; }
-.plan-card-link { color: #6366f1 !important; font-weight: 700 !important; text-decoration: none !important; }
+.plan-card-desc--pro { color: #555555 !important; }
+.plan-card--pro { background: #f8faff !important; }
+.plan-card-link {
+  color: #2563eb !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  font-size: .78rem !important;
+}
 
 /* ── Quick pills — minimal link ── */
 .quick-bar {
@@ -1056,19 +1088,22 @@ footer.footer [style*="font-weight:700"] {
    ══════════════════════════════════════════ */
 @media(max-width:700px){
 
-  /* Trust badges — tek sütun, temiz */
+  /* Trust badges — mobilde dikey yığın */
   .trust-row,.tbadge-row{
     flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:.35rem !important;
-    padding:0 1rem !important;
+    align-items:stretch !important;
+    gap:0 !important;
+    border-radius:10px !important;
+    overflow:hidden !important;
   }
   .tbadge{
     border-right:none !important;
-    border-bottom:1px solid #f1f3f7 !important;
-    padding:.4rem 0 !important;
+    border-bottom:1px solid #e5e7eb !important;
+    padding:.7rem 1rem !important;
     width:100% !important;
     font-size:.82rem !important;
+    text-align:left !important;
+    flex:unset !important;
   }
   .tbadge:last-child{border-bottom:none !important}
 
@@ -1080,9 +1115,14 @@ footer.footer [style*="font-weight:700"] {
   }
   .plan-card{
     border-right:none !important;
-    border-bottom:1px solid #e4e7ed !important;
-    padding:1rem !important;
+    border-bottom:1px solid #e5e7eb !important;
+    padding:1.1rem 1rem !important;
+    text-align:left !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:1rem !important;
   }
+  .plan-card-icon{ margin-bottom:0 !important; min-width:2rem !important; }
   .plan-card:last-child{border-bottom:none !important}
 
   /* Upload zone text */

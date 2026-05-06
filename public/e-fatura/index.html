@@ -218,97 +218,189 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 @media(max-width:600px){#mobileToggle{display:block}.main-nav{display:none;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;z-index:99}.main-nav.show{display:flex}.main-nav a{width:100%;padding:.65rem 1rem}.footer-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr}.article-wrap{padding:2rem 1.25rem 4rem}}
 </style>
 <style>
-.hub-hero{text-align:center;padding:4rem 1.5rem 2rem;max-width:700px;margin:0 auto}
-.hub-hero h1{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-.04em;margin-bottom:1rem;color:#0d0f1a}
-.hub-hero p{font-size:1.08rem;color:var(--muted);max-width:54ch;margin:0 auto 2rem}
-.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem;max-width:900px;margin:0 auto;padding:0 1.5rem 5rem}
-.hub-card{display:block;border:1px solid #e4e7ed;border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;color:inherit;background:#fff;transition:border-color .15s}
-.hub-card:hover{border-color:#0d0f1a;text-decoration:none}
-.hub-card-cat{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8;margin-bottom:.3rem}
-.hub-card-title{font-size:.95rem;font-weight:700;line-height:1.3;color:#0d0f1a;margin-bottom:.25rem}
-.hub-card-desc{font-size:.8rem;color:#64748b;line-height:1.55}
+/* ── e-Fatura Hub ── */
+.ef-wrap{max-width:780px;margin:0 auto;padding:0 1.25rem}
+
+/* Hero */
+.ef-hero{padding:3.5rem 0 2.5rem;border-bottom:1px solid #f1f3f7;margin-bottom:2.5rem}
+.ef-label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8;margin-bottom:1rem}
+.ef-hero h1{font-size:clamp(1.65rem,4vw,2.25rem);font-weight:900;letter-spacing:-.04em;line-height:1.15;color:#0d0f1a;margin-bottom:.85rem}
+.ef-hero p{font-size:.9375rem;color:#64748b;line-height:1.7;max-width:56ch}
+
+/* Kart grid */
+.ef-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:3rem}
+@media(max-width:600px){.ef-grid{grid-template-columns:1fr}}
+.ef-card{display:block;border:1px solid #e4e7ed;border-radius:10px;padding:1rem 1.1rem;text-decoration:none;color:#0d0f1a;transition:border-color .15s;background:#fff}
+.ef-card:hover{border-color:#0d0f1a}
+.ef-card-cat{display:block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;margin-bottom:.25rem}
+.ef-card-title{display:block;font-size:.9rem;font-weight:700;color:#0d0f1a;margin-bottom:.2rem;line-height:1.3}
+.ef-card-desc{font-size:.78rem;color:#64748b;line-height:1.5;display:block;margin-top:.2rem}
+
+/* İçerik bölümleri */
+.ef-content{border-top:1px solid #f1f3f7;padding-top:2.5rem}
+.ef-section{margin-bottom:2.75rem}
+.ef-section h2{font-size:1.15rem;font-weight:800;color:#0d0f1a;letter-spacing:-.025em;margin-bottom:.85rem;padding-bottom:.65rem;border-bottom:1px solid #f1f3f7}
+.ef-section h3{font-size:.95rem;font-weight:700;color:#0d0f1a;margin:1.5rem 0 .4rem}
+.ef-section p{font-size:.9rem;color:#374151;line-height:1.78;margin-bottom:.85rem}
+.ef-section strong{color:#0d0f1a}
+.ef-section code{background:#f7f8fc;border:1px solid #e4e7ed;border-radius:5px;padding:.1rem .35rem;font-size:.82em}
+.ef-section a{color:#2563eb;text-decoration:none;font-weight:500}
+.ef-section a:hover{text-decoration:underline}
+
+/* Liste */
+.ef-list{list-style:none;padding:0;margin:.5rem 0}
+.ef-list li{padding:.55rem 0;border-bottom:1px solid #f1f3f7;font-size:.9rem;color:#374151;line-height:1.6}
+.ef-list li:last-child{border-bottom:none}
+.ef-list a{color:#374151;text-decoration:none;font-weight:600}
+.ef-list a:hover{color:#0d0f1a}
+
+/* Note */
+.ef-note{border-left:3px solid #10b981;padding:.85rem 1rem;margin:1.5rem 0}
+.ef-note strong{display:block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#065f46;margin-bottom:.3rem}
+.ef-note p{font-size:.86rem;color:#374151;margin:0;line-height:1.65}
+
+/* FAQ */
+.ef-faq{border-bottom:1px solid #f1f3f7;padding:.85rem 0}
+.ef-faq:last-child{border-bottom:none}
+.ef-faq summary{font-size:.9rem;font-weight:700;color:#0d0f1a;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.ef-faq summary::after{content:'+';font-size:1.1rem;color:#94a3b8;flex-shrink:0;font-weight:400}
+.ef-faq[open] summary::after{content:'−'}
+.ef-faq p{font-size:.875rem;color:#374151;line-height:1.7;margin:.75rem 0 .25rem;padding-left:.1rem}
+
+/* Mobile */
+@media(max-width:700px){
+  .ef-hero{padding:2.25rem 0 1.75rem;margin-bottom:1.75rem}
+  .ef-hero h1{font-size:1.45rem}
+  .ef-hero p{font-size:.875rem}
+  .ef-grid{gap:.55rem;margin-bottom:2rem}
+  .ef-card{padding:.85rem .95rem}
+  .ef-section h2{font-size:1rem}
+  .ef-section p{font-size:.875rem}
+}
 </style>
-<div class="hub-hero">
-  <span class="article-category">e-Fatura / e-Arşiv</span>
-  <h1>e-Fatura ve e-Arşiv PDF İşlemleri</h1>
-  <p>GİB portalı, muhasebe yazılımları ve e-posta gönderimi için e-fatura PDF'lerini doğru boyut ve formatta hazırlama rehberleri.</p>
-</div>
-<div class="hub-grid">
-  <a href="/e-fatura/e-fatura-pdf-kucultme/" class="hub-card">
-    <div class="hub-card-cat">Boyut</div>
-    <div class="hub-card-title">e-Fatura PDF Küçültme</div>
-    <div class="hub-card-desc">E-posta limitini aşan e-fatura PDF'ini boyutunu kaybetmeden küçültün.</div>
-  </a>
-  <a href="/e-fatura/e-arsiv-fatura-pdf-birlestirme/" class="hub-card">
-    <div class="hub-card-cat">Birleştirme</div>
-    <div class="hub-card-title">e-Arşiv Fatura PDF Birleştirme</div>
-    <div class="hub-card-desc">Birden fazla e-arşiv faturasını tek PDF dosyasında birleştirin.</div>
-  </a>
-  <a href="/e-fatura/e-fatura-pdf-2mb-altina/" class="hub-card">
-    <div class="hub-card-cat">Limit</div>
-    <div class="hub-card-title">e-Fatura PDF 2MB Altına</div>
-    <div class="hub-card-desc">GİB ve muhasebe sistemlerinin yükleme limitine uygun boyuta indirin.</div>
-  </a>
-  <a href="/e-fatura/e-arsiv-fatura-boyutu-kucultme/" class="hub-card">
-    <div class="hub-card-cat">Boyut</div>
-    <div class="hub-card-title">e-Arşiv Fatura Boyutu Küçültme</div>
-    <div class="hub-card-desc">Taranmış e-arşiv faturalarının PDF boyutunu hızlıca azaltın.</div>
-  </a>
-  <a href="/e-fatura/gib-portal-pdf-yukleme-hatasi/" class="hub-card">
-    <div class="hub-card-cat">Sorun Giderme</div>
-    <div class="hub-card-title">GİB Portal PDF Yükleme Hatası</div>
-    <div class="hub-card-desc">"Dosya boyutu çok büyük" veya "format desteklenmiyor" hatalarının çözümü.</div>
-  </a>
-  <a href="/e-fatura/muhasebe-fatura-pdf-arsivleme/" class="hub-card">
-    <div class="hub-card-cat">Arşiv</div>
-    <div class="hub-card-title">Muhasebe Fatura PDF Arşivleme</div>
-    <div class="hub-card-desc">Aylık veya yıllık fatura PDF'lerini tek dosyada arşivleme yöntemi.</div>
-  </a>
-  <a href="/e-fatura/e-fatura-pdf-imzalama/" class="hub-card">
-    <div class="hub-card-cat">İmza</div>
-    <div class="hub-card-title">e-Fatura PDF İmzalama</div>
-    <div class="hub-card-desc">Oluşturulan e-fatura PDF'ine onay imzası ekleme adımları.</div>
-  </a>
-  <a href="/e-fatura/e-fatura-pdf-donusturme/" class="hub-card">
-    <div class="hub-card-cat">Dönüştürme</div>
-    <div class="hub-card-title">e-Fatura XML'den PDF'e Dönüştürme</div>
-    <div class="hub-card-desc">GİB'den indirilen XML faturayı okunabilir PDF formatına çevirin.</div>
-  </a>
+<div class="ef-wrap">
 
-<h2 class="mir-section-heading">e-Fatura ve e-Arşiv nedir, PDF ile ilişkisi ne?</h2>
-<p>e-Fatura, Gelir İdaresi Başkanlığı (GİB) sistemine elektronik olarak iletilen yapılandırılmış fatura belgesidir. Yasal format UBL-TR XML'dir. Ancak insan tarafından okunabilmesi için bu XML'den PDF oluşturulur. e-Arşiv fatura ise GİB sistemine raporlanan, müşteriye e-posta veya kağıt olarak iletilebilen faturadır.</p>
+  <!-- Hero -->
+  <div class="ef-hero">
+    <span class="ef-label">e-Fatura / e-Arşiv</span>
+    <h1>e-Fatura ve e-Arşiv PDF İşlemleri</h1>
+    <p>GİB portalı, muhasebe yazılımları ve e-posta gönderimi için e-fatura PDF'lerini doğru boyut ve formatta hazırlama rehberleri.</p>
+  </div>
 
-<p>Günlük pratikte "e-fatura PDF" denince kastedilen, bu XML'den üretilen görsel sunumdur. İşte bu PDF'lerin boyutu, formatı ve arşivi muhasebe büroları ve KOBİ'ler için ciddi bir iş yükü oluşturur.</p>
+  <!-- Rehber kartları -->
+  <div class="ef-grid">
+    <a href="/e-fatura/e-fatura-pdf-kucultme/" class="ef-card">
+      <span class="ef-card-cat">Boyut</span>
+      <strong class="ef-card-title">e-Fatura PDF Küçültme</strong>
+      <p class="ef-card-desc">E-posta limitini aşan e-fatura PDF'ini boyutunu kaybetmeden küçültün.</p>
+    </a>
+    <a href="/e-fatura/e-arsiv-fatura-pdf-birlestirme/" class="ef-card">
+      <span class="ef-card-cat">Birleştirme</span>
+      <strong class="ef-card-title">e-Arşiv Fatura PDF Birleştirme</strong>
+      <p class="ef-card-desc">Birden fazla e-arşiv faturasını tek PDF dosyasında birleştirin.</p>
+    </a>
+    <a href="/e-fatura/e-fatura-pdf-2mb-altina/" class="ef-card">
+      <span class="ef-card-cat">Limit</span>
+      <strong class="ef-card-title">e-Fatura PDF 2MB Altına</strong>
+      <p class="ef-card-desc">GİB ve muhasebe sistemlerinin yükleme limitine uygun boyuta indirin.</p>
+    </a>
+    <a href="/e-fatura/e-arsiv-fatura-boyutu-kucultme/" class="ef-card">
+      <span class="ef-card-cat">Boyut</span>
+      <strong class="ef-card-title">e-Arşiv Fatura Boyutu Küçültme</strong>
+      <p class="ef-card-desc">Taranmış e-arşiv faturalarının PDF boyutunu hızlıca azaltın.</p>
+    </a>
+    <a href="/e-fatura/gib-portal-pdf-yukleme-hatasi/" class="ef-card">
+      <span class="ef-card-cat">Sorun Giderme</span>
+      <strong class="ef-card-title">GİB Portal PDF Yükleme Hatası</strong>
+      <p class="ef-card-desc">"Dosya çok büyük" ve "format desteklenmiyor" hatalarının çözümü.</p>
+    </a>
+    <a href="/e-fatura/muhasebe-fatura-pdf-arsivleme/" class="ef-card">
+      <span class="ef-card-cat">Arşiv</span>
+      <strong class="ef-card-title">Muhasebe Fatura PDF Arşivleme</strong>
+      <p class="ef-card-desc">Aylık veya yıllık fatura PDF'lerini tek dosyada arşivleme yöntemi.</p>
+    </a>
+    <a href="/e-fatura/e-fatura-pdf-imzalama/" class="ef-card">
+      <span class="ef-card-cat">İmza</span>
+      <strong class="ef-card-title">e-Fatura PDF İmzalama</strong>
+      <p class="ef-card-desc">Oluşturulan e-fatura PDF'ine onay imzası ekleme adımları.</p>
+    </a>
+    <a href="/e-fatura/e-fatura-pdf-donusturme/" class="ef-card">
+      <span class="ef-card-cat">Dönüştürme</span>
+      <strong class="ef-card-title">e-Fatura XML'den PDF'e Dönüştürme</strong>
+      <p class="ef-card-desc">GİB'den indirilen XML faturayı okunabilir PDF formatına çevirin.</p>
+    </a>
+  </div>
 
-<h2 class="mir-section-heading">Bu rehberlerde ne öğreneceksiniz?</h2>
-<ul class="mir-list-reset"><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/e-fatura-pdf-kucultme/" class="mir-link">e-Fatura PDF küçültme</a> — e-posta eki ve muhasebe yazılımı limitleri için</li><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/e-fatura-pdf-2mb-altina/" class="mir-link">e-Fatura 2 MB altına</a> — GİB entegratörlerinin katı boyut sınırları</li><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/e-arsiv-fatura-pdf-birlestirme/" class="mir-link">e-Arşiv fatura birleştirme</a> — aylık müşteri paketi oluşturma</li><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/gib-portal-pdf-yukleme-hatasi/" class="mir-link">GİB portal yükleme hatası</a> — 'format desteklenmiyor' ve 'dosya çok büyük' çözümleri</li><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/muhasebe-fatura-pdf-arsivleme/" class="mir-link">Muhasebe fatura arşivleme</a> — 10 yıllık saklama zorunluluğuna uyum</li><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/e-fatura-pdf-imzalama/" class="mir-link">e-Fatura imzalama</a> — iç onay süreci için dijital imza</li><li class="mir-list-item"><span class="mir-list-dot"></span><a href="/e-fatura/e-fatura-pdf-donusturme/" class="mir-link">e-Fatura XML→PDF dönüştürme</a> — GİB portalından doğru PDF indirme</li></ul>
+  <!-- İçerik -->
+  <div class="ef-content">
 
-<h2 class="mir-section-heading">En sık karşılaşılan e-Fatura PDF sorunları</h2>
+    <div class="ef-section">
+      <h2>e-Fatura ve e-Arşiv nedir, PDF ile ilişkisi ne?</h2>
+      <p>e-Fatura, Gelir İdaresi Başkanlığı (GİB) sistemine elektronik olarak iletilen yapılandırılmış fatura belgesidir. Yasal format UBL-TR XML'dir. Ancak insan tarafından okunabilmesi için bu XML'den PDF oluşturulur.</p>
+      <p>e-Arşiv fatura ise GİB sistemine raporlanan, müşteriye e-posta veya kağıt olarak iletilebilen faturadır. Günlük pratikte "e-fatura PDF" denince kastedilen bu XML'den üretilen görsel sunum, muhasebe büroları ve KOBİ'ler için ciddi bir iş yükü oluşturur.</p>
+    </div>
 
-<h3 class="mir-h3">'Dosya boyutu çok büyük' hatası</h3>
-<p>Logo, Mikro, Paraşüt gibi entegratörlerin fatura modülleri 2–5 MB sınırı uygulamaktadır. Firma logosu ve e-imza görseli içeren faturalar bu sınırı hızlıca aşar. <a href="/pdf-sikistir" class="mir-link">PDF Sıkıştır</a> ile birkaç saniyede çözülür.</p>
+    <div class="ef-section">
+      <h2>Bu rehberlerde ne öğreneceksiniz?</h2>
+      <ul class="ef-list">
+        <li><a href="/e-fatura/e-fatura-pdf-kucultme/">e-Fatura PDF küçültme</a> — e-posta eki ve muhasebe yazılımı limitleri için</li>
+        <li><a href="/e-fatura/e-fatura-pdf-2mb-altina/">e-Fatura 2 MB altına</a> — GİB entegratörlerinin katı boyut sınırları</li>
+        <li><a href="/e-fatura/e-arsiv-fatura-pdf-birlestirme/">e-Arşiv fatura birleştirme</a> — aylık müşteri paketi oluşturma</li>
+        <li><a href="/e-fatura/gib-portal-pdf-yukleme-hatasi/">GİB portal yükleme hatası</a> — 'format desteklenmiyor' ve 'dosya çok büyük' çözümleri</li>
+        <li><a href="/e-fatura/muhasebe-fatura-pdf-arsivleme/">Muhasebe fatura arşivleme</a> — 10 yıllık saklama zorunluluğuna uyum</li>
+        <li><a href="/e-fatura/e-fatura-pdf-imzalama/">e-Fatura imzalama</a> — iç onay süreci için dijital imza</li>
+        <li><a href="/e-fatura/e-fatura-pdf-donusturme/">e-Fatura XML→PDF dönüştürme</a> — GİB portalından doğru PDF indirme</li>
+      </ul>
+    </div>
 
-<h3 class="mir-h3">'Format desteklenmiyor' hatası</h3>
-<p>Bazı GİB entegratörleri PDF/A formatı ister. Standart PDF'iniz PDF/A değilse GİB'in kendi görüntüleyicisinden "PDF olarak indir" seçeneğini kullanın; çıkan dosya genellikle PDF/A uyumludur.</p>
+    <div class="ef-section">
+      <h2>En sık karşılaşılan e-Fatura PDF sorunları</h2>
 
-<h3 class="mir-h3">'Şifreli dosya' hatası</h3>
-<p>Bazı muhasebe yazılımları fatura PDF'lerini otomatik şifreler. <a href="/pdf-kilit-ac" class="mir-link">PDF Kilit Aç</a> aracıyla kısıtlamayı kaldırın.</p>
+      <h3>'Dosya boyutu çok büyük' hatası</h3>
+      <p>Logo, Mikro, Paraşüt gibi entegratörlerin fatura modülleri 2–5 MB sınırı uygulamaktadır. Firma logosu ve e-imza görseli içeren faturalar bu sınırı hızlıca aşar. <a href="/pdf-sikistir">PDF Sıkıştır</a> ile birkaç saniyede çözülür.</p>
 
-<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:12px;padding:1.1rem 1.25rem;margin:1.75rem 0">
-  <strong style="display:block;font-size:.85rem;font-weight:700;color:#166534;margin-bottom:.3rem">✓ KVKK notu</strong>
-  <p style="margin:0;font-size:.92rem;color:#166534;line-height:1.65">Bu rehberlerdeki tüm PDF işlemleri MirPDF'te tarayıcınızda gerçekleşir. e-Fatura içerikleri, müşteri verilerini sunucumuza iletmez.</p>
-</div>
+      <h3>'Format desteklenmiyor' hatası</h3>
+      <p>Bazı GİB entegratörleri PDF/A formatı ister. Standart PDF'iniz PDF/A değilse GİB'in kendi görüntüleyicisinden "PDF olarak indir" seçeneğini kullanın; çıkan dosya genellikle PDF/A uyumludur.</p>
 
-<div class="mir-mt-lg"><h2 class="mir-section-heading">Sık Sorulan Sorular</h2><details class="mir-faq-item">
-<summary class="mir-faq-q">e-Fatura XML'ini PDF'e nasıl çeviririm?</summary>
-<p class="mir-faq-a">En kolay yol GİB portalından (efatura.gov.tr) 'PDF indir' seçeneğidir. Entegratör yazılımınızda da 'Fatura görüntüle/PDF indir' butonu bulunur.</p>
-</details><details class="mir-faq-item">
-<summary class="mir-faq-q">e-Fatura sıkıştırınca e-imza bozulur mu?</summary>
-<p class="mir-faq-a">Hayır. e-İmza kriptografik bir veridir, PDF görsel katmanında saklanmaz. Ancak kritik belgeler için orijinali de saklayın.</p>
-</details><details class="mir-faq-item">
-<summary class="mir-faq-q">e-Arşiv fatura ile e-Fatura arasındaki fark nedir?</summary>
-<p class="mir-faq-a">e-Fatura karşı tarafın sistemine elektronik olarak iletilir. e-Arşiv GİB'e raporlanır, müşteriye e-posta/kağıt olarak iletilebilir.</p>
-</details></div>
+      <h3>'Şifreli dosya' hatası</h3>
+      <p>Bazı muhasebe yazılımları fatura PDF'lerini otomatik şifreler. <a href="/pdf-kilit-ac">PDF Kilit Aç</a> aracıyla kısıtlamayı kaldırın.</p>
+
+      <div class="ef-note">
+        <strong>KVKK notu</strong>
+        <p>Bu rehberlerdeki tüm PDF işlemleri MirPDF'te tarayıcınızda gerçekleşir. e-Fatura içerikleri müşteri verilerini sunucumuza iletmez.</p>
+      </div>
+    </div>
+
+    <div class="ef-section">
+      <h2>Türkiye'de e-Fatura zorunluluğu ve PDF iş yükü</h2>
+      <p>2024 itibarıyla yıllık cirosu 1 milyon TL'yi aşan işletmeler e-Fatura sistemini kullanmak zorunda. Küçük işletmeler için de e-Arşiv zorunluluğu devreye girmiş durumda. Bu kapsamda her ay milyonlarca e-fatura PDF'i üretiliyor, gönderiliyor ve arşivleniyor.</p>
+      <p>GİB sisteminin katı format ve boyut gereksinimleri, yoğun fatura sezonu muhasebeciler ve KOBİ sahipleri için ciddi bir darboğaz yaratıyor. Bu rehber bölümü tam olarak bu pratik sorunlara odaklanıyor.</p>
+    </div>
+
+    <div class="ef-section">
+      <h2>e-Fatura PDF'lerinde dikkat edilecek 3 kural</h2>
+      <p><strong>1. Orijinali saklayın.</strong> Sıkıştırma veya birleştirme yaptıktan sonra orijinal XML ve PDF'leri de yedekleyin. GİB denetiminde orijinal dosyalar gerekebilir.</p>
+      <p><strong>2. e-İmza görseli bozulmasın.</strong> Fatura üzerindeki e-imza veya mühür görselini bozan aşırı sıkıştırmadan kaçının. Orta kalite her zaman yeterlidir.</p>
+      <p><strong>3. Dosya adlandırması standart olsun.</strong> <code>2026-04-fatura-GIB-00001.pdf</code> gibi tutarlı isimlendirme ileriki denetimlerde saatler kazandırır.</p>
+    </div>
+
+    <div class="ef-section">
+      <h2>Sık Sorulan Sorular</h2>
+      <details class="ef-faq">
+        <summary>e-Fatura XML'ini PDF'e nasıl çeviririm?</summary>
+        <p>En kolay yol GİB portalından (efatura.gov.tr) 'PDF indir' seçeneğidir. Entegratör yazılımınızda da 'Fatura görüntüle/PDF indir' butonu bulunur.</p>
+      </details>
+      <details class="ef-faq">
+        <summary>e-Fatura sıkıştırınca e-imza bozulur mu?</summary>
+        <p>Hayır. e-İmza kriptografik bir veridir, PDF görsel katmanında saklanmaz. Ancak kritik belgeler için orijinali de saklayın.</p>
+      </details>
+      <details class="ef-faq">
+        <summary>e-Arşiv fatura ile e-Fatura arasındaki fark nedir?</summary>
+        <p>e-Fatura karşı tarafın sistemine elektronik olarak iletilir. e-Arşiv GİB'e raporlanır, müşteriye e-posta/kağıt olarak iletilebilir.</p>
+      </details>
+    </div>
+
+  </div>
 </div>
 <footer class="footer">
   <div class="container">

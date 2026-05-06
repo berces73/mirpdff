@@ -185,12 +185,13 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 900; letter-spacing: -.035em;
   line-height: 1.1; margin-bottom: .75rem;
-  color: var(--text);
+  color: var(--text); text-align: center;
 }
 .section-sub {
   font-size: 1rem; font-weight: 400;
   color: var(--muted); margin-bottom: 3.5rem;
   line-height: 1.7; max-width: 520px;
+  text-align: center; margin-left: auto; margin-right: auto;
 }
 .principles-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -241,33 +242,34 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
 /* SECURITY */
 .security-section {
   padding: 5rem 0;
-  background: #111111;
-  border-top: 1px solid #222;
+  background: #f5f5f5;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
-.security-section .section-title { color: #fff; }
-.security-section .section-sub { color: #888; }
+.security-section .section-title { color: #111111; }
+.security-section .section-sub { color: #666666; }
 .security-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 0; border: 1px solid #2a2a2a;
+  gap: 0; border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden;
 }
 .security-item {
   padding: 2rem 1.75rem;
-  border-right: 1px solid #2a2a2a;
-  border-bottom: 1px solid #2a2a2a;
-  background: #161616;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
 }
 .security-item:nth-child(2n) { border-right: none; }
 .security-item:nth-child(3),
 .security-item:nth-child(4) { border-bottom: none; }
 .security-item h3 {
   font-size: .97rem; font-weight: 800;
-  color: #fff; margin-bottom: .5rem;
+  color: #111111; margin-bottom: .5rem;
   letter-spacing: -.01em;
 }
 .security-item p {
   font-size: .85rem; font-weight: 400;
-  color: #777; line-height: 1.7;
+  color: #666666; line-height: 1.7;
 }
 
 /* TOOLS */
@@ -562,7 +564,8 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
 
 </main>
 
-<footer class="footer">
+<!-- FOOTER -->
+<footer class="footer mir-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -603,9 +606,9 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
         <a href="/sitemap.xml">Site Haritası</a>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="mir-footer-bottom">
       <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
-      <div class="footer-links-row">
+      <div class="mir-footer-links">
         <a href="/legal/privacy.html">Gizlilik</a>
         <a href="/legal/terms.html">Şartlar</a>
         <a href="/legal/kvkk.html">KVKK</a>
@@ -613,6 +616,7 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
     </div>
   </div>
 </footer>
+
 
 <script>
 const toggle = document.getElementById('mobileToggle');

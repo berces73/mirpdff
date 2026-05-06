@@ -48,7 +48,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 
 /* ── PAGE HERO ─────────────────────────────────────── */
 .page-hero{text-align:center;padding:5rem 0 3rem;background:var(--bg-soft);border-bottom:1px solid var(--border)}
-.page-hero h1{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;letter-spacing:-.025em;margin-bottom:.75rem}
+.page-hero h1{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(1.65rem,4vw,2.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem;color:#0d0f1a}
 .page-hero p{color:var(--muted);max-width:480px;margin:0 auto}
 .hero-link{color:#6366f1;font-weight:600}
 
@@ -71,7 +71,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 .plan-card.featured{border-color:#0d0f1a;box-shadow:0 12px 40px rgba(0,0,0,.1)}
 .plan-tag{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem}
 .plan-tag--row{display:flex;align-items:center;justify-content:space-between}
-.plan-name{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.6rem;font-weight:400;margin-bottom:.3rem}
+.plan-name{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.35rem;font-weight:800;margin-bottom:.3rem;letter-spacing:-.02em;color:#0d0f1a}
 .plan-price{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:1rem 0 .3rem}
 .plan-price sup{font-size:1.1rem;font-weight:600;vertical-align:super}
 .plan-price--md{font-size:2rem}
@@ -178,7 +178,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 
 /* ── FAQ ───────────────────────────────────────────── */
 .faq-section{padding:5rem 0;background:var(--bg-soft)}
-.faq-section h2{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:2rem;font-weight:400;text-align:center;margin-bottom:2.5rem}
+.faq-section h2{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.75rem;font-weight:900;text-align:center;margin-bottom:2.5rem;letter-spacing:-.03em;color:#0d0f1a}
 .faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
 .faq-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)}
 .faq-q{width:100%;background:none;border:none;cursor:pointer;padding:1.3rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:.94rem;font-weight:700;color:var(--text);text-align:left}
@@ -203,6 +203,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 /* ── RESPONSIVE ────────────────────────────────────── */
 @media(max-width:900px){.pricing-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.pricing-grid{grid-template-columns:1fr}.credit-grid{grid-template-columns:1fr}}
+
+@media(max-width:700px){
+  .page-hero{padding:3rem 1.25rem 2rem !important}
+  .page-hero h1{font-size:1.65rem !important;line-height:1.15 !important}
+  .page-hero p{font-size:.875rem !important}
+  .hero-badges{gap:.6rem !important;font-size:.75rem !important}
+  .trust-badge{font-size:.75rem !important}
+  .plan-grid,.pricing-grid{grid-template-columns:1fr !important}
+  .plan-card,.pricing-card{padding:1.5rem 1.25rem !important}
+  .plan-name{font-size:1.1rem !important}
+  .faq-section h2{font-size:1.35rem !important}
+  .faq-q{font-size:.875rem !important;padding:1rem 1.25rem !important}
+  .comparison-wrap{overflow-x:auto !important;-webkit-overflow-scrolling:touch !important}
+  .comparison-table{min-width:480px !important;font-size:.8rem !important}
+}
 </style>
   <meta property="og:description" content="MirPDF fiyatlandırma planları. Ücretsiz günlük kullanım veya Pro plan ile sınırsız PDF işlemi Tarayıcıdan çalışır, kayıt gerekmez."/>
   <meta name="twitter:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
@@ -313,9 +328,9 @@ initNav();
     <p>Tarayıcı araçları (birleştir, böl, döndür, filigran vb.) tamamen ücretsiz ve sınırsız. OCR ve PDF→Word için günlük 7 ücretsiz işlem veya Pro plan gerekir.</p>
     <p style="margin-top:.5rem;font-size:.85rem">Ekip kullanımı için? <a href="/kurumsal/" class="hero-link">Kurumsal planı inceleyin →</a></p>
     <div class="hero-badges">
-      <div class="trust-badge"><i class="fas fa-shield-alt" style="color:#10b981"></i><span>14 günlük iade süresi</span></div>
+      <div class="trust-badge"><i class="fas fa-shield-alt" style="color:#94a3b8"></i><span>14 günlük iade süresi</span></div>
       <span class="badge-sep">|</span>
-      <div class="trust-badge"><i class="fas fa-lock" style="color:#6366f1"></i><span>Stripe ile güvenli ödeme</span></div>
+      <div class="trust-badge"><i class="fas fa-lock" style="color:#94a3b8"></i><span>Stripe ile güvenli ödeme</span></div>
       <span class="badge-sep">|</span>
       <div class="trust-badge"><i class="fas fa-times-circle"></i><span>İstediğin zaman iptal</span></div>
       <span class="badge-sep">|</span>

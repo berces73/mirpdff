@@ -915,11 +915,15 @@ footer .footer-brand p, footer .footer-brand span,
   margin-top: .65rem !important; line-height: 1.65 !important;
   max-width: 240px !important;
 }
-footer .footer-brand .logo, footer .logo {
+footer .footer-brand {
+  display: flex !important; flex-direction: column !important;
+  align-items: flex-start !important;
+}
+footer .footer-brand .logo {
   color: #111111 !important; font-weight: 800 !important;
-  font-size: 1.05rem !important; display: flex !important;
+  font-size: 1.05rem !important; display: inline-flex !important;
   align-items: center !important; gap: .45rem !important;
-  text-decoration: none !important;
+  text-decoration: none !important; line-height: 1 !important;
 }
 
 /* Col headings */

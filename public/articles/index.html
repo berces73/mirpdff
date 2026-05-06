@@ -1,205 +1,253 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="light">
+<html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0"/>
 <title>PDF Rehberleri ve İpuçları — MirPDF Blog</title>
-<meta name="description" content="PDF sıkıştırma, dönüştürme, OCR ve güvenlik hakkında Türkçe rehberler.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PDF Rehberleri ve İpuçları — MirPDF Blog">
-<meta property="og:url" content="https://mirpdf.com/articles/">
-<meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg">
-<link rel="alternate" hreflang="tr" href="https://mirpdf.com/articles/">
-<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/articles/">
-<link rel="canonical" href="https://mirpdf.com/articles/">
-<link rel="icon" href="/assets/icons/favicon.ico">
-<script>document.documentElement.setAttribute('data-theme','light');</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="PDF sıkıştırma, dönüştürme, OCR ve güvenlik hakkında Türkçe rehberler. Pratik çözümler, adım adım anlatım."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://mirpdf.com/articles/"/>
+<link rel="alternate" hreflang="tr" href="https://mirpdf.com/articles/"/>
+<link rel="alternate" hreflang="x-default" href="https://mirpdf.com/articles/"/>
+<meta property="og:title" content="PDF Rehberleri — MirPDF Blog"/>
+<meta property="og:description" content="PDF sıkıştırma, dönüştürme, OCR ve güvenlik hakkında Türkçe rehberler."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mirpdf.com/articles/"/>
+<meta property="og:image" content="https://mirpdf.com/assets/og/og-tools.jpg"/>
+<meta property="og:locale" content="tr_TR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/assets/icons/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:#ffffff;color:#111827;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-:root{--max:720px;--px:24px;--px-sm:16px;--dur:150ms}
-
-/* NAV */
-.nav{position:sticky;top:0;z-index:200;height:64px;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid #e5e7eb;display:flex;align-items:center}
-.nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--px);width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.nav-logo{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:.9375rem;color:#111827}
-.nav-logo img{border-radius:6px}
-.nav-links{display:flex;align-items:center;gap:2px}
-.nav-links a{font-size:.8125rem;font-weight:500;color:#6b7280;padding:.375rem .625rem;border-radius:6px;transition:color var(--dur),background var(--dur)}
-.nav-links a:hover{color:#111827;background:#f9fafb}
-.nav-cta{display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#111827;color:#fff !important;font-size:.8125rem;font-weight:600;border-radius:8px;transition:opacity var(--dur),transform var(--dur);margin-left:.25rem}
-.nav-cta:hover{opacity:.85;transform:scale(1.02)}
-.nav-toggle{display:none;background:none;border:1px solid #e5e7eb;color:#374151;padding:.375rem .55rem;border-radius:6px;cursor:pointer;font-size:.875rem}
-
-/* HERO */
-.hero{padding:64px var(--px) 40px;max-width:var(--max);margin:0 auto;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:.375rem;padding:4px 10px;border-radius:999px;background:#f3f4f6;font-size:.6875rem;font-weight:500;color:#9ca3af;letter-spacing:.02em;margin-bottom:16px}
-.hero-dot{width:5px;height:5px;border-radius:50%;background:#22c55e}
-.hero h1{font-size:2rem;font-weight:800;line-height:1.2;letter-spacing:-.03em;color:#111827;margin-bottom:12px;max-width:22ch;margin-left:auto;margin-right:auto}
-.hero-sub{font-size:.9375rem;color:#6b7280;line-height:1.65;max-width:52ch;margin:0 auto}
-
-/* FILTER */
-.filter-bar{max-width:var(--max);margin:32px auto 0;padding:0 var(--px) 16px;display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid #f3f4f6}
-.filter-btn{padding:5px 12px;border:none;border-radius:6px;background:transparent;font-family:inherit;font-size:.75rem;font-weight:500;color:#9ca3af;cursor:pointer;transition:color var(--dur),background var(--dur)}
-.filter-btn:hover{color:#374151;background:#f9fafb}
-.filter-btn.active{color:#111827;background:#f3f4f6;font-weight:600}
-
-/* ARTICLE LIST */
-.article-list{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
-.article-card{border-bottom:1px solid #f3f4f6;transition:background var(--dur)}
-.article-card:first-child{border-top:1px solid #f3f4f6}
-.card-link{display:block;padding:20px 0;position:relative}
-.card-meta-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap}
-.card-cat{display:inline-block;font-size:.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;line-height:1.4}
-[data-cat="teknik"]    .card-cat{background:#eff6ff;color:#1d4ed8}
-[data-cat="devlet"]    .card-cat{background:#f0fdf4;color:#15803d}
-[data-cat="guvenlik"]  .card-cat{background:#faf5ff;color:#6d28d9}
-[data-cat="rehber"]    .card-cat{background:#fff7ed;color:#c2410c}
-[data-cat="pratik"]    .card-cat{background:#fefce8;color:#a16207}
-[data-cat="mobil"]     .card-cat{background:#f0fdfa;color:#0f766e}
-[data-cat="donusum"]   .card-cat{background:#fff1f2;color:#be123c}
-[data-cat="duzenleme"] .card-cat{background:#f5f3ff;color:#5b21b6}
-.card-sep{width:3px;height:3px;border-radius:50%;background:#d1d5db;flex-shrink:0}
-.card-meta-txt{font-size:.6875rem;color:#9ca3af;font-weight:400}
-.card-title{font-size:1rem;font-weight:600;color:#111827;line-height:1.4;margin-bottom:5px;letter-spacing:-.01em;transition:color var(--dur);padding-right:28px}
-.article-card:hover .card-title{color:#2563eb}
-.card-excerpt{font-size:.8125rem;color:#6b7280;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:54ch}
-.card-arrow{position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:.8125rem;color:#d1d5db;transition:color var(--dur),transform var(--dur)}
-.article-card:hover .card-arrow{color:#2563eb;transform:translateY(-50%) translateX(3px)}
-
-/* TOOLS */
-.tools-section{max-width:var(--max);margin:40px auto 0;padding:0 var(--px) 20px;border-top:1px solid #f3f4f6}
-.section-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;margin-bottom:10px;padding-top:32px}
-.tools-row{display:flex;flex-wrap:wrap;gap:6px}
-.tool-pill{display:inline-block;padding:5px 12px;border:1px solid #e5e7eb;border-radius:6px;font-size:.75rem;font-weight:500;color:#6b7280;background:#fff;transition:all var(--dur)}
-.tool-pill:hover{background:#111827;color:#fff;border-color:#111827}
-
-/* MORE */
-.more-section{max-width:var(--max);margin:24px auto 0;padding:0 var(--px) 80px}
-.more-list{display:flex;flex-direction:column;gap:2px}
-.more-link{display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border-radius:6px;font-size:.8125rem;color:#6b7280;font-weight:500;border:1px solid transparent;transition:all var(--dur)}
-.more-link:hover{color:#111827;background:#f9fafb;border-color:#e5e7eb}
-.more-arrow{color:#d1d5db;font-size:.75rem;flex-shrink:0}
-.more-link:hover .more-arrow{color:#2563eb}
-
-/* FOOTER */
-.footer{background:#fff;border-top:1px solid #e5e7eb;padding:40px 0 24px}
-.footer-inner{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px}
-.footer-brand-name{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:.875rem;color:#111827;margin-bottom:.5rem}
-.footer-brand-name img{border-radius:5px}
-.footer-brand p{font-size:.75rem;color:#9ca3af;line-height:1.6;max-width:180px}
-.footer-col h4{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#111827;margin-bottom:.65rem}
-.footer-col a{display:block;font-size:.75rem;color:#9ca3af;margin-bottom:.35rem;transition:color var(--dur)}
-.footer-col a:hover{color:#111827}
-.footer-bottom{border-top:1px solid #f3f4f6;padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.6875rem;color:#9ca3af}
-.footer-bottom a{color:#9ca3af;margin-left:14px;transition:color var(--dur)}
-.footer-bottom a:hover{color:#111827}
-
-/* MOBILE */
-@media(max-width:640px){
-  :root{--px:16px}
-  .hero{padding:48px var(--px) 28px}
-  .hero h1{font-size:1.625rem}
-  .hero-sub{font-size:.875rem}
-  .nav-links{display:none}
-  .nav-links.open{display:flex;flex-direction:column;align-items:stretch;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;padding:12px;z-index:199;gap:2px;overflow-y:auto}
-  .nav-links.open a{padding:11px 14px;border-radius:8px;font-size:.9375rem}
-  .nav-links.open .nav-cta{height:44px;margin-left:0;justify-content:center;border-radius:10px}
-  .nav-toggle{display:flex;align-items:center}
-  .card-title{font-size:.9375rem}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --border: #ebebeb;
+  --border-light: #f3f3f3;
+  --text: #111111;
+  --muted: #666666;
+  --light: #999999;
+  --accent: #2563eb;
+  --max: 680px;
+  --max-wide: 1100px;
 }
-</style>
-<style id="__global_mobile">
-/* ── Global Mobile Nav Fix ── */
-#mobileToggle,#nav-toggle{
-  display:none;background:none;
-  border:1.5px solid #e3e6f0;color:#0d0f1a;
-  padding:.4rem .65rem;border-radius:9px;
-  cursor:pointer;font-size:1rem;
-  position:relative;z-index:400;
-  align-items:center;justify-content:center;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
-@media(max-width:700px){
-  #mobileToggle,#nav-toggle{display:flex!important}
-  
-  /* nav-links (tool sayfaları) */
-  .nav-links{
-    display:none!important;flex-direction:column!important;
-    position:absolute!important;top:64px!important;left:0!important;right:0!important;
-    background:#fff!important;border-bottom:1px solid #e3e6f0!important;
-    box-shadow:0 12px 32px rgba(0,0,0,.12)!important;
-    padding:1rem 1.25rem 1.5rem!important;gap:.15rem!important;z-index:300!important;
-  }
-  .nav-links.open,.nav-links.show{display:flex!important}
-  .nav-links a{
-    padding:.7rem 1rem!important;border-radius:10px!important;
-    font-size:.95rem!important;color:#374151!important;
-    text-decoration:none!important;font-weight:500!important;
-    border:none!important;background:none!important;
-  }
-  .nav-links a:hover{background:#f7f8fc!important;color:#0d0f1a!important}
-  .nav-links .nav-btn,.nav-links .mir-btn-primary{
-    margin-top:.5rem!important;padding:.8rem 1rem!important;
-    text-align:center!important;border-radius:11px!important;
-  }
+a { color: inherit; text-decoration: none; }
 
-  /* mainNav (diğer sayfalar) */  
-  #mainNav:not(.desktop-only){
-    display:none!important;flex-direction:column!important;
-    position:absolute!important;top:64px!important;left:0!important;right:0!important;
-    background:#fff!important;border-bottom:1px solid #e3e6f0!important;
-    box-shadow:0 12px 32px rgba(0,0,0,.12)!important;
-    padding:1rem 1.25rem 1.5rem!important;gap:.15rem!important;z-index:300!important;
-  }
-  #mainNav.show{display:flex!important}
-  #mainNav a{
-    padding:.7rem 1rem!important;border-radius:10px!important;
-    font-size:.95rem!important;color:#374151!important;
-    text-decoration:none!important;font-weight:500!important;
-    white-space:normal!important;
-    border:none!important;background:none!important;
-  }
-  #mainNav a:hover{background:#f7f8fc!important;color:#0d0f1a!important}
-  
-  /* Footer linkler */
-  footer a{text-decoration:none!important}
+/* ── HEADER ── */
+.header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  height: 56px; display: flex; align-items: center;
+}
+.header-inner {
+  max-width: var(--max-wide); margin: 0 auto;
+  padding: 0 1.5rem; width: 100%;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem;
+}
+.logo {
+  display: flex; align-items: center; gap: .4rem;
+  font-weight: 800; font-size: 1rem;
+  letter-spacing: -.02em; color: var(--text);
+}
+.logo img { border-radius: 6px; }
+.main-nav { display: flex; align-items: center; gap: .1rem; }
+.main-nav a {
+  color: var(--muted); font-size: .8125rem; font-weight: 500;
+  padding: .35rem .7rem; border-radius: 7px;
+  transition: color .12s, background .12s;
+}
+.main-nav a:hover { color: var(--text); background: var(--bg-soft); }
+.main-nav a.active { color: var(--text); font-weight: 600; }
+.nav-cta {
+  background: var(--text) !important; color: #fff !important;
+  padding: .4rem 1rem !important; border-radius: 8px;
+  font-weight: 700 !important; font-size: .8125rem;
+}
+.nav-cta:hover { opacity: .82 !important; }
+#mobileToggle {
+  display: none; background: none;
+  border: 1px solid var(--border); color: var(--text);
+  padding: .35rem .6rem; border-radius: 7px;
+  cursor: pointer; font-size: .875rem; line-height: 1;
 }
 
-/* ── Global Footer Link Color Fix ── */
-footer.sf a,footer.sf div,
-.sf a,.sfi a,
-.fcol a,.fbot a,
-footer[style*="background:#0d"] a,
-footer[style*="background: #0d"] a{
-  color:rgba(255,255,255,.65)!important;
-  text-decoration:none!important;
+/* ── PAGE HEADER ── */
+.page-header {
+  max-width: var(--max); margin: 0 auto;
+  padding: 4rem 1.5rem 2.5rem;
+  border-bottom: 1px solid var(--border);
 }
-footer.sf a:hover,.fcol a:hover,.fbot a:hover{color:#fff!important}
+.page-header .eyebrow {
+  font-size: .7rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--light); display: block; margin-bottom: .85rem;
+}
+.page-header h1 {
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 900; letter-spacing: -.04em;
+  line-height: 1.1; margin-bottom: .75rem;
+}
+.page-header p {
+  font-size: .9375rem; color: var(--muted); line-height: 1.7;
+}
 
-/* Light footer */
-footer:not(.sf) a{
-  text-decoration:none;
-  color:inherit;
+/* ── FILTER ── */
+.filter-bar {
+  max-width: var(--max); margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex; gap: .25rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+}
+.filter-btn {
+  padding: .3rem .75rem; border: none;
+  border-radius: 5px; background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: .75rem; font-weight: 500;
+  color: var(--light); cursor: pointer;
+  transition: color .12s, background .12s;
+}
+.filter-btn:hover { color: var(--muted); background: var(--bg-soft); }
+.filter-btn.active {
+  color: var(--text); background: #f0f0f0;
+  font-weight: 600;
+}
+
+/* ── ARTICLE LIST ── */
+.article-list {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.article-item {
+  border-bottom: 1px solid var(--border-light);
+  transition: none;
+}
+.article-item:first-child { border-top: 1px solid var(--border-light); }
+.article-link {
+  display: block; padding: 1.5rem 0;
+  transition: none;
+}
+.article-meta {
+  display: flex; align-items: center; gap: .5rem;
+  margin-bottom: .5rem; flex-wrap: wrap;
+}
+.article-cat {
+  font-size: .6875rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--light);
+}
+.meta-dot {
+  width: 2px; height: 2px; border-radius: 50%;
+  background: var(--border); flex-shrink: 0;
+}
+.meta-time {
+  font-size: .6875rem; color: var(--light); font-weight: 400;
+}
+.article-title {
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); line-height: 1.45;
+  letter-spacing: -.015em; margin-bottom: .4rem;
+  transition: color .12s;
+}
+.article-item:hover .article-title { color: var(--accent); }
+.article-excerpt {
+  font-size: .875rem; color: var(--muted);
+  line-height: 1.65;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.article-item:hover .article-excerpt { color: #444; }
+
+/* ── TOOLS STRIP ── */
+.tools-strip {
+  max-width: var(--max); margin: 3rem auto 0;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.strip-label {
+  font-size: .6875rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--light); display: block; margin-bottom: .85rem;
+}
+.strip-tools {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+}
+.strip-tool {
+  font-size: .78rem; font-weight: 500;
+  color: var(--muted); padding: .35rem .8rem;
+  border: 1px solid var(--border); border-radius: 6px;
+  background: var(--bg); transition: .13s;
+}
+.strip-tool:hover {
+  border-color: var(--text); color: var(--text);
+  background: var(--bg);
+}
+
+/* ── FOOTER ── */
+.footer { background: var(--bg); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
+.footer .container { max-width: var(--max-wide); margin: 0 auto; padding: 0 1.5rem; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3,1fr); gap: 3rem; margin-bottom: 2.5rem; }
+.footer-brand .flogo { display: flex; align-items: center; gap: .4rem; font-weight: 800; font-size: 1rem; color: var(--text); }
+.footer-brand .flogo img { border-radius: 6px; }
+.footer-brand p { font-size: .82rem; color: var(--muted); margin-top: .6rem; line-height: 1.65; max-width: 220px; }
+.social-links { display: flex; gap: .4rem; margin-top: .75rem; }
+.social-link { width: 30px; height: 30px; border-radius: 7px; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; font-size: .8rem; color: var(--muted); transition: .13s; }
+.social-link:hover { border-color: var(--text); color: var(--text); }
+.footer-col h4 { font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--text); margin-bottom: .75rem; }
+.footer-col a { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); margin-bottom: .35rem; transition: color .12s; }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; font-size: .75rem; color: var(--light); }
+.footer-bottom a { color: var(--light); transition: color .12s; }
+.footer-bottom a:hover { color: var(--text); }
+.footer-links-row { display: flex; gap: 1.1rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 580px) {
+  .page-header { padding: 2.5rem 1.25rem 2rem; }
+  .filter-bar, .article-list, .tools-strip { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  #mobileToggle { display: block; }
+  .main-nav {
+    display: none; flex-direction: column;
+    position: absolute; top: 56px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border);
+    padding: .75rem; z-index: 99;
+  }
+  .main-nav.show { display: flex; }
+  .main-nav a { width: 100%; padding: .6rem 1rem; }
 }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
       <img src="/assets/icons/logo.svg" width="26" height="26" alt="">
       MirPDF
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menü">☰</button>
-    <nav class="nav-links" id="navLinks">
+    <button id="mobileToggle" aria-label="Menü" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Ana navigasyon">
       <a href="/#tools">Araçlar</a>
-      <a href="/articles/">Blog</a>
+      <a href="/articles/" class="active">Blog</a>
       <a href="/pricing">Fiyatlar</a>
       <a href="/faq">SSS</a>
       <a href="/contact">İletişim</a>
@@ -209,310 +257,270 @@ footer:not(.sf) a{
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-badge"><span class="hero-dot"></span>MirPDF Blog — 2026</div>
-  <h1>PDF Hakkında Her Şey,<br>Türkçe ve Ücretsiz</h1>
-  <p class="hero-sub">Sıkıştırma, dönüştürme, OCR, güvenlik ve e-Devlet başvuruları için uzman rehberler. Kayıt gerekmez, reklam yok.</p>
-</section>
+<main>
+  <div class="page-header">
+    <span class="eyebrow">Blog & Rehberler</span>
+    <h1>PDF rehberleri ve ipuçları</h1>
+    <p>Günlük PDF işlerini kolaylaştıran pratik rehberler. Türkçe, adım adım, gereksiz detay olmadan.</p>
+  </div>
 
-<div class="filter-bar">
-  <button class="filter-btn active" onclick="filterCat('hepsi',this)">Tümü</button>
-  <button class="filter-btn" onclick="filterCat('teknik',this)">Teknik</button>
-  <button class="filter-btn" onclick="filterCat('devlet',this)">e-Devlet</button>
-  <button class="filter-btn" onclick="filterCat('guvenlik',this)">Güvenlik</button>
-  <button class="filter-btn" onclick="filterCat('rehber',this)">Rehber</button>
-  <button class="filter-btn" onclick="filterCat('mobil',this)">Mobil</button>
-</div>
+  <div class="filter-bar" role="navigation" aria-label="Kategori filtresi">
+    <button class="filter-btn active" data-filter="all">Tümü</button>
+    <button class="filter-btn" data-filter="teknik">Teknik</button>
+    <button class="filter-btn" data-filter="devlet">e-Devlet</button>
+    <button class="filter-btn" data-filter="guvenlik">Güvenlik</button>
+    <button class="filter-btn" data-filter="rehber">Rehber</button>
+    <button class="filter-btn" data-filter="mobil">Mobil</button>
+    <button class="filter-btn" data-filter="donusum">Dönüşüm</button>
+  </div>
 
-<main class="article-list">
-  <article class="article-card" data-cat="teknik">
-    <a href="/articles/pdf-boyutu-neden-buyuk.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Teknik Rehber</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">16 Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">12 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF Boyutu Neden Bu Kadar Büyük?</h2>
-      <p class="card-excerpt">Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza katmanları — PDF boyutunu belirleyen tüm faktörler ve çözümler.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="devlet">
-    <a href="/articles/e-devlet-pdf-hatalari-cozum.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">e-Devlet Rehberi</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">16 Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">10 dk okuma</span>
-      </div>
-      <h2 class="card-title">e-Devlet PDF Hataları ve Çözümleri — Tam Rehber 2026</h2>
-      <p class="card-excerpt">Dosya boyutu çok büyük, format desteklenmiyor, şifreli PDF. KYK, İŞKUR, SGK başvurularındaki tüm PDF hataları ve adım adım çözümler.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="teknik">
-    <a href="/articles/tarayicide-pdf-isleme-teknoloji.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Teknoloji</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">16 Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">10 dk okuma</span>
-      </div>
-      <h2 class="card-title">Tarayıcıda PDF İşleme: WebAssembly ve KVKK</h2>
-      <p class="card-excerpt">MirPDF nasıl çalışır? WebAssembly, pdf-lib ve Web Workers ile tarayıcıda PDF işleme teknolojisi ve KVKK uyumu.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="teknik">
-    <a href="/articles/ocr-nasil-calisir-turkce-rehber.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Teknoloji</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">16 Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">9 dk okuma</span>
-      </div>
-      <h2 class="card-title">OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma</h2>
-      <p class="card-excerpt">Optik Karakter Tanıma teknolojisi, Türkçe OCR'ın zorlukları, Tesseract motoru ve doğruluk faktörleri. Adım adım rehber.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="guvenlik">
-    <a href="/articles/pdf-guvenligi-rehberi.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Güvenlik</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">16 Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">11 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF Güvenliği: Parola, AES-256, KVKK ve Güvenli Paylaşım</h2>
-      <p class="card-excerpt">PDF parola türleri, AES-256 şifreleme, KVKK madde 12 uyumu, filigran ile belge takibi ve güvenli paylaşım protokolü.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="rehber">
-    <a href="/articles/pdf-8-temel-islem-rehberi.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Kapsamlı Rehber</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">14 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF ile Çalışmada 8 Temel İşlem — Adım Adım 2026</h2>
-      <p class="card-excerpt">Birleştirme, bölme, döndürme, sayfa silme, JPG→PDF, şifreleme ve filigran: en sık karşılaşılan sorunlar ve kesin çözümler.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="teknik">
-    <a href="/articles/pdf-sikistirma.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Optimizasyon</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">10 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF Boyutunu Kalite Kaybetmeden Küçültme — 2026 Rehberi</h2>
-      <p class="card-excerpt">Görsel sıkıştırma, font alt kümeleme ve tarayıcı tabanlı güvenli işleme ile PDF dosyalarınızı %70'e kadar küçültün.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="rehber">
-    <a href="/articles/pdf-birlestirme.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Adım Adım Rehber</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">8 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF Dosyalarını Birleştirme: Hızlı, Güvenli ve Sıra Yönetimiyle</h2>
-      <p class="card-excerpt">Tarayıcı tabanlı birleştirme teknolojisi ile dosyalarınız sunucuya yüklenmez. Sıralama yönetimi ve büyük dosya desteği dahil.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="pratik">
-    <a href="/articles/pdf-kucultme-outlook-icin.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Pratik Çözüm</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">6 dk okuma</span>
-      </div>
-      <h2 class="card-title">Outlook Ek Boyut Sınırını Aşmadan PDF Gönderme</h2>
-      <p class="card-excerpt">Outlook'un 20 MB ek sınırını aşan PDF'leri nasıl küçültürsünüz? Kalite kaybı olmadan e-posta ile gönderilebilir boyuta getirin.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="mobil">
-    <a href="/articles/pdf-birlestirme-mobil.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Mobil Rehber</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">5 dk okuma</span>
-      </div>
-      <h2 class="card-title">Telefondan PDF Birleştirme — Android ve iPhone İçin</h2>
-      <p class="card-excerpt">Uygulama indirmeden, doğrudan mobil tarayıcıdan birden fazla PDF'yi tek dosyada birleştirin. iOS ve Android uyumlu.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="donusum">
-    <a href="/articles/jpg-pdf-yapma-ucretsiz.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Dönüştürme</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">6 dk okuma</span>
-      </div>
-      <h2 class="card-title">JPG'den PDF Oluşturma: Ücretsiz, Hızlı ve Toplu İşlem</h2>
-      <p class="card-excerpt">Tek fotoğraf veya onlarca görsel — hepsini sıralı, profesyonel bir PDF belgesine dönüştürün. Kayıpsız ve kayıt gerekmez.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="guvenlik">
-    <a href="/articles/sifreli-pdf-acma.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Güvenlik</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">7 dk okuma</span>
-      </div>
-      <h2 class="card-title">Şifreli PDF Açma: Parola Biliyorsanız Kilit Nasıl Kaldırılır?</h2>
-      <p class="card-excerpt">Parola korumalı PDF dosyalarını güvenli şekilde açın ve şifre kaldırarak düzenlenebilir hale getirin. Tarayıcıda, sunucusuz.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="duzenleme">
-    <a href="/articles/pdf-sayfa-silme-online.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Sayfa Yönetimi</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">5 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF'ten Sayfa Silme — Online, Kayıt Olmadan</h2>
-      <p class="card-excerpt">Boş, yanlış veya gizli kalması gereken sayfaları PDF'den anında kaldırın. Tekil silme ve aralık seçimi desteklenir.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="mobil">
-    <a href="/articles/telefonda-word-pdf-yapma.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Mobil Rehber</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">6 dk okuma</span>
-      </div>
-      <h2 class="card-title">Telefonda Word Dosyasını PDF'ye Çevirme — iOS ve Android</h2>
-      <p class="card-excerpt">Android veya iPhone'da DOCX dosyasını biçimlendirme bozulmadan PDF'ye dönüştürmenin en kolay ve güvenilir yolu.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="duzenleme">
-    <a href="/articles/imza-icin-pdf-duzenleme.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Belge Hazırlama</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">7 dk okuma</span>
-      </div>
-      <h2 class="card-title">İmza Atmak İçin PDF Hazırlama: Alanlar, Düzen ve İpuçları</h2>
-      <p class="card-excerpt">İmzalanacak PDF'yi doğru formatta hazırlayın. İmza alanı ekleme, sayfa düzeni ve e-imza uyumluluğu için adım adım rehber.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="devlet">
-    <a href="/articles/e-devlet-pdf-donusturme.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">e-Devlet Rehberi</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">8 dk okuma</span>
-      </div>
-      <h2 class="card-title">e-Devlet Belgelerini PDF Olarak İndirme ve Dönüştürme</h2>
-      <p class="card-excerpt">Barkodlu e-Devlet belgelerini geçerliliğini koruyarak doğru PDF formatında hazırlayın. KYK, SGK ve İŞKUR başvuruları için.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="pratik">
-    <a href="/articles/qr-kod-gorsele-ekleme.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Pratik Çözüm</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">5 dk okuma</span>
-      </div>
-      <h2 class="card-title">PDF ve Görsellere QR Kod Ekleme — Kartvizit, Afiş ve Daha Fazlası</h2>
-      <p class="card-excerpt">Kartvizit, afiş ve sosyal medya görsellerine QR kod yerleştirin. Doğrudan tarayıcıdan, uygulama gerektirmez.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
-  <article class="article-card" data-cat="guvenlik">
-    <a href="/articles/kvkk-uyumlu-pdf-araci.html" class="card-link">
-      <div class="card-meta-row">
-        <span class="card-cat">Kurumsal &amp; KVKK</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">Mart 2026</span>
-        <span class="card-sep"></span>
-        <span class="card-meta-txt">9 dk okuma</span>
-      </div>
-      <h2 class="card-title">KVKK Uyumlu PDF Aracı: Saklamama, Log Politikası ve Kurumsal Güvenlik</h2>
-      <p class="card-excerpt">Kişisel veri içeren belgeler için doğru PDF aracını nasıl seçersiniz? KVKK madde 12, sunucu politikası ve kurumsal uyum rehberi.</p>
-      <span class="card-arrow">→</span>
-    </a>
-  </article>
+  <div class="article-list" id="articleList">
+
+    <article class="article-item" data-cat="teknik">
+      <a href="/articles/pdf-boyutu-neden-buyuk.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Teknik Rehber</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">16 Mart 2026 · 12 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF Boyutu Neden Bu Kadar Büyük?</h2>
+        <p class="article-excerpt">Gömülü fontlar, yüksek DPI görseller, taranmış sayfalar, e-imza katmanları — PDF boyutunu belirleyen tüm faktörler ve çözümler.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="devlet">
+      <a href="/articles/e-devlet-pdf-hatalari-cozum.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">e-Devlet Rehberi</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">16 Mart 2026 · 10 dk okuma</span>
+        </div>
+        <h2 class="article-title">e-Devlet PDF Hataları ve Çözümleri — Tam Rehber 2026</h2>
+        <p class="article-excerpt">Dosya boyutu çok büyük, format desteklenmiyor, şifreli PDF. KYK, İŞKUR, SGK başvurularındaki tüm PDF hataları ve adım adım çözümler.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="teknik">
+      <a href="/articles/tarayicide-pdf-isleme-teknoloji.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Teknoloji</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">16 Mart 2026 · 10 dk okuma</span>
+        </div>
+        <h2 class="article-title">Tarayıcıda PDF İşleme: WebAssembly ve KVKK</h2>
+        <p class="article-excerpt">MirPDF nasıl çalışır? WebAssembly, pdf-lib ve Web Workers ile tarayıcıda PDF işleme teknolojisi ve KVKK uyumu.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="teknik">
+      <a href="/articles/ocr-nasil-calisir-turkce-rehber.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Teknoloji</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">16 Mart 2026 · 9 dk okuma</span>
+        </div>
+        <h2 class="article-title">OCR Nasıl Çalışır? Taranan PDF'den Metin Çıkarma</h2>
+        <p class="article-excerpt">Optik Karakter Tanıma teknolojisi, Türkçe OCR'ın zorlukları, Tesseract motoru ve doğruluk faktörleri.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="guvenlik">
+      <a href="/articles/pdf-guvenligi-rehberi.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Güvenlik</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">16 Mart 2026 · 11 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF Güvenliği: Parola, AES-256, KVKK ve Güvenli Paylaşım</h2>
+        <p class="article-excerpt">PDF parola türleri, AES-256 şifreleme, KVKK madde 12 uyumu, filigran ile belge takibi ve güvenli paylaşım protokolü.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="rehber">
+      <a href="/articles/pdf-8-temel-islem-rehberi.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Kapsamlı Rehber</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 14 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF ile Çalışmada 8 Temel İşlem — Adım Adım 2026</h2>
+        <p class="article-excerpt">Birleştirme, bölme, döndürme, sayfa silme, JPG→PDF, şifreleme ve filigran: en sık karşılaşılan sorunlar ve kesin çözümler.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="teknik">
+      <a href="/articles/pdf-sikistirma.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Optimizasyon</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 10 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF Boyutunu Kalite Kaybetmeden Küçültme — 2026 Rehberi</h2>
+        <p class="article-excerpt">Görsel sıkıştırma, font alt kümeleme ve tarayıcı tabanlı güvenli işleme ile PDF boyutunu optimize edin.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="rehber">
+      <a href="/articles/pdf-birlestirme.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Adım Adım Rehber</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 8 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF Dosyalarını Birleştirme: Hızlı, Güvenli ve Sıra Yönetimiyle</h2>
+        <p class="article-excerpt">Tarayıcı tabanlı birleştirme teknolojisi ile dosyalarınız sunucuya yüklenmez. Sıralama, önizleme ve tek tıkla birleştirme.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="rehber">
+      <a href="/articles/pdf-kucultme-outlook-icin.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Pratik Çözüm</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 6 dk okuma</span>
+        </div>
+        <h2 class="article-title">Outlook Ek Boyut Sınırını Aşmadan PDF Gönderme</h2>
+        <p class="article-excerpt">Outlook'un 20 MB ek sınırını aşan PDF'leri nasıl küçültürsünüz? Kalite kaybı olmadan e-posta eki hazırlama.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="mobil">
+      <a href="/articles/pdf-birlestirme-mobil.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Mobil Rehber</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 5 dk okuma</span>
+        </div>
+        <h2 class="article-title">Telefondan PDF Birleştirme — Android ve iPhone İçin</h2>
+        <p class="article-excerpt">Uygulama indirmeden, doğrudan mobil tarayıcıdan birden fazla PDF'yi tek dosyada birleştirin.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="donusum">
+      <a href="/articles/jpg-pdf-yapma-ucretsiz.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Dönüştürme</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 6 dk okuma</span>
+        </div>
+        <h2 class="article-title">JPG'den PDF Oluşturma: Ücretsiz, Hızlı ve Toplu İşlem</h2>
+        <p class="article-excerpt">Tek fotoğraf veya onlarca görsel — hepsini sıralı, profesyonel bir PDF belgesine dönüştürün.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="guvenlik">
+      <a href="/articles/sifreli-pdf-acma.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Güvenlik</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 7 dk okuma</span>
+        </div>
+        <h2 class="article-title">Şifreli PDF Açma: Parola Biliyorsanız Kilit Nasıl Kaldırılır?</h2>
+        <p class="article-excerpt">Parola korumalı PDF dosyalarını güvenli şekilde açın ve şifre kaldırarak düzenlenebilir hale getirin.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="rehber">
+      <a href="/articles/pdf-sayfa-silme-online.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Sayfa Yönetimi</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 5 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF'ten Sayfa Silme — Online, Kayıt Olmadan</h2>
+        <p class="article-excerpt">Boş, yanlış veya gizli kalması gereken sayfaları PDF'den anında kaldırın. Tekil veya çoklu seçim.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="mobil">
+      <a href="/articles/telefonda-word-pdf-yapma.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Mobil Rehber</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 6 dk okuma</span>
+        </div>
+        <h2 class="article-title">Telefonda Word Dosyasını PDF'ye Çevirme — iOS ve Android</h2>
+        <p class="article-excerpt">Android veya iPhone'da DOCX dosyasını biçimlendirme bozulmadan PDF'ye dönüştürme yöntemleri.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="rehber">
+      <a href="/articles/imza-icin-pdf-duzenleme.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Belge Hazırlama</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 7 dk okuma</span>
+        </div>
+        <h2 class="article-title">İmza Atmak İçin PDF Hazırlama: Alanlar, Düzen ve İpuçları</h2>
+        <p class="article-excerpt">İmzalanacak PDF'yi doğru formatta hazırlayın. İmza alanı ekleme, sayfa düzeni ve yaygın hatalar.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="devlet">
+      <a href="/articles/e-devlet-pdf-donusturme.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">e-Devlet Rehberi</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 8 dk okuma</span>
+        </div>
+        <h2 class="article-title">e-Devlet Belgelerini PDF Olarak İndirme ve Dönüştürme</h2>
+        <p class="article-excerpt">Barkodlu e-Devlet belgelerini geçerliliğini koruyarak doğru PDF formatında hazırlama.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="rehber">
+      <a href="/articles/qr-kod-gorsele-ekleme.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Pratik Çözüm</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 5 dk okuma</span>
+        </div>
+        <h2 class="article-title">PDF ve Görsellere QR Kod Ekleme — Kartvizit, Afiş ve Daha Fazlası</h2>
+        <p class="article-excerpt">Kartvizit, afiş ve sosyal medya görsellerine QR kod yerleştirin. Doğrudan tarayıcıdan, kayıt olmadan.</p>
+      </a>
+    </article>
+
+    <article class="article-item" data-cat="guvenlik">
+      <a href="/articles/kvkk-uyumlu-pdf-araci.html" class="article-link">
+        <div class="article-meta">
+          <span class="article-cat">Kurumsal & KVKK</span>
+          <span class="meta-dot"></span>
+          <span class="meta-time">Mart 2026 · 9 dk okuma</span>
+        </div>
+        <h2 class="article-title">KVKK Uyumlu PDF Aracı: Saklamama, Log Politikası ve Kurumsal Güvenlik</h2>
+        <p class="article-excerpt">Kişisel veri içeren belgeler için doğru PDF aracını nasıl seçersiniz? KVKK madde 12 ve teknik gereksinimler.</p>
+      </a>
+    </article>
+
+  </div>
+
+  <div class="tools-strip">
+    <span class="strip-label">PDF Araçları</span>
+    <div class="strip-tools">
+      <a href="/pdf-birlestir" class="strip-tool">PDF Birleştir</a>
+      <a href="/pdf-sikistir" class="strip-tool">PDF Sıkıştır</a>
+      <a href="/pdf-bol" class="strip-tool">PDF Böl</a>
+      <a href="/pdf-to-word" class="strip-tool">PDF → Word</a>
+      <a href="/ocr" class="strip-tool">OCR / Metin</a>
+      <a href="/jpg-to-pdf" class="strip-tool">Görsel → PDF</a>
+      <a href="/pdf-kilitle" class="strip-tool">PDF Kilitle</a>
+      <a href="/pdf-kilit-ac" class="strip-tool">Kilit Aç</a>
+      <a href="/filigran-ekle" class="strip-tool">Filigran</a>
+    </div>
+  </div>
 </main>
 
-<section class="tools-section">
-  <p class="section-label">Popüler Araçlar</p>
-  <div class="tools-row">
-    <a href="/pdf-birlestir" class="tool-pill">PDF Birleştir</a>
-    <a href="/pdf-sikistir" class="tool-pill">PDF Sıkıştır</a>
-    <a href="/pdf-bol" class="tool-pill">PDF Böl</a>
-    <a href="/jpg-to-pdf" class="tool-pill">JPG → PDF</a>
-    <a href="/pdf-to-jpg" class="tool-pill">PDF → JPG</a>
-    <a href="/ocr" class="tool-pill">OCR / Metin</a>
-  </div>
-</section>
-
-<section class="more-section">
-  <p class="section-label">Diğer Makaleler</p>
-  <div class="more-list">
-    <a href="/articles/smallpdf-ilovepdf-karsilastirma" class="more-link">Smallpdf vs. iLovePDF: Hangisi Daha İyi?<span class="more-arrow">→</span></a>
-    <a href="/articles/pdf-a-arsivleme" class="more-link">PDF/A: Uzun Vadeli Arşivleme<span class="more-arrow">→</span></a>
-    <a href="/articles/adobe-acrobat-ucretsiz-alternatif" class="more-link">Adobe Acrobat'a Ücretsiz Alternatif<span class="more-arrow">→</span></a>
-    <a href="/articles/telefon-pdf-word-yapma" class="more-link">Telefonda PDF'den Word'e<span class="more-arrow">→</span></a>
-    <a href="/articles/pdf-acilamiyor-cozum" class="more-link">PDF Açılmıyor: Çözüm Yolları<span class="more-arrow">→</span></a>
-  </div>
-</section>
-
-<footer class="footer mir-footer">
+<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo" aria-label="MirPDF Ana Sayfa">
-          <img loading="lazy" src="/assets/icons/logo.svg" width="32" height="32" alt="">
+        <a href="/" class="flogo" aria-label="MirPDF Ana Sayfa">
+          <img src="/assets/icons/logo.svg" width="28" height="28" alt="">
           MirPDF
         </a>
         <p>Türkiye için yapıldı. Tarayıcıda çalışır. Kayıt istemez. TL fiyatlandırma.</p>
         <div class="social-links">
-          <a href="https://twitter.com/mirpdf" target="_blank" rel="noopener" aria-label="Twitter/X" class="social-link"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://twitter.com/mirpdf" target="_blank" rel="noopener" aria-label="Twitter" class="social-link"><i class="fab fa-x-twitter"></i></a>
           <a href="https://linkedin.com/company/mirpdf" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
           <a href="https://github.com/mirpdf" target="_blank" rel="noopener" aria-label="GitHub" class="social-link"><i class="fab fa-github"></i></a>
         </div>
@@ -543,9 +551,9 @@ footer:not(.sf) a{
         <a href="/sitemap.xml">Site Haritası</a>
       </div>
     </div>
-    <div class="mir-footer-bottom">
+    <div class="footer-bottom">
       <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
-      <div class="mir-footer-links">
+      <div class="footer-links-row">
         <a href="/legal/privacy.html">Gizlilik</a>
         <a href="/legal/terms.html">Şartlar</a>
         <a href="/legal/kvkk.html">KVKK</a>
@@ -555,53 +563,30 @@ footer:not(.sf) a{
 </footer>
 
 <script>
-const toggle = document.getElementById('navToggle');
-const links = document.getElementById('navLinks');
-toggle?.addEventListener('click', () => links.classList.toggle('open'));
-document.addEventListener('click', e => { if (!e.target.closest('.nav')) links.classList.remove('open'); });
-function filterCat(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.article-card').forEach(c => { c.style.display = (cat==='hepsi'||c.dataset.cat===cat)?'':'none'; });
+const toggle = document.getElementById('mobileToggle');
+const nav = document.getElementById('mainNav');
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? '✕' : '☰';
+  });
 }
+
+// Filter
+const btns = document.querySelectorAll('.filter-btn');
+const items = document.querySelectorAll('.article-item');
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    items.forEach(item => {
+      item.style.display = (filter === 'all' || item.dataset.cat === filter) ? '' : 'none';
+    });
+  });
+});
 </script>
 <script defer src="/assets/js/cookie-consent.js"></script>
-<script defer data-domain="mirpdf.com" src="https://plausible.io/js/script.js"></script>
-<script>
-(function(){
-  var mt=document.getElementById('mobileToggle')||document.getElementById('nav-toggle');
-  var nav=document.getElementById('mainNav')||document.querySelector('.nav-links');
-  if(!mt||!nav)return;
-  if(mt.dataset.nb)return;
-  mt.dataset.nb='1';
-  mt.addEventListener('click',function(e){
-    e.stopPropagation();
-    var open=nav.classList.toggle('show');
-    if(nav.classList.contains('nav-links'))nav.classList.toggle('open',open);
-    mt.setAttribute('aria-expanded',String(open));
-    mt.innerHTML=open?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
-    var ov=document.getElementById('__nv');
-    if(open){
-      if(!ov){
-        ov=document.createElement('div');
-        ov.id='__nv';
-        ov.style.cssText='position:fixed;inset:0;z-index:249;background:rgba(0,0,0,.4)';
-        document.body.appendChild(ov);
-        ov.addEventListener('click',closeNav);
-      }
-    } else { ov&&ov.remove(); }
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',closeNav);
-  });
-  function closeNav(){
-    nav.classList.remove('show','open');
-    mt.setAttribute('aria-expanded','false');
-    mt.innerHTML='<i class="fas fa-bars"></i>';
-    var ov=document.getElementById('__nv');
-    if(ov)ov.remove();
-  }
-})();
-</script>
 </body>
 </html>

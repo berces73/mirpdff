@@ -1027,7 +1027,7 @@ footer:not(.sf) a{
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" data-link="home" class="logo" aria-label="MirPDF Ana Sayfa">
-          <img loading="eager" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="logo-img">
+          <img loading="lazy" src="/assets/icons/logo.svg" width="32" height="32" alt="" class="logo-img">
           MirPDF
         </a>
         <p>Türkiye için yapıldı. Tarayıcıda çalışır. Kayıt istemez. TL fiyatlandırma.</p>
@@ -1053,13 +1053,6 @@ footer:not(.sf) a{
         <a href="/pricing" data-link="pricing">Fiyatlar</a>
         <a href="/faq" data-link="faq">SSS</a>
         <a href="/articles/" data-link="blog_index">Blog</a>
-        <a href="/kurumsal/">Kurumsal</a>
-        <a href="/developers/">API</a>
-        <a href="/referral.html">Davet Et &amp; Kazan</a>
-        <a href="/press.html">Basın Kiti</a>
-        <a href="/arama.html">Site Araması</a>
-        <a href="/status">Sistem Durumu</a>
-        <a href="/changelog">Değişiklikler</a>
       </div>
       <div class="footer-col">
         <h4>Yasal</h4>
@@ -1071,18 +1064,16 @@ footer:not(.sf) a{
       </div>
     </div>
     <!-- Newsletter -->
-    <div style="border-top:1px solid rgba(255,255,255,.08);margin-top:2rem;padding-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
-      <div>
-        <div style="font-weight:700;font-size:.92rem;margin-bottom:.3rem">Bülten</div>
-        <div style="font-size:.8rem;color:#94a3b8">PDF ipuçları ve güncellemeler için abone olun.</div>
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-text">
+        <div class="footer-newsletter-title">Bülten</div>
+        <div class="footer-newsletter-sub">PDF ipuçları ve güncellemeler için abone olun.</div>
       </div>
-      <form id="mirNewsletterForm" data-source="footer" style="display:flex;gap:.5rem;flex-wrap:wrap">
-        <input type="email" placeholder="E-posta adresiniz" required
-          style="padding:.55rem .9rem;border:1px solid rgba(255,255,255,.15);border-radius:9px;background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:.85rem;outline:none;min-width:220px">
-        <button type="submit"
-          style="background:#6366f1;color:#fff;border:none;border-radius:9px;padding:.55rem 1.1rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit">Abone Ol</button>
+      <form id="mirNewsletterForm" data-source="footer" class="footer-newsletter-form">
+        <input type="email" placeholder="E-posta adresiniz" required class="footer-newsletter-input">
+        <button type="submit" class="footer-newsletter-btn">Abone Ol</button>
       </form>
-      <div id="mirNewsletterMsg" style="font-size:.82rem;width:100%"></div>
+      <div id="mirNewsletterMsg" class="footer-newsletter-msg"></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 MirPDF — Tüm hakları saklıdır.</span>
@@ -1090,7 +1081,7 @@ footer:not(.sf) a{
         <a href="/legal/privacy.html" data-link="legal_privacy">Gizlilik</a>
         <a href="/legal/terms.html" data-link="legal_terms">Şartlar</a>
         <a href="/legal/kvkk.html" data-link="legal_kvkk">KVKK</a>
-        <a href="javascript:void(0)" onclick="window.mirOpenCookiePrefs&&mirOpenCookiePrefs()" style="cursor:pointer">Çerez Tercihleri</a>
+        <a href="javascript:void(0)" onclick="window.mirOpenCookiePrefs&&mirOpenCookiePrefs()">Çerez Tercihleri</a>
       </div>
     </div>
   </div>

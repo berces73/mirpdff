@@ -99,6 +99,18 @@ footer:not(.sf) a{
   text-decoration:none;
   color:inherit;
 }
+
+/* ── Mobile Hub Fix ── */
+@media(max-width:700px){
+  .hub-hero{padding:2.5rem 1.25rem 1.5rem !important}
+  .hub-hero h1{font-size:1.55rem !important;letter-spacing:-.025em !important}
+  .hub-hero p{font-size:.875rem !important}
+  .hub-grid{grid-template-columns:1fr !important;padding:0 1.1rem 3rem !important;gap:.6rem !important}
+  .content-grid{grid-template-columns:1fr !important;padding:0 1.1rem 3rem !important;gap:2rem !important}
+  .col-left p,.col-right p{font-size:.875rem !important;line-height:1.72 !important}
+  .col-left h2,.col-right h2,.content-grid h2{font-size:1.1rem !important;font-weight:800 !important}
+  .col-left h3,.col-right h3{font-size:.95rem !important;font-weight:700 !important}
+}
 </style>
 </head>
 <body>
@@ -129,7 +141,7 @@ footer:not(.sf) a{
 :root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--light:#94a3b8;--radius:18px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 .header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
@@ -146,12 +158,12 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 .article-breadcrumb a:hover{color:var(--text)}
 .article-breadcrumb span{color:var(--light)}
 .article-category{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2563eb;background:#eff6ff;padding:.2rem .7rem;border-radius:100px;margin-bottom:1rem;text-decoration:none}
-.article-title{font-family:'Instrument Serif',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem}
+.article-title{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem}
 .article-lead{font-size:1.08rem;color:var(--muted);line-height:1.7;margin-bottom:1.75rem;max-width:64ch}
 .article-meta{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;font-size:.83rem;color:var(--muted);padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:2.5rem}
 .article-body{font-size:17px;line-height:1.75;color:#374151}
 .article-body > * + *{margin-top:1.25rem}
-.article-body h2{font-family:'Instrument Serif',serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:400;color:var(--text);margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em;scroll-margin-top:80px}
+.article-body h2{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:var(--text);margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em;scroll-margin-top:80px}
 .article-body h3{font-size:1.1rem;font-weight:700;color:var(--text);margin-top:2rem;margin-bottom:.5rem}
 .article-body p{color:#374151;margin-bottom:.75rem}
 .article-body strong{color:var(--text);font-weight:700}
@@ -181,7 +193,7 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 .toc a:hover{color:var(--text);border-left-color:var(--text)}
 .article-cta{background:var(--text);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;position:relative;overflow:hidden}
 .article-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
-.article-cta h3{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:#fff;margin-bottom:.5rem;position:relative}
+.article-cta h3{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.5rem;position:relative}
 .article-cta p{color:rgba(255,255,255,.65);font-size:.95rem;margin-bottom:1.5rem;position:relative;max-width:400px;margin-left:auto;margin-right:auto}
 .article-cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:#fff;color:var(--text);font-weight:700;font-size:.92rem;padding:.7rem 1.75rem;border-radius:10px;text-decoration:none;transition:all .15s;position:relative}
 .article-cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.25);text-decoration:none}
@@ -207,14 +219,14 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 </style>
 <style>
 .hub-hero{text-align:center;padding:4rem 1.5rem 2rem;max-width:700px;margin:0 auto}
-.hub-hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+.hub-hero h1{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-.04em;margin-bottom:1rem;color:#0d0f1a}
 .hub-hero p{font-size:1.08rem;color:var(--muted);max-width:54ch;margin:0 auto 2rem}
-.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;max-width:900px;margin:0 auto;padding:0 1.5rem 5rem}
-.hub-card{display:block;border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.5rem;text-decoration:none;color:inherit;background:var(--bg-soft);transition:all .15s}
-.hub-card:hover{border-color:#93c5fd;transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,.08);text-decoration:none}
-.hub-card-cat{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#2563eb;margin-bottom:.45rem}
-.hub-card-title{font-size:1rem;font-weight:700;line-height:1.3;color:var(--text);margin-bottom:.4rem}
-.hub-card-desc{font-size:.83rem;color:var(--muted);line-height:1.55}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem;max-width:900px;margin:0 auto;padding:0 1.5rem 5rem}
+.hub-card{display:block;border:1px solid #e4e7ed;border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;color:inherit;background:#fff;transition:border-color .15s}
+.hub-card:hover{border-color:#0d0f1a;text-decoration:none}
+.hub-card-cat{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8;margin-bottom:.3rem}
+.hub-card-title{font-size:.95rem;font-weight:700;line-height:1.3;color:#0d0f1a;margin-bottom:.25rem}
+.hub-card-desc{font-size:.8rem;color:#64748b;line-height:1.55}
 </style>
 <div class="hub-hero">
   <span class="article-category">e-Fatura / e-Arşiv</span>

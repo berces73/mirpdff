@@ -22,7 +22,7 @@
 :root{--bg:#ffffff;--bg-soft:#f7f8fc;--bg-mute:#eef0f7;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--ac:#2563eb;--ac-soft:#eff6ff}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
 
 /* NAV */
@@ -40,7 +40,7 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 .hero{background:var(--text);color:#fff;padding:5rem 0 4.5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none}
 .hero-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:#93c5fd;font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1.25rem}
-.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin-bottom:1.1rem}
+.hero h1{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin-bottom:1.1rem}
 .hero h1 em{color:#93c5fd;font-style:normal}
 .hero-lead{color:rgba(255,255,255,.72);font-size:1.05rem;max-width:560px;line-height:1.65;margin-bottom:2rem}
 .hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
@@ -70,7 +70,7 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 .roi-slider{width:100%;margin:0 0 1.25rem;accent-color:var(--ac)}
 .roi-val{font-weight:700;color:var(--ac)}
 .roi-result{background:var(--text);color:#fff;border-radius:18px;padding:2rem;text-align:center}
-.roi-result-num{font-family:'Instrument Serif',serif;font-size:3.5rem;font-weight:400;line-height:1;color:#93c5fd;margin:.5rem 0}
+.roi-result-num{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:3.5rem;font-weight:400;line-height:1;color:#93c5fd;margin:.5rem 0}
 .roi-result-label{font-size:.9rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem}
 .roi-breakdown{text-align:left;display:flex;flex-direction:column;gap:.6rem;border-top:1px solid rgba(255,255,255,.12);padding-top:1.25rem;margin-top:.5rem}
 .roi-row{display:flex;justify-content:space-between;font-size:.84rem;color:rgba(255,255,255,.65)}
@@ -92,7 +92,7 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 .plan.featured{background:#fff;border-color:var(--ac);box-shadow:0 12px 40px rgba(37,99,235,.12)}
 .plan-badge{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.5rem}
 .plan.featured .plan-badge{color:var(--ac)}
-.plan-name{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;margin-bottom:.25rem}
+.plan-name{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.5rem;font-weight:400;margin-bottom:.25rem}
 .plan-price{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:.75rem 0 .2rem}
 .plan-price sup{font-size:1rem;font-weight:600;vertical-align:super}
 .plan-period{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
@@ -100,7 +100,7 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 .plan-features li{display:flex;align-items:flex-start;gap:.6rem;font-size:.85rem;color:var(--muted);line-height:1.4}
 .plan-features li i.fa-check{color:#10b981;flex-shrink:0;margin-top:.2rem}
 .plan-features li i.fa-times{color:#cbd5e1;flex-shrink:0;margin-top:.2rem}
-.plan-btn{display:block;width:100%;padding:.82rem;border-radius:11px;font-family:'Figtree',sans-serif;font-weight:700;font-size:.92rem;text-align:center;cursor:pointer;border:none;background:var(--text);color:#fff;transition:.15s;text-decoration:none}
+.plan-btn{display:block;width:100%;padding:.82rem;border-radius:11px;font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-weight:700;font-size:.92rem;text-align:center;cursor:pointer;border:none;background:var(--text);color:#fff;transition:.15s;text-decoration:none}
 .plan.featured .plan-btn{background:var(--ac)}
 .plan-btn:hover{opacity:.87}
 .plan-note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem}
@@ -120,7 +120,7 @@ body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);lin
 /* CONTACT */
 .contact-section{padding:5rem 0}
 .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3.5rem;align-items:start}
-.contact-left h2{font-family:'Instrument Serif',serif;font-size:2rem;font-weight:400;margin-bottom:.75rem;line-height:1.2}
+.contact-left h2{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:2rem;font-weight:400;margin-bottom:.75rem;line-height:1.2}
 .contact-left p{color:var(--muted);font-size:.92rem;line-height:1.65;margin-bottom:1.5rem}
 .contact-points{display:flex;flex-direction:column;gap:.85rem}
 .contact-point{display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem}
@@ -285,7 +285,7 @@ footer:not(.sf) a{
 <section class="pain-section">
   <div class="container">
     <div class="section-label">Tanıdık geliyor mu?</div>
-    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400;margin-bottom:.4rem">Muhasebe bürosunun günlük PDF sorunları</h2>
+    <h2 style="font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.9rem;font-weight:400;margin-bottom:.4rem">Muhasebe bürosunun günlük PDF sorunları</h2>
     <div class="pain-grid">
       <div class="pain-card active">
         <div class="pain-icon">📧</div>
@@ -329,7 +329,7 @@ footer:not(.sf) a{
 <section class="roi-section" id="roi">
   <div class="container">
     <div class="section-label">Tasarruf hesapla</div>
-    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400">Büronuz aylık ne kadar zaman kazanır?</h2>
+    <h2 style="font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.9rem;font-weight:400">Büronuz aylık ne kadar zaman kazanır?</h2>
     <div class="roi-grid">
       <div class="roi-inputs">
         <label class="roi-label">Kaç kişi çalışıyor? <span class="roi-val" id="v-kisi">3</span></label>
@@ -360,7 +360,7 @@ footer:not(.sf) a{
 <section class="usecases-section">
   <div class="container">
     <div class="section-label">Kullanım senaryoları</div>
-    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400;margin-bottom:.4rem">Muhasebe bürosunun PDF iş akışları</h2>
+    <h2 style="font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.9rem;font-weight:400;margin-bottom:.4rem">Muhasebe bürosunun PDF iş akışları</h2>
     <div class="usecases-grid">
       <div class="usecase-card">
         <div class="usecase-icon"><i class="fas fa-file-invoice"></i></div>
@@ -419,7 +419,7 @@ footer:not(.sf) a{
   <div class="container">
     <div style="text-align:center;margin-bottom:2.5rem">
       <div class="section-label" style="text-align:center">Fiyatlandırma</div>
-      <h2 style="font-family:'Instrument Serif',serif;font-size:2rem;font-weight:400">Büro büyüklüğünüze göre plan seçin</h2>
+      <h2 style="font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:2rem;font-weight:400">Büro büyüklüğünüze göre plan seçin</h2>
       <p style="color:var(--muted);font-size:.92rem;margin-top:.4rem">KDV dahil · Türkçe e-fatura · İstediğiniz zaman iptal</p>
     </div>
     <div class="pricing-grid">
@@ -490,7 +490,7 @@ footer:not(.sf) a{
 <section class="testimonials-section">
   <div class="container">
     <div class="section-label">Kullanıcı Görüşleri</div>
-    <h2 style="font-family:'Instrument Serif',serif;font-size:1.9rem;font-weight:400;margin-bottom:.25rem">Muhasebeciler ne diyor?</h2>
+    <h2 style="font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;font-size:1.9rem;font-weight:400;margin-bottom:.25rem">Muhasebeciler ne diyor?</h2>
     <div class="testi-grid">
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>

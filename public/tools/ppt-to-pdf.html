@@ -70,12 +70,49 @@
 }
   </script>
 <style>
+  /* ── v10 Tool Hero Override ── */
+  body,h1,h2,h3,button,input,select,textarea{
+    font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif!important;
+    -webkit-font-smoothing:antialiased;
+  }
+  .tool-hero{
+    background:#fff!important;
+    border-bottom:1px solid #f1f3f7!important;
+    padding:3rem 1.5rem 2.5rem!important;
+    text-align:center!important;
+  }
+  .tool-hero__icon{display:none!important}
+  .tool-hero__title{
+    font-size:clamp(1.65rem,4vw,2.35rem)!important;
+    font-weight:900!important;
+    letter-spacing:-.04em!important;
+    line-height:1.1!important;
+    color:#0d0f1a!important;
+    margin:0 auto 1rem!important;
+    max-width:22ch!important;
+  }
+  .tool-hero__desc{
+    font-size:.9375rem!important;
+    color:#64748b!important;
+    line-height:1.65!important;
+    max-width:48ch!important;
+    margin:0 auto 1.1rem!important;
+  }
+  .tool-hero__badges{display:none!important}
+  #tool-app{max-width:760px!important;margin:2rem auto!important;padding:0 1.25rem!important}
+  @media(max-width:700px){
+    .tool-hero{padding:2rem 1.1rem 1.75rem!important}
+    .tool-hero__title{font-size:1.45rem!important;max-width:100%!important}
+    .tool-hero__desc{font-size:.875rem!important;max-width:100%!important}
+    #tool-app{padding:0 1rem!important}
+  }
+
 :root{--bg:#f7f8fc;--border:#e3e6f0;--text:#0d0f1a;--muted:#64748b;--primary:#6366f1}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Figtree',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 .container{max-width:860px;margin:0 auto;padding:0 1.5rem}
 main{padding:3rem 0 5rem}
-.tool-hero{text-align:center;margin-bottom:3rem}
+
 .tool-icon{width:72px;height:72px;border-radius:18px;background:#d97706;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.8rem}
 h1{font-size:2rem;font-weight:800;margin-bottom:.6rem;line-height:1.2}
 .hero-sub{color:var(--muted);font-size:1rem;max-width:520px;margin:0 auto 2rem}

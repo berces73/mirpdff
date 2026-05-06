@@ -221,6 +221,24 @@ footer:not(.sf) a{
   color:inherit;
 }
 </style>
+<style>
+  /* ── v10 Tool Hero Override ── */
+  body,h1,h2,h3,button,input,select,textarea{
+    font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif!important;
+    -webkit-font-smoothing:antialiased;
+  }
+  .tool-hero{background:#fff!important;border-bottom:1px solid #f1f3f7!important;padding:3rem 1.5rem 2.5rem!important;text-align:center!important}
+  .tool-hero__icon{display:none!important}
+  .tool-hero__title{font-size:clamp(1.65rem,4vw,2.35rem)!important;font-weight:900!important;letter-spacing:-.04em!important;line-height:1.1!important;color:#0d0f1a!important;margin:0 auto 1rem!important}
+  .tool-hero__desc{font-size:.9375rem!important;color:#64748b!important;line-height:1.65!important;max-width:48ch!important;margin:0 auto 1.1rem!important}
+  .tool-hero__badges{display:none!important}
+  #tool-app{max-width:760px!important;margin:2rem auto!important;padding:0 1.25rem!important}
+  @media(max-width:700px){
+    .tool-hero{padding:2rem 1.1rem 1.75rem!important}
+    .tool-hero__title{font-size:1.45rem!important}
+    .tool-hero__desc{font-size:.875rem!important}
+  }
+</style>
 </head>
 <body data-tool="watermark">
 <meta name="tool-variant" content="qr">

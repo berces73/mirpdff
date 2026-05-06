@@ -1181,3 +1181,201 @@ details.faq-item p {
   .tool-hero { padding: 2rem 1rem 1.75rem; }
   .tool-hero__title { font-size: 1.375rem; }
 }
+
+/* ══════════════════════════════════════════════════════
+   v9 — Smallpdf-level Tool Hero Typography
+   Tüm tool sayfalarında tek tutarlı tema
+   ══════════════════════════════════════════════════════ */
+
+/* ── Global font ── */
+body, h1, h2, h3, button, input, select, textarea {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Tool hero — Smallpdf gibi ── */
+.tool-hero {
+  background: #fff !important;
+  border-bottom: 1px solid #f1f3f7 !important;
+  padding: 3rem 1.5rem 2.25rem !important;
+  text-align: center !important;
+}
+.tool-hero .container {
+  max-width: 680px !important;
+  margin: 0 auto !important;
+}
+
+/* Breadcrumb — minimal */
+.tool-hero .breadcrumb {
+  display: flex !important;
+  justify-content: center !important;
+  gap: .4rem !important;
+  font-size: .75rem !important;
+  color: #94a3b8 !important;
+  margin-bottom: 1.25rem !important;
+}
+.tool-hero .breadcrumb a {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+}
+
+/* H1 — büyük, kalın, siyah */
+.tool-hero__title {
+  font-size: clamp(1.65rem, 4vw, 2.25rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.04em !important;
+  line-height: 1.1 !important;
+  color: #0d0f1a !important;
+  margin: 0 auto 1rem !important;
+  max-width: 18ch !important;
+}
+
+/* Açıklama — gri, orta boy */
+.tool-hero__desc {
+  font-size: .9375rem !important;
+  color: #64748b !important;
+  line-height: 1.65 !important;
+  max-width: 44ch !important;
+  margin: 0 auto 1.25rem !important;
+}
+
+/* Badge'ler — gizle, dropzone altına taşındı */
+.tool-hero__badges {
+  display: none !important;
+}
+
+/* ── Dropzone — büyük, sade ── */
+.tp-dropzone {
+  border: 2px dashed #e2e8f0 !important;
+  border-radius: 16px !important;
+  background: #f8faff !important;
+  padding: 3rem 1.75rem !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  cursor: pointer !important;
+  transition: border-color .15s, background .15s !important;
+}
+.tp-dropzone:hover {
+  border-color: #0d0f1a !important;
+  background: #f7f8fc !important;
+}
+.tp-dropzone--over {
+  border-color: #0d0f1a !important;
+  background: #f1f3f7 !important;
+}
+.tp-dropzone__icon {
+  font-size: 2.75rem !important;
+  color: #94a3b8 !important;
+  margin-bottom: 1rem !important;
+}
+.tp-dropzone__label {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #0d0f1a !important;
+  margin-bottom: .3rem !important;
+}
+.tp-dropzone__sub {
+  font-size: .84rem !important;
+  color: #94a3b8 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* Seç butonu — büyük, siyah */
+.tp-select-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+  background: #0d0f1a !important;
+  color: #fff !important;
+  font-size: .9rem !important;
+  font-weight: 700 !important;
+  padding: .8rem 2rem !important;
+  border-radius: 10px !important;
+  border: none !important;
+  cursor: pointer !important;
+  letter-spacing: .02em !important;
+  font-family: inherit !important;
+  transition: background .15s !important;
+  text-transform: none !important;
+  width: auto !important;
+  min-width: 200px !important;
+  justify-content: center !important;
+}
+.tp-select-btn:hover {
+  background: #1f2937 !important;
+}
+
+/* ── Trust satırı (dropzone altı) ── */
+.tp-trust {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  flex-wrap: wrap !important;
+  margin: 1.1rem auto 0 !important;
+  max-width: 560px !important;
+}
+.tp-trust-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .3rem !important;
+  font-size: .75rem !important;
+  color: #94a3b8 !important;
+  padding: .3rem .75rem !important;
+  border-right: 1px solid #e4e7ed !important;
+}
+.tp-trust-item:last-child { border-right: none !important; }
+.tp-trust-item i { font-size: .65rem !important; }
+
+/* ── Tool app container ── */
+#tool-app {
+  max-width: 780px !important;
+  margin: 2rem auto !important;
+  padding: 0 1.25rem !important;
+}
+
+/* ── Run butonu ── */
+.tp-run-btn, .run-btn {
+  font-size: .95rem !important;
+  font-weight: 700 !important;
+  padding: .8rem 2rem !important;
+  border-radius: 10px !important;
+  background: #0d0f1a !important;
+  color: #fff !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background .15s !important;
+  font-family: inherit !important;
+}
+.tp-run-btn:hover, .run-btn:hover { background: #1f2937 !important; }
+
+/* ── Old hero override (tool pages .hero sınıfı) ── */
+.hero h1 {
+  font-size: clamp(1.65rem, 4vw, 2.25rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.04em !important;
+  color: #0d0f1a !important;
+}
+.hero p {
+  font-size: .9375rem !important;
+  color: #64748b !important;
+}
+.hero-badge {
+  background: none !important;
+  border: 1px solid #e4e7ed !important;
+  color: #64748b !important;
+  font-size: .72rem !important;
+}
+
+/* ── Mobil ── */
+@media(max-width:700px) {
+  .tool-hero { padding: 2rem 1.1rem 1.75rem !important; }
+  .tool-hero__title { font-size: 1.45rem !important; max-width: 100% !important; }
+  .tool-hero__desc { font-size: .875rem !important; max-width: 100% !important; }
+  .tp-dropzone { padding: 2.25rem 1.1rem !important; }
+  .tp-dropzone__label { font-size: .95rem !important; }
+  .tp-select-btn { min-width: 100% !important; padding: .85rem 1rem !important; }
+  .tp-trust { gap: 0 !important; }
+  .tp-trust-item { font-size: .7rem !important; padding: .25rem .5rem !important; }
+  .hero h1 { font-size: 1.45rem !important; }
+  #tool-app { padding: 0 1rem !important; }
+}

@@ -1320,25 +1320,31 @@ body, h1, h2, h3, button, input, select, textarea {
   display: flex !important;
   justify-content: center !important;
   flex-wrap: wrap !important;
-  gap: .35rem !important;
+  gap: .5rem .75rem !important;
   margin-bottom: 0 !important;
 }
 .tp-chip {
   display: inline-flex !important;
   align-items: center !important;
-  padding: .2rem .6rem !important;
-  border: 1px solid #dddddd !important;
-  border-radius: 4px !important;
-  font-size: .7rem !important;
-  font-weight: 600 !important;
-  color: #555555 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: .78rem !important;
+  font-weight: 700 !important;
+  color: #333333 !important;
   text-decoration: none !important;
   background: transparent !important;
-  transition: border-color .12s, color .12s !important;
-  letter-spacing: .02em !important;
+  transition: color .12s !important;
+  letter-spacing: .015em !important;
   text-transform: uppercase !important;
 }
-.tp-chip:hover { border-color: #555555 !important; color: #111111 !important; }
+.tp-chip:hover { color: #111111 !important; }
+.tp-chip + .tp-chip::before {
+  content: "·" !important;
+  margin-right: .75rem !important;
+  color: #cccccc !important;
+  font-weight: 400 !important;
+}
 
 /* Related links */
 .tp-related {

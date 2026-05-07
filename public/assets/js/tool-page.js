@@ -935,7 +935,6 @@ async function toolCompress(root, status) {
   proModeBtn.addEventListener("click",  () => { proMode = true;  proModeBtn.classList.add("tp-mode-btn--active"); freeModeBtn.classList.remove("tp-mode-btn--active"); });
   modeWrap.append(freeModeBtn, proModeBtn);
   optBox.appendChild(modeWrap);
-  optBox.appendChild(proNote);
   const goBtn = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: "📦 Sıkıştır ve İndir" });
   let abortCtrl = null;
   const onFile = async (file) => {

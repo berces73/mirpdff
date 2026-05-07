@@ -2096,24 +2096,18 @@ function renderTrustWidget(root, tool) {
     "ppt-to-pdf":  [{ href: "/articles/pdf-powerpoint-donusturme.html", label: "PDF'i PowerPoint'e Çevirme" }],
   };
   const links = RELATED[tool] || [];
-  const trust = el("section", { class: "tp-trust" });
+  const trust = el("section", { class: "tp-trust-bar" });
   trust.innerHTML = `
-    <div class="tp-trust__row">
-      <div class="tp-trust__text">
-        <div class="tp-trust__title">🔒 Gizlilik & Güven</div>
-        <div class="tp-trust__desc">Dosyalar yalnızca işlem için kullanılır ve otomatik silinir. Kurumsal kullanım için KVKK uyumlu belgeler hazır.</div>
-        <div class="tp-trust__actions">
-          <a class="tp-trust__link" href="/legal/kvkk.html">KVKK</a>
-          <a class="tp-trust__link" href="/legal/security.html">Güvenlik</a>
-          <a class="tp-trust__link" href="/legal/dpa.html">DPA</a>
-          <a class="tp-trust__link" href="/kurumsal/">Kurumsal</a>
-        </div>
-      </div>
-      ${links.length ? `<div class="tp-trust__links">
-        <div class="tp-trust__links-title">İlgili Rehberler</div>
-        ${links.map(l => `<a href="${l.href}" class="tp-trust__lnk">${l.label}</a>`).join("")}
-      </div>` : ""}
+    <div class="tp-chips">
+      <a class="tp-chip" href="/legal/kvkk.html">KVKK</a>
+      <a class="tp-chip" href="/legal/security.html">Güvenlik</a>
+      <a class="tp-chip" href="/legal/dpa.html">DPA</a>
+      <a class="tp-chip" href="/kurumsal/">Kurumsal</a>
     </div>
+    ${links.length ? `<div class="tp-related">
+      <span class="tp-related__label">Rehberler</span>
+      ${links.map(l => `<a href="${l.href}" class="tp-related__link">${l.label}</a>`).join("")}
+    </div>` : ""}
   `;
   root.appendChild(trust);
 }

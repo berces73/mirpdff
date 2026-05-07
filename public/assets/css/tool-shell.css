@@ -33,8 +33,8 @@
   --border:  #2d3154;
   --text:    #e8eaf6;
   --muted:   #8892b0;
-  --accent:  #818cf8;
-  --accent2: #6366f1;
+  --accent:  #111111;
+  --accent2: #333333;
 }
 
 /* ── 2. Base ─────────────────────────────────────────────────────────────── */
@@ -173,35 +173,30 @@ body {
 
 /* ── 6. Drop Zone ────────────────────────────────────────────────────────── */
 .drop-zone {
-  border: 2.5px dashed #c5c9d0;
-  border-radius: var(--radius-lg);
-  background: #fafbfc;
-  padding: 3.5rem 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 1.75rem 1.5rem;
   text-align: center;
   cursor: pointer;
-  transition: border-color .2s, background .2s, transform .2s, box-shadow .2s;
+  transition: border-color .15s, box-shadow .15s;
   position: relative;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
 }
 [data-theme="dark"] .drop-zone {
   background: var(--bg2);
   border-color: var(--border);
 }
-.drop-zone:hover,
-.drop-zone.over {
-  border-color: var(--accent);
-  background: var(--bg3);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+.drop-zone:hover {
+  border-color: #aaaaaa;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
 }
 .drop-zone.over {
+  border-color: #111111;
   border-style: solid;
-  border-color: var(--accent);
-  animation: dzPulse .6s ease infinite alternate;
-}
-@keyframes dzPulse {
-  from { box-shadow: 0 0 0 0 rgba(99,102,241,.2); }
-  to   { box-shadow: 0 0 0 8px rgba(99,102,241,.0); }
+  background: #f8f8f8;
 }
 .drop-zone input[type=file] {
   position: absolute;
@@ -211,28 +206,31 @@ body {
   width: 100%;
   height: 100%;
 }
-.dz-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; transition: transform .2s; }
-.drop-zone:hover .dz-icon { transform: scale(1.08); }
-.dz-title { font-size: 1rem; font-weight: 600; color: var(--muted); margin-bottom: 1.2rem; }
+.dz-icon { font-size: 1.6rem; margin-bottom: .6rem; display: block; color: #cccccc; transition: none; }
+.drop-zone:hover .dz-icon { transform: none; }
+.dz-title { font-size: 1rem; font-weight: 700; color: #111111; margin-bottom: .75rem; letter-spacing: -.015em; }
 .dz-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: .5rem;
-  background: var(--accent);
+  justify-content: center;
+  gap: .4rem;
+  background: #111111;
   color: #fff;
-  padding: .8rem 2.2rem;
-  border-radius: var(--radius);
+  padding: .75rem 1.25rem;
+  border-radius: 9px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: .875rem;
   border: none;
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
+  width: 100%;
+  letter-spacing: -.01em;
+  transition: background .14s;
   pointer-events: none;
+  font-family: 'Inter', ui-sans-serif, sans-serif;
 }
 .drop-zone:hover .dz-btn,
 .drop-zone.over .dz-btn {
-  background: var(--accent2);
-  transform: translateY(-1px);
+  background: #333333;
 }
 .dz-sub { font-size: .82rem; color: var(--muted); margin-top: .8rem; }
 .dz-file {

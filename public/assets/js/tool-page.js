@@ -621,7 +621,6 @@ async function toolMerge(root, status) {
       goBtn.disabled = false;
     }
   });
-  const mergeNote = el("p", { class: "tp-note", html: "🖥️ Birleştirme tamamen tarayıcınızda yapılır. Dosyalar sunucuya gönderilmez." });
   root.append(zone, thumbGrid, goBtn);
 }
 async function toolSplit(root, status) {
@@ -705,8 +704,7 @@ async function toolSplit(root, status) {
       goBtn.disabled = false;
     }
   });
-  const note_split = el("p", { class: "tp-note", html: "🖥️ Bölme işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, optBox, goBtn, note_split);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 async function toolRotate(root, status) {
   const progress = ensureProgress(root);
@@ -752,8 +750,7 @@ async function toolRotate(root, status) {
     } catch (e) { setStatus(status, "Başarısız: " + e.message, "error"); hideProgress(progress); }
     finally { goBtn.disabled = false; }
   });
-  const note_rotate = el("p", { class: "tp-note", html: "🖥️ Döndürme işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, optBox, goBtn, note_rotate);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 async function toolExtract(root, status) {
   const progress = ensureProgress(root);
@@ -808,8 +805,7 @@ async function toolExtract(root, status) {
     } catch (e) { setStatus(status, "Başarısız: " + e.message, "error"); hideProgress(progress); }
     finally { goBtn.disabled = false; }
   });
-  const note_extract = el("p", { class: "tp-note", html: "🖥️ İşlem işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, optBox, goBtn, note_extract);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 async function toolProtect(root, status) {
   const progress = ensureProgress(root);
@@ -864,8 +860,7 @@ async function toolProtect(root, status) {
       goBtn.disabled = false;
     }
   });
-  const note_protect = el("p", { class: "tp-note", html: "🖥️ Kilitleme işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, optBox, infoBox, goBtn, note_protect);
+  root.append(zone, thumbWrap, optBox, infoBox, goBtn);
 }
 async function toolUnlock(root, status) {
   const progress = ensureProgress(root);
@@ -924,8 +919,7 @@ async function toolUnlock(root, status) {
       goBtn.disabled = false;
     }
   });
-  const note_unlock = el("p", { class: "tp-note", html: "🖥️ Kilit açma işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, optBox, infoBox, goBtn, note_unlock);
+  root.append(zone, thumbWrap, optBox, infoBox, goBtn);
 }
 async function toolCompress(root, status) {
   const progress = ensureProgress(root);
@@ -941,7 +935,6 @@ async function toolCompress(root, status) {
   proModeBtn.addEventListener("click",  () => { proMode = true;  proModeBtn.classList.add("tp-mode-btn--active"); freeModeBtn.classList.remove("tp-mode-btn--active"); });
   modeWrap.append(freeModeBtn, proModeBtn);
   optBox.appendChild(modeWrap);
-  const proNote = el("p", { class: "tp-note", html: `🔒 Güçlü mod: Dosya yalnızca işlem için sunucuya gönderilir ve 1 saat içinde silinir (KVKK uyumlu).` });
   optBox.appendChild(proNote);
   const goBtn = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: "📦 Sıkıştır ve İndir" });
   let abortCtrl = null;
@@ -1232,7 +1225,6 @@ async function toolJpgToPdf(root, status) {
       goBtn.disabled = false;
     }
   });
-  const jpgNote = el("p", { class: "tp-note", html: "🖥️ JPG → PDF dönüşümü tarayıcınızda yapılır. Görseller sunucuya gitmez." });
   root.append(zone, thumbGrid, jpgNote, goBtn);
 }
 /* ─── Office → PDF araçları ──────────────────────────────────────── */
@@ -1510,8 +1502,7 @@ async function toolPdfToJpg(root, status) {
       goBtn.disabled = false;
     }
   });
-  const note_pdf_to_jpg = el("p", { class: "tp-note", html: "🖥️ Dönüşüm işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, goBtn, note_pdf_to_jpg);
+  root.append(zone, thumbWrap, goBtn);
 }
 async function toolWatermark(root, status) {
   const variant = toolVariant();
@@ -1603,7 +1594,6 @@ async function toolWatermark(root, status) {
       goBtn.disabled = false;
     }
   });
-  const waterNote = el("p", { class: "tp-note", html: "🖥️ Filigran işlemi tamamen tarayıcınızda yapılır. Dosyanız sunucuya gönderilmez." });
   root.append(zone, thumbWrap, optBox, waterNote, goBtn);
 }
 // ── PDF Arka Plan Ekle ────────────────────────────────────────────────────────
@@ -1670,8 +1660,6 @@ async function toolBackground(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-
-  const note = el("p", { class: "tp-note", html: "🖥️ İşlem tamamen tarayıcınızda yapılır. Dosya sunucuya gönderilmez." });
   root.append(zone, thumbWrap, optBox, note, goBtn);
 }
 
@@ -1745,8 +1733,6 @@ async function toolMetadata(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-
-  const note = el("p", { class: "tp-note", html: "🖥️ İşlem tamamen tarayıcınızda yapılır. Dosya sunucuya gönderilmez." });
   root.append(zone, thumbWrap, optBox, note, goBtn);
 }
 
@@ -1800,8 +1786,6 @@ async function toolAyikla(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-
-  const note = el("p", { class: "tp-note", html: "🖥️ İşlem tamamen tarayıcınızda yapılır. Dosya sunucuya gönderilmez." });
   root.append(zone, thumbWrap, optBox, note, goBtn);
 }
 
@@ -1875,8 +1859,6 @@ async function toolCrop(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-
-  const note = el("p", { class: "tp-note", html: "🖥️ İşlem tamamen tarayıcınızda yapılır. Dosya sunucuya gönderilmez." });
   root.append(zone, thumbWrap, optBox, note, goBtn);
 }
 
@@ -1950,8 +1932,6 @@ async function toolDuplicate(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-
-  const note = el("p", { class: "tp-note", html: "🖥️ İşlem tamamen tarayıcınızda yapılır. Dosya sunucuya gönderilmez." });
   root.append(zone, thumbWrap, optBox, note, goBtn);
 }
 
@@ -2024,8 +2004,7 @@ async function toolReorder(root, status) {
       goBtn.disabled = false;
     }
   });
-  const note_reorder = el("p", { class: "tp-note", html: "🖥️ Sıralama işlemi tamamen tarayıcınızda yapılır. Dosyalar sunucuya gitmez." });
-  root.append(zone, thumbWrap, optBox, goBtn, note_reorder);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 const TOOL_FAQ = {
   compress: [

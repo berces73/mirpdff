@@ -341,49 +341,80 @@ body{
 }
 
 /* ── Footer ── */
-footer,.site-footer{
-  background:#0d0f1a;color:rgba(255,255,255,.55);
-  padding:3rem 1.5rem 2rem;
+footer, .site-footer, .footer, footer.mir-footer {
+  background: #ffffff !important;
+  border-top: 1px solid #ebebeb !important;
+  color: #111111 !important;
+  padding: 3.5rem 0 0 !important;
 }
-.footer-inner,.sfi{max-width:1100px;margin:0 auto}
-.footer-grid,.sfg{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:2.5rem;margin-bottom:2.5rem;
+.footer-inner, .sfi {
+  max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
 }
-@media(max-width:760px){.footer-grid,.sfg{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.footer-grid,.sfg{grid-template-columns:1fr}}
-.footer-brand,.fbrand{
-  display:flex;align-items:center;gap:.5rem;
-  color:#fff;font-weight:800;
-  text-decoration:none;margin-bottom:.65rem;
+.footer-grid, .sfg {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 2.5rem; margin-bottom: 2.5rem;
 }
-.footer-brand-desc,.fdesc{
-  font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.65;
+.footer-brand, .fbrand {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 0;
 }
-.footer-col,.fcol{margin-top:0}
-.footer-col h4,.fcol h4,.mir-footer-section-title{
-  font-size:.68rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.1em;
-  color:rgba(255,255,255,.3);margin-bottom:.85rem;
+.footer-brand-name {
+  display: inline-flex; align-items: center; gap: .4rem;
+  color: #111111 !important; font-weight: 800;
+  font-size: .9375rem; text-decoration: none;
+  margin-bottom: .5rem; line-height: 1;
 }
-.footer-col a,.fcol a{
-  display:block;color:rgba(255,255,255,.55);
-  font-size:.84rem;margin-bottom:.45rem;
-  text-decoration:none;transition:.12s;
+.footer-brand-name img { border-radius: 6px; }
+.footer-brand-desc, .fdesc {
+  font-size: .82rem; color: #666666; line-height: 1.65; max-width: 220px;
 }
-.footer-col a:hover,.fcol a:hover{color:#fff}
-.footer-bottom,.fbot{
-  border-top:1px solid rgba(255,255,255,.07);
-  padding-top:1.5rem;display:flex;
-  justify-content:space-between;flex-wrap:wrap;
-  gap:.5rem;font-size:.75rem;color:rgba(255,255,255,.3);
+.footer-social {
+  display: flex; gap: .4rem; margin-top: .75rem;
 }
-.footer-bottom a,.fbot a{
-  color:rgba(255,255,255,.3);text-decoration:none;
-  margin-left:.6rem;transition:.12s;
+.footer-social a {
+  width: 30px; height: 30px; border-radius: 7px;
+  border: 1px solid #ebebeb !important;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: .8rem; color: #666666 !important;
+  text-decoration: none !important;
+  transition: border-color .12s, color .12s;
+  margin-bottom: 0 !important;
 }
-.footer-bottom a:hover,.fbot a:hover{color:#fff}
+.footer-social a:hover { border-color: #111111 !important; color: #111111 !important; }
+.footer-col, .fcol { margin-top: 0; }
+.footer-col h4, .fcol h4, .mir-footer-section-title {
+  font-size: .68rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: #111111 !important; margin-bottom: .75rem;
+}
+.footer-col a, .fcol a {
+  display: block; color: #666666 !important;
+  font-size: .82rem; font-weight: 500;
+  margin-bottom: .35rem;
+  text-decoration: none !important; transition: color .12s;
+}
+.footer-col a:hover, .fcol a:hover { color: #111111 !important; }
+.footer-bottom, .fbot {
+  border-top: 1px solid #ebebeb !important;
+  padding: 1.25rem 0 2rem !important; margin-top: 0;
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: .5rem;
+  font-size: .75rem; color: #999999 !important;
+}
+.footer-bottom a, .fbot a {
+  color: #999999 !important; text-decoration: none !important;
+  margin-left: 1rem; transition: color .12s;
+}
+.footer-bottom a:hover, .fbot a:hover { color: #111111 !important; }
+@media(max-width:760px){
+  .footer-grid, .sfg { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+}
+@media(max-width:480px){
+  .footer-grid, .sfg { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom, .fbot { flex-direction: column; align-items: flex-start; }
+  .footer-bottom a, .fbot a { margin-left: 0; margin-right: .75rem; }
+}
 
 /* ── Cookie consent ── */
 .cookie-banner{

@@ -2083,7 +2083,7 @@ function injectFaqSchema(tool) {
   document.head.appendChild(s);
 }
 function renderTrustWidget(root, tool) {
-  if (root.querySelector(".tp-trust")) return;
+  if (root.querySelector(".tp-trust-bar")) return;
   const RELATED = {
     compress:     [{ href: "/articles/pdf-kucultme-outlook-icin.html", label: "Outlook için PDF Küçültme" }, { href: "/articles/pdf-sikistirma.html", label: "PDF Sıkıştırma Rehberi" }],
     merge:        [{ href: "/articles/pdf-birlestirme-mobil.html", label: "Telefonda PDF Birleştirme" }],

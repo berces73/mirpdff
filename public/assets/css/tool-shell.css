@@ -1412,3 +1412,15 @@ body, h1, h2, h3, button, input, select, textarea {
   .hero h1 { font-size: 1.45rem !important; }
   #tool-app { padding: 0 1rem !important; }
 }
+
+/* ── Eski trust kartı — tamamen gizle ── */
+.tp-trust__row,
+.tp-trust__title,
+.tp-trust__desc,
+.tp-trust__actions,
+.tp-trust__links,
+.tp-trust__links-title,
+.tp-trust__lnk,
+section.tp-trust {
+  display: none !important;
+}

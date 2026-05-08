@@ -556,64 +556,14 @@ function injectToolContent() {
   }
 
   const html = `
-    <!-- ── Nasıl Kullanılır ── -->
-    <div class="tc-section">
-      <p class="tc-section-title">Nasıl Kullanılır?</p>
-      <p class="tc-section-sub">Üç adımda ${data.title.toLowerCase()} yapın</p>
-      <div class="tc-steps">
-        ${data.steps.map((s, i) => `
-          <div class="tc-step">
-            <div class="tc-step-num">${i + 1}</div>
-            <div class="tc-step-icon"><i class="fas ${s.icon}"></i></div>
-            <h3>${s.title}</h3>
-            <p>${s.desc}</p>
-          </div>
-        `).join("")}
-      </div>
-    </div>
-
-    <!-- ── Özellikler ── -->
-    <div class="tc-section">
-      <p class="tc-section-title">Neden MirPDF?</p>
-      <p class="tc-section-sub">Hızlı, güvenli ve ücretsiz ${data.title.toLowerCase()}</p>
-      <div class="tc-features">
-        ${data.features.map(f => `
-          <div class="tc-feat">
-            <div class="tc-feat-icon"><i class="fas ${f.icon}"></i></div>
-            <div class="tc-feat-body">
-              <h4>${f.title}</h4>
-              <p>${f.desc}</p>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    </div>
-
-    <!-- ── SSS ── -->
-    <div class="tc-section">
-      <p class="tc-section-title">Sık Sorulan Sorular</p>
-      <p class="tc-section-sub">${data.title} hakkında merak edilenler</p>
-      <div class="tc-faq">
-        ${data.faq.map(f => `
-          <div class="tc-faq-item">
-            <button class="tc-faq-q" onclick="this.closest('.tc-faq-item').classList.toggle('open')">
-              ${f.q} <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="tc-faq-a">${f.a}</div>
-          </div>
-        `).join("")}
-      </div>
-    </div>
-
     <!-- ── İlgili Araçlar ── -->
-    <div class="tc-section" style="margin-bottom:4rem">
-      <p class="tc-section-title">İlgili Araçlar</p>
-      <p class="tc-section-sub">Bunları da beğenebilirsiniz</p>
-      <div class="tc-related">
+    <div class="tc-related-section">
+      <p class="tc-related-label">İlgili Araçlar</p>
+      <div class="tc-related-row">
         ${(data.related || []).map(key => {
           const t = RELATED_TOOLS[key];
           if (!t) return "";
-          return `<a href="${t.href}" class="tc-related-card"><i class="fas ${t.icon}"></i>${t.label}</a>`;
+          return `<a href="${t.href}" class="tc-rel-chip"><i class="fas ${t.icon}"></i>${t.label}</a>`;
         }).join("")}
       </div>
     </div>

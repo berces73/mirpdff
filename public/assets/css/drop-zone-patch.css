@@ -279,3 +279,45 @@ body,h1,h2,h3,h4,button,input,select,textarea{
   .tp-trust-bar span,.tp-trust-bar a{font-size:.7rem!important;padding:.2rem .5rem!important}
   #tool-app,.tool-app{padding:0 .9rem!important}
 }
+
+/* ── İlgili Araçlar — sade chip row ── */
+.tc-related-section {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 2rem;
+}
+.tc-related-label {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #9ca3af;
+  margin-bottom: .85rem;
+}
+.tc-related-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.tc-rel-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .35rem .85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
+}
+.tc-rel-chip:hover {
+  border-color: #0d0f1a;
+  color: #0d0f1a;
+}
+.tc-rel-chip i {
+  font-size: .75rem;
+  color: #9ca3af;
+}

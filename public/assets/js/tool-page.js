@@ -2119,8 +2119,23 @@ function main() {
     case "ayikla":       runPromise = toolAyikla(root, status);      break;
     case "crop":         runPromise = toolCrop(root, status);        break;
     case "duplicate":    runPromise = toolDuplicate(root, status);   break;
+    case "edit":
+    case "sign":
+    case "number": {
+      const soon = document.createElement("div");
+      soon.style.cssText = "text-align:center;padding:2rem 0;border-top:1px solid #f0f0f0;margin-top:1rem";
+      soon.innerHTML = `
+        <p style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#9ca3af;margin-bottom:.5rem">Çok Yakında</p>
+        <p style="font-size:.875rem;color:#374151">Bu araç şu an geliştirme aşamasındadır. Diğer araçlarımızı kullanabilirsiniz.</p>
+        <a href="/#tools" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;background:#0d0f1a;color:#fff;font-size:.82rem;font-weight:700;padding:.6rem 1.25rem;border-radius:9px;text-decoration:none">
+          <i class="fas fa-th"></i> Tüm Araçlar
+        </a>
+      `;
+      root.appendChild(soon);
+      runPromise = Promise.resolve();
+      break;
+    }
     default:
-      setStatus(status, `"${tool}" aracı yakında aktif olacak.`, "info");
       runPromise = Promise.resolve();
   }
   Promise.resolve(runPromise)

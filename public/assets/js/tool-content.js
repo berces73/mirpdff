@@ -556,6 +556,22 @@ function injectToolContent() {
   }
 
   const html = `
+    <!-- ── Nasıl Kullanılır ── -->
+    <div class="tc-how">
+      <p class="tc-how-label">Nasıl Kullanılır</p>
+      <div class="tc-how-steps">
+        ${data.steps.map((s, i) => `
+          <div class="tc-how-step">
+            <span class="tc-how-num">${i + 1}</span>
+            <div class="tc-how-body">
+              <strong>${s.title}</strong>
+              <p>${s.desc}</p>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+
     <!-- ── İlgili Araçlar ── -->
     <div class="tc-related-section">
       <p class="tc-related-label">İlgili Araçlar</p>

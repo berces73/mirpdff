@@ -621,7 +621,7 @@ async function toolMerge(root, status) {
       goBtn.disabled = false;
     }
   });
-  root.append(zone, thumbGrid, goBtn);
+  root.append(zone, goBtn);
 }
 async function toolSplit(root, status) {
   const progress = ensureProgress(root);
@@ -816,7 +816,6 @@ async function toolProtect(root, status) {
   const pwInp     = el("input", { type: "password", class: "tp-input", placeholder: "Şifre girin (en az 4 karakter)", autocomplete: "new-password" });
   const pw2Inp    = el("input", { type: "password", class: "tp-input", placeholder: "Şifreyi tekrar girin", autocomplete: "new-password" });
   const goBtn     = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " PDF'i Kilitle ve İndir" });
-  const infoBox = el("div", { class: "tp-tool-note", html: `Önemli: Şifrenizi kaydedin. Dosya kilitlenince şifre olmadan açılamaz. İşlem tarayıcınızda gerçekleşir, sunucuya gönderilmez.` });
   optBox.appendChild(el("label", { class: "tp-label", text: "Şifre" }));
   optBox.appendChild(pwInp);
   optBox.appendChild(el("label", { class: "tp-label", text: "Şifre (Tekrar)" }));
@@ -860,7 +859,7 @@ async function toolProtect(root, status) {
       goBtn.disabled = false;
     }
   });
-  root.append(zone, thumbWrap, optBox, infoBox, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 async function toolUnlock(root, status) {
   const progress = ensureProgress(root);
@@ -870,7 +869,6 @@ async function toolUnlock(root, status) {
   const optBox    = el("div", { class: "tp-optbox tp-optbox--hidden" });
   const pwInp     = el("input", { type: "password", class: "tp-input", placeholder: "Mevcut şifreyi girin", autocomplete: "current-password" });
   const goBtn     = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " Kilidi Aç ve İndir" });
-  const infoBox = el("div", { class: "tp-tool-note", html: `ℹ Not: Bu araç yalnızca kullanıcı parolası bilinen PDF'lerin kilidini açar. Sahipsiz şifre kırma desteklenmez.` });
   optBox.appendChild(el("label", { class: "tp-label", text: "PDF Şifresi" }));
   optBox.appendChild(pwInp);
   const onFile = async (file) => {
@@ -919,7 +917,7 @@ async function toolUnlock(root, status) {
       goBtn.disabled = false;
     }
   });
-  root.append(zone, thumbWrap, optBox, infoBox, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 async function toolCompress(root, status) {
   const progress = ensureProgress(root);
@@ -1037,7 +1035,7 @@ async function toolPdfToWord(root, status) {
   const { zone } = createDropZone({ accept: ".pdf", label: "PDF dosyasını sürükleyin" });
   const thumbWrap = el("div", { class: "tp-single-thumb tp-single-thumb--hidden" });
   const goBtn     = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " Word'e Dönüştür (Sunucu)" });
-  const note      = el("p", { class: "tp-note", html: ` İşlem sunucuda yapılır, dosya 1 saat içinde silinir (KVKK uyumlu).` });
+  const note = el("p", { class: "tp-note", html: "İşlem sunucuda yapılır, dosya 1 saat içinde silinir." });
   const onFile = async (file) => {
     const err = validatePdf(file);
     if (err) { window.toast?.(err, "error"); return; }
@@ -1104,7 +1102,7 @@ async function toolOcr(root, status) {
     el("option", { value: "eng", text: "Sadece İngilizce" }),
   ]);
   const goBtn = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " Metin Tanı (Sunucu)" });
-  const note  = el("p", { class: "tp-note", html: ` İşlem sunucuda yapılır (Tesseract), dosya 1 saat içinde silinir.` });
+  const note = el("p", { class: "tp-note", html: "İşlem sunucuda yapılır, dosya 1 saat içinde silinir." });
   optBox.appendChild(el("label", { class: "tp-label", text: "OCR Dili" }));
   optBox.appendChild(langSel);
   const onFile = async (file) => {
@@ -1224,7 +1222,7 @@ async function toolJpgToPdf(root, status) {
       goBtn.disabled = false;
     }
   });
-  root.append(zone, thumbGrid, jpgNote, goBtn);
+  root.append(zone, goBtn);
 }
 /*  Office → PDF araçları  */
 function validateOfficeFile(file, exts) {
@@ -1247,7 +1245,7 @@ async function toolWordToPdf(root, status) {
   });
   const thumbWrap = el("div", { class: "tp-single-thumb tp-single-thumb--hidden" });
   const goBtn     = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " PDF'e Dönüştür (Sunucu)" });
-  const note      = el("p", { class: "tp-note", html: " DOCX/DOC işlem sunucuda yapılır, dosya 1 saat içinde silinir (KVKK uyumlu)." });
+  const note = el("p", { class: "tp-note", html: "İşlem sunucuda yapılır, dosya 1 saat içinde silinir." });
   const onFile = (file) => {
     const err = validateOfficeFile(file, [".docx", ".doc"]);
     if (err) { window.toast?.(err, "error"); return; }
@@ -1318,7 +1316,7 @@ async function toolExcelToPdf(root, status) {
   });
   const thumbWrap = el("div", { class: "tp-single-thumb tp-single-thumb--hidden" });
   const goBtn     = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " PDF'e Dönüştür (Sunucu)" });
-  const note      = el("p", { class: "tp-note", html: " XLSX/XLS işlem sunucuda yapılır, dosya 1 saat içinde silinir (KVKK uyumlu)." });
+  const note = el("p", { class: "tp-note", html: "İşlem sunucuda yapılır, dosya 1 saat içinde silinir." });
   const onFile = (file) => {
     const err = validateOfficeFile(file, [".xlsx", ".xls"]);
     if (err) { window.toast?.(err, "error"); return; }
@@ -1389,7 +1387,7 @@ async function toolPptToPdf(root, status) {
   });
   const thumbWrap = el("div", { class: "tp-single-thumb tp-single-thumb--hidden" });
   const goBtn     = el("button", { class: "tp-btn tp-btn--primary tp-btn--hidden", type: "button", html: " PDF'e Dönüştür (Sunucu)" });
-  const note      = el("p", { class: "tp-note", html: " PPTX/PPT işlem sunucuda yapılır, dosya 1 saat içinde silinir (KVKK uyumlu)." });
+  const note = el("p", { class: "tp-note", html: "İşlem sunucuda yapılır, dosya 1 saat içinde silinir." });
   const onFile = (file) => {
     const err = validateOfficeFile(file, [".pptx", ".ppt"]);
     if (err) { window.toast?.(err, "error"); return; }
@@ -1593,7 +1591,7 @@ async function toolWatermark(root, status) {
       goBtn.disabled = false;
     }
   });
-  root.append(zone, thumbWrap, optBox, waterNote, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 //  PDF Arka Plan Ekle 
 async function toolBackground(root, status) {
@@ -2076,15 +2074,15 @@ function renderTrustWidget(root, tool) {
   const links = RELATED[tool] || [];
   const trust = el("section", { class: "tp-trust-bar" });
   trust.innerHTML = `
-    <div class="tp-chips">
-      <a class="tp-chip" href="/legal/kvkk.html">KVKK</a>
-      <a class="tp-chip" href="/legal/security.html">Güvenlik</a>
-      <a class="tp-chip" href="/legal/dpa.html">DPA</a>
-      <a class="tp-chip" href="/kurumsal/">Kurumsal</a>
+    <div class="tp-trust-row">
+      <span><i class="fas fa-shield-alt"></i> KVKK Uyumlu</span>
+      <span><i class="fas fa-lock"></i> SSL</span>
+      <span><i class="fas fa-clock"></i> 1 saat içinde silinir</span>
+      <span><i class="fas fa-gift"></i> Ücretsiz</span>
     </div>
-    ${links.length ? `<div class="tp-related">
-      <span class="tp-related__label">Rehberler</span>
-      ${links.map(l => `<a href="${l.href}" class="tp-related__link">${l.label}</a>`).join("")}
+    ${links.length ? `<div class="tp-trust-links">
+      <span class="tp-trust-links-label">Rehberler</span>
+      ${links.map(l => `<a href="${l.href}" class="tp-trust-link">${l.label}</a>`).join("")}
     </div>` : ""}
   `;
   root.appendChild(trust);

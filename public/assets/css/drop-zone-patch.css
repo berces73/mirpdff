@@ -1,552 +1,114 @@
-/* ══════════════════════════════════════════════
-   MirPDF Tool UI — v10 Clean & Corporate
-   ══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   MirPDF Tool UI — Final Clean v11
+   ══════════════════════════════════════════ */
 
-/* ── Global font ── */
+/* Font */
 body,h1,h2,h3,h4,button,input,select,textarea{
   font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif!important;
   -webkit-font-smoothing:antialiased;
 }
 
-/* ── Tool hero ── */
-.tool-hero{
-  background:#fff!important;
-  border-bottom:1px solid #f0f0f0!important;
-  padding:2.75rem 1.5rem 2.25rem!important;
-  text-align:center!important;
-}
+/* Hero */
+.tool-hero{background:#fff!important;border-bottom:1px solid #f0f0f0!important;padding:2.75rem 1.5rem 2.25rem!important;text-align:center!important}
 .tool-hero__icon{display:none!important}
-.tool-hero__title{
-  font-size:clamp(1.65rem,4vw,2.35rem)!important;
-  font-weight:900!important;
-  letter-spacing:-.04em!important;
-  line-height:1.1!important;
-  color:#0d0f1a!important;
-  margin:0 auto .85rem!important;
-}
-.tool-hero__desc{
-  font-size:.9375rem!important;
-  color:#64748b!important;
-  line-height:1.65!important;
-  margin:0 auto 0!important;
-  max-width:48ch!important;
-}
+.tool-hero__title{font-size:clamp(1.6rem,4vw,2.2rem)!important;font-weight:900!important;letter-spacing:-.04em!important;line-height:1.1!important;color:#0d0f1a!important;margin:0 auto .75rem!important}
+.tool-hero__desc{font-size:.9375rem!important;color:#64748b!important;line-height:1.6!important;margin:0 auto!important;max-width:48ch!important}
 .tool-hero__badges{display:none!important}
 
-/* ── Tool app wrapper ── */
-#tool-app,.tool-app{
-  max-width:720px!important;
-  margin:2.25rem auto!important;
-  padding:0 1.25rem!important;
-}
+/* App wrapper */
+#tool-app,.tool-app{max-width:720px!important;margin:2rem auto!important;padding:0 1.25rem!important}
 
-/* ── Dropzone ── */
-.tp-dropzone{
-  border:1.5px dashed #d1d5db!important;
-  border-radius:14px!important;
-  background:#fafafa!important;
-  padding:2.75rem 1.75rem!important;
-  text-align:center!important;
-  cursor:pointer!important;
-  transition:border-color .15s,background .15s!important;
-}
-.tp-dropzone:hover{
-  border-color:#0d0f1a!important;
-  background:#f7f8fc!important;
-}
-.tp-dropzone--over{
-  border-color:#0d0f1a!important;
-  background:#f3f4f6!important;
-}
-/* SVG ikon → gri */
-.tp-dropzone__icon{
-  color:#9ca3af!important;
-  margin-bottom:.85rem!important;
-  font-size:2.5rem!important;
-}
-.tp-dropzone__icon svg{
-  stroke:#9ca3af!important;
-}
-.tp-dropzone__label{
-  font-size:1.05rem!important;
-  font-weight:700!important;
-  color:#0d0f1a!important;
-  margin-bottom:.3rem!important;
-}
-.tp-dropzone__sub{
-  font-size:.82rem!important;
-  color:#9ca3af!important;
-  margin-bottom:1.25rem!important;
-}
+/* Dropzone */
+.tp-dropzone{border:1.5px dashed #d1d5db!important;border-radius:14px!important;background:#fafafa!important;padding:2.75rem 1.5rem!important;text-align:center!important;cursor:pointer!important;transition:border-color .15s!important}
+.tp-dropzone:hover,.tp-dropzone--over{border-color:#0d0f1a!important;background:#f7f8fc!important}
+.tp-dropzone__icon{color:#d1d5db!important;font-size:2.25rem!important;margin-bottom:.75rem!important}
+.tp-dropzone__icon svg{stroke:#d1d5db!important}
+.tp-dropzone__label{font-size:1rem!important;font-weight:700!important;color:#0d0f1a!important;margin-bottom:.3rem!important}
+.tp-dropzone__sub{font-size:.82rem!important;color:#9ca3af!important;margin-bottom:1.1rem!important}
 
-/* ── Select butonu ── */
-.tp-select-btn{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:.45rem!important;
-  background:#0d0f1a!important;
-  color:#fff!important;
-  font-size:.9rem!important;
-  font-weight:700!important;
-  padding:.8rem 1.75rem!important;
-  border-radius:10px!important;
-  border:none!important;
-  cursor:pointer!important;
-  width:100%!important;
-  max-width:320px!important;
-  margin:0 auto!important;
-  font-family:inherit!important;
-  letter-spacing:.01em!important;
-  text-transform:none!important;
-  transition:background .15s!important;
-}
+/* Seç butonu */
+.tp-select-btn{display:flex!important;align-items:center!important;justify-content:center!important;gap:.4rem!important;background:#0d0f1a!important;color:#fff!important;font-size:.9rem!important;font-weight:700!important;padding:.78rem 1.75rem!important;border-radius:10px!important;border:none!important;cursor:pointer!important;width:100%!important;max-width:300px!important;margin:0 auto!important;font-family:inherit!important;transition:background .15s!important}
 .tp-select-btn:hover{background:#1f2937!important}
 
-/* ── Trust bar ── */
-.tp-trust{background:none!important;border:none!important;padding:0!important;margin:0!important}
-.tp-trust-bar{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:0;
-  margin:1rem auto 0;
-  padding-top:.85rem;
-  border-top:1px solid #f0f0f0;
-  max-width:580px;
-}
-.tp-trust-bar span,
-.tp-trust-bar a{
-  display:inline-flex;
-  align-items:center;
-  gap:.3rem;
-  font-size:.74rem;
-  color:#9ca3af;
-  font-weight:500;
-  padding:.2rem .7rem;
-  text-decoration:none;
-  border-right:1px solid #e5e7eb;
-}
-.tp-trust-bar span:last-child,
-.tp-trust-bar a:last-child{border-right:none}
-.tp-trust-bar i{font-size:.6rem}
+/* Trust bar */
+.tp-trust-bar{border-top:1px solid #f0f0f0;margin-top:.85rem;padding-top:.85rem}
+.tp-trust-row{display:flex;justify-content:center;flex-wrap:wrap;gap:0}
+.tp-trust-row span{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:#9ca3af;font-weight:500;padding:.2rem .65rem;border-right:1px solid #e5e7eb}
+.tp-trust-row span:last-child{border-right:none}
+.tp-trust-row i{font-size:.6rem}
+.tp-trust-links{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin-top:.65rem;padding-top:.65rem;border-top:1px solid #f0f0f0}
+.tp-trust-links-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#9ca3af;flex-shrink:0}
+.tp-trust-link{font-size:.78rem;color:#374151;text-decoration:none;font-weight:500}
+.tp-trust-link:hover{color:#0d0f1a;text-decoration:underline}
 
-/* ── tp-note ── */
-.tp-note{
-  font-size:.78rem!important;
-  color:#9ca3af!important;
-  text-align:center!important;
-  margin:.75rem 0!important;
-  line-height:1.5!important;
-}
+/* tp-note */
+.tp-note{font-size:.78rem!important;color:#9ca3af!important;text-align:center!important;margin:.6rem 0!important;padding:0!important;background:none!important;border:none!important;line-height:1.5!important}
 
-/* ── Buton ── */
-.tp-btn--primary{
-  background:#0d0f1a!important;
-  color:#fff!important;
-  font-size:.9rem!important;
-  font-weight:700!important;
-  padding:.8rem 1.75rem!important;
-  border-radius:10px!important;
-  border:none!important;
-  cursor:pointer!important;
-  font-family:inherit!important;
-  transition:background .15s!important;
-}
+/* tp-info-box — sarı/renkli kutular → sade not */
+.tp-info-box,.tp-tool-note,.tp-warning,.tp-server-note{background:none!important;border:none!important;border-top:1px solid #f0f0f0!important;border-radius:0!important;padding:.75rem 0!important;margin:.5rem 0!important;font-size:.78rem!important;color:#9ca3af!important;line-height:1.55!important;box-shadow:none!important}
+.tp-info-box strong,.tp-tool-note strong{color:#374151!important;font-weight:600!important}
+.tp-info-box a,.tp-tool-note a{color:#374151!important}
+
+/* Chip row / eski trust */
+.tp-chips,.tp-related{display:none!important}
+
+/* Thumbnail */
+.tp-single-thumb{margin:.75rem auto!important;max-width:300px!important}
+.tp-thumb-card{border:1px solid #e5e7eb!important;border-radius:10px!important;padding:.75rem!important;background:#fff!important;box-shadow:none!important}
+
+/* Buton */
+.tp-btn--primary{background:#0d0f1a!important;color:#fff!important;font-size:.9rem!important;font-weight:700!important;padding:.78rem 1.75rem!important;border-radius:10px!important;border:none!important;cursor:pointer!important;font-family:inherit!important;transition:background .15s!important;width:100%!important}
 .tp-btn--primary:hover{background:#1f2937!important}
-.tp-btn--secondary{
-  background:#fff!important;
-  color:#0d0f1a!important;
-  border:1.5px solid #e5e7eb!important;
-  font-size:.875rem!important;
-  font-weight:600!important;
-  padding:.7rem 1.5rem!important;
-  border-radius:10px!important;
-  cursor:pointer!important;
-  font-family:inherit!important;
-  transition:.15s!important;
-}
-.tp-btn--secondary:hover{border-color:#0d0f1a!important}
+.tp-btn--secondary{background:#fff!important;color:#374151!important;border:1.5px solid #e5e7eb!important;font-size:.875rem!important;font-weight:600!important;padding:.7rem 1.5rem!important;border-radius:10px!important;cursor:pointer!important;font-family:inherit!important;transition:.15s!important}
+.tp-btn--secondary:hover{border-color:#0d0f1a!important;color:#0d0f1a!important}
 
-/* ── Options / form ── */
-.tp-opts{
-  background:#f9fafb!important;
-  border:1px solid #e5e7eb!important;
-  border-radius:12px!important;
-  padding:1.25rem!important;
-  margin:1.25rem 0!important;
-}
-.tp-opt-label{
-  font-size:.78rem!important;
-  font-weight:700!important;
-  color:#374151!important;
-  text-transform:uppercase!important;
-  letter-spacing:.06em!important;
-  margin-bottom:.5rem!important;
-  display:block!important;
-}
-.tp-opt-group{
-  display:flex;
-  gap:.5rem;
-  flex-wrap:wrap;
-}
-.tp-opt-btn{
-  background:#fff!important;
-  border:1.5px solid #e5e7eb!important;
-  color:#374151!important;
-  font-size:.82rem!important;
-  font-weight:600!important;
-  padding:.45rem .9rem!important;
-  border-radius:8px!important;
-  cursor:pointer!important;
-  font-family:inherit!important;
-  transition:.15s!important;
-}
-.tp-opt-btn:hover,.tp-opt-btn.active,.tp-opt-btn[aria-pressed="true"]{
-  border-color:#0d0f1a!important;
-  color:#0d0f1a!important;
-  background:#f7f8fc!important;
-}
+/* Opts */
+.tp-opts{background:#f9fafb!important;border:1px solid #e5e7eb!important;border-radius:10px!important;padding:1rem 1.1rem!important;margin:1rem 0!important}
+.tp-opt-label{font-size:.72rem!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.07em!important;color:#374151!important;margin-bottom:.5rem!important;display:block!important}
+.tp-opt-btn{background:#fff!important;border:1.5px solid #e5e7eb!important;color:#374151!important;font-size:.8rem!important;font-weight:600!important;padding:.4rem .85rem!important;border-radius:8px!important;cursor:pointer!important;font-family:inherit!important;transition:.15s!important}
+.tp-opt-btn.active,.tp-opt-btn:hover{border-color:#0d0f1a!important;color:#0d0f1a!important}
 
-/* ── Status ── */
-.tp-status{
-  font-size:.82rem!important;
-  color:#374151!important;
-  text-align:center!important;
-  padding:.75rem!important;
-}
+/* Nasıl kullanılır */
+.tc-how{padding:1.75rem 0 1.25rem;border-top:1px solid #f0f0f0;margin-top:1.75rem}
+.tc-how-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#9ca3af;margin-bottom:1rem}
+.tc-how-steps{display:flex;flex-direction:column}
+.tc-how-step{display:flex;align-items:flex-start;gap:.85rem;padding:.8rem 0;border-bottom:1px solid #f0f0f0}
+.tc-how-step:last-child{border-bottom:none}
+.tc-how-num{width:22px;height:22px;border-radius:50%;background:#0d0f1a;color:#fff;font-size:.68rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.tc-how-body strong{display:block;font-size:.875rem;font-weight:700;color:#0d0f1a;margin-bottom:.15rem}
+.tc-how-body p{font-size:.8rem;color:#64748b;margin:0;line-height:1.5}
 
-/* ── How steps (tool-content.js) ── */
-.tc-step{
-  border:1px solid #e5e7eb!important;
-  border-radius:12px!important;
-  box-shadow:none!important;
-  background:#fff!important;
-}
-.tc-step:hover{
-  box-shadow:none!important;
-  transform:none!important;
-  border-color:#0d0f1a!important;
-}
-.tc-step-num{background:#0d0f1a!important}
-.tc-step-icon{background:#f3f4f6!important;color:#374151!important;border-radius:10px!important}
-.tc-step h3{color:#0d0f1a!important;font-weight:700!important}
-.tc-step p{color:#64748b!important}
+/* İlgili araçlar */
+.tc-related-section{padding:1.75rem 0 2.5rem;border-top:1px solid #f0f0f0;margin-top:1.25rem}
+.tc-related-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#9ca3af;margin-bottom:.75rem}
+.tc-related-row{display:flex;flex-wrap:wrap;gap:.4rem}
+.tc-rel-chip{display:inline-flex;align-items:center;gap:.3rem;background:#fff;border:1px solid #e5e7eb;color:#374151;font-size:.78rem;font-weight:600;padding:.3rem .8rem;border-radius:7px;text-decoration:none;transition:.15s}
+.tc-rel-chip:hover{border-color:#0d0f1a;color:#0d0f1a}
+.tc-rel-chip i{font-size:.7rem;color:#9ca3af}
 
-/* ── Feature cards ── */
-.tc-feat{
-  background:#f9fafb!important;
-  border:1px solid #e5e7eb!important;
-  border-radius:12px!important;
-}
-.tc-feat-icon{background:#f3f4f6!important;color:#374151!important}
-.tc-feat-body h4{color:#0d0f1a!important;font-weight:700!important}
-.tc-feat-body p{color:#64748b!important}
+/* SSS - eski stil override */
+.tp-faq-section{border-top:1px solid #f0f0f0;padding-top:1.5rem;margin-top:1.5rem}
+.tp-faq-section h2,[class*="faq-title"]{font-size:.65rem!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.1em!important;color:#9ca3af!important;margin-bottom:.85rem!important}
+.tp-faq-item{border:none!important;border-bottom:1px solid #f0f0f0!important;border-radius:0!important;padding:.8rem 0!important;background:none!important;box-shadow:none!important}
+.tp-faq-item:last-child{border-bottom:none!important}
+.tp-faq-q{font-size:.875rem!important;font-weight:700!important;color:#0d0f1a!important;background:none!important;border:none!important;padding:0!important;text-align:left!important;cursor:pointer!important;width:100%!important;font-family:inherit!important}
+.tp-faq-a{font-size:.83rem!important;color:#64748b!important;line-height:1.65!important;padding-top:.45rem!important}
 
-/* ── FAQ ── */
-.tc-faq-item{border:1px solid #e5e7eb!important;border-radius:10px!important}
-.tc-faq-q{font-size:.875rem!important;font-weight:700!important;color:#0d0f1a!important}
-.tc-faq-q:hover{background:#f9fafb!important}
-.tc-faq-a{font-size:.875rem!important;color:#374151!important;line-height:1.7!important}
+/* Özellik listesi (OCR, Word) */
+.tp-feature-list{margin-top:1rem}
+.tp-feature-item{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0;border-bottom:1px solid #f0f0f0;background:none!important;border-radius:0!important;box-shadow:none!important}
+.tp-feature-item:last-child{border-bottom:none}
+.tp-feature-item .feat-icon{font-size:1.1rem;color:#9ca3af;flex-shrink:0;margin-top:.1rem;width:auto!important;height:auto!important;background:none!important;border-radius:0!important}
+.tp-feature-item strong{display:block;font-size:.875rem;font-weight:700;color:#0d0f1a;margin-bottom:.15rem}
+.tp-feature-item p{font-size:.8rem;color:#64748b;margin:0;line-height:1.5}
 
-/* ── Related chips ── */
-.tc-related-card{
-  border:1px solid #e5e7eb!important;
-  border-radius:10px!important;
-  background:#fff!important;
-  color:#374151!important;
-}
-.tc-related-card:hover{border-color:#0d0f1a!important;color:#0d0f1a!important;box-shadow:none!important;transform:none!important}
-.tc-related-card i{color:#374151!important}
-
-/* ── Section titles ── */
-.tc-section-title{
-  font-size:1.15rem!important;
-  font-weight:800!important;
-  color:#0d0f1a!important;
-  letter-spacing:-.025em!important;
-}
-.tc-section-sub{color:#64748b!important;font-size:.875rem!important}
-
-/* ── Mobile ── */
+/* Mobil */
 @media(max-width:700px){
   .tool-hero{padding:2rem 1rem 1.75rem!important}
   .tool-hero__title{font-size:1.45rem!important}
   .tool-hero__desc{font-size:.875rem!important}
   .tp-dropzone{padding:2.25rem 1rem!important}
-  .tp-select-btn{max-width:100%!important;padding:.85rem 1rem!important}
-  .tp-trust-bar span,.tp-trust-bar a{font-size:.7rem!important;padding:.2rem .5rem!important}
+  .tp-select-btn{max-width:100%!important}
   #tool-app,.tool-app{padding:0 .9rem!important}
-}
-
-/* ── İlgili Araçlar — sade chip row ── */
-.tc-related-section {
-  padding: 2rem 0 3rem;
-  border-top: 1px solid #f0f0f0;
-  margin-top: 2rem;
-}
-.tc-related-label {
-  font-size: .7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #9ca3af;
-  margin-bottom: .85rem;
-}
-.tc-related-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-}
-.tc-rel-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  color: #374151;
-  font-size: .8rem;
-  font-weight: 600;
-  padding: .35rem .85rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: border-color .15s, color .15s;
-}
-.tc-rel-chip:hover {
-  border-color: #0d0f1a;
-  color: #0d0f1a;
-}
-.tc-rel-chip i {
-  font-size: .75rem;
-  color: #9ca3af;
-}
-
-/* ── Nasıl Kullanılır — numbered steps ── */
-.tc-how {
-  padding: 2rem 0 1.5rem;
-  border-top: 1px solid #f0f0f0;
-  margin-top: 2rem;
-}
-.tc-how-label {
-  font-size: .7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #9ca3af;
-  margin-bottom: 1.25rem;
-}
-.tc-how-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.tc-how-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: .9rem 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-.tc-how-step:last-child { border-bottom: none; }
-.tc-how-num {
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  background: #0d0f1a;
-  color: #fff;
-  font-size: .72rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: .1rem;
-}
-.tc-how-body strong {
-  display: block;
-  font-size: .9rem;
-  font-weight: 700;
-  color: #0d0f1a;
-  margin-bottom: .2rem;
-}
-.tc-how-body p {
-  font-size: .82rem;
-  color: #64748b;
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ── tp-info-box / tp-tool-note — sade, kutusuz ── */
-.tp-info-box, .tp-tool-note {
-  background: none !important;
-  border: none !important;
-  border-top: 1px solid #f0f0f0 !important;
-  border-radius: 0 !important;
-  padding: .85rem 0 !important;
-  margin: .75rem 0 0 !important;
-  font-size: .78rem !important;
-  color: #9ca3af !important;
-  line-height: 1.55 !important;
-}
-.tp-info-box strong, .tp-tool-note strong {
-  color: #374151 !important;
-  font-weight: 600 !important;
-}
-.tp-info-box a, .tp-tool-note a {
-  color: #374151 !important;
-  text-decoration: underline !important;
-}
-
-/* ── İlgili makaleler / rehberler ── */
-.tp-trust__links, .tp-links-section {
-  border-top: 1px solid #f0f0f0;
-  padding-top: .75rem;
-  margin-top: .75rem;
-}
-.tp-trust__links-title, .tp-links-label {
-  font-size: .65rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .1em !important;
-  color: #9ca3af !important;
-  margin-bottom: .5rem !important;
-}
-.tp-trust__lnk {
-  display: inline-flex !important;
-  align-items: center !important;
-  color: #374151 !important;
-  font-size: .8rem !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  margin-right: 1rem !important;
-}
-.tp-trust__lnk:hover { color: #0d0f1a !important; text-decoration: underline !important; }
-
-/* ── SSS (pdf-to-jpg, qr gibi sayfalarda eski HTML var) ── */
-.tp-faq-section, .faq-section {
-  margin-top: 2rem !important;
-  border-top: 1px solid #f0f0f0 !important;
-  padding-top: 1.5rem !important;
-}
-.tp-faq-section h2, .faq-section h2,
-.tp-faq-title {
-  font-size: .7rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .1em !important;
-  color: #9ca3af !important;
-  margin-bottom: 1rem !important;
-}
-.tp-faq-item, .faq-item {
-  border: none !important;
-  border-bottom: 1px solid #f0f0f0 !important;
-  border-radius: 0 !important;
-  padding: .85rem 0 !important;
-  background: none !important;
-  box-shadow: none !important;
-}
-.tp-faq-item:last-child, .faq-item:last-child { border-bottom: none !important; }
-.tp-faq-q, .faq-q {
-  font-size: .875rem !important;
-  font-weight: 700 !important;
-  color: #0d0f1a !important;
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  cursor: pointer !important;
-  width: 100% !important;
-  text-align: left !important;
-  font-family: inherit !important;
-}
-.tp-faq-q:hover, .faq-q:hover { color: #374151 !important; background: none !important; }
-.tp-faq-a, .faq-a {
-  font-size: .85rem !important;
-  color: #64748b !important;
-  line-height: 1.65 !important;
-  padding-top: .5rem !important;
-}
-
-/* Eski SSS büyük başlık override */
-[class*="faq"] h2:not(.article-body h2) {
-  font-size: .7rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .1em !important;
-  color: #9ca3af !important;
-}
-
-/* ── LibreOffice motoru, Türkçe destek vb. özellik kartları ── */
-.tp-feature-list, .tp-features {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0 !important;
-  margin-top: 1rem !important;
-}
-.tp-feature-item {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: .75rem !important;
-  padding: .75rem 0 !important;
-  border-bottom: 1px solid #f0f0f0 !important;
-  background: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-.tp-feature-item:last-child { border-bottom: none !important; }
-.tp-feature-item .tp-feat-icon,
-.tp-feature-item [class*="icon"] {
-  font-size: 1.25rem !important;
-  width: auto !important;
-  height: auto !important;
-  background: none !important;
-  border-radius: 0 !important;
-  color: #9ca3af !important;
-  flex-shrink: 0 !important;
-}
-.tp-feature-item strong {
-  display: block !important;
-  font-size: .875rem !important;
-  font-weight: 700 !important;
-  color: #0d0f1a !important;
-  margin-bottom: .15rem !important;
-}
-.tp-feature-item p {
-  font-size: .8rem !important;
-  color: #64748b !important;
-  margin: 0 !important;
-  line-height: 1.5 !important;
-}
-
-/* Trust bar sade */
-.tp-trust-wrap { margin-top: 0 !important; }
-.tp-trust-bar {
-  display: flex !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-  border-top: 1px solid #f0f0f0 !important;
-  padding-top: .85rem !important;
-  margin-top: .85rem !important;
-}
-.tp-trust-bar span {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: .3rem !important;
-  font-size: .72rem !important;
-  color: #9ca3af !important;
-  font-weight: 500 !important;
-  padding: .2rem .65rem !important;
-  border-right: 1px solid #e5e7eb !important;
-}
-.tp-trust-bar span:last-child { border-right: none !important; }
-.tp-trust-bar i { font-size: .6rem !important; }
-
-/* OCR/Word özel özellik bölümleri - kutu kaldır */
-.tp-server-note {
-  font-size: .78rem !important;
-  color: #9ca3af !important;
-  text-align: center !important;
-  margin: .5rem 0 !important;
-  border: none !important;
-  background: none !important;
-  padding: 0 !important;
+  .tp-trust-row span{font-size:.68rem!important;padding:.2rem .45rem!important}
 }

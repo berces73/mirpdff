@@ -375,3 +375,178 @@ body,h1,h2,h3,h4,button,input,select,textarea{
   line-height: 1.55;
   margin: 0;
 }
+
+/* ── tp-info-box / tp-tool-note — sade, kutusuz ── */
+.tp-info-box, .tp-tool-note {
+  background: none !important;
+  border: none !important;
+  border-top: 1px solid #f0f0f0 !important;
+  border-radius: 0 !important;
+  padding: .85rem 0 !important;
+  margin: .75rem 0 0 !important;
+  font-size: .78rem !important;
+  color: #9ca3af !important;
+  line-height: 1.55 !important;
+}
+.tp-info-box strong, .tp-tool-note strong {
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+.tp-info-box a, .tp-tool-note a {
+  color: #374151 !important;
+  text-decoration: underline !important;
+}
+
+/* ── İlgili makaleler / rehberler ── */
+.tp-trust__links, .tp-links-section {
+  border-top: 1px solid #f0f0f0;
+  padding-top: .75rem;
+  margin-top: .75rem;
+}
+.tp-trust__links-title, .tp-links-label {
+  font-size: .65rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1em !important;
+  color: #9ca3af !important;
+  margin-bottom: .5rem !important;
+}
+.tp-trust__lnk {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #374151 !important;
+  font-size: .8rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin-right: 1rem !important;
+}
+.tp-trust__lnk:hover { color: #0d0f1a !important; text-decoration: underline !important; }
+
+/* ── SSS (pdf-to-jpg, qr gibi sayfalarda eski HTML var) ── */
+.tp-faq-section, .faq-section {
+  margin-top: 2rem !important;
+  border-top: 1px solid #f0f0f0 !important;
+  padding-top: 1.5rem !important;
+}
+.tp-faq-section h2, .faq-section h2,
+.tp-faq-title {
+  font-size: .7rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1em !important;
+  color: #9ca3af !important;
+  margin-bottom: 1rem !important;
+}
+.tp-faq-item, .faq-item {
+  border: none !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  border-radius: 0 !important;
+  padding: .85rem 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.tp-faq-item:last-child, .faq-item:last-child { border-bottom: none !important; }
+.tp-faq-q, .faq-q {
+  font-size: .875rem !important;
+  font-weight: 700 !important;
+  color: #0d0f1a !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  text-align: left !important;
+  font-family: inherit !important;
+}
+.tp-faq-q:hover, .faq-q:hover { color: #374151 !important; background: none !important; }
+.tp-faq-a, .faq-a {
+  font-size: .85rem !important;
+  color: #64748b !important;
+  line-height: 1.65 !important;
+  padding-top: .5rem !important;
+}
+
+/* Eski SSS büyük başlık override */
+[class*="faq"] h2:not(.article-body h2) {
+  font-size: .7rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1em !important;
+  color: #9ca3af !important;
+}
+
+/* ── LibreOffice motoru, Türkçe destek vb. özellik kartları ── */
+.tp-feature-list, .tp-features {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin-top: 1rem !important;
+}
+.tp-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: .75rem !important;
+  padding: .75rem 0 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.tp-feature-item:last-child { border-bottom: none !important; }
+.tp-feature-item .tp-feat-icon,
+.tp-feature-item [class*="icon"] {
+  font-size: 1.25rem !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  color: #9ca3af !important;
+  flex-shrink: 0 !important;
+}
+.tp-feature-item strong {
+  display: block !important;
+  font-size: .875rem !important;
+  font-weight: 700 !important;
+  color: #0d0f1a !important;
+  margin-bottom: .15rem !important;
+}
+.tp-feature-item p {
+  font-size: .8rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Trust bar sade */
+.tp-trust-wrap { margin-top: 0 !important; }
+.tp-trust-bar {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  border-top: 1px solid #f0f0f0 !important;
+  padding-top: .85rem !important;
+  margin-top: .85rem !important;
+}
+.tp-trust-bar span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .3rem !important;
+  font-size: .72rem !important;
+  color: #9ca3af !important;
+  font-weight: 500 !important;
+  padding: .2rem .65rem !important;
+  border-right: 1px solid #e5e7eb !important;
+}
+.tp-trust-bar span:last-child { border-right: none !important; }
+.tp-trust-bar i { font-size: .6rem !important; }
+
+/* OCR/Word özel özellik bölümleri - kutu kaldır */
+.tp-server-note {
+  font-size: .78rem !important;
+  color: #9ca3af !important;
+  text-align: center !important;
+  margin: .5rem 0 !important;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+}

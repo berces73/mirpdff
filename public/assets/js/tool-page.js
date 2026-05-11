@@ -1657,7 +1657,7 @@ async function toolBackground(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-  root.append(zone, thumbWrap, optBox, note, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 
 //  PDF Metadata Düzenle 
@@ -1730,7 +1730,7 @@ async function toolMetadata(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-  root.append(zone, thumbWrap, optBox, note, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 
 //  PDF Sayfa Ayıkla 
@@ -1783,7 +1783,7 @@ async function toolAyikla(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-  root.append(zone, thumbWrap, optBox, note, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 
 //  PDF Sayfa Kırp 
@@ -1856,7 +1856,7 @@ async function toolCrop(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-  root.append(zone, thumbWrap, optBox, note, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 
 //  PDF Sayfa Kopyala 
@@ -1929,7 +1929,7 @@ async function toolDuplicate(root, status) {
       hideProgress(progress);
     } finally { goBtn.disabled = false; }
   });
-  root.append(zone, thumbWrap, optBox, note, goBtn);
+  root.append(zone, thumbWrap, optBox, goBtn);
 }
 
 //  Yardımcı: sayfa aralığı parser (inline JS ile uyumlu) 

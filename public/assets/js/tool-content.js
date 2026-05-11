@@ -394,7 +394,72 @@ const TOOL_DATA = {
       { q: "Şifreli PDF dönüştürülebilir mi?", a: "Önce 'PDF Kilit Aç' aracıyla şifreyi kaldırmanız gerekir." }
     ],
     related: ["jpg-to-pdf","sikistir","birlestir","ayikla"]
-  }
+  },
+
+  background: {
+    title: "Arka Plan Ekleme", icon: "fa-paint-brush", color: "#8b5cf6",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Arka plan eklemek istediğiniz PDF'i seçin." },
+      { icon: "fa-palette", title: "Renk ve Saydamlık Seçin", desc: "Renk seçici ile arka plan rengini ve saydamlığını belirleyin." },
+      { icon: "fa-download", title: "İndirin", desc: "Seçilen sayfalara arka plan uygulanmış PDF hazır." }
+    ],
+    related: ["filigran","kilitle","birlestir","sikistir"]
+  },
+  metadata: {
+    title: "Meta Veri Düzenleme", icon: "fa-info-circle", color: "#0891b2",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Meta verilerini düzenlemek istediğiniz PDF'i seçin." },
+      { icon: "fa-edit", title: "Bilgileri Düzenleyin", desc: "Başlık, yazar, konu gibi meta verileri güncelleyin." },
+      { icon: "fa-download", title: "İndirin", desc: "Güncellenmiş meta verilerle yeni PDF hazır." }
+    ],
+    related: ["birlestir","kilitle","sikistir","ayikla"]
+  },
+  crop: {
+    title: "Sayfa Kırpma", icon: "fa-crop-alt", color: "#f59e0b",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Sayfalarını kırpmak istediğiniz PDF'i seçin." },
+      { icon: "fa-crop-alt", title: "Kırpma Alanını Belirleyin", desc: "Kenar boşluklarını ve kırpma değerlerini girin." },
+      { icon: "fa-download", title: "İndirin", desc: "Kırpılmış sayfalarla yeni PDF oluşturulur." }
+    ],
+    related: ["rotate","birlestir","ayikla","sirala"]
+  },
+  duplicate: {
+    title: "Sayfa Kopyalama", icon: "fa-copy", color: "#10b981",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Sayfa kopyalamak istediğiniz PDF'i seçin." },
+      { icon: "fa-copy", title: "Sayfaları Seçin", desc: "Kopyalamak istediğiniz sayfa veya aralığı belirtin." },
+      { icon: "fa-download", title: "İndirin", desc: "Kopyalanmış sayfalar eklenmiş PDF hazır." }
+    ],
+    related: ["sirala","ayikla","birlestir","bol"]
+  },
+  reorder: {
+    title: "Sayfa Sıralama", icon: "fa-sort", color: "#14b8a6",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Sayfalarını yeniden düzenlemek istediğiniz PDF'i seçin." },
+      { icon: "fa-arrows-alt", title: "Sürükle ve Bırak", desc: "Sayfa küçük resimlerini istediğiniz sıraya sürükleyin." },
+      { icon: "fa-download", title: "Kaydedin", desc: "Yeni sırayla PDF oluşturulur ve indirilir." }
+    ],
+    related: ["ayikla","birlestir","bol","rotate"]
+  },
+  extract: {
+    title: "Sayfa Silme", icon: "fa-trash-alt", color: "#ef4444",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Sayfa silmek istediğiniz PDF'i seçin." },
+      { icon: "fa-trash-alt", title: "Silinecek Sayfaları Belirtin", desc: "Sayfa numarası veya aralık girin." },
+      { icon: "fa-download", title: "İndirin", desc: "Seçili sayfalar silinmiş yeni PDF hazır." }
+    ],
+    related: ["ayikla","sirala","birlestir","bol"]
+  },
+  number: {
+    title: "Sayfa Numaralama", icon: "fa-list-ol", color: "#6366f1",
+    steps: [
+      { icon: "fa-cloud-upload-alt", title: "PDF Yükleyin", desc: "Sayfa numarası eklemek istediğiniz PDF'i seçin." },
+      { icon: "fa-list-ol", title: "Konum Seçin", desc: "Numara konumu, başlangıç değeri ve biçimini belirleyin." },
+      { icon: "fa-download", title: "İndirin", desc: "Sayfa numaraları eklenmiş PDF hazır." }
+    ],
+    related: ["filigran","birlestir","sirala","kilitle"]
+  },
+
 };
 
 // Araç eşleştirme
@@ -419,7 +484,20 @@ const TOOL_MAP = {
   "watermark": "filigran",
   "qr": "qr",
   "jpg-to-pdf": "jpg-to-pdf",
-  "pdf-to-jpg": "pdf-to-jpg"
+  "pdf-to-jpg": "pdf-to-jpg",
+  "background":  "background",
+  "arkaplan":    "background",
+  "metadata":    "metadata",
+  "crop":        "crop",
+  "kirp":        "crop",
+  "duplicate":   "duplicate",
+  "kopyala":     "duplicate",
+  "reorder":     "reorder",
+  "sirala":      "reorder",
+  "extract":     "extract",
+  "sil":         "extract",
+  "number":      "number",
+  "numarala":    "number"
 };
 
 const RELATED_TOOLS = {
